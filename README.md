@@ -1,5 +1,7 @@
 # sqlplus
 
+[![Build Status](https://travis-ci.org/mijecu25/sqlplus.svg?branch=execute-sql)](https://travis-ci.org/mijecu25/sqlplus)
+[![Coverage Status](https://coveralls.io/repos/github/mijecu25/sqlplus/badge.svg?branch=execute-sql)](https://coveralls.io/github/mijecu25/sqlplus?branch=execute-sql)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/miguelvelezmj25/sqlplus/master/LICENSE)
 
 ## License
