@@ -8,7 +8,7 @@ import org.junit.Test;
  * Test for SQLPlusConnection class.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.0.1 
+ * @version 0.0.2
  *
  */
 public class TestSQLPlusConnection {
@@ -49,7 +49,7 @@ public class TestSQLPlusConnection {
         // Delete instance
         SQLPlusConnection.destroyInstance();
     }
-    
+        
     /**
      * Test getConnection providing username and password
      */
@@ -60,6 +60,22 @@ public class TestSQLPlusConnection {
 
         // Check that the connection is not null
         Assert.assertNull(connection);
+    }
+    
+    /**
+     * Test getConnection providing username, password and port
+     */
+    @Test
+    public void getConnection4() {
+        // Get connection
+        SQLPlusConnection connection = SQLPlusConnection.getConnection("test", "abc", "12345");
+
+        // Check that the connection is not null
+        Assert.assertNotNull(connection);
+
+        // TODO delete this call. This is for testing purposes
+        // Delete instance
+        SQLPlusConnection.destroyInstance();
     }
     
 }

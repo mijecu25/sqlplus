@@ -8,10 +8,10 @@ import java.sql.Statement;
 import java.util.Properties;
 
 /**
- * Singleton class
+ * Singleton class. Default database is MySQL on port 3306.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.0.1  
+ * @version 0.0.2 
  *
  */
 public class SQLPlusConnection {
@@ -20,6 +20,9 @@ public class SQLPlusConnection {
     
     private static final String MYSQL_DRIVER = "mysql";
     private static final String MYSQL_PORT = "3306";
+    
+    private static final String DEFAULT_DATABASE = SQLPlusConnection.MYSQL_DRIVER;
+    private static final String DEFAULT_PORT = SQLPlusConnection.MYSQL_PORT;
     
     private static SQLPlusConnection INSTANCE;
     
@@ -33,6 +36,17 @@ public class SQLPlusConnection {
         this.password = password;
         this.database = database;
         this.port = port;
+    }
+    
+    /**
+     * Create an SQLPlusConnection to a mysql database on the provided port
+     * 
+     * @param username
+     * @param password
+     * @param port
+     */
+    private SQLPlusConnection(String username, String password, String port) {
+        this(username, password, SQLPlusConnection.MYSQL_DRIVER, port);
     }
     
     /**
@@ -59,6 +73,26 @@ public class SQLPlusConnection {
         if(SQLPlusConnection.INSTANCE == null) {
             // Create an SQLPlusConnection to database with the info provided by the user
             SQLPlusConnection.INSTANCE = new SQLPlusConnection(username, password, database, port);
+        }
+        
+        // Return the instance
+        return SQLPlusConnection.INSTANCE;
+    }
+    
+    /**
+     * Get an SQLPlusConnection. By not providing information about the port, SQLPlus default to a 
+     * MySQL database.
+     * 
+     * @param username
+     * @param password
+     * @param port
+     * @return
+     */
+    public static SQLPlusConnection getConnection(String username, String password, String port) {
+        // If there is not an instance
+        if(SQLPlusConnection.INSTANCE == null) {
+            // Create an SQLPlusConnection to database with the info provided by the user
+            SQLPlusConnection.INSTANCE = new SQLPlusConnection(username, password, port);
         }
         
         // Return the instance
@@ -102,13 +136,14 @@ public class SQLPlusConnection {
     }
     
     public Connection connect() {
+        // TODO once connected to the database, I should delete any traces of the password in memory
         Connection connection = null;
         
         Properties connectionProperties = new Properties();
         connectionProperties.put("user", "root");
         
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/", connectionProperties);
+            connection = DriverManager.getConnection(SQLPlusConnection.JDBC + ":mysql://127.0.0.1:3306/", connectionProperties);
             
             Statement statement;
             
@@ -149,8 +184,13 @@ public class SQLPlusConnection {
 
     public String getPort() { return port; }
 
+    public static String getDefaultDatabase() { return SQLPlusConnection.DEFAULT_DATABASE; }
+
+    public static String getDefaultPort() { return SQLPlusConnection.DEFAULT_PORT; }
+
     @Override
     public String toString() {
+        // TODO When displaying the password, use *****
         return "SQLPlusConnection [username=" + username + ", password=" + password + ", database="
                 + database + ", port=" + port + "]";
     }

@@ -1,5 +1,6 @@
 package com.mijecu25.sqlplus;
 
+import java.io.Console;
 import java.util.Scanner;
 
 import org.apache.commons.lang3.StringUtils;
@@ -7,7 +8,7 @@ import org.apache.commons.lang3.StringUtils;
 /**
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.0.1 
+ * @version 0.0.2
  *
  */
 public class SQLPlus {
@@ -27,6 +28,9 @@ public class SQLPlus {
         System.out.println(StringUtils.center("", SQLPlus.UILENGTH, '-'));
         System.out.println(StringUtils.center(" Type " + SQLPlus.EXIT + " or " + SQLPlus.QUIT + " to exit the application ", SQLPlus.UILENGTH, '-'));
         System.out.println(StringUtils.center("", SQLPlus.UILENGTH, '-'));
+        
+        // Get credentials from the user
+        SQLPlus.createSQLPlusConnection(inputScanner);
         
         // Execute the input scanner
         while(true) {
@@ -52,6 +56,60 @@ public class SQLPlus {
         
         // Close the input scanner
         inputScanner.close();
+    }
+    
+    /**
+     * Create an SQLPlusConnection by taking the credentials from the user.
+     * 
+     * @param inputScanner
+     * @return
+     */
+    public static SQLPlusConnection createSQLPlusConnection(Scanner inputScanner) {
+        // TODO use prepared statements
+        // Add credentials
+        System.out.print(SQLPlus.PROMPT + "Database(default " + SQLPlusConnection.getDefaultDatabase() + "): ");
+        String database = inputScanner.nextLine().trim();
+      
+        System.out.print(SQLPlus.PROMPT + "Port (default " + SQLPlusConnection.getDefaultPort() + "): ");
+        String port = inputScanner.nextLine().trim();
+        
+        System.out.print(SQLPlus.PROMPT + "Username: ");
+        String username = inputScanner.nextLine().trim();
+
+        // Insecure method of password entry
+//        System.out.print(SQLPlus.PROMPT + "Password: ");
+//        String password = inputScanner.nextLine().trim();
+        
+        // Create a SQLPlusConnection
+        SQLPlusConnection sqlPlusConnection = null;
+
+        // Get the console for safe password entry
+        Console console = System.console();
+        // Read the password without echoing the result
+        char[] password = console.readPassword("%s", SQLPlus.PROMPT + "Password:");
+        
+        // If the password is not null
+        if(password != null) {
+          // If the database and port are default
+          if(database.isEmpty() && port.isEmpty()) {
+              sqlPlusConnection = SQLPlusConnection.getConnection(username, new String(password));
+          }
+          // If the database is empty
+          else if(database.isEmpty()) {
+              sqlPlusConnection = SQLPlusConnection.getConnection(username, new String(password), port);
+          }
+          // All the values were provided by the user
+          else {
+              sqlPlusConnection = SQLPlusConnection.getConnection(username, new String(password), database, port);
+          }
+          
+          // Fill the password array with whitespace to minimize the lifetime of sensitive data in memory.
+          java.util.Arrays.fill(password, ' ');
+        }
+   
+        System.out.println(sqlPlusConnection);
+        
+        return sqlPlusConnection;
     }
     
 }
