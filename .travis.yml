@@ -9,4 +9,4 @@ script:
     mvn test
 
 after_success:
-    - mvn -eX cobertura:cobertura coveralls:report
+    - mvn -e -X cobertura:cobertura coveralls:report
