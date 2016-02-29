@@ -7,6 +7,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Properties;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 /**
  * Singleton class. Default database is MySQL on port 3306.
  * 
@@ -24,6 +27,8 @@ public class SQLPlusConnection {
     private static final String DEFAULT_DATABASE = SQLPlusConnection.MYSQL_DRIVER;
     private static final String DEFAULT_PORT = SQLPlusConnection.MYSQL_PORT;
     
+    private static final Logger logger = LogManager.getLogger(SQLPlusConnection.class);
+    
     private static SQLPlusConnection INSTANCE;
     
     private String username;
@@ -31,7 +36,16 @@ public class SQLPlusConnection {
     private String database;
     private String port;
     
+    /**
+     * 
+     * @param username
+     * @param password
+     * @param database
+     * @param port
+     */
     private SQLPlusConnection(String username, String password, String database, String port) {
+        SQLPlusConnection.logger.info("Creating SQLPlusConnection with username:" + username + " password:********* database:" + database
+                + " port:" + port);
         this.username = username;
         this.password = password;
         this.database = database;
@@ -71,11 +85,14 @@ public class SQLPlusConnection {
     public static SQLPlusConnection getConnection(String username, String password, String database, String port) {
         // If there is not an instance
         if(SQLPlusConnection.INSTANCE == null) {
+            SQLPlusConnection.logger.info("Creating a new SQLPlusConnection instance with username:" + username 
+                    + " password:********* database:" + database + " port:" + port);
             // Create an SQLPlusConnection to database with the info provided by the user
             SQLPlusConnection.INSTANCE = new SQLPlusConnection(username, password, database, port);
         }
         
         // Return the instance
+        SQLPlusConnection.logger.info("Returning SQLPlusConnection instance " + SQLPlusConnection.INSTANCE);
         return SQLPlusConnection.INSTANCE;
     }
     
@@ -91,11 +108,14 @@ public class SQLPlusConnection {
     public static SQLPlusConnection getConnection(String username, String password, String port) {
         // If there is not an instance
         if(SQLPlusConnection.INSTANCE == null) {
+            SQLPlusConnection.logger.info("Creating a new SQLPlusConnection instance with username:" + username 
+                    + " password:********* port:" + port);
             // Create an SQLPlusConnection to database with the info provided by the user
             SQLPlusConnection.INSTANCE = new SQLPlusConnection(username, password, port);
         }
         
         // Return the instance
+        SQLPlusConnection.logger.info("Returning SQLPlusConnection instance" + SQLPlusConnection.INSTANCE);
         return SQLPlusConnection.INSTANCE;
     }
     
@@ -110,11 +130,14 @@ public class SQLPlusConnection {
     public static SQLPlusConnection getConnection(String username, String password) {
         // If there is not an instance
         if(SQLPlusConnection.INSTANCE == null) {
+            SQLPlusConnection.logger.info("Creating a new SQLPlusConnection instance with username:" + username 
+                    + " password:*********");
             // Create an SQLPlusConnection to a MySQL database on port 3306
             SQLPlusConnection.INSTANCE = new SQLPlusConnection(username, password);
         }
         
         // Return the instance
+        SQLPlusConnection.logger.info("Returning SQLPlusConnection instance" + SQLPlusConnection.INSTANCE);
         return SQLPlusConnection.INSTANCE;
     }
     
@@ -126,12 +149,14 @@ public class SQLPlusConnection {
     public static SQLPlusConnection getConnection() {
         // If there is not an instance
         if(SQLPlusConnection.INSTANCE == null) {
+            SQLPlusConnection.logger.warn("There is not an SQLPlusConnection");
             // Print an error message since we cannot implement a default constructor since we need the user to
             // gives an username and password to connect to a database
             System.out.println("WARNING: There is not an SQLPlusConnection");
         }
         
         // Return the instance
+        SQLPlusConnection.logger.info("Returning SQLPlusConnection instance" + SQLPlusConnection.INSTANCE);
         return SQLPlusConnection.INSTANCE;
     }
     
