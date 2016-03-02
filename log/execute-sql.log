@@ -28,3 +28,61 @@
 [03-02-2016 10:56:09.705] [main] INFO  com.mijecu25.sqlplus.SQLPlusConnection:getConnection:95 - Returning SQLPlusConnection instance SQLPlusConnection [username=miguel, password=qwerty, database=hello, port=12345]
 [03-02-2016 10:56:09.705] [main] INFO  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:135 - Created SQLPlusConnection SQLPlusConnection [username=miguel, password=qwerty, database=hello, port=12345]
 [03-02-2016 10:56:09.705] [main] INFO  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:136 - Returning created SQLPlusConnection
+[03-02-2016 11:07:21.698] [main] INFO  com.mijecu25.sqlplus.SQLPlus:main:26 - Initializing SQLPlus
+[03-02-2016 11:07:21.699] [main] INFO  com.mijecu25.sqlplus.SQLPlus:main:38 - Create SQLPlusConnection
+[03-02-2016 11:07:21.699] [main] INFO  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:74 - Will create a SQLPlusConnection
+[03-02-2016 11:10:09.487] [main] INFO  com.mijecu25.sqlplus.SQLPlus:main:26 - Initializing SQLPlus
+[03-02-2016 11:10:09.489] [main] INFO  com.mijecu25.sqlplus.SQLPlus:main:42 - Create SQLPlusConnection
+[03-02-2016 11:10:09.489] [main] INFO  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:78 - Will create a SQLPlusConnection
+[03-02-2016 11:12:27.921] [main] INFO  com.mijecu25.sqlplus.SQLPlus:main:30 - Initializing SQLPlus
+[03-02-2016 11:12:27.923] [main] INFO  com.mijecu25.sqlplus.SQLPlus:main:57 - Create SQLPlusConnection
+[03-02-2016 11:12:27.923] [main] INFO  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:93 - Will create a SQLPlusConnection
+[03-02-2016 11:16:14.432] [main] INFO  com.mijecu25.sqlplus.SQLPlus:main:32 - Initializing SQLPlus
+[03-02-2016 11:16:25.634] [main] INFO  com.mijecu25.sqlplus.SQLPlus:main:32 - Initializing SQLPlus
+[03-02-2016 11:16:25.636] [main] INFO  com.mijecu25.sqlplus.SQLPlus:main:59 - Create SQLPlusConnection
+[03-02-2016 11:16:25.636] [main] INFO  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:95 - Will create a SQLPlusConnection
+[03-02-2016 11:20:43.394] [main] INFO  com.mijecu25.sqlplus.SQLPlus:main:32 - Initializing SQLPlus
+[03-02-2016 11:20:43.396] [main] INFO  com.mijecu25.sqlplus.SQLPlus:main:59 - Create SQLPlusConnection
+[03-02-2016 11:20:43.396] [main] INFO  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:98 - Will create a SQLPlusConnection
+[03-02-2016 11:20:49.225] [main] INFO  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:105 - User entered database:
+[03-02-2016 11:20:56.601] [main] INFO  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:109 - User entered port:12345678
+[03-02-2016 11:21:00.113] [main] INFO  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:123 - User entered username:tommy
+[03-02-2016 11:24:43.520] [main] INFO  com.mijecu25.sqlplus.SQLPlus:main:32 - Initializing SQLPlus
+[03-02-2016 11:24:43.522] [main] INFO  com.mijecu25.sqlplus.SQLPlus:main:59 - Create SQLPlusConnection
+[03-02-2016 11:24:43.522] [main] INFO  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:98 - Will create a SQLPlusConnection
+[03-02-2016 11:24:50.831] [main] INFO  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:105 - User entered database:mysql
+[03-02-2016 11:24:52.615] [main] INFO  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:109 - User entered port:
+[03-02-2016 11:25:00.832] [main] INFO  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:123 - User entered username:jerry
+[03-02-2016 11:25:00.833] [main] FATAL com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:136 - A console to enter a password was not found
+[03-02-2016 11:25:39.305] [main] INFO  com.mijecu25.sqlplus.SQLPlus:main:32 - Initializing SQLPlus
+[03-02-2016 11:25:39.307] [main] INFO  com.mijecu25.sqlplus.SQLPlus:main:59 - Create SQLPlusConnection
+[03-02-2016 11:25:39.307] [main] INFO  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:98 - Will create a SQLPlusConnection
+[03-02-2016 11:25:47.103] [main] INFO  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:105 - User entered database:
+[03-02-2016 11:25:47.591] [main] INFO  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:109 - User entered port:
+[03-02-2016 11:25:47.968] [main] WARN  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:118 - The user did not provide a username
+[03-02-2016 11:25:51.152] [main] INFO  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:123 - User entered username:fsd
+[03-02-2016 11:25:51.153] [main] FATAL com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:136 - A console to enter a password was not found
+[03-02-2016 11:28:58.903] [main] INFO  com.mijecu25.sqlplus.SQLPlusConnection:getConnection:88 - Creating a new SQLPlusConnection instance with username:test password:********* database:db port:12345
+[03-02-2016 11:28:58.904] [main] INFO  com.mijecu25.sqlplus.SQLPlusConnection:<init>:47 - Creating SQLPlusConnection with username:test password:********* database:db port:12345
+[03-02-2016 11:28:58.904] [main] INFO  com.mijecu25.sqlplus.SQLPlusConnection:getConnection:95 - Returning SQLPlusConnection instance SQLPlusConnection [username=test, password=abc, database=db, port=12345]
+[03-02-2016 11:28:58.904] [main] INFO  com.mijecu25.sqlplus.SQLPlusConnection:getConnection:133 - Creating a new SQLPlusConnection instance with username:test password:*********
+[03-02-2016 11:28:58.905] [main] INFO  com.mijecu25.sqlplus.SQLPlusConnection:<init>:47 - Creating SQLPlusConnection with username:test password:********* database:mysql port:3306
+[03-02-2016 11:28:58.905] [main] INFO  com.mijecu25.sqlplus.SQLPlusConnection:getConnection:140 - Returning SQLPlusConnection instanceSQLPlusConnection [username=test, password=abc, database=mysql, port=3306]
+[03-02-2016 11:28:58.905] [main] WARN  com.mijecu25.sqlplus.SQLPlusConnection:getConnection:152 - There is not an SQLPlusConnection
+[03-02-2016 11:28:58.906] [main] INFO  com.mijecu25.sqlplus.SQLPlusConnection:getConnection:159 - Returning SQLPlusConnection instancenull
+[03-02-2016 11:28:58.906] [main] INFO  com.mijecu25.sqlplus.SQLPlusConnection:getConnection:111 - Creating a new SQLPlusConnection instance with username:test password:********* port:12345
+[03-02-2016 11:28:58.906] [main] INFO  com.mijecu25.sqlplus.SQLPlusConnection:<init>:47 - Creating SQLPlusConnection with username:test password:********* database:mysql port:12345
+[03-02-2016 11:28:58.906] [main] INFO  com.mijecu25.sqlplus.SQLPlusConnection:getConnection:118 - Returning SQLPlusConnection instanceSQLPlusConnection [username=test, password=abc, database=mysql, port=12345]
+[03-02-2016 11:29:06.333] [main] INFO  com.mijecu25.sqlplus.SQLPlus:main:32 - Initializing SQLPlus
+[03-02-2016 11:29:06.335] [main] INFO  com.mijecu25.sqlplus.SQLPlus:main:59 - Create SQLPlusConnection
+[03-02-2016 11:29:06.335] [main] INFO  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:98 - Will create a SQLPlusConnection
+[03-02-2016 11:29:18.204] [main] INFO  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:105 - User entered database:
+[03-02-2016 11:29:20.644] [main] INFO  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:109 - User entered port:543
+[03-02-2016 11:29:22.908] [main] INFO  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:123 - User entered username:jerry
+[03-02-2016 11:29:24.876] [main] INFO  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:146 - User entered a some password
+[03-02-2016 11:29:24.876] [main] INFO  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:154 - Connection with username, password, and port
+[03-02-2016 11:29:24.876] [main] INFO  com.mijecu25.sqlplus.SQLPlusConnection:getConnection:111 - Creating a new SQLPlusConnection instance with username:jerry password:********* port:543
+[03-02-2016 11:29:24.877] [main] INFO  com.mijecu25.sqlplus.SQLPlusConnection:<init>:47 - Creating SQLPlusConnection with username:jerry password:********* database:mysql port:543
+[03-02-2016 11:29:24.877] [main] INFO  com.mijecu25.sqlplus.SQLPlusConnection:getConnection:118 - Returning SQLPlusConnection instanceSQLPlusConnection [username=jerry, password=tomas, database=mysql, port=543]
+[03-02-2016 11:29:24.877] [main] INFO  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:167 - Created SQLPlusConnection SQLPlusConnection [username=jerry, password=tomas, database=mysql, port=543]
+[03-02-2016 11:29:24.877] [main] INFO  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:168 - Returning created SQLPlusConnection

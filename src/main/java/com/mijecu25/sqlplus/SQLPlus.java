@@ -1,6 +1,10 @@
 package com.mijecu25.sqlplus;
 
+import java.io.BufferedReader;
 import java.io.Console;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Scanner;
 
 import org.apache.commons.lang3.StringUtils;
@@ -8,9 +12,10 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 /**
+ * SQLPlus.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.0.3
+ * @version 0.0.4
  *
  */
 public class SQLPlus {
@@ -19,25 +24,45 @@ public class SQLPlus {
     private static final String QUIT = "quit";
     private static final int    UILENGTH = 80;
     private static final String PROMPT = "sqlplus> ";    
+    private static final String LICENSE_FILE = "LICENSE";
+    
     private static final Logger logger = LogManager.getLogger(SQLPlus.class);
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         SQLPlus.logger.info("Initializing SQLPlus");
         
         // Create a scanner to get user input
         Scanner inputScanner = new Scanner(System.in);
         
         // UI intro
-        System.out.println(StringUtils.center("", SQLPlus.UILENGTH, '-'));
-        System.out.println(StringUtils.center(" Welcome to SQLPlus ", SQLPlus.UILENGTH, '-'));
-        System.out.println(StringUtils.center("", SQLPlus.UILENGTH, '-'));
-        System.out.println(StringUtils.center(" Type " + SQLPlus.EXIT + " or " + SQLPlus.QUIT + " to exit the application ", SQLPlus.UILENGTH, '-'));
-        System.out.println(StringUtils.center("", SQLPlus.UILENGTH, '-'));
+        System.out.println("Welcome to SQLPlus!");
+        System.out.println();
+        // TODO get the version
+        System.out.println("Version: TODO");
+        System.out.println();
+        BufferedReader bufferedReader = null;
+        bufferedReader = new BufferedReader(new FileReader(SQLPlus.LICENSE_FILE));
+
+        String line = bufferedReader.readLine();
+        
+        while (line != null) {
+          System.out.println(line);
+          
+          line = bufferedReader.readLine();
+        }
+
+        bufferedReader.close();        
+        System.out.println();
+
         
         // Get credentials from the user
         SQLPlus.logger.info("Create SQLPlusConnection");
         SQLPlus.createSQLPlusConnection(inputScanner);
+        System.out.println("");
         
+        // TODO this actually is not true. Have not written code to create the connection
+        System.out.println("Connection established! Commands end with ;");
+        System.out.println("Type " + SQLPlus.EXIT + " or " + SQLPlus.QUIT + " to exit the application ");
         // Execute the input scanner
         while(true) {
             // Get a line from the user until the hit enter (carriage return, line feed/ new line)
@@ -73,6 +98,7 @@ public class SQLPlus {
     public static SQLPlusConnection createSQLPlusConnection(Scanner inputScanner) {
         SQLPlus.logger.info("Will create a SQLPlusConnection");
         
+        System.out.println("You will now enter the credentials to connect to your database");
         // TODO use prepared statements
         // Add credentials
         System.out.print(SQLPlus.PROMPT + "Database(default " + SQLPlusConnection.getDefaultDatabase() + "): ");
@@ -106,6 +132,13 @@ public class SQLPlus {
 
         // Get the console for safe password entry
         Console console = System.console();
+        
+        if(console == null) {
+            SQLPlus.logger.fatal("A console to enter a password was not found");
+            System.out.println("SQLPlus was not able to find your JVM's Console object. Try running SQLPlus from the command line.");
+            
+            throw new NullPointerException();            
+        }
         // Read the password without echoing the result
         char[] password = console.readPassword("%s", SQLPlus.PROMPT + "Password:");
         
