@@ -10,11 +10,13 @@ import java.util.Properties;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.mijecu25.sqlplus.logger.Messages;
+
 /**
  * Singleton class. Default database is MySQL on port 3306.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.0.2 
+ * @version 0.0.3
  *
  */
 public class SQLPlusConnection {
@@ -152,7 +154,7 @@ public class SQLPlusConnection {
             SQLPlusConnection.logger.warn("There is not an SQLPlusConnection");
             // Print an error message since we cannot implement a default constructor since we need the user to
             // gives an username and password to connect to a database
-            System.out.println("WARNING: There is not an SQLPlusConnection");
+            System.out.println(Messages.WARNING + "There is not an SQLPlusConnection");
         }
         
         // Return the instance

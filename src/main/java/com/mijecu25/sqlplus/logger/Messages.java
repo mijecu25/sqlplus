@@ -8,5 +8,7 @@ package com.mijecu25.sqlplus.logger;
  */
 public abstract class Messages {
     
+    public static final String WARNING = "WARNING: ";
+    public static final String ERROR = "ERROR: ";
 
 }

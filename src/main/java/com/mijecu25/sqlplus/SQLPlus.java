@@ -2,7 +2,6 @@ package com.mijecu25.sqlplus;
 
 import java.io.BufferedReader;
 import java.io.Console;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
@@ -10,19 +9,22 @@ import java.util.Scanner;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.message.Message;
+
+import com.mijecu25.sqlplus.logger.Messages;
 
 /**
  * SQLPlus.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.0.5
+ * @version 0.0.6
  *
  */
 public class SQLPlus {
 
     private static final String EXIT = "exit";
     private static final String QUIT = "quit";
-    private static final int    UILENGTH = 80;
+//    private static final int    UILENGTH = 80;
     private static final String PROMPT = "sqlplus> ";    
     private static final String LICENSE_FILE = "LICENSE";
     
@@ -55,11 +57,19 @@ public class SQLPlus {
         bufferedReader.close();        
         System.out.println();
 
-        
-        // Get credentials from the user
-        SQLPlus.logger.info("Create SQLPlusConnection");
-        SQLPlus.createSQLPlusConnection(inputScanner);
-        System.out.println("");
+        try {
+            // Get credentials from the user
+            SQLPlus.logger.info("Create SQLPlusConnection");
+            SQLPlus.createSQLPlusConnection(inputScanner);
+            System.out.println("");
+        } 
+        catch(NullPointerException npe) {
+            // This exception can occur if the user is running the program where the JVM Console
+            // object cannot be found
+            SQLPlus.exitSQLPlus();
+            
+            return ;
+        }
         
         // TODO this actually is not true. Have not written code to create the connection
         System.out.println("Connection established! Commands end with ;");
@@ -78,7 +88,7 @@ public class SQLPlus {
                         
             // Logic to quit
             if(input.equals(SQLPlus.QUIT) || input.equals(SQLPlus.EXIT)) {
-                System.out.println("Bye");
+                SQLPlus.exitSQLPlus();
                 break;
             }
             
@@ -96,7 +106,7 @@ public class SQLPlus {
      * @param inputScanner
      * @return
      */
-    public static SQLPlusConnection createSQLPlusConnection(Scanner inputScanner) {
+    private static SQLPlusConnection createSQLPlusConnection(Scanner inputScanner) {
         SQLPlus.logger.info("Will create a SQLPlusConnection");
         
         System.out.println("You will now enter the credentials to connect to your database");
@@ -106,19 +116,42 @@ public class SQLPlus {
         String database = inputScanner.nextLine().trim();
         SQLPlus.logger.info("User entered database:" + database);
       
-        System.out.print(SQLPlus.PROMPT + "Port (default " + SQLPlusConnection.getDefaultPort() + "): ");
-        String port = inputScanner.nextLine().trim();
-        SQLPlus.logger.info("User entered port:" + port);
+        String port = "";
+        
+        // While the port is not numeric
+        while(!StringUtils.isNumeric(port)) {
+            System.out.print(SQLPlus.PROMPT + "Port (default " + SQLPlusConnection.getDefaultPort() + "): ");
+            port = inputScanner.nextLine().trim();
+            SQLPlus.logger.info("User entered port:" + port);
+            
+            // If the port is empty
+            if(port.isEmpty()) {
+                // Assume that the user wants to use the default port. Continue to the next step
+                break;
+            }
+            
+            // If the port has more than 5 numbers or is not numberic 
+            if(port.length() > 5 || !StringUtils.isNumeric(port)) {
+                SQLPlus.logger.warn("The user provided an invalid port number: " + port);
+                System.out.println(Messages.WARNING + "You need to provided a valid port number "
+                        + "from 0 to 65535");
+                
+                // Set the port to the empty string to ask the user again
+                port = "";
+            }
+        }
         
         String username = "";
         
+        // While the username is empty
         while(username.isEmpty()) {
             System.out.print(SQLPlus.PROMPT + "Username: ");
             username = inputScanner.nextLine().trim();
             
+            // If the username is empty
             if(username.isEmpty()) {
                 SQLPlus.logger.warn("The user did not provide a username");
-                System.out.println("WARNING! You cannot have an empty username");
+                System.out.println(Messages.WARNING + "You cannot have an empty username");
             }
         }
         
@@ -134,12 +167,17 @@ public class SQLPlus {
         // Get the console for safe password entry
         Console console = System.console();
         
+        // If the console is null
         if(console == null) {
-            SQLPlus.logger.fatal("A console to enter a password was not found");
-            System.out.println("SQLPlus was not able to find your JVM's Console object. Try running SQLPlus from the command line.");
+            // The Console object for the JVM could not be found. Alert the user and throw a
+            // NullPointerException that the caller will handle
+            SQLPlus.logger.fatal("A JVM Console object to enter a password was not found");
+            System.out.println(Messages.ERROR + "SQLPlus was not able to find your JVM's Console object. "
+                    + "Try running SQLPlus from the command line.");
             
             throw new NullPointerException();            
         }
+        
         // Read the password without echoing the result
         char[] password = console.readPassword("%s", SQLPlus.PROMPT + "Password:");
         
@@ -169,6 +207,14 @@ public class SQLPlus {
         SQLPlus.logger.info("Created SQLPlusConnection " + sqlPlusConnection);     
         SQLPlus.logger.info("Returning created SQLPlusConnection");
         return sqlPlusConnection;
+    }
+    
+    /**
+     * 
+     */
+    private static void exitSQLPlus() {
+        SQLPlus.logger.info("Quitting SQLPlus");
+        System.out.println("Bye");
     }
     
 }

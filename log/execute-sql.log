@@ -92,3 +92,62 @@
 [03-02-2016 11:38:12.916] [main] INFO  com.mijecu25.sqlplus.SQLPlus:main:32 - Initializing SQLPlus
 [03-02-2016 11:38:12.918] [main] INFO  com.mijecu25.sqlplus.SQLPlus:main:60 - Create SQLPlusConnection
 [03-02-2016 11:38:12.919] [main] INFO  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:100 - Will create a SQLPlusConnection
+[03-02-2016 11:49:22.275] [main] INFO  com.mijecu25.sqlplus.SQLPlus:main:32 - Initializing SQLPlus
+[03-02-2016 11:49:22.277] [main] INFO  com.mijecu25.sqlplus.SQLPlus:main:60 - Create SQLPlusConnection
+[03-02-2016 11:49:22.277] [main] INFO  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:106 - Will create a SQLPlusConnection
+[03-02-2016 11:49:28.125] [main] INFO  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:113 - User entered database:pl
+[03-02-2016 11:49:31.813] [main] INFO  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:117 - User entered port:123
+[03-02-2016 11:49:34.053] [main] INFO  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:131 - User entered username:magnum
+[03-02-2016 11:49:34.054] [main] FATAL com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:144 - A console to enter a password was not found
+[03-02-2016 12:00:56.774] [main] INFO  com.mijecu25.sqlplus.SQLPlus:main:32 - Initializing SQLPlus
+[03-02-2016 12:00:56.776] [main] INFO  com.mijecu25.sqlplus.SQLPlus:main:60 - Create SQLPlusConnection
+[03-02-2016 12:00:56.777] [main] INFO  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:108 - Will create a SQLPlusConnection
+[03-02-2016 12:00:58.286] [main] INFO  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:115 - User entered database:
+[03-02-2016 12:01:00.471] [main] INFO  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:122 - User entered port:123456
+[03-02-2016 12:01:00.471] [main] WARN  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:129 - The user provided a non numeric port: 123456
+[03-02-2016 12:01:07.487] [main] WARN  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:141 - The user did not provide a username
+[03-02-2016 12:01:08.194] [main] WARN  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:141 - The user did not provide a username
+[03-02-2016 12:05:09.283] [main] INFO  com.mijecu25.sqlplus.SQLPlus:main:31 - Initializing SQLPlus
+[03-02-2016 12:05:09.286] [main] INFO  com.mijecu25.sqlplus.SQLPlus:main:59 - Create SQLPlusConnection
+[03-02-2016 12:05:09.286] [main] INFO  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:107 - Will create a SQLPlusConnection
+[03-02-2016 12:05:11.509] [main] INFO  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:114 - User entered database:
+[03-02-2016 12:05:14.595] [main] INFO  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:122 - User entered port:456789
+[03-02-2016 12:05:14.595] [main] WARN  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:132 - The user provided a non numeric port: 456789
+[03-02-2016 12:05:18.101] [main] INFO  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:122 - User entered port:465789
+[03-02-2016 12:05:18.101] [main] WARN  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:132 - The user provided a non numeric port: 465789
+[03-02-2016 12:05:21.213] [main] INFO  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:122 - User entered port:654321
+[03-02-2016 12:05:21.213] [main] WARN  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:132 - The user provided a non numeric port: 654321
+[03-02-2016 12:05:38.029] [main] INFO  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:122 - User entered port:12.2
+[03-02-2016 12:05:38.029] [main] WARN  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:132 - The user provided a non numeric port: 12.2
+[03-02-2016 12:05:40.334] [main] INFO  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:122 - User entered port:.12
+[03-02-2016 12:05:40.334] [main] WARN  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:132 - The user provided a non numeric port: .12
+[03-02-2016 12:05:42.141] [main] INFO  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:122 - User entered port:-45
+[03-02-2016 12:05:42.141] [main] WARN  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:132 - The user provided a non numeric port: -45
+[03-02-2016 12:05:46.630] [main] INFO  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:122 - User entered port:12.578
+[03-02-2016 12:05:46.630] [main] WARN  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:132 - The user provided a non numeric port: 12.578
+[03-02-2016 12:05:48.612] [main] INFO  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:122 - User entered port:
+[03-02-2016 12:05:50.934] [main] INFO  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:154 - User entered username:miguel
+[03-02-2016 12:05:50.935] [main] FATAL com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:170 - A JVM Console object to enter a password was not found
+[03-02-2016 12:05:50.935] [main] INFO  com.mijecu25.sqlplus.SQLPlus:exitSQLPlus:211 - Quitting SQLPlus
+[03-02-2016 12:07:51.835] [main] INFO  com.mijecu25.sqlplus.SQLPlus:main:34 - Initializing SQLPlus
+[03-02-2016 12:07:51.838] [main] INFO  com.mijecu25.sqlplus.SQLPlus:main:62 - Create SQLPlusConnection
+[03-02-2016 12:07:51.838] [main] INFO  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:110 - Will create a SQLPlusConnection
+[03-02-2016 12:07:53.308] [main] INFO  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:117 - User entered database:
+[03-02-2016 12:07:55.934] [main] INFO  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:125 - User entered port:546454654
+[03-02-2016 12:07:55.934] [main] WARN  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:135 - The user provided an invalid port number: 546454654
+[03-02-2016 12:07:58.316] [main] INFO  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:125 - User entered port:1321
+[03-02-2016 12:07:59.868] [main] INFO  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:157 - User entered username:fasdf
+[03-02-2016 12:07:59.869] [main] FATAL com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:173 - A JVM Console object to enter a password was not found
+[03-02-2016 12:07:59.869] [main] INFO  com.mijecu25.sqlplus.SQLPlus:exitSQLPlus:215 - Quitting SQLPlus
+[03-02-2016 12:08:12.909] [main] INFO  com.mijecu25.sqlplus.SQLPlus:main:34 - Initializing SQLPlus
+[03-02-2016 12:08:12.911] [main] INFO  com.mijecu25.sqlplus.SQLPlus:main:62 - Create SQLPlusConnection
+[03-02-2016 12:08:12.911] [main] INFO  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:110 - Will create a SQLPlusConnection
+[03-02-2016 12:08:13.523] [main] INFO  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:117 - User entered database:
+[03-02-2016 12:08:14.372] [main] INFO  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:125 - User entered port:adfasdf
+[03-02-2016 12:08:14.373] [main] WARN  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:135 - The user provided an invalid port number: adfasdf
+[03-02-2016 12:08:15.572] [main] INFO  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:125 - User entered port:afdsf
+[03-02-2016 12:08:15.573] [main] WARN  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:135 - The user provided an invalid port number: afdsf
+[03-02-2016 12:08:16.670] [main] INFO  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:125 - User entered port:fadfa
+[03-02-2016 12:08:16.670] [main] WARN  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:135 - The user provided an invalid port number: fadfa
+[03-02-2016 12:08:19.147] [main] INFO  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:125 - User entered port:asdfaf
+[03-02-2016 12:08:19.148] [main] WARN  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:135 - The user provided an invalid port number: asdfaf
