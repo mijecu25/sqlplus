@@ -86,3 +86,9 @@
 [03-02-2016 11:29:24.877] [main] INFO  com.mijecu25.sqlplus.SQLPlusConnection:getConnection:118 - Returning SQLPlusConnection instanceSQLPlusConnection [username=jerry, password=tomas, database=mysql, port=543]
 [03-02-2016 11:29:24.877] [main] INFO  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:167 - Created SQLPlusConnection SQLPlusConnection [username=jerry, password=tomas, database=mysql, port=543]
 [03-02-2016 11:29:24.877] [main] INFO  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:168 - Returning created SQLPlusConnection
+[03-02-2016 11:37:45.958] [main] INFO  com.mijecu25.sqlplus.SQLPlus:main:32 - Initializing SQLPlus
+[03-02-2016 11:37:45.960] [main] INFO  com.mijecu25.sqlplus.SQLPlus:main:59 - Create SQLPlusConnection
+[03-02-2016 11:37:45.960] [main] INFO  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:99 - Will create a SQLPlusConnection
+[03-02-2016 11:38:12.916] [main] INFO  com.mijecu25.sqlplus.SQLPlus:main:32 - Initializing SQLPlus
+[03-02-2016 11:38:12.918] [main] INFO  com.mijecu25.sqlplus.SQLPlus:main:60 - Create SQLPlusConnection
+[03-02-2016 11:38:12.919] [main] INFO  com.mijecu25.sqlplus.SQLPlus:createSQLPlusConnection:100 - Will create a SQLPlusConnection

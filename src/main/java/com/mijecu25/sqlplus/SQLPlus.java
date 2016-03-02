@@ -15,7 +15,7 @@ import org.apache.logging.log4j.Logger;
  * SQLPlus.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.0.4
+ * @version 0.0.5
  *
  */
 public class SQLPlus {
@@ -35,7 +35,8 @@ public class SQLPlus {
         Scanner inputScanner = new Scanner(System.in);
         
         // UI intro
-        System.out.println("Welcome to SQLPlus!");
+        System.out.println("Welcome to SQLPlus! This program allows you to add alerts to your sql queries.");
+        System.out.println("Be sure to use SQLPlus from the command line.");
         System.out.println();
         // TODO get the version
         System.out.println("Version: TODO");
