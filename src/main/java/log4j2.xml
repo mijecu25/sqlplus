@@ -1,23 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="info">
+  <Properties>
+    <Property name="log-path">src/main/java/com/mijecu25/sqlplus/logger</Property>
+  </Properties>
+  
   <Appenders>
     <Console name="STDOUT" target="SYSTEM_OUT">
-      <PatternLayout pattern="%d{MM-dd-yyyy HH:mm:ss.SSS} [%t] %-5level %logger{36}:%L - %msg%n"/>
+      <PatternLayout pattern="[%d{MM-dd-yyyy HH:mm:ss.SSS}] [%t] %-5level %logger{36}:%M:%L - %msg%n"/>
     </Console>
     
-   	<RollingFile name="RollingFile" fileName="src/main/java/com/mijecu25/sqlplus/logger/execute-sql.log" 
-   			filePattern="src/main/java/com/mijecu25/sqlplus/logger/execute-sql-%d{MM-dd-yyyy}-%i.log">
-      <PatternLayout pattern="%d{MM-dd-yyyy HH:mm:ss.SSS} [%t] %-5level %logger{36}:%L - %msg%n"/>
+   	<RollingFile name="RollingFile" fileName="${log-path}/execute-sql.log" 
+   			filePattern="${log-path}/execute-sql-%d{yyyy-MM-dd}-%i.log">
+      <PatternLayout pattern="[%d{MM-dd-yyyy HH:mm:ss.SSS}] [%t] %-5level %logger{36}:%M:%L - %msg%n"/>
       <Policies>
-      	<TimeBasedTriggeringPolicy interval="24" modulate="true"/>
-        <SizeBasedTriggeringPolicy size="1 MB"/>
+      	<TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+      	<SizeBasedTriggeringPolicy size="5 MB" />
       </Policies>
     </RollingFile>
   </Appenders>
   
   <Loggers>
     <Root level="debug">
-<!--       <AppenderRef ref="STDOUT"/> -->
+      <AppenderRef ref="STDOUT" level="off"/>
       <AppenderRef ref="RollingFile"/>
     </Root>
   </Loggers>
