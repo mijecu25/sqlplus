@@ -9,7 +9,6 @@ import java.util.Scanner;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.message.Message;
 
 import com.mijecu25.sqlplus.logger.Messages;
 
@@ -17,7 +16,7 @@ import com.mijecu25.sqlplus.logger.Messages;
  * SQLPlus.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.0.7
+ * @version 0.0.0.1
  *
  */
 public class SQLPlus {
