@@ -17,7 +17,7 @@ import com.mijecu25.sqlplus.logger.Messages;
  * SQLPlus.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.0.6
+ * @version 0.0.7
  *
  */
 public class SQLPlus {
@@ -32,6 +32,18 @@ public class SQLPlus {
     
     public static void main(String[] args) throws IOException {
         SQLPlus.logger.info("Initializing SQLPlus");
+        
+        // Check if the user is using a valid console (i.e. not from Eclipse)
+        if(System.console() == null) {
+            // The Console object for the JVM could not be found. Alert the user 
+            SQLPlus.logger.fatal("A JVM Console object was not found");
+            System.out.println(Messages.ERROR + "SQLPlus was not able to find your JVM's Console object. "
+                    + "Try running SQLPlus from the command line.");
+            
+            SQLPlus.exitSQLPlus();
+            
+            return ;
+        }
         
         // Create a scanner to get user input
         Scanner inputScanner = new Scanner(System.in);
@@ -122,7 +134,6 @@ public class SQLPlus {
         while(!StringUtils.isNumeric(port)) {
             System.out.print(SQLPlus.PROMPT + "Port (default " + SQLPlusConnection.getDefaultPort() + "): ");
             port = inputScanner.nextLine().trim();
-            SQLPlus.logger.info("User entered port:" + port);
             
             // If the port is empty
             if(port.isEmpty()) {
@@ -140,6 +151,7 @@ public class SQLPlus {
                 port = "";
             }
         }
+        SQLPlus.logger.info("User entered port:" + port);
         
         String username = "";
         
@@ -154,7 +166,6 @@ public class SQLPlus {
                 System.out.println(Messages.WARNING + "You cannot have an empty username");
             }
         }
-        
         SQLPlus.logger.info("User entered username:" + username);
 
         // Insecure method of password entry
@@ -216,5 +227,5 @@ public class SQLPlus {
         SQLPlus.logger.info("Quitting SQLPlus");
         System.out.println("Bye");
     }
-    
+        
 }
