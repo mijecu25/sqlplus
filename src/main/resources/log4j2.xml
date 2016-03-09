@@ -6,11 +6,11 @@
   
     <Appenders>
         <Console name="STDOUT" target="SYSTEM_OUT">
-            <PatternLayout pattern="[%d{MM-dd-yyyy HH:mm:ss.SSS}] [%t] %-5level %logger{36}:%M:%L - %msg%n"/>
+            <PatternLayout pattern="[%d{MM-dd-yyyy HH:mm:ss.SSS}] [%t] %-5level %logger{36}.%M(%L) - %msg%n"/>
         </Console>
     
         <RollingFile name="RollingFile" fileName="${log-path}/execute-sql.log" filePattern="${log-path}/execute-sql-%d{yyyy-MM-dd}-%i.log">
-            <PatternLayout pattern="[%d{MM-dd-yyyy HH:mm:ss.SSS}] [%t] %-5level %logger{36}:%M:%L - %msg%n"/>
+            <PatternLayout pattern="[%d{MM-dd-yyyy HH:mm:ss.SSS}] [%t] %-5level %logger{36}.%M(%L) - %msg%n"/>
             <Policies>
                 <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
                 <SizeBasedTriggeringPolicy size="5 MB" />

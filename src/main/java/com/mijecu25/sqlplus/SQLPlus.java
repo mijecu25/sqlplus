@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.Console;
 import java.io.FileReader;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.Scanner;
 
 import org.apache.commons.lang3.StringUtils;
@@ -16,7 +17,7 @@ import com.mijecu25.sqlplus.logger.Messages;
  * SQLPlus.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.0.0.1
+ * @version 0.0.0.2
  *
  */
 public class SQLPlus {
@@ -27,6 +28,8 @@ public class SQLPlus {
     private static final String PROMPT = "sqlplus> ";    
     private static final String LICENSE_FILE = "LICENSE";
     
+    private static SQLPlusConnection sqlPlusConnection;
+    
     private static final Logger logger = LogManager.getLogger(SQLPlus.class);
     
     public static void main(String[] args) throws IOException {
@@ -35,8 +38,8 @@ public class SQLPlus {
         // Check if the user is using a valid console (i.e. not from Eclipse)
         if(System.console() == null) {
             // The Console object for the JVM could not be found. Alert the user 
-            SQLPlus.logger.fatal("A JVM Console object was not found");
-            System.out.println(Messages.ERROR + "SQLPlus was not able to find your JVM's Console object. "
+            SQLPlus.logger.fatal(Messages.FATAL + "A JVM Console object was not found");
+            System.out.println(Messages.FATAL + "SQLPlus was not able to find your JVM's Console object. "
                     + "Try running SQLPlus from the command line.");
             
             SQLPlus.exitSQLPlus();
@@ -71,12 +74,24 @@ public class SQLPlus {
         try {
             // Get credentials from the user
             SQLPlus.logger.info("Create SQLPlusConnection");
-            SQLPlus.createSQLPlusConnection(inputScanner);
+            SQLPlus.sqlPlusConnection = SQLPlus.createSQLPlusConnection(inputScanner);
             System.out.println("");
         } 
         catch(NullPointerException npe) {
             // This exception can occur if the user is running the program where the JVM Console
             // object cannot be found
+            SQLPlus.logger.fatal(Messages.FATAL + Messages.FATAL_EXIT(npe.getClass().getName()));
+            System.out.println(Messages.FATAL + Messages.FATAL_EXCEPTION_ACTION(npe.getClass().getSimpleName())
+                    + Messages.SPACE + Messages.CHECK_LOG_FILES);
+            SQLPlus.exitSQLPlus();
+            
+            return ;
+        }
+        catch(SQLException sqle) {
+            // This exception can occur when trying to establish a connect.
+            SQLPlus.logger.fatal(Messages.FATAL + Messages.FATAL_EXIT(sqle.getClass().getName()));
+            System.out.println(Messages.FATAL + Messages.FATAL_EXCEPTION_ACTION(sqle.getClass().getSimpleName())
+                    + Messages.SPACE + Messages.CHECK_LOG_FILES);
             SQLPlus.exitSQLPlus();
             
             return ;
@@ -116,8 +131,9 @@ public class SQLPlus {
      * 
      * @param inputScanner
      * @return
+     * @throws SQLException 
      */
-    private static SQLPlusConnection createSQLPlusConnection(Scanner inputScanner) {
+    private static SQLPlusConnection createSQLPlusConnection(Scanner inputScanner) throws SQLException {
         SQLPlus.logger.info("Will create a SQLPlusConnection");
         
         System.out.println("You will now enter the credentials to connect to your database");
@@ -193,7 +209,7 @@ public class SQLPlus {
         
         // If the password is not null
         if(password != null) {
-            SQLPlus.logger.info("User entered a some password");  
+            SQLPlus.logger.info("User entered some password");  
             // If the database and port are default
             if(database.isEmpty() && port.isEmpty()) {
                 SQLPlus.logger.info("Connection with username and password");
@@ -223,6 +239,14 @@ public class SQLPlus {
      * 
      */
     private static void exitSQLPlus() {
+        // If there is a SQLPlusConnection
+        if(SQLPlus.sqlPlusConnection != null) {
+            // Disconnect from the database
+            SQLPlus.logger.info("Attempting to disconnect the SQLPlusConnection");
+            SQLPlus.sqlPlusConnection.disconnect();
+            SQLPlus.logger.info("Disconnected the SQLPlusConnection");
+        }
+        
         SQLPlus.logger.info("Quitting SQLPlus");
         System.out.println("Bye");
     }
