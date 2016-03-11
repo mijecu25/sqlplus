@@ -1,10 +1,12 @@
-package com.mijecu25.sqlplus;
+package com.mijecu25.sqlplus.connection;
 
 import java.sql.SQLException;
 
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+
+import com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection;
 
 /**
  * Test for SQLPlusConnection class. TODO tell that this test might not work with their machine.
@@ -13,7 +15,7 @@ import org.junit.Test;
  * @version 0.0.0.1
  *
  */
-public class TestSQLPlusConnection {
+public class TestSQLPlusMySQLConnection {
 
     @Before
     public void initialize() {
@@ -27,14 +29,14 @@ public class TestSQLPlusConnection {
     @Test
     public void getConnection1() throws SQLException {
         // Get connection
-        SQLPlusConnection connection = SQLPlusConnection.getConnection("root", "", "mysql", "3306");
+        SQLPlusMySQLConnection connection = SQLPlusMySQLConnection.getConnection("root", "", "mysql", "3306");
 
         // Check that the connection is not null
         Assert.assertNotNull(connection);
         
         // TODO delete this call. This is for testing purposes
         // Delete instance
-        SQLPlusConnection.destroyInstance();
+        SQLPlusMySQLConnection.destroyInstance();
     }
     
     /**
@@ -44,25 +46,25 @@ public class TestSQLPlusConnection {
     @Test
     public void getConnection2() throws SQLException {
         // Get connection
-        SQLPlusConnection connection = SQLPlusConnection.getConnection("root", "");
+        SQLPlusMySQLConnection connection = SQLPlusMySQLConnection.getConnection("root", "");
 
         // Check that the connection is not null
         Assert.assertNotNull(connection);
 
         // TODO delete this call. This is for testing purposes
         // Delete instance
-        SQLPlusConnection.destroyInstance();
+        SQLPlusMySQLConnection.destroyInstance();
     }
         
     /**
-     * Test getConnection providing username and password
+     * Test getConnection without there being a connection
      */
     @Test
     public void getConnection3() {
         // Get connection
-        SQLPlusConnection connection = SQLPlusConnection.getConnection();
+        SQLPlusMySQLConnection connection = SQLPlusMySQLConnection.getConnection();
 
-        // Check that the connection is not null
+        // Check that the connection is null since no connection has been created
         Assert.assertNull(connection);
     }
     
@@ -73,14 +75,14 @@ public class TestSQLPlusConnection {
     @Test
     public void getConnection4() throws SQLException {
         // Get connection
-        SQLPlusConnection connection = SQLPlusConnection.getConnection("root", "", "3306");
+        SQLPlusMySQLConnection connection = SQLPlusMySQLConnection.getConnection("root", "", "3306");
 
         // Check that the connection is not null
         Assert.assertNotNull(connection);
 
         // TODO delete this call. This is for testing purposes
         // Delete instance
-        SQLPlusConnection.destroyInstance();
+        SQLPlusMySQLConnection.destroyInstance();
     }
             
 }
