@@ -2,7 +2,9 @@ package com.mijecu25.sqlplus.connection;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Properties;
 
 import org.apache.logging.log4j.LogManager;
@@ -14,11 +16,11 @@ import com.mijecu25.sqlplus.logger.Messages;
  * SQLPlusConnection abstrac class. Default database is MySQL on port 3306.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.0.0.4
+ * @version 0.0.0.5
  *
  */
 public abstract class SQLPlusConnection {
-    
+    // TODO ask the user about the host. Right now we are just using localhost. Remember that host and database are different
     private static final String LOCALHOST = "127.0.0.1";
     private static final String JAVA_DATABASE_DRIVER = "jdbc";
         
@@ -89,9 +91,34 @@ public abstract class SQLPlusConnection {
         }
     }
 
+    /**
+     * Execute a sql query
+     * 
+     * @param query
+     */
     public void execute(String query) {
-        // TODO Auto-generated method stub
+        SQLPlusConnection.logger.info("Query to be executed: " + query);
         
+        // TODO
+        Statement statement;        
+        try {
+            statement = this.connection.createStatement();
+            ResultSet result = statement.executeQuery(query);       
+            
+            System.out.println(result.getMetaData().getColumnCount());      
+            
+//            while(result.next()) {      
+//                System.out.println(result.getString(1));        
+//            }
+        } catch (SQLException sqle) {
+            // This exception can occur if the user entered an invalid query
+            SQLPlusConnection.logger.warn(Messages.WARNING + "The user entered an invalid query string");
+            SQLPlusConnection.logger.warn("ERROR" + Messages.SPACE + sqle.getErrorCode() + Messages.SPACE + "(" 
+                    + sqle.getSQLState() + "):" + sqle.getMessage());
+            System.out.println("ERROR" + Messages.SPACE + sqle.getErrorCode() + Messages.SPACE + "(" 
+                    + sqle.getSQLState() + "):" + sqle.getMessage());
+        }       
+
     }
 
     /**
@@ -107,6 +134,7 @@ public abstract class SQLPlusConnection {
                 SQLPlusConnection.logger.info("Disconnected from the database");
             } 
             catch (SQLException sqle) {
+                // This exception might never occur, but it is good practice to handle it
                 SQLPlusConnection.logger.warn(Messages.WARNING + "Error when attempting to disconnect from the "
                         + "database", sqle);
                 System.out.println(Messages.WARNING + sqle.getMessage());

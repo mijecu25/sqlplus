@@ -19,7 +19,7 @@ import com.mijecu25.sqlplus.logger.Messages;
  * SQLPlus.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.0.0.3
+ * @version 0.0.0.4
  *
  */
 public class SQLPlus {
@@ -27,7 +27,9 @@ public class SQLPlus {
 //    private static final int    UILENGTH = 80;
     private static final String EXIT = "exit";
     private static final String QUIT = "quit";
-    private static final String PROMPT = "sqlplus> ";    
+    private static final String PROMPT = "sqlplus> ";   
+    private static final char END_OF_COMMAND = ';'; 
+    private static final String WAIT_FOR_END_OF_COMMAND = "      -> "; 
     private static final String LICENSE_FILE = "LICENSE";
     
     private static SQLPlusConnection sqlPlusConnection;
@@ -109,28 +111,36 @@ public class SQLPlus {
         }
         
         // TODO this actually is not true. Have not written code to create the connection
-        System.out.println("Connection established! Commands end with ;");
+        System.out.println("Connection established! Commands end with " + SQLPlus.END_OF_COMMAND);
         System.out.println("Type " + SQLPlus.EXIT + " or " + SQLPlus.QUIT + " to exit the application ");
         // Execute the input scanner
         while(true) {
             // Get a line from the user until the hit enter (carriage return, line feed/ new line)
             System.out.print(SQLPlus.PROMPT);
-            String input = inputScanner.nextLine().trim();
+            String query = inputScanner.nextLine().trim();
             
             // If the user did not enter anything 
-            if(input.isEmpty()) {
+            if(query.isEmpty()) {
                 // Continue to the next iteration
                 continue;
             }
-                        
+            
             // Logic to quit
-            if(input.equals(SQLPlus.QUIT) || input.equals(SQLPlus.EXIT)) {
+            if(query.equals(SQLPlus.QUIT) || query.equals(SQLPlus.EXIT)) {
                 SQLPlus.exitSQLPlus();
                 break;
             }
             
-            // TODO this is for test. REMOVE
-            System.out.println("You entered: " + input);
+            // While the user does not finish the command with the SQLPlus.END_OF_COMMAND
+            while(query.charAt(query.length()-1) != SQLPlus.END_OF_COMMAND) {
+                // Print the wait for command prompt and get the next line for the user
+                System.out.print(SQLPlus.WAIT_FOR_END_OF_COMMAND);
+                query += inputScanner.nextLine().trim();
+            }
+            
+            // Execute the query from the user
+            SQLPlus.logger.info("Will execute a query from the user");
+            SQLPlus.sqlPlusConnection.execute(query);
         }
         
         // Close the input scanner
