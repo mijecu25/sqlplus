@@ -16,11 +16,10 @@ import com.mijecu25.sqlplus.logger.Messages;
  * SQLPlusConnection abstrac class. Default database is MySQL on port 3306.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.0.0.6
+ * @version 0.0.0.7
  *
  */
 public abstract class SQLPlusConnection {
-    // TODO ask the user about the host. Right now we are just using localhost. Remember that host and database are different
     private static final String LOCALHOST = "127.0.0.1";
     private static final String JAVA_DATABASE_DRIVER = "jdbc";
         
