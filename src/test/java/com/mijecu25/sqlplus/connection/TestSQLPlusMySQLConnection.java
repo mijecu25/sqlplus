@@ -12,14 +12,24 @@ import com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection;
  * Test for SQLPlusConnection class. TODO tell that this test might not work with their machine.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.0.0.1
+ * @version 0.0.0.2
  *
  */
 public class TestSQLPlusMySQLConnection {
 
+    private String username;
+    private String password;
+    private String host;
+    private String database;
+    private String port;
+    
     @Before
     public void initialize() {
-        
+        this.username = "root";
+        this.password = "";
+        this.host = "localhost";
+        this.database = "mysql";
+        this.port = "3306";
     }
     
     /**
@@ -29,7 +39,8 @@ public class TestSQLPlusMySQLConnection {
     @Test
     public void getConnection1() throws SQLException {
         // Get connection
-        SQLPlusMySQLConnection connection = SQLPlusMySQLConnection.getConnection("root", "", "mysql", "3306");
+        SQLPlusMySQLConnection connection = SQLPlusMySQLConnection.getConnection(this.username, this.password,
+                this.host, this.database, this.port);
 
         // Check that the connection is not null
         Assert.assertNotNull(connection);
@@ -46,7 +57,8 @@ public class TestSQLPlusMySQLConnection {
     @Test
     public void getConnection2() throws SQLException {
         // Get connection
-        SQLPlusMySQLConnection connection = SQLPlusMySQLConnection.getConnection("root", "");
+        SQLPlusMySQLConnection connection = SQLPlusMySQLConnection.getConnection(this.username, this.password,
+                this.host);
 
         // Check that the connection is not null
         Assert.assertNotNull(connection);
@@ -75,7 +87,8 @@ public class TestSQLPlusMySQLConnection {
     @Test
     public void getConnection4() throws SQLException {
         // Get connection
-        SQLPlusMySQLConnection connection = SQLPlusMySQLConnection.getConnection("root", "", "3306");
+        SQLPlusMySQLConnection connection = SQLPlusMySQLConnection.getConnection(this.username, this.password,
+                this.host, this.port);
 
         // Check that the connection is not null
         Assert.assertNotNull(connection);

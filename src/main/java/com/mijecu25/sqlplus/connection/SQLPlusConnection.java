@@ -16,7 +16,7 @@ import com.mijecu25.sqlplus.logger.Messages;
  * SQLPlusConnection abstrac class. Default database is MySQL on port 3306.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.0.0.5
+ * @version 0.0.0.6
  *
  */
 public abstract class SQLPlusConnection {
@@ -26,9 +26,11 @@ public abstract class SQLPlusConnection {
         
     private static final String DEFAULT_DATABASE = SQLPlusMySQLConnection.MYSQL;
     private static final String DEFAULT_PORT = SQLPlusMySQLConnection.MYSQL_PORT_NUMBER;
+    private static final String DEFAULT_HOST = SQLPlusConnection.LOCALHOST;
     
     private static final Logger logger = LogManager.getLogger(SQLPlusConnection.class);
         
+    private String host;
     private String username;
     private String password;
     private String database;
@@ -42,12 +44,14 @@ public abstract class SQLPlusConnection {
      * 
      * @param username
      * @param password
+     * @param host
      * @param database
      * @param port
      */
-    public SQLPlusConnection(String username, String password, String database, String port) {
+    public SQLPlusConnection(String username, String password, String host, String database, String port) {
         SQLPlusConnection.logger.info("Instantiating the credentials that will be used to connect to a " 
                 + database + " database");
+        this.host = host;
         this.username = username;
         this.password = password;
         this.database = database;
@@ -58,20 +62,21 @@ public abstract class SQLPlusConnection {
 
     /**
      * Connect to a database with the keywords and credentials provided by the user. The keywords used are platform
-     * specific and are determined by the type of host/database used by the user. The default host/database is
+     * specific and are determined by the type of database used by the user. The default database is
      * {@value #DEFAULT_DATABASE}.
      * 
      * @param username
      * @param password
      * @param host
+     * @param database
      * @param port
      * @throws SQLException
      */
-    public void connect(String username, String password, String host, String port) throws SQLException {
+    public void connect(String username, String password) throws SQLException {
         // TODO once connected to the database, I should delete any traces of the password in memory  
         SQLPlusConnection.logger.info("Adding the connection properties to connect to a " + this.database + " database");
-        this.connectionProperties.put(host, this.database);
-        this.connectionProperties.put(port, this.port);
+
+        // Add the properties to connect to a database
         this.connectionProperties.put(username, this.username);
         this.connectionProperties.put(password, this.password);
         
@@ -79,8 +84,8 @@ public abstract class SQLPlusConnection {
             SQLPlusConnection.logger.info("Attempting to connect to the database");
             // TODO executing this command, prints a message about ssl connection. Get rid of that
             this.connection = DriverManager.getConnection(SQLPlusConnection.JAVA_DATABASE_DRIVER 
-                    + ":" + SQLPlusMySQLConnection.MYSQL + "://" + SQLPlusConnection.LOCALHOST + ":" 
-                    + this.port + "/", this.connectionProperties);            
+                    + ":" + this.database + "://" + this.host + ":" + this.port + "/",
+                    this.connectionProperties);            
         } catch (SQLException sqle) {
             SQLPlusConnection.logger.warn(Messages.WARNING + "Error when attempting to connect to the "
                     + "database", sqle);
@@ -97,9 +102,9 @@ public abstract class SQLPlusConnection {
      * @param query
      */
     public void execute(String query) {
-        SQLPlusConnection.logger.info("Query to be executed: " + query);
+        SQLPlusConnection.logger.info("Query to be executed: \"" + query + "\"");
         
-        // TODO
+        // TODO process a statement
         Statement statement;        
         try {
             statement = this.connection.createStatement();
@@ -114,9 +119,9 @@ public abstract class SQLPlusConnection {
             // This exception can occur if the user entered an invalid query
             SQLPlusConnection.logger.warn(Messages.WARNING + "The user entered an invalid query string");
             SQLPlusConnection.logger.warn("ERROR" + Messages.SPACE + sqle.getErrorCode() + Messages.SPACE + "(" 
-                    + sqle.getSQLState() + "):" + sqle.getMessage());
+                    + sqle.getSQLState() + "): " + sqle.getMessage());
             System.out.println("ERROR" + Messages.SPACE + sqle.getErrorCode() + Messages.SPACE + "(" 
-                    + sqle.getSQLState() + "):" + sqle.getMessage());
+                    + sqle.getSQLState() + "): " + sqle.getMessage());
         }       
 
     }
@@ -149,21 +154,25 @@ public abstract class SQLPlusConnection {
     public String getUsername() { return this.username; }
 
     // TODO delete this
-    public String getPassword() { return password; }
+    public String getPassword() { return this.password; }
+    
+    public String getHost() { return this.host; }
 
-    public String getDatabase() { return database; }
+    public String getDatabase() { return this.database; }
 
-    public String getPort() { return port; }
+    public String getPort() { return this.port; }
     
     public static String getDefaultDatabase() { return SQLPlusConnection.DEFAULT_DATABASE; }
 
     public static String getDefaultPort() { return SQLPlusConnection.DEFAULT_PORT; }
+    
+    public static String getDefaultHost() { return SQLPlusConnection.DEFAULT_HOST; }
 
     @Override
     public String toString() {
         // TODO delete password
-        return "SQLPlusConnection [username=" + username + ", password=" + password + ", database="
-                + database + ", port=" + port + "]";
+        return "SQLPlusConnection [username=" + this.username + ", password=" + this.password 
+                + ", host=" + this.host + ", database=" + this.database + ", port=" + this.port + "]";
     }
 
 }

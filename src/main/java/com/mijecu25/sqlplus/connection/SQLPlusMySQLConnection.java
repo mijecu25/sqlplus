@@ -11,15 +11,15 @@ import com.mijecu25.sqlplus.logger.Messages;
  * Singleton class. Default database is MySQL on port 3306.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.0.0.1
+ * @version 0.0.0.2
  *
  */
 public class SQLPlusMySQLConnection extends SQLPlusConnection {
         
     private static final String MYSQL_USER = "user";
     private static final String MYSQL_PASSWORD = "password";
-    private static final String MYSQL_HOST = "host";
-    private static final String MYSQL_PORT = "port";
+//    private static final String MYSQL_HOST = "host";
+//    private static final String MYSQL_PORT = "port";
     
     private static final Logger logger = LogManager.getLogger(SQLPlusMySQLConnection.class);
     
@@ -33,19 +33,20 @@ public class SQLPlusMySQLConnection extends SQLPlusConnection {
      * 
      * @param username
      * @param password
+     * @param host
      * @param database
      * @param port
      * @throws SQLException 
      */
-    private SQLPlusMySQLConnection(String username, String password, String database, String port) throws SQLException {
-        super(username, password, database, port);
+    private SQLPlusMySQLConnection(String username, String password, String host, String database, String port) 
+            throws SQLException {
+        super(username, password, host, database, port);
         SQLPlusMySQLConnection.logger.info("Creating SQLPlusMySQLConnection with username:" + username 
-                + " password:********* database:" + database + " port:" + port);
+                + " password:********* host: " + host + " database:" + database + " port:" + port);
 
         // Connect to the database using the mysql keywords
         SQLPlusMySQLConnection.logger.info("Will connect to a MySQL database using the credentials provided");
-        this.connect(SQLPlusMySQLConnection.MYSQL_USER, SQLPlusMySQLConnection.MYSQL_PASSWORD, 
-                SQLPlusMySQLConnection.MYSQL_HOST, SQLPlusMySQLConnection.MYSQL_PORT);
+        this.connect(SQLPlusMySQLConnection.MYSQL_USER, SQLPlusMySQLConnection.MYSQL_PASSWORD);
     }
     
     /**
@@ -53,11 +54,12 @@ public class SQLPlusMySQLConnection extends SQLPlusConnection {
      * 
      * @param username
      * @param password
+     * @param host
      * @param port
      * @throws SQLException 
      */
-    private SQLPlusMySQLConnection(String username, String password, String port) throws SQLException {
-        this(username, password, SQLPlusMySQLConnection.MYSQL, port);
+    private SQLPlusMySQLConnection(String username, String password, String host, String port) throws SQLException {
+        this(username, password, host, SQLPlusMySQLConnection.MYSQL, port);
     }
     
     /**
@@ -65,10 +67,11 @@ public class SQLPlusMySQLConnection extends SQLPlusConnection {
      * 
      * @param username
      * @param password
+     * @param host
      * @throws SQLException 
      */
-    private SQLPlusMySQLConnection(String username, String password) throws SQLException {
-        this(username, password, SQLPlusMySQLConnection.MYSQL, SQLPlusMySQLConnection.MYSQL_PORT_NUMBER);
+    private SQLPlusMySQLConnection(String username, String password, String host) throws SQLException {
+        this(username, password, host, SQLPlusMySQLConnection.MYSQL, SQLPlusMySQLConnection.MYSQL_PORT_NUMBER);
     }
         
     /**
@@ -76,19 +79,20 @@ public class SQLPlusMySQLConnection extends SQLPlusConnection {
      * 
      * @param username
      * @param password
+     * @param host
      * @param database
      * @param port
      * @return
      * @throws SQLException 
      */
-    public static SQLPlusMySQLConnection getConnection(String username, String password, String database, 
+    public static SQLPlusMySQLConnection getConnection(String username, String password, String host, String database, 
             String port) throws SQLException {
         // If there is not an instance
         if(SQLPlusMySQLConnection.INSTANCE == null) {
             SQLPlusMySQLConnection.logger.info("Creating a new SQLPlusMySQLConnection instance with username:" + username 
-                    + " password:********* database:" + database + " port:" + port);
+                    + " password:********* host:" + host + " database:" + database + " port:" + port);
             // Create an SQLPlusMySQLConnection to database with the info provided by the user
-            SQLPlusMySQLConnection.INSTANCE = new SQLPlusMySQLConnection(username, password, database, port);
+            SQLPlusMySQLConnection.INSTANCE = new SQLPlusMySQLConnection(username, password, host, database, port);
         }
         
         // Return the instance
@@ -102,18 +106,19 @@ public class SQLPlusMySQLConnection extends SQLPlusConnection {
      * 
      * @param username
      * @param password
+     * @param host
      * @param port
      * @return
      * @throws SQLException 
      */
-    public static SQLPlusMySQLConnection getConnection(String username, String password, 
+    public static SQLPlusMySQLConnection getConnection(String username, String password, String host,  
             String port) throws SQLException {
         // If there is not an instance
         if(SQLPlusMySQLConnection.INSTANCE == null) {
             SQLPlusMySQLConnection.logger.info("Creating a new SQLPlusMySQLConnection instance with username:" + username 
-                    + " password:********* port:" + port);
+                    + " password:********* host:" + host + " port:" + port);
             // Create an SQLPlusMySQLConnection to database with the info provided by the user
-            SQLPlusMySQLConnection.INSTANCE = new SQLPlusMySQLConnection(username, password, port);
+            SQLPlusMySQLConnection.INSTANCE = new SQLPlusMySQLConnection(username, password, host, port);
         }
         
         // Return the instance
@@ -127,16 +132,17 @@ public class SQLPlusMySQLConnection extends SQLPlusConnection {
      * 
      * @param username
      * @param password
+     * @param host
      * @return
      * @throws SQLException 
      */
-    public static SQLPlusMySQLConnection getConnection(String username, String password) throws SQLException {
+    public static SQLPlusMySQLConnection getConnection(String username, String password, String host) throws SQLException {
         // If there is not an instance
         if(SQLPlusMySQLConnection.INSTANCE == null) {
             SQLPlusMySQLConnection.logger.info("Creating a new SQLPlusMySQLConnection instance with username:" + username 
-                    + " password:*********");
+                    + " password:********* host:" + host);
             // Create an SQLPlusMySQLConnection to a MySQL database on port 3306
-            SQLPlusMySQLConnection.INSTANCE = new SQLPlusMySQLConnection(username, password);
+            SQLPlusMySQLConnection.INSTANCE = new SQLPlusMySQLConnection(username, password, host);
         }
         
         // Return the instance

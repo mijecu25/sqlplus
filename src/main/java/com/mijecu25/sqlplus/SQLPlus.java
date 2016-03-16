@@ -16,11 +16,10 @@ import com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection;
 import com.mijecu25.sqlplus.logger.Messages;
 
 /**
- * SQLPlus.
+ * SQLPlus add alerts to your sql queries.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.0.0.4
- *
+ * @version 0.0.0.5
  */
 public class SQLPlus {
 
@@ -42,7 +41,8 @@ public class SQLPlus {
         // Check if the user is using a valid console (i.e. not from Eclipse)
         if(System.console() == null) {
             // The Console object for the JVM could not be found. Alert the user 
-            SQLPlus.logger.fatal(Messages.FATAL + "A JVM Console object was not found");
+            SQLPlus.logger.fatal(Messages.FATAL + "A JVM Console object was not found. Try running SQLPlus "
+                    + "from the command line");
             System.out.println(Messages.FATAL + "SQLPlus was not able to find your JVM's Console object. "
                     + "Try running SQLPlus from the command line.");
             
@@ -100,7 +100,7 @@ public class SQLPlus {
             return ;
         }
         catch(SQLException sqle) {
-            // This exception can occur when trying to establish a connect.
+            // This exception can occur when trying to establish a connection
             SQLPlus.logger.fatal(Messages.FATAL + Messages.FATAL_EXIT(sqle.getClass().getName()));
             System.out.println(Messages.FATAL + Messages.FATAL_EXCEPTION_ACTION(sqle.getClass().getSimpleName())
                     + Messages.SPACE + Messages.CHECK_LOG_FILES);
@@ -109,10 +109,20 @@ public class SQLPlus {
             SQLPlus.logger.fatal(Messages.FATAL + Messages.QUIT_ERROR);
             return ;
         }
+        catch(IllegalArgumentException iae) {
+            // This exception can occur when trying to establish a connection
+            SQLPlus.logger.fatal(Messages.FATAL + Messages.FATAL_EXIT(iae.getClass().getName()));
+            System.out.println(Messages.FATAL + Messages.FATAL_EXCEPTION_ACTION(iae.getClass().getSimpleName())
+                    + Messages.SPACE + Messages.CHECK_LOG_FILES);
+            SQLPlus.exitSQLPlus();
+            
+            SQLPlus.logger.fatal(Messages.FATAL + Messages.QUIT_ERROR);
+            return ;
+        }
         
-        // TODO this actually is not true. Have not written code to create the connection
         System.out.println("Connection established! Commands end with " + SQLPlus.END_OF_COMMAND);
         System.out.println("Type " + SQLPlus.EXIT + " or " + SQLPlus.QUIT + " to exit the application ");
+       
         // Execute the input scanner
         while(true) {
             // Get a line from the user until the hit enter (carriage return, line feed/ new line)
@@ -127,6 +137,7 @@ public class SQLPlus {
             
             // Logic to quit
             if(query.equals(SQLPlus.QUIT) || query.equals(SQLPlus.EXIT)) {
+                SQLPlus.logger.info("The user wants to quit SQLPlus");
                 SQLPlus.exitSQLPlus();
                 break;
             }
@@ -158,7 +169,23 @@ public class SQLPlus {
         System.out.println("You will now enter the credentials to connect to your database");
         // TODO use prepared statements
         // Add credentials
-        System.out.print(SQLPlus.PROMPT + "Database(default " + SQLPlusMySQLConnection.getDefaultDatabase() + "): ");
+        System.out.print(SQLPlus.PROMPT + "Host(default " + SQLPlusConnection.getDefaultHost() + "): ");
+        String host = inputScanner.nextLine().trim();
+        SQLPlus.logger.info("User entered host:" + host);
+        
+        // TODO remove this later when other hosts are supported
+        if(!host.isEmpty()) {
+            // The Console object for the JVM could not be found. Alert the user and throw a
+            // NullPointerException that the caller will handle
+            SQLPlus.logger.fatal(Messages.FATAL + "The user wants to use a host that is not supported");
+            System.out.println(Messages.ERROR + "SQLPlus does not support the host that you entered");
+            
+            SQLPlus.logger.info("Throwing a " + IllegalArgumentException.class.getSimpleName() + " to the "
+                    + "calling class");
+            throw new IllegalArgumentException();  
+        }
+        
+        System.out.print(SQLPlus.PROMPT + "Database(default " + SQLPlusConnection.getDefaultDatabase() + "): ");
         String database = inputScanner.nextLine().trim();
         SQLPlus.logger.info("User entered database:" + database);
       
@@ -166,7 +193,7 @@ public class SQLPlus {
         
         // While the port is not numeric
         while(!StringUtils.isNumeric(port)) {
-            System.out.print(SQLPlus.PROMPT + "Port (default " + SQLPlusMySQLConnection.getDefaultPort() + "): ");
+            System.out.print(SQLPlus.PROMPT + "Port (default " + SQLPlusConnection.getDefaultPort() + "): ");
             port = inputScanner.nextLine().trim();
             SQLPlus.logger.info("Port entered: " + port);
             SQLPlus.logger.info("Port string length: " + port.length());
@@ -239,40 +266,39 @@ public class SQLPlus {
                     + "calling class");
             throw new NullPointerException(); 
         }
-
-        // TODO there should be logic here that handle the different databases.
         SQLPlus.logger.info("User entered some password");  
+
+        // TODO handle different databases
         // If the database and port are default
         if(database.isEmpty() && port.isEmpty()) {
-            SQLPlus.logger.info("Connection with username and password");
-            sqlPlusConnection = SQLPlusMySQLConnection.getConnection(username, new String(password));
+            SQLPlus.logger.info("Connection with username, password, and host");
+            sqlPlusConnection = SQLPlusMySQLConnection.getConnection(username, new String(password), SQLPlusConnection.getDefaultHost());
         }
         // If the database is empty but the port is not empty 
         else if(database.isEmpty() && !port.isEmpty()) {
-            SQLPlus.logger.info("Connection with username, password, and port");
-            sqlPlusConnection = SQLPlusMySQLConnection.getConnection(username, new String(password), port);
+            SQLPlus.logger.info("Connection with username, password, host, and port");
+            sqlPlusConnection = SQLPlusMySQLConnection.getConnection(username, new String(password), SQLPlusConnection.getDefaultHost(), port);
         }
         // If the port is empty but the database is not empty 
         else if(port.isEmpty() && !database.isEmpty()) {
-            SQLPlus.logger.info("Connection with username, password, and database");
-            sqlPlusConnection = SQLPlusMySQLConnection.getConnection(username, new String(password), database, SQLPlusMySQLConnection.getDefaultPort());
+            SQLPlus.logger.info("Connection with username, password, host, and database");
+            sqlPlusConnection = SQLPlusMySQLConnection.getConnection(username, new String(password), SQLPlusConnection.getDefaultHost(), database, SQLPlusMySQLConnection.getDefaultPort());
         }
-
         // All the values were provided by the user
         else {
             SQLPlus.logger.info("Connection with all credentials");
-                sqlPlusConnection = SQLPlusMySQLConnection.getConnection(username, new String(password), database, port);
+                sqlPlusConnection = SQLPlusMySQLConnection.getConnection(username, new String(password), SQLPlusConnection.getDefaultHost(), database, port);
             }
   
             // Fill the password array with whitespace to minimize the lifetime of sensitive data in memory.  
         java.util.Arrays.fill(password, ' ');
-   
+           
         SQLPlus.logger.info("Created and returning a SQLPlusConnection " + sqlPlusConnection);     
         return sqlPlusConnection;
     }
     
     /**
-     * 
+     * Exit SQLPlus.
      */
     private static void exitSQLPlus() {
         // If there is a SQLPlusConnection
