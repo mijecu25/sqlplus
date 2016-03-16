@@ -4,6 +4,8 @@
 [![Coverage Status](https://coveralls.io/repos/github/mijecu25/sqlplus/badge.svg?branch=master)](https://coveralls.io/github/mijecu25/sqlplus?branch=master)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/mijecu25/sqlplus/master/LICENSE)
 
+Add alerts to your sql queries.
+
 ## License
 
 The MIT License (MIT)
