@@ -16,7 +16,7 @@ import com.mijecu25.sqlplus.logger.Messages;
  * SQLPlusConnection abstrac class. Default database is MySQL on port 3306.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.0.0.8
+ * @version 0.0.0.9
  *
  */
 public abstract class SQLPlusConnection {
@@ -149,18 +149,7 @@ public abstract class SQLPlusConnection {
             SQLPlusConnection.logger.info("Tried to disconnect from the database, but there was not a connection");
         }
     }
-    
-    public String getUsername() { return this.username; }
-
-    // TODO delete this
-    public String getPassword() { return this.password; }
-    
-    public String getHost() { return this.host; }
-
-    public String getDatabase() { return this.database; }
-
-    public String getPort() { return this.port; }
-    
+      
     public static String getDefaultDatabase() { return SQLPlusConnection.DEFAULT_DATABASE; }
 
     public static String getDefaultPort() { return SQLPlusConnection.DEFAULT_PORT; }
