@@ -3,10 +3,10 @@ package com.mijecu25.sqlplus;
 import org.junit.Before;
 
 /**
- * Test for SQLPlus class. Cannot test since we are using console input.
+ * Test for SQLPlus class.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.0.0.1
+ * @version 0.0.0.2
  *
  */
 public class TestSQLPlus {
