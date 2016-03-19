@@ -16,7 +16,7 @@ import com.mijecu25.sqlplus.logger.Messages;
  * SQLPlusConnection abstrac class. Default database is MySQL on port 3306.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.0.0.9
+ * @version 0.1.0.1
  *
  */
 public abstract class SQLPlusConnection {

@@ -19,7 +19,7 @@ import com.mijecu25.sqlplus.logger.Messages;
  * SQLPlus add alerts to your sql queries.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.0.0.5
+ * @version 0.1.0.1
  */
 public class SQLPlus {
 

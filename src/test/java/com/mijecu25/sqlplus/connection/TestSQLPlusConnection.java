@@ -11,7 +11,7 @@ import org.junit.Test;
  * Test SQLPlusConnection.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.0.0.1
+ * @version 0.1.0.1
  */
 public class TestSQLPlusConnection {
     

@@ -6,7 +6,7 @@ import org.junit.Before;
  * Test for SQLPlus class.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.0.0.2
+ * @version 0.1.0.1
  *
  */
 public class TestSQLPlus {

@@ -11,7 +11,7 @@ import com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection;
  * Test for SQLPlusMySQLConnection class. TODO tell that this test might not work with their machine.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.0.0.5
+ * @version 0.1.0.1
  *
  */
 public class TestSQLPlusMySQLConnection extends TestSQLPlusConnection {

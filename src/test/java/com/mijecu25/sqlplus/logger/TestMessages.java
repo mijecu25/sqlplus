@@ -7,7 +7,7 @@ import org.junit.Test;
  * Test for Messages class.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.0.0.1
+ * @version 0.1.0.1
  */
 public class TestMessages {
     

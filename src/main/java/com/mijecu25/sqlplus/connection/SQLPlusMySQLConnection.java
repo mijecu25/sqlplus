@@ -11,7 +11,7 @@ import com.mijecu25.sqlplus.logger.Messages;
  * Singleton class. Default database is MySQL on port 3306.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.0.0.2
+ * @version 0.1.0.1
  *
  */
 public class SQLPlusMySQLConnection extends SQLPlusConnection {

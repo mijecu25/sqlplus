@@ -3,7 +3,7 @@ package com.mijecu25.sqlplus.logger;
 /**
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.0.0.2
+ * @version 0.1.0.1
  *
  */
 public abstract class Messages {
