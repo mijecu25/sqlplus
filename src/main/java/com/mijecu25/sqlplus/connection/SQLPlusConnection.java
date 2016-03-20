@@ -16,7 +16,7 @@ import com.mijecu25.sqlplus.logger.Messages;
  * SQLPlusConnection abstrac class. Default database is MySQL on port 3306.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.1
+ * @version 0.1.0.2
  *
  */
 public abstract class SQLPlusConnection {
@@ -31,7 +31,7 @@ public abstract class SQLPlusConnection {
         
     private String host;
     private String username;
-    private String password;
+    private char[] password;
     private String database;
     private String port;
     
@@ -47,7 +47,7 @@ public abstract class SQLPlusConnection {
      * @param database
      * @param port
      */
-    public SQLPlusConnection(String username, String password, String host, String database, String port) {
+    public SQLPlusConnection(String username, char[] password, String host, String database, String port) {
         SQLPlusConnection.logger.info("Instantiating the credentials that will be used to connect to a " 
                 + database + " database");
         this.host = host;
@@ -64,20 +64,24 @@ public abstract class SQLPlusConnection {
      * specific and are determined by the type of database used by the user. The default database is
      * {@value #DEFAULT_DATABASE}.
      * 
-     * @param username
-     * @param password
+     * @param usernameKey
+     * @param passwordKey
      * @param host
      * @param database
      * @param port
      * @throws SQLException
      */
-    public void connect(String username, String password) throws SQLException {
-        // TODO once connected to the database, I should delete any traces of the password in memory  
+    public void connect(String usernameKey, String passwordKey) throws SQLException {
         SQLPlusConnection.logger.info("Adding the connection properties to connect to a " + this.database + " database");
 
         // Add the properties to connect to a database
-        this.connectionProperties.put(username, this.username);
-        this.connectionProperties.put(password, this.password);
+        this.connectionProperties.put(usernameKey, this.username);
+        this.connectionProperties.put(passwordKey, new String(this.password));
+        
+        // Delete any traces of password in memory by filling the password array with with random characters
+        // to minimize the lifetime of sensitive data in memory. Then call the garbage collections
+        java.util.Arrays.fill(this.password, Character.MIN_VALUE);
+        System.gc();
         
         try {
             SQLPlusConnection.logger.info("Attempting to connect to the database");
@@ -158,9 +162,8 @@ public abstract class SQLPlusConnection {
 
     @Override
     public String toString() {
-        // TODO delete password
-        return "SQLPlusConnection [username=" + this.username + ", password=" + this.password 
-                + ", host=" + this.host + ", database=" + this.database + ", port=" + this.port + "]";
+        return "SQLPlusConnection [username=" + this.username + ", host=" + this.host + ", database=" 
+                + this.database + ", port=" + this.port + "]";
     }
 
 }

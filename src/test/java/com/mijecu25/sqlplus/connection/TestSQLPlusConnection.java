@@ -11,13 +11,13 @@ import org.junit.Test;
  * Test SQLPlusConnection.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.1
+ * @version 0.1.0.2
  */
 public class TestSQLPlusConnection {
     
     protected static String host;
     protected static String username;
-    protected static String password;
+    protected static char[] password;
     protected static String database;
     protected static String port;
     protected static SQLPlusMySQLConnection connection;
@@ -25,7 +25,7 @@ public class TestSQLPlusConnection {
     @BeforeClass
     public static void initialize() throws SQLException  {
         TestSQLPlusConnection.username = "root";
-        TestSQLPlusConnection.password = "";
+        TestSQLPlusConnection.password = "".toCharArray();
         TestSQLPlusConnection.host = "localhost";
         TestSQLPlusConnection.database = "mysql";
         TestSQLPlusConnection.port = "3306";

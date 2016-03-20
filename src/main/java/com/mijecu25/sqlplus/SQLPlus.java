@@ -19,7 +19,7 @@ import com.mijecu25.sqlplus.logger.Messages;
  * SQLPlus add alerts to your sql queries.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.1
+ * @version 0.1.0.2
  */
 public class SQLPlus {
 
@@ -272,26 +272,28 @@ public class SQLPlus {
         // If the database and port are default
         if(database.isEmpty() && port.isEmpty()) {
             SQLPlus.logger.info("Connection with username, password, and host");
-            sqlPlusConnection = SQLPlusMySQLConnection.getConnection(username, new String(password), SQLPlusConnection.getDefaultHost());
+            sqlPlusConnection = SQLPlusMySQLConnection.getConnection(username, password, SQLPlusConnection.getDefaultHost());
         }
         // If the database is empty but the port is not empty 
         else if(database.isEmpty() && !port.isEmpty()) {
             SQLPlus.logger.info("Connection with username, password, host, and port");
-            sqlPlusConnection = SQLPlusMySQLConnection.getConnection(username, new String(password), SQLPlusConnection.getDefaultHost(), port);
+            sqlPlusConnection = SQLPlusMySQLConnection.getConnection(username, password, SQLPlusConnection.getDefaultHost(), port);
         }
         // If the port is empty but the database is not empty 
         else if(port.isEmpty() && !database.isEmpty()) {
             SQLPlus.logger.info("Connection with username, password, host, and database");
-            sqlPlusConnection = SQLPlusMySQLConnection.getConnection(username, new String(password), SQLPlusConnection.getDefaultHost(), database, SQLPlusMySQLConnection.getDefaultPort());
+            sqlPlusConnection = SQLPlusMySQLConnection.getConnection(username, password, SQLPlusConnection.getDefaultHost(), database, SQLPlusMySQLConnection.getDefaultPort());
         }
         // All the values were provided by the user
         else {
             SQLPlus.logger.info("Connection with all credentials");
-                sqlPlusConnection = SQLPlusMySQLConnection.getConnection(username, new String(password), SQLPlusConnection.getDefaultHost(), database, port);
-            }
+                sqlPlusConnection = SQLPlusMySQLConnection.getConnection(username, password, SQLPlusConnection.getDefaultHost(), database, port);
+        }
   
-            // Fill the password array with whitespace to minimize the lifetime of sensitive data in memory.  
-        java.util.Arrays.fill(password, ' ');
+        // Delete any traces of password in memory by filling the password array with with random characters
+        // to minimize the lifetime of sensitive data in memory. Then call the garbage collections
+        java.util.Arrays.fill(password, Character.MIN_VALUE);
+        System.gc();
            
         SQLPlus.logger.info("Created and returning a SQLPlusConnection " + sqlPlusConnection);     
         return sqlPlusConnection;
