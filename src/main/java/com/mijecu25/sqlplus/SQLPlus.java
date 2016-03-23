@@ -5,7 +5,6 @@ import java.io.Console;
 import java.io.FileReader;
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.Scanner;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
@@ -15,11 +14,14 @@ import com.mijecu25.sqlplus.connection.SQLPlusConnection;
 import com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection;
 import com.mijecu25.sqlplus.logger.Messages;
 
+import jline.TerminalFactory;
+import jline.console.ConsoleReader;
+
 /**
  * SQLPlus add alerts to your sql queries.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.2
+ * @version 0.1.0.3
  */
 public class SQLPlus {
 
@@ -32,6 +34,7 @@ public class SQLPlus {
     private static final String LICENSE_FILE = "LICENSE";
     
     private static SQLPlusConnection sqlPlusConnection;
+    private static ConsoleReader console;
     
     private static final Logger logger = LogManager.getLogger(SQLPlus.class);
     
@@ -51,10 +54,7 @@ public class SQLPlus {
             SQLPlus.logger.fatal(Messages.FATAL + Messages.QUIT_ERROR);
             return ;
         }
-        
-        // Create a scanner to get user input
-        Scanner inputScanner = new Scanner(System.in);
-        
+                        
         // UI intro
         System.out.println("Welcome to SQLPlus! This program allows you to add alerts to your sql queries.");
         System.out.println("Be sure to use SQLPlus from the command line.");
@@ -82,10 +82,13 @@ public class SQLPlus {
         bufferedReader.close();        
         System.out.println();
 
+        // Create the jline console that allows us to remember commands and use arrow keys
+        SQLPlus.console = new ConsoleReader();
+        
         try {
             // Get credentials from the user
             SQLPlus.logger.info("Create SQLPlusConnection");
-            SQLPlus.sqlPlusConnection = SQLPlus.createSQLPlusConnection(inputScanner);
+            SQLPlus.sqlPlusConnection = SQLPlus.createSQLPlusConnection();
             System.out.println("");
         } 
         catch(NullPointerException npe) {
@@ -122,55 +125,61 @@ public class SQLPlus {
         
         System.out.println("Connection established! Commands end with " + SQLPlus.END_OF_COMMAND);
         System.out.println("Type " + SQLPlus.EXIT + " or " + SQLPlus.QUIT + " to exit the application ");
-       
+               
         // Execute the input scanner
         while(true) {
-            // Get a line from the user until the hit enter (carriage return, line feed/ new line)
+            // Get a line from the user until the hit enter (carriage return, line feed/ new line). 
             System.out.print(SQLPlus.PROMPT);
-            String query = inputScanner.nextLine().trim();
-            
+            line = console.readLine().trim();
+
             // If the user did not enter anything 
-            if(query.isEmpty()) {
+            if(line.isEmpty()) {
                 // Continue to the next iteration
                 continue;
             }
             
             // Logic to quit
-            if(query.equals(SQLPlus.QUIT) || query.equals(SQLPlus.EXIT)) {
+            if(line.equals(SQLPlus.QUIT) || line.equals(SQLPlus.EXIT)) {
                 SQLPlus.logger.info("The user wants to quit SQLPlus");
                 SQLPlus.exitSQLPlus();
                 break;
-            }
+            }      
+            
+            // Use a StringBuilder since jline works weird when it has read a line. The issue we were having was with the 
+            // end of command logic. jline does not keep the input from the user in the variable that was stored in. Each 
+            // time jline reads a new line, the variable is empty 
+            StringBuilder query = new StringBuilder();
+            query.append(line);
             
             // While the user does not finish the command with the SQLPlus.END_OF_COMMAND
             while(query.charAt(query.length()-1) != SQLPlus.END_OF_COMMAND) {
                 // Print the wait for command prompt and get the next line for the user
                 System.out.print(SQLPlus.WAIT_FOR_END_OF_COMMAND);
-                query += inputScanner.nextLine().trim();
+                query.append(" ");
+                line = StringUtils.stripEnd(console.readLine(), null);
+                query.append(line);
             }
             
             // Execute the query from the user
             SQLPlus.logger.info("Will execute a query from the user");
-            SQLPlus.sqlPlusConnection.execute(query);
+            SQLPlus.sqlPlusConnection.execute(query.toString());
         }
         
-        // Close the input scanner
-        inputScanner.close();
     }
     
     /**
      * Create an SQLPlusConnection by taking the credentials from the user.
-     * 
-     * @param inputScanner
+     *
      * @return
-     * @throws SQLException 
+     * @throws IOException
+     * @throws SQLException
      */
-    private static SQLPlusConnection createSQLPlusConnection(Scanner inputScanner) throws SQLException {        
+    private static SQLPlusConnection createSQLPlusConnection() throws IOException, SQLException {                
         System.out.println("You will now enter the credentials to connect to your database");
         // TODO use prepared statements
         // Add credentials
         System.out.print(SQLPlus.PROMPT + "Host(default " + SQLPlusConnection.getDefaultHost() + "): ");
-        String host = inputScanner.nextLine().trim();
+        String host = console.readLine().trim();
         SQLPlus.logger.info("User entered host:" + host);
         
         // TODO remove this later when other hosts are supported
@@ -186,7 +195,7 @@ public class SQLPlus {
         }
         
         System.out.print(SQLPlus.PROMPT + "Database(default " + SQLPlusConnection.getDefaultDatabase() + "): ");
-        String database = inputScanner.nextLine().trim();
+        String database = console.readLine().trim();
         SQLPlus.logger.info("User entered database:" + database);
       
         String port = "";
@@ -194,7 +203,7 @@ public class SQLPlus {
         // While the port is not numeric
         while(!StringUtils.isNumeric(port)) {
             System.out.print(SQLPlus.PROMPT + "Port (default " + SQLPlusConnection.getDefaultPort() + "): ");
-            port = inputScanner.nextLine().trim();
+            port = console.readLine().trim();
             SQLPlus.logger.info("Port entered: " + port);
             SQLPlus.logger.info("Port string length: " + port.length());
             
@@ -221,7 +230,7 @@ public class SQLPlus {
         // While the username is empty
         while(username.isEmpty()) {
             System.out.print(SQLPlus.PROMPT + "Username: ");
-            username = inputScanner.nextLine().trim();
+            username = console.readLine().trim();
             
             // If the username is empty
             if(username.isEmpty()) {
@@ -233,12 +242,14 @@ public class SQLPlus {
         
         // Create a SQLPlusConnection
         SQLPlusMySQLConnection sqlPlusConnection = null;
-
+        // Reset the jline console since we are going to use the regular console to securely get the password
+        SQLPlus.resetConsole();
+        
         // Get the console for safe password entry
-        Console console = System.console();
+        Console javaConsole = System.console();
         
         // If the console is null
-        if(console == null) {
+        if(javaConsole == null) {
             // The Console object for the JVM could not be found. Alert the user and throw a
             // NullPointerException that the caller will handle
             SQLPlus.logger.fatal("A JVM Console object to enter a password was not found");
@@ -251,7 +262,10 @@ public class SQLPlus {
         }
         
         // Read the password without echoing the result
-        char[] password = console.readPassword("%s", SQLPlus.PROMPT + "Password:");
+        char[] password = javaConsole.readPassword("%s", SQLPlus.PROMPT + "Password:");
+        
+        // Recreate the jline console
+        SQLPlus.console = new ConsoleReader();
         
         // If the password is null
         if(password == null) {
@@ -266,7 +280,8 @@ public class SQLPlus {
                     + "calling class");
             throw new NullPointerException(); 
         }
-        SQLPlus.logger.info("User entered some password");  
+        SQLPlus.logger.info("User entered some password"); 
+        System.out.println();
 
         // TODO handle different databases
         // If the database and port are default
@@ -311,8 +326,31 @@ public class SQLPlus {
             SQLPlus.logger.info("Disconnected the SQLPlusConnection");
         }
         
+        // Reset the console from jline
+        SQLPlus.logger.info("Reset the console from jline");
+        SQLPlus.resetConsole();
+        
         SQLPlus.logger.info("Quitting SQLPlus");
         System.out.println("Bye");
+    }
+    
+    /**
+     * Reset the console from the changes that jline has done.
+     */
+    private static void resetConsole() {
+        // Reset the console
+        try {
+            SQLPlus.logger.info("About to reset the console from jline");
+            TerminalFactory.get().restore();
+            SQLPlus.logger.info("Reset the console from jline");
+        } 
+        catch(Exception e) {
+            // This exception might never occur, but it is good practice to handle it
+            SQLPlus.logger.warn(Messages.WARNING + "Error when attempting to reset the console from the changes made by jline", e);
+            System.out.println(Messages.WARNING + "There was a error when trying to reset your console to its normal state");
+            System.out.println(e.getMessage());
+            System.out.println(Messages.WARNING + "Close this console window and open a new one to avoid any issues");
+        }
     }
         
 }

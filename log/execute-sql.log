@@ -1,607 +1,358 @@
-[03-20-2016 11:48:18.336] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(92) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost database:mysql port:3306
-[03-20-2016 11:48:18.340] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
-[03-20-2016 11:48:18.340] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
-[03-20-2016 11:48:18.340] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
-[03-20-2016 11:48:18.340] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
-[03-20-2016 11:48:18.341] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(85) - Attempting to connect to the database
-[03-20-2016 11:48:18.365] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(92) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost database:mysql port:3306
-[03-20-2016 11:48:18.366] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
-[03-20-2016 11:48:18.366] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
-[03-20-2016 11:48:18.366] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
-[03-20-2016 11:48:18.366] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
-[03-20-2016 11:48:18.366] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(85) - Attempting to connect to the database
-[03-20-2016 11:48:30.944] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(92) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost database:mysql port:3306
-[03-20-2016 11:48:30.945] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
-[03-20-2016 11:48:30.945] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
-[03-20-2016 11:48:30.945] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
-[03-20-2016 11:48:30.945] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
-[03-20-2016 11:48:30.945] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(85) - Attempting to connect to the database
-[03-20-2016 11:48:30.967] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(92) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost database:mysql port:3306
-[03-20-2016 11:48:30.968] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
-[03-20-2016 11:48:30.968] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
-[03-20-2016 11:48:30.968] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
-[03-20-2016 11:48:30.968] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
-[03-20-2016 11:48:30.968] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(85) - Attempting to connect to the database
-[03-20-2016 11:49:08.256] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(92) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost database:mysql port:3306
-[03-20-2016 11:49:08.257] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
-[03-20-2016 11:49:08.257] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
-[03-20-2016 11:49:08.257] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
-[03-20-2016 11:49:08.257] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
-[03-20-2016 11:49:08.257] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(85) - Attempting to connect to the database
-[03-20-2016 11:49:13.577] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(92) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost database:mysql port:3306
-[03-20-2016 11:49:13.578] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
-[03-20-2016 11:49:13.578] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
-[03-20-2016 11:49:13.578] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
-[03-20-2016 11:49:13.578] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
-[03-20-2016 11:49:13.578] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(85) - Attempting to connect to the database
-[03-20-2016 11:49:44.821] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(92) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost database:mysql port:3306
-[03-20-2016 11:49:44.822] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
-[03-20-2016 11:49:44.822] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
-[03-20-2016 11:49:44.823] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
-[03-20-2016 11:49:44.823] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
-[03-20-2016 11:49:44.823] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(85) - Attempting to connect to the database
-[03-20-2016 11:51:35.689] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(92) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost database:mysql port:3306
-[03-20-2016 11:51:35.689] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
-[03-20-2016 11:51:35.689] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
-[03-20-2016 11:51:35.690] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
-[03-20-2016 11:51:35.690] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
-[03-20-2016 11:51:35.690] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(85) - Attempting to connect to the database
-[03-20-2016 11:52:27.074] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(92) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost database:mysql port:3306
-[03-20-2016 11:52:27.075] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
-[03-20-2016 11:52:27.075] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
-[03-20-2016 11:52:27.075] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
-[03-20-2016 11:52:27.075] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
-[03-20-2016 11:52:27.075] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(85) - Attempting to connect to the database
-[03-20-2016 11:54:56.013] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(92) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost database:mysql port:3306
-[03-20-2016 11:54:56.014] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
-[03-20-2016 11:54:56.014] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
-[03-20-2016 11:54:56.015] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
-[03-20-2016 11:54:56.015] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
-[03-20-2016 11:54:56.015] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(85) - Attempting to connect to the database
-[03-20-2016 11:56:26.110] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(92) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost database:mysql port:3306
-[03-20-2016 11:56:26.111] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
-[03-20-2016 11:56:26.111] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
-[03-20-2016 11:56:26.112] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
-[03-20-2016 11:56:26.112] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
-[03-20-2016 11:56:26.112] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(85) - Attempting to connect to the database
-[03-20-2016 11:57:15.800] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(92) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost database:mysql port:3306
-[03-20-2016 11:57:15.801] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
-[03-20-2016 11:57:15.801] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
-[03-20-2016 11:57:15.801] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
-[03-20-2016 11:57:15.801] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
-[03-20-2016 11:57:15.801] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(85) - Attempting to connect to the database
-[03-20-2016 11:57:16.188] [main] WARN  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(91) - WARNING: Error when attempting to connect to the database
-java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
-	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:957) ~[mysql-connector-java-5.1.38.jar:5.1.38]
-	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3878) ~[mysql-connector-java-5.1.38.jar:5.1.38]
-	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3814) ~[mysql-connector-java-5.1.38.jar:5.1.38]
-	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:871) ~[mysql-connector-java-5.1.38.jar:5.1.38]
-	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1694) ~[mysql-connector-java-5.1.38.jar:5.1.38]
-	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1215) ~[mysql-connector-java-5.1.38.jar:5.1.38]
-	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2255) ~[mysql-connector-java-5.1.38.jar:5.1.38]
-	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2286) ~[mysql-connector-java-5.1.38.jar:5.1.38]
-	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2085) ~[mysql-connector-java-5.1.38.jar:5.1.38]
-	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:795) ~[mysql-connector-java-5.1.38.jar:5.1.38]
-	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44) ~[mysql-connector-java-5.1.38.jar:5.1.38]
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:1.8.0_65]
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:1.8.0_65]
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:1.8.0_65]
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:422) ~[?:1.8.0_65]
-	at com.mysql.jdbc.Util.handleNewInstance(Util.java:404) ~[mysql-connector-java-5.1.38.jar:5.1.38]
-	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:400) ~[mysql-connector-java-5.1.38.jar:5.1.38]
-	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:327) ~[mysql-connector-java-5.1.38.jar:5.1.38]
-	at java.sql.DriverManager.getConnection(DriverManager.java:664) ~[?:1.8.0_65]
-	at java.sql.DriverManager.getConnection(DriverManager.java:208) ~[?:1.8.0_65]
-	at com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(SQLPlusConnection.java:87) [classes/:?]
-	at com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(SQLPlusMySQLConnection.java:49) [classes/:?]
-	at com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(SQLPlusMySQLConnection.java:95) [classes/:?]
-	at com.mijecu25.sqlplus.connection.TestSQLPlusConnection.initialize(TestSQLPlusConnection.java:34) [test-classes/:?]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_65]
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_65]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_65]
-	at java.lang.reflect.Method.invoke(Method.java:497) ~[?:1.8.0_65]
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50) [junit-4.12.jar:4.12]
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47) [junit-4.12.jar:4.12]
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24) [junit-4.12.jar:4.12]
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) [junit-4.12.jar:4.12]
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
-	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86) [.cp/:?]
-	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38) [.cp/:?]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459) [.cp/:?]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675) [.cp/:?]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382) [.cp/:?]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192) [.cp/:?]
-[03-20-2016 11:57:16.196] [main] WARN  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(95) - WARNING: Throwing a SQLException to the calling class
-[03-20-2016 11:59:47.622] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(92) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost database:mysql port:3306
-[03-20-2016 11:59:47.623] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
-[03-20-2016 11:59:47.623] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
-[03-20-2016 11:59:47.624] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
-[03-20-2016 11:59:47.624] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
-[03-20-2016 11:59:47.624] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(85) - Attempting to connect to the database
-[03-20-2016 11:59:58.252] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(92) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost database:mysql port:3306
-[03-20-2016 11:59:58.253] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
-[03-20-2016 11:59:58.253] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
-[03-20-2016 11:59:58.254] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
-[03-20-2016 11:59:58.254] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
-[03-20-2016 11:59:58.254] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(85) - Attempting to connect to the database
-[03-20-2016 12:06:05.901] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(92) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost database:mysql port:3306
-[03-20-2016 12:06:05.902] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
-[03-20-2016 12:06:05.902] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
-[03-20-2016 12:06:05.902] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
-[03-20-2016 12:06:05.902] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
-[03-20-2016 12:06:05.902] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(86) - Attempting to connect to the database
-[03-20-2016 12:06:06.256] [main] WARN  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(92) - WARNING: Error when attempting to connect to the database
-java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
-	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:957) ~[mysql-connector-java-5.1.38.jar:5.1.38]
-	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3878) ~[mysql-connector-java-5.1.38.jar:5.1.38]
-	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3814) ~[mysql-connector-java-5.1.38.jar:5.1.38]
-	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:871) ~[mysql-connector-java-5.1.38.jar:5.1.38]
-	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1694) ~[mysql-connector-java-5.1.38.jar:5.1.38]
-	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1215) ~[mysql-connector-java-5.1.38.jar:5.1.38]
-	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2255) ~[mysql-connector-java-5.1.38.jar:5.1.38]
-	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2286) ~[mysql-connector-java-5.1.38.jar:5.1.38]
-	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2085) ~[mysql-connector-java-5.1.38.jar:5.1.38]
-	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:795) ~[mysql-connector-java-5.1.38.jar:5.1.38]
-	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44) ~[mysql-connector-java-5.1.38.jar:5.1.38]
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:1.8.0_65]
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:1.8.0_65]
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:1.8.0_65]
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:422) ~[?:1.8.0_65]
-	at com.mysql.jdbc.Util.handleNewInstance(Util.java:404) ~[mysql-connector-java-5.1.38.jar:5.1.38]
-	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:400) ~[mysql-connector-java-5.1.38.jar:5.1.38]
-	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:327) ~[mysql-connector-java-5.1.38.jar:5.1.38]
-	at java.sql.DriverManager.getConnection(DriverManager.java:664) ~[?:1.8.0_65]
-	at java.sql.DriverManager.getConnection(DriverManager.java:208) ~[?:1.8.0_65]
-	at com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(SQLPlusConnection.java:88) [classes/:?]
-	at com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(SQLPlusMySQLConnection.java:49) [classes/:?]
-	at com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(SQLPlusMySQLConnection.java:95) [classes/:?]
-	at com.mijecu25.sqlplus.connection.TestSQLPlusConnection.initialize(TestSQLPlusConnection.java:34) [test-classes/:?]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_65]
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_65]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_65]
-	at java.lang.reflect.Method.invoke(Method.java:497) ~[?:1.8.0_65]
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50) [junit-4.12.jar:4.12]
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47) [junit-4.12.jar:4.12]
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24) [junit-4.12.jar:4.12]
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) [junit-4.12.jar:4.12]
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
-	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86) [.cp/:?]
-	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38) [.cp/:?]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459) [.cp/:?]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675) [.cp/:?]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382) [.cp/:?]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192) [.cp/:?]
-[03-20-2016 12:06:06.261] [main] WARN  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(96) - WARNING: Throwing a SQLException to the calling class
-[03-20-2016 12:44:22.944] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(92) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost database:mysql port:3306
-[03-20-2016 12:44:22.945] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
-[03-20-2016 12:44:22.946] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
-[03-20-2016 12:44:22.946] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
-[03-20-2016 12:44:22.946] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
-[03-20-2016 12:44:22.946] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(86) - Attempting to connect to the database
-[03-20-2016 12:44:23.076] [main] WARN  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(92) - WARNING: Error when attempting to connect to the database
-com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
-
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:1.8.0_65]
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:1.8.0_65]
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:1.8.0_65]
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:422) ~[?:1.8.0_65]
-	at com.mysql.jdbc.Util.handleNewInstance(Util.java:404) ~[mysql-connector-java-5.1.38.jar:5.1.38]
-	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:981) ~[mysql-connector-java-5.1.38.jar:5.1.38]
-	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:339) ~[mysql-connector-java-5.1.38.jar:5.1.38]
-	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2253) ~[mysql-connector-java-5.1.38.jar:5.1.38]
-	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2286) ~[mysql-connector-java-5.1.38.jar:5.1.38]
-	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2085) ~[mysql-connector-java-5.1.38.jar:5.1.38]
-	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:795) ~[mysql-connector-java-5.1.38.jar:5.1.38]
-	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44) ~[mysql-connector-java-5.1.38.jar:5.1.38]
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:1.8.0_65]
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:1.8.0_65]
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:1.8.0_65]
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:422) ~[?:1.8.0_65]
-	at com.mysql.jdbc.Util.handleNewInstance(Util.java:404) ~[mysql-connector-java-5.1.38.jar:5.1.38]
-	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:400) ~[mysql-connector-java-5.1.38.jar:5.1.38]
-	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:327) ~[mysql-connector-java-5.1.38.jar:5.1.38]
-	at java.sql.DriverManager.getConnection(DriverManager.java:664) ~[?:1.8.0_65]
-	at java.sql.DriverManager.getConnection(DriverManager.java:208) ~[?:1.8.0_65]
-	at com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(SQLPlusConnection.java:88) [classes/:?]
-	at com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(SQLPlusMySQLConnection.java:49) [classes/:?]
-	at com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(SQLPlusMySQLConnection.java:95) [classes/:?]
-	at com.mijecu25.sqlplus.connection.TestSQLPlusConnection.initialize(TestSQLPlusConnection.java:33) [test-classes/:?]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_65]
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_65]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_65]
-	at java.lang.reflect.Method.invoke(Method.java:497) ~[?:1.8.0_65]
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50) [junit-4.12.jar:4.12]
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47) [junit-4.12.jar:4.12]
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24) [junit-4.12.jar:4.12]
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) [junit-4.12.jar:4.12]
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
-	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86) [.cp/:?]
-	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38) [.cp/:?]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459) [.cp/:?]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675) [.cp/:?]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382) [.cp/:?]
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192) [.cp/:?]
-Caused by: java.net.ConnectException: Connection refused
-	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[?:1.8.0_65]
-	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[?:1.8.0_65]
-	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[?:1.8.0_65]
-	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[?:1.8.0_65]
-	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[?:1.8.0_65]
-	at java.net.Socket.connect(Socket.java:589) ~[?:1.8.0_65]
-	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:211) ~[mysql-connector-java-5.1.38.jar:5.1.38]
-	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:298) ~[mysql-connector-java-5.1.38.jar:5.1.38]
-	... 34 more
-[03-20-2016 12:44:23.083] [main] WARN  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(96) - WARNING: Throwing a CommunicationsException to the calling class
-[03-20-2016 13:16:53.479] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(92) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost database:mysql port:3306
-[03-20-2016 13:16:53.479] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
-[03-20-2016 13:16:53.480] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
-[03-20-2016 13:16:53.480] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
-[03-20-2016 13:16:53.480] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
-[03-20-2016 13:16:53.480] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(86) - Attempting to connect to the database
-[03-20-2016 13:16:53.876] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(99) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=localhost, database=mysql, port=3306]
-[03-20-2016 13:16:53.877] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(107) - Query to be executed: "show databases;"
-[03-20-2016 13:16:53.883] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(139) - Attempting to disconnect from the database
-[03-20-2016 13:16:53.884] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(141) - Disconnected from the database
-[03-20-2016 13:16:53.887] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(92) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost database:mysql port:3306
-[03-20-2016 13:16:53.887] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
-[03-20-2016 13:16:53.887] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
-[03-20-2016 13:16:53.887] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
-[03-20-2016 13:16:53.887] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
-[03-20-2016 13:16:53.887] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(86) - Attempting to connect to the database
-[03-20-2016 13:16:53.898] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(99) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=localhost, database=mysql, port=3306]
-[03-20-2016 13:16:53.898] [main] WARN  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(162) - There is not an SQLPlusMySQLConnection
-[03-20-2016 13:16:53.898] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(169) - Returning a SQLPlusMySQLConnection instance null
-[03-20-2016 13:16:53.899] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(142) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost
-[03-20-2016 13:16:53.899] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
-[03-20-2016 13:16:53.899] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
-[03-20-2016 13:16:53.899] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
-[03-20-2016 13:16:53.900] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
-[03-20-2016 13:16:53.900] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(86) - Attempting to connect to the database
-[03-20-2016 13:16:53.912] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(149) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=localhost, database=mysql, port=3306]
-[03-20-2016 13:16:53.912] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(92) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost database:mysql port:3306
-[03-20-2016 13:16:53.912] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
-[03-20-2016 13:16:53.913] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
-[03-20-2016 13:16:53.913] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
-[03-20-2016 13:16:53.913] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
-[03-20-2016 13:16:53.913] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(86) - Attempting to connect to the database
-[03-20-2016 13:16:53.921] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(99) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=localhost, database=mysql, port=3306]
-[03-20-2016 13:16:53.921] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(118) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost port:3306
-[03-20-2016 13:16:53.922] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
-[03-20-2016 13:16:53.922] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
-[03-20-2016 13:16:53.922] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
-[03-20-2016 13:16:53.922] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
-[03-20-2016 13:16:53.922] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(86) - Attempting to connect to the database
-[03-20-2016 13:16:53.931] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(125) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=localhost, database=mysql, port=3306]
-[03-20-2016 13:16:53.931] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(107) - Query to be executed: "show databases;"
-[03-20-2016 13:16:53.932] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(139) - Attempting to disconnect from the database
-[03-20-2016 13:16:53.933] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(141) - Disconnected from the database
-[03-20-2016 13:18:25.761] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(92) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost database:mysql port:3306
-[03-20-2016 13:18:25.762] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
-[03-20-2016 13:18:25.762] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
-[03-20-2016 13:18:25.762] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
-[03-20-2016 13:18:25.762] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
-[03-20-2016 13:18:25.762] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(86) - Attempting to connect to the database
-[03-20-2016 13:18:26.151] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(99) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=localhost, database=mysql, port=3306]
-[03-20-2016 13:18:26.153] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(107) - Query to be executed: "show databases;"
-[03-20-2016 13:18:26.156] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(139) - Attempting to disconnect from the database
-[03-20-2016 13:18:26.158] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(141) - Disconnected from the database
-[03-20-2016 13:18:26.160] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(92) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost database:mysql port:3306
-[03-20-2016 13:18:26.160] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
-[03-20-2016 13:18:26.160] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
-[03-20-2016 13:18:26.160] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
-[03-20-2016 13:18:26.160] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
-[03-20-2016 13:18:26.161] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(86) - Attempting to connect to the database
-[03-20-2016 13:18:26.171] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(99) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=localhost, database=mysql, port=3306]
-[03-20-2016 13:18:26.171] [main] WARN  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(162) - There is not an SQLPlusMySQLConnection
-[03-20-2016 13:18:26.171] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(169) - Returning a SQLPlusMySQLConnection instance null
-[03-20-2016 13:18:26.172] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(142) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost
-[03-20-2016 13:18:26.172] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
-[03-20-2016 13:18:26.172] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
-[03-20-2016 13:18:26.172] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
-[03-20-2016 13:18:26.172] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
-[03-20-2016 13:18:26.172] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(86) - Attempting to connect to the database
-[03-20-2016 13:18:26.184] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(149) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=localhost, database=mysql, port=3306]
-[03-20-2016 13:18:26.184] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(92) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost database:mysql port:3306
-[03-20-2016 13:18:26.184] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
-[03-20-2016 13:18:26.184] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
-[03-20-2016 13:18:26.185] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
-[03-20-2016 13:18:26.185] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
-[03-20-2016 13:18:26.185] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(86) - Attempting to connect to the database
-[03-20-2016 13:18:26.194] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(99) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=localhost, database=mysql, port=3306]
-[03-20-2016 13:18:26.195] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(118) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost port:3306
-[03-20-2016 13:18:26.195] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
-[03-20-2016 13:18:26.195] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
-[03-20-2016 13:18:26.195] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
-[03-20-2016 13:18:26.195] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
-[03-20-2016 13:18:26.195] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(86) - Attempting to connect to the database
-[03-20-2016 13:18:26.203] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(125) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=localhost, database=mysql, port=3306]
-[03-20-2016 13:18:26.204] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(107) - Query to be executed: "show databases;"
-[03-20-2016 13:18:26.205] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(139) - Attempting to disconnect from the database
-[03-20-2016 13:18:26.205] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(141) - Disconnected from the database
-[03-20-2016 13:18:53.827] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(39) - Initializing SQLPlus
-[03-20-2016 13:18:53.833] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(87) - Create SQLPlusConnection
-[03-20-2016 13:18:55.426] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(174) - User entered host:
-[03-20-2016 13:18:55.746] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(190) - User entered database:
-[03-20-2016 13:18:57.074] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(198) - Port entered: 
-[03-20-2016 13:18:57.075] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(199) - Port string length: 0
-[03-20-2016 13:18:57.075] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(217) - User entered port:
-[03-20-2016 13:18:59.226] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(232) - User entered username:root
-[03-20-2016 13:18:59.522] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(269) - User entered some password
-[03-20-2016 13:18:59.523] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(274) - Connection with username, password, and host
-[03-20-2016 13:18:59.523] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(142) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:127.0.0.1
-[03-20-2016 13:18:59.524] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
-[03-20-2016 13:18:59.524] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: 127.0.0.1 database:mysql port:3306
-[03-20-2016 13:18:59.524] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
-[03-20-2016 13:18:59.524] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
-[03-20-2016 13:18:59.524] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(86) - Attempting to connect to the database
-[03-20-2016 13:18:59.902] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(149) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=127.0.0.1, database=mysql, port=3306]
-[03-20-2016 13:18:59.902] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(295) - Password: [C@1d119efb
-[03-20-2016 13:18:59.902] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(297) - Created and returning a SQLPlusConnection SQLPlusConnection [username=root, host=127.0.0.1, database=mysql, port=3306]
-[03-20-2016 13:19:11.114] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(153) - Will execute a query from the user
-[03-20-2016 13:19:11.114] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(107) - Query to be executed: "show databases;"
-[03-20-2016 13:19:21.234] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(153) - Will execute a query from the user
-[03-20-2016 13:19:21.234] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(107) - Query to be executed: "show databases;"
-[03-20-2016 13:19:23.090] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(140) - The user wants to quit SQLPlus
-[03-20-2016 13:19:23.090] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(308) - Attempting to disconnect the SQLPlusConnection
-[03-20-2016 13:19:23.090] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(139) - Attempting to disconnect from the database
-[03-20-2016 13:19:23.093] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(141) - Disconnected from the database
-[03-20-2016 13:19:23.093] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(310) - Disconnected the SQLPlusConnection
-[03-20-2016 13:19:23.093] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(313) - Quitting SQLPlus
-[03-20-2016 13:19:26.356] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(39) - Initializing SQLPlus
-[03-20-2016 13:19:26.358] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(87) - Create SQLPlusConnection
-[03-20-2016 13:19:27.250] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(174) - User entered host:
-[03-20-2016 13:19:27.418] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(190) - User entered database:
-[03-20-2016 13:19:28.593] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(198) - Port entered: 
-[03-20-2016 13:19:28.594] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(199) - Port string length: 0
-[03-20-2016 13:19:28.594] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(217) - User entered port:
-[03-20-2016 13:19:31.274] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(232) - User entered username:miguelvelezmj25
-[03-20-2016 13:19:34.721] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(269) - User entered some password
-[03-20-2016 13:19:34.722] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(274) - Connection with username, password, and host
-[03-20-2016 13:19:34.722] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(142) - Creating a new SQLPlusMySQLConnection instance with username:miguelvelezmj25 password:********* host:127.0.0.1
-[03-20-2016 13:19:34.723] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
-[03-20-2016 13:19:34.723] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:miguelvelezmj25 password:********* host: 127.0.0.1 database:mysql port:3306
-[03-20-2016 13:19:34.723] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
-[03-20-2016 13:19:34.723] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
-[03-20-2016 13:19:34.724] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(86) - Attempting to connect to the database
-[03-20-2016 13:19:35.112] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(149) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=miguelvelezmj25, host=127.0.0.1, database=mysql, port=3306]
-[03-20-2016 13:19:35.112] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(295) - Password: [C@35047d03
-[03-20-2016 13:19:35.112] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(297) - Created and returning a SQLPlusConnection SQLPlusConnection [username=miguelvelezmj25, host=127.0.0.1, database=mysql, port=3306]
-[03-20-2016 13:19:40.561] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(140) - The user wants to quit SQLPlus
-[03-20-2016 13:19:40.562] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(308) - Attempting to disconnect the SQLPlusConnection
-[03-20-2016 13:19:40.562] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(139) - Attempting to disconnect from the database
-[03-20-2016 13:19:40.564] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(141) - Disconnected from the database
-[03-20-2016 13:19:40.564] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(310) - Disconnected the SQLPlusConnection
-[03-20-2016 13:19:40.565] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(313) - Quitting SQLPlus
-[03-20-2016 13:19:59.535] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(39) - Initializing SQLPlus
-[03-20-2016 13:19:59.537] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(87) - Create SQLPlusConnection
-[03-20-2016 13:20:00.057] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(174) - User entered host:
-[03-20-2016 13:20:00.225] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(190) - User entered database:
-[03-20-2016 13:20:01.480] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(198) - Port entered: 
-[03-20-2016 13:20:01.481] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(199) - Port string length: 0
-[03-20-2016 13:20:01.481] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(217) - User entered port:
-[03-20-2016 13:20:06.313] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(232) - User entered username:miguelvelezmj25
-[03-20-2016 13:20:09.128] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(269) - User entered some password
-[03-20-2016 13:20:09.129] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(274) - Connection with username, password, and host
-[03-20-2016 13:20:09.129] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(142) - Creating a new SQLPlusMySQLConnection instance with username:miguelvelezmj25 password:********* host:127.0.0.1
-[03-20-2016 13:20:09.130] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
-[03-20-2016 13:20:09.130] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:miguelvelezmj25 password:********* host: 127.0.0.1 database:mysql port:3306
-[03-20-2016 13:20:09.130] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
-[03-20-2016 13:20:09.130] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
-[03-20-2016 13:20:09.130] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(86) - Attempting to connect to the database
-[03-20-2016 13:20:09.515] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(149) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=miguelvelezmj25, host=127.0.0.1, database=mysql, port=3306]
-[03-20-2016 13:20:09.515] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(295) - Password: [C@49b0b76
-[03-20-2016 13:20:09.515] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(297) - Created and returning a SQLPlusConnection SQLPlusConnection [username=miguelvelezmj25, host=127.0.0.1, database=mysql, port=3306]
-[03-20-2016 13:20:13.288] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(140) - The user wants to quit SQLPlus
-[03-20-2016 13:20:13.288] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(308) - Attempting to disconnect the SQLPlusConnection
-[03-20-2016 13:20:13.289] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(139) - Attempting to disconnect from the database
-[03-20-2016 13:20:13.291] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(141) - Disconnected from the database
-[03-20-2016 13:20:13.291] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(310) - Disconnected the SQLPlusConnection
-[03-20-2016 13:20:13.292] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(313) - Quitting SQLPlus
-[03-20-2016 13:20:27.900] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(39) - Initializing SQLPlus
-[03-20-2016 13:20:27.903] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(87) - Create SQLPlusConnection
-[03-20-2016 13:20:29.026] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(174) - User entered host:
-[03-20-2016 13:20:29.192] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(190) - User entered database:
-[03-20-2016 13:20:30.031] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(198) - Port entered: 
-[03-20-2016 13:20:30.032] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(199) - Port string length: 0
-[03-20-2016 13:20:30.032] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(217) - User entered port:
-[03-20-2016 13:20:34.560] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(232) - User entered username:miguelvelezmj25
-[03-20-2016 13:20:36.136] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(269) - User entered some password
-[03-20-2016 13:20:36.136] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(274) - Connection with username, password, and host
-[03-20-2016 13:20:36.136] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(142) - Creating a new SQLPlusMySQLConnection instance with username:miguelvelezmj25 password:********* host:127.0.0.1
-[03-20-2016 13:20:36.137] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
-[03-20-2016 13:20:36.137] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:miguelvelezmj25 password:********* host: 127.0.0.1 database:mysql port:3306
-[03-20-2016 13:20:36.137] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
-[03-20-2016 13:20:36.137] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
-[03-20-2016 13:20:36.138] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(86) - Attempting to connect to the database
-[03-20-2016 13:20:36.526] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(149) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=miguelvelezmj25, host=127.0.0.1, database=mysql, port=3306]
-[03-20-2016 13:20:36.526] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(295) - Password: [C@2473d930
-[03-20-2016 13:20:36.526] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(297) - Created and returning a SQLPlusConnection SQLPlusConnection [username=miguelvelezmj25, host=127.0.0.1, database=mysql, port=3306]
-[03-20-2016 13:21:30.454] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(140) - The user wants to quit SQLPlus
-[03-20-2016 13:21:30.454] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(308) - Attempting to disconnect the SQLPlusConnection
-[03-20-2016 13:21:30.455] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(139) - Attempting to disconnect from the database
-[03-20-2016 13:21:30.457] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(141) - Disconnected from the database
-[03-20-2016 13:21:30.457] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(310) - Disconnected the SQLPlusConnection
-[03-20-2016 13:21:30.458] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(313) - Quitting SQLPlus
-[03-20-2016 13:21:43.428] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(92) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost database:mysql port:3306
-[03-20-2016 13:21:43.429] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
-[03-20-2016 13:21:43.429] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
-[03-20-2016 13:21:43.429] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
-[03-20-2016 13:21:43.429] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
-[03-20-2016 13:21:43.429] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(86) - Attempting to connect to the database
-[03-20-2016 13:21:43.815] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(99) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=localhost, database=mysql, port=3306]
-[03-20-2016 13:21:43.816] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(107) - Query to be executed: "show databases;"
-[03-20-2016 13:21:43.819] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(139) - Attempting to disconnect from the database
-[03-20-2016 13:21:43.821] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(141) - Disconnected from the database
-[03-20-2016 13:21:43.824] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(92) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost database:mysql port:3306
-[03-20-2016 13:21:43.824] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
-[03-20-2016 13:21:43.824] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
-[03-20-2016 13:21:43.824] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
-[03-20-2016 13:21:43.824] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
-[03-20-2016 13:21:43.825] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(86) - Attempting to connect to the database
-[03-20-2016 13:21:43.837] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(99) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=localhost, database=mysql, port=3306]
-[03-20-2016 13:21:43.837] [main] WARN  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(162) - There is not an SQLPlusMySQLConnection
-[03-20-2016 13:21:43.838] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(169) - Returning a SQLPlusMySQLConnection instance null
-[03-20-2016 13:21:43.838] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(142) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost
-[03-20-2016 13:21:43.838] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
-[03-20-2016 13:21:43.838] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
-[03-20-2016 13:21:43.839] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
-[03-20-2016 13:21:43.839] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
-[03-20-2016 13:21:43.839] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(86) - Attempting to connect to the database
-[03-20-2016 13:21:43.852] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(149) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=localhost, database=mysql, port=3306]
-[03-20-2016 13:21:43.852] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(92) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost database:mysql port:3306
-[03-20-2016 13:21:43.852] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
-[03-20-2016 13:21:43.852] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
-[03-20-2016 13:21:43.852] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
-[03-20-2016 13:21:43.853] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
-[03-20-2016 13:21:43.853] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(86) - Attempting to connect to the database
-[03-20-2016 13:21:43.861] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(99) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=localhost, database=mysql, port=3306]
-[03-20-2016 13:21:43.861] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(118) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost port:3306
-[03-20-2016 13:21:43.861] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
-[03-20-2016 13:21:43.862] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
-[03-20-2016 13:21:43.862] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
-[03-20-2016 13:21:43.862] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
-[03-20-2016 13:21:43.862] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(86) - Attempting to connect to the database
-[03-20-2016 13:21:43.869] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(125) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=localhost, database=mysql, port=3306]
-[03-20-2016 13:21:43.870] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(107) - Query to be executed: "show databases;"
-[03-20-2016 13:21:43.871] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(139) - Attempting to disconnect from the database
-[03-20-2016 13:21:43.871] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(141) - Disconnected from the database
-[03-20-2016 13:21:49.573] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(39) - Initializing SQLPlus
-[03-20-2016 13:21:49.575] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(87) - Create SQLPlusConnection
-[03-20-2016 13:21:50.182] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(174) - User entered host:
-[03-20-2016 13:21:50.358] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(190) - User entered database:
-[03-20-2016 13:21:50.926] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(198) - Port entered: 
-[03-20-2016 13:21:50.927] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(199) - Port string length: 0
-[03-20-2016 13:21:50.927] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(217) - User entered port:
-[03-20-2016 13:21:54.126] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(232) - User entered username:miguelvelezmj25
-[03-20-2016 13:21:56.125] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(269) - User entered some password
-[03-20-2016 13:21:56.126] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(274) - Connection with username, password, and host
-[03-20-2016 13:21:56.126] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(142) - Creating a new SQLPlusMySQLConnection instance with username:miguelvelezmj25 password:********* host:127.0.0.1
-[03-20-2016 13:21:56.127] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
-[03-20-2016 13:21:56.127] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:miguelvelezmj25 password:********* host: 127.0.0.1 database:mysql port:3306
-[03-20-2016 13:21:56.127] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
-[03-20-2016 13:21:56.127] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
-[03-20-2016 13:21:56.127] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(86) - Attempting to connect to the database
-[03-20-2016 13:21:56.514] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(149) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=miguelvelezmj25, host=127.0.0.1, database=mysql, port=3306]
-[03-20-2016 13:21:56.515] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(295) - Password:         
-[03-20-2016 13:21:56.515] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(297) - Created and returning a SQLPlusConnection SQLPlusConnection [username=miguelvelezmj25, host=127.0.0.1, database=mysql, port=3306]
-[03-20-2016 14:14:09.773] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(140) - The user wants to quit SQLPlus
-[03-20-2016 14:14:09.773] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(308) - Attempting to disconnect the SQLPlusConnection
-[03-20-2016 14:14:09.773] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(139) - Attempting to disconnect from the database
-[03-20-2016 14:14:09.776] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(141) - Disconnected from the database
-[03-20-2016 14:14:09.776] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(310) - Disconnected the SQLPlusConnection
-[03-20-2016 14:14:09.776] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(313) - Quitting SQLPlus
-[03-20-2016 18:41:57.868] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(39) - Initializing SQLPlus
-[03-20-2016 18:41:57.871] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(87) - Create SQLPlusConnection
-[03-20-2016 18:42:00.447] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(174) - User entered host:
-[03-20-2016 18:42:00.743] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(190) - User entered database:
-[03-20-2016 18:42:01.519] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(198) - Port entered: 
-[03-20-2016 18:42:01.519] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(199) - Port string length: 0
-[03-20-2016 18:42:01.520] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(217) - User entered port:
-[03-20-2016 18:42:05.823] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(232) - User entered username:root
-[03-20-2016 18:42:06.119] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(269) - User entered some password
-[03-20-2016 18:42:06.119] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(274) - Connection with username, password, and host
-[03-20-2016 18:42:06.120] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(142) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:127.0.0.1
-[03-20-2016 18:42:06.120] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
-[03-20-2016 18:42:06.120] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: 127.0.0.1 database:mysql port:3306
-[03-20-2016 18:42:06.120] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
-[03-20-2016 18:42:06.120] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
-[03-20-2016 18:42:06.120] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(86) - Attempting to connect to the database
-[03-20-2016 18:42:06.524] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(149) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=127.0.0.1, database=mysql, port=3306]
-[03-20-2016 18:42:06.524] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(295) - Password: 
-[03-20-2016 18:42:06.524] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(297) - Created and returning a SQLPlusConnection SQLPlusConnection [username=root, host=127.0.0.1, database=mysql, port=3306]
-[03-20-2016 18:42:11.623] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(140) - The user wants to quit SQLPlus
-[03-20-2016 18:42:11.623] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(308) - Attempting to disconnect the SQLPlusConnection
-[03-20-2016 18:42:11.623] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(139) - Attempting to disconnect from the database
-[03-20-2016 18:42:11.626] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(141) - Disconnected from the database
-[03-20-2016 18:42:11.626] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(310) - Disconnected the SQLPlusConnection
-[03-20-2016 18:42:11.626] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(313) - Quitting SQLPlus
-[03-20-2016 18:46:05.799] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(92) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost database:mysql port:3306
-[03-20-2016 18:46:05.800] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
-[03-20-2016 18:46:05.800] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
-[03-20-2016 18:46:05.800] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
-[03-20-2016 18:46:05.800] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
-[03-20-2016 18:46:05.816] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(87) - Attempting to connect to the database
-[03-20-2016 18:46:06.221] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(99) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=localhost, database=mysql, port=3306]
-[03-20-2016 18:46:06.223] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(108) - Query to be executed: "show databases;"
-[03-20-2016 18:46:06.228] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(140) - Attempting to disconnect from the database
-[03-20-2016 18:46:06.230] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(142) - Disconnected from the database
-[03-20-2016 18:46:06.232] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(92) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost database:mysql port:3306
-[03-20-2016 18:46:06.232] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
-[03-20-2016 18:46:06.232] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
-[03-20-2016 18:46:06.233] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
-[03-20-2016 18:46:06.233] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
-[03-20-2016 18:46:06.265] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(87) - Attempting to connect to the database
-[03-20-2016 18:46:06.274] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(99) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=localhost, database=mysql, port=3306]
-[03-20-2016 18:46:06.275] [main] WARN  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(162) - There is not an SQLPlusMySQLConnection
-[03-20-2016 18:46:06.275] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(169) - Returning a SQLPlusMySQLConnection instance null
-[03-20-2016 18:46:06.275] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(142) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost
-[03-20-2016 18:46:06.276] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
-[03-20-2016 18:46:06.276] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
-[03-20-2016 18:46:06.276] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
-[03-20-2016 18:46:06.276] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
-[03-20-2016 18:46:06.309] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(87) - Attempting to connect to the database
-[03-20-2016 18:46:06.321] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(149) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=localhost, database=mysql, port=3306]
-[03-20-2016 18:46:06.322] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(92) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost database:mysql port:3306
-[03-20-2016 18:46:06.322] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
-[03-20-2016 18:46:06.322] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
-[03-20-2016 18:46:06.322] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
-[03-20-2016 18:46:06.322] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
-[03-20-2016 18:46:06.349] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(87) - Attempting to connect to the database
-[03-20-2016 18:46:06.358] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(99) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=localhost, database=mysql, port=3306]
-[03-20-2016 18:46:06.358] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(118) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost port:3306
-[03-20-2016 18:46:06.358] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
-[03-20-2016 18:46:06.359] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
-[03-20-2016 18:46:06.359] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
-[03-20-2016 18:46:06.359] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
-[03-20-2016 18:46:06.378] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(87) - Attempting to connect to the database
-[03-20-2016 18:46:06.387] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(125) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=localhost, database=mysql, port=3306]
-[03-20-2016 18:46:06.387] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(108) - Query to be executed: "show databases;"
-[03-20-2016 18:46:06.389] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(140) - Attempting to disconnect from the database
-[03-20-2016 18:46:06.389] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(142) - Disconnected from the database
-[03-20-2016 18:55:59.406] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(92) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost database:mysql port:3306
-[03-20-2016 18:55:59.406] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
-[03-20-2016 18:55:59.406] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
-[03-20-2016 18:55:59.407] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
-[03-20-2016 18:55:59.407] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
-[03-20-2016 18:55:59.423] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(87) - Attempting to connect to the database
-[03-20-2016 18:55:59.792] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(99) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=localhost, database=mysql, port=3306]
-[03-20-2016 18:55:59.793] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(108) - Query to be executed: "show databases;"
-[03-20-2016 18:55:59.796] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(140) - Attempting to disconnect from the database
-[03-20-2016 18:55:59.798] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(142) - Disconnected from the database
-[03-20-2016 18:55:59.800] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(92) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost database:mysql port:3306
-[03-20-2016 18:55:59.800] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
-[03-20-2016 18:55:59.801] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
-[03-20-2016 18:55:59.801] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
-[03-20-2016 18:55:59.801] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
-[03-20-2016 18:55:59.833] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(87) - Attempting to connect to the database
-[03-20-2016 18:55:59.844] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(99) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=localhost, database=mysql, port=3306]
-[03-20-2016 18:55:59.844] [main] WARN  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(162) - There is not an SQLPlusMySQLConnection
-[03-20-2016 18:55:59.844] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(169) - Returning a SQLPlusMySQLConnection instance null
-[03-20-2016 18:55:59.845] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(142) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost
-[03-20-2016 18:55:59.845] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
-[03-20-2016 18:55:59.845] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
-[03-20-2016 18:55:59.845] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
-[03-20-2016 18:55:59.845] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
-[03-20-2016 18:55:59.880] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(87) - Attempting to connect to the database
-[03-20-2016 18:55:59.891] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(149) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=localhost, database=mysql, port=3306]
-[03-20-2016 18:55:59.892] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(92) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost database:mysql port:3306
-[03-20-2016 18:55:59.892] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
-[03-20-2016 18:55:59.892] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
-[03-20-2016 18:55:59.892] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
-[03-20-2016 18:55:59.892] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
-[03-20-2016 18:55:59.919] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(87) - Attempting to connect to the database
-[03-20-2016 18:55:59.928] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(99) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=localhost, database=mysql, port=3306]
-[03-20-2016 18:55:59.928] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(118) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost port:3306
-[03-20-2016 18:55:59.928] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
-[03-20-2016 18:55:59.928] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
-[03-20-2016 18:55:59.928] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
-[03-20-2016 18:55:59.929] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
-[03-20-2016 18:55:59.946] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(87) - Attempting to connect to the database
-[03-20-2016 18:55:59.954] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(125) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=localhost, database=mysql, port=3306]
-[03-20-2016 18:55:59.954] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(108) - Query to be executed: "show databases;"
-[03-20-2016 18:55:59.955] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(140) - Attempting to disconnect from the database
-[03-20-2016 18:55:59.956] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(142) - Disconnected from the database
+[03-22-2016 19:09:53.904] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(92) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost database:mysql port:3306
+[03-22-2016 19:09:53.908] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
+[03-22-2016 19:09:53.908] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
+[03-22-2016 19:09:53.908] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
+[03-22-2016 19:09:53.908] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
+[03-22-2016 19:09:53.924] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(87) - Attempting to connect to the database
+[03-22-2016 19:09:54.362] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(99) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=localhost, database=mysql, port=3306]
+[03-22-2016 19:09:54.364] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(108) - Query to be executed: "show databases;"
+[03-22-2016 19:09:54.369] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(140) - Attempting to disconnect from the database
+[03-22-2016 19:09:54.372] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(142) - Disconnected from the database
+[03-22-2016 19:09:54.373] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(92) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost database:mysql port:3306
+[03-22-2016 19:09:54.373] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
+[03-22-2016 19:09:54.373] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
+[03-22-2016 19:09:54.373] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
+[03-22-2016 19:09:54.374] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
+[03-22-2016 19:09:54.410] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(87) - Attempting to connect to the database
+[03-22-2016 19:09:54.422] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(99) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=localhost, database=mysql, port=3306]
+[03-22-2016 19:09:54.422] [main] WARN  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(162) - There is not an SQLPlusMySQLConnection
+[03-22-2016 19:09:54.422] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(169) - Returning a SQLPlusMySQLConnection instance null
+[03-22-2016 19:09:54.423] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(142) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost
+[03-22-2016 19:09:54.423] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
+[03-22-2016 19:09:54.423] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
+[03-22-2016 19:09:54.423] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
+[03-22-2016 19:09:54.424] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
+[03-22-2016 19:09:54.460] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(87) - Attempting to connect to the database
+[03-22-2016 19:09:54.470] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(149) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=localhost, database=mysql, port=3306]
+[03-22-2016 19:09:54.471] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(92) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost database:mysql port:3306
+[03-22-2016 19:09:54.471] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
+[03-22-2016 19:09:54.471] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
+[03-22-2016 19:09:54.471] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
+[03-22-2016 19:09:54.471] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
+[03-22-2016 19:09:54.500] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(87) - Attempting to connect to the database
+[03-22-2016 19:09:54.509] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(99) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=localhost, database=mysql, port=3306]
+[03-22-2016 19:09:54.510] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(118) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost port:3306
+[03-22-2016 19:09:54.510] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
+[03-22-2016 19:09:54.510] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
+[03-22-2016 19:09:54.510] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
+[03-22-2016 19:09:54.510] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
+[03-22-2016 19:09:54.528] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(87) - Attempting to connect to the database
+[03-22-2016 19:09:54.537] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(125) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=localhost, database=mysql, port=3306]
+[03-22-2016 19:09:54.538] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(108) - Query to be executed: "show databases;"
+[03-22-2016 19:09:54.539] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(140) - Attempting to disconnect from the database
+[03-22-2016 19:09:54.539] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(142) - Disconnected from the database
+[03-22-2016 19:10:13.781] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(42) - Initializing SQLPlus
+[03-22-2016 19:10:13.885] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(93) - Create SQLPlusConnection
+[03-22-2016 19:10:16.262] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(186) - User entered host:
+[03-22-2016 19:10:17.229] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(202) - User entered database:
+[03-22-2016 19:10:18.525] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(210) - Port entered: 
+[03-22-2016 19:10:18.525] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(211) - Port string length: 0
+[03-22-2016 19:10:18.525] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(229) - User entered port:
+[03-22-2016 19:10:21.205] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(244) - User entered username:root
+[03-22-2016 19:10:28.125] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(146) - The user wants to quit SQLPlus
+[03-22-2016 19:10:28.131] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(336) - Quitting SQLPlus
+[03-22-2016 19:13:16.056] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(92) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost database:mysql port:3306
+[03-22-2016 19:13:16.056] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
+[03-22-2016 19:13:16.057] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
+[03-22-2016 19:13:16.057] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
+[03-22-2016 19:13:16.057] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
+[03-22-2016 19:13:16.072] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(87) - Attempting to connect to the database
+[03-22-2016 19:13:16.478] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(99) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=localhost, database=mysql, port=3306]
+[03-22-2016 19:13:16.480] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(108) - Query to be executed: "show databases;"
+[03-22-2016 19:13:16.483] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(140) - Attempting to disconnect from the database
+[03-22-2016 19:13:16.485] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(142) - Disconnected from the database
+[03-22-2016 19:13:16.487] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(92) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost database:mysql port:3306
+[03-22-2016 19:13:16.487] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
+[03-22-2016 19:13:16.487] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
+[03-22-2016 19:13:16.488] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
+[03-22-2016 19:13:16.488] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
+[03-22-2016 19:13:16.522] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(87) - Attempting to connect to the database
+[03-22-2016 19:13:16.532] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(99) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=localhost, database=mysql, port=3306]
+[03-22-2016 19:13:16.533] [main] WARN  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(162) - There is not an SQLPlusMySQLConnection
+[03-22-2016 19:13:16.533] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(169) - Returning a SQLPlusMySQLConnection instance null
+[03-22-2016 19:13:16.534] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(142) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost
+[03-22-2016 19:13:16.534] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
+[03-22-2016 19:13:16.534] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
+[03-22-2016 19:13:16.534] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
+[03-22-2016 19:13:16.534] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
+[03-22-2016 19:13:16.566] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(87) - Attempting to connect to the database
+[03-22-2016 19:13:16.580] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(149) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=localhost, database=mysql, port=3306]
+[03-22-2016 19:13:16.580] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(92) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost database:mysql port:3306
+[03-22-2016 19:13:16.581] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
+[03-22-2016 19:13:16.581] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
+[03-22-2016 19:13:16.581] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
+[03-22-2016 19:13:16.581] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
+[03-22-2016 19:13:16.608] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(87) - Attempting to connect to the database
+[03-22-2016 19:13:16.617] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(99) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=localhost, database=mysql, port=3306]
+[03-22-2016 19:13:16.618] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(118) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost port:3306
+[03-22-2016 19:13:16.618] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
+[03-22-2016 19:13:16.618] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
+[03-22-2016 19:13:16.618] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
+[03-22-2016 19:13:16.618] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
+[03-22-2016 19:13:16.640] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(87) - Attempting to connect to the database
+[03-22-2016 19:13:16.649] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(125) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=localhost, database=mysql, port=3306]
+[03-22-2016 19:13:16.650] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(108) - Query to be executed: "show databases;"
+[03-22-2016 19:13:16.652] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(140) - Attempting to disconnect from the database
+[03-22-2016 19:13:16.652] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(142) - Disconnected from the database
+[03-22-2016 19:13:22.276] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(42) - Initializing SQLPlus
+[03-22-2016 19:13:22.369] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(93) - Create SQLPlusConnection
+[03-22-2016 19:13:22.866] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(186) - User entered host:
+[03-22-2016 19:13:23.871] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(202) - User entered database:
+[03-22-2016 19:13:25.639] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(210) - Port entered: 
+[03-22-2016 19:13:25.639] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(211) - Port string length: 0
+[03-22-2016 19:13:25.639] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(229) - User entered port:
+[03-22-2016 19:13:28.607] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(244) - User entered username:root
+[03-22-2016 19:13:52.070] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(146) - The user wants to quit SQLPlus
+[03-22-2016 19:13:52.075] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(334) - Quitting SQLPlus
+[03-22-2016 19:14:56.335] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(92) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost database:mysql port:3306
+[03-22-2016 19:14:56.336] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
+[03-22-2016 19:14:56.336] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
+[03-22-2016 19:14:56.337] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
+[03-22-2016 19:14:56.337] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
+[03-22-2016 19:14:56.353] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(87) - Attempting to connect to the database
+[03-22-2016 19:14:56.724] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(99) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=localhost, database=mysql, port=3306]
+[03-22-2016 19:14:56.725] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(108) - Query to be executed: "show databases;"
+[03-22-2016 19:14:56.729] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(140) - Attempting to disconnect from the database
+[03-22-2016 19:14:56.730] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(142) - Disconnected from the database
+[03-22-2016 19:14:56.732] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(92) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost database:mysql port:3306
+[03-22-2016 19:14:56.732] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
+[03-22-2016 19:14:56.732] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
+[03-22-2016 19:14:56.732] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
+[03-22-2016 19:14:56.733] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
+[03-22-2016 19:14:56.766] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(87) - Attempting to connect to the database
+[03-22-2016 19:14:56.780] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(99) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=localhost, database=mysql, port=3306]
+[03-22-2016 19:14:56.781] [main] WARN  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(162) - There is not an SQLPlusMySQLConnection
+[03-22-2016 19:14:56.781] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(169) - Returning a SQLPlusMySQLConnection instance null
+[03-22-2016 19:14:56.781] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(142) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost
+[03-22-2016 19:14:56.781] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
+[03-22-2016 19:14:56.782] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
+[03-22-2016 19:14:56.782] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
+[03-22-2016 19:14:56.782] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
+[03-22-2016 19:14:56.816] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(87) - Attempting to connect to the database
+[03-22-2016 19:14:56.827] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(149) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=localhost, database=mysql, port=3306]
+[03-22-2016 19:14:56.828] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(92) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost database:mysql port:3306
+[03-22-2016 19:14:56.828] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
+[03-22-2016 19:14:56.828] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
+[03-22-2016 19:14:56.828] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
+[03-22-2016 19:14:56.828] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
+[03-22-2016 19:14:56.858] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(87) - Attempting to connect to the database
+[03-22-2016 19:14:56.866] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(99) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=localhost, database=mysql, port=3306]
+[03-22-2016 19:14:56.867] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(118) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost port:3306
+[03-22-2016 19:14:56.867] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
+[03-22-2016 19:14:56.867] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
+[03-22-2016 19:14:56.867] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
+[03-22-2016 19:14:56.867] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
+[03-22-2016 19:14:56.886] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(87) - Attempting to connect to the database
+[03-22-2016 19:14:56.894] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(125) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=localhost, database=mysql, port=3306]
+[03-22-2016 19:14:56.894] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(108) - Query to be executed: "show databases;"
+[03-22-2016 19:14:56.895] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(140) - Attempting to disconnect from the database
+[03-22-2016 19:14:56.895] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(142) - Disconnected from the database
+[03-22-2016 19:15:00.310] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(42) - Initializing SQLPlus
+[03-22-2016 19:15:00.405] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(90) - Create SQLPlusConnection
+[03-22-2016 19:15:03.142] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(183) - User entered host:
+[03-22-2016 19:15:03.307] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(199) - User entered database:
+[03-22-2016 19:15:06.283] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(207) - Port entered: 5464564
+[03-22-2016 19:15:06.284] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(208) - Port string length: 7
+[03-22-2016 19:15:06.284] [main] WARN  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(218) - The user provided an invalid port number: 5464564
+[03-22-2016 19:15:07.835] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(207) - Port entered: 
+[03-22-2016 19:15:07.836] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(208) - Port string length: 0
+[03-22-2016 19:15:07.836] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(226) - User entered port:
+[03-22-2016 19:15:09.731] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(241) - User entered username:root
+[03-22-2016 19:15:10.295] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(283) - User entered some password
+[03-22-2016 19:15:10.295] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(288) - Connection with username, password, and host
+[03-22-2016 19:15:10.295] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(142) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:127.0.0.1
+[03-22-2016 19:15:10.295] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
+[03-22-2016 19:15:10.296] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: 127.0.0.1 database:mysql port:3306
+[03-22-2016 19:15:10.296] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
+[03-22-2016 19:15:10.296] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
+[03-22-2016 19:15:10.313] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(87) - Attempting to connect to the database
+[03-22-2016 19:15:10.646] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(149) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=127.0.0.1, database=mysql, port=3306]
+[03-22-2016 19:15:10.680] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(312) - Created and returning a SQLPlusConnection SQLPlusConnection [username=root, host=127.0.0.1, database=mysql, port=3306]
+[03-22-2016 19:15:13.971] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(164) - Will execute a query from the user
+[03-22-2016 19:15:13.971] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(108) - Query to be executed: "show databases;"
+[03-22-2016 19:15:16.251] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(164) - Will execute a query from the user
+[03-22-2016 19:15:16.251] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(108) - Query to be executed: "show databases;"
+[03-22-2016 19:15:20.771] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(164) - Will execute a query from the user
+[03-22-2016 19:15:20.771] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(108) - Query to be executed: "show data bases;"
+[03-22-2016 19:15:20.780] [main] WARN  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(123) - WARNING: The user entered an invalid query string
+[03-22-2016 19:15:20.780] [main] WARN  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(124) - ERROR: ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'data bases' at line 1
+[03-22-2016 19:15:32.282] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(164) - Will execute a query from the user
+[03-22-2016 19:15:32.283] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(108) - Query to be executed: "show databases;"
+[03-22-2016 19:15:37.986] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(164) - Will execute a query from the user
+[03-22-2016 19:15:37.986] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(108) - Query to be executed: "show tables ;"
+[03-22-2016 19:15:37.987] [main] WARN  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(123) - WARNING: The user entered an invalid query string
+[03-22-2016 19:15:37.987] [main] WARN  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(124) - ERROR: ERROR 1046 (3D000): No database selected
+[03-22-2016 19:15:41.970] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(143) - The user wants to quit SQLPlus
+[03-22-2016 19:15:41.970] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(323) - Attempting to disconnect the SQLPlusConnection
+[03-22-2016 19:15:41.971] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(140) - Attempting to disconnect from the database
+[03-22-2016 19:15:41.973] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(142) - Disconnected from the database
+[03-22-2016 19:15:41.974] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(325) - Disconnected the SQLPlusConnection
+[03-22-2016 19:15:41.979] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(331) - Quitting SQLPlus
+[03-22-2016 19:17:50.027] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(92) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost database:mysql port:3306
+[03-22-2016 19:17:50.028] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
+[03-22-2016 19:17:50.028] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
+[03-22-2016 19:17:50.029] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
+[03-22-2016 19:17:50.029] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
+[03-22-2016 19:17:50.044] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(87) - Attempting to connect to the database
+[03-22-2016 19:17:50.415] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(99) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=localhost, database=mysql, port=3306]
+[03-22-2016 19:17:50.417] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(108) - Query to be executed: "show databases;"
+[03-22-2016 19:17:50.420] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(140) - Attempting to disconnect from the database
+[03-22-2016 19:17:50.422] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(142) - Disconnected from the database
+[03-22-2016 19:17:50.424] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(92) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost database:mysql port:3306
+[03-22-2016 19:17:50.424] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
+[03-22-2016 19:17:50.425] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
+[03-22-2016 19:17:50.425] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
+[03-22-2016 19:17:50.425] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
+[03-22-2016 19:17:50.458] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(87) - Attempting to connect to the database
+[03-22-2016 19:17:50.470] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(99) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=localhost, database=mysql, port=3306]
+[03-22-2016 19:17:50.470] [main] WARN  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(162) - There is not an SQLPlusMySQLConnection
+[03-22-2016 19:17:50.470] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(169) - Returning a SQLPlusMySQLConnection instance null
+[03-22-2016 19:17:50.471] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(142) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost
+[03-22-2016 19:17:50.471] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
+[03-22-2016 19:17:50.471] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
+[03-22-2016 19:17:50.471] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
+[03-22-2016 19:17:50.471] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
+[03-22-2016 19:17:50.508] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(87) - Attempting to connect to the database
+[03-22-2016 19:17:50.518] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(149) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=localhost, database=mysql, port=3306]
+[03-22-2016 19:17:50.519] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(92) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost database:mysql port:3306
+[03-22-2016 19:17:50.519] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
+[03-22-2016 19:17:50.519] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
+[03-22-2016 19:17:50.519] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
+[03-22-2016 19:17:50.519] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
+[03-22-2016 19:17:50.546] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(87) - Attempting to connect to the database
+[03-22-2016 19:17:50.555] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(99) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=localhost, database=mysql, port=3306]
+[03-22-2016 19:17:50.556] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(118) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost port:3306
+[03-22-2016 19:17:50.556] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
+[03-22-2016 19:17:50.556] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
+[03-22-2016 19:17:50.556] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
+[03-22-2016 19:17:50.556] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
+[03-22-2016 19:17:50.578] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(87) - Attempting to connect to the database
+[03-22-2016 19:17:50.586] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(125) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=localhost, database=mysql, port=3306]
+[03-22-2016 19:17:50.586] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(108) - Query to be executed: "show databases;"
+[03-22-2016 19:17:50.588] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(140) - Attempting to disconnect from the database
+[03-22-2016 19:17:50.588] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(142) - Disconnected from the database
+[03-22-2016 19:18:23.118] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(92) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost database:mysql port:3306
+[03-22-2016 19:18:23.119] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
+[03-22-2016 19:18:23.119] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
+[03-22-2016 19:18:23.119] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
+[03-22-2016 19:18:23.119] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
+[03-22-2016 19:18:23.136] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(87) - Attempting to connect to the database
+[03-22-2016 19:18:23.515] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(99) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=localhost, database=mysql, port=3306]
+[03-22-2016 19:18:23.516] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(108) - Query to be executed: "show databases;"
+[03-22-2016 19:18:23.519] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(140) - Attempting to disconnect from the database
+[03-22-2016 19:18:23.521] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(142) - Disconnected from the database
+[03-22-2016 19:18:23.523] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(92) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost database:mysql port:3306
+[03-22-2016 19:18:23.524] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
+[03-22-2016 19:18:23.524] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
+[03-22-2016 19:18:23.524] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
+[03-22-2016 19:18:23.524] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
+[03-22-2016 19:18:23.558] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(87) - Attempting to connect to the database
+[03-22-2016 19:18:23.569] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(99) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=localhost, database=mysql, port=3306]
+[03-22-2016 19:18:23.570] [main] WARN  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(162) - There is not an SQLPlusMySQLConnection
+[03-22-2016 19:18:23.570] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(169) - Returning a SQLPlusMySQLConnection instance null
+[03-22-2016 19:18:23.570] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(142) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost
+[03-22-2016 19:18:23.570] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
+[03-22-2016 19:18:23.570] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
+[03-22-2016 19:18:23.571] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
+[03-22-2016 19:18:23.571] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
+[03-22-2016 19:18:23.604] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(87) - Attempting to connect to the database
+[03-22-2016 19:18:23.615] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(149) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=localhost, database=mysql, port=3306]
+[03-22-2016 19:18:23.616] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(92) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost database:mysql port:3306
+[03-22-2016 19:18:23.616] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
+[03-22-2016 19:18:23.616] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
+[03-22-2016 19:18:23.617] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
+[03-22-2016 19:18:23.617] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
+[03-22-2016 19:18:23.642] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(87) - Attempting to connect to the database
+[03-22-2016 19:18:23.651] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(99) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=localhost, database=mysql, port=3306]
+[03-22-2016 19:18:23.651] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(118) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost port:3306
+[03-22-2016 19:18:23.651] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
+[03-22-2016 19:18:23.652] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
+[03-22-2016 19:18:23.652] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
+[03-22-2016 19:18:23.652] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
+[03-22-2016 19:18:23.670] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(87) - Attempting to connect to the database
+[03-22-2016 19:18:23.678] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(125) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=localhost, database=mysql, port=3306]
+[03-22-2016 19:18:23.678] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(108) - Query to be executed: "show databases;"
+[03-22-2016 19:18:23.680] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(140) - Attempting to disconnect from the database
+[03-22-2016 19:18:23.680] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(142) - Disconnected from the database
+[03-22-2016 19:18:27.658] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(42) - Initializing SQLPlus
+[03-22-2016 19:22:33.374] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(92) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost database:mysql port:3306
+[03-22-2016 19:22:33.375] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
+[03-22-2016 19:22:33.375] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
+[03-22-2016 19:22:33.375] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
+[03-22-2016 19:22:33.376] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
+[03-22-2016 19:22:33.392] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(87) - Attempting to connect to the database
+[03-22-2016 19:22:33.772] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(99) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=localhost, database=mysql, port=3306]
+[03-22-2016 19:22:33.773] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(108) - Query to be executed: "show databases;"
+[03-22-2016 19:22:33.777] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(140) - Attempting to disconnect from the database
+[03-22-2016 19:22:33.778] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(142) - Disconnected from the database
+[03-22-2016 19:22:33.780] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(92) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost database:mysql port:3306
+[03-22-2016 19:22:33.781] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
+[03-22-2016 19:22:33.781] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
+[03-22-2016 19:22:33.781] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
+[03-22-2016 19:22:33.781] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
+[03-22-2016 19:22:33.816] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(87) - Attempting to connect to the database
+[03-22-2016 19:22:33.829] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(99) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=localhost, database=mysql, port=3306]
+[03-22-2016 19:22:33.829] [main] WARN  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(162) - There is not an SQLPlusMySQLConnection
+[03-22-2016 19:22:33.830] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(169) - Returning a SQLPlusMySQLConnection instance null
+[03-22-2016 19:22:33.830] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(142) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost
+[03-22-2016 19:22:33.830] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
+[03-22-2016 19:22:33.830] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
+[03-22-2016 19:22:33.831] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
+[03-22-2016 19:22:33.831] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
+[03-22-2016 19:22:33.868] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(87) - Attempting to connect to the database
+[03-22-2016 19:22:33.877] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(149) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=localhost, database=mysql, port=3306]
+[03-22-2016 19:22:33.877] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(92) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost database:mysql port:3306
+[03-22-2016 19:22:33.877] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
+[03-22-2016 19:22:33.877] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
+[03-22-2016 19:22:33.878] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
+[03-22-2016 19:22:33.878] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
+[03-22-2016 19:22:33.906] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(87) - Attempting to connect to the database
+[03-22-2016 19:22:33.914] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(99) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=localhost, database=mysql, port=3306]
+[03-22-2016 19:22:33.915] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(118) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost port:3306
+[03-22-2016 19:22:33.915] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
+[03-22-2016 19:22:33.915] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost database:mysql port:3306
+[03-22-2016 19:22:33.916] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
+[03-22-2016 19:22:33.916] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
+[03-22-2016 19:22:33.933] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(87) - Attempting to connect to the database
+[03-22-2016 19:22:33.941] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(125) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=localhost, database=mysql, port=3306]
+[03-22-2016 19:22:33.941] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(108) - Query to be executed: "show databases;"
+[03-22-2016 19:22:33.942] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(140) - Attempting to disconnect from the database
+[03-22-2016 19:22:33.942] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(142) - Disconnected from the database
+[03-22-2016 19:22:39.266] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(42) - Initializing SQLPlus
+[03-22-2016 19:22:39.361] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(90) - Create SQLPlusConnection
+[03-22-2016 19:22:40.519] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(183) - User entered host:
+[03-22-2016 19:22:41.100] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(199) - User entered database:
+[03-22-2016 19:22:44.444] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(207) - Port entered: -4
+[03-22-2016 19:22:44.444] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(208) - Port string length: 2
+[03-22-2016 19:22:44.444] [main] WARN  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(218) - The user provided an invalid port number: -4
+[03-22-2016 19:22:47.547] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(207) - Port entered: 
+[03-22-2016 19:22:47.548] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(208) - Port string length: 0
+[03-22-2016 19:22:47.548] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(226) - User entered port:
+[03-22-2016 19:22:50.364] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(241) - User entered username:root
+[03-22-2016 19:22:50.364] [main] INFO  com.mijecu25.sqlplus.SQLPlus.resetConsole(342) - About to reset the console from jline
+[03-22-2016 19:22:50.371] [main] INFO  com.mijecu25.sqlplus.SQLPlus.resetConsole(344) - Reset the console from jline
+[03-22-2016 19:22:51.433] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(283) - User entered some password
+[03-22-2016 19:22:51.433] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(288) - Connection with username, password, and host
+[03-22-2016 19:22:51.433] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(142) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:127.0.0.1
+[03-22-2016 19:22:51.433] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
+[03-22-2016 19:22:51.433] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(44) - Creating SQLPlusMySQLConnection with username:root password:********* host: 127.0.0.1 database:mysql port:3306
+[03-22-2016 19:22:51.433] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(48) - Will connect to a MySQL database using the credentials provided
+[03-22-2016 19:22:51.434] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(75) - Adding the connection properties to connect to a mysql database
+[03-22-2016 19:22:51.452] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(87) - Attempting to connect to the database
+[03-22-2016 19:22:51.792] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(149) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=127.0.0.1, database=mysql, port=3306]
+[03-22-2016 19:22:51.825] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(312) - Created and returning a SQLPlusConnection SQLPlusConnection [username=root, host=127.0.0.1, database=mysql, port=3306]
+[03-22-2016 19:23:44.794] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(164) - Will execute a query from the user
+[03-22-2016 19:23:44.794] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(108) - Query to be executed: "show databases;"
+[03-22-2016 19:23:50.753] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(164) - Will execute a query from the user
+[03-22-2016 19:23:50.754] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(108) - Query to be executed: "show tables;"
+[03-22-2016 19:23:50.761] [main] WARN  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(123) - WARNING: The user entered an invalid query string
+[03-22-2016 19:23:50.761] [main] WARN  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(124) - ERROR: ERROR 1046 (3D000): No database selected
+[03-22-2016 19:23:53.489] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(143) - The user wants to quit SQLPlus
+[03-22-2016 19:23:53.490] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(323) - Attempting to disconnect the SQLPlusConnection
+[03-22-2016 19:23:53.490] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(140) - Attempting to disconnect from the database
+[03-22-2016 19:23:53.493] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(142) - Disconnected from the database
+[03-22-2016 19:23:53.493] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(325) - Disconnected the SQLPlusConnection
+[03-22-2016 19:23:53.493] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(329) - Reset the console from jline
+[03-22-2016 19:23:53.493] [main] INFO  com.mijecu25.sqlplus.SQLPlus.resetConsole(342) - About to reset the console from jline
+[03-22-2016 19:23:53.499] [main] INFO  com.mijecu25.sqlplus.SQLPlus.resetConsole(344) - Reset the console from jline
+[03-22-2016 19:23:53.499] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(332) - Quitting SQLPlus
