@@ -5,6 +5,7 @@ import java.io.Console;
 import java.io.FileReader;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.Properties;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
@@ -21,7 +22,7 @@ import jline.console.ConsoleReader;
  * SQLPlus add alerts to your sql queries.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.3
+ * @version 0.1.0.4
  */
 public class SQLPlus {
 
@@ -32,6 +33,8 @@ public class SQLPlus {
     private static final char END_OF_COMMAND = ';'; 
     private static final String WAIT_FOR_END_OF_COMMAND = "      -> "; 
     private static final String LICENSE_FILE = "LICENSE";
+    private static final String APPLICATION_PROPERTIES_FILE = "application.properties";
+    private static final String APPLICATION_PROPERTIES_FILE_VERSION = "application.version";
     
     private static SQLPlusConnection sqlPlusConnection;
     private static ConsoleReader console;
@@ -39,7 +42,12 @@ public class SQLPlus {
     private static final Logger logger = LogManager.getLogger(SQLPlus.class);
     
     public static void main(String[] args) throws IOException {
-        SQLPlus.logger.info("Initializing SQLPlus");
+     // Create and load the properties from the application properties file
+        Properties properties = new Properties();
+        properties.load(SQLPlus.class.getClassLoader().getResourceAsStream(SQLPlus.APPLICATION_PROPERTIES_FILE));
+        
+        
+        SQLPlus.logger.info("Initializing SQLPlus version " + properties.getProperty(SQLPlus.APPLICATION_PROPERTIES_FILE_VERSION));
         
         // Check if the user is using a valid console (i.e. not from Eclipse)
         if(System.console() == null) {
@@ -59,8 +67,9 @@ public class SQLPlus {
         System.out.println("Welcome to SQLPlus! This program allows you to add alerts to your sql queries.");
         System.out.println("Be sure to use SQLPlus from the command line.");
         System.out.println();
-        // TODO get the version
-        System.out.println("Version: TODO");
+        
+        // Get the version
+        System.out.println("Version: " + properties.getProperty(SQLPlus.APPLICATION_PROPERTIES_FILE_VERSION));
         System.out.println();
         
         // Read the license file
