@@ -1,8 +1,8 @@
 # sqlplus
 
-[![Build Status](https://travis-ci.org/mijecu25/sqlplus.svg?branch=master)](https://travis-ci.org/mijecu25/sqlplus)
-[![Coverage Status](https://coveralls.io/repos/github/mijecu25/sqlplus/badge.svg?branch=master)](https://coveralls.io/github/mijecu25/sqlplus?branch=master)
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/mijecu25/sqlplus/master/LICENSE)
+[![Build Status](https://travis-ci.org/mijecu25/sqlplus.svg?branch=print-sql)](https://travis-ci.org/mijecu25/sqlplus)
+[![Coverage Status](https://coveralls.io/repos/github/mijecu25/sqlplus/badge.svg?branch=print-sql)](https://coveralls.io/github/mijecu25/sqlplus?branch=print-sql)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/mijecu25/sqlplus/print-sql/LICENSE)
 
 Add alerts to your sql queries.
 
