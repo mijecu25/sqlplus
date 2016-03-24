@@ -22,7 +22,7 @@ import jline.console.ConsoleReader;
  * SQLPlus add alerts to your sql queries.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.4
+ * @version 0.1.0.5
  */
 public class SQLPlus {
 
@@ -272,10 +272,7 @@ public class SQLPlus {
         
         // Read the password without echoing the result
         char[] password = javaConsole.readPassword("%s", SQLPlus.PROMPT + "Password:");
-        
-        // Recreate the jline console
-        SQLPlus.console = new ConsoleReader();
-        
+                
         // If the password is null
         if(password == null) {
             // The Console object for the JVM could not be found. Alert the user and throw a
@@ -318,6 +315,9 @@ public class SQLPlus {
         // to minimize the lifetime of sensitive data in memory. Then call the garbage collections
         java.util.Arrays.fill(password, Character.MIN_VALUE);
         System.gc();
+        
+        // Recreate the jline console
+        SQLPlus.console = new ConsoleReader();
            
         SQLPlus.logger.info("Created and returning a SQLPlusConnection " + sqlPlusConnection);     
         return sqlPlusConnection;
