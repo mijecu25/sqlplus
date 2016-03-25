@@ -16,7 +16,7 @@ import com.mijecu25.sqlplus.logger.Messages;
  * SQLPlusConnection abstrac class. Default database is MySQL on port 3306.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.2
+ * @version 0.1.0.3
  *
  */
 public abstract class SQLPlusConnection {
@@ -115,9 +115,9 @@ public abstract class SQLPlusConnection {
             
             System.out.println(result.getMetaData().getColumnCount());      
             
-//            while(result.next()) {      
-//                System.out.println(result.getString(1));        
-//            }
+            while(result.next()) {      
+                System.out.println(result.getString(1));        
+            }
         } catch (SQLException sqle) {
             // This exception can occur if the user entered an invalid query
             SQLPlusConnection.logger.warn(Messages.WARNING + "The user entered an invalid query string");
