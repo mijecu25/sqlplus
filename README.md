@@ -4,7 +4,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/mijecu25/sqlplus/badge.svg?branch=print-sql)](https://coveralls.io/github/mijecu25/sqlplus?branch=print-sql)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/mijecu25/sqlplus/print-sql/LICENSE)
 
-Add alerts to your sql queries.
+A DSL to add alerts to various SQL DML events.
 
 ## License
 
