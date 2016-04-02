@@ -1,7 +1,9 @@
-package com.mijecu25.sqlplus.logger;
+package com.mijecu25.utils.messages;
 
 import org.junit.Assert;
 import org.junit.Test;
+
+import com.mijecu25.utils.messages.Messages;
 
 /**
  * Test for Messages class.

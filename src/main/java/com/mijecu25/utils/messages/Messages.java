@@ -1,4 +1,4 @@
-package com.mijecu25.sqlplus.logger;
+package com.mijecu25.utils.messages;
 
 /**
  * 
