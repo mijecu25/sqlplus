@@ -4,22 +4,66 @@ lexer grammar SQLPlusLex;
 	package com.mijecu25.sqlplus.parser;
 }
 
-LESS_THAN_EQUAL : '<=';
-GREATER_THAN_EQUAL: '>=';
+// TODO delete this
+TODO : 'TODO';
+
+ASTERISK : '*';
+COMMA : ',';
 COLON : ':';
 DASH : '-';
-QUOTE : '\'';
+DOT : '.';
 EQUAL :	'=';
-LESS_THAN :	'<';
 GREATER_THAN : '>';
-NOT_EQ	: '<>' | '!=' | '~='| '^=';
+GREATER_THAN_EQUAL: '>=';
+LEFT_PARENTHESIS : '(';
+LESS_THAN :	'<';
+LESS_THAN_EQUAL : '<=';
+NOT_EQUAL	
+	:	'<>' 
+	| 	'!=' 
+	| 	'~='
+	| 	'^='
+	;
+QUESTION_MARK : '?';
+QUOTE : '\'';
+RIGHT_PARENTHESIS : ')';
 SEMICOLON :	';';
 UNDERSCORE :'_';
-QUESTION_MARK : '?';
+
 
 ALERT
 	:	'alert'
 	|	'ALERT'
+	;
+	
+AFTER
+	:	'after'
+	|	'AFTER'
+	;	
+
+AS
+	: 	'as'
+	|	'AS'
+	;
+	
+BEFORE
+	:	'before'
+	|	'BEFORE'
+	;
+
+CROSS
+	:	'cross'
+	|	'CROSS'
+	;
+	
+DELETE
+	:	'delete'
+	|	'DELETE'
+	;	
+
+FROM
+	:	'from'
+	|	'FROM'
 	;
 
 IF
@@ -31,55 +75,89 @@ IN
 	:	'in'
 	|	'IN'
 	;
+	
+INNER
+	:	'inner'
+	|	'INNER'
+	;
+		
+INSERT
+	: 	'insert'
+	|	'INSERT'
+	;	
+	
+JOIN
+	:	'join'
+	|	'JOIN'
+	;
+	
+LEFT
+	:	'left'
+	|	'LEFT'
+	;
+		
+LIKE	
+	:	'like'
+	|	'LIKE'
+	;
+	
+NATURAL
+	:	'natural'
+	|	'NATURAL'
+	;
 
-// SQL Where keyword
+OJ
+	:	'oj'
+	|	'OJ'
+	;
+	
+ON
+	:	'on'
+	|	'ON'
+	;
+
+OUTER
+	:	'outer'
+	|	'OUTER'
+	;
+
+PARTITION
+	:	'partition'
+	|	'PARTITION'
+	;
+
+RIGHT
+	:	'right'
+	|	'RIGHT'
+	;
+	
+SELECT
+	:	'select'
+	|	'SELECT'
+	;
+		
+STRAIGHT_JOIN
+	:	'straight_join'
+	|	'STRAIGHT_JOIN'
+	;
+			
+UPDATE
+	: 	'update'
+	|	'UPDATE'
+	;	
+
+USING
+	:	'using'
+	|	'USING'
+	;
+
 WHERE
 	: 	'where'
 	|	'WHERE'
 	;
 
-// SQLPlus Before keyword
-BEFORE
-	:	'before'
-	|	'BEFORE'
-	;
-
-// SQLPlus After keyword
-AFTER
-	:	'after'
-	|	'AFTER'
-	;
-
-// SQL Insert statement
-INSERT
-	: 	'insert'
-	|	'INSERT'
-	;
-
-// SQL Delete statement
-DELETE
-	:	'delete'
-	|	'DELETE'
-	;	
-
-// SQL Update statement
-UPDATE
-	: 	'update'
-	|	'UPDATE'
-	;
-
-LIKE	
-	:	'like'
-	|	'LIKE'
-	;
-
 ID
-	:	(
-			('a'..'z')|('A'..'Z')|UNDERSCORE
-		) 
-		(
-			('a'..'z')|('A'..'Z')|UNDERSCORE|('0'..'9')|COLON|DASH|QUOTE
-		)*
+	:	( 'A'..'Z' | 'a'..'z' | '_' | '$') ( 'A'..'Z' | 'a'..'z' | '_' | '$' | '0'..'9' )*
 	;
 
 NEWLINE	
