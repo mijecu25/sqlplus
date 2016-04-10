@@ -81,6 +81,12 @@
             <version>3.5.2</version>
         </dependency>
         
+        <dependency>
+            <groupId>com.mijecu25</groupId>
+            <artifactId>messages</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+        
     </dependencies>
   
     <build>

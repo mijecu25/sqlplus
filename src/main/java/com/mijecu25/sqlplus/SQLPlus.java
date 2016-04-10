@@ -11,9 +11,9 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.mijecu25.messages.Messages;
 import com.mijecu25.sqlplus.connection.SQLPlusConnection;
 import com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection;
-import com.mijecu25.utils.messages.Messages;
 
 import jline.TerminalFactory;
 import jline.console.ConsoleReader;
@@ -22,11 +22,12 @@ import jline.console.ConsoleReader;
  * SQLPlus add alerts to your sql queries.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.6
+ * @version 0.1.0.7
  */
 public class SQLPlus {
 
 //    private static final int    UILENGTH = 80;
+    private static final String PROGRAM_NAME = "SQLPlus";
     private static final String EXIT = "exit";
     private static final String QUIT = "quit";
     private static final String PROMPT = "sqlplus> ";   
@@ -47,25 +48,25 @@ public class SQLPlus {
         properties.load(SQLPlus.class.getClassLoader().getResourceAsStream(SQLPlus.APPLICATION_PROPERTIES_FILE));
         
         
-        SQLPlus.logger.info("Initializing SQLPlus version " + properties.getProperty(SQLPlus.APPLICATION_PROPERTIES_FILE_VERSION));
+        SQLPlus.logger.info("Initializing " + SQLPlus.PROGRAM_NAME + " version " + properties.getProperty(SQLPlus.APPLICATION_PROPERTIES_FILE_VERSION));
         
         // Check if the user is using a valid console (i.e. not from Eclipse)
         if(System.console() == null) {
             // The Console object for the JVM could not be found. Alert the user 
-            SQLPlus.logger.fatal(Messages.FATAL + "A JVM Console object was not found. Try running SQLPlus "
+            SQLPlus.logger.fatal(Messages.FATAL + "A JVM Console object was not found. Try running " + SQLPlus.PROGRAM_NAME
                     + "from the command line");
-            System.out.println(Messages.FATAL + "SQLPlus was not able to find your JVM's Console object. "
-                    + "Try running SQLPlus from the command line.");
+            System.out.println(Messages.FATAL + SQLPlus.PROGRAM_NAME + " was not able to find your JVM's Console object. "
+                    + "Try running " + SQLPlus.PROGRAM_NAME + " from the command line.");
             
             SQLPlus.exitSQLPlus();
           
-            SQLPlus.logger.fatal(Messages.FATAL + Messages.QUIT_ERROR);
+            SQLPlus.logger.fatal(Messages.FATAL + Messages.QUIT_PROGRAM_ERROR(PROGRAM_NAME));
             return ;
         }
                         
         // UI intro
-        System.out.println("Welcome to SQLPlus! This program allows you to add alerts to your sql queries.");
-        System.out.println("Be sure to use SQLPlus from the command line.");
+        System.out.println("Welcome to " + SQLPlus.PROGRAM_NAME + "! This program has a DSL to add alerts to various SQL DML events.");
+        System.out.println("Be sure to use " + SQLPlus.PROGRAM_NAME + " from the command line.");
         System.out.println();
         
         // Get the version
@@ -103,32 +104,32 @@ public class SQLPlus {
         catch(NullPointerException npe) {
             // This exception can occur if the user is running the program where the JVM Console
             // object cannot be found
-            SQLPlus.logger.fatal(Messages.FATAL + Messages.FATAL_EXIT(npe.getClass().getName()));
+            SQLPlus.logger.fatal(Messages.FATAL + Messages.FATAL_EXIT(SQLPlus.PROGRAM_NAME, npe.getClass().getName()));
             System.out.println(Messages.FATAL + Messages.FATAL_EXCEPTION_ACTION(npe.getClass().getSimpleName())
                     + Messages.SPACE + Messages.CHECK_LOG_FILES);
             SQLPlus.exitSQLPlus();
             
-            SQLPlus.logger.fatal(Messages.FATAL + Messages.QUIT_ERROR);
+            SQLPlus.logger.fatal(Messages.FATAL + Messages.QUIT_PROGRAM_ERROR(SQLPlus.PROGRAM_NAME));
             return ;
         }
         catch(SQLException sqle) {
             // This exception can occur when trying to establish a connection
-            SQLPlus.logger.fatal(Messages.FATAL + Messages.FATAL_EXIT(sqle.getClass().getName()));
+            SQLPlus.logger.fatal(Messages.FATAL + Messages.FATAL_EXIT(SQLPlus.PROGRAM_NAME, sqle.getClass().getName()));
             System.out.println(Messages.FATAL + Messages.FATAL_EXCEPTION_ACTION(sqle.getClass().getSimpleName())
                     + Messages.SPACE + Messages.CHECK_LOG_FILES);
             SQLPlus.exitSQLPlus();
             
-            SQLPlus.logger.fatal(Messages.FATAL + Messages.QUIT_ERROR);
+            SQLPlus.logger.fatal(Messages.FATAL + Messages.QUIT_PROGRAM_ERROR(SQLPlus.PROGRAM_NAME));
             return ;
         }
         catch(IllegalArgumentException iae) {
             // This exception can occur when trying to establish a connection
-            SQLPlus.logger.fatal(Messages.FATAL + Messages.FATAL_EXIT(iae.getClass().getName()));
+            SQLPlus.logger.fatal(Messages.FATAL + Messages.FATAL_EXIT(SQLPlus.PROGRAM_NAME, iae.getClass().getName()));
             System.out.println(Messages.FATAL + Messages.FATAL_EXCEPTION_ACTION(iae.getClass().getSimpleName())
                     + Messages.SPACE + Messages.CHECK_LOG_FILES);
             SQLPlus.exitSQLPlus();
             
-            SQLPlus.logger.fatal(Messages.FATAL + Messages.QUIT_ERROR);
+            SQLPlus.logger.fatal(Messages.FATAL + Messages.QUIT_PROGRAM_ERROR(SQLPlus.PROGRAM_NAME));
             return ;
         }
         
@@ -149,7 +150,7 @@ public class SQLPlus {
             
             // Logic to quit
             if(line.equals(SQLPlus.QUIT) || line.equals(SQLPlus.EXIT)) {
-                SQLPlus.logger.info("The user wants to quit SQLPlus");
+                SQLPlus.logger.info("The user wants to quit " + SQLPlus.PROGRAM_NAME);
                 SQLPlus.exitSQLPlus();
                 break;
             }      
@@ -196,7 +197,7 @@ public class SQLPlus {
 //            // The Console object for the JVM could not be found. Alert the user and throw a
 //            // NullPointerException that the caller will handle
 //            SQLPlus.logger.fatal(Messages.FATAL + "The user wants to use a host that is not supported");
-//            System.out.println(Messages.ERROR + "SQLPlus does not support the host that you entered");
+//            System.out.println(Messages.ERROR + SQLPlus.PROGRAM_NAME + " does not support the host that you entered");
 //            
 //            SQLPlus.logger.info("Throwing a " + IllegalArgumentException.class.getSimpleName() + " to the "
 //                    + "calling class");
@@ -262,8 +263,8 @@ public class SQLPlus {
 //            // The Console object for the JVM could not be found. Alert the user and throw a
 //            // NullPointerException that the caller will handle
 //            SQLPlus.logger.fatal("A JVM Console object to enter a password was not found");
-//            System.out.println(Messages.ERROR + "SQLPlus was not able to find your JVM's Console object. "
-//                    + "Try running SQLPlus from the command line.");
+//            System.out.println(Messages.ERROR + SQLPlus.PROGRAM_NAME + " was not able to find your JVM's Console object. "
+//                    + "Try running " + SQLPlus.PROGRAM_NAME + " from the command line.");
 //            
 //            SQLPlus.logger.info("Throwing a " + NullPointerException.class.getSimpleName() + " to the "
 //                    + "calling class");
@@ -278,8 +279,8 @@ public class SQLPlus {
 //            // The Console object for the JVM could not be found. Alert the user and throw a
 //            // NullPointerException that the caller will handle
 //            SQLPlus.logger.fatal("The password captured by the JVM Console object returned null");
-//            System.out.println(Messages.ERROR + "SQLPlus was not able to get the password you entered from"
-//                    + "your JVM's Console object. Try running SQLPlus from the command line or a different"
+//            System.out.println(Messages.ERROR + SQLPlus.PROGRAM_NAME " was not able to get the password you entered from"
+//                    + "your JVM's Console object. Try running " + SQLPlus.PROGRAM_NAME + " from the command line or a different"
 //                    + "terminal program");
 //            
 //            SQLPlus.logger.info("Throwing a " + NullPointerException.class.getSimpleName() + " to the "
@@ -345,7 +346,7 @@ public class SQLPlus {
         SQLPlus.logger.info("Reset the console from jline");
         SQLPlus.resetConsole();
         
-        SQLPlus.logger.info("Quitting SQLPlus");
+        SQLPlus.logger.info("Quitting " + SQLPlus.PROGRAM_NAME);
         System.out.println("Bye");
     }
     

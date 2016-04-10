@@ -11,13 +11,13 @@ import java.util.Properties;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.mijecu25.utils.messages.Messages;
+import com.mijecu25.messages.Messages;
 
 /**
  * SQLPlusConnection abstrac class. Default database is MySQL on port 3306.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.4
+ * @version 0.1.0.5
  */
 public abstract class SQLPlusConnection {
     private static final String LOCALHOST = "127.0.0.1";

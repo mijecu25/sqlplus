@@ -5,13 +5,13 @@ import java.sql.SQLException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.mijecu25.utils.messages.Messages;
+import com.mijecu25.messages.Messages;
 
 /**
  * Singleton class. Default database is MySQL on port 3306.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.2
+ * @version 0.1.0.3
  *
  */
 public class SQLPlusMySQLConnection extends SQLPlusConnection {
