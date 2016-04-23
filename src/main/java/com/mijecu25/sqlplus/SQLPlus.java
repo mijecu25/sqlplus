@@ -22,7 +22,7 @@ import jline.console.ConsoleReader;
  * SQLPlus add alerts to your sql queries.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.7
+ * @version 0.1.0.8
  */
 public class SQLPlus {
 
@@ -185,141 +185,142 @@ public class SQLPlus {
      * @throws SQLException
      */
     private static SQLPlusConnection createSQLPlusConnection() throws IOException, SQLException {                
-//        System.out.println("You will now enter the credentials to connect to your database");
-//
-//        // Add credentials
-//        System.out.print(SQLPlus.PROMPT + "Host(default " + SQLPlusConnection.getDefaultHost() + "): ");
-//        String host = console.readLine().trim();
-//        SQLPlus.logger.info("User entered host:" + host);
-//        
-//        // TODO remove this later when other hosts are supported
-//        if(!host.isEmpty()) {
-//            // The Console object for the JVM could not be found. Alert the user and throw a
-//            // NullPointerException that the caller will handle
-//            SQLPlus.logger.fatal(Messages.FATAL + "The user wants to use a host that is not supported");
-//            System.out.println(Messages.ERROR + SQLPlus.PROGRAM_NAME + " does not support the host that you entered");
-//            
-//            SQLPlus.logger.info("Throwing a " + IllegalArgumentException.class.getSimpleName() + " to the "
-//                    + "calling class");
-//            throw new IllegalArgumentException();  
-//        }
-//        
-//        System.out.print(SQLPlus.PROMPT + "Database(default " + SQLPlusConnection.getDefaultDatabase() + "): ");
-//        String database = console.readLine().trim();
-//        SQLPlus.logger.info("User entered database:" + database);
-//      
-//        String port = "";
-//        
-//        // While the port is not numeric
-//        while(!StringUtils.isNumeric(port)) {
-//            System.out.print(SQLPlus.PROMPT + "Port (default " + SQLPlusConnection.getDefaultPort() + "): ");
-//            port = console.readLine().trim();
-//            SQLPlus.logger.info("Port entered: " + port);
-//            SQLPlus.logger.info("Port string length: " + port.length());
-//            
-//            // If the port is empty
-//            if(port.isEmpty()) {
-//                // Assume that the user wants to use the default port. Continue to the next step
-//                break;
-//            }
-//            
-//            // If the port has more than 5 numbers or is not numberic 
-//            if(port.length() > 5 || !StringUtils.isNumeric(port)) {
-//                SQLPlus.logger.warn("The user provided an invalid port number: " + port);
-//                System.out.println(Messages.WARNING + "You need to provided a valid port number "
-//                        + "from 0 to 65535");
-//                
-//                // Set the port to the empty string to ask the user again
-//                port = "";
-//            }
-//        }
-//        SQLPlus.logger.info("User entered port:" + port);
-//        
-//        String username = "";
-//        
-//        // While the username is empty
-//        while(username.isEmpty()) {
-//            System.out.print(SQLPlus.PROMPT + "Username: ");
-//            username = console.readLine().trim();
-//            
-//            // If the username is empty
-//            if(username.isEmpty()) {
-//                SQLPlus.logger.warn("The user did not provide a username");
-//                System.out.println(Messages.WARNING + "You cannot have an empty username");
-//            }
-//        }
-//        SQLPlus.logger.info("User entered username:" + username);
-//        
-//        // Create a SQLPlusConnection
-//        SQLPlusMySQLConnection sqlPlusConnection = null;
-//        // Reset the jline console since we are going to use the regular console to securely get the password
-//        SQLPlus.resetConsole();
-//        
-//        // Get the console for safe password entry
-//        Console javaConsole = System.console();
-//        
-//        // If the console is null
-//        if(javaConsole == null) {
-//            // The Console object for the JVM could not be found. Alert the user and throw a
-//            // NullPointerException that the caller will handle
-//            SQLPlus.logger.fatal("A JVM Console object to enter a password was not found");
-//            System.out.println(Messages.ERROR + SQLPlus.PROGRAM_NAME + " was not able to find your JVM's Console object. "
-//                    + "Try running " + SQLPlus.PROGRAM_NAME + " from the command line.");
-//            
-//            SQLPlus.logger.info("Throwing a " + NullPointerException.class.getSimpleName() + " to the "
-//                    + "calling class");
-//            throw new NullPointerException();            
-//        }
-//        
-//        // Read the password without echoing the result
-//        char[] password = javaConsole.readPassword("%s", SQLPlus.PROMPT + "Password:");
-//                
-//        // If the password is null
-//        if(password == null) {
-//            // The Console object for the JVM could not be found. Alert the user and throw a
-//            // NullPointerException that the caller will handle
-//            SQLPlus.logger.fatal("The password captured by the JVM Console object returned null");
-//            System.out.println(Messages.ERROR + SQLPlus.PROGRAM_NAME " was not able to get the password you entered from"
-//                    + "your JVM's Console object. Try running " + SQLPlus.PROGRAM_NAME + " from the command line or a different"
-//                    + "terminal program");
-//            
-//            SQLPlus.logger.info("Throwing a " + NullPointerException.class.getSimpleName() + " to the "
-//                    + "calling class");
-//            throw new NullPointerException(); 
-//        }
-//        SQLPlus.logger.info("User entered some password"); 
-//        System.out.println();
-//
-//        // TODO handle different databases
-//        // If the database and port are default
-//        if(database.isEmpty() && port.isEmpty()) {
-//            SQLPlus.logger.info("Connection with username, password, and host");
-//            sqlPlusConnection = SQLPlusMySQLConnection.getConnection(username, password, SQLPlusConnection.getDefaultHost());
-//        }
-//        // If the database is empty but the port is not empty 
-//        else if(database.isEmpty() && !port.isEmpty()) {
-//            SQLPlus.logger.info("Connection with username, password, host, and port");
-//            sqlPlusConnection = SQLPlusMySQLConnection.getConnection(username, password, SQLPlusConnection.getDefaultHost(), port);
-//        }
-//        // If the port is empty but the database is not empty 
-//        else if(port.isEmpty() && !database.isEmpty()) {
-//            SQLPlus.logger.info("Connection with username, password, host, and database");
-//            sqlPlusConnection = SQLPlusMySQLConnection.getConnection(username, password, SQLPlusConnection.getDefaultHost(), database, SQLPlusMySQLConnection.getDefaultPort());
-//        }
-//        // All the values were provided by the user
-//        else {
-//            SQLPlus.logger.info("Connection with all credentials");
-//                sqlPlusConnection = SQLPlusMySQLConnection.getConnection(username, password, SQLPlusConnection.getDefaultHost(), database, port);
-//        }
-//  
-//        // Delete any traces of password in memory by filling the password array with with random characters
-//        // to minimize the lifetime of sensitive data in memory. Then call the garbage collections
-//        java.util.Arrays.fill(password, Character.MIN_VALUE);
-//        System.gc();
-//        
-//        // Recreate the jline console
-//        SQLPlus.console = new ConsoleReader();
+        if(false) {
+        System.out.println("You will now enter the credentials to connect to your database");
+
+        // Add credentials
+        System.out.print(SQLPlus.PROMPT + "Host(default " + SQLPlusConnection.getDefaultHost() + "): ");
+        String host = console.readLine().trim();
+        SQLPlus.logger.info("User entered host:" + host);
         
+        // TODO remove this later when other hosts are supported
+        if(!host.isEmpty()) {
+            // The Console object for the JVM could not be found. Alert the user and throw a
+            // NullPointerException that the caller will handle
+            SQLPlus.logger.fatal(Messages.FATAL + "The user wants to use a host that is not supported");
+            System.out.println(Messages.ERROR + SQLPlus.PROGRAM_NAME + " does not support the host that you entered");
+            
+            SQLPlus.logger.info("Throwing a " + IllegalArgumentException.class.getSimpleName() + " to the "
+                    + "calling class");
+            throw new IllegalArgumentException();  
+        }
+        
+        System.out.print(SQLPlus.PROMPT + "Database(default " + SQLPlusConnection.getDefaultDatabase() + "): ");
+        String database = console.readLine().trim();
+        SQLPlus.logger.info("User entered database:" + database);
+      
+        String port = "";
+        
+        // While the port is not numeric
+        while(!StringUtils.isNumeric(port)) {
+            System.out.print(SQLPlus.PROMPT + "Port (default " + SQLPlusConnection.getDefaultPort() + "): ");
+            port = console.readLine().trim();
+            SQLPlus.logger.info("Port entered: " + port);
+            SQLPlus.logger.info("Port string length: " + port.length());
+            
+            // If the port is empty
+            if(port.isEmpty()) {
+                // Assume that the user wants to use the default port. Continue to the next step
+                break;
+            }
+            
+            // If the port has more than 5 numbers or is not numberic 
+            if(port.length() > 5 || !StringUtils.isNumeric(port)) {
+                SQLPlus.logger.warn("The user provided an invalid port number: " + port);
+                System.out.println(Messages.WARNING + "You need to provided a valid port number "
+                        + "from 0 to 65535");
+                
+                // Set the port to the empty string to ask the user again
+                port = "";
+            }
+        }
+        SQLPlus.logger.info("User entered port:" + port);
+        
+        String username = "";
+        
+        // While the username is empty
+        while(username.isEmpty()) {
+            System.out.print(SQLPlus.PROMPT + "Username: ");
+            username = console.readLine().trim();
+            
+            // If the username is empty
+            if(username.isEmpty()) {
+                SQLPlus.logger.warn("The user did not provide a username");
+                System.out.println(Messages.WARNING + "You cannot have an empty username");
+            }
+        }
+        SQLPlus.logger.info("User entered username:" + username);
+        
+        // Create a SQLPlusConnection
+        SQLPlusMySQLConnection sqlPlusConnection = null;
+        // Reset the jline console since we are going to use the regular console to securely get the password
+        SQLPlus.resetConsole();
+        
+        // Get the console for safe password entry
+        Console javaConsole = System.console();
+        
+        // If the console is null
+        if(javaConsole == null) {
+            // The Console object for the JVM could not be found. Alert the user and throw a
+            // NullPointerException that the caller will handle
+            SQLPlus.logger.fatal("A JVM Console object to enter a password was not found");
+            System.out.println(Messages.ERROR + SQLPlus.PROGRAM_NAME + " was not able to find your JVM's Console object. "
+                    + "Try running " + SQLPlus.PROGRAM_NAME + " from the command line.");
+            
+            SQLPlus.logger.info("Throwing a " + NullPointerException.class.getSimpleName() + " to the "
+                    + "calling class");
+            throw new NullPointerException();            
+        }
+        
+        // Read the password without echoing the result
+        char[] password = javaConsole.readPassword("%s", SQLPlus.PROMPT + "Password:");
+                
+        // If the password is null
+        if(password == null) {
+            // The Console object for the JVM could not be found. Alert the user and throw a
+            // NullPointerException that the caller will handle
+            SQLPlus.logger.fatal("The password captured by the JVM Console object returned null");
+            System.out.println(Messages.ERROR + SQLPlus.PROGRAM_NAME + " was not able to get the password you entered from"
+                    + "your JVM's Console object. Try running " + SQLPlus.PROGRAM_NAME + " from the command line or a different"
+                    + "terminal program");
+            
+            SQLPlus.logger.info("Throwing a " + NullPointerException.class.getSimpleName() + " to the "
+                    + "calling class");
+            throw new NullPointerException(); 
+        }
+        SQLPlus.logger.info("User entered some password"); 
+        System.out.println();
+
+        // TODO handle different databases
+        // If the database and port are default
+        if(database.isEmpty() && port.isEmpty()) {
+            SQLPlus.logger.info("Connection with username, password, and host");
+            sqlPlusConnection = SQLPlusMySQLConnection.getConnection(username, password, SQLPlusConnection.getDefaultHost());
+        }
+        // If the database is empty but the port is not empty 
+        else if(database.isEmpty() && !port.isEmpty()) {
+            SQLPlus.logger.info("Connection with username, password, host, and port");
+            sqlPlusConnection = SQLPlusMySQLConnection.getConnection(username, password, SQLPlusConnection.getDefaultHost(), port);
+        }
+        // If the port is empty but the database is not empty 
+        else if(port.isEmpty() && !database.isEmpty()) {
+            SQLPlus.logger.info("Connection with username, password, host, and database");
+            sqlPlusConnection = SQLPlusMySQLConnection.getConnection(username, password, SQLPlusConnection.getDefaultHost(), database, SQLPlusMySQLConnection.getDefaultPort());
+        }
+        // All the values were provided by the user
+        else {
+            SQLPlus.logger.info("Connection with all credentials");
+                sqlPlusConnection = SQLPlusMySQLConnection.getConnection(username, password, SQLPlusConnection.getDefaultHost(), database, port);
+        }
+  
+        // Delete any traces of password in memory by filling the password array with with random characters
+        // to minimize the lifetime of sensitive data in memory. Then call the garbage collections
+        java.util.Arrays.fill(password, Character.MIN_VALUE);
+        System.gc();
+        
+        // Recreate the jline console
+        SQLPlus.console = new ConsoleReader();
+        }
         
         // TODO remove this which is for testing
         SQLPlus.logger.info("Connection with username, password, and host");

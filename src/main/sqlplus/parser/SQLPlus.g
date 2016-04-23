@@ -4,11 +4,19 @@ import SQLPlusLex;
 
 @header {
 	package com.mijecu25.sqlplus.parser;
+	
+	import com.mijecu25.sqlplus.compiler.core.statement.Statement;
+	import com.mijecu25.sqlplus.compiler.core.statement.ShowDatabasesStatement;
 }
 
 // This is the entry point of the SQLPlus alert program
-sqlplus
-	: 	sql_expression
+sqlplus returns [Statement statement]
+	@init {
+		$statement = null;
+	}
+	: 	sql_statement {
+			statement = $sql_statement.sqlStatement;
+		}
 		// TODO should this be optional 
 	|	sqlplus_alert
 	;
@@ -21,8 +29,33 @@ sqlplus_alert
 			}
 	;
 	
-sql_expression
+sql_statement returns [Statement sqlStatement]
+	@init {
+		$sqlStatement = null;
+	}
 	:	select_statement
+	|	show_statement {
+			$sqlStatement = $show_statement.showStatement;
+		}
+	;
+	
+show_statement returns [Statement showStatement]
+	@init {
+		$showStatement = null;
+	}
+	:	show_databases { 
+			$showStatement = $show_databases.showDatabasesStatement;
+		}			
+	;
+	
+show_databases returns [Statement showDatabasesStatement]
+	@init {
+		$showDatabasesStatement = null;
+	}
+	:	SHOW DATABASES { 
+			System.out.println("Showing databases");
+			$showDatabasesStatement = new ShowDatabasesStatement(); 
+		}
 	;
 
 select_statement
@@ -30,7 +63,7 @@ select_statement
 	;
 	
 select_expression
-	:	SELECT select_list (FROM table_references)?{ System.out.println("SQL Expressions"); }
+	:	SELECT select_list (FROM table_references)?{ System.out.println("SQL Statements"); }
 	;
 	
 select_list
