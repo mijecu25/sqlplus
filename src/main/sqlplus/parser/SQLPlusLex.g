@@ -155,6 +155,16 @@ WHERE
 	: 	'where'
 	|	'WHERE'
 	;
+	
+SHOW
+	:	'show'
+	|	'SHOW'
+	;
+	
+DATABASES
+	:	'databases'
+	|	'DATABASES'
+	;
 
 ID
 	:	( 'A'..'Z' | 'a'..'z' | '_' | '$') ( 'A'..'Z' | 'a'..'z' | '_' | '$' | '0'..'9' )*
