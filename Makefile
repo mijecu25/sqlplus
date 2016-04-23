@@ -4,3 +4,6 @@ generate-code:
 	
 run:
 	@java -cp "./target/sqlplus-0.1.0-SNAPSHOT-complete.jar:$CLASSPATH" com.mijecu25.sqlplus.SQLPlus 
+	
+package:
+	mvn package -DskipTests=true
