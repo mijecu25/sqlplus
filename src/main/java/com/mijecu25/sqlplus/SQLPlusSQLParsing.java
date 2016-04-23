@@ -16,7 +16,7 @@ import net.sf.jsqlparser.util.TablesNamesFinder;
 public class SQLPlusSQLParsing {
 
     public static void main(String[] args) throws JSQLParserException  {
-        String query = "Select * from tab1";
+        String query = "Select databases from x";
         
         Statement stmt = CCJSqlParserUtil.parse(query);
         
