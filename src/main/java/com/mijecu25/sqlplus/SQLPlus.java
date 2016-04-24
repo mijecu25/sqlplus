@@ -28,7 +28,7 @@ import jline.console.ConsoleReader;
  * SQLPlus add alerts to your sql queries.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.9
+ * @version 0.1.0.10
  */
 public class SQLPlus {
 
@@ -183,6 +183,7 @@ public class SQLPlus {
             CommonTokenStream tokens = new CommonTokenStream(lexer);
             SQLPlusParser parser = new SQLPlusParser(tokens);
             
+            // TODO handle this better
             Statement statement;
             try {
                 statement = parser.sqlplus();
@@ -197,12 +198,7 @@ public class SQLPlus {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
             }
-                
             
-            
-//            // Execute the query from the user
-//            SQLPlus.logger.info("Will execute a query from the user");
-//            SQLPlus.sqlPlusConnection.execute(query.toString());
         }
         
     }

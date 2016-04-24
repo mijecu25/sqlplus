@@ -1,9 +1,10 @@
-// $ANTLR 3.5.2 src/main/sqlplus/parser/SQLPlus.g 2016-04-23 16:50:31
+// $ANTLR 3.5.2 src/main/sqlplus/parser/SQLPlus.g 2016-04-24 11:24:55
 
 	package com.mijecu25.sqlplus.parser;
 	
 	import com.mijecu25.sqlplus.compiler.core.statement.Statement;
 	import com.mijecu25.sqlplus.compiler.core.statement.ShowDatabasesStatement;
+	import com.mijecu25.sqlplus.compiler.core.statement.StatementUseDatabase;
 
 
 import org.antlr.runtime.*;
@@ -20,8 +21,8 @@ public class SQLPlusParser extends Parser {
 		"INNER", "INSERT", "JOIN", "LEFT", "LEFT_PARENTHESIS", "LESS_THAN", "LESS_THAN_EQUAL", 
 		"LIKE", "NATURAL", "NEWLINE", "NOT_EQUAL", "OJ", "ON", "OUTER", "PARTITION", 
 		"QUESTION_MARK", "QUOTE", "RIGHT", "RIGHT_PARENTHESIS", "SELECT", "SEMICOLON", 
-		"SHOW", "STRAIGHT_JOIN", "TODO", "UNDERSCORE", "UPDATE", "USING", "WHERE", 
-		"WS"
+		"SHOW", "STRAIGHT_JOIN", "TODO", "UNDERSCORE", "UPDATE", "USE", "USING", 
+		"WHERE", "WS"
 	};
 	public static final int EOF=-1;
 	public static final int AFTER=4;
@@ -69,9 +70,10 @@ public class SQLPlusParser extends Parser {
 	public static final int TODO=46;
 	public static final int UNDERSCORE=47;
 	public static final int UPDATE=48;
-	public static final int USING=49;
-	public static final int WHERE=50;
-	public static final int WS=51;
+	public static final int USE=49;
+	public static final int USING=50;
+	public static final int WHERE=51;
+	public static final int WS=52;
 
 	// delegates
 	public Parser[] getDelegates() {
@@ -94,7 +96,7 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "sqlplus"
-	// src/main/sqlplus/parser/SQLPlus.g:13:1: sqlplus returns [Statement statement] : ( sql_statement | sqlplus_alert );
+	// src/main/sqlplus/parser/SQLPlus.g:14:1: sqlplus returns [Statement statement] : ( sql_statement | sqlplus_alert );
 	public final Statement sqlplus() throws RecognitionException {
 		Statement statement = null;
 
@@ -105,10 +107,10 @@ public class SQLPlusParser extends Parser {
 				statement = null;
 			
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:17:2: ( sql_statement | sqlplus_alert )
+			// src/main/sqlplus/parser/SQLPlus.g:18:2: ( sql_statement | sqlplus_alert )
 			int alt1=2;
 			int LA1_0 = input.LA(1);
-			if ( (LA1_0==SELECT||LA1_0==SHOW) ) {
+			if ( (LA1_0==SELECT||LA1_0==SHOW||LA1_0==USE) ) {
 				alt1=1;
 			}
 			else if ( (LA1_0==ALERT) ) {
@@ -123,7 +125,7 @@ public class SQLPlusParser extends Parser {
 
 			switch (alt1) {
 				case 1 :
-					// src/main/sqlplus/parser/SQLPlus.g:17:5: sql_statement
+					// src/main/sqlplus/parser/SQLPlus.g:18:5: sql_statement
 					{
 					pushFollow(FOLLOW_sql_statement_in_sqlplus35);
 					sql_statement1=sql_statement();
@@ -135,7 +137,7 @@ public class SQLPlusParser extends Parser {
 					}
 					break;
 				case 2 :
-					// src/main/sqlplus/parser/SQLPlus.g:21:4: sqlplus_alert
+					// src/main/sqlplus/parser/SQLPlus.g:22:4: sqlplus_alert
 					{
 					pushFollow(FOLLOW_sqlplus_alert_in_sqlplus45);
 					sqlplus_alert();
@@ -160,11 +162,11 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "sqlplus_alert"
-	// src/main/sqlplus/parser/SQLPlus.g:25:1: sqlplus_alert : ALERT timing data_manipulation_language IN ID IF ID relational_operation match_value SEMICOLON ;
+	// src/main/sqlplus/parser/SQLPlus.g:26:1: sqlplus_alert : ALERT timing data_manipulation_language IN ID IF ID relational_operation match_value SEMICOLON ;
 	public final void sqlplus_alert() throws RecognitionException {
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:26:2: ( ALERT timing data_manipulation_language IN ID IF ID relational_operation match_value SEMICOLON )
-			// src/main/sqlplus/parser/SQLPlus.g:26:4: ALERT timing data_manipulation_language IN ID IF ID relational_operation match_value SEMICOLON
+			// src/main/sqlplus/parser/SQLPlus.g:27:2: ( ALERT timing data_manipulation_language IN ID IF ID relational_operation match_value SEMICOLON )
+			// src/main/sqlplus/parser/SQLPlus.g:27:4: ALERT timing data_manipulation_language IN ID IF ID relational_operation match_value SEMICOLON
 			{
 			match(input,ALERT,FOLLOW_ALERT_in_sqlplus_alert58); 
 			pushFollow(FOLLOW_timing_in_sqlplus_alert60);
@@ -207,36 +209,44 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "sql_statement"
-	// src/main/sqlplus/parser/SQLPlus.g:32:1: sql_statement returns [Statement sqlStatement] : ( select_statement | show_statement );
+	// src/main/sqlplus/parser/SQLPlus.g:33:1: sql_statement returns [Statement sqlStatement] : ( select_statement | show_statement | use_statement );
 	public final Statement sql_statement() throws RecognitionException {
 		Statement sqlStatement = null;
 
 
 		Statement show_statement2 =null;
+		Statement use_statement3 =null;
 
 
 				sqlStatement = null;
 			
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:36:2: ( select_statement | show_statement )
-			int alt2=2;
-			int LA2_0 = input.LA(1);
-			if ( (LA2_0==SELECT) ) {
+			// src/main/sqlplus/parser/SQLPlus.g:37:2: ( select_statement | show_statement | use_statement )
+			int alt2=3;
+			switch ( input.LA(1) ) {
+			case SELECT:
+				{
 				alt2=1;
-			}
-			else if ( (LA2_0==SHOW) ) {
+				}
+				break;
+			case SHOW:
+				{
 				alt2=2;
-			}
-
-			else {
+				}
+				break;
+			case USE:
+				{
+				alt2=3;
+				}
+				break;
+			default:
 				NoViableAltException nvae =
 					new NoViableAltException("", 2, 0, input);
 				throw nvae;
 			}
-
 			switch (alt2) {
 				case 1 :
-					// src/main/sqlplus/parser/SQLPlus.g:36:4: select_statement
+					// src/main/sqlplus/parser/SQLPlus.g:37:4: select_statement
 					{
 					pushFollow(FOLLOW_select_statement_in_sql_statement104);
 					select_statement();
@@ -245,7 +255,7 @@ public class SQLPlusParser extends Parser {
 					}
 					break;
 				case 2 :
-					// src/main/sqlplus/parser/SQLPlus.g:37:4: show_statement
+					// src/main/sqlplus/parser/SQLPlus.g:38:4: show_statement
 					{
 					pushFollow(FOLLOW_show_statement_in_sql_statement109);
 					show_statement2=show_statement();
@@ -253,6 +263,18 @@ public class SQLPlusParser extends Parser {
 
 
 								sqlStatement = show_statement2;
+							
+					}
+					break;
+				case 3 :
+					// src/main/sqlplus/parser/SQLPlus.g:41:4: use_statement
+					{
+					pushFollow(FOLLOW_use_statement_in_sql_statement116);
+					use_statement3=use_statement();
+					state._fsp--;
+
+
+								sqlStatement = use_statement3;
 							
 					}
 					break;
@@ -272,27 +294,104 @@ public class SQLPlusParser extends Parser {
 
 
 
+	// $ANTLR start "use_statement"
+	// src/main/sqlplus/parser/SQLPlus.g:46:1: use_statement returns [Statement useStatement] : use_database ;
+	public final Statement use_statement() throws RecognitionException {
+		Statement useStatement = null;
+
+
+		Statement use_database4 =null;
+
+
+				useStatement = null;
+			
+		try {
+			// src/main/sqlplus/parser/SQLPlus.g:50:2: ( use_database )
+			// src/main/sqlplus/parser/SQLPlus.g:50:4: use_database
+			{
+			pushFollow(FOLLOW_use_database_in_use_statement140);
+			use_database4=use_database();
+			state._fsp--;
+
+
+						useStatement = use_database4;
+					
+			}
+
+		}
+		catch (RecognitionException re) {
+			reportError(re);
+			recover(input,re);
+		}
+		finally {
+			// do for sure before leaving
+		}
+		return useStatement;
+	}
+	// $ANTLR end "use_statement"
+
+
+
+	// $ANTLR start "use_database"
+	// src/main/sqlplus/parser/SQLPlus.g:55:1: use_database returns [Statement useDatabaseStatement] : USE database= schema_name ;
+	public final Statement use_database() throws RecognitionException {
+		Statement useDatabaseStatement = null;
+
+
+		ParserRuleReturnScope database =null;
+
+
+				useDatabaseStatement = null;
+			
+		try {
+			// src/main/sqlplus/parser/SQLPlus.g:59:2: ( USE database= schema_name )
+			// src/main/sqlplus/parser/SQLPlus.g:59:4: USE database= schema_name
+			{
+			match(input,USE,FOLLOW_USE_in_use_database164); 
+			pushFollow(FOLLOW_schema_name_in_use_database173);
+			database=schema_name();
+			state._fsp--;
+
+
+						useDatabaseStatement = new StatementUseDatabase("use " + (database!=null?input.toString(database.start,database.stop):null), (database!=null?input.toString(database.start,database.stop):null));
+					
+			}
+
+		}
+		catch (RecognitionException re) {
+			reportError(re);
+			recover(input,re);
+		}
+		finally {
+			// do for sure before leaving
+		}
+		return useDatabaseStatement;
+	}
+	// $ANTLR end "use_database"
+
+
+
 	// $ANTLR start "show_statement"
-	// src/main/sqlplus/parser/SQLPlus.g:42:1: show_statement returns [Statement showStatement] : show_databases ;
+	// src/main/sqlplus/parser/SQLPlus.g:65:1: show_statement returns [Statement showStatement] : show_databases ;
 	public final Statement show_statement() throws RecognitionException {
 		Statement showStatement = null;
 
 
-		Statement show_databases3 =null;
+		Statement show_databases5 =null;
 
 
 				showStatement = null;
 			
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:46:2: ( show_databases )
-			// src/main/sqlplus/parser/SQLPlus.g:46:4: show_databases
+			// src/main/sqlplus/parser/SQLPlus.g:69:2: ( show_databases )
+			// src/main/sqlplus/parser/SQLPlus.g:69:4: show_databases
 			{
-			pushFollow(FOLLOW_show_databases_in_show_statement133);
-			show_databases3=show_databases();
+			pushFollow(FOLLOW_show_databases_in_show_statement197);
+			show_databases5=show_databases();
 			state._fsp--;
 
 			 
-						showStatement = show_databases3;
+						showStatement = show_databases5;
 					
 			}
 
@@ -311,7 +410,7 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "show_databases"
-	// src/main/sqlplus/parser/SQLPlus.g:51:1: show_databases returns [Statement showDatabasesStatement] : SHOW DATABASES ;
+	// src/main/sqlplus/parser/SQLPlus.g:74:1: show_databases returns [Statement showDatabasesStatement] : SHOW DATABASES ;
 	public final Statement show_databases() throws RecognitionException {
 		Statement showDatabasesStatement = null;
 
@@ -320,11 +419,11 @@ public class SQLPlusParser extends Parser {
 				showDatabasesStatement = null;
 			
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:55:2: ( SHOW DATABASES )
-			// src/main/sqlplus/parser/SQLPlus.g:55:4: SHOW DATABASES
+			// src/main/sqlplus/parser/SQLPlus.g:78:2: ( SHOW DATABASES )
+			// src/main/sqlplus/parser/SQLPlus.g:78:4: SHOW DATABASES
 			{
-			match(input,SHOW,FOLLOW_SHOW_in_show_databases160); 
-			match(input,DATABASES,FOLLOW_DATABASES_in_show_databases162); 
+			match(input,SHOW,FOLLOW_SHOW_in_show_databases224); 
+			match(input,DATABASES,FOLLOW_DATABASES_in_show_databases226); 
 			 
 						showDatabasesStatement = new ShowDatabasesStatement("show databases"); 
 					
@@ -345,13 +444,13 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "select_statement"
-	// src/main/sqlplus/parser/SQLPlus.g:60:1: select_statement : select_expression ;
+	// src/main/sqlplus/parser/SQLPlus.g:83:1: select_statement : select_expression ;
 	public final void select_statement() throws RecognitionException {
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:61:2: ( select_expression )
-			// src/main/sqlplus/parser/SQLPlus.g:61:4: select_expression
+			// src/main/sqlplus/parser/SQLPlus.g:84:2: ( select_expression )
+			// src/main/sqlplus/parser/SQLPlus.g:84:4: select_expression
 			{
-			pushFollow(FOLLOW_select_expression_in_select_statement175);
+			pushFollow(FOLLOW_select_expression_in_select_statement239);
 			select_expression();
 			state._fsp--;
 
@@ -371,18 +470,18 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "select_expression"
-	// src/main/sqlplus/parser/SQLPlus.g:64:1: select_expression : SELECT select_list ( FROM table_references )? ;
+	// src/main/sqlplus/parser/SQLPlus.g:87:1: select_expression : SELECT select_list ( FROM table_references )? ;
 	public final void select_expression() throws RecognitionException {
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:65:2: ( SELECT select_list ( FROM table_references )? )
-			// src/main/sqlplus/parser/SQLPlus.g:65:4: SELECT select_list ( FROM table_references )?
+			// src/main/sqlplus/parser/SQLPlus.g:88:2: ( SELECT select_list ( FROM table_references )? )
+			// src/main/sqlplus/parser/SQLPlus.g:88:4: SELECT select_list ( FROM table_references )?
 			{
-			match(input,SELECT,FOLLOW_SELECT_in_select_expression187); 
-			pushFollow(FOLLOW_select_list_in_select_expression189);
+			match(input,SELECT,FOLLOW_SELECT_in_select_expression251); 
+			pushFollow(FOLLOW_select_list_in_select_expression253);
 			select_list();
 			state._fsp--;
 
-			// src/main/sqlplus/parser/SQLPlus.g:65:23: ( FROM table_references )?
+			// src/main/sqlplus/parser/SQLPlus.g:88:23: ( FROM table_references )?
 			int alt3=2;
 			int LA3_0 = input.LA(1);
 			if ( (LA3_0==FROM) ) {
@@ -390,10 +489,10 @@ public class SQLPlusParser extends Parser {
 			}
 			switch (alt3) {
 				case 1 :
-					// src/main/sqlplus/parser/SQLPlus.g:65:24: FROM table_references
+					// src/main/sqlplus/parser/SQLPlus.g:88:24: FROM table_references
 					{
-					match(input,FROM,FOLLOW_FROM_in_select_expression192); 
-					pushFollow(FOLLOW_table_references_in_select_expression194);
+					match(input,FROM,FOLLOW_FROM_in_select_expression256); 
+					pushFollow(FOLLOW_table_references_in_select_expression258);
 					table_references();
 					state._fsp--;
 
@@ -419,10 +518,10 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "select_list"
-	// src/main/sqlplus/parser/SQLPlus.g:68:1: select_list : ( displayed_column ( COMMA displayed_column )* | ASTERISK );
+	// src/main/sqlplus/parser/SQLPlus.g:91:1: select_list : ( displayed_column ( COMMA displayed_column )* | ASTERISK );
 	public final void select_list() throws RecognitionException {
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:69:2: ( displayed_column ( COMMA displayed_column )* | ASTERISK )
+			// src/main/sqlplus/parser/SQLPlus.g:92:2: ( displayed_column ( COMMA displayed_column )* | ASTERISK )
 			int alt5=2;
 			int LA5_0 = input.LA(1);
 			if ( (LA5_0==ID) ) {
@@ -440,13 +539,13 @@ public class SQLPlusParser extends Parser {
 
 			switch (alt5) {
 				case 1 :
-					// src/main/sqlplus/parser/SQLPlus.g:69:4: displayed_column ( COMMA displayed_column )*
+					// src/main/sqlplus/parser/SQLPlus.g:92:4: displayed_column ( COMMA displayed_column )*
 					{
-					pushFollow(FOLLOW_displayed_column_in_select_list209);
+					pushFollow(FOLLOW_displayed_column_in_select_list273);
 					displayed_column();
 					state._fsp--;
 
-					// src/main/sqlplus/parser/SQLPlus.g:69:21: ( COMMA displayed_column )*
+					// src/main/sqlplus/parser/SQLPlus.g:92:21: ( COMMA displayed_column )*
 					loop4:
 					while (true) {
 						int alt4=2;
@@ -457,10 +556,10 @@ public class SQLPlusParser extends Parser {
 
 						switch (alt4) {
 						case 1 :
-							// src/main/sqlplus/parser/SQLPlus.g:69:22: COMMA displayed_column
+							// src/main/sqlplus/parser/SQLPlus.g:92:22: COMMA displayed_column
 							{
-							match(input,COMMA,FOLLOW_COMMA_in_select_list212); 
-							pushFollow(FOLLOW_displayed_column_in_select_list214);
+							match(input,COMMA,FOLLOW_COMMA_in_select_list276); 
+							pushFollow(FOLLOW_displayed_column_in_select_list278);
 							displayed_column();
 							state._fsp--;
 
@@ -475,9 +574,9 @@ public class SQLPlusParser extends Parser {
 					}
 					break;
 				case 2 :
-					// src/main/sqlplus/parser/SQLPlus.g:70:5: ASTERISK
+					// src/main/sqlplus/parser/SQLPlus.g:93:5: ASTERISK
 					{
-					match(input,ASTERISK,FOLLOW_ASTERISK_in_select_list223); 
+					match(input,ASTERISK,FOLLOW_ASTERISK_in_select_list287); 
 					}
 					break;
 
@@ -496,10 +595,10 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "displayed_column"
-	// src/main/sqlplus/parser/SQLPlus.g:73:1: displayed_column : ( table_spec DOT ASTERISK | column_spec ( alias )? );
+	// src/main/sqlplus/parser/SQLPlus.g:96:1: displayed_column : ( table_spec DOT ASTERISK | column_spec ( alias )? );
 	public final void displayed_column() throws RecognitionException {
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:74:2: ( table_spec DOT ASTERISK | column_spec ( alias )? )
+			// src/main/sqlplus/parser/SQLPlus.g:97:2: ( table_spec DOT ASTERISK | column_spec ( alias )? )
 			int alt7=2;
 			int LA7_0 = input.LA(1);
 			if ( (LA7_0==ID) ) {
@@ -596,24 +695,24 @@ public class SQLPlusParser extends Parser {
 
 			switch (alt7) {
 				case 1 :
-					// src/main/sqlplus/parser/SQLPlus.g:74:4: table_spec DOT ASTERISK
+					// src/main/sqlplus/parser/SQLPlus.g:97:4: table_spec DOT ASTERISK
 					{
-					pushFollow(FOLLOW_table_spec_in_displayed_column236);
+					pushFollow(FOLLOW_table_spec_in_displayed_column300);
 					table_spec();
 					state._fsp--;
 
-					match(input,DOT,FOLLOW_DOT_in_displayed_column238); 
-					match(input,ASTERISK,FOLLOW_ASTERISK_in_displayed_column240); 
+					match(input,DOT,FOLLOW_DOT_in_displayed_column302); 
+					match(input,ASTERISK,FOLLOW_ASTERISK_in_displayed_column304); 
 					}
 					break;
 				case 2 :
-					// src/main/sqlplus/parser/SQLPlus.g:75:4: column_spec ( alias )?
+					// src/main/sqlplus/parser/SQLPlus.g:98:4: column_spec ( alias )?
 					{
-					pushFollow(FOLLOW_column_spec_in_displayed_column245);
+					pushFollow(FOLLOW_column_spec_in_displayed_column309);
 					column_spec();
 					state._fsp--;
 
-					// src/main/sqlplus/parser/SQLPlus.g:75:16: ( alias )?
+					// src/main/sqlplus/parser/SQLPlus.g:98:16: ( alias )?
 					int alt6=2;
 					int LA6_0 = input.LA(1);
 					if ( (LA6_0==AS||LA6_0==ID) ) {
@@ -621,9 +720,9 @@ public class SQLPlusParser extends Parser {
 					}
 					switch (alt6) {
 						case 1 :
-							// src/main/sqlplus/parser/SQLPlus.g:75:17: alias
+							// src/main/sqlplus/parser/SQLPlus.g:98:17: alias
 							{
-							pushFollow(FOLLOW_alias_in_displayed_column248);
+							pushFollow(FOLLOW_alias_in_displayed_column312);
 							alias();
 							state._fsp--;
 
@@ -650,17 +749,17 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "table_references"
-	// src/main/sqlplus/parser/SQLPlus.g:78:1: table_references : table_reference ( COMMA table_reference )* ;
+	// src/main/sqlplus/parser/SQLPlus.g:101:1: table_references : table_reference ( COMMA table_reference )* ;
 	public final void table_references() throws RecognitionException {
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:79:2: ( table_reference ( COMMA table_reference )* )
-			// src/main/sqlplus/parser/SQLPlus.g:79:4: table_reference ( COMMA table_reference )*
+			// src/main/sqlplus/parser/SQLPlus.g:102:2: ( table_reference ( COMMA table_reference )* )
+			// src/main/sqlplus/parser/SQLPlus.g:102:4: table_reference ( COMMA table_reference )*
 			{
-			pushFollow(FOLLOW_table_reference_in_table_references261);
+			pushFollow(FOLLOW_table_reference_in_table_references325);
 			table_reference();
 			state._fsp--;
 
-			// src/main/sqlplus/parser/SQLPlus.g:79:20: ( COMMA table_reference )*
+			// src/main/sqlplus/parser/SQLPlus.g:102:20: ( COMMA table_reference )*
 			loop8:
 			while (true) {
 				int alt8=2;
@@ -671,10 +770,10 @@ public class SQLPlusParser extends Parser {
 
 				switch (alt8) {
 				case 1 :
-					// src/main/sqlplus/parser/SQLPlus.g:79:21: COMMA table_reference
+					// src/main/sqlplus/parser/SQLPlus.g:102:21: COMMA table_reference
 					{
-					match(input,COMMA,FOLLOW_COMMA_in_table_references264); 
-					pushFollow(FOLLOW_table_reference_in_table_references266);
+					match(input,COMMA,FOLLOW_COMMA_in_table_references328); 
+					pushFollow(FOLLOW_table_reference_in_table_references330);
 					table_reference();
 					state._fsp--;
 
@@ -702,13 +801,13 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "table_reference"
-	// src/main/sqlplus/parser/SQLPlus.g:82:1: table_reference : table_atom ;
+	// src/main/sqlplus/parser/SQLPlus.g:105:1: table_reference : table_atom ;
 	public final void table_reference() throws RecognitionException {
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:83:2: ( table_atom )
-			// src/main/sqlplus/parser/SQLPlus.g:84:9: table_atom
+			// src/main/sqlplus/parser/SQLPlus.g:106:2: ( table_atom )
+			// src/main/sqlplus/parser/SQLPlus.g:107:9: table_atom
 			{
-			pushFollow(FOLLOW_table_atom_in_table_reference285);
+			pushFollow(FOLLOW_table_atom_in_table_reference349);
 			table_atom();
 			state._fsp--;
 
@@ -728,17 +827,17 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "table_factor1"
-	// src/main/sqlplus/parser/SQLPlus.g:87:1: table_factor1 : table_factor2 ( ( INNER | CROSS )? JOIN table_atom ( join_condition )? )? ;
+	// src/main/sqlplus/parser/SQLPlus.g:110:1: table_factor1 : table_factor2 ( ( INNER | CROSS )? JOIN table_atom ( join_condition )? )? ;
 	public final void table_factor1() throws RecognitionException {
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:88:2: ( table_factor2 ( ( INNER | CROSS )? JOIN table_atom ( join_condition )? )? )
-			// src/main/sqlplus/parser/SQLPlus.g:88:4: table_factor2 ( ( INNER | CROSS )? JOIN table_atom ( join_condition )? )?
+			// src/main/sqlplus/parser/SQLPlus.g:111:2: ( table_factor2 ( ( INNER | CROSS )? JOIN table_atom ( join_condition )? )? )
+			// src/main/sqlplus/parser/SQLPlus.g:111:4: table_factor2 ( ( INNER | CROSS )? JOIN table_atom ( join_condition )? )?
 			{
-			pushFollow(FOLLOW_table_factor2_in_table_factor1296);
+			pushFollow(FOLLOW_table_factor2_in_table_factor1360);
 			table_factor2();
 			state._fsp--;
 
-			// src/main/sqlplus/parser/SQLPlus.g:88:18: ( ( INNER | CROSS )? JOIN table_atom ( join_condition )? )?
+			// src/main/sqlplus/parser/SQLPlus.g:111:18: ( ( INNER | CROSS )? JOIN table_atom ( join_condition )? )?
 			int alt11=2;
 			int LA11_0 = input.LA(1);
 			if ( (LA11_0==CROSS||LA11_0==INNER||LA11_0==JOIN) ) {
@@ -746,9 +845,9 @@ public class SQLPlusParser extends Parser {
 			}
 			switch (alt11) {
 				case 1 :
-					// src/main/sqlplus/parser/SQLPlus.g:88:19: ( INNER | CROSS )? JOIN table_atom ( join_condition )?
+					// src/main/sqlplus/parser/SQLPlus.g:111:19: ( INNER | CROSS )? JOIN table_atom ( join_condition )?
 					{
-					// src/main/sqlplus/parser/SQLPlus.g:88:19: ( INNER | CROSS )?
+					// src/main/sqlplus/parser/SQLPlus.g:111:19: ( INNER | CROSS )?
 					int alt9=2;
 					int LA9_0 = input.LA(1);
 					if ( (LA9_0==CROSS||LA9_0==INNER) ) {
@@ -771,12 +870,12 @@ public class SQLPlusParser extends Parser {
 
 					}
 
-					match(input,JOIN,FOLLOW_JOIN_in_table_factor1308); 
-					pushFollow(FOLLOW_table_atom_in_table_factor1310);
+					match(input,JOIN,FOLLOW_JOIN_in_table_factor1372); 
+					pushFollow(FOLLOW_table_atom_in_table_factor1374);
 					table_atom();
 					state._fsp--;
 
-					// src/main/sqlplus/parser/SQLPlus.g:88:52: ( join_condition )?
+					// src/main/sqlplus/parser/SQLPlus.g:111:52: ( join_condition )?
 					int alt10=2;
 					int LA10_0 = input.LA(1);
 					if ( (LA10_0==ON||LA10_0==USING) ) {
@@ -784,9 +883,9 @@ public class SQLPlusParser extends Parser {
 					}
 					switch (alt10) {
 						case 1 :
-							// src/main/sqlplus/parser/SQLPlus.g:88:53: join_condition
+							// src/main/sqlplus/parser/SQLPlus.g:111:53: join_condition
 							{
-							pushFollow(FOLLOW_join_condition_in_table_factor1313);
+							pushFollow(FOLLOW_join_condition_in_table_factor1377);
 							join_condition();
 							state._fsp--;
 
@@ -816,17 +915,17 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "table_factor2"
-	// src/main/sqlplus/parser/SQLPlus.g:91:1: table_factor2 : table_factor3 ( STRAIGHT_JOIN table_atom ( ON expression )? )? ;
+	// src/main/sqlplus/parser/SQLPlus.g:114:1: table_factor2 : table_factor3 ( STRAIGHT_JOIN table_atom ( ON expression )? )? ;
 	public final void table_factor2() throws RecognitionException {
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:92:2: ( table_factor3 ( STRAIGHT_JOIN table_atom ( ON expression )? )? )
-			// src/main/sqlplus/parser/SQLPlus.g:92:4: table_factor3 ( STRAIGHT_JOIN table_atom ( ON expression )? )?
+			// src/main/sqlplus/parser/SQLPlus.g:115:2: ( table_factor3 ( STRAIGHT_JOIN table_atom ( ON expression )? )? )
+			// src/main/sqlplus/parser/SQLPlus.g:115:4: table_factor3 ( STRAIGHT_JOIN table_atom ( ON expression )? )?
 			{
-			pushFollow(FOLLOW_table_factor3_in_table_factor2329);
+			pushFollow(FOLLOW_table_factor3_in_table_factor2393);
 			table_factor3();
 			state._fsp--;
 
-			// src/main/sqlplus/parser/SQLPlus.g:92:18: ( STRAIGHT_JOIN table_atom ( ON expression )? )?
+			// src/main/sqlplus/parser/SQLPlus.g:115:18: ( STRAIGHT_JOIN table_atom ( ON expression )? )?
 			int alt13=2;
 			int LA13_0 = input.LA(1);
 			if ( (LA13_0==STRAIGHT_JOIN) ) {
@@ -834,14 +933,14 @@ public class SQLPlusParser extends Parser {
 			}
 			switch (alt13) {
 				case 1 :
-					// src/main/sqlplus/parser/SQLPlus.g:92:19: STRAIGHT_JOIN table_atom ( ON expression )?
+					// src/main/sqlplus/parser/SQLPlus.g:115:19: STRAIGHT_JOIN table_atom ( ON expression )?
 					{
-					match(input,STRAIGHT_JOIN,FOLLOW_STRAIGHT_JOIN_in_table_factor2332); 
-					pushFollow(FOLLOW_table_atom_in_table_factor2334);
+					match(input,STRAIGHT_JOIN,FOLLOW_STRAIGHT_JOIN_in_table_factor2396); 
+					pushFollow(FOLLOW_table_atom_in_table_factor2398);
 					table_atom();
 					state._fsp--;
 
-					// src/main/sqlplus/parser/SQLPlus.g:92:44: ( ON expression )?
+					// src/main/sqlplus/parser/SQLPlus.g:115:44: ( ON expression )?
 					int alt12=2;
 					int LA12_0 = input.LA(1);
 					if ( (LA12_0==ON) ) {
@@ -849,10 +948,10 @@ public class SQLPlusParser extends Parser {
 					}
 					switch (alt12) {
 						case 1 :
-							// src/main/sqlplus/parser/SQLPlus.g:92:45: ON expression
+							// src/main/sqlplus/parser/SQLPlus.g:115:45: ON expression
 							{
-							match(input,ON,FOLLOW_ON_in_table_factor2337); 
-							pushFollow(FOLLOW_expression_in_table_factor2339);
+							match(input,ON,FOLLOW_ON_in_table_factor2401); 
+							pushFollow(FOLLOW_expression_in_table_factor2403);
 							expression();
 							state._fsp--;
 
@@ -882,17 +981,17 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "table_factor3"
-	// src/main/sqlplus/parser/SQLPlus.g:95:1: table_factor3 : table_factor4 ( ( LEFT | RIGHT ) ( OUTER )? JOIN table_factor4 join_condition )? ;
+	// src/main/sqlplus/parser/SQLPlus.g:118:1: table_factor3 : table_factor4 ( ( LEFT | RIGHT ) ( OUTER )? JOIN table_factor4 join_condition )? ;
 	public final void table_factor3() throws RecognitionException {
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:96:2: ( table_factor4 ( ( LEFT | RIGHT ) ( OUTER )? JOIN table_factor4 join_condition )? )
-			// src/main/sqlplus/parser/SQLPlus.g:96:4: table_factor4 ( ( LEFT | RIGHT ) ( OUTER )? JOIN table_factor4 join_condition )?
+			// src/main/sqlplus/parser/SQLPlus.g:119:2: ( table_factor4 ( ( LEFT | RIGHT ) ( OUTER )? JOIN table_factor4 join_condition )? )
+			// src/main/sqlplus/parser/SQLPlus.g:119:4: table_factor4 ( ( LEFT | RIGHT ) ( OUTER )? JOIN table_factor4 join_condition )?
 			{
-			pushFollow(FOLLOW_table_factor4_in_table_factor3354);
+			pushFollow(FOLLOW_table_factor4_in_table_factor3418);
 			table_factor4();
 			state._fsp--;
 
-			// src/main/sqlplus/parser/SQLPlus.g:96:18: ( ( LEFT | RIGHT ) ( OUTER )? JOIN table_factor4 join_condition )?
+			// src/main/sqlplus/parser/SQLPlus.g:119:18: ( ( LEFT | RIGHT ) ( OUTER )? JOIN table_factor4 join_condition )?
 			int alt15=2;
 			int LA15_0 = input.LA(1);
 			if ( (LA15_0==LEFT||LA15_0==RIGHT) ) {
@@ -900,7 +999,7 @@ public class SQLPlusParser extends Parser {
 			}
 			switch (alt15) {
 				case 1 :
-					// src/main/sqlplus/parser/SQLPlus.g:96:19: ( LEFT | RIGHT ) ( OUTER )? JOIN table_factor4 join_condition
+					// src/main/sqlplus/parser/SQLPlus.g:119:19: ( LEFT | RIGHT ) ( OUTER )? JOIN table_factor4 join_condition
 					{
 					if ( input.LA(1)==LEFT||input.LA(1)==RIGHT ) {
 						input.consume();
@@ -910,7 +1009,7 @@ public class SQLPlusParser extends Parser {
 						MismatchedSetException mse = new MismatchedSetException(null,input);
 						throw mse;
 					}
-					// src/main/sqlplus/parser/SQLPlus.g:96:32: ( OUTER )?
+					// src/main/sqlplus/parser/SQLPlus.g:119:32: ( OUTER )?
 					int alt14=2;
 					int LA14_0 = input.LA(1);
 					if ( (LA14_0==OUTER) ) {
@@ -918,20 +1017,20 @@ public class SQLPlusParser extends Parser {
 					}
 					switch (alt14) {
 						case 1 :
-							// src/main/sqlplus/parser/SQLPlus.g:96:33: OUTER
+							// src/main/sqlplus/parser/SQLPlus.g:119:33: OUTER
 							{
-							match(input,OUTER,FOLLOW_OUTER_in_table_factor3364); 
+							match(input,OUTER,FOLLOW_OUTER_in_table_factor3428); 
 							}
 							break;
 
 					}
 
-					match(input,JOIN,FOLLOW_JOIN_in_table_factor3368); 
-					pushFollow(FOLLOW_table_factor4_in_table_factor3370);
+					match(input,JOIN,FOLLOW_JOIN_in_table_factor3432); 
+					pushFollow(FOLLOW_table_factor4_in_table_factor3434);
 					table_factor4();
 					state._fsp--;
 
-					pushFollow(FOLLOW_join_condition_in_table_factor3372);
+					pushFollow(FOLLOW_join_condition_in_table_factor3436);
 					join_condition();
 					state._fsp--;
 
@@ -956,17 +1055,17 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "table_factor4"
-	// src/main/sqlplus/parser/SQLPlus.g:99:1: table_factor4 : table_atom ( NATURAL ( ( LEFT | RIGHT ) ( OUTER )? )? JOIN table_atom )? ;
+	// src/main/sqlplus/parser/SQLPlus.g:122:1: table_factor4 : table_atom ( NATURAL ( ( LEFT | RIGHT ) ( OUTER )? )? JOIN table_atom )? ;
 	public final void table_factor4() throws RecognitionException {
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:100:2: ( table_atom ( NATURAL ( ( LEFT | RIGHT ) ( OUTER )? )? JOIN table_atom )? )
-			// src/main/sqlplus/parser/SQLPlus.g:100:4: table_atom ( NATURAL ( ( LEFT | RIGHT ) ( OUTER )? )? JOIN table_atom )?
+			// src/main/sqlplus/parser/SQLPlus.g:123:2: ( table_atom ( NATURAL ( ( LEFT | RIGHT ) ( OUTER )? )? JOIN table_atom )? )
+			// src/main/sqlplus/parser/SQLPlus.g:123:4: table_atom ( NATURAL ( ( LEFT | RIGHT ) ( OUTER )? )? JOIN table_atom )?
 			{
-			pushFollow(FOLLOW_table_atom_in_table_factor4386);
+			pushFollow(FOLLOW_table_atom_in_table_factor4450);
 			table_atom();
 			state._fsp--;
 
-			// src/main/sqlplus/parser/SQLPlus.g:100:15: ( NATURAL ( ( LEFT | RIGHT ) ( OUTER )? )? JOIN table_atom )?
+			// src/main/sqlplus/parser/SQLPlus.g:123:15: ( NATURAL ( ( LEFT | RIGHT ) ( OUTER )? )? JOIN table_atom )?
 			int alt18=2;
 			int LA18_0 = input.LA(1);
 			if ( (LA18_0==NATURAL) ) {
@@ -974,10 +1073,10 @@ public class SQLPlusParser extends Parser {
 			}
 			switch (alt18) {
 				case 1 :
-					// src/main/sqlplus/parser/SQLPlus.g:100:16: NATURAL ( ( LEFT | RIGHT ) ( OUTER )? )? JOIN table_atom
+					// src/main/sqlplus/parser/SQLPlus.g:123:16: NATURAL ( ( LEFT | RIGHT ) ( OUTER )? )? JOIN table_atom
 					{
-					match(input,NATURAL,FOLLOW_NATURAL_in_table_factor4389); 
-					// src/main/sqlplus/parser/SQLPlus.g:100:24: ( ( LEFT | RIGHT ) ( OUTER )? )?
+					match(input,NATURAL,FOLLOW_NATURAL_in_table_factor4453); 
+					// src/main/sqlplus/parser/SQLPlus.g:123:24: ( ( LEFT | RIGHT ) ( OUTER )? )?
 					int alt17=2;
 					int LA17_0 = input.LA(1);
 					if ( (LA17_0==LEFT||LA17_0==RIGHT) ) {
@@ -985,7 +1084,7 @@ public class SQLPlusParser extends Parser {
 					}
 					switch (alt17) {
 						case 1 :
-							// src/main/sqlplus/parser/SQLPlus.g:100:25: ( LEFT | RIGHT ) ( OUTER )?
+							// src/main/sqlplus/parser/SQLPlus.g:123:25: ( LEFT | RIGHT ) ( OUTER )?
 							{
 							if ( input.LA(1)==LEFT||input.LA(1)==RIGHT ) {
 								input.consume();
@@ -995,7 +1094,7 @@ public class SQLPlusParser extends Parser {
 								MismatchedSetException mse = new MismatchedSetException(null,input);
 								throw mse;
 							}
-							// src/main/sqlplus/parser/SQLPlus.g:100:38: ( OUTER )?
+							// src/main/sqlplus/parser/SQLPlus.g:123:38: ( OUTER )?
 							int alt16=2;
 							int LA16_0 = input.LA(1);
 							if ( (LA16_0==OUTER) ) {
@@ -1003,9 +1102,9 @@ public class SQLPlusParser extends Parser {
 							}
 							switch (alt16) {
 								case 1 :
-									// src/main/sqlplus/parser/SQLPlus.g:100:39: OUTER
+									// src/main/sqlplus/parser/SQLPlus.g:123:39: OUTER
 									{
-									match(input,OUTER,FOLLOW_OUTER_in_table_factor4399); 
+									match(input,OUTER,FOLLOW_OUTER_in_table_factor4463); 
 									}
 									break;
 
@@ -1016,8 +1115,8 @@ public class SQLPlusParser extends Parser {
 
 					}
 
-					match(input,JOIN,FOLLOW_JOIN_in_table_factor4405); 
-					pushFollow(FOLLOW_table_atom_in_table_factor4407);
+					match(input,JOIN,FOLLOW_JOIN_in_table_factor4469); 
+					pushFollow(FOLLOW_table_atom_in_table_factor4471);
 					table_atom();
 					state._fsp--;
 
@@ -1042,10 +1141,10 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "table_atom"
-	// src/main/sqlplus/parser/SQLPlus.g:103:1: table_atom : ( table_spec ( partition_clause )? ( alias )? ( index_hint_list )? | subquery alias | LEFT_PARENTHESIS table_references RIGHT_PARENTHESIS | OJ table_reference LEFT OUTER JOIN table_reference ON expression );
+	// src/main/sqlplus/parser/SQLPlus.g:126:1: table_atom : ( table_spec ( partition_clause )? ( alias )? ( index_hint_list )? | subquery alias | LEFT_PARENTHESIS table_references RIGHT_PARENTHESIS | OJ table_reference LEFT OUTER JOIN table_reference ON expression );
 	public final void table_atom() throws RecognitionException {
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:104:2: ( table_spec ( partition_clause )? ( alias )? ( index_hint_list )? | subquery alias | LEFT_PARENTHESIS table_references RIGHT_PARENTHESIS | OJ table_reference LEFT OUTER JOIN table_reference ON expression )
+			// src/main/sqlplus/parser/SQLPlus.g:127:2: ( table_spec ( partition_clause )? ( alias )? ( index_hint_list )? | subquery alias | LEFT_PARENTHESIS table_references RIGHT_PARENTHESIS | OJ table_reference LEFT OUTER JOIN table_reference ON expression )
 			int alt22=4;
 			switch ( input.LA(1) ) {
 			case ID:
@@ -1089,13 +1188,13 @@ public class SQLPlusParser extends Parser {
 			}
 			switch (alt22) {
 				case 1 :
-					// src/main/sqlplus/parser/SQLPlus.g:104:4: table_spec ( partition_clause )? ( alias )? ( index_hint_list )?
+					// src/main/sqlplus/parser/SQLPlus.g:127:4: table_spec ( partition_clause )? ( alias )? ( index_hint_list )?
 					{
-					pushFollow(FOLLOW_table_spec_in_table_atom421);
+					pushFollow(FOLLOW_table_spec_in_table_atom485);
 					table_spec();
 					state._fsp--;
 
-					// src/main/sqlplus/parser/SQLPlus.g:104:15: ( partition_clause )?
+					// src/main/sqlplus/parser/SQLPlus.g:127:15: ( partition_clause )?
 					int alt19=2;
 					int LA19_0 = input.LA(1);
 					if ( (LA19_0==PARTITION) ) {
@@ -1103,9 +1202,9 @@ public class SQLPlusParser extends Parser {
 					}
 					switch (alt19) {
 						case 1 :
-							// src/main/sqlplus/parser/SQLPlus.g:104:16: partition_clause
+							// src/main/sqlplus/parser/SQLPlus.g:127:16: partition_clause
 							{
-							pushFollow(FOLLOW_partition_clause_in_table_atom424);
+							pushFollow(FOLLOW_partition_clause_in_table_atom488);
 							partition_clause();
 							state._fsp--;
 
@@ -1114,7 +1213,7 @@ public class SQLPlusParser extends Parser {
 
 					}
 
-					// src/main/sqlplus/parser/SQLPlus.g:104:35: ( alias )?
+					// src/main/sqlplus/parser/SQLPlus.g:127:35: ( alias )?
 					int alt20=2;
 					int LA20_0 = input.LA(1);
 					if ( (LA20_0==AS||LA20_0==ID) ) {
@@ -1122,9 +1221,9 @@ public class SQLPlusParser extends Parser {
 					}
 					switch (alt20) {
 						case 1 :
-							// src/main/sqlplus/parser/SQLPlus.g:104:36: alias
+							// src/main/sqlplus/parser/SQLPlus.g:127:36: alias
 							{
-							pushFollow(FOLLOW_alias_in_table_atom429);
+							pushFollow(FOLLOW_alias_in_table_atom493);
 							alias();
 							state._fsp--;
 
@@ -1133,7 +1232,7 @@ public class SQLPlusParser extends Parser {
 
 					}
 
-					// src/main/sqlplus/parser/SQLPlus.g:104:44: ( index_hint_list )?
+					// src/main/sqlplus/parser/SQLPlus.g:127:44: ( index_hint_list )?
 					int alt21=2;
 					int LA21_0 = input.LA(1);
 					if ( (LA21_0==TODO) ) {
@@ -1141,9 +1240,9 @@ public class SQLPlusParser extends Parser {
 					}
 					switch (alt21) {
 						case 1 :
-							// src/main/sqlplus/parser/SQLPlus.g:104:45: index_hint_list
+							// src/main/sqlplus/parser/SQLPlus.g:127:45: index_hint_list
 							{
-							pushFollow(FOLLOW_index_hint_list_in_table_atom434);
+							pushFollow(FOLLOW_index_hint_list_in_table_atom498);
 							index_hint_list();
 							state._fsp--;
 
@@ -1155,46 +1254,46 @@ public class SQLPlusParser extends Parser {
 					}
 					break;
 				case 2 :
-					// src/main/sqlplus/parser/SQLPlus.g:105:5: subquery alias
+					// src/main/sqlplus/parser/SQLPlus.g:128:5: subquery alias
 					{
-					pushFollow(FOLLOW_subquery_in_table_atom442);
+					pushFollow(FOLLOW_subquery_in_table_atom506);
 					subquery();
 					state._fsp--;
 
-					pushFollow(FOLLOW_alias_in_table_atom444);
+					pushFollow(FOLLOW_alias_in_table_atom508);
 					alias();
 					state._fsp--;
 
 					}
 					break;
 				case 3 :
-					// src/main/sqlplus/parser/SQLPlus.g:106:5: LEFT_PARENTHESIS table_references RIGHT_PARENTHESIS
+					// src/main/sqlplus/parser/SQLPlus.g:129:5: LEFT_PARENTHESIS table_references RIGHT_PARENTHESIS
 					{
-					match(input,LEFT_PARENTHESIS,FOLLOW_LEFT_PARENTHESIS_in_table_atom450); 
-					pushFollow(FOLLOW_table_references_in_table_atom452);
+					match(input,LEFT_PARENTHESIS,FOLLOW_LEFT_PARENTHESIS_in_table_atom514); 
+					pushFollow(FOLLOW_table_references_in_table_atom516);
 					table_references();
 					state._fsp--;
 
-					match(input,RIGHT_PARENTHESIS,FOLLOW_RIGHT_PARENTHESIS_in_table_atom454); 
+					match(input,RIGHT_PARENTHESIS,FOLLOW_RIGHT_PARENTHESIS_in_table_atom518); 
 					}
 					break;
 				case 4 :
-					// src/main/sqlplus/parser/SQLPlus.g:107:5: OJ table_reference LEFT OUTER JOIN table_reference ON expression
+					// src/main/sqlplus/parser/SQLPlus.g:130:5: OJ table_reference LEFT OUTER JOIN table_reference ON expression
 					{
-					match(input,OJ,FOLLOW_OJ_in_table_atom460); 
-					pushFollow(FOLLOW_table_reference_in_table_atom462);
+					match(input,OJ,FOLLOW_OJ_in_table_atom524); 
+					pushFollow(FOLLOW_table_reference_in_table_atom526);
 					table_reference();
 					state._fsp--;
 
-					match(input,LEFT,FOLLOW_LEFT_in_table_atom464); 
-					match(input,OUTER,FOLLOW_OUTER_in_table_atom466); 
-					match(input,JOIN,FOLLOW_JOIN_in_table_atom468); 
-					pushFollow(FOLLOW_table_reference_in_table_atom470);
+					match(input,LEFT,FOLLOW_LEFT_in_table_atom528); 
+					match(input,OUTER,FOLLOW_OUTER_in_table_atom530); 
+					match(input,JOIN,FOLLOW_JOIN_in_table_atom532); 
+					pushFollow(FOLLOW_table_reference_in_table_atom534);
 					table_reference();
 					state._fsp--;
 
-					match(input,ON,FOLLOW_ON_in_table_atom472); 
-					pushFollow(FOLLOW_expression_in_table_atom474);
+					match(input,ON,FOLLOW_ON_in_table_atom536); 
+					pushFollow(FOLLOW_expression_in_table_atom538);
 					expression();
 					state._fsp--;
 
@@ -1216,10 +1315,10 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "join_condition"
-	// src/main/sqlplus/parser/SQLPlus.g:110:1: join_condition : ( ON expression | USING column_list );
+	// src/main/sqlplus/parser/SQLPlus.g:133:1: join_condition : ( ON expression | USING column_list );
 	public final void join_condition() throws RecognitionException {
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:111:2: ( ON expression | USING column_list )
+			// src/main/sqlplus/parser/SQLPlus.g:134:2: ( ON expression | USING column_list )
 			int alt23=2;
 			int LA23_0 = input.LA(1);
 			if ( (LA23_0==ON) ) {
@@ -1237,20 +1336,20 @@ public class SQLPlusParser extends Parser {
 
 			switch (alt23) {
 				case 1 :
-					// src/main/sqlplus/parser/SQLPlus.g:111:4: ON expression
+					// src/main/sqlplus/parser/SQLPlus.g:134:4: ON expression
 					{
-					match(input,ON,FOLLOW_ON_in_join_condition485); 
-					pushFollow(FOLLOW_expression_in_join_condition487);
+					match(input,ON,FOLLOW_ON_in_join_condition549); 
+					pushFollow(FOLLOW_expression_in_join_condition551);
 					expression();
 					state._fsp--;
 
 					}
 					break;
 				case 2 :
-					// src/main/sqlplus/parser/SQLPlus.g:112:5: USING column_list
+					// src/main/sqlplus/parser/SQLPlus.g:135:5: USING column_list
 					{
-					match(input,USING,FOLLOW_USING_in_join_condition494); 
-					pushFollow(FOLLOW_column_list_in_join_condition496);
+					match(input,USING,FOLLOW_USING_in_join_condition558); 
+					pushFollow(FOLLOW_column_list_in_join_condition560);
 					column_list();
 					state._fsp--;
 
@@ -1272,17 +1371,17 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "index_hint_list"
-	// src/main/sqlplus/parser/SQLPlus.g:115:1: index_hint_list : index_hint ( COMMA index_hint )* ;
+	// src/main/sqlplus/parser/SQLPlus.g:138:1: index_hint_list : index_hint ( COMMA index_hint )* ;
 	public final void index_hint_list() throws RecognitionException {
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:116:2: ( index_hint ( COMMA index_hint )* )
-			// src/main/sqlplus/parser/SQLPlus.g:116:4: index_hint ( COMMA index_hint )*
+			// src/main/sqlplus/parser/SQLPlus.g:139:2: ( index_hint ( COMMA index_hint )* )
+			// src/main/sqlplus/parser/SQLPlus.g:139:4: index_hint ( COMMA index_hint )*
 			{
-			pushFollow(FOLLOW_index_hint_in_index_hint_list507);
+			pushFollow(FOLLOW_index_hint_in_index_hint_list571);
 			index_hint();
 			state._fsp--;
 
-			// src/main/sqlplus/parser/SQLPlus.g:116:15: ( COMMA index_hint )*
+			// src/main/sqlplus/parser/SQLPlus.g:139:15: ( COMMA index_hint )*
 			loop24:
 			while (true) {
 				int alt24=2;
@@ -1297,10 +1396,10 @@ public class SQLPlusParser extends Parser {
 
 				switch (alt24) {
 				case 1 :
-					// src/main/sqlplus/parser/SQLPlus.g:116:16: COMMA index_hint
+					// src/main/sqlplus/parser/SQLPlus.g:139:16: COMMA index_hint
 					{
-					match(input,COMMA,FOLLOW_COMMA_in_index_hint_list510); 
-					pushFollow(FOLLOW_index_hint_in_index_hint_list512);
+					match(input,COMMA,FOLLOW_COMMA_in_index_hint_list574); 
+					pushFollow(FOLLOW_index_hint_in_index_hint_list576);
 					index_hint();
 					state._fsp--;
 
@@ -1328,13 +1427,13 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "index_hint"
-	// src/main/sqlplus/parser/SQLPlus.g:119:1: index_hint : TODO ;
+	// src/main/sqlplus/parser/SQLPlus.g:142:1: index_hint : TODO ;
 	public final void index_hint() throws RecognitionException {
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:120:2: ( TODO )
-			// src/main/sqlplus/parser/SQLPlus.g:120:4: TODO
+			// src/main/sqlplus/parser/SQLPlus.g:143:2: ( TODO )
+			// src/main/sqlplus/parser/SQLPlus.g:143:4: TODO
 			{
-			match(input,TODO,FOLLOW_TODO_in_index_hint526); 
+			match(input,TODO,FOLLOW_TODO_in_index_hint590); 
 			}
 
 		}
@@ -1351,19 +1450,19 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "partition_clause"
-	// src/main/sqlplus/parser/SQLPlus.g:123:1: partition_clause : PARTITION LEFT_PARENTHESIS partition_names RIGHT_PARENTHESIS ;
+	// src/main/sqlplus/parser/SQLPlus.g:146:1: partition_clause : PARTITION LEFT_PARENTHESIS partition_names RIGHT_PARENTHESIS ;
 	public final void partition_clause() throws RecognitionException {
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:124:2: ( PARTITION LEFT_PARENTHESIS partition_names RIGHT_PARENTHESIS )
-			// src/main/sqlplus/parser/SQLPlus.g:124:4: PARTITION LEFT_PARENTHESIS partition_names RIGHT_PARENTHESIS
+			// src/main/sqlplus/parser/SQLPlus.g:147:2: ( PARTITION LEFT_PARENTHESIS partition_names RIGHT_PARENTHESIS )
+			// src/main/sqlplus/parser/SQLPlus.g:147:4: PARTITION LEFT_PARENTHESIS partition_names RIGHT_PARENTHESIS
 			{
-			match(input,PARTITION,FOLLOW_PARTITION_in_partition_clause539); 
-			match(input,LEFT_PARENTHESIS,FOLLOW_LEFT_PARENTHESIS_in_partition_clause541); 
-			pushFollow(FOLLOW_partition_names_in_partition_clause543);
+			match(input,PARTITION,FOLLOW_PARTITION_in_partition_clause603); 
+			match(input,LEFT_PARENTHESIS,FOLLOW_LEFT_PARENTHESIS_in_partition_clause605); 
+			pushFollow(FOLLOW_partition_names_in_partition_clause607);
 			partition_names();
 			state._fsp--;
 
-			match(input,RIGHT_PARENTHESIS,FOLLOW_RIGHT_PARENTHESIS_in_partition_clause545); 
+			match(input,RIGHT_PARENTHESIS,FOLLOW_RIGHT_PARENTHESIS_in_partition_clause609); 
 			}
 
 		}
@@ -1380,17 +1479,17 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "partition_names"
-	// src/main/sqlplus/parser/SQLPlus.g:127:1: partition_names : partition_name ( COMMA partition_name )* ;
+	// src/main/sqlplus/parser/SQLPlus.g:150:1: partition_names : partition_name ( COMMA partition_name )* ;
 	public final void partition_names() throws RecognitionException {
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:128:2: ( partition_name ( COMMA partition_name )* )
-			// src/main/sqlplus/parser/SQLPlus.g:128:4: partition_name ( COMMA partition_name )*
+			// src/main/sqlplus/parser/SQLPlus.g:151:2: ( partition_name ( COMMA partition_name )* )
+			// src/main/sqlplus/parser/SQLPlus.g:151:4: partition_name ( COMMA partition_name )*
 			{
-			pushFollow(FOLLOW_partition_name_in_partition_names557);
+			pushFollow(FOLLOW_partition_name_in_partition_names621);
 			partition_name();
 			state._fsp--;
 
-			// src/main/sqlplus/parser/SQLPlus.g:128:19: ( COMMA partition_name )*
+			// src/main/sqlplus/parser/SQLPlus.g:151:19: ( COMMA partition_name )*
 			loop25:
 			while (true) {
 				int alt25=2;
@@ -1401,10 +1500,10 @@ public class SQLPlusParser extends Parser {
 
 				switch (alt25) {
 				case 1 :
-					// src/main/sqlplus/parser/SQLPlus.g:128:20: COMMA partition_name
+					// src/main/sqlplus/parser/SQLPlus.g:151:20: COMMA partition_name
 					{
-					match(input,COMMA,FOLLOW_COMMA_in_partition_names560); 
-					pushFollow(FOLLOW_partition_name_in_partition_names562);
+					match(input,COMMA,FOLLOW_COMMA_in_partition_names624); 
+					pushFollow(FOLLOW_partition_name_in_partition_names626);
 					partition_name();
 					state._fsp--;
 
@@ -1432,13 +1531,13 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "expression"
-	// src/main/sqlplus/parser/SQLPlus.g:131:1: expression : TODO ;
+	// src/main/sqlplus/parser/SQLPlus.g:154:1: expression : TODO ;
 	public final void expression() throws RecognitionException {
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:132:2: ( TODO )
-			// src/main/sqlplus/parser/SQLPlus.g:132:4: TODO
+			// src/main/sqlplus/parser/SQLPlus.g:155:2: ( TODO )
+			// src/main/sqlplus/parser/SQLPlus.g:155:4: TODO
 			{
-			match(input,TODO,FOLLOW_TODO_in_expression575); 
+			match(input,TODO,FOLLOW_TODO_in_expression639); 
 			}
 
 		}
@@ -1455,13 +1554,13 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "table_spec"
-	// src/main/sqlplus/parser/SQLPlus.g:135:1: table_spec : ( schema_name DOT )? table_name ;
+	// src/main/sqlplus/parser/SQLPlus.g:158:1: table_spec : ( schema_name DOT )? table_name ;
 	public final void table_spec() throws RecognitionException {
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:136:2: ( ( schema_name DOT )? table_name )
-			// src/main/sqlplus/parser/SQLPlus.g:136:4: ( schema_name DOT )? table_name
+			// src/main/sqlplus/parser/SQLPlus.g:159:2: ( ( schema_name DOT )? table_name )
+			// src/main/sqlplus/parser/SQLPlus.g:159:4: ( schema_name DOT )? table_name
 			{
-			// src/main/sqlplus/parser/SQLPlus.g:136:4: ( schema_name DOT )?
+			// src/main/sqlplus/parser/SQLPlus.g:159:4: ( schema_name DOT )?
 			int alt26=2;
 			int LA26_0 = input.LA(1);
 			if ( (LA26_0==ID) ) {
@@ -1475,19 +1574,19 @@ public class SQLPlusParser extends Parser {
 			}
 			switch (alt26) {
 				case 1 :
-					// src/main/sqlplus/parser/SQLPlus.g:136:5: schema_name DOT
+					// src/main/sqlplus/parser/SQLPlus.g:159:5: schema_name DOT
 					{
-					pushFollow(FOLLOW_schema_name_in_table_spec588);
+					pushFollow(FOLLOW_schema_name_in_table_spec652);
 					schema_name();
 					state._fsp--;
 
-					match(input,DOT,FOLLOW_DOT_in_table_spec590); 
+					match(input,DOT,FOLLOW_DOT_in_table_spec654); 
 					}
 					break;
 
 			}
 
-			pushFollow(FOLLOW_table_name_in_table_spec594);
+			pushFollow(FOLLOW_table_name_in_table_spec658);
 			table_name();
 			state._fsp--;
 
@@ -1507,13 +1606,13 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "column_spec"
-	// src/main/sqlplus/parser/SQLPlus.g:139:1: column_spec : ( ( schema_name DOT )? table_name DOT )? column_name ;
+	// src/main/sqlplus/parser/SQLPlus.g:162:1: column_spec : ( ( schema_name DOT )? table_name DOT )? column_name ;
 	public final void column_spec() throws RecognitionException {
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:140:2: ( ( ( schema_name DOT )? table_name DOT )? column_name )
-			// src/main/sqlplus/parser/SQLPlus.g:140:4: ( ( schema_name DOT )? table_name DOT )? column_name
+			// src/main/sqlplus/parser/SQLPlus.g:163:2: ( ( ( schema_name DOT )? table_name DOT )? column_name )
+			// src/main/sqlplus/parser/SQLPlus.g:163:4: ( ( schema_name DOT )? table_name DOT )? column_name
 			{
-			// src/main/sqlplus/parser/SQLPlus.g:140:4: ( ( schema_name DOT )? table_name DOT )?
+			// src/main/sqlplus/parser/SQLPlus.g:163:4: ( ( schema_name DOT )? table_name DOT )?
 			int alt28=2;
 			int LA28_0 = input.LA(1);
 			if ( (LA28_0==ID) ) {
@@ -1524,9 +1623,9 @@ public class SQLPlusParser extends Parser {
 			}
 			switch (alt28) {
 				case 1 :
-					// src/main/sqlplus/parser/SQLPlus.g:140:5: ( schema_name DOT )? table_name DOT
+					// src/main/sqlplus/parser/SQLPlus.g:163:5: ( schema_name DOT )? table_name DOT
 					{
-					// src/main/sqlplus/parser/SQLPlus.g:140:5: ( schema_name DOT )?
+					// src/main/sqlplus/parser/SQLPlus.g:163:5: ( schema_name DOT )?
 					int alt27=2;
 					int LA27_0 = input.LA(1);
 					if ( (LA27_0==ID) ) {
@@ -1543,29 +1642,29 @@ public class SQLPlusParser extends Parser {
 					}
 					switch (alt27) {
 						case 1 :
-							// src/main/sqlplus/parser/SQLPlus.g:140:6: schema_name DOT
+							// src/main/sqlplus/parser/SQLPlus.g:163:6: schema_name DOT
 							{
-							pushFollow(FOLLOW_schema_name_in_column_spec607);
+							pushFollow(FOLLOW_schema_name_in_column_spec671);
 							schema_name();
 							state._fsp--;
 
-							match(input,DOT,FOLLOW_DOT_in_column_spec609); 
+							match(input,DOT,FOLLOW_DOT_in_column_spec673); 
 							}
 							break;
 
 					}
 
-					pushFollow(FOLLOW_table_name_in_column_spec613);
+					pushFollow(FOLLOW_table_name_in_column_spec677);
 					table_name();
 					state._fsp--;
 
-					match(input,DOT,FOLLOW_DOT_in_column_spec615); 
+					match(input,DOT,FOLLOW_DOT_in_column_spec679); 
 					}
 					break;
 
 			}
 
-			pushFollow(FOLLOW_column_name_in_column_spec619);
+			pushFollow(FOLLOW_column_name_in_column_spec683);
 			column_name();
 			state._fsp--;
 
@@ -1585,13 +1684,13 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "column_list"
-	// src/main/sqlplus/parser/SQLPlus.g:143:1: column_list : TODO ;
+	// src/main/sqlplus/parser/SQLPlus.g:166:1: column_list : TODO ;
 	public final void column_list() throws RecognitionException {
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:144:2: ( TODO )
-			// src/main/sqlplus/parser/SQLPlus.g:144:4: TODO
+			// src/main/sqlplus/parser/SQLPlus.g:167:2: ( TODO )
+			// src/main/sqlplus/parser/SQLPlus.g:167:4: TODO
 			{
-			match(input,TODO,FOLLOW_TODO_in_column_list631); 
+			match(input,TODO,FOLLOW_TODO_in_column_list695); 
 			}
 
 		}
@@ -1608,18 +1707,18 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "subquery"
-	// src/main/sqlplus/parser/SQLPlus.g:147:1: subquery : LEFT_PARENTHESIS select_statement RIGHT_PARENTHESIS ;
+	// src/main/sqlplus/parser/SQLPlus.g:170:1: subquery : LEFT_PARENTHESIS select_statement RIGHT_PARENTHESIS ;
 	public final void subquery() throws RecognitionException {
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:148:2: ( LEFT_PARENTHESIS select_statement RIGHT_PARENTHESIS )
-			// src/main/sqlplus/parser/SQLPlus.g:148:4: LEFT_PARENTHESIS select_statement RIGHT_PARENTHESIS
+			// src/main/sqlplus/parser/SQLPlus.g:171:2: ( LEFT_PARENTHESIS select_statement RIGHT_PARENTHESIS )
+			// src/main/sqlplus/parser/SQLPlus.g:171:4: LEFT_PARENTHESIS select_statement RIGHT_PARENTHESIS
 			{
-			match(input,LEFT_PARENTHESIS,FOLLOW_LEFT_PARENTHESIS_in_subquery644); 
-			pushFollow(FOLLOW_select_statement_in_subquery646);
+			match(input,LEFT_PARENTHESIS,FOLLOW_LEFT_PARENTHESIS_in_subquery708); 
+			pushFollow(FOLLOW_select_statement_in_subquery710);
 			select_statement();
 			state._fsp--;
 
-			match(input,RIGHT_PARENTHESIS,FOLLOW_RIGHT_PARENTHESIS_in_subquery648); 
+			match(input,RIGHT_PARENTHESIS,FOLLOW_RIGHT_PARENTHESIS_in_subquery712); 
 			}
 
 		}
@@ -1636,13 +1735,13 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "alias"
-	// src/main/sqlplus/parser/SQLPlus.g:151:1: alias : ( AS )? ID ;
+	// src/main/sqlplus/parser/SQLPlus.g:174:1: alias : ( AS )? ID ;
 	public final void alias() throws RecognitionException {
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:151:7: ( ( AS )? ID )
-			// src/main/sqlplus/parser/SQLPlus.g:151:9: ( AS )? ID
+			// src/main/sqlplus/parser/SQLPlus.g:174:7: ( ( AS )? ID )
+			// src/main/sqlplus/parser/SQLPlus.g:174:9: ( AS )? ID
 			{
-			// src/main/sqlplus/parser/SQLPlus.g:151:9: ( AS )?
+			// src/main/sqlplus/parser/SQLPlus.g:174:9: ( AS )?
 			int alt29=2;
 			int LA29_0 = input.LA(1);
 			if ( (LA29_0==AS) ) {
@@ -1650,15 +1749,15 @@ public class SQLPlusParser extends Parser {
 			}
 			switch (alt29) {
 				case 1 :
-					// src/main/sqlplus/parser/SQLPlus.g:151:10: AS
+					// src/main/sqlplus/parser/SQLPlus.g:174:10: AS
 					{
-					match(input,AS,FOLLOW_AS_in_alias659); 
+					match(input,AS,FOLLOW_AS_in_alias723); 
 					}
 					break;
 
 			}
 
-			match(input,ID,FOLLOW_ID_in_alias663); 
+			match(input,ID,FOLLOW_ID_in_alias727); 
 			}
 
 		}
@@ -1675,13 +1774,13 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "column_name"
-	// src/main/sqlplus/parser/SQLPlus.g:152:1: column_name : ID ;
+	// src/main/sqlplus/parser/SQLPlus.g:175:1: column_name : ID ;
 	public final void column_name() throws RecognitionException {
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:152:13: ( ID )
-			// src/main/sqlplus/parser/SQLPlus.g:152:15: ID
+			// src/main/sqlplus/parser/SQLPlus.g:175:13: ( ID )
+			// src/main/sqlplus/parser/SQLPlus.g:175:15: ID
 			{
-			match(input,ID,FOLLOW_ID_in_column_name670); 
+			match(input,ID,FOLLOW_ID_in_column_name734); 
 			}
 
 		}
@@ -1698,13 +1797,13 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "partition_name"
-	// src/main/sqlplus/parser/SQLPlus.g:153:1: partition_name : ID ;
+	// src/main/sqlplus/parser/SQLPlus.g:176:1: partition_name : ID ;
 	public final void partition_name() throws RecognitionException {
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:153:16: ( ID )
-			// src/main/sqlplus/parser/SQLPlus.g:153:18: ID
+			// src/main/sqlplus/parser/SQLPlus.g:176:16: ( ID )
+			// src/main/sqlplus/parser/SQLPlus.g:176:18: ID
 			{
-			match(input,ID,FOLLOW_ID_in_partition_name677); 
+			match(input,ID,FOLLOW_ID_in_partition_name741); 
 			}
 
 		}
@@ -1719,16 +1818,24 @@ public class SQLPlusParser extends Parser {
 	// $ANTLR end "partition_name"
 
 
+	public static class schema_name_return extends ParserRuleReturnScope {
+	};
+
 
 	// $ANTLR start "schema_name"
-	// src/main/sqlplus/parser/SQLPlus.g:154:1: schema_name : ID ;
-	public final void schema_name() throws RecognitionException {
+	// src/main/sqlplus/parser/SQLPlus.g:177:1: schema_name : ID ;
+	public final SQLPlusParser.schema_name_return schema_name() throws RecognitionException {
+		SQLPlusParser.schema_name_return retval = new SQLPlusParser.schema_name_return();
+		retval.start = input.LT(1);
+
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:154:13: ( ID )
-			// src/main/sqlplus/parser/SQLPlus.g:154:15: ID
+			// src/main/sqlplus/parser/SQLPlus.g:177:13: ( ID )
+			// src/main/sqlplus/parser/SQLPlus.g:177:15: ID
 			{
-			match(input,ID,FOLLOW_ID_in_schema_name684); 
+			match(input,ID,FOLLOW_ID_in_schema_name748); 
 			}
+
+			retval.stop = input.LT(-1);
 
 		}
 		catch (RecognitionException re) {
@@ -1738,19 +1845,20 @@ public class SQLPlusParser extends Parser {
 		finally {
 			// do for sure before leaving
 		}
+		return retval;
 	}
 	// $ANTLR end "schema_name"
 
 
 
 	// $ANTLR start "table_name"
-	// src/main/sqlplus/parser/SQLPlus.g:155:1: table_name : ID ;
+	// src/main/sqlplus/parser/SQLPlus.g:178:1: table_name : ID ;
 	public final void table_name() throws RecognitionException {
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:155:12: ( ID )
-			// src/main/sqlplus/parser/SQLPlus.g:155:14: ID
+			// src/main/sqlplus/parser/SQLPlus.g:178:12: ( ID )
+			// src/main/sqlplus/parser/SQLPlus.g:178:14: ID
 			{
-			match(input,ID,FOLLOW_ID_in_table_name691); 
+			match(input,ID,FOLLOW_ID_in_table_name755); 
 			}
 
 		}
@@ -1767,10 +1875,10 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "timing"
-	// src/main/sqlplus/parser/SQLPlus.g:157:1: timing : ( BEFORE | AFTER );
+	// src/main/sqlplus/parser/SQLPlus.g:180:1: timing : ( BEFORE | AFTER );
 	public final void timing() throws RecognitionException {
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:158:2: ( BEFORE | AFTER )
+			// src/main/sqlplus/parser/SQLPlus.g:181:2: ( BEFORE | AFTER )
 			// src/main/sqlplus/parser/SQLPlus.g:
 			{
 			if ( input.LA(1)==AFTER||input.LA(1)==BEFORE ) {
@@ -1797,10 +1905,10 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "data_manipulation_language"
-	// src/main/sqlplus/parser/SQLPlus.g:162:1: data_manipulation_language : ( INSERT | DELETE | UPDATE );
+	// src/main/sqlplus/parser/SQLPlus.g:185:1: data_manipulation_language : ( INSERT | DELETE | UPDATE );
 	public final void data_manipulation_language() throws RecognitionException {
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:163:2: ( INSERT | DELETE | UPDATE )
+			// src/main/sqlplus/parser/SQLPlus.g:186:2: ( INSERT | DELETE | UPDATE )
 			// src/main/sqlplus/parser/SQLPlus.g:
 			{
 			if ( input.LA(1)==DELETE||input.LA(1)==INSERT||input.LA(1)==UPDATE ) {
@@ -1827,10 +1935,10 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "relational_operation"
-	// src/main/sqlplus/parser/SQLPlus.g:168:1: relational_operation : ( EQUAL | LESS_THAN_EQUAL | GREATER_THAN_EQUAL | NOT_EQUAL | LESS_THAN | GREATER_THAN | LIKE );
+	// src/main/sqlplus/parser/SQLPlus.g:191:1: relational_operation : ( EQUAL | LESS_THAN_EQUAL | GREATER_THAN_EQUAL | NOT_EQUAL | LESS_THAN | GREATER_THAN | LIKE );
 	public final void relational_operation() throws RecognitionException {
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:169:2: ( EQUAL | LESS_THAN_EQUAL | GREATER_THAN_EQUAL | NOT_EQUAL | LESS_THAN | GREATER_THAN | LIKE )
+			// src/main/sqlplus/parser/SQLPlus.g:192:2: ( EQUAL | LESS_THAN_EQUAL | GREATER_THAN_EQUAL | NOT_EQUAL | LESS_THAN | GREATER_THAN | LIKE )
 			// src/main/sqlplus/parser/SQLPlus.g:
 			{
 			if ( input.LA(1)==EQUAL||(input.LA(1) >= GREATER_THAN && input.LA(1) <= GREATER_THAN_EQUAL)||(input.LA(1) >= LESS_THAN && input.LA(1) <= LIKE)||input.LA(1)==NOT_EQUAL ) {
@@ -1857,10 +1965,10 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "match_value"
-	// src/main/sqlplus/parser/SQLPlus.g:178:1: match_value : ( ID | QUESTION_MARK );
+	// src/main/sqlplus/parser/SQLPlus.g:201:1: match_value : ( ID | QUESTION_MARK );
 	public final void match_value() throws RecognitionException {
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:179:2: ( ID | QUESTION_MARK )
+			// src/main/sqlplus/parser/SQLPlus.g:202:2: ( ID | QUESTION_MARK )
 			// src/main/sqlplus/parser/SQLPlus.g:
 			{
 			if ( input.LA(1)==ID||input.LA(1)==QUESTION_MARK ) {
@@ -1902,97 +2010,101 @@ public class SQLPlusParser extends Parser {
 	public static final BitSet FOLLOW_SEMICOLON_in_sqlplus_alert76 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_select_statement_in_sql_statement104 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_show_statement_in_sql_statement109 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_show_databases_in_show_statement133 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_SHOW_in_show_databases160 = new BitSet(new long[]{0x0000000000002000L});
-	public static final BitSet FOLLOW_DATABASES_in_show_databases162 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_select_expression_in_select_statement175 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_SELECT_in_select_expression187 = new BitSet(new long[]{0x0000000000100080L});
-	public static final BitSet FOLLOW_select_list_in_select_expression189 = new BitSet(new long[]{0x0000000000020002L});
-	public static final BitSet FOLLOW_FROM_in_select_expression192 = new BitSet(new long[]{0x0000000408100000L});
-	public static final BitSet FOLLOW_table_references_in_select_expression194 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_displayed_column_in_select_list209 = new BitSet(new long[]{0x0000000000000402L});
-	public static final BitSet FOLLOW_COMMA_in_select_list212 = new BitSet(new long[]{0x0000000000100000L});
-	public static final BitSet FOLLOW_displayed_column_in_select_list214 = new BitSet(new long[]{0x0000000000000402L});
-	public static final BitSet FOLLOW_ASTERISK_in_select_list223 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_table_spec_in_displayed_column236 = new BitSet(new long[]{0x0000000000008000L});
-	public static final BitSet FOLLOW_DOT_in_displayed_column238 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_ASTERISK_in_displayed_column240 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_column_spec_in_displayed_column245 = new BitSet(new long[]{0x0000000000100042L});
-	public static final BitSet FOLLOW_alias_in_displayed_column248 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_table_reference_in_table_references261 = new BitSet(new long[]{0x0000000000000402L});
-	public static final BitSet FOLLOW_COMMA_in_table_references264 = new BitSet(new long[]{0x0000000408100000L});
-	public static final BitSet FOLLOW_table_reference_in_table_references266 = new BitSet(new long[]{0x0000000000000402L});
-	public static final BitSet FOLLOW_table_atom_in_table_reference285 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_table_factor2_in_table_factor1296 = new BitSet(new long[]{0x0000000002800802L});
-	public static final BitSet FOLLOW_JOIN_in_table_factor1308 = new BitSet(new long[]{0x0000000408100000L});
-	public static final BitSet FOLLOW_table_atom_in_table_factor1310 = new BitSet(new long[]{0x0002000800000002L});
-	public static final BitSet FOLLOW_join_condition_in_table_factor1313 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_table_factor3_in_table_factor2329 = new BitSet(new long[]{0x0000200000000002L});
-	public static final BitSet FOLLOW_STRAIGHT_JOIN_in_table_factor2332 = new BitSet(new long[]{0x0000000408100000L});
-	public static final BitSet FOLLOW_table_atom_in_table_factor2334 = new BitSet(new long[]{0x0000000800000002L});
-	public static final BitSet FOLLOW_ON_in_table_factor2337 = new BitSet(new long[]{0x0000400000000000L});
-	public static final BitSet FOLLOW_expression_in_table_factor2339 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_table_factor4_in_table_factor3354 = new BitSet(new long[]{0x0000010004000002L});
-	public static final BitSet FOLLOW_set_in_table_factor3357 = new BitSet(new long[]{0x0000001002000000L});
-	public static final BitSet FOLLOW_OUTER_in_table_factor3364 = new BitSet(new long[]{0x0000000002000000L});
-	public static final BitSet FOLLOW_JOIN_in_table_factor3368 = new BitSet(new long[]{0x0000000408100000L});
-	public static final BitSet FOLLOW_table_factor4_in_table_factor3370 = new BitSet(new long[]{0x0002000800000000L});
-	public static final BitSet FOLLOW_join_condition_in_table_factor3372 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_table_atom_in_table_factor4386 = new BitSet(new long[]{0x0000000080000002L});
-	public static final BitSet FOLLOW_NATURAL_in_table_factor4389 = new BitSet(new long[]{0x0000010006000000L});
-	public static final BitSet FOLLOW_set_in_table_factor4392 = new BitSet(new long[]{0x0000001002000000L});
-	public static final BitSet FOLLOW_OUTER_in_table_factor4399 = new BitSet(new long[]{0x0000000002000000L});
-	public static final BitSet FOLLOW_JOIN_in_table_factor4405 = new BitSet(new long[]{0x0000000408100000L});
-	public static final BitSet FOLLOW_table_atom_in_table_factor4407 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_table_spec_in_table_atom421 = new BitSet(new long[]{0x0000402000100042L});
-	public static final BitSet FOLLOW_partition_clause_in_table_atom424 = new BitSet(new long[]{0x0000400000100042L});
-	public static final BitSet FOLLOW_alias_in_table_atom429 = new BitSet(new long[]{0x0000400000000002L});
-	public static final BitSet FOLLOW_index_hint_list_in_table_atom434 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_subquery_in_table_atom442 = new BitSet(new long[]{0x0000000000100040L});
-	public static final BitSet FOLLOW_alias_in_table_atom444 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_LEFT_PARENTHESIS_in_table_atom450 = new BitSet(new long[]{0x0000000408100000L});
-	public static final BitSet FOLLOW_table_references_in_table_atom452 = new BitSet(new long[]{0x0000020000000000L});
-	public static final BitSet FOLLOW_RIGHT_PARENTHESIS_in_table_atom454 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_OJ_in_table_atom460 = new BitSet(new long[]{0x0000000408100000L});
-	public static final BitSet FOLLOW_table_reference_in_table_atom462 = new BitSet(new long[]{0x0000000004000000L});
-	public static final BitSet FOLLOW_LEFT_in_table_atom464 = new BitSet(new long[]{0x0000001000000000L});
-	public static final BitSet FOLLOW_OUTER_in_table_atom466 = new BitSet(new long[]{0x0000000002000000L});
-	public static final BitSet FOLLOW_JOIN_in_table_atom468 = new BitSet(new long[]{0x0000000408100000L});
-	public static final BitSet FOLLOW_table_reference_in_table_atom470 = new BitSet(new long[]{0x0000000800000000L});
-	public static final BitSet FOLLOW_ON_in_table_atom472 = new BitSet(new long[]{0x0000400000000000L});
-	public static final BitSet FOLLOW_expression_in_table_atom474 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_ON_in_join_condition485 = new BitSet(new long[]{0x0000400000000000L});
-	public static final BitSet FOLLOW_expression_in_join_condition487 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_USING_in_join_condition494 = new BitSet(new long[]{0x0000400000000000L});
-	public static final BitSet FOLLOW_column_list_in_join_condition496 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_index_hint_in_index_hint_list507 = new BitSet(new long[]{0x0000000000000402L});
-	public static final BitSet FOLLOW_COMMA_in_index_hint_list510 = new BitSet(new long[]{0x0000400000000000L});
-	public static final BitSet FOLLOW_index_hint_in_index_hint_list512 = new BitSet(new long[]{0x0000000000000402L});
-	public static final BitSet FOLLOW_TODO_in_index_hint526 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_PARTITION_in_partition_clause539 = new BitSet(new long[]{0x0000000008000000L});
-	public static final BitSet FOLLOW_LEFT_PARENTHESIS_in_partition_clause541 = new BitSet(new long[]{0x0000000000100000L});
-	public static final BitSet FOLLOW_partition_names_in_partition_clause543 = new BitSet(new long[]{0x0000020000000000L});
-	public static final BitSet FOLLOW_RIGHT_PARENTHESIS_in_partition_clause545 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_partition_name_in_partition_names557 = new BitSet(new long[]{0x0000000000000402L});
-	public static final BitSet FOLLOW_COMMA_in_partition_names560 = new BitSet(new long[]{0x0000000000100000L});
-	public static final BitSet FOLLOW_partition_name_in_partition_names562 = new BitSet(new long[]{0x0000000000000402L});
-	public static final BitSet FOLLOW_TODO_in_expression575 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_schema_name_in_table_spec588 = new BitSet(new long[]{0x0000000000008000L});
-	public static final BitSet FOLLOW_DOT_in_table_spec590 = new BitSet(new long[]{0x0000000000100000L});
-	public static final BitSet FOLLOW_table_name_in_table_spec594 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_schema_name_in_column_spec607 = new BitSet(new long[]{0x0000000000008000L});
-	public static final BitSet FOLLOW_DOT_in_column_spec609 = new BitSet(new long[]{0x0000000000100000L});
-	public static final BitSet FOLLOW_table_name_in_column_spec613 = new BitSet(new long[]{0x0000000000008000L});
-	public static final BitSet FOLLOW_DOT_in_column_spec615 = new BitSet(new long[]{0x0000000000100000L});
-	public static final BitSet FOLLOW_column_name_in_column_spec619 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_TODO_in_column_list631 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_LEFT_PARENTHESIS_in_subquery644 = new BitSet(new long[]{0x0000040000000000L});
-	public static final BitSet FOLLOW_select_statement_in_subquery646 = new BitSet(new long[]{0x0000020000000000L});
-	public static final BitSet FOLLOW_RIGHT_PARENTHESIS_in_subquery648 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_AS_in_alias659 = new BitSet(new long[]{0x0000000000100000L});
-	public static final BitSet FOLLOW_ID_in_alias663 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_ID_in_column_name670 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_ID_in_partition_name677 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_ID_in_schema_name684 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_ID_in_table_name691 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_use_statement_in_sql_statement116 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_use_database_in_use_statement140 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_USE_in_use_database164 = new BitSet(new long[]{0x0000000000100000L});
+	public static final BitSet FOLLOW_schema_name_in_use_database173 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_show_databases_in_show_statement197 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_SHOW_in_show_databases224 = new BitSet(new long[]{0x0000000000002000L});
+	public static final BitSet FOLLOW_DATABASES_in_show_databases226 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_select_expression_in_select_statement239 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_SELECT_in_select_expression251 = new BitSet(new long[]{0x0000000000100080L});
+	public static final BitSet FOLLOW_select_list_in_select_expression253 = new BitSet(new long[]{0x0000000000020002L});
+	public static final BitSet FOLLOW_FROM_in_select_expression256 = new BitSet(new long[]{0x0000000408100000L});
+	public static final BitSet FOLLOW_table_references_in_select_expression258 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_displayed_column_in_select_list273 = new BitSet(new long[]{0x0000000000000402L});
+	public static final BitSet FOLLOW_COMMA_in_select_list276 = new BitSet(new long[]{0x0000000000100000L});
+	public static final BitSet FOLLOW_displayed_column_in_select_list278 = new BitSet(new long[]{0x0000000000000402L});
+	public static final BitSet FOLLOW_ASTERISK_in_select_list287 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_table_spec_in_displayed_column300 = new BitSet(new long[]{0x0000000000008000L});
+	public static final BitSet FOLLOW_DOT_in_displayed_column302 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_ASTERISK_in_displayed_column304 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_column_spec_in_displayed_column309 = new BitSet(new long[]{0x0000000000100042L});
+	public static final BitSet FOLLOW_alias_in_displayed_column312 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_table_reference_in_table_references325 = new BitSet(new long[]{0x0000000000000402L});
+	public static final BitSet FOLLOW_COMMA_in_table_references328 = new BitSet(new long[]{0x0000000408100000L});
+	public static final BitSet FOLLOW_table_reference_in_table_references330 = new BitSet(new long[]{0x0000000000000402L});
+	public static final BitSet FOLLOW_table_atom_in_table_reference349 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_table_factor2_in_table_factor1360 = new BitSet(new long[]{0x0000000002800802L});
+	public static final BitSet FOLLOW_JOIN_in_table_factor1372 = new BitSet(new long[]{0x0000000408100000L});
+	public static final BitSet FOLLOW_table_atom_in_table_factor1374 = new BitSet(new long[]{0x0004000800000002L});
+	public static final BitSet FOLLOW_join_condition_in_table_factor1377 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_table_factor3_in_table_factor2393 = new BitSet(new long[]{0x0000200000000002L});
+	public static final BitSet FOLLOW_STRAIGHT_JOIN_in_table_factor2396 = new BitSet(new long[]{0x0000000408100000L});
+	public static final BitSet FOLLOW_table_atom_in_table_factor2398 = new BitSet(new long[]{0x0000000800000002L});
+	public static final BitSet FOLLOW_ON_in_table_factor2401 = new BitSet(new long[]{0x0000400000000000L});
+	public static final BitSet FOLLOW_expression_in_table_factor2403 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_table_factor4_in_table_factor3418 = new BitSet(new long[]{0x0000010004000002L});
+	public static final BitSet FOLLOW_set_in_table_factor3421 = new BitSet(new long[]{0x0000001002000000L});
+	public static final BitSet FOLLOW_OUTER_in_table_factor3428 = new BitSet(new long[]{0x0000000002000000L});
+	public static final BitSet FOLLOW_JOIN_in_table_factor3432 = new BitSet(new long[]{0x0000000408100000L});
+	public static final BitSet FOLLOW_table_factor4_in_table_factor3434 = new BitSet(new long[]{0x0004000800000000L});
+	public static final BitSet FOLLOW_join_condition_in_table_factor3436 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_table_atom_in_table_factor4450 = new BitSet(new long[]{0x0000000080000002L});
+	public static final BitSet FOLLOW_NATURAL_in_table_factor4453 = new BitSet(new long[]{0x0000010006000000L});
+	public static final BitSet FOLLOW_set_in_table_factor4456 = new BitSet(new long[]{0x0000001002000000L});
+	public static final BitSet FOLLOW_OUTER_in_table_factor4463 = new BitSet(new long[]{0x0000000002000000L});
+	public static final BitSet FOLLOW_JOIN_in_table_factor4469 = new BitSet(new long[]{0x0000000408100000L});
+	public static final BitSet FOLLOW_table_atom_in_table_factor4471 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_table_spec_in_table_atom485 = new BitSet(new long[]{0x0000402000100042L});
+	public static final BitSet FOLLOW_partition_clause_in_table_atom488 = new BitSet(new long[]{0x0000400000100042L});
+	public static final BitSet FOLLOW_alias_in_table_atom493 = new BitSet(new long[]{0x0000400000000002L});
+	public static final BitSet FOLLOW_index_hint_list_in_table_atom498 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_subquery_in_table_atom506 = new BitSet(new long[]{0x0000000000100040L});
+	public static final BitSet FOLLOW_alias_in_table_atom508 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_LEFT_PARENTHESIS_in_table_atom514 = new BitSet(new long[]{0x0000000408100000L});
+	public static final BitSet FOLLOW_table_references_in_table_atom516 = new BitSet(new long[]{0x0000020000000000L});
+	public static final BitSet FOLLOW_RIGHT_PARENTHESIS_in_table_atom518 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_OJ_in_table_atom524 = new BitSet(new long[]{0x0000000408100000L});
+	public static final BitSet FOLLOW_table_reference_in_table_atom526 = new BitSet(new long[]{0x0000000004000000L});
+	public static final BitSet FOLLOW_LEFT_in_table_atom528 = new BitSet(new long[]{0x0000001000000000L});
+	public static final BitSet FOLLOW_OUTER_in_table_atom530 = new BitSet(new long[]{0x0000000002000000L});
+	public static final BitSet FOLLOW_JOIN_in_table_atom532 = new BitSet(new long[]{0x0000000408100000L});
+	public static final BitSet FOLLOW_table_reference_in_table_atom534 = new BitSet(new long[]{0x0000000800000000L});
+	public static final BitSet FOLLOW_ON_in_table_atom536 = new BitSet(new long[]{0x0000400000000000L});
+	public static final BitSet FOLLOW_expression_in_table_atom538 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_ON_in_join_condition549 = new BitSet(new long[]{0x0000400000000000L});
+	public static final BitSet FOLLOW_expression_in_join_condition551 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_USING_in_join_condition558 = new BitSet(new long[]{0x0000400000000000L});
+	public static final BitSet FOLLOW_column_list_in_join_condition560 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_index_hint_in_index_hint_list571 = new BitSet(new long[]{0x0000000000000402L});
+	public static final BitSet FOLLOW_COMMA_in_index_hint_list574 = new BitSet(new long[]{0x0000400000000000L});
+	public static final BitSet FOLLOW_index_hint_in_index_hint_list576 = new BitSet(new long[]{0x0000000000000402L});
+	public static final BitSet FOLLOW_TODO_in_index_hint590 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_PARTITION_in_partition_clause603 = new BitSet(new long[]{0x0000000008000000L});
+	public static final BitSet FOLLOW_LEFT_PARENTHESIS_in_partition_clause605 = new BitSet(new long[]{0x0000000000100000L});
+	public static final BitSet FOLLOW_partition_names_in_partition_clause607 = new BitSet(new long[]{0x0000020000000000L});
+	public static final BitSet FOLLOW_RIGHT_PARENTHESIS_in_partition_clause609 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_partition_name_in_partition_names621 = new BitSet(new long[]{0x0000000000000402L});
+	public static final BitSet FOLLOW_COMMA_in_partition_names624 = new BitSet(new long[]{0x0000000000100000L});
+	public static final BitSet FOLLOW_partition_name_in_partition_names626 = new BitSet(new long[]{0x0000000000000402L});
+	public static final BitSet FOLLOW_TODO_in_expression639 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_schema_name_in_table_spec652 = new BitSet(new long[]{0x0000000000008000L});
+	public static final BitSet FOLLOW_DOT_in_table_spec654 = new BitSet(new long[]{0x0000000000100000L});
+	public static final BitSet FOLLOW_table_name_in_table_spec658 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_schema_name_in_column_spec671 = new BitSet(new long[]{0x0000000000008000L});
+	public static final BitSet FOLLOW_DOT_in_column_spec673 = new BitSet(new long[]{0x0000000000100000L});
+	public static final BitSet FOLLOW_table_name_in_column_spec677 = new BitSet(new long[]{0x0000000000008000L});
+	public static final BitSet FOLLOW_DOT_in_column_spec679 = new BitSet(new long[]{0x0000000000100000L});
+	public static final BitSet FOLLOW_column_name_in_column_spec683 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_TODO_in_column_list695 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_LEFT_PARENTHESIS_in_subquery708 = new BitSet(new long[]{0x0000040000000000L});
+	public static final BitSet FOLLOW_select_statement_in_subquery710 = new BitSet(new long[]{0x0000020000000000L});
+	public static final BitSet FOLLOW_RIGHT_PARENTHESIS_in_subquery712 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_AS_in_alias723 = new BitSet(new long[]{0x0000000000100000L});
+	public static final BitSet FOLLOW_ID_in_alias727 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_ID_in_column_name734 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_ID_in_partition_name741 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_ID_in_schema_name748 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_ID_in_table_name755 = new BitSet(new long[]{0x0000000000000002L});
 }

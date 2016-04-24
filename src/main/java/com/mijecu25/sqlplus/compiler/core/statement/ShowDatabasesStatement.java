@@ -15,31 +15,29 @@ import com.mijecu25.utils.sql.mysql.MySQLUtils;
  * This class represents the "show databases" SQL statements. It prints the databases foun in the server.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.2
+ * @version 0.1.0.3
  */
 public class ShowDatabasesStatement extends Statement {
-
-    private String statement;
-    private Connection connection;
+    
     private ResultSet resultSet;
     
     private static final Logger logger = LogManager.getLogger(ShowDatabasesStatement.class);
     
     public ShowDatabasesStatement(String statement) {
+        super(statement);
         ShowDatabasesStatement.logger.info("Parsed and created a ShowDatabasesStatement");
-        this.statement = statement;
-        this.connection = null;
         this.resultSet = null;
     }
     
     @Override
     public void execute(Connection connection) throws SQLException {
         ShowDatabasesStatement.logger.info("Will execute the code to show the databases");
-        this.connection = connection;
-        java.sql.Statement statement = this.connection.createStatement();
-        this.resultSet = statement.executeQuery(this.statement);
+        this.setConnection(connection);
+        java.sql.Statement statement = this.getConnection().createStatement();
+        this.resultSet = statement.executeQuery(this.getStatement());
         
         // TODO add some checks to see if we should proceed to printing
+        // TODO check how to handle the exception
         
         this.printResult();
     }
@@ -53,7 +51,7 @@ public class ShowDatabasesStatement extends Statement {
             resultSetMetaData = this.resultSet.getMetaData(); 
         
             // Get the maximum database name length
-            int maxDatabaseNameLength = MySQLUtils.maxDatabaseNameLength(this.connection);
+            int maxDatabaseNameLength = MySQLUtils.maxDatabaseNameLength(this.getConnection());
             // The total length is added by 4 for the 2 borders and the 2 spaces on either side
             int lineTotalLenght = maxDatabaseNameLength + 4;
             // Print the horizontal border based on the length
@@ -97,6 +95,7 @@ public class ShowDatabasesStatement extends Statement {
 
     @Override
     public String toString() {
-        return "ShowDatabasesStatement [statement=" + statement + "]";
-    }   
+        return "ShowDatabasesStatement [statement=" + this.getStatement() + "]";
+    }
+
 }

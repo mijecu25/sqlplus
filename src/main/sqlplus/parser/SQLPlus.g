@@ -7,6 +7,7 @@ import SQLPlusLex;
 	
 	import com.mijecu25.sqlplus.compiler.core.statement.Statement;
 	import com.mijecu25.sqlplus.compiler.core.statement.ShowDatabasesStatement;
+	import com.mijecu25.sqlplus.compiler.core.statement.StatementUseDatabase;
 }
 
 // This is the entry point of the SQLPlus alert program
@@ -17,7 +18,7 @@ sqlplus returns [Statement statement]
 	: 	sql_statement {
 			statement = $sql_statement.sqlStatement;
 		}
-		// TODO should this be optional 
+		// TODO this should be optional 
 	|	sqlplus_alert
 	;
 
@@ -36,6 +37,28 @@ sql_statement returns [Statement sqlStatement]
 	:	select_statement
 	|	show_statement {
 			$sqlStatement = $show_statement.showStatement;
+		}
+	|	use_statement {
+			$sqlStatement = $use_statement.useStatement;
+		}
+	;
+	
+use_statement returns [Statement useStatement]
+	@init {
+		$useStatement = null;
+	}
+	:	use_database {
+			$useStatement = $use_database.useDatabaseStatement;
+		}
+	;
+	
+use_database returns [Statement useDatabaseStatement]
+	@init {
+		$useDatabaseStatement = null;
+	}
+	:	USE 
+		database = schema_name {
+			$useDatabaseStatement = new StatementUseDatabase("use " + $database.text, $database.text);
 		}
 	;
 	

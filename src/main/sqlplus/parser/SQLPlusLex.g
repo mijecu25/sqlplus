@@ -165,6 +165,11 @@ DATABASES
 	:	'databases'
 	|	'DATABASES'
 	;
+	
+USE
+	:	'use'
+	|	'USE'
+	;
 
 ID
 	:	( 'A'..'Z' | 'a'..'z' | '_' | '$') ( 'A'..'Z' | 'a'..'z' | '_' | '$' | '0'..'9' )*
