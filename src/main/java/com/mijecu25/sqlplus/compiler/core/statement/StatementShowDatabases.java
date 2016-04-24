@@ -17,21 +17,21 @@ import com.mijecu25.utils.sql.mysql.MySQLUtils;
  * @author Miguel Velez - miguelvelezmj25
  * @version 0.1.0.3
  */
-public class ShowDatabasesStatement extends Statement {
+public class StatementShowDatabases extends Statement {
     
     private ResultSet resultSet;
     
-    private static final Logger logger = LogManager.getLogger(ShowDatabasesStatement.class);
+    private static final Logger logger = LogManager.getLogger(StatementShowDatabases.class);
     
-    public ShowDatabasesStatement(String statement) {
+    public StatementShowDatabases(String statement) {
         super(statement);
-        ShowDatabasesStatement.logger.info("Parsed and created a ShowDatabasesStatement");
+        StatementShowDatabases.logger.info("Parsed and created a ShowDatabasesStatement");
         this.resultSet = null;
     }
     
     @Override
     public void execute(Connection connection) throws SQLException {
-        ShowDatabasesStatement.logger.info("Will execute the code to show the databases");
+        StatementShowDatabases.logger.info("Will execute the code to show the databases");
         this.setConnection(connection);
         java.sql.Statement statement = this.getConnection().createStatement();
         this.resultSet = statement.executeQuery(this.getStatement());
@@ -44,7 +44,7 @@ public class ShowDatabasesStatement extends Statement {
     
     @Override
     public void printResult() {
-        ShowDatabasesStatement.logger.info("Printing the labels of the columns in the result");
+        StatementShowDatabases.logger.info("Printing the labels of the columns in the result");
         try{
             // Get the medatadata from the result set
             ResultSetMetaData resultSetMetaData;
@@ -61,10 +61,10 @@ public class ShowDatabasesStatement extends Statement {
             StringBuilder line = new StringBuilder();
             String label = resultSetMetaData.getColumnLabel(1);
             
-            line.append(ShowDatabasesStatement.VERTICAL_BORDERL + " ");
+            line.append(StatementShowDatabases.VERTICAL_BORDERL + " ");
             line.append(label);
             line.append(StringUtils.repeat(" ", lineTotalLenght - 3 - label.length()));
-            line.append(ShowDatabasesStatement.VERTICAL_BORDERL);
+            line.append(StatementShowDatabases.VERTICAL_BORDERL);
             
             System.out.println(line);
     
@@ -77,10 +77,10 @@ public class ShowDatabasesStatement extends Statement {
                 line = new StringBuilder();
                 String row = this.resultSet.getString(1);
                 
-                line.append(ShowDatabasesStatement.VERTICAL_BORDERL + " ");
+                line.append(StatementShowDatabases.VERTICAL_BORDERL + " ");
                 line.append(row);
                 line.append(StringUtils.repeat(" ", lineTotalLenght - 3 - row.length()));
-                line.append(ShowDatabasesStatement.VERTICAL_BORDERL);
+                line.append(StatementShowDatabases.VERTICAL_BORDERL);
                 
                 System.out.println(line);
             }

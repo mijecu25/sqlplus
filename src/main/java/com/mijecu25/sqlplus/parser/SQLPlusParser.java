@@ -1,9 +1,9 @@
-// $ANTLR 3.5.2 src/main/sqlplus/parser/SQLPlus.g 2016-04-24 11:24:55
+// $ANTLR 3.5.2 src/main/sqlplus/parser/SQLPlus.g 2016-04-24 11:38:15
 
 	package com.mijecu25.sqlplus.parser;
 	
 	import com.mijecu25.sqlplus.compiler.core.statement.Statement;
-	import com.mijecu25.sqlplus.compiler.core.statement.ShowDatabasesStatement;
+	import com.mijecu25.sqlplus.compiler.core.statement.StatementShowDatabases;
 	import com.mijecu25.sqlplus.compiler.core.statement.StatementUseDatabase;
 
 
@@ -425,7 +425,7 @@ public class SQLPlusParser extends Parser {
 			match(input,SHOW,FOLLOW_SHOW_in_show_databases224); 
 			match(input,DATABASES,FOLLOW_DATABASES_in_show_databases226); 
 			 
-						showDatabasesStatement = new ShowDatabasesStatement("show databases"); 
+						showDatabasesStatement = new StatementShowDatabases("show databases"); 
 					
 			}
 

@@ -7,7 +7,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import com.mijecu25.sqlplus.compiler.core.statement.ShowDatabasesStatement;
+import com.mijecu25.sqlplus.compiler.core.statement.StatementShowDatabases;
 
 /**
  * Test SQLPlusConnection.
@@ -63,7 +63,7 @@ public class TestSQLPlusConnection {
     @Test
     public void testExecute() throws SQLException {
         // Execute some query
-        TestSQLPlusConnection.connection.execute(new ShowDatabasesStatement("show databases"));
+        TestSQLPlusConnection.connection.execute(new StatementShowDatabases("show databases"));
     }
     
     /**

@@ -6,7 +6,7 @@ import SQLPlusLex;
 	package com.mijecu25.sqlplus.parser;
 	
 	import com.mijecu25.sqlplus.compiler.core.statement.Statement;
-	import com.mijecu25.sqlplus.compiler.core.statement.ShowDatabasesStatement;
+	import com.mijecu25.sqlplus.compiler.core.statement.StatementShowDatabases;
 	import com.mijecu25.sqlplus.compiler.core.statement.StatementUseDatabase;
 }
 
@@ -76,7 +76,7 @@ show_databases returns [Statement showDatabasesStatement]
 		$showDatabasesStatement = null;
 	}
 	:	SHOW DATABASES { 
-			$showDatabasesStatement = new ShowDatabasesStatement("show databases"); 
+			$showDatabasesStatement = new StatementShowDatabases("show databases"); 
 		}
 	;
 
