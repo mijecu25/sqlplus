@@ -2,10 +2,7 @@ package com.mijecu25.sqlplus.connection;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.Properties;
 
 import org.apache.logging.log4j.LogManager;
@@ -17,7 +14,7 @@ import com.mijecu25.messages.Messages;
  * SQLPlusConnection abstrac class. Default database is MySQL on port 3306.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.5
+ * @version 0.1.0.6
  */
 public abstract class SQLPlusConnection {
     private static final String LOCALHOST = "127.0.0.1";
@@ -104,74 +101,107 @@ public abstract class SQLPlusConnection {
      * 
      * @param sql
      */
-    public void execute(String sql) {
-        SQLPlusConnection.logger.info("Query to be executed: \"" + sql + "\"");
-        
-        // TODO process a statement
-        Statement statement;        
+    public void execute(com.mijecu25.sqlplus.compiler.core.statement.Statement statement) {
+        SQLPlusConnection.logger.info("Query to be executed: \"" + statement + "\"");
+                
         try {
-            // Create a statement object
-            statement = this.connection.createStatement();
-
-            // TODO change this using antlr to create specific statements and each of them will know specifically what
-            // to execute and what to display
-            if(sql.contains("insert") || sql.contains("update") || sql.contains("delete")) {
-                
-            }
-            else if(sql.contains("show") || sql.contains("describe") || sql.contains("select")) {
-                SQLPlusConnection.logger.info("Executing QUERY statement");
-                
-                // Execute the query and grab the result set
-                ResultSet resultSet = statement.executeQuery(sql);       
-                // Get the medatadata from the result set
-                ResultSetMetaData resultSetMetaData = resultSet.getMetaData();
-                // Get the total number of columns in the result set
-                int columnsNumber = resultSetMetaData.getColumnCount();
-                
-                SQLPlusConnection.logger.info("Printing the labels of the columns in the result");
-                // Loop through all of the columns. SQL columns begin from 1
-                for(int i = 1; i <= columnsNumber; i++) {
-                    // If there are more than 1 column
-                    if(i > 1) {
-                        System.out.print(" ");
-                    }
-                    // Print the label of the column
-                    System.out.print(resultSetMetaData.getColumnLabel(i));
-                }
-                
-                System.out.println("");
-                
-                // While the are more rows to process
-                while (resultSet.next()) {
-                    // Loop through each column in each row
-                    for (int i = 1; i <= columnsNumber; i++) {
-                        // If thre are more than 1 column
-                        if(i > 1) {
-                            System.out.print("|  ");
-                        }
-                        // Get and print the current row value
-                        String columnValue = resultSet.getString(i);
-                        System.out.print(columnValue);
-                    }
-
-                    System.out.println("");
-                }
-                
-            }
-            else {
-                System.out.println(statement.execute(sql));
-            }
-           
-            
-            
-        } catch (SQLException sqle) {
-            // This exception can occur if the user entered an invalid query
-            SQLPlusConnection.logger.warn(Messages.WARNING + "The user entered an invalid query string");
-            SQLPlusConnection.logger.warn(Messages.ERROR + "ERROR" + Messages.SPACE + sqle.getErrorCode() + Messages.SPACE + "(" 
-                    + sqle.getSQLState() + "): " + sqle.getMessage());
-            System.out.println("ERROR" + Messages.SPACE + sqle.getErrorCode() + Messages.SPACE + "(" 
-                    + sqle.getSQLState() + "): " + sqle.getMessage());
-        }       
+            statement.execute(this.connection);
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        
+//        Statement statement;        
+//        try {
+//            // Create a statement object
+//            statement = this.connection.createStatement();
+//
+//            // to execute and what to display
+//            if(sql.contains("show") /*|| sql.contains("describe")*/) {
+//                SQLPlusConnection.logger.info("Executing QUERY statement");
+//                
+//                // Execute the query and grab the result set
+//                ResultSet resultSet = statement.executeQuery(sql);       
+//                // Get the medatadata from the result set
+//                ResultSetMetaData resultSetMetaData = resultSet.getMetaData();
+//                // Get the total number of columns in the result set
+//                int columnsNumber = resultSetMetaData.getColumnCount();
+//                
+//                int maxDatabaseNameLength = MySQLUtils.maxDatabaseNameLength((com.mysql.jdbc.Connection) this.connection);
+//                int lineTotalLenght = maxDatabaseNameLength + 4;
+//
+//                StringBuilder line = new StringBuilder();
+//                line.append("+");
+//                line.append(StringUtils.repeat("-", lineTotalLenght - 2));
+//                line.append("+");
+//                System.out.println(line);
+//                                
+//                SQLPlusConnection.logger.info("Printing the labels of the columns in the result");
+//                // Loop through all of the columns. SQL columns begin from 1
+//                for(int i = 1; i <= columnsNumber; i++) {
+//                    // If there are more than 1 column
+//                    if(i > 1) {
+//                        System.out.print(" ");
+//                    }
+//                    // Print the label of the column
+//                    line = new StringBuilder();
+//                    line.append("| ");
+//                    line.append(resultSetMetaData.getColumnLabel(i));
+//                    line.append(StringUtils.repeat(" ", lineTotalLenght - 3 - resultSetMetaData.getColumnLabel(i).length()));
+//                    line.append("|");
+//                    System.out.println(line);
+//                }
+//                
+//                line = new StringBuilder();
+//                line.append("+");
+//                line.append(StringUtils.repeat("-", lineTotalLenght - 2));
+//                line.append("+");
+//                System.out.println(line);
+//                
+//                System.out.println("");
+//                
+////                // While the are more rows to process
+////                while (resultSet.next()) {
+////                    // Loop through each column in each row
+////                    for (int i = 1; i <= columnsNumber; i++) {
+////                        // If thre are more than 1 column
+////                        if(i > 1) {
+////                            System.out.print("|  ");
+////                        }
+////                        // Get and print the current row value
+////                        String columnValue = resultSet.getString(i);
+////                        System.out.print(columnValue);
+////                    }
+////
+////                    System.out.println("");
+////                }
+//                
+//            }
+//            else if(sql.contains("use")) {
+//                statement.execute(sql);
+//            }
+//            else {//if(sql.contains("insert") || sql.contains("update") || sql.contains("delete")) {
+//
+//                net.sf.jsqlparser.statement.Statement parsedSql = null;
+//                try {
+//                    parsedSql = CCJSqlParserUtil.parse(sql);
+//                } catch (JSQLParserException e) {
+//                    // TODO Auto-generated catch block
+//                    e.printStackTrace();
+//                }                
+//                if(parsedSql instanceof Select) {
+//                    SQLPlusConnection.logger.info("Found a select statement");
+//                }
+//            }
+//            
+//        } catch (SQLException sqle) {
+//            // This exception can occur if the user entered an invalid query
+//            SQLPlusConnection.logger.warn(Messages.WARNING + "The user entered an invalid query string");
+//            SQLPlusConnection.logger.warn(Messages.ERROR + "ERROR" + Messages.SPACE + sqle.getErrorCode() + Messages.SPACE + "(" 
+//                    + sqle.getSQLState() + "): " + sqle.getMessage());
+//            System.out.println("ERROR" + Messages.SPACE + sqle.getErrorCode() + Messages.SPACE + "(" 
+//                    + sqle.getSQLState() + "): " + sqle.getMessage());
+//        }       
 
     }
 

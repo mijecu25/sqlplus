@@ -1,12 +1,11 @@
 package com.mijecu25.utils.sql.mysql;
 
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 import com.mijecu25.utils.sql.SQLUtils;
-
-import com.mysql.jdbc.Connection;
-import com.mysql.jdbc.Statement;
 
 /**
  * 
@@ -23,8 +22,8 @@ public class MySQLUtils extends SQLUtils {
      * @throws SQLException 
      */
     public static int maxLengthColumn(Connection connection, String column, String table) throws SQLException {
-        Statement statement = (Statement) connection.createStatement();
-        String query = "select max(len(" + column + ")) from " + table;
+        Statement statement = connection.createStatement();
+        String query = "select max(len(" + column + ")) from " + table + ";";
         
         ResultSet resultSet = statement.executeQuery(query);
         
@@ -34,4 +33,18 @@ public class MySQLUtils extends SQLUtils {
         
         return 0;
     }
+    
+    public static int maxDatabaseNameLength(Connection connection) throws SQLException {
+        Statement statement = connection.createStatement();
+        String query = "select max(length(schema_name)) from information_schema.schemata;"; 
+    
+        ResultSet resultSet = statement.executeQuery(query);
+        
+        while(resultSet.next()) {
+            return resultSet.getInt(1);
+        }
+        
+        return -1;
+    }
+
 }

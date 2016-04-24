@@ -53,8 +53,7 @@ show_databases returns [Statement showDatabasesStatement]
 		$showDatabasesStatement = null;
 	}
 	:	SHOW DATABASES { 
-			System.out.println("Showing databases");
-			$showDatabasesStatement = new ShowDatabasesStatement(); 
+			$showDatabasesStatement = new ShowDatabasesStatement("show databases"); 
 		}
 	;
 

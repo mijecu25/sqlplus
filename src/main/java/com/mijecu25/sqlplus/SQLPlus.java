@@ -7,13 +7,19 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Properties;
 
+import org.antlr.runtime.ANTLRStringStream;
+import org.antlr.runtime.CommonTokenStream;
+import org.antlr.runtime.RecognitionException;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.mijecu25.messages.Messages;
+import com.mijecu25.sqlplus.compiler.core.statement.Statement;
 import com.mijecu25.sqlplus.connection.SQLPlusConnection;
 import com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection;
+import com.mijecu25.sqlplus.parser.SQLPlusLex;
+import com.mijecu25.sqlplus.parser.SQLPlusParser;
 
 import jline.TerminalFactory;
 import jline.console.ConsoleReader;
@@ -22,7 +28,7 @@ import jline.console.ConsoleReader;
  * SQLPlus add alerts to your sql queries.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.8
+ * @version 0.1.0.9
  */
 public class SQLPlus {
 
@@ -170,9 +176,33 @@ public class SQLPlus {
                 query.append(line);
             }
             
-            // Execute the query from the user
-            SQLPlus.logger.info("Will execute a query from the user");
-            SQLPlus.sqlPlusConnection.execute(query.toString());
+            // Execute the antlr code to parse the user input
+            SQLPlus.logger.info("Will parse the user input to determine what to execute");
+            ANTLRStringStream input = new ANTLRStringStream(line);
+            SQLPlusLex lexer = new SQLPlusLex(input);
+            CommonTokenStream tokens = new CommonTokenStream(lexer);
+            SQLPlusParser parser = new SQLPlusParser(tokens);
+            
+            Statement statement;
+            try {
+                statement = parser.sqlplus();
+                
+                if(statement == null) {
+                    System.out.println("Return value is null");
+                }
+                else {
+                    SQLPlus.sqlPlusConnection.execute(statement);
+                }
+            } catch (RecognitionException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+                
+            
+            
+//            // Execute the query from the user
+//            SQLPlus.logger.info("Will execute a query from the user");
+//            SQLPlus.sqlPlusConnection.execute(query.toString());
         }
         
     }
