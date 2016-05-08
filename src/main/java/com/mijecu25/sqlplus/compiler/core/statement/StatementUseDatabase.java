@@ -6,12 +6,14 @@ import java.sql.SQLException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.mijecu25.messages.Messages;
+
 /**
  * This class represents the "use " + {$database} SQL statements. It changes the current database
  * in the server and prints a message with the name of the current database.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.2
+ * @version 0.1.0.3
  */
 public class StatementUseDatabase extends Statement {
     
@@ -29,13 +31,24 @@ public class StatementUseDatabase extends Statement {
 
     @Override
     public void execute(Connection connection) throws SQLException {
-        StatementUseDatabase.logger.info("Will execute the code to use the specified database");
+        StatementUseDatabase.logger.info("Will execute the code to use " + this.database);
+        // Set the connection
         this.setConnection(connection);
-        java.sql.Statement statement = this.getConnection().createStatement();
-        statement.execute(this.getStatement());
-        // TODO check how to handle the exception
         
-        this.printResult();        
+        try {
+            java.sql.Statement statement = this.getConnection().createStatement();
+            statement.execute(this.getStatement());
+            // TODO check how to handle the exception
+            
+            this.printResult();                    
+        }
+        catch(SQLException sqle) {
+            StatementUseDatabase.logger.warn(Messages.WARNING + "Error when executing " + this, sqle);
+            System.out.println(Messages.WARNING + sqle.getMessage());
+            
+            StatementUseDatabase.logger.warn(Messages.WARNING + "Throwing a " + sqle.getClass().getSimpleName() + " to the calling class");
+            throw new SQLException();
+        }
     }
 
     @Override
