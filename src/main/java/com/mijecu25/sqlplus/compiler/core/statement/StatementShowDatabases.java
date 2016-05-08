@@ -16,7 +16,7 @@ import com.mijecu25.utils.sql.mysql.MySQLUtils;
  * This class represents the "show databases" SQL statements. It prints the databases found in the server.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.3
+ * @version 0.1.0.4
  */
 public class StatementShowDatabases extends Statement {
     
@@ -46,7 +46,8 @@ public class StatementShowDatabases extends Statement {
                     + Messages.CHECK_LOG_FILES);
             throw iae;
         }
-                
+             
+        // Set the connection
         this.setConnection(connection);
         
         try {
@@ -56,15 +57,18 @@ public class StatementShowDatabases extends Statement {
             if(this.resultSet == null) {
                 throw new SQLException();
             }
-            // TODO add some checks to see if we should proceed to printing
-            // TODO check how to handle the exception
             
             this.printResult();
             
             this.resultSet.close();
         }
         catch(SQLException sqle) {
+            // This 
+            StatementShowDatabases.logger.warn(Messages.WARNING + "Error when executing " + this, sqle);
+            System.out.println(Messages.WARNING + sqle.getMessage());
             
+            StatementShowDatabases.logger.warn(Messages.WARNING + "Throwing a " + sqle.getClass().getSimpleName() + " to the calling class");
+            throw new SQLException();            
         }
         
 
