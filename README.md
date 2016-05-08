@@ -11,9 +11,13 @@ A DSL to add alerts to various SQL DML events. SQLPlus currently works with MySQ
 The easiest way to install sqlplus is to download the jar file from our [website](http://www.mijecu25.com/software/sqlplus/).
 
 If you want to download, customize, buidl from source, there are extra steps that need to be taken:
+
 1. Install Java for your operation system. SQLPlus was developed and tested using Java 1.8.0_65.
+
 2. Install Maven for your operation system. SQLPlus was developed and tested using Apache Maven 3.3.9.
+
 3. (For developing and modifying) Download ANTLR v3.5.2 and save it in a directory. SQLPlus was developed and tested using [antlr-3.5.2-complete-no-st3.jar](http://www.antlr3.org/download/antlr-3.5.2-complete-no-st3.jar).
+
 4. (For developing and modifying) Add ANTLR to your `classpath` environmental variable:	
 
 		$ export CLASSPATH=$CLASSPATH:{PATH-TO-ANTLR-JAR}/antlr-3.5.2-complete-no-st3.jar
@@ -33,10 +37,10 @@ If you want to download, customize, buidl from source, there are extra steps tha
         $ java -cp "{PATH-TO-COMPLETE-SQLPLUS-JAR}/sqlplus-{VERSION}-complete.jar:$CLASSPATH" com.mijecu25.sqlplus.SQLPlus
         Welcome to SQLPlus! This program has a DSL to add alerts to various SQL DML events.
         ...
-    It is a good idea to put the complete jar file in your ```$PATH``` variable. Also, you should create an alias in your ```.bash_profile``` or similar startup script to avoid writting a long command. 
+    It is a good idea to create an alias of the above command in your ```.bash_profile``` or similar startup script to avoid writting a long command. 
 
-        $ alias sqlplus= 'java com.mijecu25.sqlplus.SQLPlus'
-    Once you have done the above, you can run SQLPlus like this:
+        $ alias sqlplus= 'java -cp "{PATH-TO-COMPLETE-SQLPLUS-JAR}/sqlplus-{VERSION}-complete.jar:$CLASSPATH" com.mijecu25.sqlplus.SQLPlus'
+    Be sure to reload the script before using the alias. Once you have done the above, you can run SQLPlus like this:
     
         $ sqlplus
         Welcome to SQLPlus! This program has a DSL to add alerts to various SQL DML events.
