@@ -46,18 +46,6 @@ If you want to download, customize, buidl from source, there are extra steps tha
         Welcome to SQLPlus! This program has a DSL to add alerts to various SQL DML events.
         ...
     
-Clone project:
-
-	$ git clone git@github.com:mijecu25/sqlplus.git
-
-Compile project
-	
-	$ make compile
-	
-Package project
-
-	$ make package
-
 ## License
 
 The MIT License (MIT)
