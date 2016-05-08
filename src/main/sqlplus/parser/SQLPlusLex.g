@@ -4,9 +4,6 @@ lexer grammar SQLPlusLex;
 	package com.mijecu25.sqlplus.parser;
 }
 
-// TODO delete this
-TODO : 'TODO';
-
 ASTERISK : '*';
 COMMA : ',';
 COLON : ':';
@@ -50,12 +47,12 @@ BEFORE
 	:	'before'
 	|	'BEFORE'
 	;
-
-CROSS
-	:	'cross'
-	|	'CROSS'
-	;
 	
+DATABASES
+	:	'databases'
+	|	'DATABASES'
+	;
+		
 DELETE
 	:	'delete'
 	|	'DELETE'
@@ -70,107 +67,47 @@ IF
 	:	'if'
 	|	'IF'
 	;
-
-IN
+	
+IN	
 	:	'in'
 	|	'IN'
 	;
-	
-INNER
-	:	'inner'
-	|	'INNER'
-	;
-		
+			
 INSERT
 	: 	'insert'
 	|	'INSERT'
 	;	
-	
-JOIN
-	:	'join'
-	|	'JOIN'
-	;
-	
-LEFT
-	:	'left'
-	|	'LEFT'
-	;
-		
+			
 LIKE	
 	:	'like'
 	|	'LIKE'
 	;
-	
-NATURAL
-	:	'natural'
-	|	'NATURAL'
-	;
-
-OJ
-	:	'oj'
-	|	'OJ'
-	;
-	
-ON
-	:	'on'
-	|	'ON'
-	;
-
-OUTER
-	:	'outer'
-	|	'OUTER'
-	;
-
-PARTITION
-	:	'partition'
-	|	'PARTITION'
-	;
-
-RIGHT
-	:	'right'
-	|	'RIGHT'
-	;
-	
+		
 SELECT
 	:	'select'
 	|	'SELECT'
-	;
-		
-STRAIGHT_JOIN
-	:	'straight_join'
-	|	'STRAIGHT_JOIN'
-	;
-			
-UPDATE
-	: 	'update'
-	|	'UPDATE'
-	;	
-
-USING
-	:	'using'
-	|	'USING'
-	;
-
-WHERE
-	: 	'where'
-	|	'WHERE'
 	;
 	
 SHOW
 	:	'show'
 	|	'SHOW'
 	;
-	
-DATABASES
-	:	'databases'
-	|	'DATABASES'
+					
+UPDATE
+	: 	'update'
+	|	'UPDATE'
 	;
 	
 USE
 	:	'use'
 	|	'USE'
-	;
+	;	
 
+WHERE
+	: 	'where'
+	|	'WHERE'
+	;
+	
 ID
 	:	( 'A'..'Z' | 'a'..'z' | '_' | '$') ( 'A'..'Z' | 'a'..'z' | '_' | '$' | '0'..'9' )*
 	;

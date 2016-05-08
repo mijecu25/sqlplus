@@ -7,19 +7,22 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 /**
- * TODO
+ * This class represents the "use " + {$database} SQL statements. It changes the current database
+ * in the server and prints a message with the name of the current database.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.1
+ * @version 0.1.0.2
  */
 public class StatementUseDatabase extends Statement {
     
     private String database;
     
+    private static final String STATEMENT = "use ";
+    
     private static final Logger logger = LogManager.getLogger(StatementUseDatabase.class);
     
-    public StatementUseDatabase(String statement, String database) {
-        super(statement);
+    public StatementUseDatabase(String database) {
+        super(StatementUseDatabase.STATEMENT + database);
         StatementUseDatabase.logger.info("Parsed and created a StatementUseDatabase");
         this.database = database;
     }
@@ -36,7 +39,7 @@ public class StatementUseDatabase extends Statement {
     }
 
     @Override
-    public void printResult() {
+    protected void printResult() {
         StatementUseDatabase.logger.info("Printing message that acknowledges that the database was changed");
         System.out.println("Database changed to " + this.database);
     }

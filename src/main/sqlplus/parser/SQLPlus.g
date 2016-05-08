@@ -34,8 +34,8 @@ sql_statement returns [Statement sqlStatement]
 	@init {
 		$sqlStatement = null;
 	}
-	:	select_statement
-	|	show_statement {
+	:	//select_statement
+	/*|*/	show_statement {
 			$sqlStatement = $show_statement.showStatement;
 		}
 	|	use_statement {
@@ -58,7 +58,7 @@ use_database returns [Statement useDatabaseStatement]
 	}
 	:	USE 
 		database = schema_name {
-			$useDatabaseStatement = new StatementUseDatabase("use " + $database.text, $database.text);
+			$useDatabaseStatement = new StatementUseDatabase($database.text);
 		}
 	;
 	
@@ -76,100 +76,100 @@ show_databases returns [Statement showDatabasesStatement]
 		$showDatabasesStatement = null;
 	}
 	:	SHOW DATABASES { 
-			$showDatabasesStatement = new StatementShowDatabases("show databases"); 
+			$showDatabasesStatement = new StatementShowDatabases(); 
 		}
 	;
 
-select_statement
-	:	select_expression
-	;
-	
-select_expression
-	:	SELECT select_list (FROM table_references)?{ System.out.println("SQL Statements"); }
-	;
-	
-select_list
-	:	displayed_column (COMMA displayed_column)* 
-	| 	ASTERISK
-	;
-	
-displayed_column 
-	:	table_spec DOT ASTERISK
-	|	column_spec (alias)?
-	;
-
-table_references
-	:	table_reference (COMMA table_reference)*
-	;
-	
-table_reference
-	:	//table_factor1 
-	/*|*/ 	table_atom
-	;
-
-table_factor1
-	:	table_factor2 ((INNER | CROSS)? JOIN table_atom (join_condition)?)?
-	;
-	
-table_factor2
-	:	table_factor3 (STRAIGHT_JOIN table_atom (ON expression)?)?
-	;
-
-table_factor3
-	:	table_factor4 ((LEFT|RIGHT) (OUTER)? JOIN table_factor4 join_condition)?
-	;
-	
-table_factor4
-	:	table_atom (NATURAL ((LEFT|RIGHT) (OUTER)?)? JOIN table_atom)?
-	;
-	
-table_atom
-	:	table_spec (partition_clause)? (alias)? (index_hint_list)?
-	| 	subquery alias
-	| 	LEFT_PARENTHESIS table_references RIGHT_PARENTHESIS
-	| 	OJ table_reference LEFT OUTER JOIN table_reference ON expression
-	;
-
-join_condition
-	:	ON expression 
-	| 	USING column_list
-	;
-
-index_hint_list
-	:	index_hint (COMMA index_hint)*
-	;
-	
-index_hint
-	:	TODO // TODO
-	;
-	
-partition_clause
-	:	PARTITION LEFT_PARENTHESIS partition_names RIGHT_PARENTHESIS
-	;
-	
-partition_names
-	:	partition_name (COMMA partition_name)*
-	;
-
-expression
-	:	TODO // TODO
-	;
-
-table_spec
-	:	(schema_name DOT)? table_name
-	;
-
-column_spec
-	: ((schema_name DOT)? table_name DOT)? column_name 
-	;
-
-column_list
-	:	TODO //TODO
-	;
-	
-subquery
-	:	LEFT_PARENTHESIS select_statement RIGHT_PARENTHESIS
-	;
+//select_statement
+//	:	select_expression
+//	;
+//	
+//select_expression
+//	:	SELECT select_list (FROM table_references)?{ System.out.println("SQL Statements"); }
+//	;
+//	
+//select_list
+//	:	displayed_column (COMMA displayed_column)* 
+//	| 	ASTERISK
+//	;
+//	
+//displayed_column 
+//	:	table_spec DOT ASTERISK
+//	|	column_spec (alias)?
+//	;
+//
+//table_references
+//	:	table_reference (COMMA table_reference)*
+//	;
+//	
+//table_reference
+//	:	//table_factor1 
+//	/*|*/ 	table_atom
+//	;
+//
+//table_factor1
+//	:	table_factor2 ((INNER | CROSS)? JOIN table_atom (join_condition)?)?
+//	;
+//	
+//table_factor2
+//	:	table_factor3 (STRAIGHT_JOIN table_atom (ON expression)?)?
+//	;
+//
+//table_factor3
+//	:	table_factor4 ((LEFT|RIGHT) (OUTER)? JOIN table_factor4 join_condition)?
+//	;
+//	
+//table_factor4
+//	:	table_atom (NATURAL ((LEFT|RIGHT) (OUTER)?)? JOIN table_atom)?
+//	;
+//	
+//table_atom
+//	:	table_spec (partition_clause)? (alias)? (index_hint_list)?
+//	| 	subquery alias
+//	| 	LEFT_PARENTHESIS table_references RIGHT_PARENTHESIS
+//	| 	OJ table_reference LEFT OUTER JOIN table_reference ON expression
+//	;
+//
+//join_condition
+//	:	ON expression 
+//	| 	USING column_list
+//	;
+//
+//index_hint_list
+//	:	index_hint (COMMA index_hint)*
+//	;
+//	
+//index_hint
+//	:	TODO // TODO
+//	;
+//	
+//partition_clause
+//	:	PARTITION LEFT_PARENTHESIS partition_names RIGHT_PARENTHESIS
+//	;
+//	
+//partition_names
+//	:	partition_name (COMMA partition_name)*
+//	;
+//
+//expression
+//	:	TODO // TODO
+//	;
+//
+//table_spec
+//	:	(schema_name DOT)? table_name
+//	;
+//
+//column_spec
+//	: ((schema_name DOT)? table_name DOT)? column_name 
+//	;
+//
+//column_list
+//	:	TODO //TODO
+//	;
+//	
+//subquery
+//	:	LEFT_PARENTHESIS select_statement RIGHT_PARENTHESIS
+//	;
 
 alias : (AS)? ID;
 column_name : ID;

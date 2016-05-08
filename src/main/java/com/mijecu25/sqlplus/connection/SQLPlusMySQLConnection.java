@@ -11,15 +11,13 @@ import com.mijecu25.messages.Messages;
  * Singleton class. Default database is MySQL on port 3306.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.3
+ * @version 0.1.0.4
  *
  */
 public class SQLPlusMySQLConnection extends SQLPlusConnection {
         
     private static final String MYSQL_USER = "user";
     private static final String MYSQL_PASSWORD = "password";
-//    private static final String MYSQL_HOST = "host";
-//    private static final String MYSQL_PORT = "port";
     
     private static final Logger logger = LogManager.getLogger(SQLPlusMySQLConnection.class);
     

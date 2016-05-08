@@ -28,11 +28,10 @@ import jline.console.ConsoleReader;
  * SQLPlus add alerts to your sql queries.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.10
+ * @version 0.1.0.11
  */
 public class SQLPlus {
 
-//    private static final int    UILENGTH = 80;
     private static final String PROGRAM_NAME = "SQLPlus";
     private static final String EXIT = "exit";
     private static final String QUIT = "quit";
@@ -104,8 +103,7 @@ public class SQLPlus {
         try {
             // Get credentials from the user
             SQLPlus.logger.info("Create SQLPlusConnection");
-            SQLPlus.sqlPlusConnection = SQLPlus.createSQLPlusConnection();
-            System.out.println("");
+            SQLPlus.createSQLPlusConnection();
         } 
         catch(NullPointerException npe) {
             // This exception can occur if the user is running the program where the JVM Console
@@ -175,18 +173,18 @@ public class SQLPlus {
                 line = StringUtils.stripEnd(console.readLine(), null);
                 query.append(line);
             }
-            
-            // Execute the antlr code to parse the user input
-            SQLPlus.logger.info("Will parse the user input to determine what to execute");
-            ANTLRStringStream input = new ANTLRStringStream(line);
-            SQLPlusLex lexer = new SQLPlusLex(input);
-            CommonTokenStream tokens = new CommonTokenStream(lexer);
-            SQLPlusParser parser = new SQLPlusParser(tokens);
-            
-            // TODO handle this better
-            Statement statement;
+
+            SQLPlus.logger.info("Raw input from the user: " + query);
             try {
-                statement = parser.sqlplus();
+                // Execute the antlr code to parse the user input
+                SQLPlus.logger.info("Will parse the user input to determine what to execute");
+                ANTLRStringStream input = new ANTLRStringStream(query.toString());
+                SQLPlusLex lexer = new SQLPlusLex(input);
+                CommonTokenStream tokens = new CommonTokenStream(lexer);
+                SQLPlusParser parser = new SQLPlusParser(tokens);
+                
+                // TODO handle this better so that I print my own message when the string is not matched
+                Statement statement = parser.sqlplus();
                 
                 if(statement == null) {
                     System.out.println("Return value is null");
@@ -195,7 +193,7 @@ public class SQLPlus {
                     SQLPlus.sqlPlusConnection.execute(statement);
                 }
             } catch (RecognitionException e) {
-                // TODO Auto-generated catch block
+                SQLPlus.logger.warn("There was an error while parsing the user input");
                 e.printStackTrace();
             }
             
@@ -210,7 +208,7 @@ public class SQLPlus {
      * @throws IOException
      * @throws SQLException
      */
-    private static SQLPlusConnection createSQLPlusConnection() throws IOException, SQLException {                
+    private static void createSQLPlusConnection() throws IOException, SQLException {                
         if(false) {
         System.out.println("You will now enter the credentials to connect to your database");
 
@@ -351,10 +349,9 @@ public class SQLPlus {
         // TODO remove this which is for testing
         SQLPlus.logger.info("Connection with username, password, and host");
         SQLPlusMySQLConnection sqlPlusConnection = SQLPlusMySQLConnection.getConnection("root", new char[0], SQLPlusConnection.getDefaultHost());
-
-        // TODO do I want to return or just assign the value to the instance varaible? 
+ 
         SQLPlus.logger.info("Created and returning a SQLPlusConnection " + sqlPlusConnection);     
-        return sqlPlusConnection;
+        SQLPlus.sqlPlusConnection = sqlPlusConnection;
     }
     
     /**

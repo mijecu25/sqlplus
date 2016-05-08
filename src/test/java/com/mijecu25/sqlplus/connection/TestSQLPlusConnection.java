@@ -13,7 +13,7 @@ import com.mijecu25.sqlplus.compiler.core.statement.StatementShowDatabases;
  * Test SQLPlusConnection.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.2
+ * @version 0.1.0.3
  */
 public class TestSQLPlusConnection {
     
@@ -24,8 +24,14 @@ public class TestSQLPlusConnection {
     protected static String port;
     protected static SQLPlusMySQLConnection connection;
     
+    /**
+     * TODO Execute once.
+     * 
+     * @throws SQLException
+     */
     @BeforeClass
     public static void initialize() throws SQLException  {
+        // TODO use computer current user
         TestSQLPlusConnection.username = "root";
         TestSQLPlusConnection.password = "".toCharArray();
         TestSQLPlusConnection.host = "localhost";
@@ -63,7 +69,7 @@ public class TestSQLPlusConnection {
     @Test
     public void testExecute() throws SQLException {
         // Execute some query
-        TestSQLPlusConnection.connection.execute(new StatementShowDatabases("show databases"));
+        TestSQLPlusConnection.connection.execute(new StatementShowDatabases());
     }
     
     /**
