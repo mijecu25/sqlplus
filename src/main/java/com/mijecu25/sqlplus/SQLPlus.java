@@ -28,7 +28,7 @@ import jline.console.ConsoleReader;
  * SQLPlus add alerts to your sql queries.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.11
+ * @version 0.1.0.12
  */
 public class SQLPlus {
 
@@ -193,8 +193,18 @@ public class SQLPlus {
                     SQLPlus.sqlPlusConnection.execute(statement);
                 }
             } catch (RecognitionException e) {
+                // TODO test this
                 SQLPlus.logger.warn("There was an error while parsing the user input");
                 e.printStackTrace();
+            }
+            catch(IllegalArgumentException iae) {
+                // This exception can occur when a command is executed but it had illegal arguments. Most likely
+                // it is a programmer's error and should be addressed by the developer.
+                SQLPlus.logger.fatal(Messages.FATAL + Messages.FATAL_EXIT(SQLPlus.PROGRAM_NAME, iae.getClass().getName()));
+                SQLPlus.exitSQLPlus();
+
+                SQLPlus.logger.fatal(Messages.FATAL + Messages.QUIT_PROGRAM_ERROR(SQLPlus.PROGRAM_NAME));
+                return ;
             }
             
         }

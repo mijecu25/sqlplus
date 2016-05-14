@@ -13,7 +13,7 @@ import com.mijecu25.messages.Messages;
  * in the server and prints a message with the name of the current database.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.3
+ * @version 0.1.0.4
  */
 public class StatementUseDatabase extends Statement {
     
@@ -32,14 +32,27 @@ public class StatementUseDatabase extends Statement {
     @Override
     public void execute(Connection connection) throws SQLException {
         StatementUseDatabase.logger.info("Will execute the code to use " + this.database);
+
+        // If the connection is null
+        if(connection == null) {
+            IllegalArgumentException iae = new IllegalArgumentException();
+            StatementUseDatabase.logger.fatal(Messages.FATAL + "The connection passed to execute the statement "
+                    + "cannot be null");
+            System.out.println(Messages.FATAL_EXCEPTION_ACTION(iae.getClass().getSimpleName()) + Messages.SPACE
+                    + Messages.CHECK_LOG_FILES);
+            StatementUseDatabase.logger.warn(Messages.WARNING + "Throwing a " + iae.getClass().getSimpleName()
+                    + " to the calling class");
+            throw iae;
+        }
+
         // Set the connection
         this.setConnection(connection);
         
         try {
+            // Execute the query
             java.sql.Statement statement = this.getConnection().createStatement();
             statement.execute(this.getStatement());
-            // TODO check how to handle the exception
-            
+
             this.printResult();                    
         }
         catch(SQLException sqle) {
@@ -47,7 +60,7 @@ public class StatementUseDatabase extends Statement {
             System.out.println(Messages.WARNING + sqle.getMessage());
             
             StatementUseDatabase.logger.warn(Messages.WARNING + "Throwing a " + sqle.getClass().getSimpleName() + " to the calling class");
-            throw new SQLException();
+            throw sqle;
         }
     }
 

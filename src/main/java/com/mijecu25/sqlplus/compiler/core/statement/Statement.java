@@ -13,7 +13,7 @@ import com.mijecu25.messages.Messages;
  * This class represents either a SQLPlus statement or a regular SQL statement.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.4
+ * @version 0.1.0.5
  */
 public abstract class Statement {
     
@@ -42,7 +42,7 @@ public abstract class Statement {
     public Statement(String statement) {
         this.statement = statement;
         this.connection = null;
-        Statement.logger.info("Created a Statement with a statement");
+        Statement.logger.info("Created a Statement with a string statement");
     }
     
     /**
@@ -52,35 +52,35 @@ public abstract class Statement {
      * @throws SQLException
      */
     public abstract void execute(Connection connection) throws SQLException;
-//    Statement.logger.info("This statement does not have an execute method implemented");
-    
+
     /**
      * Print the result obtained after executing the statement
      */
     protected abstract void printResult();
-//        Statement.logger.info("The statement previously executed does not have a result to print")
-    
+
     /**
      * Print an horizontal border around text. The total characters displayed in the border depend on the length
      * specified by the parameter.
      *  
      * @param length the length of the longest string that will be printed.
      */
-    public void printHorizontalBorder(int length) {
+    public String buildHorizontalBorder(int length) {
+        // TODO change the javadoc. Explain the this includes a new line character
         if(length < 5) {
             IllegalArgumentException iae = new IllegalArgumentException();
             Statement.logger.fatal(Messages.FATAL + "The minimum length to print a horizontal border is 5");
-            System.out.println(Messages.FATAL_EXCEPTION_ACTION(iae.getClass().getSimpleName()) + Messages.SPACE
-                    + "The minimum length to print a horizontal border is 5." + Messages.SPACE 
-                    + Messages.CHECK_LOG_FILES);
+            System.out.println(Messages.FATAL + Messages.FATAL_EXCEPTION_ACTION(iae.getClass().getSimpleName())
+                    + Messages.SPACE + Messages.CHECK_LOG_FILES);
+            Statement.logger.warn(Messages.WARNING + "Throwing a " + iae.getClass().getSimpleName() + " to the calling class");
             throw iae;
         }
-        
+
         StringBuilder line = new StringBuilder();
         line.append(Statement.CORNER_SYMBOL);
         line.append(StringUtils.repeat(Statement.HORIZONTAL_BORDER, length - 2));
         line.append(Statement.CORNER_SYMBOL);
-        System.out.println(line);
+        line.append("\n");
+        return line.toString();
     }
 
     /**

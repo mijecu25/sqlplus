@@ -14,7 +14,7 @@ import org.junit.Test;
  * Test Statement 
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.1
+ * @version 0.1.0.2
  */
 public class TestStatement {
    
@@ -44,15 +44,15 @@ public class TestStatement {
      * @version 0.1.0.1
      */
     private class StatementConcrete extends Statement {
-        
+
         public StatementConcrete() {
             super();
         }
-        
+
         public StatementConcrete(String statement) {
             super(statement);
         }
-        
+
         @Override
         public void execute(Connection connection) throws SQLException {
             // Abstract method
@@ -62,7 +62,7 @@ public class TestStatement {
         public void printResult() {
             // Abstract method    
         }
-        
+
     }
 
     @Test
@@ -80,8 +80,10 @@ public class TestStatement {
     }
     
     @Test
-    public void testPrintHorizontalBorder() {
-        TestStatement.statement.printHorizontalBorder(5);
+    public void testBuildHorizontalBorder() {
+        String line = TestStatement.statement.buildHorizontalBorder(5);
+
+        Assert.assertNotNull(line);
     }
     
 }
