@@ -92,6 +92,11 @@ SHOW
 	:	'show'
 	|	'SHOW'
 	;
+
+TABLES
+	:	'tables'
+	|	'TABLES'
+	;
 					
 UPDATE
 	: 	'update'

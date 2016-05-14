@@ -11,10 +11,11 @@ import com.mijecu25.utils.sql.SQLUtils;
  * 
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.1; 
+ * @version 0.1.0.2; 
  */
 public class MySQLUtils extends SQLUtils {
 
+    public static final String DATABASE_TABLE = "information_schema";
     /**
      * 
      * @param column
@@ -33,6 +34,36 @@ public class MySQLUtils extends SQLUtils {
         
         return 0;
     }
+
+    public static int maxTableNameLength(Connection connection) throws SQLException {
+        Statement statement = connection.createStatement();
+        String query = "select database()";
+
+        ResultSet resultSet = statement.executeQuery(query);
+
+        String table = null;
+
+        while(resultSet.next()) {
+            table = resultSet.getString(1);
+        }
+
+        if(table == null) {
+            // TODO handle exception
+        }
+
+        MySQLUtils.useDatabaseTable(connection);
+
+        query = "select max(length(table_name)) from tables where table_schema='" + table + "'";
+
+        resultSet = statement.executeQuery(query);
+
+        while(resultSet.next()) {
+            return resultSet.getInt(1);
+        }
+
+        // TODO handle weird value if one is returned
+        return 0;
+    }
     
     public static int maxDatabaseNameLength(Connection connection) throws SQLException {
         Statement statement = connection.createStatement();
@@ -45,6 +76,13 @@ public class MySQLUtils extends SQLUtils {
         }
         
         return -1;
+    }
+
+    public static void useDatabaseTable(Connection connection) throws SQLException {
+        Statement statement = connection.createStatement();
+        String query = "use " + MySQLUtils.DATABASE_TABLE;
+
+        statement.execute(query);
     }
 
 }

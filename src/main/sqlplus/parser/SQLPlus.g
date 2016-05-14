@@ -8,6 +8,7 @@ import SQLPlusLex;
 	import com.mijecu25.sqlplus.compiler.core.statement.Statement;
 	import com.mijecu25.sqlplus.compiler.core.statement.StatementShowDatabases;
 	import com.mijecu25.sqlplus.compiler.core.statement.StatementUseDatabase;
+	import com.mijecu25.sqlplus.compiler.core.statement.StatementShowTables;
 }
 
 // This is the entry point of the SQLPlus alert program
@@ -68,7 +69,19 @@ show_statement returns [Statement showStatement]
 	}
 	:	show_databases { 
 			$showStatement = $show_databases.showDatabasesStatement;
-		}			
+		}
+	|	show_tables {
+			$showStatement = $show_tables.showTablesStatement;
+	}
+	;
+
+show_tables returns [Statement showTablesStatement]
+	@init {
+		$showTablesStatement = null;
+	}
+	:	SHOW TABLES {
+			$showTablesStatement = new StatementShowTables();
+	}
 	;
 	
 show_databases returns [Statement showDatabasesStatement]
