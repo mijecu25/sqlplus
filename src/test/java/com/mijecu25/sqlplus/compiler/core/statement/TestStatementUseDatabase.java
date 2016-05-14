@@ -11,7 +11,7 @@ import org.junit.Test;
  * Test StatementUseDatabase
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.2
+ * @version 0.1.0.3
  */
 public class TestStatementUseDatabase extends TestStatement {
     
