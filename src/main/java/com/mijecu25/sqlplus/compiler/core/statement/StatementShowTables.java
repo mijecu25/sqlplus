@@ -1,7 +1,7 @@
 package com.mijecu25.sqlplus.compiler.core.statement;
 
 import com.mijecu25.messages.Messages;
-import com.mijecu25.utils.sql.mysql.MySQLUtils;
+import com.mijecu25.utils.sql.SQLUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -11,6 +11,12 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 
+/**
+ * This class represents the "show tables" SQL statement. It prints the tables located within a database.
+ * 
+ * @author Miguel Velez - miguelvelezmj25
+ * @version 0.1.0.2
+ */
 public class StatementShowTables extends Statement {
 
     private ResultSet resultSet;
@@ -63,7 +69,8 @@ public class StatementShowTables extends Statement {
         }
         catch(SQLException sqle) {
             StatementShowTables.logger.warn(Messages.WARNING + "Error when executing " + this, sqle);
-            System.out.println(Messages.WARNING + sqle.getMessage());
+            System.out.println(Messages.WARNING + "(" + sqle.getErrorCode() + ") (" + sqle.getSQLState()
+                    + ") " + sqle.getMessage());
 
             StatementShowTables.logger.warn(Messages.WARNING + "Throwing a " + sqle.getClass().getSimpleName()
                     + " to the calling class");
@@ -78,11 +85,14 @@ public class StatementShowTables extends Statement {
             // Get the medatadata from the result set
             ResultSetMetaData resultSetMetaData;
             resultSetMetaData = this.resultSet.getMetaData();
-
             // Get the title of the result column
             String label = resultSetMetaData.getColumnLabel(1);
-            // Get the maximum database name length
-            int maxTableNameLength = MySQLUtils.maxTableNameLength(this.getConnection());
+
+            // Get the currently selected database
+            String currentDatabase = SQLUtils.selectDatabase(this.getConnection());
+            // Get the maximum table name length
+            int maxTableNameLength = SQLUtils.maxTableNameLength(this.getConnection(), currentDatabase);
+
             // The maximum width that we are going to print is either the title of the column
             // or a table name
             maxTableNameLength = Math.max(maxTableNameLength, label.length());

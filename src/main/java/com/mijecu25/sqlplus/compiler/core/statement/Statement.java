@@ -13,7 +13,7 @@ import com.mijecu25.messages.Messages;
  * This class represents either a SQLPlus statement or a regular SQL statement.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.5
+ * @version 0.1.0.7
  */
 public abstract class Statement {
     
@@ -49,7 +49,7 @@ public abstract class Statement {
      * Execute the statement.
      * 
      * @param Connection connection the connection used to execute the statement.
-     * @throws SQLException
+     * @throws SQLException if there is a problem executing the statement
      */
     public abstract void execute(Connection connection) throws SQLException;
 

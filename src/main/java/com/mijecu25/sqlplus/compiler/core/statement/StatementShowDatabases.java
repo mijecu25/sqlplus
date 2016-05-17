@@ -9,14 +9,14 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.mijecu25.utils.sql.SQLUtils;
 import com.mijecu25.messages.Messages;
-import com.mijecu25.utils.sql.mysql.MySQLUtils;
 
 /**
- * This class represents the "show databases" SQL statements. It prints the databases found in the server.
+ * This class represents the "show databases" SQL statement. It prints the databases found in the server.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.5
+ * @version 0.1.0.6
  */
 public class StatementShowDatabases extends Statement {
     
@@ -89,7 +89,7 @@ public class StatementShowDatabases extends Statement {
             resultSetMetaData = this.resultSet.getMetaData();
 
             // Get the maximum database name length
-            int maxDatabaseNameLength = MySQLUtils.maxDatabaseNameLength(this.getConnection());
+            int maxDatabaseNameLength = SQLUtils.maxDatabaseNameLength(this.getConnection());
             // The total length is added by 4 for the 2 borders and the 2 spaces on either side
             int lineTotalLength = maxDatabaseNameLength + 4;
             // Build the horizontal border based on the length
