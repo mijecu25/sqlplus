@@ -13,7 +13,7 @@ import com.mijecu25.sqlplus.compiler.core.statement.StatementShowDatabases;
  * Test SQLPlusConnection.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.3
+ * @version 0.1.0.4
  */
 public class TestSQLPlusConnection {
     
@@ -39,8 +39,7 @@ public class TestSQLPlusConnection {
         TestSQLPlusConnection.port = "3306";
         
         TestSQLPlusConnection.connection = SQLPlusMySQLConnection.getConnection(TestSQLPlusConnection.username, 
-                TestSQLPlusConnection.password, TestSQLPlusConnection.host, TestSQLPlusConnection.database, 
-                TestSQLPlusConnection.port);
+                TestSQLPlusConnection.password, TestSQLPlusConnection.host, TestSQLPlusConnection.port);
     }
     
     /**

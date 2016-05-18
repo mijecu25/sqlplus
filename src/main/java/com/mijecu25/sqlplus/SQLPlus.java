@@ -29,7 +29,7 @@ import jline.console.ConsoleReader;
  * SQLPlus add alerts to your sql queries.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.13
+ * @version 0.1.0.14
  */
 public class SQLPlus {
 
@@ -229,9 +229,8 @@ public class SQLPlus {
     /**
      * Create an SQLPlusConnection by taking the credentials from the user.
      *
-     * @return
-     * @throws IOException
-     * @throws SQLException
+     * @throws IOException if there is an I/O error while reading input from the user.
+     * @throws SQLException if there is an error while establishing a connection.
      */
     private static void createSQLPlusConnection() throws IOException, SQLException {                
         if(false) {
@@ -299,9 +298,7 @@ public class SQLPlus {
             }
         }
         SQLPlus.logger.info("User entered username:" + username);
-        
-        // Create a SQLPlusConnection
-        SQLPlusMySQLConnection sqlPlusConnection = null;
+
         // Reset the jline console since we are going to use the regular console to securely get the password
         SQLPlus.resetConsole();
         
@@ -340,26 +337,24 @@ public class SQLPlus {
         SQLPlus.logger.info("User entered some password"); 
         System.out.println();
 
-        // TODO handle different databases
-        // If the database and port are default
-        if(database.isEmpty() && port.isEmpty()) {
-            SQLPlus.logger.info("Connection with username, password, and host");
-            sqlPlusConnection = SQLPlusMySQLConnection.getConnection(username, password, SQLPlusConnection.getDefaultHost());
-        }
-        // If the database is empty but the port is not empty 
-        else if(database.isEmpty() && !port.isEmpty()) {
-            SQLPlus.logger.info("Connection with username, password, host, and port");
-            sqlPlusConnection = SQLPlusMySQLConnection.getConnection(username, password, SQLPlusConnection.getDefaultHost(), port);
-        }
-        // If the port is empty but the database is not empty 
-        else if(port.isEmpty() && !database.isEmpty()) {
-            SQLPlus.logger.info("Connection with username, password, host, and database");
-            sqlPlusConnection = SQLPlusMySQLConnection.getConnection(username, password, SQLPlusConnection.getDefaultHost(), database, SQLPlusMySQLConnection.getDefaultPort());
-        }
-        // All the values were provided by the user
-        else {
-            SQLPlus.logger.info("Connection with all credentials");
-                sqlPlusConnection = SQLPlusMySQLConnection.getConnection(username, password, SQLPlusConnection.getDefaultHost(), database, port);
+        // Create a SQLPlusConnection
+        SQLPlusConnection sqlPlusConnection = null;
+
+        // Create a connection based on the database system
+        switch(database) {
+            // TODO Check if this new logic works
+            case SQLPlusMySQLConnection.MYSQL:
+                // If the default port is being used
+                if(port.isEmpty()) {
+                    SQLPlus.logger.info("Connection with username, password, and host");
+                    sqlPlusConnection = SQLPlusMySQLConnection.getConnection(username, password, SQLPlusConnection.getDefaultHost());
+                }
+                // All the values were provided by the user
+                else {
+                    SQLPlus.logger.info("Connection with all credentials");
+                    sqlPlusConnection = SQLPlusMySQLConnection.getConnection(username, password, SQLPlusConnection.getDefaultHost(), port);
+                }
+                break;
         }
   
         // Delete any traces of password in memory by filling the password array with with random characters
@@ -373,7 +368,7 @@ public class SQLPlus {
         
         // TODO remove this which is for testing
         SQLPlus.logger.info("Connection with username, password, and host");
-        SQLPlusMySQLConnection sqlPlusConnection = SQLPlusMySQLConnection.getConnection("root", new char[0], SQLPlusConnection.getDefaultHost());
+        SQLPlusConnection sqlPlusConnection = SQLPlusMySQLConnection.getConnection("root", new char[0], SQLPlusConnection.getDefaultHost());
  
         SQLPlus.logger.info("Created and returning a SQLPlusConnection " + sqlPlusConnection);     
         SQLPlus.sqlPlusConnection = sqlPlusConnection;

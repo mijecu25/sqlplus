@@ -11,7 +11,7 @@ import com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection;
  * Test for SQLPlusMySQLConnection class. TODO tell that this test might not work with their machine.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.1
+ * @version 0.1.0.2
  *
  */
 public class TestSQLPlusMySQLConnection extends TestSQLPlusConnection {
@@ -28,20 +28,20 @@ public class TestSQLPlusMySQLConnection extends TestSQLPlusConnection {
         Assert.assertNull(connection);
     }
     
-    /**
-     * Test getConnection providing all parameters
-     * @throws SQLException 
-     */
-    @Test
-    public void getConnection3() throws SQLException {
-        // Get connection
-        SQLPlusMySQLConnection connection = SQLPlusMySQLConnection.getConnection(TestSQLPlusMySQLConnection.username, 
-                TestSQLPlusMySQLConnection.password, TestSQLPlusMySQLConnection.host, TestSQLPlusMySQLConnection.database, 
-                TestSQLPlusMySQLConnection.port);
-
-        // Check that the connection is not null
-        Assert.assertNotNull(connection);
-    }
+//    /**
+//     * Test getConnection providing all parameters
+//     * @throws SQLException
+//     */
+//    @Test
+//    public void getConnection3() throws SQLException {
+//        // Get connection
+//        SQLPlusMySQLConnection connection = SQLPlusMySQLConnection.getConnection(TestSQLPlusMySQLConnection.username,
+//                TestSQLPlusMySQLConnection.password, TestSQLPlusMySQLConnection.host, TestSQLPlusMySQLConnection.database,
+//                TestSQLPlusMySQLConnection.port);
+//
+//        // Check that the connection is not null
+//        Assert.assertNotNull(connection);
+//    }
     
     /**
      * Test getConnection providing username and password
@@ -62,7 +62,7 @@ public class TestSQLPlusMySQLConnection extends TestSQLPlusConnection {
      * @throws SQLException 
      */
     @Test
-    public void getConnection4() throws SQLException {
+    public void getConnection3() throws SQLException {
         // Get connection
         SQLPlusMySQLConnection connection = SQLPlusMySQLConnection.getConnection(TestSQLPlusMySQLConnection.username, 
                 TestSQLPlusMySQLConnection.password, TestSQLPlusMySQLConnection.host, TestSQLPlusMySQLConnection.port);

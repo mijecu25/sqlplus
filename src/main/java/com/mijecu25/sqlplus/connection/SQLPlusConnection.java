@@ -15,7 +15,7 @@ import com.mijecu25.sqlplus.compiler.core.statement.Statement;
  * SQLPlusConnection abstrac class. Default database is MySQL on port 3306.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.8
+ * @version 0.1.0.9
  */
 public abstract class SQLPlusConnection {
     private static final String LOCALHOST = "127.0.0.1";
@@ -39,11 +39,11 @@ public abstract class SQLPlusConnection {
     /**
      * Constructor that instantiates several variables use to create a connection to a database.
      * 
-     * @param username
-     * @param password
-     * @param host
-     * @param database
-     * @param port
+     * @param username the username used to connect to the database.
+     * @param password the password associated to the user.
+     * @param host the host where the server is located.
+     * @param database the type of database used.
+     * @param port the port used to connect to the server.
      */
     public SQLPlusConnection(String username, char[] password, String host, String database, String port) {
         SQLPlusConnection.logger.info("Instantiating the credentials that will be used to connect to a " 
@@ -62,12 +62,9 @@ public abstract class SQLPlusConnection {
      * specific and are determined by the type of database used by the user. The default database is
      * {@value #DEFAULT_DATABASE}.
      * 
-     * @param usernameKey
-     * @param passwordKey
-     * @param host
-     * @param database
-     * @param port
-     * @throws SQLException
+     * @param usernameKey the username keyword used to specify the user.
+     * @param passwordKey the password keyword used to specify the password
+     * @throws SQLException if there is a problem connecting to the database
      */
     public void connect(String usernameKey, String passwordKey) throws SQLException {
         SQLPlusConnection.logger.info("Adding the connection properties to connect to a " + this.database + " database");
@@ -103,8 +100,8 @@ public abstract class SQLPlusConnection {
 
     /**
      * Execute a sql query
-     * 
-     * @param sql
+     *
+     * @param statement the statement that will be executed.
      */
     public void execute(Statement statement) {
         SQLPlusConnection.logger.info("Query to be executed: \"" + statement + "\"");
@@ -112,11 +109,9 @@ public abstract class SQLPlusConnection {
         try {
             statement.execute(this.connection);
         } catch (SQLException sqle) {
-            // TODO Auto-generated catch block
             SQLPlusConnection.logger.warn(Messages.WARNING + "There was an exception when executing the last command." 
                     + Messages.SPACE + Messages.CHECK_LOG_FILES);
         }
-
     }
 
     /**
@@ -144,11 +139,26 @@ public abstract class SQLPlusConnection {
                     + "that there was not a connection." + Messages.SPACE + Messages.CHECK_LOG_FILES);
         }
     }
-      
+
+    /**
+     * Return the default database.
+     *
+     * @return the default database.
+     */
     public static String getDefaultDatabase() { return SQLPlusConnection.DEFAULT_DATABASE; }
 
+    /**
+     * Return the default port.
+     *
+     * @return the default port.
+     */
     public static String getDefaultPort() { return SQLPlusConnection.DEFAULT_PORT; }
-    
+
+    /**
+     * Return the default host.
+     *
+     * @return the default host.
+     */
     public static String getDefaultHost() { return SQLPlusConnection.DEFAULT_HOST; }
 
     @Override
