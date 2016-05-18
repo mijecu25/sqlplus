@@ -9,7 +9,7 @@ import org.apache.logging.log4j.Logger;
 import com.mijecu25.messages.Messages;
 
 /**
- * This class represents the "use " + {$database} SQL statements. It changes the current database
+ * This class represents the "use <code>database</code>" SQL statement. It changes the current database
  * in the server and prints a message with the name of the current database.
  * 
  * @author Miguel Velez - miguelvelezmj25

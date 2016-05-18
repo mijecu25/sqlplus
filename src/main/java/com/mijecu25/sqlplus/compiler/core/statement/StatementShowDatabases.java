@@ -9,8 +9,8 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.mijecu25.utils.sql.SQLUtils;
 import com.mijecu25.messages.Messages;
+import com.mijecu25.sqlutils.SQLUtils;
 
 /**
  * This class represents the "show databases" SQL statement. It prints the databases found in the server.

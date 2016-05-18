@@ -1,7 +1,8 @@
 package com.mijecu25.sqlplus.compiler.core.statement;
 
 import com.mijecu25.messages.Messages;
-import com.mijecu25.utils.sql.SQLUtils;
+import com.mijecu25.sqlutils.SQLUtils;
+
 import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
