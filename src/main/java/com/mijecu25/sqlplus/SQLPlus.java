@@ -29,7 +29,7 @@ import jline.console.ConsoleReader;
  * SQLPlus add alerts to your sql queries.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.15
+ * @version 0.1.0.16
  */
 public class SQLPlus {
 
@@ -397,7 +397,7 @@ public class SQLPlus {
         
         // TODO remove this which is for testing
         SQLPlus.logger.info("Connection with username, password, and host");
-        SQLPlusConnection sqlPlusConnection = SQLPlusMySQLConnection.getConnection("root", new char[0], SQLPlusConnection.getDefaultHost());
+        SQLPlusConnection sqlPlusConnection = SQLPlusMySQLConnection.getConnection("sqlplus", new char[0], SQLPlusConnection.getDefaultHost());
 
         // TODO this does have to be in the final code
         SQLPlus.logger.info("Created and returning a SQLPlusConnection " + sqlPlusConnection);     

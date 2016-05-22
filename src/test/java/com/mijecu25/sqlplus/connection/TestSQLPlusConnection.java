@@ -13,7 +13,7 @@ import com.mijecu25.sqlplus.compiler.core.statement.StatementShowDatabases;
  * Test SQLPlusConnection.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.4
+ * @version 0.1.0.5
  */
 public class TestSQLPlusConnection {
     
@@ -25,14 +25,14 @@ public class TestSQLPlusConnection {
     protected static SQLPlusMySQLConnection connection;
     
     /**
-     * TODO Execute once.
+     * Initialize variables for testing. Execute once.
      * 
      * @throws SQLException
      */
     @BeforeClass
     public static void initialize() throws SQLException  {
         // TODO use computer current user
-        TestSQLPlusConnection.username = "root";
+        TestSQLPlusConnection.username = "sqlplus";
         TestSQLPlusConnection.password = "".toCharArray();
         TestSQLPlusConnection.host = "localhost";
         TestSQLPlusConnection.database = "mysql";
