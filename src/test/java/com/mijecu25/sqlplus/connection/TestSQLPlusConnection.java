@@ -31,7 +31,7 @@ public class TestSQLPlusConnection {
      */
     @BeforeClass
     public static void initialize() throws SQLException  {
-        TestSQLPlusConnection.username = "sqlplus";
+        TestSQLPlusConnection.username = "root";
         TestSQLPlusConnection.password = "".toCharArray();
         TestSQLPlusConnection.host = "localhost";
         TestSQLPlusConnection.database = "mysql";
