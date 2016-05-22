@@ -1,3 +1,6 @@
+help: # List all the targets of the Makefile
+	@grep '^[^#[:space:]].*:' Makefile | sort
+	
 generate-code: # Create the parser and lexer for the SQLPlus language
 	java org.antlr.Tool -fo src/main/java/com/mijecu25/sqlplus/parser src/main/sqlplus/parser/SQLPlusLex.g 
 	java org.antlr.Tool -fo src/main/java/com/mijecu25/sqlplus/parser src/main/sqlplus/parser/SQLPlus.g
@@ -7,6 +10,3 @@ run: # Execute the SQLPlus client
 	
 package: # Package an executable jar file
 	mvn package -DskipTests=true
-
-help: # List all the targets of the Makefile
-	@grep '^[^#[:space:]].*:' Makefile | sort
