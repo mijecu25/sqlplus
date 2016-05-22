@@ -16,7 +16,7 @@ import java.sql.SQLException;
  * This class represents the "show tables" SQL statement. It prints the tables located within a database.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.3
+ * @version 0.1.0.4
  */
 public class StatementShowTables extends Statement {
 
@@ -130,8 +130,8 @@ public class StatementShowTables extends Statement {
             System.out.println(line);
         } catch (SQLException sqle) {
             StatementShowTables.logger.warn(Messages.WARNING + "Error when printing the result of " + this, sqle);
-            System.out.println(Messages.WARNING + "Could not print the result." + Messages.SPACE
-                    + Messages.WARNING + Messages.CHECK_LOG_FILES);
+            System.out.println(Messages.WARNING + "(" + sqle.getErrorCode() + ") (" + sqle.getSQLState() + ") "
+                    + "Could not print the result." + Messages.SPACE + Messages.WARNING + Messages.CHECK_LOG_FILES);
         }
     }
 

@@ -29,7 +29,7 @@ import jline.console.ConsoleReader;
  * SQLPlus add alerts to your sql queries.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.16
+ * @version 0.1.0.17
  */
 public class SQLPlus {
 
@@ -120,6 +120,7 @@ public class SQLPlus {
             return;
         } 
         catch (SQLException sqle) {
+            // TODO should I add here the error code?
             // This exception can occur when trying to establish a connection
             SQLPlus.logger.fatal(Messages.FATAL + Messages.FATAL_EXIT(SQLPlus.PROGRAM_NAME, sqle.getClass().getName()));
             System.out.println(Messages.FATAL + Messages.FATAL_EXCEPTION_ACTION(sqle.getClass().getSimpleName())

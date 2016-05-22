@@ -13,7 +13,7 @@ import com.mijecu25.messages.Messages;
  * in the server and prints a message with the name of the current database.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.4
+ * @version 0.1.0.5
  */
 public class StatementUseDatabase extends Statement {
     
@@ -57,7 +57,8 @@ public class StatementUseDatabase extends Statement {
         }
         catch(SQLException sqle) {
             StatementUseDatabase.logger.warn(Messages.WARNING + "Error when executing " + this, sqle);
-            System.out.println(Messages.WARNING + sqle.getMessage());
+            System.out.println(Messages.WARNING + "(" + sqle.getErrorCode() + ") (" + sqle.getSQLState() + ") "
+                    + sqle.getMessage());
             
             StatementUseDatabase.logger.warn(Messages.WARNING + "Throwing a " + sqle.getClass().getSimpleName() + " to the calling class");
             throw sqle;

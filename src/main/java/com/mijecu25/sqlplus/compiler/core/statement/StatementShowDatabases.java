@@ -16,7 +16,7 @@ import com.mijecu25.sqlutils.SQLUtils;
  * This class represents the "show databases" SQL statement. It prints the databases found in the server.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.7
+ * @version 0.1.0.8
  */
 public class StatementShowDatabases extends Statement {
     
@@ -47,7 +47,7 @@ public class StatementShowDatabases extends Statement {
                     + " to the calling class");
             throw iae;
         }
-             
+
         // Set the connection
         this.setConnection(connection);
         
@@ -62,7 +62,7 @@ public class StatementShowDatabases extends Statement {
                 // if there is no response, we do not want to continue executing
                 throw new SQLException();
             }
-            
+
             this.printResult();
 
             // Close the result set and statement
@@ -71,7 +71,8 @@ public class StatementShowDatabases extends Statement {
         }
         catch(SQLException sqle) {
             StatementShowDatabases.logger.warn(Messages.WARNING + "Error when executing " + this, sqle);
-            System.out.println(Messages.WARNING + sqle.getMessage());
+            System.out.println(Messages.WARNING + "(" + sqle.getErrorCode() + ") (" + sqle.getSQLState() + ") "
+                    + sqle.getMessage());
             
             StatementShowDatabases.logger.warn(Messages.WARNING + "Throwing a " + sqle.getClass().getSimpleName()
                     + " to the calling class");
@@ -125,8 +126,8 @@ public class StatementShowDatabases extends Statement {
         }
         catch (SQLException sqle) {
             StatementShowDatabases.logger.warn(Messages.WARNING + "Error when printing the result of " + this, sqle);
-            System.out.println(Messages.WARNING + "Could not print the result." + Messages.SPACE
-                    + Messages.WARNING + Messages.CHECK_LOG_FILES);
+            System.out.println(Messages.WARNING + "(" + sqle.getErrorCode() + ") (" + sqle.getSQLState() + ") "
+                    + "Could not print the result." + Messages.SPACE + Messages.WARNING + Messages.CHECK_LOG_FILES);
         }
     }
 
