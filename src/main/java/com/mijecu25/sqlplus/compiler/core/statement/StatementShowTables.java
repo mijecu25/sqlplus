@@ -16,7 +16,7 @@ import java.sql.SQLException;
  * This class represents the "show tables" SQL statement. It prints the tables located within a database.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.2
+ * @version 0.1.0.3
  */
 public class StatementShowTables extends Statement {
 
@@ -102,7 +102,7 @@ public class StatementShowTables extends Statement {
             // The total length is added by 4 for the 2 borders and the 2 spaces on either side
             int lineTotalLenght = maxTableNameLength + 4;
             // Print the horizontal border based on the length
-            line.append(this.buildHorizontalBorder(lineTotalLenght));
+            line.append(this.buildHorizontalBorder(lineTotalLenght) + "\n");
 
             // Build the label of the column
             line.append(StatementShowDatabases.VERTICAL_BORDERL + " ");
@@ -111,7 +111,7 @@ public class StatementShowTables extends Statement {
             line.append(StatementShowDatabases.VERTICAL_BORDERL + "\n");
 
             // Build a border after the name of the column
-            line.append(this.buildHorizontalBorder(lineTotalLenght));
+            line.append(this.buildHorizontalBorder(lineTotalLenght) + "\n");
 
             // While the are more rows to process
             while(resultSet.next()) {
@@ -125,7 +125,7 @@ public class StatementShowTables extends Statement {
             }
 
             // Build a border after the all of the rows
-            line.append(this.buildHorizontalBorder(lineTotalLenght));
+            line.append(this.buildHorizontalBorder(lineTotalLenght) + "\n");
 
             System.out.println(line);
         } catch (SQLException sqle) {

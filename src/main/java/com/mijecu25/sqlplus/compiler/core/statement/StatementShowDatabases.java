@@ -16,7 +16,7 @@ import com.mijecu25.sqlutils.SQLUtils;
  * This class represents the "show databases" SQL statement. It prints the databases found in the server.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.6
+ * @version 0.1.0.7
  */
 public class StatementShowDatabases extends Statement {
     
@@ -94,7 +94,7 @@ public class StatementShowDatabases extends Statement {
             int lineTotalLength = maxDatabaseNameLength + 4;
             // Build the horizontal border based on the length
             StringBuilder line = new StringBuilder();
-            line.append(this.buildHorizontalBorder(lineTotalLength));
+            line.append(this.buildHorizontalBorder(lineTotalLength) + "\n");
     
             // Print the label of the column
             String label = resultSetMetaData.getColumnLabel(1);
@@ -105,7 +105,7 @@ public class StatementShowDatabases extends Statement {
             line.append(StatementShowDatabases.VERTICAL_BORDERL + "\n");
 
             // Build a border after the name of the column
-            line.append(this.buildHorizontalBorder(lineTotalLength));
+            line.append(this.buildHorizontalBorder(lineTotalLength) + "\n");
         
             // While the are more rows to process
             while (resultSet.next()) {
@@ -119,7 +119,7 @@ public class StatementShowDatabases extends Statement {
             }
 
             // Build a border after the all of the rows
-            line.append(this.buildHorizontalBorder(lineTotalLength));
+            line.append(this.buildHorizontalBorder(lineTotalLength) + "\n");
 
             System.out.println(line);
         }
