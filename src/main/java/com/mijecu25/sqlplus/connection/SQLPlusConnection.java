@@ -15,7 +15,7 @@ import com.mijecu25.sqlplus.compiler.core.statement.Statement;
  * SQLPlusConnection abstrac class. Default database is MySQL on port 3306.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.10
+ * @version 0.1.0.11
  */
 public abstract class SQLPlusConnection {
     private static final String LOCALHOST = "127.0.0.1";
@@ -24,7 +24,9 @@ public abstract class SQLPlusConnection {
     private static final String DEFAULT_DATABASE = SQLPlusMySQLConnection.MYSQL;
     private static final String DEFAULT_PORT = SQLPlusMySQLConnection.MYSQL_PORT_NUMBER;
     private static final String DEFAULT_HOST = SQLPlusConnection.LOCALHOST;
-    
+    private static final String USE_SSL = "useSSL";
+    private static final String USE_SSL_DEFAULT = "false";
+
     private static final Logger logger = LogManager.getLogger(SQLPlusConnection.class);
         
     private String host;
@@ -72,9 +74,7 @@ public abstract class SQLPlusConnection {
         // Add the properties to connect to a database
         this.connectionProperties.put(usernameKey, this.username);
         this.connectionProperties.put(passwordKey, new String(this.password));
-//        // TODO use static strings and do not try auto reconnect, otherwise we do not get an error with wrong username and password
-//        this.connectionProperties.put("autoReconnect", "true");
-        this.connectionProperties.put("useSSL", "false");
+        this.connectionProperties.put(SQLPlusConnection.USE_SSL, SQLPlusConnection.USE_SSL_DEFAULT);
         
         // Delete any traces of password in memory by filling the password array with with random characters
         // to minimize the lifetime of sensitive data in memory. Then call the garbage collections
