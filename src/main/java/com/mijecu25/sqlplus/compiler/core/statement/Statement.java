@@ -13,7 +13,7 @@ import com.mijecu25.messages.Messages;
  * This class represents either a SQLPlus statement or a regular SQL statement.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.7
+ * @version 0.1.0.8
  */
 public abstract class Statement {
     
@@ -60,12 +60,11 @@ public abstract class Statement {
 
     /**
      * Print an horizontal border around text. The total characters displayed in the border depend on the length
-     * specified by the parameter.
+     * specified by the parameter. A new line is printed
      *  
      * @param length the length of the longest string that will be printed.
      */
     public String buildHorizontalBorder(int length) {
-        // TODO change the javadoc. Explain the this includes a new line character
         if(length < 5) {
             IllegalArgumentException iae = new IllegalArgumentException();
             Statement.logger.fatal(Messages.FATAL + "The minimum length to print a horizontal border is 5");
@@ -79,7 +78,6 @@ public abstract class Statement {
         line.append(Statement.CORNER_SYMBOL);
         line.append(StringUtils.repeat(Statement.HORIZONTAL_BORDER, length - 2));
         line.append(Statement.CORNER_SYMBOL);
-        line.append("\n");
         return line.toString();
     }
 
