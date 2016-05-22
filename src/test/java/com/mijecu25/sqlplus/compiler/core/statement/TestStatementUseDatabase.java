@@ -11,7 +11,7 @@ import org.junit.Test;
  * Test StatementUseDatabase
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.3
+ * @version 0.1.0.4
  */
 public class TestStatementUseDatabase extends TestStatement {
     
@@ -20,7 +20,6 @@ public class TestStatementUseDatabase extends TestStatement {
     @BeforeClass
     public static void initialize() throws SQLException {
         TestStatement.initialize();
-        // TODO this might not work in all computers since they might not have this database
         TestStatementUseDatabase.statement = new StatementUseDatabase("information_schema");
     }
     

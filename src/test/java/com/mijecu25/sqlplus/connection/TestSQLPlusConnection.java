@@ -13,7 +13,7 @@ import com.mijecu25.sqlplus.compiler.core.statement.StatementShowDatabases;
  * Test SQLPlusConnection.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.5
+ * @version 0.1.0.6
  */
 public class TestSQLPlusConnection {
     
@@ -31,7 +31,6 @@ public class TestSQLPlusConnection {
      */
     @BeforeClass
     public static void initialize() throws SQLException  {
-        // TODO use computer current user
         TestSQLPlusConnection.username = "sqlplus";
         TestSQLPlusConnection.password = "".toCharArray();
         TestSQLPlusConnection.host = "localhost";

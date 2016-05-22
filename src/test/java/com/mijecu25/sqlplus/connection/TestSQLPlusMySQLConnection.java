@@ -8,10 +8,10 @@ import org.junit.Test;
 import com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection;
 
 /**
- * Test for SQLPlusMySQLConnection class. TODO tell that this test might not work with their machine.
+ * Test for SQLPlusMySQLConnection class.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.3
+ * @version 0.1.0.4
  *
  */
 public class TestSQLPlusMySQLConnection extends TestSQLPlusConnection {
