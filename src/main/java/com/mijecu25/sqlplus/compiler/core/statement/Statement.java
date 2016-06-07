@@ -13,12 +13,12 @@ import com.mijecu25.messages.Messages;
  * This class represents either a SQLPlus statement or a regular SQL statement.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.8
+ * @version 0.1.0.9
  */
 public abstract class Statement {
     
     private String statement;
-    private Connection connection;
+    private Connection connection; 
     
     protected static final String CORNER_SYMBOL = "+";
     protected static final String HORIZONTAL_BORDER = "-";
@@ -48,7 +48,7 @@ public abstract class Statement {
     /**
      * Execute the statement.
      * 
-     * @param Connection connection the connection used to execute the statement.
+     * @param connection connection the connection used to execute the statement.
      * @throws SQLException if there is a problem executing the statement
      */
     public abstract void execute(Connection connection) throws SQLException;
@@ -64,7 +64,7 @@ public abstract class Statement {
      *  
      * @param length the length of the longest string that will be printed.
      */
-    public String buildHorizontalBorder(int length) {
+    public static String buildHorizontalBorder(int length) {
         if(length < 5) {
             IllegalArgumentException iae = new IllegalArgumentException();
             Statement.logger.fatal(Messages.FATAL + "The minimum length to print a horizontal border is 5");
