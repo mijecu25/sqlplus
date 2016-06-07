@@ -4,11 +4,14 @@ import SQLPlusLex;
 
 @header {
 	package com.mijecu25.sqlplus.parser;
-	
+
 	import com.mijecu25.sqlplus.compiler.core.statement.Statement;
 	import com.mijecu25.sqlplus.compiler.core.statement.StatementShowDatabases;
 	import com.mijecu25.sqlplus.compiler.core.statement.StatementUseDatabase;
 	import com.mijecu25.sqlplus.compiler.core.statement.StatementShowTables;
+	import com.mijecu25.sqlplus.compiler.core.statement.dml.StatementDML;
+	import com.mijecu25.sqlplus.compiler.core.statement.dml.StatementSelect;
+	import com.mijecu25.sqlplus.compiler.core.statement.dml.StatementSelectExpression;
 }
 
 // This is the entry point of the SQLPlus alert program
@@ -35,8 +38,10 @@ sql_statement returns [Statement sqlStatement]
 	@init {
 		$sqlStatement = null;
 	}
-	:	//select_statement
-	/*|*/	show_statement {
+	:	select_statement {
+			$sqlStatement = $select_statement.selectStatement;
+		}
+	|	show_statement {
 			$sqlStatement = $show_statement.showStatement;
 		}
 	|	use_statement {
@@ -93,33 +98,54 @@ show_databases returns [Statement showDatabasesStatement]
 		}
 	;
 
-//select_statement
-//	:	select_expression
-//	;
-//	
-//select_expression
-//	:	SELECT select_list (FROM table_references)?{ System.out.println("SQL Statements"); }
-//	;
-//	
-//select_list
-//	:	displayed_column (COMMA displayed_column)* 
-//	| 	ASTERISK
-//	;
-//	
-//displayed_column 
-//	:	table_spec DOT ASTERISK
-//	|	column_spec (alias)?
-//	;
-//
-//table_references
-//	:	table_reference (COMMA table_reference)*
-//	;
-//	
-//table_reference
-//	:	//table_factor1 
-//	/*|*/ 	table_atom
-//	;
-//
+select_statement returns [Statement selectStatement]
+	@init {
+		$selectStatement = null;
+	}
+	:	select_expression {
+			$selectStatement = $select_expression.selectExpression;
+	}
+	|	QUESTION_MARK select_expression { $selectStatement = new StatementSelect(); }
+	;
+
+select_expression returns [Statement selectExpression]
+	@init {
+		$selectExpression = null;
+	}
+	:	SELECT select_list (FROM table_references)? { 
+			$selectExpression = new StatementSelectExpression($select_list.selectList, "TODO"); 
+		}
+	;
+
+select_list returns [List<String> selectList]
+	@init {
+		$selectList = new ArrayList<String>();
+	}
+	:	column=displayed_column {
+	 		$selectList.add($column.text);
+		}
+		(
+			COMMA column=displayed_column {
+				$selectList.add($column.text);
+			}
+		)*
+	| 	ASTERISK {
+			$selectList.add($ASTERISK.text);
+		}
+	;
+
+displayed_column
+	:	column_spec (alias)?
+	;
+
+table_references
+	:	table_reference (COMMA table_reference)*
+	;
+
+table_reference
+	:	table_atom
+	;
+
 //table_factor1
 //	:	table_factor2 ((INNER | CROSS)? JOIN table_atom (join_condition)?)?
 //	;
@@ -136,13 +162,10 @@ show_databases returns [Statement showDatabasesStatement]
 //	:	table_atom (NATURAL ((LEFT|RIGHT) (OUTER)?)? JOIN table_atom)?
 //	;
 //	
-//table_atom
-//	:	table_spec (partition_clause)? (alias)? (index_hint_list)?
-//	| 	subquery alias
-//	| 	LEFT_PARENTHESIS table_references RIGHT_PARENTHESIS
-//	| 	OJ table_reference LEFT OUTER JOIN table_reference ON expression
-//	;
-//
+table_atom
+	:	table_spec
+	;
+
 //join_condition
 //	:	ON expression 
 //	| 	USING column_list
@@ -168,14 +191,14 @@ show_databases returns [Statement showDatabasesStatement]
 //	:	TODO // TODO
 //	;
 //
-//table_spec
-//	:	(schema_name DOT)? table_name
-//	;
-//
-//column_spec
-//	: ((schema_name DOT)? table_name DOT)? column_name 
-//	;
-//
+table_spec
+	:	(schema_name DOT)? table_name
+	;
+
+column_spec
+	: ((schema_name DOT)? table_name DOT)? column_name
+	;
+
 //column_list
 //	:	TODO //TODO
 //	;
