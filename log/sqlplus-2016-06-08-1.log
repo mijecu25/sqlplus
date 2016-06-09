@@ -1,0 +1,76 @@
+[06-08-2016 20:37:11.999] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(57) - Initializing SQLPlus version 0.1.0-SNAPSHOT
+[06-08-2016 20:37:12.203] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(108) - Create SQLPlusConnection
+[06-08-2016 20:37:12.203] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(400) - Connection with username, password, and host
+[06-08-2016 20:37:12.204] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(116) - Creating a new SQLPlusMySQLConnection instance with username:sqlplus password:********* host:127.0.0.1
+[06-08-2016 20:37:12.204] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(51) - Instantiating the credentials that will be used to connect to a mysql database
+[06-08-2016 20:37:12.204] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(41) - Creating SQLPlusMySQLConnection with username:sqlplus password:********* host: 127.0.0.1 port:3306
+[06-08-2016 20:37:12.205] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(45) - Will connect to a MySQL database using the credentials provided
+[06-08-2016 20:37:12.205] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(72) - Adding the connection properties to connect to a mysql database
+[06-08-2016 20:37:12.237] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(85) - Attempting to connect to the database: jdbc:mysql://127.0.0.1:3306/
+[06-08-2016 20:37:12.645] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(123) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=sqlplus, host=127.0.0.1, database=mysql, port=3306]
+[06-08-2016 20:37:12.645] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(404) - Created and returning a SQLPlusConnection SQLPlusConnection [username=sqlplus, host=127.0.0.1, database=mysql, port=3306]
+[06-08-2016 20:37:18.556] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(200) - Raw input from the user: use yugioh_db;
+[06-08-2016 20:37:18.556] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(203) - Will parse the user input to determine what to execute
+[06-08-2016 20:37:18.577] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.<init>(48) - Created a Statement with a string statement
+[06-08-2016 20:37:18.577] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.StatementUseDatabase.<init>(28) - Parsed and created a StatementUseDatabase
+[06-08-2016 20:37:18.577] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(109) - Query to be executed: "StatementUseDatabase [statement=use yugioh_db]"
+[06-08-2016 20:37:18.577] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.StatementUseDatabase.execute(34) - Will execute the code to use yugioh_db
+[06-08-2016 20:37:18.581] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.StatementUseDatabase.printResult(70) - Printing message that acknowledges that the database was changed
+[06-08-2016 20:37:22.313] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(200) - Raw input from the user: show tables ;
+[06-08-2016 20:37:22.313] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(203) - Will parse the user input to determine what to execute
+[06-08-2016 20:37:22.314] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.<init>(48) - Created a Statement with a string statement
+[06-08-2016 20:37:22.314] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.StatementShowTables.<init>(28) - Parsed and created a ShowTablesStatement
+[06-08-2016 20:37:22.314] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(109) - Query to be executed: "StatementShowTables [statement=show tables]"
+[06-08-2016 20:37:22.314] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.StatementShowTables.execute(33) - Will execute the code to show the tables
+[06-08-2016 20:37:22.315] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.StatementShowTables.printResult(80) - Printing the result
+[06-08-2016 20:37:27.660] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(200) - Raw input from the user: select name from cards;
+[06-08-2016 20:37:27.660] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(203) - Will parse the user input to determine what to execute
+[06-08-2016 20:37:27.661] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.<init>(48) - Created a Statement with a string statement
+[06-08-2016 20:37:27.662] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.dml.StatementDML.<init>(35) - Parsed and created a StatementDML
+[06-08-2016 20:37:27.662] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.dml.StatementSelectExpression.<init>(30) - Parsed and created a StatementSelectExpression
+[06-08-2016 20:37:27.662] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(109) - Query to be executed: "StatementSelectExpression [statement=SELECT name FROM cards]"
+[06-08-2016 20:37:27.662] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.dml.StatementSelectExpression.execute(35) - Will execute the code to query the database using a select statement
+[06-08-2016 20:37:27.665] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.dml.StatementSelectExpression.printResult(84) - Printing the result
+[06-08-2016 20:37:27.676] [main] WARN  com.mijecu25.sqlplus.compiler.core.statement.dml.StatementSelectExpression.printResult(126) - WARNING: Error when printing the result of StatementSelectExpression [statement=SELECT name FROM cards]
+java.sql.SQLException: Column Index out of range, 2 > 1. 
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:957) ~[sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:896) ~[sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:885) ~[sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:860) ~[sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
+	at com.mysql.jdbc.ResultSetImpl.checkColumnBounds(ResultSetImpl.java:767) ~[sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
+	at com.mysql.jdbc.ResultSetImpl.getStringInternal(ResultSetImpl.java:5245) ~[sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
+	at com.mysql.jdbc.ResultSetImpl.getString(ResultSetImpl.java:5167) ~[sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
+	at com.mijecu25.sqlplus.compiler.core.statement.dml.StatementSelectExpression.printResult(StatementSelectExpression.java:112) [sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
+	at com.mijecu25.sqlplus.compiler.core.statement.dml.StatementSelectExpression.execute(StatementSelectExpression.java:64) [sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
+	at com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(SQLPlusConnection.java:112) [sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
+	at com.mijecu25.sqlplus.SQLPlus.main(SQLPlus.java:215) [sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
+[06-08-2016 20:37:50.931] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(200) - Raw input from the user: select name from cards;
+[06-08-2016 20:37:50.931] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(203) - Will parse the user input to determine what to execute
+[06-08-2016 20:37:50.931] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.<init>(48) - Created a Statement with a string statement
+[06-08-2016 20:37:50.932] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.dml.StatementDML.<init>(35) - Parsed and created a StatementDML
+[06-08-2016 20:37:50.932] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.dml.StatementSelectExpression.<init>(30) - Parsed and created a StatementSelectExpression
+[06-08-2016 20:37:50.932] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(109) - Query to be executed: "StatementSelectExpression [statement=SELECT name FROM cards]"
+[06-08-2016 20:37:50.932] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.dml.StatementSelectExpression.execute(35) - Will execute the code to query the database using a select statement
+[06-08-2016 20:37:50.934] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.dml.StatementSelectExpression.printResult(84) - Printing the result
+[06-08-2016 20:37:50.935] [main] WARN  com.mijecu25.sqlplus.compiler.core.statement.dml.StatementSelectExpression.printResult(126) - WARNING: Error when printing the result of StatementSelectExpression [statement=SELECT name FROM cards]
+java.sql.SQLException: Column Index out of range, 2 > 1. 
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:957) ~[sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:896) ~[sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:885) ~[sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:860) ~[sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
+	at com.mysql.jdbc.ResultSetImpl.checkColumnBounds(ResultSetImpl.java:767) ~[sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
+	at com.mysql.jdbc.ResultSetImpl.getStringInternal(ResultSetImpl.java:5245) ~[sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
+	at com.mysql.jdbc.ResultSetImpl.getString(ResultSetImpl.java:5167) ~[sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
+	at com.mijecu25.sqlplus.compiler.core.statement.dml.StatementSelectExpression.printResult(StatementSelectExpression.java:112) [sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
+	at com.mijecu25.sqlplus.compiler.core.statement.dml.StatementSelectExpression.execute(StatementSelectExpression.java:64) [sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
+	at com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(SQLPlusConnection.java:112) [sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
+	at com.mijecu25.sqlplus.SQLPlus.main(SQLPlus.java:215) [sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
+[06-08-2016 20:38:20.585] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(180) - The user wants to quit SQLPlus
+[06-08-2016 20:38:20.586] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(415) - Attempting to disconnect the SQLPlusConnection
+[06-08-2016 20:38:20.586] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(127) - Attempting to disconnect from the database
+[06-08-2016 20:38:20.588] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(129) - Disconnected from the database
+[06-08-2016 20:38:20.588] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(417) - Disconnected the SQLPlusConnection
+[06-08-2016 20:38:20.589] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(421) - Reset the console from jline
+[06-08-2016 20:38:20.589] [main] INFO  com.mijecu25.sqlplus.SQLPlus.resetConsole(434) - About to reset the console from jline
+[06-08-2016 20:38:20.597] [main] INFO  com.mijecu25.sqlplus.SQLPlus.resetConsole(436) - Reset the console from jline
+[06-08-2016 20:38:20.597] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(424) - Quitting SQLPlus

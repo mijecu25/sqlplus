@@ -1,7 +1,6 @@
 package com.mijecu25.sqlplus.compiler.core.statement;
 
 import java.sql.Connection;
-import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 
@@ -16,12 +15,10 @@ import com.mijecu25.sqlutils.SQLUtils;
  * This class represents the "show databases" SQL statement. It prints the databases found in the server.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.8
+ * @version 0.1.0.9
  */
 public class StatementShowDatabases extends Statement {
-    
-    private ResultSet resultSet;
-    
+       
     private static final String STATEMENT = "show databases";
     
     private static final Logger logger = LogManager.getLogger(StatementShowDatabases.class);
@@ -29,7 +26,6 @@ public class StatementShowDatabases extends Statement {
     public StatementShowDatabases() {
         super(StatementShowDatabases.STATEMENT);
         StatementShowDatabases.logger.info("Parsed and created a ShowDatabasesStatement");
-        this.resultSet = null;
     }
     
     @Override
@@ -49,12 +45,12 @@ public class StatementShowDatabases extends Statement {
         }
 
         // Set the connection
-        this.setConnection(connection);
+        this.connection = connection;
         
         try {
             // Execute the query
-            java.sql.Statement statement = this.getConnection().createStatement();
-            this.resultSet = statement.executeQuery(this.getStatement());
+            java.sql.Statement statement = this.connection.createStatement();
+            this.resultSet = statement.executeQuery(this.statement);
 
             // The result from the query is null
             if(this.resultSet == null) {
@@ -90,12 +86,12 @@ public class StatementShowDatabases extends Statement {
             resultSetMetaData = this.resultSet.getMetaData();
 
             // Get the maximum database name length
-            int maxDatabaseNameLength = SQLUtils.maxDatabaseNameLength(this.getConnection());
+            int maxDatabaseNameLength = SQLUtils.maxDatabaseNameLength(this.connection);
             // The total length is added by 4 for the 2 borders and the 2 spaces on either side
             int lineTotalLength = maxDatabaseNameLength + 4;
             // Build the horizontal border based on the length
             StringBuilder line = new StringBuilder();
-            line.append(this.buildHorizontalBorder(lineTotalLength) + "\n");
+            line.append(Statement.buildHorizontalBorder(lineTotalLength) + "\n");
     
             // Print the label of the column
             String label = resultSetMetaData.getColumnLabel(1);
@@ -106,7 +102,7 @@ public class StatementShowDatabases extends Statement {
             line.append(StatementShowDatabases.VERTICAL_BORDERL + "\n");
 
             // Build a border after the name of the column
-            line.append(this.buildHorizontalBorder(lineTotalLength) + "\n");
+            line.append(Statement.buildHorizontalBorder(lineTotalLength) + "\n");
         
             // While the are more rows to process
             while (resultSet.next()) {
@@ -120,7 +116,7 @@ public class StatementShowDatabases extends Statement {
             }
 
             // Build a border after the all of the rows
-            line.append(this.buildHorizontalBorder(lineTotalLength) + "\n");
+            line.append(Statement.buildHorizontalBorder(lineTotalLength) + "\n");
 
             System.out.println(line);
         }
@@ -133,7 +129,7 @@ public class StatementShowDatabases extends Statement {
 
     @Override
     public String toString() {
-        return "ShowDatabasesStatement [statement=" + this.getStatement() + "]";
+        return "ShowDatabasesStatement [statement=" + this.statement + "]";
     }
 
 }

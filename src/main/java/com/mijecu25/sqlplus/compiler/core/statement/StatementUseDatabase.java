@@ -13,7 +13,7 @@ import com.mijecu25.messages.Messages;
  * in the server and prints a message with the name of the current database.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.5
+ * @version 0.1.0.6
  */
 public class StatementUseDatabase extends Statement {
     
@@ -46,12 +46,12 @@ public class StatementUseDatabase extends Statement {
         }
 
         // Set the connection
-        this.setConnection(connection);
+        this.connection = connection;
         
         try {
             // Execute the query
-            java.sql.Statement statement = this.getConnection().createStatement();
-            statement.execute(this.getStatement());
+            java.sql.Statement statement = this.connection.createStatement();
+            statement.execute(this.statement);
 
             this.printResult();                    
         }
@@ -73,7 +73,7 @@ public class StatementUseDatabase extends Statement {
 
     @Override
     public String toString() {
-        return "StatementUseDatabase [statement=" + this.getStatement() + "]";
+        return "StatementUseDatabase [statement=" + this.statement + "]";
     }
 
 }

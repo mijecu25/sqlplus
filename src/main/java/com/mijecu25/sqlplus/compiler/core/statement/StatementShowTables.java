@@ -8,7 +8,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.sql.Connection;
-import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 
@@ -16,11 +15,9 @@ import java.sql.SQLException;
  * This class represents the "show tables" SQL statement. It prints the tables located within a database.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.4
+ * @version 0.1.0.5
  */
 public class StatementShowTables extends Statement {
-
-    private ResultSet resultSet;
 
     private static final String STATEMENT = "show tables";
 
@@ -29,7 +26,6 @@ public class StatementShowTables extends Statement {
     public StatementShowTables() {
         super(StatementShowTables.STATEMENT);
         StatementShowTables.logger.info("Parsed and created a ShowTablesStatement");
-        this.resultSet = null;
     }
 
     @Override
@@ -49,12 +45,12 @@ public class StatementShowTables extends Statement {
         }
 
         // Set the connection
-        this.setConnection(connection);
+        this.connection = connection;
 
         try {
             // Execute the query
-            java.sql.Statement statement = this.getConnection().createStatement();
-            this.resultSet = statement.executeQuery(this.getStatement());
+            java.sql.Statement statement = this.connection.createStatement();
+            this.resultSet = statement.executeQuery(this.statement);
 
             if(this.resultSet == null) {
                 // Throw an exception because this will be very weird. Also,
@@ -90,9 +86,9 @@ public class StatementShowTables extends Statement {
             String label = resultSetMetaData.getColumnLabel(1);
 
             // Get the currently selected database
-            String currentDatabase = SQLUtils.selectDatabase(this.getConnection());
+            String currentDatabase = SQLUtils.selectDatabase(this.connection);
             // Get the maximum table name length
-            int maxTableNameLength = SQLUtils.maxTableNameLength(this.getConnection(), currentDatabase);
+            int maxTableNameLength = SQLUtils.maxTableNameLength(this.connection, currentDatabase);
 
             // The maximum width that we are going to print is either the title of the column
             // or a table name
@@ -102,7 +98,7 @@ public class StatementShowTables extends Statement {
             // The total length is added by 4 for the 2 borders and the 2 spaces on either side
             int lineTotalLenght = maxTableNameLength + 4;
             // Print the horizontal border based on the length
-            line.append(this.buildHorizontalBorder(lineTotalLenght) + "\n");
+            line.append(Statement.buildHorizontalBorder(lineTotalLenght) + "\n");
 
             // Build the label of the column
             line.append(StatementShowDatabases.VERTICAL_BORDERL + " ");
@@ -111,7 +107,7 @@ public class StatementShowTables extends Statement {
             line.append(StatementShowDatabases.VERTICAL_BORDERL + "\n");
 
             // Build a border after the name of the column
-            line.append(this.buildHorizontalBorder(lineTotalLenght) + "\n");
+            line.append(Statement.buildHorizontalBorder(lineTotalLenght) + "\n");
 
             // While the are more rows to process
             while(resultSet.next()) {
@@ -125,7 +121,7 @@ public class StatementShowTables extends Statement {
             }
 
             // Build a border after the all of the rows
-            line.append(this.buildHorizontalBorder(lineTotalLenght) + "\n");
+            line.append(Statement.buildHorizontalBorder(lineTotalLenght) + "\n");
 
             System.out.println(line);
         } catch (SQLException sqle) {
@@ -137,6 +133,6 @@ public class StatementShowTables extends Statement {
 
     @Override
     public String toString() {
-        return "StatementShowTables [statement=" + this.getStatement() + "]";
+        return "StatementShowTables [statement=" + this.statement + "]";
     }
 }

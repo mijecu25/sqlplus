@@ -104,8 +104,7 @@ select_statement returns [Statement selectStatement]
 	}
 	:	select_expression {
 			$selectStatement = $select_expression.selectExpression;
-	}
-	|	QUESTION_MARK select_expression { $selectStatement = new StatementSelect(); }
+		}
 	;
 
 select_expression returns [Statement selectExpression]
@@ -113,7 +112,7 @@ select_expression returns [Statement selectExpression]
 		$selectExpression = null;
 	}
 	:	SELECT select_list (FROM table_references)? { 
-			$selectExpression = new StatementSelectExpression($select_list.selectList, "TODO"); 
+			$selectExpression = new StatementSelectExpression($select_list.selectList, $table_references.tableReferences);
 		}
 	;
 
@@ -121,11 +120,11 @@ select_list returns [List<String> selectList]
 	@init {
 		$selectList = new ArrayList<String>();
 	}
-	:	column=displayed_column {
+	:	column = displayed_column {
 	 		$selectList.add($column.text);
 		}
 		(
-			COMMA column=displayed_column {
+			COMMA column = displayed_column {
 				$selectList.add($column.text);
 			}
 		)*
@@ -138,8 +137,18 @@ displayed_column
 	:	column_spec (alias)?
 	;
 
-table_references
-	:	table_reference (COMMA table_reference)*
+table_references returns [List<String> tableReferences]
+	@init {
+		$tableReferences = new ArrayList<String>();
+	}
+	:	table = table_reference {
+			$tableReferences.add($table.text);
+		}
+		(
+			COMMA table = table_reference {
+				$tableReferences.add($table.text);
+			}
+		)*
 	;
 
 table_reference

@@ -14,11 +14,11 @@ import org.junit.Test;
  * Test Statement 
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.2
+ * @version 0.1.0.3
  */
 public class TestStatement {
    
-    private static StatementConcrete statement;
+//    private static StatementConcrete statement;
     
     protected static Properties properties;
     protected static Connection connection;
@@ -29,7 +29,7 @@ public class TestStatement {
         TestStatement.properties.put("user", System.getProperty("user.name"));
         TestStatement.connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/", properties);  
         
-        TestStatement.statement = new TestStatement().new StatementConcrete();
+//        TestStatement.statement = new TestStatement().new StatementConcrete();
     }
     
     @AfterClass
@@ -81,7 +81,7 @@ public class TestStatement {
     
     @Test
     public void testBuildHorizontalBorder() {
-        String line = TestStatement.statement.buildHorizontalBorder(5);
+        String line = Statement.buildHorizontalBorder(5);
 
         Assert.assertNotNull(line);
     }
