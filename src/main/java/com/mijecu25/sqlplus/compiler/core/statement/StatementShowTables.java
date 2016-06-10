@@ -15,7 +15,7 @@ import java.sql.SQLException;
  * This class represents the "show tables" SQL statement. It prints the tables located within a database.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.5
+ * @version 0.1.0.6
  */
 public class StatementShowTables extends Statement {
 
@@ -82,49 +82,21 @@ public class StatementShowTables extends Statement {
             // Get the medatadata from the result set
             ResultSetMetaData resultSetMetaData;
             resultSetMetaData = this.resultSet.getMetaData();
-            // Get the title of the result column
-            String label = resultSetMetaData.getColumnLabel(1);
 
             // Get the currently selected database
             String currentDatabase = SQLUtils.selectDatabase(this.connection);
             // Get the maximum table name length
             int maxTableNameLength = SQLUtils.maxTableNameLength(this.connection, currentDatabase);
-
+            // Get the title of the result column
+            String label = resultSetMetaData.getColumnLabel(1);
             // The maximum width that we are going to print is either the title of the column
             // or a table name
             maxTableNameLength = Math.max(maxTableNameLength, label.length());
 
-            StringBuilder line = new StringBuilder();
-            // The total length is added by 4 for the 2 borders and the 2 spaces on either side
-            int lineTotalLenght = maxTableNameLength + 4;
-            // Print the horizontal border based on the length
-            line.append(Statement.buildHorizontalBorder(lineTotalLenght) + "\n");
-
-            // Build the label of the column
-            line.append(StatementShowDatabases.VERTICAL_BORDERL + " ");
-            line.append(label);
-            line.append(StringUtils.repeat(" ", lineTotalLenght - 3 - label.length()));
-            line.append(StatementShowDatabases.VERTICAL_BORDERL + "\n");
-
-            // Build a border after the name of the column
-            line.append(Statement.buildHorizontalBorder(lineTotalLenght) + "\n");
-
-            // While the are more rows to process
-            while(resultSet.next()) {
-                // Get and print the current row value
-                String row = this.resultSet.getString(1);
-
-                line.append(StatementShowDatabases.VERTICAL_BORDERL + " ");
-                line.append(row);
-                line.append(StringUtils.repeat(" ", lineTotalLenght - 3 - row.length()));
-                line.append(StatementShowDatabases.VERTICAL_BORDERL + "\n");
-            }
-
-            // Build a border after the all of the rows
-            line.append(Statement.buildHorizontalBorder(lineTotalLenght) + "\n");
-
-            System.out.println(line);
-        } catch (SQLException sqle) {
+            // Print the result which is a single column
+            Statement.printSingleColumn(this.resultSet, maxTableNameLength);
+        } 
+        catch (SQLException sqle) {
             StatementShowTables.logger.warn(Messages.WARNING + "Error when printing the result of " + this, sqle);
             System.out.println(Messages.WARNING + "(" + sqle.getErrorCode() + ") (" + sqle.getSQLState() + ") "
                     + "Could not print the result." + Messages.SPACE + Messages.WARNING + Messages.CHECK_LOG_FILES);
