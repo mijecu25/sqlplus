@@ -14,7 +14,7 @@ import com.mijecu25.messages.Messages;
  * This class represents either a SQLPlus statement or a regular SQL statement.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.11
+ * @version 0.1.0.12
  */
 public abstract class Statement {
     
@@ -86,6 +86,7 @@ public abstract class Statement {
     }
 
     /**
+     * TODO check the parameter check
      * Print a right horizontal border around text. The total characters displayed in the border depends on the length
      * specified by the parameter. A new line is printed
      *
@@ -102,7 +103,7 @@ public abstract class Statement {
         }
 
         StringBuilder line = new StringBuilder();
-        line.append(StringUtils.repeat(Statement.HORIZONTAL_BORDER, length - 2));
+        line.append(StringUtils.repeat(Statement.HORIZONTAL_BORDER, length - 1));
         line.append(Statement.CORNER_SYMBOL);
         return line.toString();
     }

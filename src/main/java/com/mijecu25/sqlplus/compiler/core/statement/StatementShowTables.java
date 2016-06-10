@@ -3,7 +3,6 @@ package com.mijecu25.sqlplus.compiler.core.statement;
 import com.mijecu25.messages.Messages;
 import com.mijecu25.sqlutils.SQLUtils;
 
-import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -15,7 +14,7 @@ import java.sql.SQLException;
  * This class represents the "show tables" SQL statement. It prints the tables located within a database.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.6
+ * @version 0.1.0.7
  */
 public class StatementShowTables extends Statement {
 

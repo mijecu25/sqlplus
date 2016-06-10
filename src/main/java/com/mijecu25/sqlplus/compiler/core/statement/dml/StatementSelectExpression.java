@@ -11,22 +11,29 @@ import org.apache.logging.log4j.Logger;
 import java.sql.Connection;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * This class represents the "select...." SQL statement. It prints the columns that match the query.
  *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.1
+ * @version 0.1.0.2
  */
 public class StatementSelectExpression extends StatementDML {
+    
+    private List<Integer> columnsMaxLength;
 
     private static final Logger logger = LogManager.getLogger(StatementSelectExpression.class);
 
     public StatementSelectExpression(List<String> columns, List<String> tables) {
+        // TODO make sure that only 1 table is selected since that is the only thing
+        // we are going to support right now.
         super(StatementDML.SELECT + StatementDML.unrollList(columns)
                 + StatementDML.FROM + StatementDML.unrollList(tables),
                 columns, tables);
+        this.columnsMaxLength = new ArrayList<Integer>();
+        
         StatementSelectExpression.logger.info("Parsed and created a StatementSelectExpression");
     }
 
@@ -81,44 +88,68 @@ public class StatementSelectExpression extends StatementDML {
 
     @Override
     protected void printResult() {
+        // TODO comment
         StatementSelectExpression.logger.info("Printing the result");
         try{
             // Get the medatadata from the result set
             ResultSetMetaData resultSetMetaData;
             resultSetMetaData = this.resultSet.getMetaData();
 
-            // Get the maximum database name length
-            int maxDatabaseNameLength = SQLUtils.maxDatabaseNameLength(this.connection);
-            // The total length is added by 4 for the 2 borders and the 2 spaces on either side
-            int lineTotalLength = maxDatabaseNameLength + 4;
-            // Build the horizontal border based on the length
-            StringBuilder line = new StringBuilder();
-            line.append(Statement.buildHorizontalBorder(lineTotalLength) + "\n");
+            StringBuilder line = new StringBuilder("+");
 
-            // Print the label of the column
-            String label = resultSetMetaData.getColumnLabel(1);
+            // Loop through all the columns to build the top border of the result
+            for(int i = 0; i < this.columns.size(); i++) {
+                // Get the maximum row length
+                // TODO We only support 1 column
+                int maxDatabaseNameLength = SQLUtils.maxRowLength(this.connection, this.columns.get(i), this.tables.get(0));
+                // Add the max row length to the respective column. We add 4 to the length for the 1 right border and 
+                // 2 whitespaces on either side
+                this.columnsMaxLength.add(i, maxDatabaseNameLength + 3);
+                // Add a right border the to fit the maximum row in a column
+                line.append(Statement.buildRightHorizontalBorder(this.columnsMaxLength.get(i)));
+            }
 
-            line.append(StatementSelectExpression.VERTICAL_BORDERL + " ");
-            line.append(label);
-            line.append(StringUtils.repeat(" ", lineTotalLength - 3 - label.length()));
+            line.append("\n");
+
+            // Loop through all of the columns to print the titles of the result table
+            for(int i = 1; i <= this.columns.size(); i++) {
+                String label = resultSetMetaData.getColumnLabel(i);
+
+                line.append(StatementSelectExpression.VERTICAL_BORDERL + " ");
+                line.append(label);
+                line.append(StringUtils.repeat(" ", this.columnsMaxLength.get(i-1) - 2 - label.length()));
+            }
+
             line.append(StatementSelectExpression.VERTICAL_BORDERL + "\n");
+            line.append(StatementSelectExpression.CORNER_SYMBOL);
 
-            // Build a border after the name of the column
-            line.append(Statement.buildHorizontalBorder(lineTotalLength) + "\n");
+            for(int i = 0; i < this.columns.size(); i++) {
+                line.append(StringUtils.repeat("-", this.columnsMaxLength.get(i) - 1));
+                line.append(StatementSelectExpression.CORNER_SYMBOL);
+            }
+
+            line.append("\n");
 
             // While the are more rows to process
             while (resultSet.next()) {
-                // Get and print the current row value
-                String row = this.resultSet.getString(1);
+                for(int i = 1; i <= this.columns.size(); i++) {
+                    // Get and print the current row value
+                    String row = this.resultSet.getString(i);
 
-                line.append(StatementSelectExpression.VERTICAL_BORDERL + " ");
-                line.append(row);
-                line.append(StringUtils.repeat(" ", lineTotalLength - 3 - row.length()));
+                    line.append(StatementSelectExpression.VERTICAL_BORDERL + " ");
+                    line.append(row);
+                    line.append(StringUtils.repeat(" ", this.columnsMaxLength.get(i-1) - 2 - row.length()));
+                }
+
                 line.append(StatementSelectExpression.VERTICAL_BORDERL + "\n");
             }
 
-            // Build a border after the all of the rows
-            line.append(Statement.buildHorizontalBorder(lineTotalLength) + "\n");
+            line.append(StatementSelectExpression.CORNER_SYMBOL);
+
+            for(int i = 0; i < this.columns.size(); i++) {
+                line.append(StringUtils.repeat("-", this.columnsMaxLength.get(i) - 1));
+                line.append(StatementSelectExpression.CORNER_SYMBOL);
+            }
 
             System.out.println(line);
         }
