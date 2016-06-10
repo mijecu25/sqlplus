@@ -9,7 +9,7 @@ import java.sql.SQLException;
  * TODO
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.3  
+ * @version 0.1.0.4  
  */
 public abstract class SQLUtils {
 
@@ -132,52 +132,46 @@ public abstract class SQLUtils {
         return length;
     }
 
-//    /**
-     //     * Get the maximum length of a column in a table.
-     //     *
-     //     * @param connection the connection to the database.
-     //     * @param column the name of the column.
-     //     * @param table the name of the table that will be used.
-     //     *
-     //     * @return the length of the maximum entry in the column.
-     //     *
-     //     * @throws SQLException if there is an error when executing the query.
-     //     */
-//    public static int maxLengthColumn(Connection connection, String column, String table) throws SQLException {
-//        if(connection == null) {
-//            // TODO
-//        }
-//
-//        if(column == null || column.isEmpty()) {
-//            // TODO
-//        }
-//
-//        if(table == null || table.isEmpty()) {
-//            // TODO
-//        }
-//
-//        // Create a statement
-//        Statement statement = connection.createStatement();
-//        String query = "select max(len(" + column + ")) from " + table + ";";
-//
-//        // Query the statement
-//        ResultSet resultSet = statement.executeQuery(query);
-//
-//        // Get the length
-//        int length = 0;
-//
-//        while(resultSet.next()) {
-//            length = resultSet.getInt(1);
-//        }
-//
-//        // Close the result set and statement
-//        resultSet.close();
-//        statement.close();
-//
-//        return length;
-//    }
+    /**
+      * Get the maximum length of a column in a table.
+      *
+      * @param connection the connection to the database.
+      * @param column the name of the column.
+      * @param table the name of the table that will be used.
+      *
+      * @return the length of the maximum entry in the column.
+      *
+      * @throws SQLException if there is an error when executing the query.
+      */
+    public static int maxLengthColumn(Connection connection, String column, String table) throws SQLException {
+        if(connection == null) {
+            // TODO
+        }
 
-    //    public static void useDatabaseTable(Connection connection) throws SQLException {
+        if(column == null || column.isEmpty()) {
+            // TODO
+        }
+
+        if(table == null || table.isEmpty()) {
+            // TODO
+        }
+
+        // Get the database system
+        String databaseSystem = SQLUtils.getDatabaseSystem(connection);
+
+        int length = 0;
+
+        switch(databaseSystem) {
+            // MySQL
+            default:
+                length = MySQLUtils.maxLengthColumn(connection, column, table);
+                break;
+        }
+
+        return length;
+    }
+
+//        public static void useDatabaseTable(Connection connection) throws SQLException {
 //        Statement statement = connection.createStatement();
 //        String query = "use " + MySQLUtils.DATABASE_TABLE;
 //
