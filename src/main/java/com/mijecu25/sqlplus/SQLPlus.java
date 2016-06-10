@@ -180,11 +180,11 @@ public class SQLPlus {
                 }
 
                 if (line.equals("-")) {
-                    line = "select id from cards;";
+                    line = "select name from classes;";
                 }
 
                 if (line.equals("--")) {
-                    line = "select id, name from cards;";
+                    line = "select name, year from classes;";
                 }
 
                 // Logic to quit
