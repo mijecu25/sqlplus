@@ -9,7 +9,7 @@ import java.sql.Statement;
  * Utility class for MySQL database.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.5 
+ * @version 0.1.0.6
  */
 public class MySQLUtils {
 
@@ -134,7 +134,7 @@ public class MySQLUtils {
      * @return
      * @throws SQLException
      */
-    public static int maxLengthColumn(Connection connection, String column, String table) throws SQLException {
+    public static int maxRowLength(Connection connection, String column, String table) throws SQLException {
         // Create a statement
         Statement statement = connection.createStatement();
         String query = "select max(length(" + column + ")) from " + table + ";";

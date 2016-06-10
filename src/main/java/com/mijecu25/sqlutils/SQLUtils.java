@@ -9,7 +9,7 @@ import java.sql.SQLException;
  * TODO
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.4  
+ * @version 0.1.0.5
  */
 public abstract class SQLUtils {
 
@@ -143,7 +143,7 @@ public abstract class SQLUtils {
       *
       * @throws SQLException if there is an error when executing the query.
       */
-    public static int maxLengthColumn(Connection connection, String column, String table) throws SQLException {
+    public static int maxRowLength(Connection connection, String column, String table) throws SQLException {
         if(connection == null) {
             // TODO
         }
@@ -164,7 +164,7 @@ public abstract class SQLUtils {
         switch(databaseSystem) {
             // MySQL
             default:
-                length = MySQLUtils.maxLengthColumn(connection, column, table);
+                length = MySQLUtils.maxRowLength(connection, column, table);
                 break;
         }
 
