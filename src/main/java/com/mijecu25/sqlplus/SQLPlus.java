@@ -29,7 +29,7 @@ import jline.console.ConsoleReader;
  * SQLPlus add alerts to your sql queries.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.18
+ * @version 0.1.0.19
  */
 public class SQLPlus {
 
@@ -187,6 +187,10 @@ public class SQLPlus {
                     line = "select name, year from classes;";
                 }
 
+                if (line.equals("x")) {
+                    line = "select name from classes, classes;";
+                }
+
                 // Logic to quit
                 if (line.equals(SQLPlus.QUIT) || line.equals(SQLPlus.EXIT)) {
                     SQLPlus.logger.info("The user wants to quit " + SQLPlus.PROGRAM_NAME);
@@ -211,20 +215,29 @@ public class SQLPlus {
 
                 SQLPlus.logger.info("Raw input from the user: " + query);
 
-                // Execute the antlr code to parse the user input
-                SQLPlus.logger.info("Will parse the user input to determine what to execute");
-                ANTLRStringStream input = new ANTLRStringStream(query.toString());
-                SQLPlusLex lexer = new SQLPlusLex(input);
-                CommonTokenStream tokens = new CommonTokenStream(lexer);
-                SQLPlusParser parser = new SQLPlusParser(tokens);
+                try {
+                    // Execute the antlr code to parse the user input
+                    SQLPlus.logger.info("Will parse the user input to determine what to execute");
+                    ANTLRStringStream input = new ANTLRStringStream(query.toString());
+                    SQLPlusLex lexer = new SQLPlusLex(input);
+                    CommonTokenStream tokens = new CommonTokenStream(lexer);
+                    SQLPlusParser parser = new SQLPlusParser(tokens);
 
-                // TODO handle this better so that I print my own message when the string is not matched
-                Statement statement = parser.sqlplus();
+                    // TODO handle this better so that I print my own message when the string is not matched
+                    Statement statement = parser.sqlplus();
 
-                if (statement == null) {
-                    System.out.println("Return value is null");
-                } else {
-                    SQLPlus.sqlPlusConnection.execute(statement);
+                    if (statement == null) {
+                        System.out.println("Return value is null");
+                    }
+                    else {
+                        SQLPlus.sqlPlusConnection.execute(statement);
+                    }
+                }
+                catch(UnsupportedOperationException uoe) {
+                    // This exception can occur when the user entered a command allowed by the parsers, but not currently
+                    // supported by SQLPlus. This can occur because the parser is written in such a way that supports
+                    // the addition of features.
+                    SQLPlus.logger.warn(Messages.WARNING + "The previous command is not currently supported.");
                 }
             }
         }

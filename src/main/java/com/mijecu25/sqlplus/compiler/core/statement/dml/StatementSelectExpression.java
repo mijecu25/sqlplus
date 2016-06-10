@@ -18,7 +18,7 @@ import java.util.List;
  * This class represents the "select...." SQL statement. It prints the columns that match the query.
  *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.2
+ * @version 0.1.0.3
  */
 public class StatementSelectExpression extends StatementDML {
     
@@ -27,7 +27,6 @@ public class StatementSelectExpression extends StatementDML {
     private static final Logger logger = LogManager.getLogger(StatementSelectExpression.class);
 
     public StatementSelectExpression(List<String> columns, List<String> tables) {
-        // TODO make sure that only 1 table is selected since that is the only thing
         // we are going to support right now.
         super(StatementDML.SELECT + StatementDML.unrollList(columns)
                 + StatementDML.FROM + StatementDML.unrollList(tables),
@@ -101,7 +100,7 @@ public class StatementSelectExpression extends StatementDML {
             for(int i = 0; i < this.columns.size(); i++) {
                 // Get the maximum row length
                 // TODO We only support 1 column
-                int maxDatabaseNameLength = SQLUtils.maxRowLength(this.connection, this.columns.get(i), this.tables.get(0));
+                int maxDatabaseNameLength = SQLUtils.maxRowLength(this.connection, this.columns.get(i), this.getFirstTable());
                 // Add the max row length to the respective column. We add 4 to the length for the 1 right border and 
                 // 2 whitespaces on either side
                 this.columnsMaxLength.add(i, maxDatabaseNameLength + 3);

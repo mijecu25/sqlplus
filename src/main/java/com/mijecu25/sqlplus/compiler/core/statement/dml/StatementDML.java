@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
+import com.mijecu25.messages.Messages;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -13,7 +14,7 @@ import com.mijecu25.sqlplus.compiler.core.statement.Statement;
  * This class contains common behavior for all DML SQL statements.
  *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.1
+ * @version 0.1.0.2
  */
 public abstract class StatementDML extends Statement {
     
@@ -31,6 +32,17 @@ public abstract class StatementDML extends Statement {
     public StatementDML(String statement, List<String> columns, List<String> tables) {
         super(statement);
         this.columns = columns;
+
+        // Check if the user entered more than 1 table reference
+        if(tables.size() > 1) {
+            // We currently support only 1 table reference
+            UnsupportedOperationException uoe = new UnsupportedOperationException();
+            StatementDML.logger.warn(Messages.WARNING + "You can only enter a single table reference in the FROM clause");
+            System.out.println(Messages.WARNING + "You can only enter a single table reference in the FROM clause");
+            StatementDML.logger.warn(Messages.WARNING + "Throwing a " + uoe.getClass().getSimpleName() + " to the calling class");
+            throw uoe;
+        }
+
         this.tables = tables;
         StatementDML.logger.info("Parsed and created a StatementDML");
     }
@@ -65,6 +77,13 @@ public abstract class StatementDML extends Statement {
         
         return result.toString();
     }
+
+    /**
+     * Helper method to return the first table in the list of referenced tables.
+     *
+     * @return a string with the name of the first referenced table.
+     */
+    public String getFirstTable() { return this.tables.get(0); }
 
 //    /**
 //     * Return the columns referenced in the query.
