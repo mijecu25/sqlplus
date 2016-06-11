@@ -18,7 +18,7 @@ import java.util.List;
  * This class represents the "select...." SQL statement. It prints the columns that match the query.
  *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.3
+ * @version 0.1.0.4
  */
 public class StatementSelectExpression extends StatementDML {
     
@@ -67,7 +67,14 @@ public class StatementSelectExpression extends StatementDML {
                 throw new SQLException();
             }
 
-            this.printResult();
+            // TODO add this in all other places
+            // Check if the result set has values or not
+            if(this.resultSet.isBeforeFirst()) {
+                this.printResult();
+            }
+            else {
+                Statement.printEmptySet();
+            }
 
             // Close the result set and statement
             this.resultSet.close();
@@ -87,69 +94,95 @@ public class StatementSelectExpression extends StatementDML {
 
     @Override
     protected void printResult() {
-        // TODO comment
         StatementSelectExpression.logger.info("Printing the result");
         try{
             // Get the medatadata from the result set
             ResultSetMetaData resultSetMetaData;
             resultSetMetaData = this.resultSet.getMetaData();
 
-            StringBuilder line = new StringBuilder("+");
+            // Since we might be printing multiple columns, the approach we take is begin with adding the left
+            // characters and for each column, we complete the right side of the table
+            StringBuilder line = new StringBuilder(StatementSelectExpression.CORNER_SYMBOL);
+            String label = "";
 
             // Loop through all the columns to build the top border of the result
             for(int i = 0; i < this.columns.size(); i++) {
                 // Get the maximum row length
-                // TODO We only support 1 column
-                int maxDatabaseNameLength = SQLUtils.maxRowLength(this.connection, this.columns.get(i), this.getFirstTable());
-                // Add the max row length to the respective column. We add 4 to the length for the 1 right border and 
+                int maxRowLength = SQLUtils.maxRowLength(this.connection, this.columns.get(i), this.getFirstTable());
+                // Get the title of the result column
+                label = resultSetMetaData.getColumnLabel(i+1);
+                // The maximum width that we are going to print is either the title of the column
+                // or a row
+                maxRowLength = Math.max(maxRowLength, label.length());
+                // Add the max row length to the respective column. We add 3 to the length for the 1 right border and
                 // 2 whitespaces on either side
-                this.columnsMaxLength.add(i, maxDatabaseNameLength + 3);
+                this.columnsMaxLength.add(i, maxRowLength + 3);
                 // Add a right border the to fit the maximum row in a column
                 line.append(Statement.buildRightHorizontalBorder(this.columnsMaxLength.get(i)));
             }
 
+            // After completing the top border, we add a new line
             line.append("\n");
+            // Add a vertical border to start the title row
+            line.append(StatementSelectExpression.VERTICAL_BORDERL);
 
             // Loop through all of the columns to print the titles of the result table
             for(int i = 1; i <= this.columns.size(); i++) {
-                String label = resultSetMetaData.getColumnLabel(i);
+                // Get the title
+                label = resultSetMetaData.getColumnLabel(i);
 
-                line.append(StatementSelectExpression.VERTICAL_BORDERL + " ");
+                // Add a white space, title, whitespaces, and right border to complete the title for this column
+                line.append(" ");
                 line.append(label);
                 line.append(StringUtils.repeat(" ", this.columnsMaxLength.get(i-1) - 2 - label.length()));
+                line.append(StatementSelectExpression.VERTICAL_BORDERL);
             }
 
-            line.append(StatementSelectExpression.VERTICAL_BORDERL + "\n");
+            // After completing the titles, we add a new line
+            line.append("\n");
+            // Add a corner symbol to start bottom border of the title row
             line.append(StatementSelectExpression.CORNER_SYMBOL);
 
+            // Loop through all of the columns
             for(int i = 0; i < this.columns.size(); i++) {
-                line.append(StringUtils.repeat("-", this.columnsMaxLength.get(i) - 1));
-                line.append(StatementSelectExpression.CORNER_SYMBOL);
+                // Add a right border the to fit the maximum row in a column
+                line.append(Statement.buildRightHorizontalBorder(this.columnsMaxLength.get(i)));
             }
 
+            // After completing the bottom border of titles, we add a new line
             line.append("\n");
 
             // While the are more rows to process
             while (resultSet.next()) {
-                for(int i = 1; i <= this.columns.size(); i++) {
-                    // Get and print the current row value
-                    String row = this.resultSet.getString(i);
+                // Add a vertical border to start the current row of results
+                line.append(StatementSelectExpression.VERTICAL_BORDERL);
 
-                    line.append(StatementSelectExpression.VERTICAL_BORDERL + " ");
+                // Loop through all of the columns
+                for(int i = 1; i <= this.columns.size(); i++) {
+                    // Get the current row and check if it is null
+                    String row = Statement.checkAndTransformNull(this.resultSet.getString(i));
+
+                    // Add a white space, row, whitespaces, and right border to complete the row for this column
+                    line.append(" ");
                     line.append(row);
                     line.append(StringUtils.repeat(" ", this.columnsMaxLength.get(i-1) - 2 - row.length()));
+                    line.append(StatementSelectExpression.VERTICAL_BORDERL);
                 }
 
-                line.append(StatementSelectExpression.VERTICAL_BORDERL + "\n");
+                // After completing all of the columns, we add a new line
+                line.append("\n");
             }
 
+            // Add a corner symbol to start bottom border of the result table
             line.append(StatementSelectExpression.CORNER_SYMBOL);
 
+            // Loop through all of the columns
             for(int i = 0; i < this.columns.size(); i++) {
-                line.append(StringUtils.repeat("-", this.columnsMaxLength.get(i) - 1));
-                line.append(StatementSelectExpression.CORNER_SYMBOL);
+                // Add a right border the to fit the maximum row in a column
+                line.append(Statement.buildRightHorizontalBorder(this.columnsMaxLength.get(i)));
             }
 
+            // Print the result table
             System.out.println(line);
         }
         catch (SQLException sqle) {

@@ -14,7 +14,7 @@ import com.mijecu25.messages.Messages;
  * This class represents either a SQLPlus statement or a regular SQL statement.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.12
+ * @version 0.1.0.13
  */
 public abstract class Statement {
     
@@ -69,9 +69,10 @@ public abstract class Statement {
      * @param length the length of the longest string that will be printed.
      */
     public static String buildHorizontalBorder(int length) {
-        if(length < 5) {
+        int limit = 5;
+        if(length < limit) {
             IllegalArgumentException iae = new IllegalArgumentException();
-            Statement.logger.fatal(Messages.FATAL + "The minimum length to print a horizontal border is 5");
+            Statement.logger.fatal(Messages.FATAL + "The minimum length to print a horizontal border is " + limit);
             System.out.println(Messages.FATAL + Messages.FATAL_EXCEPTION_ACTION(iae.getClass().getSimpleName())
                     + Messages.SPACE + Messages.CHECK_LOG_FILES);
             Statement.logger.warn(Messages.WARNING + "Throwing a " + iae.getClass().getSimpleName() + " to the calling class");
@@ -86,16 +87,17 @@ public abstract class Statement {
     }
 
     /**
-     * TODO check the parameter check
      * Print a right horizontal border around text. The total characters displayed in the border depends on the length
      * specified by the parameter. A new line is printed
      *
      * @param length the length of the longest string that will be printed.
      */
     public static String buildRightHorizontalBorder(int length) {
-        if(length < 4) {
+        int limit = 4;
+
+        if(length < limit) {
             IllegalArgumentException iae = new IllegalArgumentException();
-            Statement.logger.fatal(Messages.FATAL + "The minimum length to print a horizontal border is 4");
+            Statement.logger.fatal(Messages.FATAL + "The minimum length to print a horizontal border is " + limit);
             System.out.println(Messages.FATAL + Messages.FATAL_EXCEPTION_ACTION(iae.getClass().getSimpleName())
                     + Messages.SPACE + Messages.CHECK_LOG_FILES);
             Statement.logger.warn(Messages.WARNING + "Throwing a " + iae.getClass().getSimpleName() + " to the calling class");
@@ -107,14 +109,46 @@ public abstract class Statement {
         line.append(Statement.CORNER_SYMBOL);
         return line.toString();
     }
-    
+
+    /**
+     * Print the result of a query that only has a single column. If the result set has more than 1 column, an
+     * exception is thrown. The <code>maxLength</code> attribute is not calculated in this method and should be
+     * done by the calling method.
+     *
+     * @param resultSet the result set that will be printed.
+     * @param maxLength the calculated maximum length of the row in the table.
+     *
+     * @throws SQLException if there is a problem print the results.
+     */
     public static void printSingleColumn(ResultSet resultSet, int maxLength) throws SQLException {
         if(resultSet == null) {
-            // TODO
+            IllegalArgumentException iae = new IllegalArgumentException();
+            Statement.logger.fatal(Messages.FATAL + "The result set is null");
+            System.out.println(Messages.FATAL + Messages.FATAL_EXCEPTION_ACTION(iae.getClass().getSimpleName())
+                    + Messages.SPACE + Messages.CHECK_LOG_FILES);
+            Statement.logger.warn(Messages.WARNING + "Throwing a " + iae.getClass().getSimpleName() + " to the calling class");
+            throw iae;
         }
-        
-        if(maxLength < 0) {
-            // TODO
+
+        // If there is more than a single column
+        if(resultSet.getMetaData().getColumnCount() > 1) {
+            IllegalArgumentException iae = new IllegalArgumentException();
+            Statement.logger.fatal(Messages.FATAL + "The result set has more than one column");
+            System.out.println(Messages.FATAL + Messages.FATAL_EXCEPTION_ACTION(iae.getClass().getSimpleName())
+                    + Messages.SPACE + Messages.CHECK_LOG_FILES);
+            Statement.logger.warn(Messages.WARNING + "Throwing a " + iae.getClass().getSimpleName() + " to the calling class");
+            throw iae;
+        }
+
+        int limit = 5;
+
+        if(maxLength < limit) {
+            IllegalArgumentException iae = new IllegalArgumentException();
+            Statement.logger.fatal(Messages.FATAL + "The minimum length to print a single column is " + limit);
+            System.out.println(Messages.FATAL + Messages.FATAL_EXCEPTION_ACTION(iae.getClass().getSimpleName())
+                    + Messages.SPACE + Messages.CHECK_LOG_FILES);
+            Statement.logger.warn(Messages.WARNING + "Throwing a " + iae.getClass().getSimpleName() + " to the calling class");
+            throw iae;
         }
         
         StringBuilder line = new StringBuilder();
@@ -149,6 +183,30 @@ public abstract class Statement {
         line.append(Statement.buildHorizontalBorder(lineTotalLength) + "\n");
 
         System.out.println(line);
+    }
+
+    /**
+     * Check if the string is null. If it is, return "NULL". Otherwise, return the original string.
+     *
+     * This is a helper method mostly used in resultt values to transform null values into "NULL".
+     *
+     * @param string the string that will be checked.
+     *
+     * @return "NULL" if the original string is null or the original string.
+     */
+    public static String checkAndTransformNull(String string) {
+        if(string == null) {
+            return "NULL";
+        }
+
+        return string;
+    }
+
+    /**
+     * Print a string that specifies that the result set is empty.
+     */
+    public static void printEmptySet() {
+        System.out.println("Empty set");
     }
 
 //    /**
