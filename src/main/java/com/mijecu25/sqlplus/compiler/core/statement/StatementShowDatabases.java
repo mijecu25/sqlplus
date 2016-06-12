@@ -14,7 +14,7 @@ import com.mijecu25.sqlutils.SQLUtils;
  * This class represents the "show databases" SQL statement. It prints the databases found in the server.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.13
+ * @version 0.1.0.14
  */
 public class StatementShowDatabases extends Statement {
        
@@ -102,7 +102,7 @@ public class StatementShowDatabases extends Statement {
             Statement.printSingleColumn(this.resultSet, maxDatabaseNameLength);
         }
         catch (SQLException sqle) {
-            StatementShowDatabases.logger.warn(Messages.WARNING + "Error when printing the result of " + this);
+            StatementShowDatabases.logger.warn(Messages.WARNING + "Error when printing the result of " + this, sqle);
             System.out.println(Messages.WARNING + "(" + sqle.getErrorCode() + ") (" + sqle.getSQLState() + ") "
                     + "Could not print the result. " + Messages.CHECK_LOG_FILES);
         }
