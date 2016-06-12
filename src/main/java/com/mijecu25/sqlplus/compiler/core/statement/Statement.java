@@ -15,7 +15,7 @@ import com.mijecu25.messages.Messages;
  * This class represents either a SQLPlus statement or a regular SQL statement.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.15
+ * @version 0.1.0.16
  */
 public abstract class Statement {
     
@@ -59,9 +59,8 @@ public abstract class Statement {
 
     /**
      * Print the result obtained after executing the statement.
-     * @throws SQLException if there is a problem executing the statement.
      */
-    protected abstract void printResult() throws SQLException;
+    protected abstract void printResult();
 
     /**
      * Print an horizontal border around text. The total characters displayed in the border depends on the length
@@ -158,37 +157,46 @@ public abstract class Statement {
             Statement.logger.warn(Messages.WARNING + "Throwing a " + iae.getClass().getSimpleName() + " to the calling class");
             throw iae;
         }
-        
+
+
         StringBuilder line = new StringBuilder();
-        // The total length is added by 4 for the 2 borders and the 2 spaces on either side
-        int lineTotalLength = maxLength + 4;
-        // Print the horizontal border based on the length
-        line.append(Statement.buildHorizontalBorder(lineTotalLength) + "\n");
 
-        // Get the title of the result column
-        String label = resultSet.getMetaData().getColumnLabel(1);
-        // Build the label of the column
-        line.append(StatementShowDatabases.VERTICAL_BORDER + " ");
-        line.append(label);
-        line.append(StringUtils.repeat(" ", lineTotalLength - 3 - label.length()));
-        line.append(StatementShowDatabases.VERTICAL_BORDER + "\n");
+        try {
+            // The total length is added by 4 for the 2 borders and the 2 spaces on either side
+            int lineTotalLength = maxLength + 4;
+            // Print the horizontal border based on the length
+            line.append(Statement.buildHorizontalBorder(lineTotalLength) + "\n");
 
-        // Build a border after the name of the column
-        line.append(Statement.buildHorizontalBorder(lineTotalLength) + "\n");
-
-        // While the are more rows to process
-        while(resultSet.next()) {
-            // Get and print the current row value
-            String row = resultSet.getString(1);
-
+            // Get the title of the result column
+            String label = resultSet.getMetaData().getColumnLabel(1);
+            // Build the label of the column
             line.append(StatementShowDatabases.VERTICAL_BORDER + " ");
-            line.append(row);
-            line.append(StringUtils.repeat(" ", lineTotalLength - 3 - row.length()));
+            line.append(label);
+            line.append(StringUtils.repeat(" ", lineTotalLength - 3 - label.length()));
             line.append(StatementShowDatabases.VERTICAL_BORDER + "\n");
-        }
 
-        // Build a border after the all of the rows
-        line.append(Statement.buildHorizontalBorder(lineTotalLength) + "\n");
+            // Build a border after the name of the column
+            line.append(Statement.buildHorizontalBorder(lineTotalLength) + "\n");
+
+            // While the are more rows to process
+            while (resultSet.next()) {
+                // Get and print the current row value
+                String row = resultSet.getString(1);
+
+                line.append(StatementShowDatabases.VERTICAL_BORDER + " ");
+                line.append(row);
+                line.append(StringUtils.repeat(" ", lineTotalLength - 3 - row.length()));
+                line.append(StatementShowDatabases.VERTICAL_BORDER + "\n");
+            }
+
+            // Build a border after the all of the rows
+            line.append(Statement.buildHorizontalBorder(lineTotalLength) + "\n");
+        }
+        catch(SQLException sqle) {
+            Statement.logger.warn(Messages.WARNING + "Error when printing a single column result", sqle);
+
+            throw sqle;
+        }
 
         System.out.println(line);
     }

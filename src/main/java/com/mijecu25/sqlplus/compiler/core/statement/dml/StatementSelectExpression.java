@@ -17,7 +17,7 @@ import java.util.List;
  * This class represents the "select...." SQL statement. It prints the columns that match the query.
  *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.5
+ * @version 0.1.0.6
  */
 public class StatementSelectExpression extends StatementDML {
     
@@ -116,9 +116,9 @@ public class StatementSelectExpression extends StatementDML {
             Statement.printMultipleColumn(this.resultSet, this.columnsMaxLength);
         }
         catch (SQLException sqle) {
-            StatementSelectExpression.logger.warn(Messages.WARNING + "Error when printing the result of " + this, sqle);
+            StatementSelectExpression.logger.warn(Messages.WARNING + "Error when printing the result of " + this);
             System.out.println(Messages.WARNING + "(" + sqle.getErrorCode() + ") (" + sqle.getSQLState() + ") "
-                    + "Could not print the result." + Messages.SPACE + Messages.WARNING + Messages.CHECK_LOG_FILES);
+                    + "Could not print the result. " + Messages.CHECK_LOG_FILES);
         }
         
     }
