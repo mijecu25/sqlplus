@@ -14,7 +14,7 @@ import java.sql.SQLException;
  * This class represents the "show tables" SQL statement. It prints the tables located within a database.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.8
+ * @version 0.1.0.9
  */
 public class StatementShowTables extends Statement {
 
@@ -57,7 +57,13 @@ public class StatementShowTables extends Statement {
                 throw new SQLException();
             }
 
-            this.printResult();
+            // Check if the result set has values or not
+            if(this.resultSet.isBeforeFirst()) {
+                this.printResult();
+            }
+            else {
+                Statement.printEmptySet();
+            }
 
             // Close the result set and statement
             this.resultSet.close();

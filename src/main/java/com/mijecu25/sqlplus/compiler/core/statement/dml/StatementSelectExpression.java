@@ -17,7 +17,7 @@ import java.util.List;
  * This class represents the "select...." SQL statement. It prints the columns that match the query.
  *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.6
+ * @version 0.1.0.7
  */
 public class StatementSelectExpression extends StatementDML {
     
@@ -66,7 +66,6 @@ public class StatementSelectExpression extends StatementDML {
                 throw new SQLException();
             }
 
-            // TODO add this in all other places
             // Check if the result set has values or not
             if(this.resultSet.isBeforeFirst()) {
                 this.printResult();

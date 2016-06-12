@@ -14,7 +14,7 @@ import com.mijecu25.sqlutils.SQLUtils;
  * This class represents the "show databases" SQL statement. It prints the databases found in the server.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.11
+ * @version 0.1.0.12
  */
 public class StatementShowDatabases extends Statement {
        
@@ -58,7 +58,13 @@ public class StatementShowDatabases extends Statement {
                 throw new SQLException();
             }
 
-            this.printResult();
+            // Check if the result set has values or not
+            if(this.resultSet.isBeforeFirst()) {
+                this.printResult();
+            }
+            else {
+                Statement.printEmptySet();
+            }
 
             // Close the result set and statement
             this.resultSet.close();
