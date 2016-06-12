@@ -14,7 +14,7 @@ import java.sql.SQLException;
  * This class represents the "show tables" SQL statement. It prints the tables located within a database.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.9
+ * @version 0.1.0.10
  */
 public class StatementShowTables extends Statement {
 
@@ -36,7 +36,7 @@ public class StatementShowTables extends Statement {
             IllegalArgumentException iae = new IllegalArgumentException();
             StatementShowTables.logger.fatal(Messages.FATAL + "The connection passed to execute the statement "
                     + "cannot be null");
-            System.out.println(Messages.FATAL_EXCEPTION_ACTION(iae.getClass().getSimpleName()) + Messages.SPACE
+            System.out.println(Messages.FATAL_EXCEPTION_ACTION(iae.getClass().getSimpleName()) + " "
                     + Messages.CHECK_LOG_FILES);
             StatementShowTables.logger.warn(Messages.WARNING + "Throwing a " + iae.getClass().getSimpleName()
                     + " to the calling class");

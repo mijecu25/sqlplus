@@ -15,7 +15,7 @@ import com.mijecu25.sqlplus.compiler.core.statement.Statement;
  * SQLPlusConnection abstrac class. Default database is MySQL on port 3306.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.12
+ * @version 0.1.0.13
  */
 public abstract class SQLPlusConnection {
     private static final String LOCALHOST = "127.0.0.1";
@@ -112,7 +112,7 @@ public abstract class SQLPlusConnection {
             statement.execute(this.connection);
         } catch (SQLException sqle) {
             SQLPlusConnection.logger.warn(Messages.WARNING + "There was an exception when executing the last command." 
-                    + Messages.SPACE + Messages.CHECK_LOG_FILES);
+                    + " " + Messages.CHECK_LOG_FILES);
         }
     }
 
@@ -139,7 +139,7 @@ public abstract class SQLPlusConnection {
         else {
             SQLPlusConnection.logger.warn("Tried to disconnect from the database, but there was not a connection");
             System.out.println(Messages.WARNING + "SQLPlus attempted to disconnect from your database but it found "
-                    + "that there was not a connection." + Messages.SPACE + Messages.CHECK_LOG_FILES);
+                    + "that there was not a connection." + " " + Messages.CHECK_LOG_FILES);
         }
     }
 

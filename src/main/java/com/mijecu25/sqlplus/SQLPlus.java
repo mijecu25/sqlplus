@@ -29,7 +29,7 @@ import jline.console.ConsoleReader;
  * SQLPlus add alerts to your sql queries.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.19
+ * @version 0.1.0.20
  */
 public class SQLPlus {
 
@@ -113,7 +113,7 @@ public class SQLPlus {
             // object cannot be found
             SQLPlus.logger.fatal(Messages.FATAL + Messages.FATAL_EXIT(SQLPlus.PROGRAM_NAME, npe.getClass().getName()));
             System.out.println(Messages.FATAL + Messages.FATAL_EXCEPTION_ACTION(npe.getClass().getSimpleName())
-                    + Messages.SPACE + Messages.CHECK_LOG_FILES);
+                    + " " + Messages.CHECK_LOG_FILES);
             SQLPlus.exitSQLPlus();
 
             SQLPlus.logger.fatal(Messages.FATAL + Messages.QUIT_PROGRAM_ERROR(SQLPlus.PROGRAM_NAME));
@@ -124,7 +124,7 @@ public class SQLPlus {
             // This exception can occur when trying to establish a connection
             SQLPlus.logger.fatal(Messages.FATAL + Messages.FATAL_EXIT(SQLPlus.PROGRAM_NAME, sqle.getClass().getName()));
             System.out.println(Messages.FATAL + Messages.FATAL_EXCEPTION_ACTION(sqle.getClass().getSimpleName())
-                    + Messages.SPACE + Messages.CHECK_LOG_FILES);
+                    + " " + Messages.CHECK_LOG_FILES);
             SQLPlus.exitSQLPlus();
 
             SQLPlus.logger.fatal(Messages.FATAL + Messages.QUIT_PROGRAM_ERROR(SQLPlus.PROGRAM_NAME));
@@ -134,7 +134,7 @@ public class SQLPlus {
             // This exception can occur when trying to establish a connection
             SQLPlus.logger.fatal(Messages.FATAL + Messages.FATAL_EXIT(SQLPlus.PROGRAM_NAME, iae.getClass().getName()));
             System.out.println(Messages.FATAL + Messages.FATAL_EXCEPTION_ACTION(iae.getClass().getSimpleName())
-                    + Messages.SPACE + Messages.CHECK_LOG_FILES);
+                    + " " + Messages.CHECK_LOG_FILES);
             SQLPlus.exitSQLPlus();
 
             SQLPlus.logger.fatal(Messages.FATAL + Messages.QUIT_PROGRAM_ERROR(SQLPlus.PROGRAM_NAME));

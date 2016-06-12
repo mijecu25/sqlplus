@@ -17,7 +17,7 @@ import java.util.List;
  * This class represents the "select...." SQL statement. It prints the columns that match the query.
  *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.7
+ * @version 0.1.0.8
  */
 public class StatementSelectExpression extends StatementDML {
     
@@ -44,7 +44,7 @@ public class StatementSelectExpression extends StatementDML {
             IllegalArgumentException iae = new IllegalArgumentException();
             StatementSelectExpression.logger.fatal(Messages.FATAL + "The connection passed to execute the statement "
                     + "cannot be null");
-            System.out.println(Messages.FATAL_EXCEPTION_ACTION(iae.getClass().getSimpleName()) + Messages.SPACE
+            System.out.println(Messages.FATAL_EXCEPTION_ACTION(iae.getClass().getSimpleName()) + " "
                     + Messages.CHECK_LOG_FILES);
             StatementSelectExpression.logger.warn(Messages.WARNING + "Throwing a " + iae.getClass().getSimpleName()
                     + " to the calling class");

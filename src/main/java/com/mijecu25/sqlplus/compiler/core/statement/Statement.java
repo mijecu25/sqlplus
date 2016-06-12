@@ -15,7 +15,7 @@ import com.mijecu25.messages.Messages;
  * This class represents either a SQLPlus statement or a regular SQL statement.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.16
+ * @version 0.1.0.17
  */
 public abstract class Statement {
     
@@ -77,7 +77,7 @@ public abstract class Statement {
             IllegalArgumentException iae = new IllegalArgumentException();
             Statement.logger.fatal(Messages.FATAL + "The minimum length to print a horizontal border is " + limit);
             System.out.println(Messages.FATAL + Messages.FATAL_EXCEPTION_ACTION(iae.getClass().getSimpleName())
-                    + Messages.SPACE + Messages.CHECK_LOG_FILES);
+                    + " " + Messages.CHECK_LOG_FILES);
             Statement.logger.warn(Messages.WARNING + "Throwing a " + iae.getClass().getSimpleName() + " to the calling class");
             throw iae;
         }
@@ -104,7 +104,7 @@ public abstract class Statement {
             IllegalArgumentException iae = new IllegalArgumentException();
             Statement.logger.fatal(Messages.FATAL + "The minimum length to print a horizontal border is " + limit);
             System.out.println(Messages.FATAL + Messages.FATAL_EXCEPTION_ACTION(iae.getClass().getSimpleName())
-                    + Messages.SPACE + Messages.CHECK_LOG_FILES);
+                    + " " + Messages.CHECK_LOG_FILES);
             Statement.logger.warn(Messages.WARNING + "Throwing a " + iae.getClass().getSimpleName() + " to the calling class");
             throw iae;
         }
@@ -117,7 +117,7 @@ public abstract class Statement {
 
     /**
      * Print the result of a query that only has a single column. If the result set has more than 1 column, an
-     * exception is thrown. The <code>maxLength</code> attribute is not calculated in this method and should be
+     * exception is thrown. The <code>maxLength</code> parameter is not calculated in this method and should be
      * done by the calling method.
      *
      * @param resultSet the result set that will be printed.
@@ -132,7 +132,7 @@ public abstract class Statement {
             IllegalArgumentException iae = new IllegalArgumentException();
             Statement.logger.fatal(Messages.FATAL + "The result set is null");
             System.out.println(Messages.FATAL + Messages.FATAL_EXCEPTION_ACTION(iae.getClass().getSimpleName())
-                    + Messages.SPACE + Messages.CHECK_LOG_FILES);
+                    + " " + Messages.CHECK_LOG_FILES);
             Statement.logger.warn(Messages.WARNING + "Throwing a " + iae.getClass().getSimpleName() + " to the calling class");
             throw iae;
         }
@@ -142,7 +142,7 @@ public abstract class Statement {
             IllegalArgumentException iae = new IllegalArgumentException();
             Statement.logger.fatal(Messages.FATAL + "The result set has more than one column");
             System.out.println(Messages.FATAL + Messages.FATAL_EXCEPTION_ACTION(iae.getClass().getSimpleName())
-                    + Messages.SPACE + Messages.CHECK_LOG_FILES);
+                    + " " + Messages.CHECK_LOG_FILES);
             Statement.logger.warn(Messages.WARNING + "Throwing a " + iae.getClass().getSimpleName() + " to the calling class");
             throw iae;
         }
@@ -153,7 +153,7 @@ public abstract class Statement {
             IllegalArgumentException iae = new IllegalArgumentException();
             Statement.logger.fatal(Messages.FATAL + "The minimum length to print a single column is " + limit);
             System.out.println(Messages.FATAL + Messages.FATAL_EXCEPTION_ACTION(iae.getClass().getSimpleName())
-                    + Messages.SPACE + Messages.CHECK_LOG_FILES);
+                    + " " + Messages.CHECK_LOG_FILES);
             Statement.logger.warn(Messages.WARNING + "Throwing a " + iae.getClass().getSimpleName() + " to the calling class");
             throw iae;
         }
@@ -202,10 +202,13 @@ public abstract class Statement {
     }
 
     /**
-     * TODO explain that it can also print single column
-     * @param resultSet
-     * @param columnsMaxLength
-     * @throws SQLException
+     * Print the result of a query that either a single or multiple columns. The <code>columnsMaxLength</code> parameter
+     * is not calculated in this method and should be done by the calling method.
+     *
+     * @param resultSet the result set that will be printed.
+     * @param columnsMaxLength the calculated maximum length of each of column in the table.
+     *
+     * @throws SQLException if there is a problem print the results.
      */
     public static void printMultipleColumn(ResultSet resultSet, List<Integer> columnsMaxLength) throws SQLException {
         Statement.logger.info("Printing a result set that has a single or multiple columns");
@@ -214,7 +217,7 @@ public abstract class Statement {
             IllegalArgumentException iae = new IllegalArgumentException();
             Statement.logger.fatal(Messages.FATAL + "The result set is null");
             System.out.println(Messages.FATAL + Messages.FATAL_EXCEPTION_ACTION(iae.getClass().getSimpleName())
-                    + Messages.SPACE + Messages.CHECK_LOG_FILES);
+                    + " " + Messages.CHECK_LOG_FILES);
             Statement.logger.warn(Messages.WARNING + "Throwing a " + iae.getClass().getSimpleName() + " to the calling class");
             throw iae;
         }
@@ -227,7 +230,7 @@ public abstract class Statement {
                 IllegalArgumentException iae = new IllegalArgumentException();
                 Statement.logger.fatal(Messages.FATAL + "The minimum length to print a single column is " + limit);
                 System.out.println(Messages.FATAL + Messages.FATAL_EXCEPTION_ACTION(iae.getClass().getSimpleName())
-                        + Messages.SPACE + Messages.CHECK_LOG_FILES);
+                        + " " + Messages.CHECK_LOG_FILES);
                 Statement.logger.warn(Messages.WARNING + "Throwing a " + iae.getClass().getSimpleName() + " to the calling class");
                 throw iae;
             }
