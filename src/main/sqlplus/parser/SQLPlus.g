@@ -10,7 +10,6 @@ import SQLPlusLex;
 	import com.mijecu25.sqlplus.compiler.core.statement.StatementUseDatabase;
 	import com.mijecu25.sqlplus.compiler.core.statement.StatementShowTables;
 	import com.mijecu25.sqlplus.compiler.core.statement.dml.StatementDML;
-	import com.mijecu25.sqlplus.compiler.core.statement.dml.StatementSelect;
 	import com.mijecu25.sqlplus.compiler.core.statement.dml.StatementSelectExpression;
 }
 
