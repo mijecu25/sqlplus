@@ -15,7 +15,7 @@ import com.mijecu25.messages.Messages;
  * This class represents either a SQLPlus statement or a regular SQL statement.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.14
+ * @version 0.1.0.15
  */
 public abstract class Statement {
     
@@ -25,7 +25,7 @@ public abstract class Statement {
     
     protected static final String CORNER_SYMBOL = "+";
     protected static final String HORIZONTAL_BORDER = "-";
-    protected static final String VERTICAL_BORDERL = "|";
+    protected static final String VERTICAL_BORDER = "|";
             
     private static final Logger logger = LogManager.getLogger(Statement.class);
     
@@ -168,10 +168,10 @@ public abstract class Statement {
         // Get the title of the result column
         String label = resultSet.getMetaData().getColumnLabel(1);
         // Build the label of the column
-        line.append(StatementShowDatabases.VERTICAL_BORDERL + " ");
+        line.append(StatementShowDatabases.VERTICAL_BORDER + " ");
         line.append(label);
         line.append(StringUtils.repeat(" ", lineTotalLength - 3 - label.length()));
-        line.append(StatementShowDatabases.VERTICAL_BORDERL + "\n");
+        line.append(StatementShowDatabases.VERTICAL_BORDER + "\n");
 
         // Build a border after the name of the column
         line.append(Statement.buildHorizontalBorder(lineTotalLength) + "\n");
@@ -181,10 +181,10 @@ public abstract class Statement {
             // Get and print the current row value
             String row = resultSet.getString(1);
 
-            line.append(StatementShowDatabases.VERTICAL_BORDERL + " ");
+            line.append(StatementShowDatabases.VERTICAL_BORDER + " ");
             line.append(row);
             line.append(StringUtils.repeat(" ", lineTotalLength - 3 - row.length()));
-            line.append(StatementShowDatabases.VERTICAL_BORDERL + "\n");
+            line.append(StatementShowDatabases.VERTICAL_BORDER + "\n");
         }
 
         // Build a border after the all of the rows
@@ -242,7 +242,7 @@ public abstract class Statement {
         // After completing the top border, we add a new line
         line.append("\n");
         // Add a vertical border to start the title row
-        line.append(Statement.VERTICAL_BORDERL);
+        line.append(Statement.VERTICAL_BORDER);
 
         // Loop through all of the columns to print the titles of the result table
         for(int i = 1; i <= columnsMaxLength.size(); i++) {
@@ -253,7 +253,7 @@ public abstract class Statement {
             line.append(" ");
             line.append(label);
             line.append(StringUtils.repeat(" ", columnsMaxLength.get(i-1) - 2 - label.length()));
-            line.append(Statement.VERTICAL_BORDERL);
+            line.append(Statement.VERTICAL_BORDER);
         }
 
         // After completing the titles, we add a new line
@@ -273,7 +273,7 @@ public abstract class Statement {
         // While the are more rows to process
         while (resultSet.next()) {
             // Add a vertical border to start the current row of results
-            line.append(Statement.VERTICAL_BORDERL);
+            line.append(Statement.VERTICAL_BORDER);
 
             // Loop through all of the columns
             for(int i = 1; i <= columnsMaxLength.size(); i++) {
@@ -284,7 +284,7 @@ public abstract class Statement {
                 line.append(" ");
                 line.append(row);
                 line.append(StringUtils.repeat(" ", columnsMaxLength.get(i-1) - 2 - row.length()));
-                line.append(Statement.VERTICAL_BORDERL);
+                line.append(Statement.VERTICAL_BORDER);
             }
 
             // After completing all of the columns, we add a new line
