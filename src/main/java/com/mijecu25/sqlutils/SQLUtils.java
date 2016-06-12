@@ -9,9 +9,11 @@ import java.sql.SQLException;
  * TODO
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.5
+ * @version 0.1.0.6
  */
 public abstract class SQLUtils {
+
+    public static final String ALL_SYMBOL = "*";
 
     /**
      * Get the name of the database system that is used by the connection.
