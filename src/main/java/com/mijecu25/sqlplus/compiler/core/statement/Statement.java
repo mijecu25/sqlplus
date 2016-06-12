@@ -3,6 +3,7 @@ package com.mijecu25.sqlplus.compiler.core.statement;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
@@ -14,7 +15,7 @@ import com.mijecu25.messages.Messages;
  * This class represents either a SQLPlus statement or a regular SQL statement.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.13
+ * @version 0.1.0.14
  */
 public abstract class Statement {
     
@@ -69,7 +70,10 @@ public abstract class Statement {
      * @param length the length of the longest string that will be printed.
      */
     public static String buildHorizontalBorder(int length) {
+        Statement.logger.info("Building a horizontal border");
+
         int limit = 5;
+
         if(length < limit) {
             IllegalArgumentException iae = new IllegalArgumentException();
             Statement.logger.fatal(Messages.FATAL + "The minimum length to print a horizontal border is " + limit);
@@ -93,6 +97,8 @@ public abstract class Statement {
      * @param length the length of the longest string that will be printed.
      */
     public static String buildRightHorizontalBorder(int length) {
+        Statement.logger.info("Building a horizontal border");
+
         int limit = 4;
 
         if(length < limit) {
@@ -121,6 +127,8 @@ public abstract class Statement {
      * @throws SQLException if there is a problem print the results.
      */
     public static void printSingleColumn(ResultSet resultSet, int maxLength) throws SQLException {
+        Statement.logger.info("Printing a result set that has a single column");
+
         if(resultSet == null) {
             IllegalArgumentException iae = new IllegalArgumentException();
             Statement.logger.fatal(Messages.FATAL + "The result set is null");
@@ -140,7 +148,7 @@ public abstract class Statement {
             throw iae;
         }
 
-        int limit = 5;
+        int limit = 1;
 
         if(maxLength < limit) {
             IllegalArgumentException iae = new IllegalArgumentException();
@@ -182,6 +190,117 @@ public abstract class Statement {
         // Build a border after the all of the rows
         line.append(Statement.buildHorizontalBorder(lineTotalLength) + "\n");
 
+        System.out.println(line);
+    }
+
+    /**
+     * TODO explain that it can also print single column
+     * @param resultSet
+     * @param columnsMaxLength
+     * @throws SQLException
+     */
+    public static void printMultipleColumn(ResultSet resultSet, List<Integer> columnsMaxLength) throws SQLException {
+        Statement.logger.info("Printing a result set that has a single or multiple columns");
+
+        if(resultSet == null) {
+            IllegalArgumentException iae = new IllegalArgumentException();
+            Statement.logger.fatal(Messages.FATAL + "The result set is null");
+            System.out.println(Messages.FATAL + Messages.FATAL_EXCEPTION_ACTION(iae.getClass().getSimpleName())
+                    + Messages.SPACE + Messages.CHECK_LOG_FILES);
+            Statement.logger.warn(Messages.WARNING + "Throwing a " + iae.getClass().getSimpleName() + " to the calling class");
+            throw iae;
+        }
+
+        int limit = 1;
+
+        // Loop through all of the columns lengths
+        for(int i = 0; i < columnsMaxLength.size(); i++) {
+            if(columnsMaxLength.get(i) < limit) {
+                IllegalArgumentException iae = new IllegalArgumentException();
+                Statement.logger.fatal(Messages.FATAL + "The minimum length to print a single column is " + limit);
+                System.out.println(Messages.FATAL + Messages.FATAL_EXCEPTION_ACTION(iae.getClass().getSimpleName())
+                        + Messages.SPACE + Messages.CHECK_LOG_FILES);
+                Statement.logger.warn(Messages.WARNING + "Throwing a " + iae.getClass().getSimpleName() + " to the calling class");
+                throw iae;
+            }
+        }
+
+        // Since we might be printing multiple columns, the approach we take is to add the left
+        // characters and for each column, we complete the right side of the table
+        StringBuilder line = new StringBuilder(Statement.CORNER_SYMBOL);
+        String label = "";
+        int padding = 3;
+
+        // Loop through all the columns to build the top border of the result
+        for(int i = 0; i < columnsMaxLength.size(); i++) {
+            // The total length of each columns is added by 3 for the right border and the 2 spaces on either side
+            columnsMaxLength.set(i, columnsMaxLength.get(i) + padding);
+            // Add a right border the to fit the maximum row in a column
+            line.append(Statement.buildRightHorizontalBorder(columnsMaxLength.get(i)));
+        }
+
+        // After completing the top border, we add a new line
+        line.append("\n");
+        // Add a vertical border to start the title row
+        line.append(Statement.VERTICAL_BORDERL);
+
+        // Loop through all of the columns to print the titles of the result table
+        for(int i = 1; i <= columnsMaxLength.size(); i++) {
+            // Get the title
+            label = resultSet.getMetaData().getColumnLabel(i);
+
+            // Add a white space, title, whitespaces, and right border to complete the title for this column
+            line.append(" ");
+            line.append(label);
+            line.append(StringUtils.repeat(" ", columnsMaxLength.get(i-1) - 2 - label.length()));
+            line.append(Statement.VERTICAL_BORDERL);
+        }
+
+        // After completing the titles, we add a new line
+        line.append("\n");
+        // Add a corner symbol to start bottom border of the title row
+        line.append(Statement.CORNER_SYMBOL);
+
+        // Loop through all of the columns
+        for(int i = 0; i < columnsMaxLength.size(); i++) {
+            // Add a right border the to fit the maximum row in a column
+            line.append(Statement.buildRightHorizontalBorder(columnsMaxLength.get(i)));
+        }
+
+        // After completing the bottom border of titles, we add a new line
+        line.append("\n");
+
+        // While the are more rows to process
+        while (resultSet.next()) {
+            // Add a vertical border to start the current row of results
+            line.append(Statement.VERTICAL_BORDERL);
+
+            // Loop through all of the columns
+            for(int i = 1; i <= columnsMaxLength.size(); i++) {
+                // Get the current row and check if it is null
+                String row = Statement.checkAndTransformNull(resultSet.getString(i));
+
+                // Add a white space, row, whitespaces, and right border to complete the row for this column
+                line.append(" ");
+                line.append(row);
+                line.append(StringUtils.repeat(" ", columnsMaxLength.get(i-1) - 2 - row.length()));
+                line.append(Statement.VERTICAL_BORDERL);
+            }
+
+            // After completing all of the columns, we add a new line
+            line.append("\n");
+        }
+
+        // Add a corner symbol to start bottom border of the result table
+        line.append(Statement.CORNER_SYMBOL);
+
+        // Loop through all of the columns
+        for(int i = 0; i < columnsMaxLength.size(); i++) {
+            // Add a right border the to fit the maximum row in a column
+            line.append(Statement.buildRightHorizontalBorder(columnsMaxLength.get(i)));
+        }
+
+        // Print the result table
         System.out.println(line);
     }
 
