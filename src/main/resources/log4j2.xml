@@ -3,21 +3,27 @@
     <Properties>
         <Property name="log-path">./log</Property>
     </Properties>
-  
+
     <Appenders>
         <Console name="STDOUT" target="SYSTEM_OUT">
             <PatternLayout pattern="[%d{MM-dd-yyyy HH:mm:ss.SSS}] [%t] %-5level %logger{36}.%M(%L) - %msg%n"/>
         </Console>
-    
+
         <RollingFile name="RollingFile" fileName="${log-path}/sqlplus.log" filePattern="${log-path}/sqlplus-%d{yyyy-MM-dd}-%i.log">
             <PatternLayout pattern="[%d{MM-dd-yyyy HH:mm:ss.SSS}] [%t] %-5level %logger{36}.%M(%L) - %msg%n"/>
             <Policies>
                 <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
                 <SizeBasedTriggeringPolicy size="5 MB" />
             </Policies>
+            <DefaultRolloverStrategy>
+                <Delete basePath="${log-path}">
+                    <IfFileName glob="*.log" />
+                    <IfLastModified age="60d" />
+                </Delete>
+            </DefaultRolloverStrategy>
         </RollingFile>
     </Appenders>
-  
+
     <Loggers>
         <Root level="debug">
             <AppenderRef ref="STDOUT" level="off"/>
