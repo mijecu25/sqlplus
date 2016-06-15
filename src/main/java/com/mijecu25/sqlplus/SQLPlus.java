@@ -29,7 +29,7 @@ import jline.console.ConsoleReader;
  * SQLPlus add alerts to your sql queries.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.21
+ * @version 0.1.0.22
  */
 public class SQLPlus {
 
@@ -241,12 +241,11 @@ public class SQLPlus {
                     }
                 }
                 catch(RecognitionException re) {
-                    SQLPlus.logger.warn(Messages.WARNING + "You have an error in your SQL syntax. Check the manual"
+                    String message = Messages.WARNING + "You have an error in your SQL syntax. Check the manual"
                             + " that corresponds to your " + SQLPlus.sqlPlusConnection.getCurrentDatabase()
-                            + " server or " + SQLPlus.PROGRAM_NAME + " for the correct syntax");
-                    System.out.println(Messages.WARNING + "You have an error in your SQL syntax. Check the manual"
-                            + " that corresponds to your " + SQLPlus.sqlPlusConnection.getCurrentDatabase()
-                            + " server or " + SQLPlus.PROGRAM_NAME + " for the correct syntax");
+                            + " server or " + SQLPlus.PROGRAM_NAME + " for the correct syntax";
+                    SQLPlus.logger.warn(message);
+                    System.out.println(message);
                 }
                 catch(UnsupportedOperationException uoe) {
                     // This exception can occur when the user entered a command allowed by the parsers, but not currently

@@ -15,14 +15,17 @@ import com.mijecu25.sqlplus.compiler.core.statement.Statement;
  * SQLPlusConnection abstrac class. Default database is MySQL on port 3306.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.14
+ * @version 0.1.0.15
  */
 public abstract class SQLPlusConnection {
+    public static final String MYSQL = "mysql";
+    public static final String MYSQL_PORT_NUMBER = "3306";
+
     private static final String LOCALHOST = "127.0.0.1";
     private static final String JAVA_DATABASE_DRIVER = "jdbc";
         
-    private static final String DEFAULT_DATABASE = SQLPlusMySQLConnection.MYSQL;
-    private static final String DEFAULT_PORT = SQLPlusMySQLConnection.MYSQL_PORT_NUMBER;
+    private static final String DEFAULT_DATABASE = SQLPlusConnection.MYSQL;
+    private static final String DEFAULT_PORT = SQLPlusConnection.MYSQL_PORT_NUMBER;
     private static final String DEFAULT_HOST = SQLPlusConnection.LOCALHOST;
     private static final String USE_SSL = "useSSL";
     private static final String USE_SSL_DEFAULT = "false";

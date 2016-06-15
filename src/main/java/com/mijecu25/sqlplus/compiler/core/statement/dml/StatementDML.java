@@ -14,7 +14,7 @@ import com.mijecu25.sqlplus.compiler.core.statement.Statement;
  * This class contains common behavior for all DML SQL statements.
  *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.3
+ * @version 0.1.0.4
  */
 public abstract class StatementDML extends Statement {
     
@@ -37,8 +37,9 @@ public abstract class StatementDML extends Statement {
         if(tables.size() > 1) {
             // We currently support only 1 table reference
             UnsupportedOperationException uoe = new UnsupportedOperationException();
-            StatementDML.logger.warn(Messages.WARNING + "You can only enter a single table reference in the FROM clause");
-            System.out.println(Messages.WARNING + "You can only enter a single table reference in the FROM clause");
+            String message = Messages.WARNING + "You can only enter a single table reference in the FROM clause";
+            StatementDML.logger.warn(message);
+            System.out.println(message);
             StatementDML.logger.warn(Messages.WARNING + "Throwing a " + uoe.getClass().getSimpleName() + " to the calling class");
             throw uoe;
         }
