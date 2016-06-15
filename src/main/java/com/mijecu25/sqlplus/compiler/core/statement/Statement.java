@@ -2,7 +2,9 @@ package com.mijecu25.sqlplus.compiler.core.statement;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
@@ -15,7 +17,7 @@ import com.mijecu25.messages.Messages;
  * This class represents either a SQLPlus statement or a regular SQL statement.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.17
+ * @version 0.1.0.18
  */
 public abstract class Statement {
     
@@ -339,31 +341,33 @@ public abstract class Statement {
         System.out.println("Empty set");
     }
 
-//    /**
-//     * Return the statement that will be executed.
-//     * 
-//     * @return the string that represents the statement that will be executed
-//     */
-//    protected String getStatement() { return this.statement; }
-//
-//    /**
-//     * Return the connection to the database.
-//     * 
-//     * @return the connection used to execute the statement.
-//     */
-//    protected Connection getConnection() { return this.connection; }
-//
-//    /**
-//     * Set the statement.
-//     * 
-//     * @param statement the statement that will be executed
-//     */
-//    protected void setStatement(String statement) { this.statement = statement; }
-//
-//    /**
-//     * Set the connection.
-//     * 
-//     * @param connection the connection used to execute the statement.
-//     */
-//    protected void setConnection(Connection connection) { this.connection = connection; }    
+    /**
+     * Return a list of all of the columns when the user used the {@code SQLUtils.ALL_SYMBOL} to query a table.
+     *
+     * @param resultSetMetaData the object that has the information about the columns.
+     *
+     * @return a list with all of the columns in the queried table.
+     *
+     * @throws SQLException if there is a problem getting the columns.
+     */
+    public static List<String> transformAllToColumns(ResultSetMetaData resultSetMetaData) throws SQLException {
+        Statement.logger.info("Getting all of the columns that the user queried");
+        List<String> columns = new ArrayList<String>();
+
+        try {
+            // Loop through all of the columns found in the result set metadata
+            for (int i = 1; i <= resultSetMetaData.getColumnCount(); i++) {
+                // Add the column name to the list
+                columns.add(resultSetMetaData.getColumnName(i));
+            }
+        }
+        catch(SQLException sqle) {
+            Statement.logger.warn(Messages.WARNING + "Error when getting all of the columns queried", sqle);
+
+            throw sqle;
+        }
+
+        return columns;
+    }
+
 }

@@ -17,7 +17,7 @@ import java.util.List;
  * This class represents the "select...." SQL statement. It prints the columns that match the query.
  *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.9
+ * @version 0.1.0.10
  */
 public class StatementSelectExpression extends StatementDML {
     
@@ -97,6 +97,12 @@ public class StatementSelectExpression extends StatementDML {
             // Get the medatadata from the result set
             ResultSetMetaData resultSetMetaData;
             resultSetMetaData = this.resultSet.getMetaData();
+
+            // If the user wants to select all of the columns
+            if(this.columns.size() == 1 && this.columns.get(0).equals(SQLUtils.ALL_SYMBOL)) {
+                // Get all of the columns for the table
+                this.columns = Statement.transformAllToColumns(resultSetMetaData);
+            }
 
             // Loop through all the columns to build the top border of the result
             for(int i = 0; i < this.columns.size(); i++) {

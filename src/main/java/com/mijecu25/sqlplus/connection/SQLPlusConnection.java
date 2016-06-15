@@ -15,7 +15,7 @@ import com.mijecu25.sqlplus.compiler.core.statement.Statement;
  * SQLPlusConnection abstrac class. Default database is MySQL on port 3306.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.13
+ * @version 0.1.0.14
  */
 public abstract class SQLPlusConnection {
     private static final String LOCALHOST = "127.0.0.1";
@@ -28,12 +28,13 @@ public abstract class SQLPlusConnection {
     private static final String USE_SSL_DEFAULT = "false";
 
     private static final Logger logger = LogManager.getLogger(SQLPlusConnection.class);
-        
+
     private String host;
     private String username;
     private char[] password;
     private String database;
     private String port;
+    private String currentDatabase;
     
     private Connection connection;
     private Properties connectionProperties;
@@ -55,6 +56,7 @@ public abstract class SQLPlusConnection {
         this.password = password;
         this.database = database;
         this.port = port;
+        this.currentDatabase = this.database.toUpperCase();
         
         this.connectionProperties = new Properties();
     }
@@ -163,6 +165,13 @@ public abstract class SQLPlusConnection {
      * @return the default host.
      */
     public static String getDefaultHost() { return SQLPlusConnection.DEFAULT_HOST; }
+
+    /**
+     * Return the current database system.
+     *
+     * @return a string with the current database system.
+     */
+    public String getCurrentDatabase() { return this.currentDatabase; }
 
     @Override
     public String toString() {

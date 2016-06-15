@@ -29,7 +29,7 @@ import jline.console.ConsoleReader;
  * SQLPlus add alerts to your sql queries.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.20
+ * @version 0.1.0.21
  */
 public class SQLPlus {
 
@@ -187,8 +187,16 @@ public class SQLPlus {
                     line = "select name, year from classes;";
                 }
 
+                if (line.equals("*")) {
+                    line = "select * from classes;";
+                }
+
                 if (line.equals("x")) {
                     line = "select name from classes, classes;";
+                }
+
+                if (line.equals("e")) {
+                    line = "select * feom classes;";
                 }
 
                 // Logic to quit
@@ -223,7 +231,6 @@ public class SQLPlus {
                     CommonTokenStream tokens = new CommonTokenStream(lexer);
                     SQLPlusParser parser = new SQLPlusParser(tokens);
 
-                    // TODO handle this better so that I print my own message when the string is not matched
                     Statement statement = parser.sqlplus();
 
                     if (statement == null) {
@@ -233,18 +240,22 @@ public class SQLPlus {
                         SQLPlus.sqlPlusConnection.execute(statement);
                     }
                 }
+                catch(RecognitionException re) {
+                    SQLPlus.logger.warn(Messages.WARNING + "You have an error in your SQL syntax. Check the manual"
+                            + " that corresponds to your " + SQLPlus.sqlPlusConnection.getCurrentDatabase()
+                            + " server or " + SQLPlus.PROGRAM_NAME + " for the correct syntax");
+                    System.out.println(Messages.WARNING + "You have an error in your SQL syntax. Check the manual"
+                            + " that corresponds to your " + SQLPlus.sqlPlusConnection.getCurrentDatabase()
+                            + " server or " + SQLPlus.PROGRAM_NAME + " for the correct syntax");
+                }
                 catch(UnsupportedOperationException uoe) {
                     // This exception can occur when the user entered a command allowed by the parsers, but not currently
                     // supported by SQLPlus. This can occur because the parser is written in such a way that supports
                     // the addition of features.
                     SQLPlus.logger.warn(Messages.WARNING + "The previous command is not currently supported.");
                 }
+
             }
-        }
-        catch(RecognitionException e) {
-            // TODO test this
-            SQLPlus.logger.warn("There was an error while parsing the user input");
-            e.printStackTrace();
         }
         catch(IllegalArgumentException iae) {
             // This exception can occur when a command is executed but it had illegal arguments. Most likely

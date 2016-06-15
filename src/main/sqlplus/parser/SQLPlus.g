@@ -9,8 +9,28 @@ import SQLPlusLex;
 	import com.mijecu25.sqlplus.compiler.core.statement.StatementShowDatabases;
 	import com.mijecu25.sqlplus.compiler.core.statement.StatementUseDatabase;
 	import com.mijecu25.sqlplus.compiler.core.statement.StatementShowTables;
-	import com.mijecu25.sqlplus.compiler.core.statement.dml.StatementDML;
 	import com.mijecu25.sqlplus.compiler.core.statement.dml.StatementSelectExpression;
+}
+
+@members {
+	@Override
+ 	public Object recoverFromMismatchedSet(IntStream input, RecognitionException e, BitSet follow) throws RecognitionException {
+    	throw e;
+	}
+
+	protected void mismatch(IntStream input, int ttype, BitSet follow) throws RecognitionException {
+		 throw new MismatchedTokenException(ttype, input);
+	}
+
+	protected Object recoverFromMismatchedToken(IntStream input, int ttype, BitSet follow) throws RecognitionException {
+		throw new MismatchedTokenException(ttype, input);
+	}
+}
+
+@rulecatch {
+	catch (RecognitionException re) {
+		throw re;
+	}
 }
 
 // This is the entry point of the SQLPlus alert program
@@ -18,7 +38,7 @@ sqlplus returns [Statement statement]
 	@init {
 		$statement = null;
 	}
-	: 	sql_statement {
+	: 	sql_statement SEMICOLON {
 			statement = $sql_statement.sqlStatement;
 		}
 		// TODO this should be optional 
@@ -110,7 +130,8 @@ select_expression returns [Statement selectExpression]
 	@init {
 		$selectExpression = null;
 	}
-	:	SELECT select_list (FROM table_references)? { 
+	// TODO the (from table_references) was optional
+	:	SELECT select_list FROM table_references {
 			$selectExpression = new StatementSelectExpression($select_list.selectList, $table_references.tableReferences);
 		}
 	;

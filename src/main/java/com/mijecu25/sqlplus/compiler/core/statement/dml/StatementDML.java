@@ -14,7 +14,7 @@ import com.mijecu25.sqlplus.compiler.core.statement.Statement;
  * This class contains common behavior for all DML SQL statements.
  *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.2
+ * @version 0.1.0.3
  */
 public abstract class StatementDML extends Statement {
     
@@ -54,25 +54,24 @@ public abstract class StatementDML extends Statement {
     protected abstract void printResult();
 
     /**
-     * Transform the list of columns to a comma separated string.
+     * Transform the list of elements to a comma separated string.
      *
-
-     * @param columns the columns referenced in the query.
+     * @param list the list of elements that are transformed to a string.
      *
-     * @return comma separate string with the columns
+     * @return comma separate string with the elements.
      */
-    public static String unrollList(List<String> columns) {
+    public static String unrollList(List<String> list) {
         StringBuilder result = new StringBuilder();
 
         // Loop through the list of columns
-        for(int i = 0; i < columns.size(); i++) {
+        for(int i = 0; i < list.size(); i++) {
             // If we are adding another column to the string, add a comma
             if(i > 0) {
                 result.append(", ");
             }
 
             // Add the column to the list
-            result.append(columns.get(i));
+            result.append(list.get(i));
         }
         
         return result.toString();
@@ -84,35 +83,5 @@ public abstract class StatementDML extends Statement {
      * @return a string with the name of the first referenced table.
      */
     public String getFirstTable() { return this.tables.get(0); }
-
-//    /**
-//     * Return the columns referenced in the query.
-//     *
-//     * @return a list of strings with the columns referenced in the query.
-//     */
-//    public List<String> getColumns() { return columns; }
-//
-//    /**
-//     * Set the columns referenced in the query.
-//     *
-//     * @param columns the list of columns referenced in the query.
-//     */
-//    public void setColumns(List<String> columns) { this.columns = columns; }
-//
-//    /**
-//     * Return the tables referenced in the query.
-//     *
-//     * @return a list of strings with the tables referenced in the query.
-//     */
-//    public List<String> getTables() { return this.tables; }
-//
-//    /**
-//     * Set the tables referenced in the query.
-//     *
-//     * @param tables the list of tables referenced in the query.
-//     */
-//    public void setTables(List<String> tables) {
-//        this.tables = tables;
-//    }
 
 }
