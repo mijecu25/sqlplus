@@ -29,7 +29,7 @@ import jline.console.ConsoleReader;
  * SQLPlus add alerts to your sql queries.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.22
+ * @version 0.1.0.23
  */
 public class SQLPlus {
 
@@ -80,7 +80,7 @@ public class SQLPlus {
         System.out.println();
 
         // Read the license file
-        BufferedReader bufferedReader = null;
+        BufferedReader bufferedReader;
         bufferedReader = new BufferedReader(new FileReader(SQLPlus.LICENSE_FILE));
 
         // Read a line
@@ -108,32 +108,14 @@ public class SQLPlus {
             SQLPlus.logger.info("Create SQLPlusConnection");
             SQLPlus.createSQLPlusConnection();
         } 
-        catch (NullPointerException npe) {
-            // This exception can occur if the user is running the program where the JVM Console
-            // object cannot be found
-            SQLPlus.logger.fatal(Messages.FATAL + Messages.FATAL_EXIT(SQLPlus.PROGRAM_NAME, npe.getClass().getName()));
-            System.out.println(Messages.FATAL + Messages.FATAL_EXCEPTION_ACTION(npe.getClass().getSimpleName())
-                    + " " + Messages.CHECK_LOG_FILES);
-            SQLPlus.exitSQLPlus();
-
-            SQLPlus.logger.fatal(Messages.FATAL + Messages.QUIT_PROGRAM_ERROR(SQLPlus.PROGRAM_NAME));
-            return;
-        } 
-        catch (SQLException sqle) {
-            // TODO should I add here the error code?
+        catch (NullPointerException | SQLException | IllegalArgumentException e) {
+            // NPE: This exception can occur if the user is running the program where the JVM Console
+            // object cannot be found.
+            // SQLE: TODO should I add here the error code?
             // This exception can occur when trying to establish a connection
-            SQLPlus.logger.fatal(Messages.FATAL + Messages.FATAL_EXIT(SQLPlus.PROGRAM_NAME, sqle.getClass().getName()));
-            System.out.println(Messages.FATAL + Messages.FATAL_EXCEPTION_ACTION(sqle.getClass().getSimpleName())
-                    + " " + Messages.CHECK_LOG_FILES);
-            SQLPlus.exitSQLPlus();
-
-            SQLPlus.logger.fatal(Messages.FATAL + Messages.QUIT_PROGRAM_ERROR(SQLPlus.PROGRAM_NAME));
-            return;
-        } 
-        catch (IllegalArgumentException iae) {
-            // This exception can occur when trying to establish a connection
-            SQLPlus.logger.fatal(Messages.FATAL + Messages.FATAL_EXIT(SQLPlus.PROGRAM_NAME, iae.getClass().getName()));
-            System.out.println(Messages.FATAL + Messages.FATAL_EXCEPTION_ACTION(iae.getClass().getSimpleName())
+            // IAE: This exception can occur when trying to establish a connection
+            SQLPlus.logger.fatal(Messages.FATAL + Messages.FATAL_EXIT(SQLPlus.PROGRAM_NAME, e.getClass().getName()));
+            System.out.println(Messages.FATAL + Messages.FATAL_EXCEPTION_ACTION(e.getClass().getSimpleName())
                     + " " + Messages.CHECK_LOG_FILES);
             SQLPlus.exitSQLPlus();
 
@@ -263,13 +245,10 @@ public class SQLPlus {
             SQLPlus.exitSQLPlus();
 
             SQLPlus.logger.fatal(Messages.FATAL + Messages.QUIT_PROGRAM_ERROR(SQLPlus.PROGRAM_NAME));
-            return ;
         }
         catch(UserInterruptException uie) {
             SQLPlus.logger.warn(Messages.WARNING + "The user typed an interrupt instruction.");
             SQLPlus.exitSQLPlus();
-
-            return ;
         }
     }
     
@@ -388,9 +367,6 @@ public class SQLPlus {
         }
         SQLPlus.logger.info("User entered some password"); 
         System.out.println();
-
-        // Create a SQLPlusConnection
-        SQLPlusConnection sqlPlusConnection = null;
 
         // Create a connection based on the database system
         switch(database) {
