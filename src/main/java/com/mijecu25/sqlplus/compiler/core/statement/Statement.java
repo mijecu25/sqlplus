@@ -17,7 +17,7 @@ import com.mijecu25.messages.Messages;
  * This class represents either a SQLPlus statement or a regular SQL statement.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.18
+ * @version 0.1.0.19
  */
 public abstract class Statement {
     
@@ -25,9 +25,9 @@ public abstract class Statement {
     protected Connection connection; 
     protected ResultSet resultSet;
     
-    protected static final String CORNER_SYMBOL = "+";
-    protected static final String HORIZONTAL_BORDER = "-";
-    protected static final String VERTICAL_BORDER = "|";
+    private static final String CORNER_SYMBOL = "+";
+    private static final String HORIZONTAL_BORDER = "-";
+    private static final String VERTICAL_BORDER = "|";
             
     private static final Logger logger = LogManager.getLogger(Statement.class);
     
@@ -172,10 +172,10 @@ public abstract class Statement {
             // Get the title of the result column
             String label = resultSet.getMetaData().getColumnLabel(1);
             // Build the label of the column
-            line.append(StatementShowDatabases.VERTICAL_BORDER + " ");
+            line.append(Statement.VERTICAL_BORDER + " ");
             line.append(label);
             line.append(StringUtils.repeat(" ", lineTotalLength - 3 - label.length()));
-            line.append(StatementShowDatabases.VERTICAL_BORDER + "\n");
+            line.append(Statement.VERTICAL_BORDER + "\n");
 
             // Build a border after the name of the column
             line.append(Statement.buildHorizontalBorder(lineTotalLength) + "\n");
@@ -185,14 +185,15 @@ public abstract class Statement {
                 // Get and print the current row value
                 String row = resultSet.getString(1);
 
-                line.append(StatementShowDatabases.VERTICAL_BORDER + " ");
+                line.append(Statement.VERTICAL_BORDER + " ");
                 line.append(row);
                 line.append(StringUtils.repeat(" ", lineTotalLength - 3 - row.length()));
-                line.append(StatementShowDatabases.VERTICAL_BORDER + "\n");
+                line.append(Statement.VERTICAL_BORDER + "\n");
             }
 
             // Build a border after the all of the rows
-            line.append(Statement.buildHorizontalBorder(lineTotalLength) + "\n");
+            line.append(Statement.buildHorizontalBorder(lineTotalLength));
+            line.append("\n");
         }
         catch(SQLException sqle) {
             Statement.logger.warn(Messages.WARNING + "Error when printing a single column result", sqle);
@@ -227,8 +228,8 @@ public abstract class Statement {
         int limit = 1;
 
         // Loop through all of the columns lengths
-        for(int i = 0; i < columnsMaxLength.size(); i++) {
-            if(columnsMaxLength.get(i) < limit) {
+        for(Integer columnMaxLength : columnsMaxLength) {
+            if(columnMaxLength < limit) {
                 IllegalArgumentException iae = new IllegalArgumentException();
                 Statement.logger.fatal(Messages.FATAL + "The minimum length to print a single column is " + limit);
                 System.out.println(Messages.FATAL + Messages.FATAL_EXCEPTION_ACTION(iae.getClass().getSimpleName())
@@ -241,7 +242,7 @@ public abstract class Statement {
         // Since we might be printing multiple columns, the approach we take is to add the left
         // characters and for each column, we complete the right side of the table
         StringBuilder line = new StringBuilder(Statement.CORNER_SYMBOL);
-        String label = "";
+        String label;
         int padding = 3;
 
         // Loop through all the columns to build the top border of the result
@@ -275,9 +276,9 @@ public abstract class Statement {
         line.append(Statement.CORNER_SYMBOL);
 
         // Loop through all of the columns
-        for(int i = 0; i < columnsMaxLength.size(); i++) {
+        for(Integer columnMaxLength : columnsMaxLength) {
             // Add a right border the to fit the maximum row in a column
-            line.append(Statement.buildRightHorizontalBorder(columnsMaxLength.get(i)));
+            line.append(Statement.buildRightHorizontalBorder(columnMaxLength));
         }
 
         // After completing the bottom border of titles, we add a new line
@@ -308,9 +309,9 @@ public abstract class Statement {
         line.append(Statement.CORNER_SYMBOL);
 
         // Loop through all of the columns
-        for(int i = 0; i < columnsMaxLength.size(); i++) {
+        for(Integer columnMaxLength : columnsMaxLength) {
             // Add a right border the to fit the maximum row in a column
-            line.append(Statement.buildRightHorizontalBorder(columnsMaxLength.get(i)));
+            line.append(Statement.buildRightHorizontalBorder(columnMaxLength));
         }
 
         // Print the result table
