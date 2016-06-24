@@ -14,23 +14,16 @@ import com.mijecu25.sqlplus.compiler.core.statement.Statement;
  * This class contains common behavior for all DML SQL statements.
  *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.4
+ * @version 0.1.0.5
  */
 public abstract class StatementDML extends Statement {
-    
-    protected static final String DELETE = "DELETE ";
-    protected static final String INSERT = "INSERT ";
-    protected static final String SELECT = "SELECT ";
-    protected static final String UPDATE = "UPDATE ";
-    protected static final String FROM = " FROM ";
-
     private static final Logger logger = LogManager.getLogger(StatementDML.class);
     
     protected List<String> columns;
     protected List<String> tables;
     
-    public StatementDML(String statement, List<String> columns, List<String> tables) {
-        super(statement);
+    public StatementDML(List<String> columns, List<String> tables) {
+        super();
         this.columns = columns;
 
         // Check if the user entered more than 1 table reference

@@ -17,7 +17,7 @@ import com.mijecu25.messages.Messages;
  * This class represents either a SQLPlus statement or a regular SQL statement.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.19
+ * @version 0.1.0.20
  */
 public abstract class Statement {
     
@@ -35,20 +35,10 @@ public abstract class Statement {
      * Create a statement object
      */
     public Statement() {
-        this("");
-        Statement.logger.info("Created a default Statement");
-    }
-       
-    /**
-     * Create a statement object using a statement.
-     *
-     * @param statement the string that represents the statement that will be executed
-     */
-    public Statement(String statement) {
-        this.statement = statement;
+        this.statement = null;
         this.connection = null;
         this.resultSet = null;
-        Statement.logger.info("Created a Statement with a string statement");
+        Statement.logger.info("Created a Statement");
     }
     
     /**
@@ -370,5 +360,11 @@ public abstract class Statement {
 
         return columns;
     }
+
+    /**
+     * TODO
+     * @param statement
+     */
+    public void setStatement(String statement) { this.statement = statement; }
 
 }

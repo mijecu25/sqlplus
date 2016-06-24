@@ -14,16 +14,13 @@ import java.sql.SQLException;
  * This class represents the "show tables" SQL statement. It prints the tables located within a database.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.11
+ * @version 0.1.0.12
  */
 public class StatementShowTables extends Statement {
-
-    private static final String STATEMENT = "show tables";
-
     private static final Logger logger = LogManager.getLogger(StatementShowTables.class);
 
     public StatementShowTables() {
-        super(StatementShowTables.STATEMENT);
+        super();
         StatementShowTables.logger.info("Parsed and created a ShowTablesStatement");
     }
 

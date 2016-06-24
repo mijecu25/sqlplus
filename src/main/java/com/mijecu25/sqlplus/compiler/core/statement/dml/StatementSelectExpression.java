@@ -17,19 +17,16 @@ import java.util.List;
  * This class represents the "select...." SQL statement. It prints the columns that match the query.
  *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.10
+ * @version 0.1.0.11
  */
 public class StatementSelectExpression extends StatementDML {
-    
     private List<Integer> columnsMaxLength;
 
     private static final Logger logger = LogManager.getLogger(StatementSelectExpression.class);
 
     public StatementSelectExpression(List<String> columns, List<String> tables) {
-        // we are going to support right now.
-        super(StatementDML.SELECT + StatementDML.unrollList(columns)
-                + StatementDML.FROM + StatementDML.unrollList(tables),
-                columns, tables);
+        // We are going to support only one table right now.
+        super(columns, tables);
         this.columnsMaxLength = new ArrayList<Integer>();
         
         StatementSelectExpression.logger.info("Parsed and created a StatementSelectExpression");

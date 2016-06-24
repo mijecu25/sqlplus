@@ -14,16 +14,13 @@ import com.mijecu25.sqlutils.SQLUtils;
  * This class represents the "show databases" SQL statement. It prints the databases found in the server.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.14
+ * @version 0.1.0.15
  */
 public class StatementShowDatabases extends Statement {
-       
-    private static final String STATEMENT = "show databases";
-    
     private static final Logger logger = LogManager.getLogger(StatementShowDatabases.class);
     
     public StatementShowDatabases() {
-        super(StatementShowDatabases.STATEMENT);
+        super();
         StatementShowDatabases.logger.info("Parsed and created a ShowDatabasesStatement");
     }
     

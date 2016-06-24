@@ -13,18 +13,15 @@ import com.mijecu25.messages.Messages;
  * in the server and prints a message with the name of the current database.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.7
+ * @version 0.1.0.8
  */
 public class StatementUseDatabase extends Statement {
-    
     private String database;
-    
-    private static final String STATEMENT = "use ";
     
     private static final Logger logger = LogManager.getLogger(StatementUseDatabase.class);
     
     public StatementUseDatabase(String database) {
-        super(StatementUseDatabase.STATEMENT + database);
+        super();
         StatementUseDatabase.logger.info("Parsed and created a StatementUseDatabase");
         this.database = database;
     }

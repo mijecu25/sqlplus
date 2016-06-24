@@ -29,7 +29,7 @@ import jline.console.ConsoleReader;
  * SQLPlus add alerts to your sql queries.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.23
+ * @version 0.1.0.24
  */
 public class SQLPlus {
 
@@ -219,6 +219,7 @@ public class SQLPlus {
                         System.out.println("Return value is null");
                     }
                     else {
+                        statement.setStatement(query.toString());
                         SQLPlus.sqlPlusConnection.execute(statement);
                     }
                 }
