@@ -14,7 +14,7 @@ import org.junit.Test;
  * Test Statement 
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.3
+ * @version 0.1.0.4
  */
 public class TestStatement {
    
@@ -50,7 +50,7 @@ public class TestStatement {
         }
 
         public StatementConcrete(String statement) {
-            super(statement);
+            super();
         }
 
         @Override

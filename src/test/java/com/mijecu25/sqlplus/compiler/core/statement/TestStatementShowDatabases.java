@@ -11,7 +11,7 @@ import org.junit.Test;
  * Test StatementShowDatabases
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.1
+ * @version 0.1.0.2
  */
 public class TestStatementShowDatabases extends TestStatement {
 
@@ -21,6 +21,7 @@ public class TestStatementShowDatabases extends TestStatement {
     public static void initialize() throws SQLException {
         TestStatement.initialize();
         TestStatementShowDatabases.statement = new StatementShowDatabases();
+        TestStatementShowDatabases.statement.setStatement("show databases");
     }
     
     @AfterClass

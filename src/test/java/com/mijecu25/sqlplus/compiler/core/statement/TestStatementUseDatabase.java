@@ -11,16 +11,19 @@ import org.junit.Test;
  * Test StatementUseDatabase
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.4
+ * @version 0.1.0.5
  */
 public class TestStatementUseDatabase extends TestStatement {
-    
+
+    private static final String INFORMATION_SCHEMA = "information_schema";
+
     protected static StatementUseDatabase statement;
     
     @BeforeClass
     public static void initialize() throws SQLException {
         TestStatement.initialize();
-        TestStatementUseDatabase.statement = new StatementUseDatabase("information_schema");
+        TestStatementUseDatabase.statement = new StatementUseDatabase(TestStatementUseDatabase.INFORMATION_SCHEMA);
+        TestStatementUseDatabase.statement.setStatement("use " + TestStatementUseDatabase.INFORMATION_SCHEMA);
     }
     
     @AfterClass
@@ -30,7 +33,7 @@ public class TestStatementUseDatabase extends TestStatement {
     
     @Test
     public void testStatementUseDatabase() {
-        StatementUseDatabase statement = new StatementUseDatabase("information_schema");
+        StatementUseDatabase statement = new StatementUseDatabase(TestStatementUseDatabase.INFORMATION_SCHEMA);
 
         Assert.assertNotNull(statement);
     }
