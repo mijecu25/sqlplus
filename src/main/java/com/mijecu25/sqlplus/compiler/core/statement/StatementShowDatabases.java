@@ -14,7 +14,7 @@ import com.mijecu25.sqlutils.SQLUtils;
  * This class represents the "show databases" SQL statement. It prints the databases found in the server.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.15
+ * @version 0.1.0.16
  */
 public class StatementShowDatabases extends Statement {
     private static final Logger logger = LogManager.getLogger(StatementShowDatabases.class);
@@ -40,42 +40,8 @@ public class StatementShowDatabases extends Statement {
             throw iae;
         }
 
-        // Set the connection
-        this.connection = connection;
-        
-        try {
-            // Execute the query
-            java.sql.Statement statement = this.connection.createStatement();
-            this.resultSet = statement.executeQuery(this.statement);
-
-            // The result from the query is null
-            if(this.resultSet == null) {
-                // Throw an exception because this will be very weird. Also,
-                // if there is no response, we do not want to continue executing
-                throw new SQLException();
-            }
-
-            // Check if the result set has values or not
-            if(this.resultSet.isBeforeFirst()) {
-                this.printResult();
-            }
-            else {
-                Statement.printEmptySet();
-            }
-
-            // Close the result set and statement
-            this.resultSet.close();
-            statement.close();
-        }
-        catch(SQLException sqle) {
-            StatementShowDatabases.logger.warn(Messages.WARNING + "Error when executing " + this, sqle);
-            System.out.println(Messages.WARNING + "(" + sqle.getErrorCode() + ") (" + sqle.getSQLState() + ") "
-                    + sqle.getMessage());
-            
-            StatementShowDatabases.logger.warn(Messages.WARNING + "Throwing a " + sqle.getClass().getSimpleName()
-                    + " to the calling class");
-            throw sqle;
-        }
+        // Execute the query
+        this.executeQuery(connection);
 
     }
     

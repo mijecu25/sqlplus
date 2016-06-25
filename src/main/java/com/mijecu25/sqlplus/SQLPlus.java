@@ -29,7 +29,7 @@ import jline.console.ConsoleReader;
  * SQLPlus add alerts to your sql queries.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.24
+ * @version 0.1.0.25
  */
 public class SQLPlus {
 
@@ -162,7 +162,7 @@ public class SQLPlus {
                 }
 
                 if (line.equals("-")) {
-                    line = "select name from classes;";
+                    line = "select created_at from classes;";
                 }
 
                 if (line.equals("--")) {

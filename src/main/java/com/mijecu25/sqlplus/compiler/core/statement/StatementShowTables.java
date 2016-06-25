@@ -14,7 +14,7 @@ import java.sql.SQLException;
  * This class represents the "show tables" SQL statement. It prints the tables located within a database.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.12
+ * @version 0.1.0.13
  */
 public class StatementShowTables extends Statement {
     private static final Logger logger = LogManager.getLogger(StatementShowTables.class);
@@ -40,41 +40,8 @@ public class StatementShowTables extends Statement {
             throw iae;
         }
 
-        // Set the connection
-        this.connection = connection;
-
-        try {
-            // Execute the query
-            java.sql.Statement statement = this.connection.createStatement();
-            this.resultSet = statement.executeQuery(this.statement);
-
-            if(this.resultSet == null) {
-                // Throw an exception because this will be very weird. Also,
-                // if there is no response, we do not want to continue executing
-                throw new SQLException();
-            }
-
-            // Check if the result set has values or not
-            if(this.resultSet.isBeforeFirst()) {
-                this.printResult();
-            }
-            else {
-                Statement.printEmptySet();
-            }
-
-            // Close the result set and statement
-            this.resultSet.close();
-            statement.close();
-        }
-        catch(SQLException sqle) {
-            StatementShowTables.logger.warn(Messages.WARNING + "Error when executing " + this, sqle);
-            System.out.println(Messages.WARNING + "(" + sqle.getErrorCode() + ") (" + sqle.getSQLState()
-                    + ") " + sqle.getMessage());
-
-            StatementShowTables.logger.warn(Messages.WARNING + "Throwing a " + sqle.getClass().getSimpleName()
-                    + " to the calling class");
-            throw sqle;
-        }
+        // Execute the query
+        this.executeQuery(connection);
     }
 
     @Override

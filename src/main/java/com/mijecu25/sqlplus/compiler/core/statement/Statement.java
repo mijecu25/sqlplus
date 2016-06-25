@@ -17,12 +17,12 @@ import com.mijecu25.messages.Messages;
  * This class represents either a SQLPlus statement or a regular SQL statement.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.20
+ * @version 0.1.0.21
  */
 public abstract class Statement {
     
     protected String statement;
-    protected Connection connection; 
+    protected Connection connection;
     protected ResultSet resultSet;
     
     private static final String CORNER_SYMBOL = "+";
@@ -359,6 +359,63 @@ public abstract class Statement {
         }
 
         return columns;
+    }
+
+
+    /**
+     * TODO
+     * @param connection
+     * @throws SQLException
+     */
+    public void executeQuery(Connection connection) throws SQLException {
+        // If the connection is null
+        if(connection == null) {
+            IllegalArgumentException iae = new IllegalArgumentException();
+            Statement.logger.fatal(Messages.FATAL + "The connection passed to execute the statement "
+                    + "cannot be null");
+            System.out.println(Messages.FATAL_EXCEPTION_ACTION(iae.getClass().getSimpleName()) + " "
+                    + Messages.CHECK_LOG_FILES);
+            Statement.logger.warn(Messages.WARNING + "Throwing a " + iae.getClass().getSimpleName()
+                    + " to the calling class");
+            throw iae;
+        }
+
+        // Set the connection
+        this.connection = connection;
+
+        try {
+            // Execute the query
+            java.sql.Statement statement = connection.createStatement();
+            this.resultSet = statement.executeQuery(this.statement);
+
+            // The result from the query is null
+            if(this.resultSet == null) {
+                // Throw an exception because this will be very weird. Also,
+                // if there is no response, we do not want to continue executing
+                throw new SQLException();
+            }
+
+            // Check if the result set has values or not
+            if(this.resultSet.isBeforeFirst()) {
+                this.printResult();
+            }
+            else {
+                Statement.printEmptySet();
+            }
+
+            // Close the result set and statement
+            this.resultSet.close();
+            statement.close();
+        }
+        catch(SQLException sqle) {
+            Statement.logger.warn(Messages.WARNING + "Error when executing " + this, sqle);
+            System.out.println(Messages.WARNING + "(" + sqle.getErrorCode() + ") (" + sqle.getSQLState() + ") "
+                    + sqle.getMessage());
+
+            Statement.logger.warn(Messages.WARNING + "Throwing a " + sqle.getClass().getSimpleName()
+                    + " to the calling class");
+            throw sqle;
+        }
     }
 
     /**
