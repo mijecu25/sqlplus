@@ -2,6 +2,7 @@ package com.mijecu25.sqlplus.connection;
 
 import java.sql.SQLException;
 
+import com.mijecu25.sqlplus.compiler.core.statement.Statement;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -11,22 +12,22 @@ import com.mijecu25.sqlplus.compiler.core.statement.StatementShowDatabases;
 
 /**
  * Test SQLPlusConnection.
- * 
+ *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.6
+ * @version 0.1.0.7
  */
 public class TestSQLPlusConnection {
-    
+
     protected static String host;
     protected static String username;
     protected static char[] password;
     protected static String database;
     protected static String port;
     protected static SQLPlusMySQLConnection connection;
-    
+
     /**
      * Initialize variables for testing. Execute once.
-     * 
+     *
      * @throws SQLException
      */
     @BeforeClass
@@ -36,11 +37,11 @@ public class TestSQLPlusConnection {
         TestSQLPlusConnection.host = "localhost";
         TestSQLPlusConnection.database = "mysql";
         TestSQLPlusConnection.port = "3306";
-        
-        TestSQLPlusConnection.connection = SQLPlusMySQLConnection.getConnection(TestSQLPlusConnection.username, 
+
+        TestSQLPlusConnection.connection = SQLPlusMySQLConnection.getConnection(TestSQLPlusConnection.username,
                 TestSQLPlusConnection.password, TestSQLPlusConnection.host, TestSQLPlusConnection.port);
     }
-    
+
     /**
      * TODO delete this call. This is for testing purposes
      * Delete instance
@@ -49,7 +50,7 @@ public class TestSQLPlusConnection {
     public void destroyConnectionBefore() {
         SQLPlusMySQLConnection.destroyInstance();
     }
-    
+
     /**
      * TODO delete this call. This is for testing purposes
      * Delete instance
@@ -58,21 +59,25 @@ public class TestSQLPlusConnection {
     public static void destroyConnectionAfter() {
         SQLPlusMySQLConnection.destroyInstance();
     }
-    
+
     /**
      * Test execute.
-     * 
+     *
      * @throws SQLException
      */
     @Test
     public void testExecute() throws SQLException {
+        // Create a show databases statement
+        Statement showDatabasesStatement = new StatementShowDatabases();
+        showDatabasesStatement.setStatement("show databases");
+
         // Execute some query
-        TestSQLPlusConnection.connection.execute(new StatementShowDatabases());
+        TestSQLPlusConnection.connection.execute(showDatabasesStatement);
     }
-    
+
     /**
      * Test execute.
-     * 
+     *
      * @throws SQLException
      */
     @Test
@@ -80,6 +85,6 @@ public class TestSQLPlusConnection {
         // Get connection
         TestSQLPlusConnection.connection.disconnect();
     }
-    
-    
+
+
 }

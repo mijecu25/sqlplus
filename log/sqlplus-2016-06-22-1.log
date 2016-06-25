@@ -1,0 +1,118 @@
+[06-22-2016 16:06:09.489] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(57) - Initializing SQLPlus version 0.1.0-SNAPSHOT
+[06-22-2016 16:06:54.994] [main] FATAL com.mijecu25.sqlplus.SQLPlus.main(62) - FATAL: A JVM Console object was not found. Try running SQLPlusfrom the command line
+[06-22-2016 16:07:07.473] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(432) - Reset the console from jline
+[06-22-2016 16:07:07.473] [main] INFO  com.mijecu25.sqlplus.SQLPlus.resetConsole(445) - About to reset the console from jline
+[06-22-2016 16:07:13.313] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(57) - Initializing SQLPlus version 0.1.0-SNAPSHOT
+[06-22-2016 16:07:13.315] [main] FATAL com.mijecu25.sqlplus.SQLPlus.main(62) - FATAL: A JVM Console object was not found. Try running SQLPlusfrom the command line
+[06-22-2016 16:07:13.315] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(432) - Reset the console from jline
+[06-22-2016 16:07:13.315] [main] INFO  com.mijecu25.sqlplus.SQLPlus.resetConsole(445) - About to reset the console from jline
+[06-22-2016 16:07:13.534] [main] INFO  com.mijecu25.sqlplus.SQLPlus.resetConsole(447) - Reset the console from jline
+[06-22-2016 16:07:13.535] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(435) - Quitting SQLPlus
+[06-22-2016 16:07:13.536] [main] FATAL com.mijecu25.sqlplus.SQLPlus.main(69) - FATAL: Quitting SQLPlus because of an error
+[06-22-2016 20:13:38.945] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(57) - Initializing SQLPlus version 0.1.0-SNAPSHOT
+[06-22-2016 20:13:39.062] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(108) - Create SQLPlusConnection
+[06-22-2016 20:13:39.062] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(411) - Connection with username, password, and host
+[06-22-2016 20:13:39.062] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(113) - Creating a new SQLPlusMySQLConnection instance with username:sqlplus password:********* host:127.0.0.1
+[06-22-2016 20:13:39.062] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(55) - Instantiating the credentials that will be used to connect to a mysql database
+[06-22-2016 20:13:39.063] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(38) - Creating SQLPlusMySQLConnection with username:sqlplus password:********* host: 127.0.0.1 port:3306
+[06-22-2016 20:13:39.063] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(42) - Will connect to a MySQL database using the credentials provided
+[06-22-2016 20:13:39.063] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(77) - Adding the connection properties to connect to a mysql database
+[06-22-2016 20:13:39.083] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(90) - Attempting to connect to the database: jdbc:mysql://127.0.0.1:3306/
+[06-22-2016 20:13:39.301] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(120) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=sqlplus, host=127.0.0.1, database=mysql, port=3306]
+[06-22-2016 20:13:39.301] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(415) - Created and returning a SQLPlusConnection SQLPlusConnection [username=sqlplus, host=127.0.0.1, database=mysql, port=3306]
+[06-22-2016 20:13:45.292] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(206) - Raw input from the user: show databases;
+[06-22-2016 20:13:45.292] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(210) - Will parse the user input to determine what to execute
+[06-22-2016 20:13:45.303] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.<init>(51) - Created a Statement with a string statement
+[06-22-2016 20:13:45.303] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.StatementShowDatabases.<init>(27) - Parsed and created a ShowDatabasesStatement
+[06-22-2016 20:13:45.304] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(114) - Query to be executed: "ShowDatabasesStatement [statement=show databases]"
+[06-22-2016 20:13:45.304] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.StatementShowDatabases.execute(32) - Will execute the code to show the databases
+[06-22-2016 20:13:45.309] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.StatementShowDatabases.printResult(87) - Printing the result
+[06-22-2016 20:13:45.311] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.printSingleColumn(131) - Printing a result set that has a single column
+[06-22-2016 20:13:45.311] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildHorizontalBorder(74) - Building a horizontal border
+[06-22-2016 20:13:45.313] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildHorizontalBorder(74) - Building a horizontal border
+[06-22-2016 20:13:45.314] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildHorizontalBorder(74) - Building a horizontal border
+[06-22-2016 20:13:48.109] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(206) - Raw input from the user: use courses;
+[06-22-2016 20:13:48.109] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(210) - Will parse the user input to determine what to execute
+[06-22-2016 20:13:48.110] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.<init>(51) - Created a Statement with a string statement
+[06-22-2016 20:13:48.110] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.StatementUseDatabase.<init>(28) - Parsed and created a StatementUseDatabase
+[06-22-2016 20:13:48.110] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(114) - Query to be executed: "StatementUseDatabase [statement=use courses]"
+[06-22-2016 20:13:48.111] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.StatementUseDatabase.execute(34) - Will execute the code to use courses
+[06-22-2016 20:13:48.114] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.StatementUseDatabase.printResult(70) - Printing message that acknowledges that the database was changed
+[06-22-2016 20:13:51.621] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(206) - Raw input from the user: show tables;
+[06-22-2016 20:13:51.621] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(210) - Will parse the user input to determine what to execute
+[06-22-2016 20:13:51.622] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.<init>(51) - Created a Statement with a string statement
+[06-22-2016 20:13:51.622] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.StatementShowTables.<init>(27) - Parsed and created a ShowTablesStatement
+[06-22-2016 20:13:51.622] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(114) - Query to be executed: "StatementShowTables [statement=show tables]"
+[06-22-2016 20:13:51.622] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.StatementShowTables.execute(32) - Will execute the code to show the tables
+[06-22-2016 20:13:51.623] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.StatementShowTables.printResult(85) - Printing the result
+[06-22-2016 20:13:51.625] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.printSingleColumn(131) - Printing a result set that has a single column
+[06-22-2016 20:13:51.625] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildHorizontalBorder(74) - Building a horizontal border
+[06-22-2016 20:13:51.625] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildHorizontalBorder(74) - Building a horizontal border
+[06-22-2016 20:13:51.625] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildHorizontalBorder(74) - Building a horizontal border
+[06-22-2016 20:14:02.181] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(206) - Raw input from the user: select * from universities;
+[06-22-2016 20:14:02.181] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(210) - Will parse the user input to determine what to execute
+[06-22-2016 20:14:02.182] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.<init>(51) - Created a Statement with a string statement
+[06-22-2016 20:14:02.182] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.dml.StatementDML.<init>(48) - Parsed and created a StatementDML
+[06-22-2016 20:14:02.182] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.dml.StatementSelectExpression.<init>(35) - Parsed and created a StatementSelectExpression
+[06-22-2016 20:14:02.183] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(114) - Query to be executed: "StatementSelectExpression [statement=SELECT * FROM universities]"
+[06-22-2016 20:14:02.183] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.dml.StatementSelectExpression.execute(40) - Will execute the code to query the database using a select statement
+[06-22-2016 20:14:02.193] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.dml.StatementSelectExpression.printResult(95) - Printing the result
+[06-22-2016 20:14:02.194] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.transformAllToColumns(355) - Getting all of the columns that the user queried
+[06-22-2016 20:14:02.197] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.printMultipleColumn(217) - Printing a result set that has a single or multiple columns
+[06-22-2016 20:14:02.198] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(101) - Building a horizontal border
+[06-22-2016 20:14:02.198] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(101) - Building a horizontal border
+[06-22-2016 20:14:02.198] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(101) - Building a horizontal border
+[06-22-2016 20:14:02.198] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(101) - Building a horizontal border
+[06-22-2016 20:14:02.198] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(101) - Building a horizontal border
+[06-22-2016 20:14:02.198] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(101) - Building a horizontal border
+[06-22-2016 20:14:02.198] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(101) - Building a horizontal border
+[06-22-2016 20:14:02.198] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(101) - Building a horizontal border
+[06-22-2016 20:14:02.198] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(101) - Building a horizontal border
+[06-22-2016 20:14:02.198] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(101) - Building a horizontal border
+[06-22-2016 20:14:02.198] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(101) - Building a horizontal border
+[06-22-2016 20:14:02.198] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(101) - Building a horizontal border
+[06-22-2016 20:14:02.198] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(101) - Building a horizontal border
+[06-22-2016 20:14:02.198] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(101) - Building a horizontal border
+[06-22-2016 20:14:02.199] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(101) - Building a horizontal border
+[06-22-2016 20:14:02.199] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(101) - Building a horizontal border
+[06-22-2016 20:14:02.199] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(101) - Building a horizontal border
+[06-22-2016 20:14:02.199] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(101) - Building a horizontal border
+[06-22-2016 20:14:02.199] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(101) - Building a horizontal border
+[06-22-2016 20:14:02.199] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(101) - Building a horizontal border
+[06-22-2016 20:14:02.200] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(101) - Building a horizontal border
+[06-22-2016 20:14:02.200] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(101) - Building a horizontal border
+[06-22-2016 20:14:02.200] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(101) - Building a horizontal border
+[06-22-2016 20:14:02.200] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(101) - Building a horizontal border
+[06-22-2016 20:14:02.200] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(101) - Building a horizontal border
+[06-22-2016 20:14:02.200] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(101) - Building a horizontal border
+[06-22-2016 20:14:02.200] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(101) - Building a horizontal border
+[06-22-2016 20:14:02.200] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(101) - Building a horizontal border
+[06-22-2016 20:14:02.200] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(101) - Building a horizontal border
+[06-22-2016 20:14:02.200] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(101) - Building a horizontal border
+[06-22-2016 20:14:20.060] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(206) - Raw input from the user: select alias, address, city from universities;
+[06-22-2016 20:14:20.060] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(210) - Will parse the user input to determine what to execute
+[06-22-2016 20:14:20.061] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.<init>(51) - Created a Statement with a string statement
+[06-22-2016 20:14:20.061] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.dml.StatementDML.<init>(48) - Parsed and created a StatementDML
+[06-22-2016 20:14:20.061] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.dml.StatementSelectExpression.<init>(35) - Parsed and created a StatementSelectExpression
+[06-22-2016 20:14:20.061] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(114) - Query to be executed: "StatementSelectExpression [statement=SELECT alias, address, city FROM universities]"
+[06-22-2016 20:14:20.061] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.dml.StatementSelectExpression.execute(40) - Will execute the code to query the database using a select statement
+[06-22-2016 20:14:20.062] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.dml.StatementSelectExpression.printResult(95) - Printing the result
+[06-22-2016 20:14:20.063] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.printMultipleColumn(217) - Printing a result set that has a single or multiple columns
+[06-22-2016 20:14:20.064] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(101) - Building a horizontal border
+[06-22-2016 20:14:20.064] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(101) - Building a horizontal border
+[06-22-2016 20:14:20.064] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(101) - Building a horizontal border
+[06-22-2016 20:14:20.064] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(101) - Building a horizontal border
+[06-22-2016 20:14:20.064] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(101) - Building a horizontal border
+[06-22-2016 20:14:20.064] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(101) - Building a horizontal border
+[06-22-2016 20:14:20.064] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(101) - Building a horizontal border
+[06-22-2016 20:14:20.064] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(101) - Building a horizontal border
+[06-22-2016 20:14:20.065] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(101) - Building a horizontal border
+[06-22-2016 20:14:22.228] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(186) - The user wants to quit SQLPlus
+[06-22-2016 20:14:22.228] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(426) - Attempting to disconnect the SQLPlusConnection
+[06-22-2016 20:14:22.228] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(132) - Attempting to disconnect from the database
+[06-22-2016 20:14:22.230] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(134) - Disconnected from the database
+[06-22-2016 20:14:22.231] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(428) - Disconnected the SQLPlusConnection
+[06-22-2016 20:14:22.231] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(432) - Reset the console from jline
+[06-22-2016 20:14:22.231] [main] INFO  com.mijecu25.sqlplus.SQLPlus.resetConsole(445) - About to reset the console from jline
+[06-22-2016 20:14:22.236] [main] INFO  com.mijecu25.sqlplus.SQLPlus.resetConsole(447) - Reset the console from jline
+[06-22-2016 20:14:22.236] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(435) - Quitting SQLPlus
