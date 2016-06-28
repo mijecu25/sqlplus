@@ -17,7 +17,7 @@ import com.mijecu25.messages.Messages;
  * This class represents either a SQLPlus statement or a regular SQL statement.
  *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.22
+ * @version 0.1.0.23
  */
 public abstract class Statement {
 
@@ -170,6 +170,8 @@ public abstract class Statement {
             // Build a border after the name of the column
             line.append(Statement.buildHorizontalBorder(lineTotalLength) + "\n");
 
+            int rowTotal = 0;
+
             // While the are more rows to process
             while (resultSet.next()) {
                 // Get and print the current row value
@@ -179,11 +181,13 @@ public abstract class Statement {
                 line.append(row);
                 line.append(StringUtils.repeat(" ", lineTotalLength - 3 - row.length()));
                 line.append(Statement.VERTICAL_BORDER + "\n");
+
+                rowTotal++;
             }
 
             // Build a border after the all of the rows
-            line.append(Statement.buildHorizontalBorder(lineTotalLength));
-            line.append("\n");
+            line.append(Statement.buildHorizontalBorder(lineTotalLength) + "\n");
+            line.append(Statement.displayResultSetSize(rowTotal));
         }
         catch(SQLException sqle) {
             Statement.logger.warn(Messages.WARNING + "Error when printing a single column result", sqle);
@@ -194,6 +198,7 @@ public abstract class Statement {
         System.out.println(line);
     }
 
+    // TODO add check to this method like the one above
     /**
      * Print the result of a query that either a single or multiple columns. The <code>columnsMaxLength</code> parameter
      * is not calculated in this method and should be done by the calling method.
@@ -274,6 +279,8 @@ public abstract class Statement {
         // After completing the bottom border of titles, we add a new line
         line.append("\n");
 
+        int rowTotal = 0;
+
         // While the are more rows to process
         while (resultSet.next()) {
             // Add a vertical border to start the current row of results
@@ -293,6 +300,8 @@ public abstract class Statement {
 
             // After completing all of the columns, we add a new line
             line.append("\n");
+
+            rowTotal++;
         }
 
         // Add a corner symbol to start bottom border of the result table
@@ -303,6 +312,8 @@ public abstract class Statement {
             // Add a right border the to fit the maximum row in a column
             line.append(Statement.buildRightHorizontalBorder(columnMaxLength));
         }
+
+        line.append("\n" + Statement.displayResultSetSize(rowTotal));
 
         // Print the result table
         System.out.println(line);
@@ -386,7 +397,10 @@ public abstract class Statement {
         try {
             // Execute the query
             java.sql.Statement statement = connection.createStatement();
+
+            long startTime = System.nanoTime();
             this.resultSet = statement.executeQuery(this.statement);
+            long endTime = System.nanoTime();
 
             // The result from the query is null
             if(this.resultSet == null) {
@@ -402,6 +416,8 @@ public abstract class Statement {
             else {
                 Statement.printEmptySet();
             }
+
+            System.out.printf("Execution time: %.2f sec\n", (endTime - startTime)/1000000000.0);
 
             // Close the result set and statement
             this.resultSet.close();
@@ -433,6 +449,8 @@ public abstract class Statement {
                     return Statement.checkAndTransformNull(resultSet.getDouble(index) + "");
                 case "DATETIME":
                     return Statement.checkAndTransformNull(resultSet.getDate(index) + " " + resultSet.getTime(index));
+                case "DATE":
+                    return Statement.checkAndTransformNull(resultSet.getDate(index) + "");
                 default:
                     System.out.println(type + " is new");
                     // TODO throw an error
@@ -446,6 +464,14 @@ public abstract class Statement {
         // TODO should never reach
         return "ERROR";
 
+    }
+
+    private static String displayResultSetSize(int size) {
+        if(size == 1) {
+            return size + " row in set";
+        }
+
+        return size + " rows in set";
     }
 
     /**
