@@ -12,18 +12,18 @@ import com.mijecu25.sqlutils.SQLUtils;
 
 /**
  * This class represents the "show databases" SQL statement. It prints the databases found in the server.
- * 
+ *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.16
+ * @version 0.1.0.15
  */
 public class StatementShowDatabases extends Statement {
     private static final Logger logger = LogManager.getLogger(StatementShowDatabases.class);
-    
+
     public StatementShowDatabases() {
         super();
         StatementShowDatabases.logger.info("Parsed and created a ShowDatabasesStatement");
     }
-    
+
     @Override
     public void execute(Connection connection) throws SQLException {
         StatementShowDatabases.logger.info("Will execute the code to show the databases");
@@ -40,11 +40,11 @@ public class StatementShowDatabases extends Statement {
             throw iae;
         }
 
-        // Execute the query
         this.executeQuery(connection);
+        // TODO Do we need to catch the exception here?
 
     }
-    
+
     @Override
     protected void printResult() {
         StatementShowDatabases.logger.info("Printing the result");

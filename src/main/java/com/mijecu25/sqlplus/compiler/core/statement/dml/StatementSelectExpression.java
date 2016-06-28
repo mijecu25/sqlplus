@@ -17,7 +17,7 @@ import java.util.List;
  * This class represents the "select...." SQL statement. It prints the columns that match the query.
  *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.11
+ * @version 0.1.0.12
  */
 public class StatementSelectExpression extends StatementDML {
     private List<Integer> columnsMaxLength;
@@ -28,7 +28,7 @@ public class StatementSelectExpression extends StatementDML {
         // We are going to support only one table right now.
         super(columns, tables);
         this.columnsMaxLength = new ArrayList<Integer>();
-        
+
         StatementSelectExpression.logger.info("Parsed and created a StatementSelectExpression");
     }
 
@@ -48,43 +48,8 @@ public class StatementSelectExpression extends StatementDML {
             throw iae;
         }
 
-        // Set the connection
-        this.connection = connection;
-
-        try {
-            // Execute the query
-            java.sql.Statement statement = this.connection.createStatement();
-            this.resultSet = statement.executeQuery(this.statement);
-
-            // The result from the query is null
-            if(this.resultSet == null) {
-                // Throw an exception because this will be very weird. Also,
-                // if there is no response, we do not want to continue executing
-                throw new SQLException();
-            }
-
-            // Check if the result set has values or not
-            if(this.resultSet.isBeforeFirst()) {
-                this.printResult();
-            }
-            else {
-                Statement.printEmptySet();
-            }
-
-            // Close the result set and statement
-            this.resultSet.close();
-            statement.close();
-        }
-        catch(SQLException sqle) {
-            StatementSelectExpression.logger.warn(Messages.WARNING + "Error when executing " + this, sqle);
-            System.out.println(Messages.WARNING + "(" + sqle.getErrorCode() + ") (" + sqle.getSQLState() + ") "
-                    + sqle.getMessage());
-
-            StatementSelectExpression.logger.warn(Messages.WARNING + "Throwing a " + sqle.getClass().getSimpleName()
-                    + " to the calling class");
-            throw sqle;
-        }
-        
+        this.executeQuery(connection);
+        // TODO Do we need to catch the exception here?
     }
 
     @Override
@@ -122,12 +87,12 @@ public class StatementSelectExpression extends StatementDML {
             System.out.println(Messages.WARNING + "(" + sqle.getErrorCode() + ") (" + sqle.getSQLState() + ") "
                     + "Could not print the result. " + Messages.CHECK_LOG_FILES);
         }
-        
+
     }
 
     @Override
     public String toString() {
         return "StatementSelectExpression [statement=" + this.statement + "]";
     }
-    
+
 }
