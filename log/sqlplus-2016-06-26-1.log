@@ -1,0 +1,31 @@
+[06-26-2016 09:52:18.495] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(57) - Initializing SQLPlus version 0.1.0-SNAPSHOT
+[06-26-2016 09:52:18.634] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(108) - Create SQLPlusConnection
+[06-26-2016 09:52:18.634] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(412) - Connection with username, password, and host
+[06-26-2016 09:52:18.634] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(113) - Creating a new SQLPlusMySQLConnection instance with username:sqlplus password:********* host:127.0.0.1
+[06-26-2016 09:52:18.634] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(55) - Instantiating the credentials that will be used to connect to a mysql database
+[06-26-2016 09:52:18.634] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(38) - Creating SQLPlusMySQLConnection with username:sqlplus password:********* host: 127.0.0.1 port:3306
+[06-26-2016 09:52:18.634] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(42) - Will connect to a MySQL database using the credentials provided
+[06-26-2016 09:52:18.634] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(77) - Adding the connection properties to connect to a mysql database
+[06-26-2016 09:52:18.652] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(90) - Attempting to connect to the database: jdbc:mysql://127.0.0.1:3306/
+[06-26-2016 09:52:18.867] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(120) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=sqlplus, host=127.0.0.1, database=mysql, port=3306]
+[06-26-2016 09:52:18.867] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(416) - Created and returning a SQLPlusConnection SQLPlusConnection [username=sqlplus, host=127.0.0.1, database=mysql, port=3306]
+[06-26-2016 09:52:22.876] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(206) - Raw input from the user: show databases;
+[06-26-2016 09:52:22.876] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(210) - Will parse the user input to determine what to execute
+[06-26-2016 09:52:22.887] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.<init>(41) - Created a Statement
+[06-26-2016 09:52:22.887] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.StatementShowDatabases.<init>(24) - Parsed and created a ShowDatabasesStatement
+[06-26-2016 09:52:22.887] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(114) - Query to be executed: "ShowDatabasesStatement [statement=show databases;]"
+[06-26-2016 09:52:22.887] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.StatementShowDatabases.execute(29) - Will execute the code to show the databases
+[06-26-2016 09:52:22.893] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.StatementShowDatabases.printResult(50) - Printing the result
+[06-26-2016 09:52:22.896] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.printSingleColumn(121) - Printing a result set that has a single column
+[06-26-2016 09:52:22.897] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildHorizontalBorder(64) - Building a horizontal border
+[06-26-2016 09:52:22.899] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildHorizontalBorder(64) - Building a horizontal border
+[06-26-2016 09:52:22.899] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildHorizontalBorder(64) - Building a horizontal border
+[06-26-2016 09:52:24.629] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(186) - The user wants to quit SQLPlus
+[06-26-2016 09:52:24.630] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(427) - Attempting to disconnect the SQLPlusConnection
+[06-26-2016 09:52:24.630] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(132) - Attempting to disconnect from the database
+[06-26-2016 09:52:24.632] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(134) - Disconnected from the database
+[06-26-2016 09:52:24.632] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(429) - Disconnected the SQLPlusConnection
+[06-26-2016 09:52:24.632] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(433) - Reset the console from jline
+[06-26-2016 09:52:24.632] [main] INFO  com.mijecu25.sqlplus.SQLPlus.resetConsole(446) - About to reset the console from jline
+[06-26-2016 09:52:24.638] [main] INFO  com.mijecu25.sqlplus.SQLPlus.resetConsole(448) - Reset the console from jline
+[06-26-2016 09:52:24.638] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(436) - Quitting SQLPlus

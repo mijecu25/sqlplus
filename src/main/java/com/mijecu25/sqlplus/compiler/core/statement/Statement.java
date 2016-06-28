@@ -17,7 +17,7 @@ import com.mijecu25.messages.Messages;
  * This class represents either a SQLPlus statement or a regular SQL statement.
  *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.20
+ * @version 0.1.0.22
  */
 public abstract class Statement {
 
@@ -173,7 +173,7 @@ public abstract class Statement {
             // While the are more rows to process
             while (resultSet.next()) {
                 // Get and print the current row value
-                String row = resultSet.getString(1);
+                String row = Statement.getRowAsString(resultSet, 1);
 
                 line.append(Statement.VERTICAL_BORDER + " ");
                 line.append(row);
@@ -282,7 +282,7 @@ public abstract class Statement {
             // Loop through all of the columns
             for(int i = 1; i <= columnsMaxLength.size(); i++) {
                 // Get the current row and check if it is null
-                String row = Statement.checkAndTransformNull(resultSet.getString(i));
+                String row = Statement.getRowAsString(resultSet, i);
 
                 // Add a white space, row, whitespaces, and right border to complete the row for this column
                 line.append(" ");
@@ -306,65 +306,6 @@ public abstract class Statement {
 
         // Print the result table
         System.out.println(line);
-    }
-
-    /**
-     * TODO
-     * @param connection
-     * @throws SQLException
-     */
-    public void executeQuery(Connection connection) throws SQLException {
-        Statement.logger.info("Will execute the code to show the databases");
-
-        // If the connection is null
-        if(connection == null) {
-            IllegalArgumentException iae = new IllegalArgumentException();
-            Statement.logger.fatal(Messages.FATAL + "The connection passed to execute the statement "
-                    + "cannot be null");
-            System.out.println(Messages.FATAL_EXCEPTION_ACTION(iae.getClass().getSimpleName()) + " "
-                    + Messages.CHECK_LOG_FILES);
-            Statement.logger.warn(Messages.WARNING + "Throwing a " + iae.getClass().getSimpleName()
-                    + " to the calling class");
-            throw iae;
-        }
-
-        // Set the connection
-        this.connection = connection;
-
-        try {
-            // Execute the query
-            java.sql.Statement statement = this.connection.createStatement();
-            this.resultSet = statement.executeQuery(this.statement);
-
-            // The result from the query is null
-            if(this.resultSet == null) {
-                // Throw an exception because this will be very weird. Also,
-                // if there is no response, we do not want to continue executing
-                throw new SQLException();
-            }
-
-            // Check if the result set has values or not
-            if(this.resultSet.isBeforeFirst()) {
-                this.printResult();
-            }
-            else {
-                Statement.printEmptySet();
-            }
-
-            // Close the result set and statement
-            this.resultSet.close();
-            statement.close();
-        }
-        // TODO check how this exception is handled
-        catch(SQLException sqle) {
-            Statement.logger.warn(Messages.WARNING + "Error when executing " + this, sqle);
-            System.out.println(Messages.WARNING + "(" + sqle.getErrorCode() + ") (" + sqle.getSQLState() + ") "
-                    + sqle.getMessage());
-
-            Statement.logger.warn(Messages.WARNING + "Throwing a " + sqle.getClass().getSimpleName()
-                    + " to the calling class");
-            throw sqle;
-        }
     }
 
     /**
@@ -418,6 +359,93 @@ public abstract class Statement {
         }
 
         return columns;
+    }
+
+
+    /**
+     * TODO
+     * @param connection
+     * @throws SQLException
+     */
+    public void executeQuery(Connection connection) throws SQLException {
+        // If the connection is null
+        if(connection == null) {
+            IllegalArgumentException iae = new IllegalArgumentException();
+            Statement.logger.fatal(Messages.FATAL + "The connection passed to execute the statement "
+                    + "cannot be null");
+            System.out.println(Messages.FATAL_EXCEPTION_ACTION(iae.getClass().getSimpleName()) + " "
+                    + Messages.CHECK_LOG_FILES);
+            Statement.logger.warn(Messages.WARNING + "Throwing a " + iae.getClass().getSimpleName()
+                    + " to the calling class");
+            throw iae;
+        }
+
+        // Set the connection
+        this.connection = connection;
+
+        try {
+            // Execute the query
+            java.sql.Statement statement = connection.createStatement();
+            this.resultSet = statement.executeQuery(this.statement);
+
+            // The result from the query is null
+            if(this.resultSet == null) {
+                // Throw an exception because this will be very weird. Also,
+                // if there is no response, we do not want to continue executing
+                throw new SQLException();
+            }
+
+            // Check if the result set has values or not
+            if(this.resultSet.isBeforeFirst()) {
+                this.printResult();
+            }
+            else {
+                Statement.printEmptySet();
+            }
+
+            // Close the result set and statement
+            this.resultSet.close();
+            statement.close();
+        }
+        catch(SQLException sqle) {
+            Statement.logger.warn(Messages.WARNING + "Error when executing " + this, sqle);
+            System.out.println(Messages.WARNING + "(" + sqle.getErrorCode() + ") (" + sqle.getSQLState() + ") "
+                    + sqle.getMessage());
+
+            Statement.logger.warn(Messages.WARNING + "Throwing a " + sqle.getClass().getSimpleName()
+                    + " to the calling class");
+            throw sqle;
+        }
+    }
+
+
+    private static String getRowAsString(ResultSet resultSet, int index) {
+        try {
+            // TODO can we leave this private? Maybe we can make it public if other classes use it
+            String type = resultSet.getMetaData().getColumnTypeName(index);
+
+            switch (type) {
+                case "VARCHAR":
+                    return Statement.checkAndTransformNull(resultSet.getString(index));
+                case "INT":
+                    return Statement.checkAndTransformNull(resultSet.getInt(index) + "");
+                case "DOUBLE":
+                    return Statement.checkAndTransformNull(resultSet.getDouble(index) + "");
+                case "DATETIME":
+                    return Statement.checkAndTransformNull(resultSet.getDate(index) + " " + resultSet.getTime(index));
+                default:
+                    System.out.println(type + " is new");
+                    // TODO throw an error
+                    break;
+            }
+        }
+        catch(SQLException sqle) {
+            // TODO
+        }
+
+        // TODO should never reach
+        return "ERROR";
+
     }
 
     /**
