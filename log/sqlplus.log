@@ -1623,3 +1623,230 @@ java.sql.SQLException: Can not issue data manipulation statements with executeQu
 [06-29-2016 09:28:58.444] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(92) - Building a horizontal border
 [06-29-2016 09:28:58.445] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(132) - Attempting to disconnect from the database
 [06-29-2016 09:28:58.445] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(134) - Disconnected from the database
+[06-29-2016 09:33:00.798] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.<init>(42) - Created a Statement
+[06-29-2016 09:33:00.799] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.<init>(42) - Created a Statement
+[06-29-2016 09:33:00.800] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildHorizontalBorder(65) - Building a horizontal border
+[06-29-2016 09:33:00.823] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.<init>(42) - Created a Statement
+[06-29-2016 09:33:00.824] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.StatementUseDatabase.<init>(25) - Parsed and created a StatementUseDatabase
+[06-29-2016 09:33:00.824] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.StatementUseDatabase.execute(31) - Will execute the code to use information_schema
+[06-29-2016 09:33:00.827] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.StatementUseDatabase.printResult(51) - Printing message that acknowledges that the database was changed
+[06-29-2016 09:33:00.828] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.<init>(42) - Created a Statement
+[06-29-2016 09:33:00.828] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.StatementUseDatabase.<init>(25) - Parsed and created a StatementUseDatabase
+[06-29-2016 09:33:00.828] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.<init>(42) - Created a Statement
+[06-29-2016 09:33:00.829] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.<init>(42) - Created a Statement
+[06-29-2016 09:33:00.829] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildHorizontalBorder(65) - Building a horizontal border
+[06-29-2016 09:33:00.832] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(87) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost port:3306
+[06-29-2016 09:33:00.832] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(55) - Instantiating the credentials that will be used to connect to a mysql database
+[06-29-2016 09:33:00.832] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(38) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost port:3306
+[06-29-2016 09:33:00.832] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(42) - Will connect to a MySQL database using the credentials provided
+[06-29-2016 09:33:00.832] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(77) - Adding the connection properties to connect to a mysql database
+[06-29-2016 09:33:00.862] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(90) - Attempting to connect to the database: jdbc:mysql://localhost:3306/
+[06-29-2016 09:33:00.866] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(94) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=localhost, database=mysql, port=3306]
+[06-29-2016 09:33:00.866] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.<init>(42) - Created a Statement
+[06-29-2016 09:33:00.866] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.StatementDefault.<init>(21) - Parsed and created a default statement object
+[06-29-2016 09:33:00.866] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(114) - Query to be executed: "StatementDefault [statement=show databases]"
+[06-29-2016 09:33:00.866] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.StatementDefault.execute(26) - Will execute the code of a default SQL statement
+[06-29-2016 09:33:00.867] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.StatementDefault.printResult(46) - Printing the result
+[06-29-2016 09:33:00.867] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.printMultipleColumn(118) - Printing a result set that has a single or multiple columns
+[06-29-2016 09:33:00.867] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(92) - Building a horizontal border
+[06-29-2016 09:33:00.868] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(92) - Building a horizontal border
+[06-29-2016 09:33:00.868] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(92) - Building a horizontal border
+[06-29-2016 09:33:00.869] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(132) - Attempting to disconnect from the database
+[06-29-2016 09:33:00.869] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(134) - Disconnected from the database
+[06-29-2016 09:33:00.870] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(87) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost port:3306
+[06-29-2016 09:33:00.870] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(55) - Instantiating the credentials that will be used to connect to a mysql database
+[06-29-2016 09:33:00.870] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(38) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost port:3306
+[06-29-2016 09:33:00.870] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(42) - Will connect to a MySQL database using the credentials provided
+[06-29-2016 09:33:00.871] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(77) - Adding the connection properties to connect to a mysql database
+[06-29-2016 09:33:00.904] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(90) - Attempting to connect to the database: jdbc:mysql://localhost:3306/
+[06-29-2016 09:33:00.907] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(94) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=localhost, database=mysql, port=3306]
+[06-29-2016 09:33:00.907] [main] WARN  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(158) - There is not an SQLPlusMySQLConnection
+[06-29-2016 09:33:00.907] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(165) - Returning a SQLPlusMySQLConnection instance null
+[06-29-2016 09:33:00.908] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(113) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost
+[06-29-2016 09:33:00.908] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(55) - Instantiating the credentials that will be used to connect to a mysql database
+[06-29-2016 09:33:00.908] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(38) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost port:3306
+[06-29-2016 09:33:00.908] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(42) - Will connect to a MySQL database using the credentials provided
+[06-29-2016 09:33:00.908] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(77) - Adding the connection properties to connect to a mysql database
+[06-29-2016 09:33:00.941] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(90) - Attempting to connect to the database: jdbc:mysql://localhost:3306/
+[06-29-2016 09:33:00.944] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(120) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=localhost, database=mysql, port=3306]
+[06-29-2016 09:33:00.945] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(87) - Creating a new SQLPlusMySQLConnection instance with username:root password:********* host:localhost port:3306
+[06-29-2016 09:33:00.945] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(55) - Instantiating the credentials that will be used to connect to a mysql database
+[06-29-2016 09:33:00.945] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(38) - Creating SQLPlusMySQLConnection with username:root password:********* host: localhost port:3306
+[06-29-2016 09:33:00.946] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(42) - Will connect to a MySQL database using the credentials provided
+[06-29-2016 09:33:00.946] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(77) - Adding the connection properties to connect to a mysql database
+[06-29-2016 09:33:00.963] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(90) - Attempting to connect to the database: jdbc:mysql://localhost:3306/
+[06-29-2016 09:33:00.966] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(94) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=localhost, database=mysql, port=3306]
+[06-29-2016 09:33:00.967] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(138) - Creating a new SQLPlusMySQLConnection instance with username:root password:*********
+[06-29-2016 09:33:00.967] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(55) - Instantiating the credentials that will be used to connect to a mysql database
+[06-29-2016 09:33:00.967] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(38) - Creating SQLPlusMySQLConnection with username:root password:********* host: 127.0.0.1 port:3306
+[06-29-2016 09:33:00.967] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(42) - Will connect to a MySQL database using the credentials provided
+[06-29-2016 09:33:00.967] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(77) - Adding the connection properties to connect to a mysql database
+[06-29-2016 09:33:00.977] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(90) - Attempting to connect to the database: jdbc:mysql://127.0.0.1:3306/
+[06-29-2016 09:33:00.979] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(145) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=root, host=127.0.0.1, database=mysql, port=3306]
+[06-29-2016 09:33:00.980] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.<init>(42) - Created a Statement
+[06-29-2016 09:33:00.980] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.StatementDefault.<init>(21) - Parsed and created a default statement object
+[06-29-2016 09:33:00.980] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(114) - Query to be executed: "StatementDefault [statement=show databases]"
+[06-29-2016 09:33:00.980] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.StatementDefault.execute(26) - Will execute the code of a default SQL statement
+[06-29-2016 09:33:00.981] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.StatementDefault.printResult(46) - Printing the result
+[06-29-2016 09:33:00.981] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.printMultipleColumn(118) - Printing a result set that has a single or multiple columns
+[06-29-2016 09:33:00.981] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(92) - Building a horizontal border
+[06-29-2016 09:33:00.981] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(92) - Building a horizontal border
+[06-29-2016 09:33:00.981] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(92) - Building a horizontal border
+[06-29-2016 09:33:00.982] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(132) - Attempting to disconnect from the database
+[06-29-2016 09:33:00.982] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(134) - Disconnected from the database
+[06-29-2016 09:33:04.127] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(58) - Initializing SQLPlus version 0.1.0-SNAPSHOT
+[06-29-2016 09:33:04.250] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(109) - Create SQLPlusConnection
+[06-29-2016 09:33:04.250] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(416) - Connection with username, password, and host
+[06-29-2016 09:33:04.251] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(113) - Creating a new SQLPlusMySQLConnection instance with username:sqlplus password:********* host:127.0.0.1
+[06-29-2016 09:33:04.251] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(55) - Instantiating the credentials that will be used to connect to a mysql database
+[06-29-2016 09:33:04.251] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(38) - Creating SQLPlusMySQLConnection with username:sqlplus password:********* host: 127.0.0.1 port:3306
+[06-29-2016 09:33:04.251] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(42) - Will connect to a MySQL database using the credentials provided
+[06-29-2016 09:33:04.251] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(77) - Adding the connection properties to connect to a mysql database
+[06-29-2016 09:33:04.268] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(90) - Attempting to connect to the database: jdbc:mysql://127.0.0.1:3306/
+[06-29-2016 09:33:04.485] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(120) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=sqlplus, host=127.0.0.1, database=mysql, port=3306]
+[06-29-2016 09:33:04.485] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(420) - Created and returning a SQLPlusConnection SQLPlusConnection [username=sqlplus, host=127.0.0.1, database=mysql, port=3306]
+[06-29-2016 09:33:06.969] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(207) - Raw input from the user: show databases;
+[06-29-2016 09:33:06.969] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(214) - Will parse the user input to determine what to execute
+[06-29-2016 09:33:06.979] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.<init>(42) - Created a Statement
+[06-29-2016 09:33:06.979] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.StatementDefault.<init>(21) - Parsed and created a default statement object
+[06-29-2016 09:33:06.979] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(114) - Query to be executed: "StatementDefault [statement=show databases;]"
+[06-29-2016 09:33:06.979] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.StatementDefault.execute(26) - Will execute the code of a default SQL statement
+[06-29-2016 09:33:06.981] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.StatementDefault.printResult(46) - Printing the result
+[06-29-2016 09:33:06.982] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.printMultipleColumn(118) - Printing a result set that has a single or multiple columns
+[06-29-2016 09:33:06.982] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(92) - Building a horizontal border
+[06-29-2016 09:33:06.984] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(92) - Building a horizontal border
+[06-29-2016 09:33:06.984] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(92) - Building a horizontal border
+[06-29-2016 09:33:15.053] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(207) - Raw input from the user: use yuigoh_db;
+[06-29-2016 09:33:15.053] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(214) - Will parse the user input to determine what to execute
+[06-29-2016 09:33:15.054] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.<init>(42) - Created a Statement
+[06-29-2016 09:33:15.054] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.StatementUseDatabase.<init>(25) - Parsed and created a StatementUseDatabase
+[06-29-2016 09:33:15.054] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(114) - Query to be executed: "StatementUseDatabase [statement=use yuigoh_db;]"
+[06-29-2016 09:33:15.055] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.StatementUseDatabase.execute(31) - Will execute the code to use yuigoh_db
+[06-29-2016 09:33:15.062] [main] WARN  com.mijecu25.sqlplus.compiler.core.statement.Statement.executeSQL(355) - WARNING: Error when executing StatementUseDatabase [statement=use yuigoh_db;]
+com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown database 'yuigoh_db'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:1.8.0_65]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:1.8.0_65]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:1.8.0_65]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422) ~[?:1.8.0_65]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:404) ~[sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
+	at com.mysql.jdbc.Util.getInstance(Util.java:387) ~[sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:939) ~[sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3878) ~[sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3814) ~[sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2478) ~[sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2625) ~[sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2547) ~[sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2505) ~[sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
+	at com.mysql.jdbc.StatementImpl.executeInternal(StatementImpl.java:840) ~[sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
+	at com.mysql.jdbc.StatementImpl.execute(StatementImpl.java:740) ~[sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
+	at com.mijecu25.sqlplus.compiler.core.statement.Statement.executeSQL(Statement.java:350) [sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
+	at com.mijecu25.sqlplus.compiler.core.statement.StatementUseDatabase.execute(StatementUseDatabase.java:46) [sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
+	at com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(SQLPlusConnection.java:117) [sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
+	at com.mijecu25.sqlplus.SQLPlus.main(SQLPlus.java:232) [sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
+[06-29-2016 09:33:15.066] [main] WARN  com.mijecu25.sqlplus.compiler.core.statement.Statement.executeSQL(359) - WARNING: Throwing a MySQLSyntaxErrorException to the calling class
+[06-29-2016 09:33:15.066] [main] WARN  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(119) - WARNING: There was an exception when executing the last command. Please check the log files.
+[06-29-2016 09:33:20.098] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(207) - Raw input from the user: use yugioh_db;
+[06-29-2016 09:33:20.098] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(214) - Will parse the user input to determine what to execute
+[06-29-2016 09:33:20.098] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.<init>(42) - Created a Statement
+[06-29-2016 09:33:20.099] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.StatementUseDatabase.<init>(25) - Parsed and created a StatementUseDatabase
+[06-29-2016 09:33:20.099] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(114) - Query to be executed: "StatementUseDatabase [statement=use yugioh_db;]"
+[06-29-2016 09:33:20.099] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.StatementUseDatabase.execute(31) - Will execute the code to use yugioh_db
+[06-29-2016 09:33:20.100] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.StatementUseDatabase.printResult(51) - Printing message that acknowledges that the database was changed
+[06-29-2016 09:33:24.229] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(207) - Raw input from the user: show tables;
+[06-29-2016 09:33:24.229] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(214) - Will parse the user input to determine what to execute
+[06-29-2016 09:33:24.230] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.<init>(42) - Created a Statement
+[06-29-2016 09:33:24.230] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.StatementDefault.<init>(21) - Parsed and created a default statement object
+[06-29-2016 09:33:24.230] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(114) - Query to be executed: "StatementDefault [statement=show tables;]"
+[06-29-2016 09:33:24.230] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.StatementDefault.execute(26) - Will execute the code of a default SQL statement
+[06-29-2016 09:33:24.233] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.StatementDefault.printResult(46) - Printing the result
+[06-29-2016 09:33:24.234] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.printMultipleColumn(118) - Printing a result set that has a single or multiple columns
+[06-29-2016 09:33:24.234] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(92) - Building a horizontal border
+[06-29-2016 09:33:24.234] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(92) - Building a horizontal border
+[06-29-2016 09:33:24.234] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(92) - Building a horizontal border
+[06-29-2016 09:33:27.701] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(207) - Raw input from the user: describer rarities;
+[06-29-2016 09:33:27.701] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(214) - Will parse the user input to determine what to execute
+[06-29-2016 09:33:27.701] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.<init>(42) - Created a Statement
+[06-29-2016 09:33:27.701] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.StatementDefault.<init>(21) - Parsed and created a default statement object
+[06-29-2016 09:33:27.701] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(114) - Query to be executed: "StatementDefault [statement=describer rarities;]"
+[06-29-2016 09:33:27.701] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.StatementDefault.execute(26) - Will execute the code of a default SQL statement
+[06-29-2016 09:33:27.702] [main] WARN  com.mijecu25.sqlplus.compiler.core.statement.Statement.executeQuery(317) - WARNING: Error when executing StatementDefault [statement=describer rarities;]
+com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'describer rarities' at line 1
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:1.8.0_65]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:1.8.0_65]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:1.8.0_65]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422) ~[?:1.8.0_65]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:404) ~[sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
+	at com.mysql.jdbc.Util.getInstance(Util.java:387) ~[sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:939) ~[sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3878) ~[sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3814) ~[sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2478) ~[sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2625) ~[sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2547) ~[sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2505) ~[sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
+	at com.mysql.jdbc.StatementImpl.executeQuery(StatementImpl.java:1370) ~[sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
+	at com.mijecu25.sqlplus.compiler.core.statement.Statement.executeQuery(Statement.java:292) [sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
+	at com.mijecu25.sqlplus.compiler.core.statement.StatementDefault.execute(StatementDefault.java:40) [sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
+	at com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(SQLPlusConnection.java:117) [sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
+	at com.mijecu25.sqlplus.SQLPlus.main(SQLPlus.java:232) [sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
+[06-29-2016 09:33:27.703] [main] WARN  com.mijecu25.sqlplus.compiler.core.statement.Statement.executeQuery(321) - WARNING: Throwing a MySQLSyntaxErrorException to the calling class
+[06-29-2016 09:33:27.703] [main] WARN  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(119) - WARNING: There was an exception when executing the last command. Please check the log files.
+[06-29-2016 09:33:31.255] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(207) - Raw input from the user: describe rarities;
+[06-29-2016 09:33:31.255] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(214) - Will parse the user input to determine what to execute
+[06-29-2016 09:33:31.256] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.<init>(42) - Created a Statement
+[06-29-2016 09:33:31.256] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.StatementDefault.<init>(21) - Parsed and created a default statement object
+[06-29-2016 09:33:31.256] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(114) - Query to be executed: "StatementDefault [statement=describe rarities;]"
+[06-29-2016 09:33:31.256] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.StatementDefault.execute(26) - Will execute the code of a default SQL statement
+[06-29-2016 09:33:31.257] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.StatementDefault.printResult(46) - Printing the result
+[06-29-2016 09:33:31.258] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.printMultipleColumn(118) - Printing a result set that has a single or multiple columns
+[06-29-2016 09:33:31.258] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(92) - Building a horizontal border
+[06-29-2016 09:33:31.258] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(92) - Building a horizontal border
+[06-29-2016 09:33:31.258] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(92) - Building a horizontal border
+[06-29-2016 09:33:31.258] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(92) - Building a horizontal border
+[06-29-2016 09:33:31.258] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(92) - Building a horizontal border
+[06-29-2016 09:33:31.258] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(92) - Building a horizontal border
+[06-29-2016 09:33:31.258] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(92) - Building a horizontal border
+[06-29-2016 09:33:31.258] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(92) - Building a horizontal border
+[06-29-2016 09:33:31.259] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(92) - Building a horizontal border
+[06-29-2016 09:33:31.259] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(92) - Building a horizontal border
+[06-29-2016 09:33:31.259] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(92) - Building a horizontal border
+[06-29-2016 09:33:31.259] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(92) - Building a horizontal border
+[06-29-2016 09:33:31.259] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(92) - Building a horizontal border
+[06-29-2016 09:33:31.259] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(92) - Building a horizontal border
+[06-29-2016 09:33:31.259] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(92) - Building a horizontal border
+[06-29-2016 09:33:31.259] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(92) - Building a horizontal border
+[06-29-2016 09:33:31.259] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(92) - Building a horizontal border
+[06-29-2016 09:33:31.259] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(92) - Building a horizontal border
+[06-29-2016 09:33:36.356] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(207) - Raw input from the user: select * from rarities;
+[06-29-2016 09:33:36.356] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(214) - Will parse the user input to determine what to execute
+[06-29-2016 09:33:36.357] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.<init>(42) - Created a Statement
+[06-29-2016 09:33:36.357] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.dml.StatementDML.<init>(41) - Parsed and created a StatementDML
+[06-29-2016 09:33:36.357] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.dml.StatementSelectExpression.<init>(25) - Parsed and created a StatementSelectExpression
+[06-29-2016 09:33:36.357] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(114) - Query to be executed: "StatementSelectExpression [statement=select * from rarities;]"
+[06-29-2016 09:33:36.357] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.dml.StatementSelectExpression.execute(30) - Will execute the code to query the database using a select statement
+[06-29-2016 09:33:36.358] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.dml.StatementSelectExpression.printResult(50) - Printing the result
+[06-29-2016 09:33:36.361] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.printMultipleColumn(118) - Printing a result set that has a single or multiple columns
+[06-29-2016 09:33:36.361] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(92) - Building a horizontal border
+[06-29-2016 09:33:36.361] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(92) - Building a horizontal border
+[06-29-2016 09:33:36.361] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(92) - Building a horizontal border
+[06-29-2016 09:33:36.361] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(92) - Building a horizontal border
+[06-29-2016 09:33:36.361] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(92) - Building a horizontal border
+[06-29-2016 09:33:36.361] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(92) - Building a horizontal border
+[06-29-2016 09:33:36.361] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(92) - Building a horizontal border
+[06-29-2016 09:33:36.361] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(92) - Building a horizontal border
+[06-29-2016 09:33:36.361] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(92) - Building a horizontal border
+[06-29-2016 09:33:36.361] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(92) - Building a horizontal border
+[06-29-2016 09:33:36.363] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(92) - Building a horizontal border
+[06-29-2016 09:33:36.363] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(92) - Building a horizontal border
+[06-29-2016 09:33:36.364] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(92) - Building a horizontal border
+[06-29-2016 09:33:36.364] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(92) - Building a horizontal border
+[06-29-2016 09:33:36.364] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.buildRightHorizontalBorder(92) - Building a horizontal border
+[06-29-2016 09:33:39.332] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(187) - The user wants to quit SQLPlus
+[06-29-2016 09:33:39.333] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(431) - Attempting to disconnect the SQLPlusConnection
+[06-29-2016 09:33:39.333] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(132) - Attempting to disconnect from the database
+[06-29-2016 09:33:39.335] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(134) - Disconnected from the database
+[06-29-2016 09:33:39.336] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(433) - Disconnected the SQLPlusConnection
+[06-29-2016 09:33:39.336] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(437) - Reset the console from jline
+[06-29-2016 09:33:39.336] [main] INFO  com.mijecu25.sqlplus.SQLPlus.resetConsole(450) - About to reset the console from jline
+[06-29-2016 09:33:39.347] [main] INFO  com.mijecu25.sqlplus.SQLPlus.resetConsole(452) - Reset the console from jline
+[06-29-2016 09:33:39.347] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(440) - Quitting SQLPlus
