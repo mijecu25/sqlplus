@@ -6,9 +6,7 @@ import SQLPlusLex;
 	package com.mijecu25.sqlplus.parser;
 
 	import com.mijecu25.sqlplus.compiler.core.statement.Statement;
-	import com.mijecu25.sqlplus.compiler.core.statement.StatementShowDatabases;
 	import com.mijecu25.sqlplus.compiler.core.statement.StatementUseDatabase;
-	import com.mijecu25.sqlplus.compiler.core.statement.StatementShowTables;
 	import com.mijecu25.sqlplus.compiler.core.statement.dml.StatementSelectExpression;
 }
 
@@ -57,12 +55,9 @@ sql_statement returns [Statement sqlStatement]
 	@init {
 		$sqlStatement = null;
 	}
-	:	select_statement {
-			$sqlStatement = $select_statement.selectStatement;
-		}
-	|	show_statement {
-			$sqlStatement = $show_statement.showStatement;
-		}
+	:   data_manipulation_statements {
+	        $sqlStatement = $data_manipulation_statements.dataManipulationStatement;
+	    }
 	|	use_statement {
 			$sqlStatement = $use_statement.useStatement;
 		}
@@ -86,36 +81,15 @@ use_database returns [Statement useDatabaseStatement]
 			$useDatabaseStatement = new StatementUseDatabase($database.text);
 		}
 	;
-	
-show_statement returns [Statement showStatement]
-	@init {
-		$showStatement = null;
-	}
-	:	show_databases { 
-			$showStatement = $show_databases.showDatabasesStatement;
-		}
-	|	show_tables {
-			$showStatement = $show_tables.showTablesStatement;
-	}
-	;
 
-show_tables returns [Statement showTablesStatement]
+data_manipulation_statements returns [Statement dataManipulationStatement]
 	@init {
-		$showTablesStatement = null;
+	    $dataManipulationStatement = null;
 	}
-	:	SHOW TABLES {
-			$showTablesStatement = new StatementShowTables();
-	}
-	;
-	
-show_databases returns [Statement showDatabasesStatement]
-	@init {
-		$showDatabasesStatement = null;
-	}
-	:	SHOW DATABASES { 
-			$showDatabasesStatement = new StatementShowDatabases(); 
-		}
-	;
+	:   select_statement {
+            $dataManipulationStatement = $select_statement.selectStatement;
+        }
+    ;
 
 select_statement returns [Statement selectStatement]
 	@init {
@@ -126,6 +100,15 @@ select_statement returns [Statement selectStatement]
 		}
 	;
 
+/*update_statements returns [Statement updateStatements]
+	@init {
+		$updateStatements = null;
+	}
+	:	single_table_update_statement {
+			$updateStatements = $select_expression.selectExpression;
+		}
+	;*/
+
 select_expression returns [Statement selectExpression]
 	@init {
 		$selectExpression = null;
@@ -135,6 +118,15 @@ select_expression returns [Statement selectExpression]
 			$selectExpression = new StatementSelectExpression($select_list.selectList, $table_references.tableReferences);
 		}
 	;
+
+/*single_table_update_statement returns [Statement singleTableUpdateStatement]
+	@init {
+		$singleTableUpdateStatement = null;
+	}
+	:	UPDATE table_reference select_list FROM table_references {
+			$selectExpression = new StatementSelectExpression($select_list.selectList, $table_references.tableReferences);
+		}
+	;*/
 
 select_list returns [List<String> selectList]
 	@init {

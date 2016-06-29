@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Properties;
 
+import com.mijecu25.sqlplus.compiler.core.statement.StatementDefault;
 import jline.console.UserInterruptException;
 import org.antlr.runtime.ANTLRStringStream;
 import org.antlr.runtime.CommonTokenStream;
@@ -29,7 +30,7 @@ import jline.console.ConsoleReader;
  * SQLPlus add alerts to your sql queries.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.25
+ * @version 0.1.0.26
  */
 public class SQLPlus {
 
@@ -206,29 +207,29 @@ public class SQLPlus {
                 SQLPlus.logger.info("Raw input from the user: " + query);
 
                 try {
-                    // Execute the antlr code to parse the user input
-                    SQLPlus.logger.info("Will parse the user input to determine what to execute");
-                    ANTLRStringStream input = new ANTLRStringStream(query.toString());
-                    SQLPlusLex lexer = new SQLPlusLex(input);
-                    CommonTokenStream tokens = new CommonTokenStream(lexer);
-                    SQLPlusParser parser = new SQLPlusParser(tokens);
+                    Statement statement;
 
-                    Statement statement = parser.sqlplus();
+                    try {
+                        // Execute the antlr code to parse the user input
+                        SQLPlus.logger.info("Will parse the user input to determine what to execute");
+                        ANTLRStringStream input = new ANTLRStringStream(query.toString());
+                        SQLPlusLex lexer = new SQLPlusLex(input);
+                        CommonTokenStream tokens = new CommonTokenStream(lexer);
+                        SQLPlusParser parser = new SQLPlusParser(tokens);
 
-                    if (statement == null) {
-                        System.out.println("Return value is null");
+                        statement = parser.sqlplus();
+                    } catch (RecognitionException re) {
+                        // TODO move this to somehwere else
+//                        String message = Messages.WARNING + "You have an error in your SQL syntax. Check the manual"
+//                                + " that corresponds to your " + SQLPlus.sqlPlusConnection.getCurrentDatabase()
+//                                + " server or " + SQLPlus.PROGRAM_NAME + " for the correct syntax";
+//                        SQLPlus.logger.warn(message);
+//                        System.out.println(message);
+                        statement = new StatementDefault();
                     }
-                    else {
-                        statement.setStatement(query.toString());
-                        SQLPlus.sqlPlusConnection.execute(statement);
-                    }
-                }
-                catch(RecognitionException re) {
-                    String message = Messages.WARNING + "You have an error in your SQL syntax. Check the manual"
-                            + " that corresponds to your " + SQLPlus.sqlPlusConnection.getCurrentDatabase()
-                            + " server or " + SQLPlus.PROGRAM_NAME + " for the correct syntax";
-                    SQLPlus.logger.warn(message);
-                    System.out.println(message);
+
+                    statement.setStatement(query.toString());
+                    SQLPlus.sqlPlusConnection.execute(statement);
                 }
                 catch(UnsupportedOperationException uoe) {
                     // This exception can occur when the user entered a command allowed by the parsers, but not currently

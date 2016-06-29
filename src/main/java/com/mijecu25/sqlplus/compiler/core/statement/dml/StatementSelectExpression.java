@@ -1,33 +1,26 @@
 package com.mijecu25.sqlplus.compiler.core.statement.dml;
 
 import com.mijecu25.messages.Messages;
-import com.mijecu25.sqlplus.compiler.core.statement.Statement;
-import com.mijecu25.sqlutils.SQLUtils;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.sql.Connection;
-import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
  * This class represents the "select...." SQL statement. It prints the columns that match the query.
  *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.12
+ * @version 0.1.0.13
  */
 public class StatementSelectExpression extends StatementDML {
-    private List<Integer> columnsMaxLength;
-
     private static final Logger logger = LogManager.getLogger(StatementSelectExpression.class);
 
     public StatementSelectExpression(List<String> columns, List<String> tables) {
         // We are going to support only one table right now.
         super(columns, tables);
-        this.columnsMaxLength = new ArrayList<Integer>();
 
         StatementSelectExpression.logger.info("Parsed and created a StatementSelectExpression");
     }
@@ -55,32 +48,9 @@ public class StatementSelectExpression extends StatementDML {
     @Override
     protected void printResult() {
         StatementSelectExpression.logger.info("Printing the result");
+
         try{
-            // Get the medatadata from the result set
-            ResultSetMetaData resultSetMetaData;
-            resultSetMetaData = this.resultSet.getMetaData();
-
-            // If the user wants to select all of the columns
-            if(this.columns.size() == 1 && this.columns.get(0).equals(SQLUtils.ALL_SYMBOL)) {
-                // Get all of the columns for the table
-                this.columns = Statement.transformAllToColumns(resultSetMetaData);
-            }
-
-            // Loop through all the columns to build the top border of the result
-            for(int i = 0; i < this.columns.size(); i++) {
-                // Get the maximum row length
-                int maxRowLength = SQLUtils.maxRowLength(this.connection, this.columns.get(i), this.getFirstTable());
-                // Get the title of the result column
-                String label = resultSetMetaData.getColumnLabel(i+1);
-                // The maximum width that we are going to print is either the title of the column
-                // or a row
-                maxRowLength = Math.max(maxRowLength, label.length());
-                // Add the max row length to the respective column.
-                this.columnsMaxLength.add(i, maxRowLength);
-            }
-
-            // Print the result which could have multiple
-            Statement.printMultipleColumn(this.resultSet, this.columnsMaxLength);
+            this.printTable();
         }
         catch (SQLException sqle) {
             StatementSelectExpression.logger.warn(Messages.WARNING + "Error when printing the result of " + this, sqle);
