@@ -32,7 +32,7 @@ If you want to download, customize, buidl from source, there are extra steps tha
         $ make package
     This target uses Maven to package the project, while skipping the JUnit tests, to build a jar file called ```sqlplus-{VERSION}-complete.jar```. You are welcome to execute the test cases. However, some of them might not work because they were using commands specific to the setup and configurations of the MySQL server of the developers.
 
-7. Execute SQLPLus! 
+7. Execute SQLPlus! 
         
         $ java -cp "{PATH-TO-COMPLETE-SQLPLUS-JAR}/sqlplus-{VERSION}-complete.jar:$CLASSPATH" com.mijecu25.sqlplus.SQLPlus
         Welcome to SQLPlus! This program has a DSL to add alerts to various SQL DML events.
