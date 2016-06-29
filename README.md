@@ -1,7 +1,7 @@
 # sqlplus
 
-[![Build Status](https://travis-ci.org/mijecu25/sqlplus.svg?branch=master)](https://travis-ci.org/mijecu25/sqlplus)
-[![Coverage Status](https://coveralls.io/repos/github/mijecu25/sqlplus/badge.svg?branch=master)](https://coveralls.io/github/mijecu25/sqlplus?branch=master)
+[![Build Status](https://travis-ci.org/mijecu25/sqlplus.svg?branch=dml)](https://travis-ci.org/mijecu25/sqlplus)
+[![Coverage Status](https://coveralls.io/repos/github/mijecu25/sqlplus/badge.svg?branch=dml)](https://coveralls.io/github/mijecu25/sqlplus?branch=dml)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/mijecu25/sqlplus/develop/LICENSE)
 
 A DSL to add alerts to various SQL DML events. SQLPlus currently works with MySQL server.
