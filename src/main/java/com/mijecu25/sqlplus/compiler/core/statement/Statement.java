@@ -18,7 +18,7 @@ import com.mijecu25.messages.Messages;
  * This class represents either a SQLPlus statement or a regular SQL statement.
  *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.26
+ * @version 0.1.0.27
  */
 public abstract class Statement {
     private List<Integer> columnsMaxLength;
@@ -108,7 +108,6 @@ public abstract class Statement {
         return line.toString();
     }
 
-    // TODO add check to this method like the one above
     /**
      * Print the result of a query that either a single or multiple columns. The <code>columnsMaxLength</code> parameter
      * is not calculated in this method and should be done by the calling method.
@@ -117,29 +116,6 @@ public abstract class Statement {
      */
     private void printMultipleColumn() throws SQLException {
         Statement.logger.info("Printing a result set that has a single or multiple columns");
-
-//        if(this.resultSet == null) {
-//            IllegalArgumentException iae = new IllegalArgumentException();
-//            Statement.logger.fatal(Messages.FATAL + "The result set is null");
-//            System.out.println(Messages.FATAL + Messages.FATAL_EXCEPTION_ACTION(iae.getClass().getSimpleName())
-//                    + " " + Messages.CHECK_LOG_FILES);
-//            Statement.logger.warn(Messages.WARNING + "Throwing a " + iae.getClass().getSimpleName() + " to the calling class");
-//            throw iae;
-//        }
-//
-//        int limit = 1;
-//
-//        // Loop through all of the columns lengths
-//        for(Integer columnMaxLength : this.columnsMaxLength) {
-//            if(columnMaxLength < limit) {
-//                IllegalArgumentException iae = new IllegalArgumentException();
-//                Statement.logger.fatal(Messages.FATAL + "The minimum length to print a single column is " + limit);
-//                System.out.println(Messages.FATAL + Messages.FATAL_EXCEPTION_ACTION(iae.getClass().getSimpleName())
-//                        + " " + Messages.CHECK_LOG_FILES);
-//                Statement.logger.warn(Messages.WARNING + "Throwing a " + iae.getClass().getSimpleName() + " to the calling class");
-//                throw iae;
-//            }
-//        }
 
         try {
             // Since we might be printing multiple columns, the approach we take is to add the left
