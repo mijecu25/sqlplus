@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.mijecu25.sqlplus.SQLPlus;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -17,7 +18,7 @@ import com.mijecu25.messages.Messages;
  * This class represents either a SQLPlus statement or a regular SQL statement.
  *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.25
+ * @version 0.1.0.26
  */
 public abstract class Statement {
     private List<Integer> columnsMaxLength;
@@ -36,7 +37,6 @@ public abstract class Statement {
      */
     public Statement() {
         this.statement = null;
-//        this.connection = null;
         this.resultSet = null;
         this.columnsMaxLength = new ArrayList<Integer>();
         Statement.logger.info("Created a Statement");
@@ -95,7 +95,7 @@ public abstract class Statement {
 
         if(length < limit) {
             IllegalArgumentException iae = new IllegalArgumentException();
-            Statement.logger.fatal(Messages.FATAL + "The minimum length to print a horizontal border is " + limit);
+            Statement.logger.fatal(Messages.FATAL + "The minimum length to print a right horizontal border is " + limit);
             System.out.println(Messages.FATAL + Messages.FATAL_EXCEPTION_ACTION(iae.getClass().getSimpleName())
                     + " " + Messages.CHECK_LOG_FILES);
             Statement.logger.warn(Messages.WARNING + "Throwing a " + iae.getClass().getSimpleName() + " to the calling class");
@@ -118,112 +118,120 @@ public abstract class Statement {
     private void printMultipleColumn() throws SQLException {
         Statement.logger.info("Printing a result set that has a single or multiple columns");
 
-        if(this.resultSet == null) {
-            IllegalArgumentException iae = new IllegalArgumentException();
-            Statement.logger.fatal(Messages.FATAL + "The result set is null");
-            System.out.println(Messages.FATAL + Messages.FATAL_EXCEPTION_ACTION(iae.getClass().getSimpleName())
-                    + " " + Messages.CHECK_LOG_FILES);
-            Statement.logger.warn(Messages.WARNING + "Throwing a " + iae.getClass().getSimpleName() + " to the calling class");
-            throw iae;
-        }
+//        if(this.resultSet == null) {
+//            IllegalArgumentException iae = new IllegalArgumentException();
+//            Statement.logger.fatal(Messages.FATAL + "The result set is null");
+//            System.out.println(Messages.FATAL + Messages.FATAL_EXCEPTION_ACTION(iae.getClass().getSimpleName())
+//                    + " " + Messages.CHECK_LOG_FILES);
+//            Statement.logger.warn(Messages.WARNING + "Throwing a " + iae.getClass().getSimpleName() + " to the calling class");
+//            throw iae;
+//        }
+//
+//        int limit = 1;
+//
+//        // Loop through all of the columns lengths
+//        for(Integer columnMaxLength : this.columnsMaxLength) {
+//            if(columnMaxLength < limit) {
+//                IllegalArgumentException iae = new IllegalArgumentException();
+//                Statement.logger.fatal(Messages.FATAL + "The minimum length to print a single column is " + limit);
+//                System.out.println(Messages.FATAL + Messages.FATAL_EXCEPTION_ACTION(iae.getClass().getSimpleName())
+//                        + " " + Messages.CHECK_LOG_FILES);
+//                Statement.logger.warn(Messages.WARNING + "Throwing a " + iae.getClass().getSimpleName() + " to the calling class");
+//                throw iae;
+//            }
+//        }
 
-        int limit = 1;
+        try {
+            // Since we might be printing multiple columns, the approach we take is to add the left
+            // characters and for each column, we complete the right side of the table
+            StringBuilder line = new StringBuilder(Statement.CORNER_SYMBOL);
+            String label;
+            int padding = 3;
 
-        // Loop through all of the columns lengths
-        for(Integer columnMaxLength : this.columnsMaxLength) {
-            if(columnMaxLength < limit) {
-                IllegalArgumentException iae = new IllegalArgumentException();
-                Statement.logger.fatal(Messages.FATAL + "The minimum length to print a single column is " + limit);
-                System.out.println(Messages.FATAL + Messages.FATAL_EXCEPTION_ACTION(iae.getClass().getSimpleName())
-                        + " " + Messages.CHECK_LOG_FILES);
-                Statement.logger.warn(Messages.WARNING + "Throwing a " + iae.getClass().getSimpleName() + " to the calling class");
-                throw iae;
+            // Loop through all the columns to build the top border of the result
+            for (int i = 0; i < this.columnsMaxLength.size(); i++) {
+                // The total length of each columns is added by 3 for the right border and the 2 spaces on either side
+                this.columnsMaxLength.set(i, this.columnsMaxLength.get(i) + padding);
+                // Add a right border the to fit the maximum row in a column
+                line.append(Statement.buildRightHorizontalBorder(this.columnsMaxLength.get(i)));
             }
-        }
 
-        // Since we might be printing multiple columns, the approach we take is to add the left
-        // characters and for each column, we complete the right side of the table
-        StringBuilder line = new StringBuilder(Statement.CORNER_SYMBOL);
-        String label;
-        int padding = 3;
-
-        // Loop through all the columns to build the top border of the result
-        for(int i = 0; i < this.columnsMaxLength.size(); i++) {
-            // The total length of each columns is added by 3 for the right border and the 2 spaces on either side
-            this.columnsMaxLength.set(i, this.columnsMaxLength.get(i) + padding);
-            // Add a right border the to fit the maximum row in a column
-            line.append(Statement.buildRightHorizontalBorder(this.columnsMaxLength.get(i)));
-        }
-
-        // After completing the top border, we add a new line
-        line.append("\n");
-        // Add a vertical border to start the title row
-        line.append(Statement.VERTICAL_BORDER);
-
-        // Loop through all of the columns to print the titles of the result table
-        for(int i = 1; i <= this.columnsMaxLength.size(); i++) {
-            // Get the title
-            label = this.resultSet.getMetaData().getColumnLabel(i);
-
-            // Add a white space, title, whitespaces, and right border to complete the title for this column
-            line.append(" ");
-            line.append(label);
-            line.append(StringUtils.repeat(" ", this.columnsMaxLength.get(i-1) - 2 - label.length()));
-            line.append(Statement.VERTICAL_BORDER);
-        }
-
-        // After completing the titles, we add a new line
-        line.append("\n");
-        // Add a corner symbol to start bottom border of the title row
-        line.append(Statement.CORNER_SYMBOL);
-
-        // Loop through all of the columns
-        for(Integer columnMaxLength : this.columnsMaxLength) {
-            // Add a right border the to fit the maximum row in a column
-            line.append(Statement.buildRightHorizontalBorder(columnMaxLength));
-        }
-
-        // After completing the bottom border of titles, we add a new line
-        line.append("\n");
-
-        int rowTotal = 0;
-
-        // While the are more rows to process
-        while (this.resultSet.next()) {
-            // Add a vertical border to start the current row of results
+            // After completing the top border, we add a new line
+            line.append("\n");
+            // Add a vertical border to start the title row
             line.append(Statement.VERTICAL_BORDER);
 
-            // Loop through all of the columns
-            for(int i = 1; i <= this.columnsMaxLength.size(); i++) {
-                // Get the current row and check if it is null
-                String row = Statement.getRowAsString(resultSet, i);
+            // Loop through all of the columns to print the titles of the result table
+            for (int i = 1; i <= this.columnsMaxLength.size(); i++) {
+                // Get the title
+                label = this.resultSet.getMetaData().getColumnLabel(i);
 
-                // Add a white space, row, whitespaces, and right border to complete the row for this column
+                // Add a white space, title, whitespaces, and right border to complete the title for this column
                 line.append(" ");
-                line.append(row);
-                line.append(StringUtils.repeat(" ", this.columnsMaxLength.get(i-1) - 2 - row.length()));
+                line.append(label);
+                line.append(StringUtils.repeat(" ", this.columnsMaxLength.get(i - 1) - 2 - label.length()));
                 line.append(Statement.VERTICAL_BORDER);
             }
 
-            // After completing all of the columns, we add a new line
+            // After completing the titles, we add a new line
+            line.append("\n");
+            // Add a corner symbol to start bottom border of the title row
+            line.append(Statement.CORNER_SYMBOL);
+
+            // Loop through all of the columns
+            for (Integer columnMaxLength : this.columnsMaxLength) {
+                // Add a right border the to fit the maximum row in a column
+                line.append(Statement.buildRightHorizontalBorder(columnMaxLength));
+            }
+
+            // After completing the bottom border of titles, we add a new line
             line.append("\n");
 
-            rowTotal++;
+            int rowTotal = 0;
+
+            // While the are more rows to process
+            while (this.resultSet.next()) {
+                // Add a vertical border to start the current row of results
+                line.append(Statement.VERTICAL_BORDER);
+
+                // Loop through all of the columns
+                for (int i = 1; i <= this.columnsMaxLength.size(); i++) {
+                    // Get the current row and check if it is null
+                    String row = this.getRowAsString(i);
+
+                    // Add a white space, row, whitespaces, and right border to complete the row for this column
+                    line.append(" ");
+                    line.append(row);
+                    line.append(StringUtils.repeat(" ", this.columnsMaxLength.get(i - 1) - 2 - row.length()));
+                    line.append(Statement.VERTICAL_BORDER);
+                }
+
+                // After completing all of the columns, we add a new line
+                line.append("\n");
+
+                rowTotal++;
+            }
+
+            // Add a corner symbol to start bottom border of the result table
+            line.append(Statement.CORNER_SYMBOL);
+
+            // Loop through all of the columns
+            for (Integer columnMaxLength : this.columnsMaxLength) {
+                // Add a right border the to fit the maximum row in a column
+                line.append(Statement.buildRightHorizontalBorder(columnMaxLength));
+            }
+
+            line.append("\n" + Statement.displayResultSetSize(rowTotal));
+
+            // Print the result table
+            System.out.println(line);
         }
+        catch(SQLException sqle) {
+            Statement.logger.warn(Messages.WARNING + "Error when printing a result set with single or multiple columns",
+                    sqle);
 
-        // Add a corner symbol to start bottom border of the result table
-        line.append(Statement.CORNER_SYMBOL);
-
-        // Loop through all of the columns
-        for(Integer columnMaxLength : this.columnsMaxLength) {
-            // Add a right border the to fit the maximum row in a column
-            line.append(Statement.buildRightHorizontalBorder(columnMaxLength));
+            throw sqle;
         }
-
-        line.append("\n" + Statement.displayResultSetSize(rowTotal));
-
-        // Print the result table
-        System.out.println(line);
     }
 
     /**
@@ -281,14 +289,28 @@ public abstract class Statement {
 
 
     /**
-     * TODO
-     * @param connection
-     * @throws SQLException
+     * Execute a SQL query statement using the provided connection. This type of execution generates a single ResultSet
+     * object.
+     *
+     * @param connection the connection used to execute the query.
+     * @throws SQLException if there is a problem executing the query.
      */
     protected void executeQuery(Connection connection) throws SQLException {
+        // If the connection is null
+        if(connection == null) {
+            IllegalArgumentException iae = new IllegalArgumentException();
+            Statement.logger.fatal(Messages.FATAL + "The connection passed to execute the query "
+                    + "cannot be null");
+            System.out.println(Messages.FATAL + Messages.FATAL_EXCEPTION_ACTION(iae.getClass().getSimpleName()) + " "
+                    + Messages.CHECK_LOG_FILES);
+            Statement.logger.warn(Messages.WARNING + "Throwing a " + iae.getClass().getSimpleName()
+                    + " to the calling class");
+            throw iae;
+        }
+
         try {
-            // Execute the query
-            java.sql.Statement statement = connection.createStatement();
+            // Create a Java statement with a resultSet that can be scrolled and cannot be updated while scrolling
+            java.sql.Statement statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
 
             long startTime = System.nanoTime();
             this.resultSet = statement.executeQuery(this.statement);
@@ -296,7 +318,7 @@ public abstract class Statement {
 
             // The result from the query is null
             if(this.resultSet == null) {
-                // Throw an exception because this will be very weird. Also,
+                // Throw an exception because this is very weird. Also,
                 // if there is no response, we do not want to continue executing
                 throw new SQLException();
             }
@@ -327,17 +349,19 @@ public abstract class Statement {
     }
 
     /**
-     * TODO
-     * @param connection
-     * @throws SQLException
+     * Execute a SQL statement using the provided connection. This type of execution does not generate any object.
+     * Developers should implement their own output to the user.
+     *
+     * @param connection the connection used to execute the query.
+     * @throws SQLException if there is a problem executing the query.
      */
-    public void executeSQL(Connection connection) throws SQLException {
+    protected void executeSQL(Connection connection) throws SQLException {
         // If the connection is null
         if(connection == null) {
             IllegalArgumentException iae = new IllegalArgumentException();
-            Statement.logger.fatal(Messages.FATAL + "The connection passed to execute the statement "
+            Statement.logger.fatal(Messages.FATAL + "The connection passed to execute sql "
                     + "cannot be null");
-            System.out.println(Messages.FATAL_EXCEPTION_ACTION(iae.getClass().getSimpleName()) + " "
+            System.out.println(Messages.FATAL + Messages.FATAL_EXCEPTION_ACTION(iae.getClass().getSimpleName()) + " "
                     + Messages.CHECK_LOG_FILES);
             Statement.logger.warn(Messages.WARNING + "Throwing a " + iae.getClass().getSimpleName()
                     + " to the calling class");
@@ -345,7 +369,7 @@ public abstract class Statement {
         }
 
         try {
-            // Execute the query
+            // Create a Java statement
             java.sql.Statement statement = connection.createStatement();
             statement.execute(this.statement);
 
@@ -362,67 +386,106 @@ public abstract class Statement {
     }
 
     /**
-     * TODO
-     * @throws SQLException
+     * Print a result table after executing a statement.
+     *
+     * @throws SQLException if there is a problem printing a result table.
      */
-    public void printTable() throws SQLException {
-        // Get the medatadata from the result set
-        ResultSetMetaData resultSetMetaData;
-        resultSetMetaData = this.resultSet.getMetaData();
+    protected void printTable() throws SQLException {
+        try {
+            // Get the medatadata from the result set
+            ResultSetMetaData resultSetMetaData;
+            resultSetMetaData = this.resultSet.getMetaData();
 
-        // Loop through all the columns to build the top border of the result
-        for(int i = 0; i < resultSetMetaData.getColumnCount(); i++) {
-            // Get the maximum database name length
-            this.columnsMaxLength.add(i, resultSetMetaData.getColumnLabel(1).length());
-        }
-
-        while(this.resultSet.next()) {
-            for(int i = 0; i < resultSetMetaData.getColumnCount(); i++) {
-                int maxLength = this.columnsMaxLength.get(i);
-                maxLength = Math.max(maxLength, Statement.getRowAsString(this.resultSet, i + 1).length());
-                this.columnsMaxLength.set(i, maxLength);
+            // Loop through all the columns to build the top border of the result
+            for (int i = 0; i < resultSetMetaData.getColumnCount(); i++) {
+                // Get the maximum database name length
+                this.columnsMaxLength.add(i, resultSetMetaData.getColumnLabel(1).length());
             }
+
+            while (this.resultSet.next()) {
+                for (int i = 0; i < resultSetMetaData.getColumnCount(); i++) {
+                    int maxLength = this.columnsMaxLength.get(i);
+                    maxLength = Math.max(maxLength, this.getRowAsString(i + 1).length());
+                    this.columnsMaxLength.set(i, maxLength);
+                }
+            }
+
+            // Move the cursor before the first row to be able to print the results
+            this.resultSet.beforeFirst();
+
+            // Print the result which is a single column
+            this.printMultipleColumn();
         }
+        catch(SQLException sqle) {
+            Statement.logger.warn(Messages.WARNING + "Error when printing a table result", sqle);
 
-        this.resultSet.beforeFirst();
-
-        // Print the result which is a single column
-        this.printMultipleColumn();
+            throw sqle;
+        }
     }
 
+    /**
+     * Extracts the current row from a result set using the correct method based on its data type. The data type is
+     * derived from the column type in the resultSet.
+     *
+     * @param columnIndex the index of the column for the current row.
+     *
+     * @return a string representation of the current row.
+     *
+     * @throws SQLException if there is a problem transforming a row into a string.
+     */
+    protected String getRowAsString(int columnIndex) throws SQLException {
+        if(columnIndex < 1) {
+            IllegalArgumentException iae = new IllegalArgumentException();
+            Statement.logger.fatal(Messages.FATAL + "The minimum column index: " + columnIndex + " cannot be less than 1");
+            System.out.println(Messages.FATAL + Messages.FATAL_EXCEPTION_ACTION(iae.getClass().getSimpleName())
+                    + " " + Messages.CHECK_LOG_FILES);
+            Statement.logger.warn(Messages.WARNING + "Throwing a " + iae.getClass().getSimpleName() + " to the calling class");
+            throw iae;
+        }
 
-    private static String getRowAsString(ResultSet resultSet, int index) {
         try {
-            // TODO can we leave this private? Maybe we can make it public if other classes use it
-            String type = resultSet.getMetaData().getColumnTypeName(index);
+            String type = this.resultSet.getMetaData().getColumnTypeName(columnIndex);
 
+            // Get a string based on types
             switch (type) {
                 case "VARCHAR":
-                    return Statement.checkAndTransformNull(resultSet.getString(index));
+                    return Statement.checkAndTransformNull(this.resultSet.getString(columnIndex));
                 case "INT":
-                    return Statement.checkAndTransformNull(resultSet.getInt(index) + "");
+                    return Statement.checkAndTransformNull(this.resultSet.getInt(columnIndex) + "");
                 case "DOUBLE":
-                    return Statement.checkAndTransformNull(resultSet.getDouble(index) + "");
+                    return Statement.checkAndTransformNull(this.resultSet.getDouble(columnIndex) + "");
                 case "DATETIME":
-                    return Statement.checkAndTransformNull(resultSet.getDate(index) + " " + resultSet.getTime(index));
+                    return Statement.checkAndTransformNull(this.resultSet.getDate(columnIndex) + " " + this.resultSet.getTime(columnIndex));
                 case "DATE":
-                    return Statement.checkAndTransformNull(resultSet.getDate(index) + "");
+                    return Statement.checkAndTransformNull(this.resultSet.getDate(columnIndex) + "");
                 default:
-                    System.out.println(type + " is new");
-                    // TODO throw an error
-                    break;
+                    throw new UnsupportedOperationException(type + " is not currently a supported data type in " + SQLPlus.PROGRAM_NAME);
             }
         }
         catch(SQLException sqle) {
-            // TODO
+            Statement.logger.warn(Messages.WARNING + "Error when transforming a row to a string", sqle);
+
+            throw sqle;
         }
-
-        // TODO should never reach
-        return "ERROR";
-
     }
 
-    private static String displayResultSetSize(int size) {
+    /**
+     * Format a string that displays the size of a result set based on its size.
+     *
+     * @param size the number of rows in the result set.
+     *
+     * @return a string formatted based on the size of the result.
+     */
+    public static String displayResultSetSize(int size) {
+        if(size < 1) {
+            IllegalArgumentException iae = new IllegalArgumentException();
+            Statement.logger.fatal(Messages.FATAL + "The minimum result set size: " + size + " cannot be less than 1");
+            System.out.println(Messages.FATAL + Messages.FATAL_EXCEPTION_ACTION(iae.getClass().getSimpleName())
+                    + " " + Messages.CHECK_LOG_FILES);
+            Statement.logger.warn(Messages.WARNING + "Throwing a " + iae.getClass().getSimpleName() + " to the calling class");
+            throw iae;
+        }
+
         if(size == 1) {
             return size + " row in set";
         }
@@ -431,8 +494,9 @@ public abstract class Statement {
     }
 
     /**
-     * TODO
-     * @param statement
+     * Set the statement string.
+     *
+     * @param statement the statement.
      */
     public void setStatement(String statement) { this.statement = statement; }
 

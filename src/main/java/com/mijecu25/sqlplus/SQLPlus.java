@@ -30,11 +30,11 @@ import jline.console.ConsoleReader;
  * SQLPlus add alerts to your sql queries.
  * 
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.26
+ * @version 0.1.0.27
  */
 public class SQLPlus {
 
-    private static final String PROGRAM_NAME = "SQLPlus";
+    public static final String PROGRAM_NAME = "SQLPlus";
     private static final String EXIT = "exit";
     private static final String QUIT = "quit";
     private static final String PROMPT = "sqlplus> ";   
@@ -235,6 +235,9 @@ public class SQLPlus {
                     // This exception can occur when the user entered a command allowed by the parsers, but not currently
                     // supported by SQLPlus. This can occur because the parser is written in such a way that supports
                     // the addition of features.
+                    SQLPlus.logger.warn(Messages.WARNING + uoe);
+                    System.out.println(Messages.WARNING + Messages.FATAL_EXCEPTION_ACTION(uoe.getClass().getSimpleName())
+                            + " " + Messages.CHECK_LOG_FILES);
                     SQLPlus.logger.warn(Messages.WARNING + "The previous command is not currently supported.");
                 }
 
