@@ -17,7 +17,7 @@ import com.mijecu25.messages.Messages;
  * This class represents either a SQLPlus statement or a regular SQL statement.
  *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.23
+ * @version 0.1.0.24
  */
 public abstract class Statement {
 
@@ -430,6 +430,44 @@ public abstract class Statement {
 
             Statement.logger.warn(Messages.WARNING + "Throwing a " + sqle.getClass().getSimpleName()
                     + " to the calling class");
+            throw sqle;
+        }
+    }
+
+    /**
+     * TODO
+     * @param connection
+     * @throws SQLException
+     */
+    public void executeSQL(Connection connection) throws SQLException {
+        // If the connection is null
+        if(connection == null) {
+            IllegalArgumentException iae = new IllegalArgumentException();
+            Statement.logger.fatal(Messages.FATAL + "The connection passed to execute the statement "
+                    + "cannot be null");
+            System.out.println(Messages.FATAL_EXCEPTION_ACTION(iae.getClass().getSimpleName()) + " "
+                    + Messages.CHECK_LOG_FILES);
+            Statement.logger.warn(Messages.WARNING + "Throwing a " + iae.getClass().getSimpleName()
+                    + " to the calling class");
+            throw iae;
+        }
+
+        // Set the connection
+        this.connection = connection;
+
+        try {
+            // Execute the query
+            java.sql.Statement statement = this.connection.createStatement();
+            statement.execute(this.statement);
+
+            this.printResult();
+        }
+        catch(SQLException sqle) {
+            Statement.logger.warn(Messages.WARNING + "Error when executing " + this, sqle);
+            System.out.println(Messages.WARNING + "(" + sqle.getErrorCode() + ") (" + sqle.getSQLState() + ") "
+                    + sqle.getMessage());
+
+            Statement.logger.warn(Messages.WARNING + "Throwing a " + sqle.getClass().getSimpleName() + " to the calling class");
             throw sqle;
         }
     }

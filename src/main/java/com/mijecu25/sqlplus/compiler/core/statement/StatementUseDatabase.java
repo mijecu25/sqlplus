@@ -11,15 +11,15 @@ import com.mijecu25.messages.Messages;
 /**
  * This class represents the "use <code>database</code>" SQL statement. It changes the current database
  * in the server and prints a message with the name of the current database.
- * 
+ *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.8
+ * @version 0.1.0.9
  */
 public class StatementUseDatabase extends Statement {
     private String database;
-    
+
     private static final Logger logger = LogManager.getLogger(StatementUseDatabase.class);
-    
+
     public StatementUseDatabase(String database) {
         super();
         StatementUseDatabase.logger.info("Parsed and created a StatementUseDatabase");
@@ -42,24 +42,8 @@ public class StatementUseDatabase extends Statement {
             throw iae;
         }
 
-        // Set the connection
-        this.connection = connection;
-        
-        try {
-            // Execute the query
-            java.sql.Statement statement = this.connection.createStatement();
-            statement.execute(this.statement);
-
-            this.printResult();                    
-        }
-        catch(SQLException sqle) {
-            StatementUseDatabase.logger.warn(Messages.WARNING + "Error when executing " + this, sqle);
-            System.out.println(Messages.WARNING + "(" + sqle.getErrorCode() + ") (" + sqle.getSQLState() + ") "
-                    + sqle.getMessage());
-            
-            StatementUseDatabase.logger.warn(Messages.WARNING + "Throwing a " + sqle.getClass().getSimpleName() + " to the calling class");
-            throw sqle;
-        }
+        // TODO should we catch an exception?
+        this.executeSQL(connection);
     }
 
     @Override
