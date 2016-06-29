@@ -34,7 +34,7 @@ public class StatementSelectExpression extends StatementDML {
             IllegalArgumentException iae = new IllegalArgumentException();
             StatementSelectExpression.logger.fatal(Messages.FATAL + "The connection passed to execute the statement "
                     + "cannot be null");
-            System.out.println(Messages.FATAL_EXCEPTION_ACTION(iae.getClass().getSimpleName()) + " "
+            System.out.println(Messages.FATAL + Messages.FATAL_EXCEPTION_ACTION(iae.getClass().getSimpleName()) + " "
                     + Messages.CHECK_LOG_FILES);
             StatementSelectExpression.logger.warn(Messages.WARNING + "Throwing a " + iae.getClass().getSimpleName()
                     + " to the calling class");

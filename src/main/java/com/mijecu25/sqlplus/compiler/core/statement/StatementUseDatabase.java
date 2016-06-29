@@ -13,7 +13,7 @@ import com.mijecu25.messages.Messages;
  * in the server and prints a message with the name of the current database.
  *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.9
+ * @version 0.1.0.10
  */
 public class StatementUseDatabase extends Statement {
     private String database;
@@ -35,7 +35,7 @@ public class StatementUseDatabase extends Statement {
             IllegalArgumentException iae = new IllegalArgumentException();
             StatementUseDatabase.logger.fatal(Messages.FATAL + "The connection passed to execute the statement "
                     + "cannot be null");
-            System.out.println(Messages.FATAL_EXCEPTION_ACTION(iae.getClass().getSimpleName()) + " "
+            System.out.println(Messages.FATAL + Messages.FATAL_EXCEPTION_ACTION(iae.getClass().getSimpleName()) + " "
                     + Messages.CHECK_LOG_FILES);
             StatementUseDatabase.logger.warn(Messages.WARNING + "Throwing a " + iae.getClass().getSimpleName()
                     + " to the calling class");

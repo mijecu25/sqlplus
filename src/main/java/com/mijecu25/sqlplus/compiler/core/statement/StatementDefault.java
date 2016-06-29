@@ -11,7 +11,7 @@ import java.sql.SQLException;
  * This class represents a default SQL statement.
  *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.1
+ * @version 0.1.0.2
  */
 public class StatementDefault extends Statement {
     private static final Logger logger = LogManager.getLogger(StatementDefault.class);
@@ -30,7 +30,7 @@ public class StatementDefault extends Statement {
             IllegalArgumentException iae = new IllegalArgumentException();
             StatementDefault.logger.fatal(Messages.FATAL + "The connection passed to execute the statement "
                     + "cannot be null");
-            System.out.println(Messages.FATAL_EXCEPTION_ACTION(iae.getClass().getSimpleName()) + " "
+            System.out.println(Messages.FATAL + Messages.FATAL_EXCEPTION_ACTION(iae.getClass().getSimpleName()) + " "
                     + Messages.CHECK_LOG_FILES);
             StatementDefault.logger.warn(Messages.WARNING + "Throwing a " + iae.getClass().getSimpleName()
                     + " to the calling class");
@@ -53,5 +53,10 @@ public class StatementDefault extends Statement {
             System.out.println(Messages.WARNING + "(" + sqle.getErrorCode() + ") (" + sqle.getSQLState() + ") "
                     + "Could not print the result. " + Messages.CHECK_LOG_FILES);
         }
+    }
+
+    @Override
+    public String toString() {
+        return "StatementDefault [statement=" + this.statement + "]";
     }
 }
