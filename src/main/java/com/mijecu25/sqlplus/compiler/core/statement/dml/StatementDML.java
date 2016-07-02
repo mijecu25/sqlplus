@@ -14,7 +14,7 @@ import com.mijecu25.sqlplus.compiler.core.statement.Statement;
  * This class contains common behavior for all DML SQL statements.
  *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.6
+ * @version 0.1.0.7
  */
 public abstract class StatementDML extends Statement {
     private static final Logger logger = LogManager.getLogger(StatementDML.class);
@@ -26,7 +26,6 @@ public abstract class StatementDML extends Statement {
         super();
         this.columns = columns;
 
-        // Check if the user entered more than 1 table reference
         if(tables.size() > 1) {
             // We currently support only 1 table reference
             UnsupportedOperationException uoe = new UnsupportedOperationException();
@@ -46,30 +45,6 @@ public abstract class StatementDML extends Statement {
 
     @Override
     protected abstract void printResult();
-
-//    /**
-//     * Transform the list of elements to a comma separated string.
-//     *
-//     * @param list the list of elements that are transformed to a string.
-//     *
-//     * @return comma separate string with the elements.
-//     */
-//    public static String unrollList(List<String> list) {
-//        StringBuilder result = new StringBuilder();
-//
-//        // Loop through the list of columns
-//        for(int i = 0; i < list.size(); i++) {
-//            // If we are adding another column to the string, add a comma
-//            if(i > 0) {
-//                result.append(", ");
-//            }
-//
-//            // Add the column to the list
-//            result.append(list.get(i));
-//        }
-//
-//        return result.toString();
-//    }
 
     /**
      * Helper method to return the first table in the list of referenced tables.
