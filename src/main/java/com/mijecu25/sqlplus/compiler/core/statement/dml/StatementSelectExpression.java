@@ -13,13 +13,12 @@ import java.util.List;
  * This class represents the "select...." SQL statement. It prints the columns that match the query.
  *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.13
+ * @version 0.1.0.14
  */
 public class StatementSelectExpression extends StatementDML {
     private static final Logger logger = LogManager.getLogger(StatementSelectExpression.class);
 
     public StatementSelectExpression(List<String> columns, List<String> tables) {
-        // We are going to support only one table right now.
         super(columns, tables);
 
         StatementSelectExpression.logger.info("Parsed and created a StatementSelectExpression");
@@ -29,7 +28,6 @@ public class StatementSelectExpression extends StatementDML {
     public void execute(Connection connection) throws SQLException {
         StatementSelectExpression.logger.info("Will execute the code to query the database using a select statement");
 
-        // If the connection is null
         if(connection == null) {
             IllegalArgumentException iae = new IllegalArgumentException();
             StatementSelectExpression.logger.fatal(Messages.FATAL + "The connection passed to execute the statement "
