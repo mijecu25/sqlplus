@@ -18,7 +18,7 @@ import com.mijecu25.messages.Messages;
  * This class represents either a SQLPlus statement or a regular SQL statement.
  *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.27
+ * @version 0.1.0.28
  */
 public abstract class Statement {
     private List<Integer> columnsMaxLength;
@@ -112,94 +112,73 @@ public abstract class Statement {
      * Print the result of a query that either a single or multiple columns. The <code>columnsMaxLength</code> parameter
      * is not calculated in this method and should be done by the calling method.
      *
+     * The approach use to print columns is to add the left characters of each column and, for each
+     * column, we complte the right side of the table.
+     *
      * @throws SQLException if there is a problem print the results.
      */
     private void printMultipleColumn() throws SQLException {
         Statement.logger.info("Printing a result set that has a single or multiple columns");
 
         try {
-            // Since we might be printing multiple columns, the approach we take is to add the left
-            // characters and for each column, we complete the right side of the table
             StringBuilder line = new StringBuilder(Statement.CORNER_SYMBOL);
             String label;
             int padding = 3;
 
-            // Loop through all the columns to build the top border of the result
             for (int i = 0; i < this.columnsMaxLength.size(); i++) {
                 // The total length of each columns is added by 3 for the right border and the 2 spaces on either side
                 this.columnsMaxLength.set(i, this.columnsMaxLength.get(i) + padding);
-                // Add a right border the to fit the maximum row in a column
                 line.append(Statement.buildRightHorizontalBorder(this.columnsMaxLength.get(i)));
             }
 
-            // After completing the top border, we add a new line
             line.append("\n");
-            // Add a vertical border to start the title row
             line.append(Statement.VERTICAL_BORDER);
 
-            // Loop through all of the columns to print the titles of the result table
             for (int i = 1; i <= this.columnsMaxLength.size(); i++) {
-                // Get the title
                 label = this.resultSet.getMetaData().getColumnLabel(i);
 
-                // Add a white space, title, whitespaces, and right border to complete the title for this column
                 line.append(" ");
                 line.append(label);
                 line.append(StringUtils.repeat(" ", this.columnsMaxLength.get(i - 1) - 2 - label.length()));
                 line.append(Statement.VERTICAL_BORDER);
             }
 
-            // After completing the titles, we add a new line
             line.append("\n");
-            // Add a corner symbol to start bottom border of the title row
             line.append(Statement.CORNER_SYMBOL);
 
-            // Loop through all of the columns
             for (Integer columnMaxLength : this.columnsMaxLength) {
-                // Add a right border the to fit the maximum row in a column
                 line.append(Statement.buildRightHorizontalBorder(columnMaxLength));
             }
 
-            // After completing the bottom border of titles, we add a new line
             line.append("\n");
 
             int rowTotal = 0;
 
-            // While the are more rows to process
             while (this.resultSet.next()) {
-                // Add a vertical border to start the current row of results
                 line.append(Statement.VERTICAL_BORDER);
 
-                // Loop through all of the columns
                 for (int i = 1; i <= this.columnsMaxLength.size(); i++) {
-                    // Get the current row and check if it is null
                     String row = this.getRowAsString(i);
 
-                    // Add a white space, row, whitespaces, and right border to complete the row for this column
                     line.append(" ");
                     line.append(row);
                     line.append(StringUtils.repeat(" ", this.columnsMaxLength.get(i - 1) - 2 - row.length()));
                     line.append(Statement.VERTICAL_BORDER);
                 }
 
-                // After completing all of the columns, we add a new line
                 line.append("\n");
 
                 rowTotal++;
             }
 
-            // Add a corner symbol to start bottom border of the result table
             line.append(Statement.CORNER_SYMBOL);
 
-            // Loop through all of the columns
             for (Integer columnMaxLength : this.columnsMaxLength) {
-                // Add a right border the to fit the maximum row in a column
                 line.append(Statement.buildRightHorizontalBorder(columnMaxLength));
             }
 
             line.append("\n" + Statement.displayResultSetSize(rowTotal));
 
-            // Print the result table
             System.out.println(line);
         }
         catch(SQLException sqle) {
@@ -248,9 +227,7 @@ public abstract class Statement {
         List<String> columns = new ArrayList<String>();
 
         try {
-            // Loop through all of the columns found in the result set metadata
             for (int i = 1; i <= resultSetMetaData.getColumnCount(); i++) {
-                // Add the column name to the list
                 columns.add(resultSetMetaData.getColumnName(i));
             }
         }
@@ -272,7 +249,6 @@ public abstract class Statement {
      * @throws SQLException if there is a problem executing the query.
      */
     protected void executeQuery(Connection connection) throws SQLException {
-        // If the connection is null
         if(connection == null) {
             IllegalArgumentException iae = new IllegalArgumentException();
             Statement.logger.fatal(Messages.FATAL + "The connection passed to execute the query "
@@ -292,14 +268,12 @@ public abstract class Statement {
             this.resultSet = statement.executeQuery(this.statement);
             long endTime = System.nanoTime();
 
-            // The result from the query is null
             if(this.resultSet == null) {
-                // Throw an exception because this is very weird. Also,
-                // if there is no response, we do not want to continue executing
+                // It would be very weird if this were to be null. Also, if there is no response, 
+                // we do not want to continue executing
                 throw new SQLException();
             }
 
-            // Check if the result set has values or not
             if(this.resultSet.isBeforeFirst()) {
                 this.printResult();
             }
@@ -309,7 +283,6 @@ public abstract class Statement {
 
             System.out.printf("Execution time: %.2f sec\n", (endTime - startTime)/1000000000.0);
 
-            // Close the result set and statement
             this.resultSet.close();
             statement.close();
         }
@@ -332,7 +305,6 @@ public abstract class Statement {
      * @throws SQLException if there is a problem executing the query.
      */
     protected void executeSQL(Connection connection) throws SQLException {
-        // If the connection is null
         if(connection == null) {
             IllegalArgumentException iae = new IllegalArgumentException();
             Statement.logger.fatal(Messages.FATAL + "The connection passed to execute sql "
@@ -345,7 +317,6 @@ public abstract class Statement {
         }
 
         try {
-            // Create a Java statement
             java.sql.Statement statement = connection.createStatement();
             statement.execute(this.statement);
 
@@ -368,13 +339,10 @@ public abstract class Statement {
      */
     protected void printTable() throws SQLException {
         try {
-            // Get the medatadata from the result set
             ResultSetMetaData resultSetMetaData;
             resultSetMetaData = this.resultSet.getMetaData();
 
-            // Loop through all the columns to build the top border of the result
             for (int i = 0; i < resultSetMetaData.getColumnCount(); i++) {
-                // Get the maximum database name length
                 this.columnsMaxLength.add(i, resultSetMetaData.getColumnLabel(1).length());
             }
 
@@ -386,10 +354,7 @@ public abstract class Statement {
                 }
             }
 
-            // Move the cursor before the first row to be able to print the results
             this.resultSet.beforeFirst();
-
-            // Print the result which is a single column
             this.printMultipleColumn();
         }
         catch(SQLException sqle) {
@@ -422,7 +387,6 @@ public abstract class Statement {
         try {
             String type = this.resultSet.getMetaData().getColumnTypeName(columnIndex);
 
-            // Get a string based on types
             switch (type) {
                 case "VARCHAR":
                     return Statement.checkAndTransformNull(this.resultSet.getString(columnIndex));
