@@ -7,7 +7,6 @@ lexer grammar SQLPlusLex;
 ASTERISK : '*';
 COMMA : ',';
 COLON : ':';
-DASH : '-';
 DOT : '.';
 EQUAL :	'=';
 GREATER_THAN : '>';
@@ -15,12 +14,14 @@ GREATER_THAN_EQUAL: '>=';
 LEFT_PARENTHESIS : '(';
 LESS_THAN :	'<';
 LESS_THAN_EQUAL : '<=';
-NOT_EQUAL	
-	:	'<>' 
-	| 	'!=' 
+MINUS : '-';
+NOT_EQUAL
+	:	'<>'
+	| 	'!='
 	| 	'~='
 	| 	'^='
 	;
+PLUS : '+';
 QUESTION_MARK : '?';
 QUOTE : '\'';
 RIGHT_PARENTHESIS : ')';
@@ -32,31 +33,31 @@ ALERT
 	:	'alert'
 	|	'ALERT'
 	;
-	
+
 AFTER
 	:	'after'
 	|	'AFTER'
-	;	
+	;
 
 AS
 	: 	'as'
 	|	'AS'
 	;
-	
+
 BEFORE
 	:	'before'
 	|	'BEFORE'
 	;
-	
+
 DATABASES
 	:	'databases'
 	|	'DATABASES'
 	;
-		
+
 DELETE
 	:	'delete'
 	|	'DELETE'
-	;	
+	;
 
 FROM
 	:	'from'
@@ -67,27 +68,32 @@ IF
 	:	'if'
 	|	'IF'
 	;
-	
-IN	
+
+IN
 	:	'in'
 	|	'IN'
 	;
-			
+
+INTO
+    :   'into'
+    |   'INTO'
+    ;
+
 INSERT
 	: 	'insert'
 	|	'INSERT'
-	;	
-			
-LIKE	
+	;
+
+LIKE
 	:	'like'
 	|	'LIKE'
 	;
-		
+
 SELECT
 	:	'select'
 	|	'SELECT'
 	;
-	
+
 SHOW
 	:	'show'
 	|	'SHOW'
@@ -97,32 +103,51 @@ TABLES
 	:	'tables'
 	|	'TABLES'
 	;
-					
+
 UPDATE
 	: 	'update'
 	|	'UPDATE'
 	;
-	
+
 USE
 	:	'use'
 	|	'USE'
-	;	
+	;
+
+VALUES
+    :   'values'
+    |   'VALUES'
+    ;
 
 WHERE
 	: 	'where'
 	|	'WHERE'
 	;
-	
+
+INTEGER_NUMBER
+    :   ( '0'..'9' )+
+    ;
+
 ID
 	:	( 'A'..'Z' | 'a'..'z' | '_' | '$') ( 'A'..'Z' | 'a'..'z' | '_' | '$' | '0'..'9' )*
 	;
 
-NEWLINE	
+REAL_NUMBER
+    :   ( INTEGER_NUMBER DOT INTEGER_NUMBER | INTEGER_NUMBER DOT | DOT INTEGER_NUMBER | INTEGER_NUMBER )
+        ( ('E'|'e') ( PLUS | MINUS )? INTEGER_NUMBER )?
+    ;
+
+TEXT_STRING
+    :   '\'' ( ~('\'') )* '\''
+    |   '"' ( ~('"') )* '"'
+    ;
+
+NEWLINE
 		// Optional carriage return
-	: 	'\r'? '\n' 
+	: 	'\r'? '\n'
 	;
 
-WS  	
+WS
 		// One or more. Just ignore
-	: 	(' '|'\t')+ { $channel = HIDDEN; } 
+	: 	(' '|'\t')+ { $channel = HIDDEN; }
 	;
