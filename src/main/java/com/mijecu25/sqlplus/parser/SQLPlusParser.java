@@ -1,10 +1,11 @@
-// $ANTLR 3.5.2 src/main/sqlplus/parser/SQLPlus.g 2016-07-06 13:35:02
+// $ANTLR 3.5.2 src/main/sqlplus/parser/SQLPlus.g 2016-07-06 13:40:53
 
 	package com.mijecu25.sqlplus.parser;
 
 	import com.mijecu25.sqlplus.compiler.core.statement.Statement;
 	import com.mijecu25.sqlplus.compiler.core.statement.StatementUseDatabase;
 	import com.mijecu25.sqlplus.compiler.core.statement.dml.StatementSelectExpression;
+	import com.mijecu25.sqlplus.compiler.core.statement.dml.StatementInsertStatement1;
 
 
 import org.antlr.runtime.*;
@@ -103,7 +104,7 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "sqlplus"
-	// src/main/sqlplus/parser/SQLPlus.g:35:1: sqlplus returns [Statement statement] : ( sql_statement SEMICOLON | sqlplus_alert );
+	// src/main/sqlplus/parser/SQLPlus.g:36:1: sqlplus returns [Statement statement] : ( sql_statement SEMICOLON | sqlplus_alert );
 	public final Statement sqlplus() throws RecognitionException {
 		Statement statement = null;
 
@@ -114,7 +115,7 @@ public class SQLPlusParser extends Parser {
 				statement = null;
 			
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:39:2: ( sql_statement SEMICOLON | sqlplus_alert )
+			// src/main/sqlplus/parser/SQLPlus.g:40:2: ( sql_statement SEMICOLON | sqlplus_alert )
 			int alt1=2;
 			int LA1_0 = input.LA(1);
 			if ( (LA1_0==INSERT||LA1_0==SELECT||LA1_0==USE) ) {
@@ -132,7 +133,7 @@ public class SQLPlusParser extends Parser {
 
 			switch (alt1) {
 				case 1 :
-					// src/main/sqlplus/parser/SQLPlus.g:39:5: sql_statement SEMICOLON
+					// src/main/sqlplus/parser/SQLPlus.g:40:5: sql_statement SEMICOLON
 					{
 					pushFollow(FOLLOW_sql_statement_in_sqlplus47);
 					sql_statement1=sql_statement();
@@ -145,7 +146,7 @@ public class SQLPlusParser extends Parser {
 					}
 					break;
 				case 2 :
-					// src/main/sqlplus/parser/SQLPlus.g:43:4: sqlplus_alert
+					// src/main/sqlplus/parser/SQLPlus.g:44:4: sqlplus_alert
 					{
 					pushFollow(FOLLOW_sqlplus_alert_in_sqlplus59);
 					sqlplus_alert();
@@ -171,11 +172,11 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "sqlplus_alert"
-	// src/main/sqlplus/parser/SQLPlus.g:47:1: sqlplus_alert : ALERT timing data_manipulation_language IN ID IF ID relational_operation match_value SEMICOLON ;
+	// src/main/sqlplus/parser/SQLPlus.g:48:1: sqlplus_alert : ALERT timing data_manipulation_language IN ID IF ID relational_operation match_value SEMICOLON ;
 	public final void sqlplus_alert() throws RecognitionException {
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:48:2: ( ALERT timing data_manipulation_language IN ID IF ID relational_operation match_value SEMICOLON )
-			// src/main/sqlplus/parser/SQLPlus.g:48:4: ALERT timing data_manipulation_language IN ID IF ID relational_operation match_value SEMICOLON
+			// src/main/sqlplus/parser/SQLPlus.g:49:2: ( ALERT timing data_manipulation_language IN ID IF ID relational_operation match_value SEMICOLON )
+			// src/main/sqlplus/parser/SQLPlus.g:49:4: ALERT timing data_manipulation_language IN ID IF ID relational_operation match_value SEMICOLON
 			{
 			match(input,ALERT,FOLLOW_ALERT_in_sqlplus_alert71); 
 			pushFollow(FOLLOW_timing_in_sqlplus_alert73);
@@ -219,7 +220,7 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "sql_statement"
-	// src/main/sqlplus/parser/SQLPlus.g:54:1: sql_statement returns [Statement sqlStatement] : ( data_manipulation_statements | use_statement );
+	// src/main/sqlplus/parser/SQLPlus.g:55:1: sql_statement returns [Statement sqlStatement] : ( data_manipulation_statements | use_statement );
 	public final Statement sql_statement() throws RecognitionException {
 		Statement sqlStatement = null;
 
@@ -231,7 +232,7 @@ public class SQLPlusParser extends Parser {
 				sqlStatement = null;
 			
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:58:2: ( data_manipulation_statements | use_statement )
+			// src/main/sqlplus/parser/SQLPlus.g:59:2: ( data_manipulation_statements | use_statement )
 			int alt2=2;
 			int LA2_0 = input.LA(1);
 			if ( (LA2_0==INSERT||LA2_0==SELECT) ) {
@@ -249,7 +250,7 @@ public class SQLPlusParser extends Parser {
 
 			switch (alt2) {
 				case 1 :
-					// src/main/sqlplus/parser/SQLPlus.g:58:6: data_manipulation_statements
+					// src/main/sqlplus/parser/SQLPlus.g:59:6: data_manipulation_statements
 					{
 					pushFollow(FOLLOW_data_manipulation_statements_in_sql_statement117);
 					data_manipulation_statements2=data_manipulation_statements();
@@ -261,7 +262,7 @@ public class SQLPlusParser extends Parser {
 					}
 					break;
 				case 2 :
-					// src/main/sqlplus/parser/SQLPlus.g:61:4: use_statement
+					// src/main/sqlplus/parser/SQLPlus.g:62:4: use_statement
 					{
 					pushFollow(FOLLOW_use_statement_in_sql_statement124);
 					use_statement3=use_statement();
@@ -290,7 +291,7 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "use_statement"
-	// src/main/sqlplus/parser/SQLPlus.g:66:1: use_statement returns [Statement useStatement] : use_database ;
+	// src/main/sqlplus/parser/SQLPlus.g:67:1: use_statement returns [Statement useStatement] : use_database ;
 	public final Statement use_statement() throws RecognitionException {
 		Statement useStatement = null;
 
@@ -301,8 +302,8 @@ public class SQLPlusParser extends Parser {
 				useStatement = null;
 			
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:70:2: ( use_database )
-			// src/main/sqlplus/parser/SQLPlus.g:70:4: use_database
+			// src/main/sqlplus/parser/SQLPlus.g:71:2: ( use_database )
+			// src/main/sqlplus/parser/SQLPlus.g:71:4: use_database
 			{
 			pushFollow(FOLLOW_use_database_in_use_statement147);
 			use_database4=use_database();
@@ -329,7 +330,7 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "use_database"
-	// src/main/sqlplus/parser/SQLPlus.g:75:1: use_database returns [Statement useDatabaseStatement] : USE database= schema_name ;
+	// src/main/sqlplus/parser/SQLPlus.g:76:1: use_database returns [Statement useDatabaseStatement] : USE database= schema_name ;
 	public final Statement use_database() throws RecognitionException {
 		Statement useDatabaseStatement = null;
 
@@ -340,8 +341,8 @@ public class SQLPlusParser extends Parser {
 				useDatabaseStatement = null;
 			
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:79:2: ( USE database= schema_name )
-			// src/main/sqlplus/parser/SQLPlus.g:79:4: USE database= schema_name
+			// src/main/sqlplus/parser/SQLPlus.g:80:2: ( USE database= schema_name )
+			// src/main/sqlplus/parser/SQLPlus.g:80:4: USE database= schema_name
 			{
 			match(input,USE,FOLLOW_USE_in_use_database170); 
 			pushFollow(FOLLOW_schema_name_in_use_database178);
@@ -369,7 +370,7 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "data_manipulation_statements"
-	// src/main/sqlplus/parser/SQLPlus.g:85:1: data_manipulation_statements returns [Statement dataManipulationStatement] : ( select_statement | insert_statements );
+	// src/main/sqlplus/parser/SQLPlus.g:86:1: data_manipulation_statements returns [Statement dataManipulationStatement] : ( select_statement | insert_statements );
 	public final Statement data_manipulation_statements() throws RecognitionException {
 		Statement dataManipulationStatement = null;
 
@@ -381,7 +382,7 @@ public class SQLPlusParser extends Parser {
 			    dataManipulationStatement = null;
 			
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:89:2: ( select_statement | insert_statements )
+			// src/main/sqlplus/parser/SQLPlus.g:90:2: ( select_statement | insert_statements )
 			int alt3=2;
 			int LA3_0 = input.LA(1);
 			if ( (LA3_0==SELECT) ) {
@@ -399,7 +400,7 @@ public class SQLPlusParser extends Parser {
 
 			switch (alt3) {
 				case 1 :
-					// src/main/sqlplus/parser/SQLPlus.g:89:6: select_statement
+					// src/main/sqlplus/parser/SQLPlus.g:90:6: select_statement
 					{
 					pushFollow(FOLLOW_select_statement_in_data_manipulation_statements203);
 					select_statement5=select_statement();
@@ -411,7 +412,7 @@ public class SQLPlusParser extends Parser {
 					}
 					break;
 				case 2 :
-					// src/main/sqlplus/parser/SQLPlus.g:92:9: insert_statements
+					// src/main/sqlplus/parser/SQLPlus.g:93:9: insert_statements
 					{
 					pushFollow(FOLLOW_insert_statements_in_data_manipulation_statements215);
 					insert_statements6=insert_statements();
@@ -440,7 +441,7 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "select_statement"
-	// src/main/sqlplus/parser/SQLPlus.g:97:1: select_statement returns [Statement selectStatement] : select_expression ;
+	// src/main/sqlplus/parser/SQLPlus.g:98:1: select_statement returns [Statement selectStatement] : select_expression ;
 	public final Statement select_statement() throws RecognitionException {
 		Statement selectStatement = null;
 
@@ -451,8 +452,8 @@ public class SQLPlusParser extends Parser {
 				selectStatement = null;
 			
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:101:2: ( select_expression )
-			// src/main/sqlplus/parser/SQLPlus.g:101:4: select_expression
+			// src/main/sqlplus/parser/SQLPlus.g:102:2: ( select_expression )
+			// src/main/sqlplus/parser/SQLPlus.g:102:4: select_expression
 			{
 			pushFollow(FOLLOW_select_expression_in_select_statement241);
 			select_expression7=select_expression();
@@ -479,7 +480,7 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "insert_statements"
-	// src/main/sqlplus/parser/SQLPlus.g:106:1: insert_statements returns [Statement insertStatements] : insert_statement1 ;
+	// src/main/sqlplus/parser/SQLPlus.g:107:1: insert_statements returns [Statement insertStatements] : insert_statement1 ;
 	public final Statement insert_statements() throws RecognitionException {
 		Statement insertStatements = null;
 
@@ -490,8 +491,8 @@ public class SQLPlusParser extends Parser {
 		        insertStatements = null;
 		    
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:110:5: ( insert_statement1 )
-			// src/main/sqlplus/parser/SQLPlus.g:110:9: insert_statement1
+			// src/main/sqlplus/parser/SQLPlus.g:111:5: ( insert_statement1 )
+			// src/main/sqlplus/parser/SQLPlus.g:111:9: insert_statement1
 			{
 			pushFollow(FOLLOW_insert_statement1_in_insert_statements272);
 			insert_statement18=insert_statement1();
@@ -518,7 +519,7 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "select_expression"
-	// src/main/sqlplus/parser/SQLPlus.g:124:1: select_expression returns [Statement selectExpression] : SELECT select_list FROM table_references ;
+	// src/main/sqlplus/parser/SQLPlus.g:125:1: select_expression returns [Statement selectExpression] : SELECT select_list FROM table_references ;
 	public final Statement select_expression() throws RecognitionException {
 		Statement selectExpression = null;
 
@@ -530,8 +531,8 @@ public class SQLPlusParser extends Parser {
 				selectExpression = null;
 			
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:129:2: ( SELECT select_list FROM table_references )
-			// src/main/sqlplus/parser/SQLPlus.g:129:4: SELECT select_list FROM table_references
+			// src/main/sqlplus/parser/SQLPlus.g:130:2: ( SELECT select_list FROM table_references )
+			// src/main/sqlplus/parser/SQLPlus.g:130:4: SELECT select_list FROM table_references
 			{
 			match(input,SELECT,FOLLOW_SELECT_in_select_expression303); 
 			pushFollow(FOLLOW_select_list_in_select_expression305);
@@ -564,7 +565,7 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "insert_statement1"
-	// src/main/sqlplus/parser/SQLPlus.g:134:1: insert_statement1 returns [Statement insertStatement1] : insert_header ( column_list )? value_list_clause ;
+	// src/main/sqlplus/parser/SQLPlus.g:135:1: insert_statement1 returns [Statement insertStatement1] : insert_header ( column_list )? value_list_clause ;
 	public final Statement insert_statement1() throws RecognitionException {
 		Statement insertStatement1 = null;
 
@@ -577,14 +578,14 @@ public class SQLPlusParser extends Parser {
 			    insertStatement1 = null;
 			
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:138:2: ( insert_header ( column_list )? value_list_clause )
-			// src/main/sqlplus/parser/SQLPlus.g:138:6: insert_header ( column_list )? value_list_clause
+			// src/main/sqlplus/parser/SQLPlus.g:139:2: ( insert_header ( column_list )? value_list_clause )
+			// src/main/sqlplus/parser/SQLPlus.g:139:6: insert_header ( column_list )? value_list_clause
 			{
 			pushFollow(FOLLOW_insert_header_in_insert_statement1334);
 			insert_header11=insert_header();
 			state._fsp--;
 
-			// src/main/sqlplus/parser/SQLPlus.g:139:6: ( column_list )?
+			// src/main/sqlplus/parser/SQLPlus.g:140:6: ( column_list )?
 			int alt4=2;
 			int LA4_0 = input.LA(1);
 			if ( (LA4_0==LEFT_PARENTHESIS) ) {
@@ -592,7 +593,7 @@ public class SQLPlusParser extends Parser {
 			}
 			switch (alt4) {
 				case 1 :
-					// src/main/sqlplus/parser/SQLPlus.g:139:7: column_list
+					// src/main/sqlplus/parser/SQLPlus.g:140:7: column_list
 					{
 					pushFollow(FOLLOW_column_list_in_insert_statement1342);
 					column_list12=column_list();
@@ -608,7 +609,7 @@ public class SQLPlusParser extends Parser {
 			state._fsp--;
 
 
-				        System.out.println(insert_header11 + " " + column_list12 + " " + value_list_clause13);
+				        insertStatement1 = new StatementInsertStatement1(insert_header11, column_list12, value_list_clause13);
 				    
 			}
 
@@ -628,7 +629,7 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "select_list"
-	// src/main/sqlplus/parser/SQLPlus.g:153:1: select_list returns [List<String> selectList] : (column= displayed_column ( COMMA column= displayed_column )* | ASTERISK );
+	// src/main/sqlplus/parser/SQLPlus.g:154:1: select_list returns [List<String> selectList] : (column= displayed_column ( COMMA column= displayed_column )* | ASTERISK );
 	public final List<String> select_list() throws RecognitionException {
 		List<String> selectList = null;
 
@@ -640,7 +641,7 @@ public class SQLPlusParser extends Parser {
 				selectList = new ArrayList<String>();
 			
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:157:2: (column= displayed_column ( COMMA column= displayed_column )* | ASTERISK )
+			// src/main/sqlplus/parser/SQLPlus.g:158:2: (column= displayed_column ( COMMA column= displayed_column )* | ASTERISK )
 			int alt6=2;
 			int LA6_0 = input.LA(1);
 			if ( (LA6_0==ID) ) {
@@ -658,7 +659,7 @@ public class SQLPlusParser extends Parser {
 
 			switch (alt6) {
 				case 1 :
-					// src/main/sqlplus/parser/SQLPlus.g:157:4: column= displayed_column ( COMMA column= displayed_column )*
+					// src/main/sqlplus/parser/SQLPlus.g:158:4: column= displayed_column ( COMMA column= displayed_column )*
 					{
 					pushFollow(FOLLOW_displayed_column_in_select_list376);
 					column=displayed_column();
@@ -667,7 +668,7 @@ public class SQLPlusParser extends Parser {
 
 						 		selectList.add((column!=null?input.toString(column.start,column.stop):null));
 							
-					// src/main/sqlplus/parser/SQLPlus.g:160:3: ( COMMA column= displayed_column )*
+					// src/main/sqlplus/parser/SQLPlus.g:161:3: ( COMMA column= displayed_column )*
 					loop5:
 					while (true) {
 						int alt5=2;
@@ -678,7 +679,7 @@ public class SQLPlusParser extends Parser {
 
 						switch (alt5) {
 						case 1 :
-							// src/main/sqlplus/parser/SQLPlus.g:161:4: COMMA column= displayed_column
+							// src/main/sqlplus/parser/SQLPlus.g:162:4: COMMA column= displayed_column
 							{
 							match(input,COMMA,FOLLOW_COMMA_in_select_list387); 
 							pushFollow(FOLLOW_displayed_column_in_select_list393);
@@ -699,7 +700,7 @@ public class SQLPlusParser extends Parser {
 					}
 					break;
 				case 2 :
-					// src/main/sqlplus/parser/SQLPlus.g:165:5: ASTERISK
+					// src/main/sqlplus/parser/SQLPlus.g:166:5: ASTERISK
 					{
 					ASTERISK14=(Token)match(input,ASTERISK,FOLLOW_ASTERISK_in_select_list406); 
 
@@ -728,20 +729,20 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "displayed_column"
-	// src/main/sqlplus/parser/SQLPlus.g:170:1: displayed_column : column_spec ( alias )? ;
+	// src/main/sqlplus/parser/SQLPlus.g:171:1: displayed_column : column_spec ( alias )? ;
 	public final SQLPlusParser.displayed_column_return displayed_column() throws RecognitionException {
 		SQLPlusParser.displayed_column_return retval = new SQLPlusParser.displayed_column_return();
 		retval.start = input.LT(1);
 
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:171:2: ( column_spec ( alias )? )
-			// src/main/sqlplus/parser/SQLPlus.g:171:4: column_spec ( alias )?
+			// src/main/sqlplus/parser/SQLPlus.g:172:2: ( column_spec ( alias )? )
+			// src/main/sqlplus/parser/SQLPlus.g:172:4: column_spec ( alias )?
 			{
 			pushFollow(FOLLOW_column_spec_in_displayed_column419);
 			column_spec();
 			state._fsp--;
 
-			// src/main/sqlplus/parser/SQLPlus.g:171:16: ( alias )?
+			// src/main/sqlplus/parser/SQLPlus.g:172:16: ( alias )?
 			int alt7=2;
 			int LA7_0 = input.LA(1);
 			if ( (LA7_0==AS||LA7_0==ID) ) {
@@ -749,7 +750,7 @@ public class SQLPlusParser extends Parser {
 			}
 			switch (alt7) {
 				case 1 :
-					// src/main/sqlplus/parser/SQLPlus.g:171:17: alias
+					// src/main/sqlplus/parser/SQLPlus.g:172:17: alias
 					{
 					pushFollow(FOLLOW_alias_in_displayed_column422);
 					alias();
@@ -780,7 +781,7 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "table_references"
-	// src/main/sqlplus/parser/SQLPlus.g:174:1: table_references returns [List<String> tableReferences] : table= table_reference ( COMMA table= table_reference )* ;
+	// src/main/sqlplus/parser/SQLPlus.g:175:1: table_references returns [List<String> tableReferences] : table= table_reference ( COMMA table= table_reference )* ;
 	public final List<String> table_references() throws RecognitionException {
 		List<String> tableReferences = null;
 
@@ -791,8 +792,8 @@ public class SQLPlusParser extends Parser {
 				tableReferences = new ArrayList<String>();
 			
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:178:2: (table= table_reference ( COMMA table= table_reference )* )
-			// src/main/sqlplus/parser/SQLPlus.g:178:4: table= table_reference ( COMMA table= table_reference )*
+			// src/main/sqlplus/parser/SQLPlus.g:179:2: (table= table_reference ( COMMA table= table_reference )* )
+			// src/main/sqlplus/parser/SQLPlus.g:179:4: table= table_reference ( COMMA table= table_reference )*
 			{
 			pushFollow(FOLLOW_table_reference_in_table_references449);
 			table=table_reference();
@@ -801,7 +802,7 @@ public class SQLPlusParser extends Parser {
 
 						tableReferences.add((table!=null?input.toString(table.start,table.stop):null));
 					
-			// src/main/sqlplus/parser/SQLPlus.g:181:3: ( COMMA table= table_reference )*
+			// src/main/sqlplus/parser/SQLPlus.g:182:3: ( COMMA table= table_reference )*
 			loop8:
 			while (true) {
 				int alt8=2;
@@ -812,7 +813,7 @@ public class SQLPlusParser extends Parser {
 
 				switch (alt8) {
 				case 1 :
-					// src/main/sqlplus/parser/SQLPlus.g:182:4: COMMA table= table_reference
+					// src/main/sqlplus/parser/SQLPlus.g:183:4: COMMA table= table_reference
 					{
 					match(input,COMMA,FOLLOW_COMMA_in_table_references460); 
 					pushFollow(FOLLOW_table_reference_in_table_references469);
@@ -851,14 +852,14 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "table_reference"
-	// src/main/sqlplus/parser/SQLPlus.g:189:1: table_reference : table_atom ;
+	// src/main/sqlplus/parser/SQLPlus.g:190:1: table_reference : table_atom ;
 	public final SQLPlusParser.table_reference_return table_reference() throws RecognitionException {
 		SQLPlusParser.table_reference_return retval = new SQLPlusParser.table_reference_return();
 		retval.start = input.LT(1);
 
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:190:2: ( table_atom )
-			// src/main/sqlplus/parser/SQLPlus.g:190:4: table_atom
+			// src/main/sqlplus/parser/SQLPlus.g:191:2: ( table_atom )
+			// src/main/sqlplus/parser/SQLPlus.g:191:4: table_atom
 			{
 			pushFollow(FOLLOW_table_atom_in_table_reference487);
 			table_atom();
@@ -884,7 +885,7 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "insert_header"
-	// src/main/sqlplus/parser/SQLPlus.g:193:1: insert_header returns [String table] : INSERT ( INTO )? table_spec ;
+	// src/main/sqlplus/parser/SQLPlus.g:194:1: insert_header returns [String table] : INSERT ( INTO )? table_spec ;
 	public final String insert_header() throws RecognitionException {
 		String table = null;
 
@@ -895,11 +896,11 @@ public class SQLPlusParser extends Parser {
 		        table = null;
 		    
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:197:5: ( INSERT ( INTO )? table_spec )
-			// src/main/sqlplus/parser/SQLPlus.g:197:9: INSERT ( INTO )? table_spec
+			// src/main/sqlplus/parser/SQLPlus.g:198:5: ( INSERT ( INTO )? table_spec )
+			// src/main/sqlplus/parser/SQLPlus.g:198:9: INSERT ( INTO )? table_spec
 			{
 			match(input,INSERT,FOLLOW_INSERT_in_insert_header516); 
-			// src/main/sqlplus/parser/SQLPlus.g:197:16: ( INTO )?
+			// src/main/sqlplus/parser/SQLPlus.g:198:16: ( INTO )?
 			int alt9=2;
 			int LA9_0 = input.LA(1);
 			if ( (LA9_0==INTO) ) {
@@ -907,7 +908,7 @@ public class SQLPlusParser extends Parser {
 			}
 			switch (alt9) {
 				case 1 :
-					// src/main/sqlplus/parser/SQLPlus.g:197:17: INTO
+					// src/main/sqlplus/parser/SQLPlus.g:198:17: INTO
 					{
 					match(input,INTO,FOLLOW_INTO_in_insert_header519); 
 					}
@@ -940,7 +941,7 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "value_list_clause"
-	// src/main/sqlplus/parser/SQLPlus.g:202:1: value_list_clause returns [List<List<String>> valueListClause] : VALUES value= column_value_list ( COMMA value= column_value_list )* ;
+	// src/main/sqlplus/parser/SQLPlus.g:203:1: value_list_clause returns [List<List<String>> valueListClause] : VALUES value= column_value_list ( COMMA value= column_value_list )* ;
 	public final List<List<String>> value_list_clause() throws RecognitionException {
 		List<List<String>> valueListClause = null;
 
@@ -951,8 +952,8 @@ public class SQLPlusParser extends Parser {
 		        valueListClause = new ArrayList<List<String>>();
 		    
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:206:5: ( VALUES value= column_value_list ( COMMA value= column_value_list )* )
-			// src/main/sqlplus/parser/SQLPlus.g:206:9: VALUES value= column_value_list ( COMMA value= column_value_list )*
+			// src/main/sqlplus/parser/SQLPlus.g:207:5: ( VALUES value= column_value_list ( COMMA value= column_value_list )* )
+			// src/main/sqlplus/parser/SQLPlus.g:207:9: VALUES value= column_value_list ( COMMA value= column_value_list )*
 			{
 			match(input,VALUES,FOLLOW_VALUES_in_value_list_clause557); 
 			pushFollow(FOLLOW_column_value_list_in_value_list_clause571);
@@ -962,7 +963,7 @@ public class SQLPlusParser extends Parser {
 
 			            valueListClause.add(value);
 			        
-			// src/main/sqlplus/parser/SQLPlus.g:210:9: ( COMMA value= column_value_list )*
+			// src/main/sqlplus/parser/SQLPlus.g:211:9: ( COMMA value= column_value_list )*
 			loop10:
 			while (true) {
 				int alt10=2;
@@ -973,7 +974,7 @@ public class SQLPlusParser extends Parser {
 
 				switch (alt10) {
 				case 1 :
-					// src/main/sqlplus/parser/SQLPlus.g:211:13: COMMA value= column_value_list
+					// src/main/sqlplus/parser/SQLPlus.g:212:13: COMMA value= column_value_list
 					{
 					match(input,COMMA,FOLLOW_COMMA_in_value_list_clause597); 
 					pushFollow(FOLLOW_column_value_list_in_value_list_clause615);
@@ -1009,7 +1010,7 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "column_value_list"
-	// src/main/sqlplus/parser/SQLPlus.g:218:1: column_value_list returns [List<String> columnValueList] : LEFT_PARENTHESIS expression= bit_expr ( COMMA expression= bit_expr )* RIGHT_PARENTHESIS ;
+	// src/main/sqlplus/parser/SQLPlus.g:219:1: column_value_list returns [List<String> columnValueList] : LEFT_PARENTHESIS expression= bit_expr ( COMMA expression= bit_expr )* RIGHT_PARENTHESIS ;
 	public final List<String> column_value_list() throws RecognitionException {
 		List<String> columnValueList = null;
 
@@ -1020,8 +1021,8 @@ public class SQLPlusParser extends Parser {
 		        columnValueList = new ArrayList<String>();
 		    
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:222:5: ( LEFT_PARENTHESIS expression= bit_expr ( COMMA expression= bit_expr )* RIGHT_PARENTHESIS )
-			// src/main/sqlplus/parser/SQLPlus.g:222:9: LEFT_PARENTHESIS expression= bit_expr ( COMMA expression= bit_expr )* RIGHT_PARENTHESIS
+			// src/main/sqlplus/parser/SQLPlus.g:223:5: ( LEFT_PARENTHESIS expression= bit_expr ( COMMA expression= bit_expr )* RIGHT_PARENTHESIS )
+			// src/main/sqlplus/parser/SQLPlus.g:223:9: LEFT_PARENTHESIS expression= bit_expr ( COMMA expression= bit_expr )* RIGHT_PARENTHESIS
 			{
 			match(input,LEFT_PARENTHESIS,FOLLOW_LEFT_PARENTHESIS_in_column_value_list660); 
 			pushFollow(FOLLOW_bit_expr_in_column_value_list674);
@@ -1031,7 +1032,7 @@ public class SQLPlusParser extends Parser {
 
 			            columnValueList.add((expression!=null?input.toString(expression.start,expression.stop):null));
 			        
-			// src/main/sqlplus/parser/SQLPlus.g:226:9: ( COMMA expression= bit_expr )*
+			// src/main/sqlplus/parser/SQLPlus.g:227:9: ( COMMA expression= bit_expr )*
 			loop11:
 			while (true) {
 				int alt11=2;
@@ -1042,7 +1043,7 @@ public class SQLPlusParser extends Parser {
 
 				switch (alt11) {
 				case 1 :
-					// src/main/sqlplus/parser/SQLPlus.g:227:13: COMMA expression= bit_expr
+					// src/main/sqlplus/parser/SQLPlus.g:228:13: COMMA expression= bit_expr
 					{
 					match(input,COMMA,FOLLOW_COMMA_in_column_value_list700); 
 					pushFollow(FOLLOW_bit_expr_in_column_value_list718);
@@ -1079,11 +1080,11 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "table_atom"
-	// src/main/sqlplus/parser/SQLPlus.g:234:1: table_atom : table_spec ;
+	// src/main/sqlplus/parser/SQLPlus.g:235:1: table_atom : table_spec ;
 	public final void table_atom() throws RecognitionException {
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:235:2: ( table_spec )
-			// src/main/sqlplus/parser/SQLPlus.g:235:4: table_spec
+			// src/main/sqlplus/parser/SQLPlus.g:236:2: ( table_spec )
+			// src/main/sqlplus/parser/SQLPlus.g:236:4: table_spec
 			{
 			pushFollow(FOLLOW_table_spec_in_table_atom747);
 			table_spec();
@@ -1109,16 +1110,16 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "table_spec"
-	// src/main/sqlplus/parser/SQLPlus.g:238:1: table_spec : ( schema_name DOT )? table_name ;
+	// src/main/sqlplus/parser/SQLPlus.g:239:1: table_spec : ( schema_name DOT )? table_name ;
 	public final SQLPlusParser.table_spec_return table_spec() throws RecognitionException {
 		SQLPlusParser.table_spec_return retval = new SQLPlusParser.table_spec_return();
 		retval.start = input.LT(1);
 
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:239:2: ( ( schema_name DOT )? table_name )
-			// src/main/sqlplus/parser/SQLPlus.g:239:4: ( schema_name DOT )? table_name
+			// src/main/sqlplus/parser/SQLPlus.g:240:2: ( ( schema_name DOT )? table_name )
+			// src/main/sqlplus/parser/SQLPlus.g:240:4: ( schema_name DOT )? table_name
 			{
-			// src/main/sqlplus/parser/SQLPlus.g:239:4: ( schema_name DOT )?
+			// src/main/sqlplus/parser/SQLPlus.g:240:4: ( schema_name DOT )?
 			int alt12=2;
 			int LA12_0 = input.LA(1);
 			if ( (LA12_0==ID) ) {
@@ -1129,7 +1130,7 @@ public class SQLPlusParser extends Parser {
 			}
 			switch (alt12) {
 				case 1 :
-					// src/main/sqlplus/parser/SQLPlus.g:239:5: schema_name DOT
+					// src/main/sqlplus/parser/SQLPlus.g:240:5: schema_name DOT
 					{
 					pushFollow(FOLLOW_schema_name_in_table_spec759);
 					schema_name();
@@ -1165,7 +1166,7 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "column_list"
-	// src/main/sqlplus/parser/SQLPlus.g:242:1: column_list returns [List<String> columnList] : LEFT_PARENTHESIS column= column_spec ( COMMA column= column_spec )* RIGHT_PARENTHESIS ;
+	// src/main/sqlplus/parser/SQLPlus.g:243:1: column_list returns [List<String> columnList] : LEFT_PARENTHESIS column= column_spec ( COMMA column= column_spec )* RIGHT_PARENTHESIS ;
 	public final List<String> column_list() throws RecognitionException {
 		List<String> columnList = null;
 
@@ -1176,8 +1177,8 @@ public class SQLPlusParser extends Parser {
 		        columnList = new ArrayList<String>();
 		    
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:246:2: ( LEFT_PARENTHESIS column= column_spec ( COMMA column= column_spec )* RIGHT_PARENTHESIS )
-			// src/main/sqlplus/parser/SQLPlus.g:246:6: LEFT_PARENTHESIS column= column_spec ( COMMA column= column_spec )* RIGHT_PARENTHESIS
+			// src/main/sqlplus/parser/SQLPlus.g:247:2: ( LEFT_PARENTHESIS column= column_spec ( COMMA column= column_spec )* RIGHT_PARENTHESIS )
+			// src/main/sqlplus/parser/SQLPlus.g:247:6: LEFT_PARENTHESIS column= column_spec ( COMMA column= column_spec )* RIGHT_PARENTHESIS
 			{
 			match(input,LEFT_PARENTHESIS,FOLLOW_LEFT_PARENTHESIS_in_column_list791); 
 			pushFollow(FOLLOW_column_spec_in_column_list802);
@@ -1187,7 +1188,7 @@ public class SQLPlusParser extends Parser {
 
 				        columnList.add((column!=null?input.toString(column.start,column.stop):null));
 				    
-			// src/main/sqlplus/parser/SQLPlus.g:250:9: ( COMMA column= column_spec )*
+			// src/main/sqlplus/parser/SQLPlus.g:251:9: ( COMMA column= column_spec )*
 			loop13:
 			while (true) {
 				int alt13=2;
@@ -1198,7 +1199,7 @@ public class SQLPlusParser extends Parser {
 
 				switch (alt13) {
 				case 1 :
-					// src/main/sqlplus/parser/SQLPlus.g:251:13: COMMA column= column_spec
+					// src/main/sqlplus/parser/SQLPlus.g:252:13: COMMA column= column_spec
 					{
 					match(input,COMMA,FOLLOW_COMMA_in_column_list828); 
 					pushFollow(FOLLOW_column_spec_in_column_list846);
@@ -1238,16 +1239,16 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "column_spec"
-	// src/main/sqlplus/parser/SQLPlus.g:258:1: column_spec : ( ( schema_name DOT )? table_name DOT )? column_name ;
+	// src/main/sqlplus/parser/SQLPlus.g:259:1: column_spec : ( ( schema_name DOT )? table_name DOT )? column_name ;
 	public final SQLPlusParser.column_spec_return column_spec() throws RecognitionException {
 		SQLPlusParser.column_spec_return retval = new SQLPlusParser.column_spec_return();
 		retval.start = input.LT(1);
 
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:259:2: ( ( ( schema_name DOT )? table_name DOT )? column_name )
-			// src/main/sqlplus/parser/SQLPlus.g:259:4: ( ( schema_name DOT )? table_name DOT )? column_name
+			// src/main/sqlplus/parser/SQLPlus.g:260:2: ( ( ( schema_name DOT )? table_name DOT )? column_name )
+			// src/main/sqlplus/parser/SQLPlus.g:260:4: ( ( schema_name DOT )? table_name DOT )? column_name
 			{
-			// src/main/sqlplus/parser/SQLPlus.g:259:4: ( ( schema_name DOT )? table_name DOT )?
+			// src/main/sqlplus/parser/SQLPlus.g:260:4: ( ( schema_name DOT )? table_name DOT )?
 			int alt15=2;
 			int LA15_0 = input.LA(1);
 			if ( (LA15_0==ID) ) {
@@ -1258,9 +1259,9 @@ public class SQLPlusParser extends Parser {
 			}
 			switch (alt15) {
 				case 1 :
-					// src/main/sqlplus/parser/SQLPlus.g:259:5: ( schema_name DOT )? table_name DOT
+					// src/main/sqlplus/parser/SQLPlus.g:260:5: ( schema_name DOT )? table_name DOT
 					{
-					// src/main/sqlplus/parser/SQLPlus.g:259:5: ( schema_name DOT )?
+					// src/main/sqlplus/parser/SQLPlus.g:260:5: ( schema_name DOT )?
 					int alt14=2;
 					int LA14_0 = input.LA(1);
 					if ( (LA14_0==ID) ) {
@@ -1277,7 +1278,7 @@ public class SQLPlusParser extends Parser {
 					}
 					switch (alt14) {
 						case 1 :
-							// src/main/sqlplus/parser/SQLPlus.g:259:6: schema_name DOT
+							// src/main/sqlplus/parser/SQLPlus.g:260:6: schema_name DOT
 							{
 							pushFollow(FOLLOW_schema_name_in_column_spec874);
 							schema_name();
@@ -1326,14 +1327,14 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "bit_expr"
-	// src/main/sqlplus/parser/SQLPlus.g:262:1: bit_expr : simple_expr ;
+	// src/main/sqlplus/parser/SQLPlus.g:263:1: bit_expr : simple_expr ;
 	public final SQLPlusParser.bit_expr_return bit_expr() throws RecognitionException {
 		SQLPlusParser.bit_expr_return retval = new SQLPlusParser.bit_expr_return();
 		retval.start = input.LT(1);
 
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:263:5: ( simple_expr )
-			// src/main/sqlplus/parser/SQLPlus.g:263:9: simple_expr
+			// src/main/sqlplus/parser/SQLPlus.g:264:5: ( simple_expr )
+			// src/main/sqlplus/parser/SQLPlus.g:264:9: simple_expr
 			{
 			pushFollow(FOLLOW_simple_expr_in_bit_expr902);
 			simple_expr();
@@ -1359,10 +1360,10 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "simple_expr"
-	// src/main/sqlplus/parser/SQLPlus.g:266:1: simple_expr : ( literal_value | column_spec );
+	// src/main/sqlplus/parser/SQLPlus.g:267:1: simple_expr : ( literal_value | column_spec );
 	public final void simple_expr() throws RecognitionException {
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:267:5: ( literal_value | column_spec )
+			// src/main/sqlplus/parser/SQLPlus.g:268:5: ( literal_value | column_spec )
 			int alt16=2;
 			int LA16_0 = input.LA(1);
 			if ( (LA16_0==INTEGER_NUMBER||LA16_0==MINUS||LA16_0==PLUS||LA16_0==REAL_NUMBER||LA16_0==TEXT_STRING) ) {
@@ -1380,7 +1381,7 @@ public class SQLPlusParser extends Parser {
 
 			switch (alt16) {
 				case 1 :
-					// src/main/sqlplus/parser/SQLPlus.g:267:9: literal_value
+					// src/main/sqlplus/parser/SQLPlus.g:268:9: literal_value
 					{
 					pushFollow(FOLLOW_literal_value_in_simple_expr921);
 					literal_value();
@@ -1389,7 +1390,7 @@ public class SQLPlusParser extends Parser {
 					}
 					break;
 				case 2 :
-					// src/main/sqlplus/parser/SQLPlus.g:268:9: column_spec
+					// src/main/sqlplus/parser/SQLPlus.g:269:9: column_spec
 					{
 					pushFollow(FOLLOW_column_spec_in_simple_expr931);
 					column_spec();
@@ -1414,10 +1415,10 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "literal_value"
-	// src/main/sqlplus/parser/SQLPlus.g:271:1: literal_value : ( string_literal | number_literal );
+	// src/main/sqlplus/parser/SQLPlus.g:272:1: literal_value : ( string_literal | number_literal );
 	public final void literal_value() throws RecognitionException {
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:272:5: ( string_literal | number_literal )
+			// src/main/sqlplus/parser/SQLPlus.g:273:5: ( string_literal | number_literal )
 			int alt17=2;
 			int LA17_0 = input.LA(1);
 			if ( (LA17_0==TEXT_STRING) ) {
@@ -1435,7 +1436,7 @@ public class SQLPlusParser extends Parser {
 
 			switch (alt17) {
 				case 1 :
-					// src/main/sqlplus/parser/SQLPlus.g:272:9: string_literal
+					// src/main/sqlplus/parser/SQLPlus.g:273:9: string_literal
 					{
 					pushFollow(FOLLOW_string_literal_in_literal_value950);
 					string_literal();
@@ -1444,7 +1445,7 @@ public class SQLPlusParser extends Parser {
 					}
 					break;
 				case 2 :
-					// src/main/sqlplus/parser/SQLPlus.g:273:9: number_literal
+					// src/main/sqlplus/parser/SQLPlus.g:274:9: number_literal
 					{
 					pushFollow(FOLLOW_number_literal_in_literal_value960);
 					number_literal();
@@ -1469,11 +1470,11 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "string_literal"
-	// src/main/sqlplus/parser/SQLPlus.g:276:1: string_literal : TEXT_STRING ;
+	// src/main/sqlplus/parser/SQLPlus.g:277:1: string_literal : TEXT_STRING ;
 	public final void string_literal() throws RecognitionException {
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:276:17: ( TEXT_STRING )
-			// src/main/sqlplus/parser/SQLPlus.g:276:21: TEXT_STRING
+			// src/main/sqlplus/parser/SQLPlus.g:277:17: ( TEXT_STRING )
+			// src/main/sqlplus/parser/SQLPlus.g:277:21: TEXT_STRING
 			{
 			match(input,TEXT_STRING,FOLLOW_TEXT_STRING_in_string_literal976); 
 			}
@@ -1493,13 +1494,13 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "number_literal"
-	// src/main/sqlplus/parser/SQLPlus.g:277:1: number_literal : ( PLUS | MINUS )? ( INTEGER_NUMBER | REAL_NUMBER ) ;
+	// src/main/sqlplus/parser/SQLPlus.g:278:1: number_literal : ( PLUS | MINUS )? ( INTEGER_NUMBER | REAL_NUMBER ) ;
 	public final void number_literal() throws RecognitionException {
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:277:17: ( ( PLUS | MINUS )? ( INTEGER_NUMBER | REAL_NUMBER ) )
-			// src/main/sqlplus/parser/SQLPlus.g:277:19: ( PLUS | MINUS )? ( INTEGER_NUMBER | REAL_NUMBER )
+			// src/main/sqlplus/parser/SQLPlus.g:278:17: ( ( PLUS | MINUS )? ( INTEGER_NUMBER | REAL_NUMBER ) )
+			// src/main/sqlplus/parser/SQLPlus.g:278:19: ( PLUS | MINUS )? ( INTEGER_NUMBER | REAL_NUMBER )
 			{
-			// src/main/sqlplus/parser/SQLPlus.g:277:19: ( PLUS | MINUS )?
+			// src/main/sqlplus/parser/SQLPlus.g:278:19: ( PLUS | MINUS )?
 			int alt18=2;
 			int LA18_0 = input.LA(1);
 			if ( (LA18_0==MINUS||LA18_0==PLUS) ) {
@@ -1547,13 +1548,13 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "alias"
-	// src/main/sqlplus/parser/SQLPlus.g:279:1: alias : ( AS )? ID ;
+	// src/main/sqlplus/parser/SQLPlus.g:280:1: alias : ( AS )? ID ;
 	public final void alias() throws RecognitionException {
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:279:7: ( ( AS )? ID )
-			// src/main/sqlplus/parser/SQLPlus.g:279:9: ( AS )? ID
+			// src/main/sqlplus/parser/SQLPlus.g:280:7: ( ( AS )? ID )
+			// src/main/sqlplus/parser/SQLPlus.g:280:9: ( AS )? ID
 			{
-			// src/main/sqlplus/parser/SQLPlus.g:279:9: ( AS )?
+			// src/main/sqlplus/parser/SQLPlus.g:280:9: ( AS )?
 			int alt19=2;
 			int LA19_0 = input.LA(1);
 			if ( (LA19_0==AS) ) {
@@ -1561,7 +1562,7 @@ public class SQLPlusParser extends Parser {
 			}
 			switch (alt19) {
 				case 1 :
-					// src/main/sqlplus/parser/SQLPlus.g:279:10: AS
+					// src/main/sqlplus/parser/SQLPlus.g:280:10: AS
 					{
 					match(input,AS,FOLLOW_AS_in_alias1008); 
 					}
@@ -1587,11 +1588,11 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "column_name"
-	// src/main/sqlplus/parser/SQLPlus.g:280:1: column_name : ID ;
+	// src/main/sqlplus/parser/SQLPlus.g:281:1: column_name : ID ;
 	public final void column_name() throws RecognitionException {
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:280:13: ( ID )
-			// src/main/sqlplus/parser/SQLPlus.g:280:15: ID
+			// src/main/sqlplus/parser/SQLPlus.g:281:13: ( ID )
+			// src/main/sqlplus/parser/SQLPlus.g:281:15: ID
 			{
 			match(input,ID,FOLLOW_ID_in_column_name1019); 
 			}
@@ -1611,11 +1612,11 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "partition_name"
-	// src/main/sqlplus/parser/SQLPlus.g:281:1: partition_name : ID ;
+	// src/main/sqlplus/parser/SQLPlus.g:282:1: partition_name : ID ;
 	public final void partition_name() throws RecognitionException {
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:281:16: ( ID )
-			// src/main/sqlplus/parser/SQLPlus.g:281:18: ID
+			// src/main/sqlplus/parser/SQLPlus.g:282:16: ( ID )
+			// src/main/sqlplus/parser/SQLPlus.g:282:18: ID
 			{
 			match(input,ID,FOLLOW_ID_in_partition_name1026); 
 			}
@@ -1638,14 +1639,14 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "schema_name"
-	// src/main/sqlplus/parser/SQLPlus.g:282:1: schema_name : ID ;
+	// src/main/sqlplus/parser/SQLPlus.g:283:1: schema_name : ID ;
 	public final SQLPlusParser.schema_name_return schema_name() throws RecognitionException {
 		SQLPlusParser.schema_name_return retval = new SQLPlusParser.schema_name_return();
 		retval.start = input.LT(1);
 
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:282:13: ( ID )
-			// src/main/sqlplus/parser/SQLPlus.g:282:15: ID
+			// src/main/sqlplus/parser/SQLPlus.g:283:13: ( ID )
+			// src/main/sqlplus/parser/SQLPlus.g:283:15: ID
 			{
 			match(input,ID,FOLLOW_ID_in_schema_name1033); 
 			}
@@ -1668,11 +1669,11 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "table_name"
-	// src/main/sqlplus/parser/SQLPlus.g:283:1: table_name : ID ;
+	// src/main/sqlplus/parser/SQLPlus.g:284:1: table_name : ID ;
 	public final void table_name() throws RecognitionException {
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:283:12: ( ID )
-			// src/main/sqlplus/parser/SQLPlus.g:283:14: ID
+			// src/main/sqlplus/parser/SQLPlus.g:284:12: ( ID )
+			// src/main/sqlplus/parser/SQLPlus.g:284:14: ID
 			{
 			match(input,ID,FOLLOW_ID_in_table_name1040); 
 			}
@@ -1692,10 +1693,10 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "timing"
-	// src/main/sqlplus/parser/SQLPlus.g:285:1: timing : ( BEFORE | AFTER );
+	// src/main/sqlplus/parser/SQLPlus.g:286:1: timing : ( BEFORE | AFTER );
 	public final void timing() throws RecognitionException {
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:286:2: ( BEFORE | AFTER )
+			// src/main/sqlplus/parser/SQLPlus.g:287:2: ( BEFORE | AFTER )
 			// src/main/sqlplus/parser/SQLPlus.g:
 			{
 			if ( input.LA(1)==AFTER||input.LA(1)==BEFORE ) {
@@ -1723,10 +1724,10 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "data_manipulation_language"
-	// src/main/sqlplus/parser/SQLPlus.g:290:1: data_manipulation_language : ( INSERT | DELETE | UPDATE );
+	// src/main/sqlplus/parser/SQLPlus.g:291:1: data_manipulation_language : ( INSERT | DELETE | UPDATE );
 	public final void data_manipulation_language() throws RecognitionException {
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:291:2: ( INSERT | DELETE | UPDATE )
+			// src/main/sqlplus/parser/SQLPlus.g:292:2: ( INSERT | DELETE | UPDATE )
 			// src/main/sqlplus/parser/SQLPlus.g:
 			{
 			if ( input.LA(1)==DELETE||input.LA(1)==INSERT||input.LA(1)==UPDATE ) {
@@ -1754,10 +1755,10 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "relational_operation"
-	// src/main/sqlplus/parser/SQLPlus.g:296:1: relational_operation : ( EQUAL | LESS_THAN_EQUAL | GREATER_THAN_EQUAL | NOT_EQUAL | LESS_THAN | GREATER_THAN | LIKE );
+	// src/main/sqlplus/parser/SQLPlus.g:297:1: relational_operation : ( EQUAL | LESS_THAN_EQUAL | GREATER_THAN_EQUAL | NOT_EQUAL | LESS_THAN | GREATER_THAN | LIKE );
 	public final void relational_operation() throws RecognitionException {
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:297:2: ( EQUAL | LESS_THAN_EQUAL | GREATER_THAN_EQUAL | NOT_EQUAL | LESS_THAN | GREATER_THAN | LIKE )
+			// src/main/sqlplus/parser/SQLPlus.g:298:2: ( EQUAL | LESS_THAN_EQUAL | GREATER_THAN_EQUAL | NOT_EQUAL | LESS_THAN | GREATER_THAN | LIKE )
 			// src/main/sqlplus/parser/SQLPlus.g:
 			{
 			if ( input.LA(1)==EQUAL||(input.LA(1) >= GREATER_THAN && input.LA(1) <= GREATER_THAN_EQUAL)||(input.LA(1) >= LESS_THAN && input.LA(1) <= LIKE)||input.LA(1)==NOT_EQUAL ) {
@@ -1785,10 +1786,10 @@ public class SQLPlusParser extends Parser {
 
 
 	// $ANTLR start "match_value"
-	// src/main/sqlplus/parser/SQLPlus.g:306:1: match_value : ( ID | QUESTION_MARK );
+	// src/main/sqlplus/parser/SQLPlus.g:307:1: match_value : ( ID | QUESTION_MARK );
 	public final void match_value() throws RecognitionException {
 		try {
-			// src/main/sqlplus/parser/SQLPlus.g:307:2: ( ID | QUESTION_MARK )
+			// src/main/sqlplus/parser/SQLPlus.g:308:2: ( ID | QUESTION_MARK )
 			// src/main/sqlplus/parser/SQLPlus.g:
 			{
 			if ( input.LA(1)==ID||input.LA(1)==QUESTION_MARK ) {

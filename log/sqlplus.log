@@ -68,3 +68,28 @@ Caused by: java.net.ConnectException: Connection refused
 [07-06-2016 13:35:24.147] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(420) - Created and returning a SQLPlusConnection SQLPlusConnection [username=sqlplus, host=127.0.0.1, database=mysql, port=3306]
 [07-06-2016 13:35:52.296] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(207) - Raw input from the user: insert into db (id) values ('p');
 [07-06-2016 13:35:52.296] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(214) - Will parse the user input to determine what to execute
+[07-06-2016 13:41:01.563] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(58) - Initializing SQLPlus version 0.1.0-SNAPSHOT
+[07-06-2016 13:41:01.654] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(109) - Create SQLPlusConnection
+[07-06-2016 13:41:01.655] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(416) - Connection with username, password, and host
+[07-06-2016 13:41:01.655] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(113) - Creating a new SQLPlusMySQLConnection instance with username:sqlplus password:********* host:127.0.0.1
+[07-06-2016 13:41:01.655] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(55) - Instantiating the credentials that will be used to connect to a mysql database
+[07-06-2016 13:41:01.655] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(38) - Creating SQLPlusMySQLConnection with username:sqlplus password:********* host: 127.0.0.1 port:3306
+[07-06-2016 13:41:01.655] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(42) - Will connect to a MySQL database using the credentials provided
+[07-06-2016 13:41:01.655] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(77) - Adding the connection properties to connect to a mysql database
+[07-06-2016 13:41:01.672] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(90) - Attempting to connect to the database: jdbc:mysql://127.0.0.1:3306/
+[07-06-2016 13:41:01.868] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(120) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=sqlplus, host=127.0.0.1, database=mysql, port=3306]
+[07-06-2016 13:41:01.868] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(420) - Created and returning a SQLPlusConnection SQLPlusConnection [username=sqlplus, host=127.0.0.1, database=mysql, port=3306]
+[07-06-2016 13:41:12.434] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(207) - Raw input from the user: insert into db (id) values ('p');
+[07-06-2016 13:41:12.435] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(214) - Will parse the user input to determine what to execute
+[07-06-2016 13:41:12.448] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.<init>(42) - Created a Statement
+[07-06-2016 13:41:12.448] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.dml.StatementDML.<init>(40) - Parsed and created a StatementDML
+[07-06-2016 13:41:12.448] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(114) - Query to be executed: "StatementInsertStatement1 [statement=insert into db (id) values ('p');]"
+[07-06-2016 13:41:36.123] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(187) - The user wants to quit SQLPlus
+[07-06-2016 13:41:36.123] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(431) - Attempting to disconnect the SQLPlusConnection
+[07-06-2016 13:41:36.123] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(132) - Attempting to disconnect from the database
+[07-06-2016 13:41:36.125] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(134) - Disconnected from the database
+[07-06-2016 13:41:36.126] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(433) - Disconnected the SQLPlusConnection
+[07-06-2016 13:41:36.126] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(437) - Reset the console from jline
+[07-06-2016 13:41:36.126] [main] INFO  com.mijecu25.sqlplus.SQLPlus.resetConsole(450) - About to reset the console from jline
+[07-06-2016 13:41:36.131] [main] INFO  com.mijecu25.sqlplus.SQLPlus.resetConsole(452) - Reset the console from jline
+[07-06-2016 13:41:36.131] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(440) - Quitting SQLPlus

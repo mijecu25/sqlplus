@@ -8,6 +8,7 @@ import SQLPlusLex;
 	import com.mijecu25.sqlplus.compiler.core.statement.Statement;
 	import com.mijecu25.sqlplus.compiler.core.statement.StatementUseDatabase;
 	import com.mijecu25.sqlplus.compiler.core.statement.dml.StatementSelectExpression;
+	import com.mijecu25.sqlplus.compiler.core.statement.dml.StatementInsertStatement1;
 }
 
 @members {
@@ -137,7 +138,7 @@ insert_statement1 returns [Statement insertStatement1]
 	}
 	:   insert_header
 	    (column_list)? value_list_clause {
-	        System.out.println($insert_header.table + " " + $column_list.columnList + " " + $value_list_clause.valueListClause);
+	        $insertStatement1 = new StatementInsertStatement1($insert_header.table, $column_list.columnList, $value_list_clause.valueListClause);
 	    }
 	;
 
