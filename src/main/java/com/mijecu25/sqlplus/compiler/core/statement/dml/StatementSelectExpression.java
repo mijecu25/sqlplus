@@ -13,7 +13,7 @@ import java.util.List;
  * This class represents the "select...." SQL statement. It prints the columns that match the query.
  *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.14
+ * @version 0.1.0.15
  */
 public class StatementSelectExpression extends StatementDML {
     private static final Logger logger = LogManager.getLogger(StatementSelectExpression.class);
@@ -39,7 +39,7 @@ public class StatementSelectExpression extends StatementDML {
             throw iae;
         }
 
-        this.executeQuery(connection);
+        this.executeStatement(connection);
         // TODO Do we need to catch the exception here?
     }
 

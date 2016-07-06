@@ -453,7 +453,7 @@
 [06-28-2016 19:45:49.733] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.StatementDefault.<init>(18) - Parsed and created a default statement object
 [06-28-2016 19:45:49.733] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(114) - Query to be executed: "com.mijecu25.sqlplus.compiler.core.statement.StatementDefault@6b0c2d26"
 [06-28-2016 19:45:49.733] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.StatementDefault.execute(23) - Will execute the code of a default SQL statement
-[06-28-2016 19:45:49.743] [main] WARN  com.mijecu25.sqlplus.compiler.core.statement.Statement.executeQuery(319) - WARNING: Error when executing com.mijecu25.sqlplus.compiler.core.statement.StatementDefault@6b0c2d26
+[06-28-2016 19:45:49.743] [main] WARN  executeStatement(319) - WARNING: Error when executing com.mijecu25.sqlplus.compiler.core.statement.StatementDefault@6b0c2d26
 com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:1.8.0_65]
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:1.8.0_65]
@@ -469,11 +469,11 @@ com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in 
 	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2547) ~[sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
 	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2505) ~[sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
 	at com.mysql.jdbc.StatementImpl.executeQuery(StatementImpl.java:1370) ~[sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
-	at com.mijecu25.sqlplus.compiler.core.statement.Statement.executeQuery(Statement.java:294) [sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
+	at executeStatement(Statement.java:294) [sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
 	at com.mijecu25.sqlplus.compiler.core.statement.StatementDefault.execute(StatementDefault.java:37) [sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
 	at com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(SQLPlusConnection.java:117) [sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
 	at com.mijecu25.sqlplus.SQLPlus.main(SQLPlus.java:232) [sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
-[06-28-2016 19:45:49.747] [main] WARN  com.mijecu25.sqlplus.compiler.core.statement.Statement.executeQuery(323) - WARNING: Throwing a MySQLSyntaxErrorException to the calling class
+[06-28-2016 19:45:49.747] [main] WARN  executeStatement(323) - WARNING: Throwing a MySQLSyntaxErrorException to the calling class
 [06-28-2016 19:45:49.748] [main] WARN  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(119) - WARNING: There was an exception when executing the last command. Please check the log files.
 [06-28-2016 19:45:51.861] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(207) - Raw input from the user: show tables;
 [06-28-2016 19:45:51.861] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(214) - Will parse the user input to determine what to execute
@@ -531,7 +531,7 @@ com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in 
 [06-28-2016 19:46:17.316] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.StatementDefault.<init>(18) - Parsed and created a default statement object
 [06-28-2016 19:46:17.316] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(114) - Query to be executed: "com.mijecu25.sqlplus.compiler.core.statement.StatementDefault@5a4aa2f2"
 [06-28-2016 19:46:17.317] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.StatementDefault.execute(23) - Will execute the code of a default SQL statement
-[06-28-2016 19:46:17.318] [main] WARN  com.mijecu25.sqlplus.compiler.core.statement.Statement.executeQuery(319) - WARNING: Error when executing com.mijecu25.sqlplus.compiler.core.statement.StatementDefault@5a4aa2f2
+[06-28-2016 19:46:17.318] [main] WARN  executeStatement(319) - WARNING: Error when executing com.mijecu25.sqlplus.compiler.core.statement.StatementDefault@5a4aa2f2
 com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'courses.courses' doesn't exist
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:1.8.0_65]
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:1.8.0_65]
@@ -547,11 +547,11 @@ com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'courses.course
 	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2547) ~[sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
 	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2505) ~[sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
 	at com.mysql.jdbc.StatementImpl.executeQuery(StatementImpl.java:1370) ~[sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
-	at com.mijecu25.sqlplus.compiler.core.statement.Statement.executeQuery(Statement.java:294) [sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
+	at executeStatement(Statement.java:294) [sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
 	at com.mijecu25.sqlplus.compiler.core.statement.StatementDefault.execute(StatementDefault.java:37) [sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
 	at com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(SQLPlusConnection.java:117) [sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
 	at com.mijecu25.sqlplus.SQLPlus.main(SQLPlus.java:232) [sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
-[06-28-2016 19:46:17.319] [main] WARN  com.mijecu25.sqlplus.compiler.core.statement.Statement.executeQuery(323) - WARNING: Throwing a MySQLSyntaxErrorException to the calling class
+[06-28-2016 19:46:17.319] [main] WARN  executeStatement(323) - WARNING: Throwing a MySQLSyntaxErrorException to the calling class
 [06-28-2016 19:46:17.319] [main] WARN  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(119) - WARNING: There was an exception when executing the last command. Please check the log files.
 [06-28-2016 19:46:34.339] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(207) - Raw input from the user: describe classes;
 [06-28-2016 19:46:34.339] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(214) - Will parse the user input to determine what to execute

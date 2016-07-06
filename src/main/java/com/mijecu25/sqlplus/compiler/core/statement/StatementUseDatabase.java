@@ -13,7 +13,7 @@ import com.mijecu25.messages.Messages;
  * in the server and prints a message with the name of the current database.
  *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.10
+ * @version 0.1.0.11
  */
 public class StatementUseDatabase extends Statement {
     private String database;
@@ -43,7 +43,7 @@ public class StatementUseDatabase extends Statement {
         }
 
         // TODO should we catch an exception?
-        this.executeSQL(connection);
+        this.executeStatement(connection);
     }
 
     @Override

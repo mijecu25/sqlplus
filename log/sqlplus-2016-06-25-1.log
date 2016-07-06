@@ -169,7 +169,7 @@
 [06-25-2016 10:23:53.528] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.dml.StatementSelectExpression.<init>(32) - Parsed and created a StatementSelectExpression
 [06-25-2016 10:23:53.528] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(114) - Query to be executed: "StatementSelectExpression [statement=select id, country from courses;]"
 [06-25-2016 10:23:53.528] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.dml.StatementSelectExpression.execute(37) - Will execute the code to query the database using a select statement
-[06-25-2016 10:23:53.538] [main] WARN  com.mijecu25.sqlplus.compiler.core.statement.Statement.executeQuery(411) - WARNING: Error when executing StatementSelectExpression [statement=select id, country from courses;]
+[06-25-2016 10:23:53.538] [main] WARN  executeStatement(411) - WARNING: Error when executing StatementSelectExpression [statement=select id, country from courses;]
 com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'courses.courses' doesn't exist
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:1.8.0_65]
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:1.8.0_65]
@@ -185,11 +185,11 @@ com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'courses.course
 	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2547) ~[sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
 	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2505) ~[sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
 	at com.mysql.jdbc.StatementImpl.executeQuery(StatementImpl.java:1370) ~[sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
-	at com.mijecu25.sqlplus.compiler.core.statement.Statement.executeQuery(Statement.java:389) [sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
+	at executeStatement(Statement.java:389) [sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
 	at com.mijecu25.sqlplus.compiler.core.statement.dml.StatementSelectExpression.execute(StatementSelectExpression.java:52) [sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
 	at com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(SQLPlusConnection.java:117) [sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
 	at com.mijecu25.sqlplus.SQLPlus.main(SQLPlus.java:223) [sqlplus-0.1.0-SNAPSHOT-complete.jar:?]
-[06-25-2016 10:23:53.543] [main] WARN  com.mijecu25.sqlplus.compiler.core.statement.Statement.executeQuery(415) - WARNING: Throwing a MySQLSyntaxErrorException to the calling class
+[06-25-2016 10:23:53.543] [main] WARN  executeStatement(415) - WARNING: Throwing a MySQLSyntaxErrorException to the calling class
 [06-25-2016 10:23:53.543] [main] WARN  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(119) - WARNING: There was an exception when executing the last command. Please check the log files.
 [06-25-2016 10:24:03.879] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(206) - Raw input from the user: select id, country from universities;
 [06-25-2016 10:24:03.880] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(210) - Will parse the user input to determine what to execute
