@@ -18,7 +18,7 @@ import com.mijecu25.messages.Messages;
  * This class represents either a SQLPlus statement or a regular SQL statement.
  *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.28
+ * @version 0.1.0.29
  */
 public abstract class Statement {
     private List<Integer> columnsMaxLength;
@@ -265,25 +265,27 @@ public abstract class Statement {
             java.sql.Statement statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
 
             long startTime = System.nanoTime();
-            this.resultSet = statement.executeQuery(this.statement);
+            boolean hasResultSet = statement.execute(this.statement);
             long endTime = System.nanoTime();
 
-            if(this.resultSet == null) {
-                // It would be very weird if this were to be null. Also, if there is no response, 
-                // we do not want to continue executing
-                throw new SQLException();
-            }
+            if(hasResultSet) {
+                this.resultSet = statement.getResultSet();
 
-            if(this.resultSet.isBeforeFirst()) {
-                this.printResult();
+                if(this.resultSet.isBeforeFirst()) {
+                    this.printResult();
+                }
+                else {
+                    Statement.printEmptySet();
+                }
+
+                this.resultSet.close();
             }
             else {
-                Statement.printEmptySet();
+                //TODO
             }
 
             System.out.printf("Execution time: %.2f sec\n", (endTime - startTime)/1000000000.0);
 
-            this.resultSet.close();
             statement.close();
         }
         catch(SQLException sqle) {
