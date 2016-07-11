@@ -18,7 +18,7 @@ import com.mijecu25.messages.Messages;
  * This class represents either a SQLPlus statement or a regular SQL statement.
  *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.30
+ * @version 0.1.0.31
  */
 public abstract class Statement {
     private List<Integer> columnsMaxLength;
@@ -269,6 +269,7 @@ public abstract class Statement {
             long endTime = System.nanoTime();
 
             if(hasResultSet) {
+                Statement.logger.info("The query has a result set");
                 this.resultSet = statement.getResultSet();
 
                 if(this.resultSet.isBeforeFirst()) {
@@ -281,6 +282,7 @@ public abstract class Statement {
                 this.resultSet.close();
             }
             else {
+                Statement.logger.info("The query does not have a result set");
                 this.printResult();
             }
 
@@ -428,11 +430,19 @@ public abstract class Statement {
             throw iae;
         }
 
+        StringBuilder result = new StringBuilder();
+        result.append(size);
+
         if(size == 1) {
-            return size + " row in set";
+            result.append(" row");
+        }
+        else {
+            result.append(" rows");
         }
 
-        return size + " rows in set";
+        result.append(" in set");
+
+        return result.toString();
     }
 
     /**
