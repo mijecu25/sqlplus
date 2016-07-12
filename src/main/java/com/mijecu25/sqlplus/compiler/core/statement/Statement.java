@@ -18,7 +18,7 @@ import com.mijecu25.messages.Messages;
  * This class represents either a SQLPlus statement or a regular SQL statement.
  *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.31
+ * @version 0.1.0.32
  */
 public abstract class Statement {
     private List<Integer> columnsMaxLength;
@@ -347,7 +347,7 @@ public abstract class Statement {
             resultSetMetaData = this.resultSet.getMetaData();
 
             for (int i = 0; i < resultSetMetaData.getColumnCount(); i++) {
-                this.columnsMaxLength.add(i, resultSetMetaData.getColumnLabel(1).length());
+                this.columnsMaxLength.add(i, resultSetMetaData.getColumnLabel(i + 1).length());
             }
 
             while (this.resultSet.next()) {
