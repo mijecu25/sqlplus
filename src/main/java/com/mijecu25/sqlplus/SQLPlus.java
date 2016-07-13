@@ -30,7 +30,7 @@ import jline.console.ConsoleReader;
  * SQLPlus add alerts to your sql queries.
  *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.28
+ * @version 0.1.0.29
  */
 public class SQLPlus {
 
@@ -138,9 +138,7 @@ public class SQLPlus {
                     return;
                 }
 
-                if (line.isEmpty()) {
-                    continue;
-                }
+                if (line.isEmpty()) { continue; }
 
                 // TODO DELETE
                 if (line.equals(".")) {
@@ -199,6 +197,7 @@ public class SQLPlus {
                         SQLPlusParser parser = new SQLPlusParser(tokens);
 
                         statement = parser.sqlplus();
+                        // TODO check if null so that we catch the exception
                     }
                     catch (RecognitionException re) {
                         // TODO move this to somehwere else
@@ -282,9 +281,7 @@ public class SQLPlus {
                 SQLPlus.logger.info("Port entered: " + port);
                 SQLPlus.logger.info("Port string length: " + port.length());
 
-                if (port.isEmpty()) {
-                    break;
-                }
+                if (port.isEmpty()) { break; }
 
                 if (port.length() > 5 || !StringUtils.isNumeric(port)) {
                     SQLPlus.logger.warn("The user provided an invalid port number: " + port);
