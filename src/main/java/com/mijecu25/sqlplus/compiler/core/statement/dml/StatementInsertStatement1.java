@@ -12,7 +12,7 @@ import java.util.List;
  * This class represents the "insert...." SQL statement. It inserts rows into a table.
  *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.2
+ * @version 0.1.0.3
  */
 public class StatementInsertStatement1 extends StatementDML {
     private List<List<String>> valuesList;
@@ -29,7 +29,7 @@ public class StatementInsertStatement1 extends StatementDML {
 
     @Override
     public void execute(Connection connection) throws SQLException {
-        StatementInsertStatement1.logger.info("Will execute the code to query the database using a select statement");
+        StatementInsertStatement1.logger.info("Will execute the code to insert columns in the selected database");
 
         if(connection == null) {
             IllegalArgumentException iae = new IllegalArgumentException();
@@ -49,7 +49,7 @@ public class StatementInsertStatement1 extends StatementDML {
 
     @Override
     protected void printResult() {
-
+        StatementInsertStatement1.logger.info("Printing the result");
     }
 
     @Override

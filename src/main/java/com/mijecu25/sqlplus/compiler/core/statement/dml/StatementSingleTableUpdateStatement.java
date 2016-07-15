@@ -13,7 +13,7 @@ import java.util.Map;
  * This class represents the "update...." SQL statement. It updates the columns that match the query.
  *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.1
+ * @version 0.1.0.2
  */
 public class StatementSingleTableUpdateStatement extends StatementDML {
     private Map<String, Expression> columnValues;
@@ -26,12 +26,12 @@ public class StatementSingleTableUpdateStatement extends StatementDML {
 
         this.columnValues = columnValues;
 
-        StatementSingleTableUpdateStatement.logger.info("Parsed and created a StatementSingleTableUpdateStatement");
+        StatementSingleTableUpdateStatement.logger.info("Parsed and created a StatementInsertStatement1");
     }
 
     @Override
     public void execute(Connection connection) throws SQLException {
-        StatementSingleTableUpdateStatement.logger.info("Will execute the code to query the database using a select statement");
+        StatementSingleTableUpdateStatement.logger.info("Will execute the code to update columns in the selected database");
 
         if(connection == null) {
             IllegalArgumentException iae = new IllegalArgumentException();
@@ -44,16 +44,14 @@ public class StatementSingleTableUpdateStatement extends StatementDML {
             throw iae;
         }
 
-        this.executeStatement(connection);
+        this.executeUpdate(connection);
         // TODO Do we need to catch the exception here?
     }
 
     @Override
     protected void printResult() {
-
+        StatementSingleTableUpdateStatement.logger.info("Printing the result");
     }
-
-
 
     @Override
     public String toString() {

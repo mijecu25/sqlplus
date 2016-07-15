@@ -17,7 +17,7 @@ import com.mijecu25.sqlplus.compiler.core.statement.Statement;
  * This class contains common behavior for all DML SQL statements.
  *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.9
+ * @version 0.1.0.10
  */
 public abstract class StatementDML extends Statement {
     private static final Logger logger = LogManager.getLogger(StatementDML.class);
@@ -85,7 +85,7 @@ public abstract class StatementDML extends Statement {
             int rowCount = statement.executeUpdate(this.statement);
             long endTime = System.nanoTime();
 
-            System.out.println(StatementDML.displayNumberOfAffectedRows(rowCount));
+            System.out.println(Statement.displayNumberOfAffectedRows(rowCount));
 
             System.out.printf("Execution time: %.2f sec\n", (endTime - startTime)/1000000000.0);
 
@@ -108,40 +108,6 @@ public abstract class StatementDML extends Statement {
      * @return a string with the name of the first referenced table.
      */
     public String getFirstTable() { return this.tables.get(0); }
-
-    /**
-     * Format a string that displays the number of rows affected by a query.
-     *
-     * @param rowCount the number of rows affected by a query.
-     *
-     * @return a string formatted based on the numbers of affected rows.
-     */
-    public static String displayNumberOfAffectedRows(int rowCount) {
-        if(rowCount < 0) {
-            IllegalArgumentException iae = new IllegalArgumentException();
-            StatementDML.logger.fatal(Messages.FATAL + "The minimum number of affected rows: " + rowCount
-                    + " cannot be less than 0");
-            System.out.println(Messages.FATAL + Messages.FATAL_EXCEPTION_ACTION(iae.getClass().getSimpleName())
-                    + " " + Messages.CHECK_LOG_FILES);
-            StatementDML.logger.warn(Messages.WARNING + "Throwing a " + iae.getClass().getSimpleName() + " to the calling class");
-            throw iae;
-        }
-
-        StringBuilder result = new StringBuilder();
-        result.append("Query OK, ");
-        result.append(rowCount);
-
-        if(rowCount == 1) {
-            result.append(" row");
-        }
-        else {
-            result.append(" rows");
-        }
-
-        result.append(" in set");
-
-        return result.toString();
-    }
 
     /**
      * Return a list of tables from a single string that represents a table. This is used since StatementDML's constructors

@@ -18,7 +18,7 @@ import com.mijecu25.messages.Messages;
  * This class represents either a SQLPlus statement or a regular SQL statement.
  *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.33
+ * @version 0.1.0.34
  */
 public abstract class Statement {
     private List<Integer> columnsMaxLength;
@@ -62,8 +62,6 @@ public abstract class Statement {
      * @param length the length of the longest string that will be printed.
      */
     public static String buildHorizontalBorder(int length) {
-        Statement.logger.info("Building a horizontal border");
-
         int limit = 5;
 
         if(length < limit) {
@@ -281,7 +279,7 @@ public abstract class Statement {
             }
             else {
                 Statement.logger.info("The query does not have a result set");
-                this.printResult();
+                System.out.println(Statement.displayNumberOfAffectedRows(statement.getUpdateCount()));
             }
 
             System.out.printf("Execution time: %.2f sec\n", (endTime - startTime)/1000000000.0);
@@ -404,6 +402,40 @@ public abstract class Statement {
         }
 
         result.append(" in set");
+
+        return result.toString();
+    }
+
+    /**
+     * Format a string that displays the number of rows affected by a query.
+     *
+     * @param rowCount the number of rows affected by a query.
+     *
+     * @return a string formatted based on the numbers of affected rows.
+     */
+    public static String displayNumberOfAffectedRows(int rowCount) {
+        if(rowCount < 0) {
+            IllegalArgumentException iae = new IllegalArgumentException();
+            Statement.logger.fatal(Messages.FATAL + "The minimum number of affected rows: " + rowCount
+                    + " cannot be less than 0");
+            System.out.println(Messages.FATAL + Messages.FATAL_EXCEPTION_ACTION(iae.getClass().getSimpleName())
+                    + " " + Messages.CHECK_LOG_FILES);
+            Statement.logger.warn(Messages.WARNING + "Throwing a " + iae.getClass().getSimpleName() + " to the calling class");
+            throw iae;
+        }
+
+        StringBuilder result = new StringBuilder();
+        result.append("Query OK, ");
+        result.append(rowCount);
+
+        if(rowCount == 1) {
+            result.append(" row");
+        }
+        else {
+            result.append(" rows");
+        }
+
+        result.append(" affected");
 
         return result.toString();
     }
