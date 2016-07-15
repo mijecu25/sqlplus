@@ -30,7 +30,7 @@ import jline.console.ConsoleReader;
  * SQLPlus add alerts to your sql queries.
  *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.29
+ * @version 0.1.0.30
  */
 public class SQLPlus {
 
@@ -57,17 +57,17 @@ public class SQLPlus {
         SQLPlus.logger.info("Initializing " + SQLPlus.PROGRAM_NAME + " version " + properties.getProperty(SQLPlus.APPLICATION_PROPERTIES_FILE_VERSION));
 
         // Check if the user is using a valid console (i.e. not from Eclipse)
-        if (System.console() == null) {
-            SQLPlus.logger.fatal(Messages.FATAL + "A JVM Console object was not found. Try running " + SQLPlus.PROGRAM_NAME
-                    + "from the command line");
-            System.out.println(Messages.FATAL + SQLPlus.PROGRAM_NAME + " was not able to find your JVM's Console object. "
-                    + "Try running " + SQLPlus.PROGRAM_NAME + " from the command line.");
-
-            SQLPlus.exitSQLPlus();
-
-            SQLPlus.logger.fatal(Messages.FATAL + Messages.QUIT_PROGRAM_ERROR(PROGRAM_NAME));
-            return;
-        }
+//        if (System.console() == null) {
+//            SQLPlus.logger.fatal(Messages.FATAL + "A JVM Console object was not found. Try running " + SQLPlus.PROGRAM_NAME
+//                    + "from the command line");
+//            System.out.println(Messages.FATAL + SQLPlus.PROGRAM_NAME + " was not able to find your JVM's Console object. "
+//                    + "Try running " + SQLPlus.PROGRAM_NAME + " from the command line.");
+//
+//            SQLPlus.exitSQLPlus();
+//
+//            SQLPlus.logger.fatal(Messages.FATAL + Messages.QUIT_PROGRAM_ERROR(PROGRAM_NAME));
+//            return;
+//        }
 
         System.out.println("Welcome to " + SQLPlus.PROGRAM_NAME + "! This program has a DSL to add alerts to various SQL DML events.");
         System.out.println("Be sure to use " + SQLPlus.PROGRAM_NAME + " from the command line.");
@@ -141,6 +141,18 @@ public class SQLPlus {
                 if (line.isEmpty()) { continue; }
 
                 // TODO DELETE
+                if (line.equals("1")) {
+                    line = "select * from t where a = 1;";
+                }
+
+                if (line.equals("2")) {
+                    line = "select * from t where a = 1 or b = 2;";
+                }
+
+                if (line.equals("3")) {
+                    line = "select * from t where a = 1 or b = 2 or c = 3;";
+                }
+
                 if (line.equals(".")) {
                     line = "use courses;";
                 }
