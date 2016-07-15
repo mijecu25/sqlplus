@@ -2,6 +2,7 @@ package com.mijecu25.sqlplus.compiler.core.statement.dml;
 
 import com.mijecu25.messages.Messages;
 
+import com.mijecu25.sqlplus.compiler.core.expression.Expression;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -13,14 +14,13 @@ import java.util.List;
  * This class represents the "select...." SQL statement. It prints the columns that match the query.
  *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.13
+ * @version 0.1.0.16
  */
 public class StatementSelectExpression extends StatementDML {
     private static final Logger logger = LogManager.getLogger(StatementSelectExpression.class);
 
-    public StatementSelectExpression(List<String> columns, List<String> tables) {
-        // We are going to support only one table right now.
-        super(columns, tables);
+    public StatementSelectExpression(List<String> columns, List<String> tables, Expression whereClause) {
+        super(columns, tables, whereClause);
 
         StatementSelectExpression.logger.info("Parsed and created a StatementSelectExpression");
     }
@@ -29,7 +29,6 @@ public class StatementSelectExpression extends StatementDML {
     public void execute(Connection connection) throws SQLException {
         StatementSelectExpression.logger.info("Will execute the code to query the database using a select statement");
 
-        // If the connection is null
         if(connection == null) {
             IllegalArgumentException iae = new IllegalArgumentException();
             StatementSelectExpression.logger.fatal(Messages.FATAL + "The connection passed to execute the statement "
@@ -41,7 +40,7 @@ public class StatementSelectExpression extends StatementDML {
             throw iae;
         }
 
-        this.executeQuery(connection);
+        this.executeStatement(connection);
         // TODO Do we need to catch the exception here?
     }
 

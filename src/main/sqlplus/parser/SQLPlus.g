@@ -5,9 +5,17 @@ import SQLPlusLex;
 @header {
 	package com.mijecu25.sqlplus.parser;
 
+    import java.util.Map;
+    import java.util.HashMap;
+
 	import com.mijecu25.sqlplus.compiler.core.statement.Statement;
 	import com.mijecu25.sqlplus.compiler.core.statement.StatementUseDatabase;
 	import com.mijecu25.sqlplus.compiler.core.statement.dml.StatementSelectExpression;
+	import com.mijecu25.sqlplus.compiler.core.statement.dml.StatementInsertStatement1;
+	import com.mijecu25.sqlplus.compiler.core.statement.dml.StatementSingleTableUpdateStatement;
+	import com.mijecu25.sqlplus.compiler.core.expression.Expression;
+	import com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary;
+	import com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral;
 }
 
 @members {
@@ -39,18 +47,18 @@ sqlplus returns [Statement statement]
 	: 	sql_statement SEMICOLON {
 			statement = $sql_statement.sqlStatement;
 		}
-		// TODO this should be optional 
+		// TODO this should be optional
 	|	sqlplus_alert
 	;
 
 
-sqlplus_alert 
-	:	ALERT timing data_manipulation_language IN ID IF ID relational_operation match_value SEMICOLON 
-			{ 
-				System.out.println("Created SQLPlus alert"); 
+sqlplus_alert
+	:	ALERT timing data_manipulation_language IN ID IF ID relational_operation match_value SEMICOLON
+			{
+				System.out.println("Created SQLPlus alert");
 			}
 	;
-	
+
 sql_statement returns [Statement sqlStatement]
 	@init {
 		$sqlStatement = null;
@@ -62,7 +70,7 @@ sql_statement returns [Statement sqlStatement]
 			$sqlStatement = $use_statement.useStatement;
 		}
 	;
-	
+
 use_statement returns [Statement useStatement]
 	@init {
 		$useStatement = null;
@@ -71,12 +79,12 @@ use_statement returns [Statement useStatement]
 			$useStatement = $use_database.useDatabaseStatement;
 		}
 	;
-	
+
 use_database returns [Statement useDatabaseStatement]
 	@init {
 		$useDatabaseStatement = null;
 	}
-	:	USE 
+	:	USE
 		database = schema_name {
 			$useDatabaseStatement = new StatementUseDatabase($database.text);
 		}
@@ -89,6 +97,12 @@ data_manipulation_statements returns [Statement dataManipulationStatement]
 	:   select_statement {
             $dataManipulationStatement = $select_statement.selectStatement;
         }
+    |   insert_statements {
+            $dataManipulationStatement = $insert_statements.insertStatements;
+        }
+    |   update_statements {
+            $dataManipulationStatement = $update_statements.updateStatements;
+    }
     ;
 
 select_statement returns [Statement selectStatement]
@@ -100,33 +114,52 @@ select_statement returns [Statement selectStatement]
 		}
 	;
 
-/*update_statements returns [Statement updateStatements]
+insert_statements returns [Statement insertStatements]
+    @init {
+        $insertStatements = null;
+    }
+    :   insert_statement1 {
+            $insertStatements = $insert_statement1.insertStatement1;
+        }
+    ;
+
+update_statements returns [Statement updateStatements]
 	@init {
 		$updateStatements = null;
 	}
 	:	single_table_update_statement {
-			$updateStatements = $select_expression.selectExpression;
+			$updateStatements = $single_table_update_statement.singleTableUpdateStatement;
 		}
-	;*/
+	;
 
 select_expression returns [Statement selectExpression]
 	@init {
 		$selectExpression = null;
 	}
-	// TODO the (from table_references) was optional
-	:	SELECT select_list FROM table_references {
-			$selectExpression = new StatementSelectExpression($select_list.selectList, $table_references.tableReferences);
+	// Original: (from table_references) ?
+	:	SELECT select_list FROM (table_references (where_clause)?)?  {
+			$selectExpression = new StatementSelectExpression($select_list.selectList, $table_references.tableReferences, $where_clause.expr);
 		}
 	;
 
-/*single_table_update_statement returns [Statement singleTableUpdateStatement]
+insert_statement1 returns [Statement insertStatement1]
+	@init {
+	    $insertStatement1 = null;
+	}
+	:   insert_header
+	    (column_list)? value_list_clause {
+	        $insertStatement1 = new StatementInsertStatement1($insert_header.table, $column_list.columnList, $value_list_clause.valueListClause);
+	    }
+	;
+
+single_table_update_statement returns [Statement singleTableUpdateStatement]
 	@init {
 		$singleTableUpdateStatement = null;
 	}
-	:	UPDATE table_reference select_list FROM table_references {
-			$selectExpression = new StatementSelectExpression($select_list.selectList, $table_references.tableReferences);
+	:	UPDATE table_reference set_columns_clause (where_clause)? {
+			$singleTableUpdateStatement = new StatementSingleTableUpdateStatement($table_reference.text, $set_columns_clause.columnsValuesMap, $where_clause.expr);
 		}
-	;*/
+	;
 
 select_list returns [List<String> selectList]
 	@init {
@@ -157,7 +190,8 @@ table_references returns [List<String> tableReferences]
 			$tableReferences.add($table.text);
 		}
 		(
-			COMMA table = table_reference {
+			COMMA
+			table = table_reference {
 				$tableReferences.add($table.text);
 			}
 		)*
@@ -167,79 +201,222 @@ table_reference
 	:	table_atom
 	;
 
-//table_factor1
-//	:	table_factor2 ((INNER | CROSS)? JOIN table_atom (join_condition)?)?
-//	;
-//	
-//table_factor2
-//	:	table_factor3 (STRAIGHT_JOIN table_atom (ON expression)?)?
-//	;
-//
-//table_factor3
-//	:	table_factor4 ((LEFT|RIGHT) (OUTER)? JOIN table_factor4 join_condition)?
-//	;
-//	
-//table_factor4
-//	:	table_atom (NATURAL ((LEFT|RIGHT) (OUTER)?)? JOIN table_atom)?
-//	;
-//	
+insert_header returns [String table]
+    @init {
+        $table = null;
+    }
+    :   INSERT (INTO)? table_spec {
+            $table = $table_spec.text;
+        }
+    ;
+
+value_list_clause returns [List<List<String>> valueListClause]
+    @init {
+        $valueListClause = new ArrayList<List<String>>();
+    }
+    :   VALUES
+        value = column_value_list {
+            $valueListClause.add($value.columnValueList);
+        }
+        (
+            COMMA
+            value = column_value_list {
+                $valueListClause.add($value.columnValueList);
+            }
+        )*
+    ;
+
+column_value_list returns [List<String> columnValueList]
+    @init {
+        $columnValueList = new ArrayList<String>();
+    }
+    :   LEFT_PARENTHESIS
+        expr = bit_expr {
+            $columnValueList.add($expr.text);
+        }
+        (
+            COMMA
+            expr = bit_expr {
+                $columnValueList.add($expr.text);
+            }
+        )* RIGHT_PARENTHESIS
+    ;
+
+set_columns_clause returns [Map<String, Expression> columnsValuesMap]
+    @init {
+        $columnsValuesMap = new HashMap<String, Expression>();
+    }
+    :   SET
+        columnValue = set_column_clause {
+            columnsValuesMap.putAll($columnValue.columnValueMap);
+        }
+        (
+            COMMA
+            columnValue = set_column_clause {
+                columnsValuesMap.putAll($columnValue.columnValueMap);
+            }
+        )*
+    ;
+
+set_column_clause returns [Map<String, Expression> columnValueMap]
+    @init {
+        $columnValueMap = new HashMap<String, Expression>();
+    }
+    :	column_spec EQUAL (
+            expression {
+                $columnValueMap.put($column_spec.text, $expression.expr);
+            }
+            |
+            DEFAULT {
+                $columnValueMap.put($column_spec.text, new ExpressionLiteral($DEFAULT.text));
+            }
+        )
+    ;
+
+where_clause returns [Expression expr]
+    @init {
+        $expr = null;
+    }
+    :   WHERE expression { $expr = $expression.expr; }
+    ;
+
 table_atom
 	:	table_spec
 	;
 
-//join_condition
-//	:	ON expression 
-//	| 	USING column_list
-//	;
-//
-//index_hint_list
-//	:	index_hint (COMMA index_hint)*
-//	;
-//	
-//index_hint
-//	:	TODO // TODO
-//	;
-//	
-//partition_clause
-//	:	PARTITION LEFT_PARENTHESIS partition_names RIGHT_PARENTHESIS
-//	;
-//	
-//partition_names
-//	:	partition_name (COMMA partition_name)*
-//	;
-//
-//expression
-//	:	TODO // TODO
-//	;
-//
 table_spec
 	:	(schema_name DOT)? table_name
 	;
 
-column_spec
-	: ((schema_name DOT)? table_name DOT)? column_name
+column_list returns [List<String> columnList]
+    @init {
+        $columnList = new ArrayList<String>();
+    }
+	:   LEFT_PARENTHESIS
+	    column = column_spec {
+	        $columnList.add($column.text);
+	    }
+        (
+            COMMA
+            column = column_spec {
+                $columnList.add($column.text);
+            }
+        )* RIGHT_PARENTHESIS
 	;
 
-//column_list
-//	:	TODO //TODO
-//	;
-//	
-//subquery
-//	:	LEFT_PARENTHESIS select_statement RIGHT_PARENTHESIS
-//	;
+column_spec
+	:   ((schema_name DOT)? table_name DOT)? column_name
+	;
 
-alias : (AS)? ID;
-column_name : ID;
-partition_name : ID;
-schema_name	: ID;
-table_name	: ID;
+subquery
+    :   LEFT_PARENTHESIS select_statement RIGHT_PARENTHESIS
+    ;
+
+expression returns [Expression expr]
+    @init {
+        $expr = null;
+    }
+    :   left = expr_factor1 { $expr = $left.expr; }
+        (
+            OR right = expr_factor1 {
+                $expr = new ExpressionBinary($OR.text, $expr, $right.expr);
+            }
+        )*
+    ;
+
+expr_factor1 returns [Expression expr]
+    @init {
+        $expr = null;
+    }
+    :   left = expr_factor2 { $expr = $left.expr; }
+        (
+            XOR right = expr_factor2 {
+                $expr = new ExpressionBinary($XOR.text, $expr, $right.expr);
+            }
+        )*
+    ;
+
+expr_factor2 returns [Expression expr]
+    @init {
+        $expr = null;
+    }
+    :   left = expr_factor3 { $expr = $left.expr; }
+        (
+            AND right = expr_factor3 {
+                $expr = new ExpressionBinary($AND.text, $expr, $right.expr);
+            }
+        )*
+    ;
+
+expr_factor3 returns [Expression expr]
+    @init {
+        $expr = null;
+    }
+    :   (NOT)? expr_factor4 { $expr = new ExpressionBinary($NOT.text, null, $expr_factor4.expr); }
+    ;
+
+expr_factor4 returns [Expression expr]
+    @init {
+        $expr = null;
+    }
+    :   bool_primary ( IS (NOT)? (boolean_literal | NULL) )? { $expr = $bool_primary.expr; }
+    ;
+
+bool_primary returns [Expression expr]
+    @init {
+        $expr = null;
+    }
+    :   left = predicate
+        relational_op
+        right = predicate {
+            $expr = new ExpressionBinary($relational_op.text, $left.expr, $right.expr);
+        }
+    |   predicate relational_op ( ALL | ANY )? subquery
+    |   NOT EXISTS subquery
+    |   predicate
+    ;
+
+predicate returns [Expression expr]
+    @init {
+        $expr = null;
+    }
+    :   bit_expr { $expr = new ExpressionLiteral($bit_expr.text); }
+    ;
+
+bit_expr
+    :   simple_expr
+    ;
+
+simple_expr
+    :   literal_value
+    |   column_spec
+    ;
+
+literal_value
+    :   string_literal
+    |   number_literal
+    ;
+
+relational_op
+    :   EQUAL
+    |   GREATER_THAN
+    |   GREATER_THAN_EQUAL
+    |   LESS_THAN
+    |   LESS_THAN_EQUAL
+    |   NOT_EQUAL
+    ;
+
+string_literal  :   TEXT_STRING;
+number_literal  :	(PLUS | MINUS)? (INTEGER_NUMBER | REAL_NUMBER);
+boolean_literal :	TRUE | FALSE;
+
 
 timing
 	:	BEFORE
 	|	AFTER
 	;
 
-data_manipulation_language	
+data_manipulation_language
 	:	INSERT
 	|	DELETE
 	|	UPDATE
@@ -259,3 +436,9 @@ match_value
 	:	ID
 	|	QUESTION_MARK
 	;
+
+alias : (AS)? ID;
+column_name : ID;
+partition_name : ID;
+schema_name	: ID;
+table_name	: ID;

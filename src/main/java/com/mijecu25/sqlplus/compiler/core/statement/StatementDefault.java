@@ -11,7 +11,7 @@ import java.sql.SQLException;
  * This class represents a default SQL statement.
  *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.2
+ * @version 0.1.0.4
  */
 public class StatementDefault extends Statement {
     private static final Logger logger = LogManager.getLogger(StatementDefault.class);
@@ -25,7 +25,6 @@ public class StatementDefault extends Statement {
     public void execute(Connection connection) throws SQLException {
         StatementDefault.logger.info("Will execute the code of a default SQL statement");
 
-        // If the connection is null
         if(connection == null) {
             IllegalArgumentException iae = new IllegalArgumentException();
             StatementDefault.logger.fatal(Messages.FATAL + "The connection passed to execute the statement "
@@ -37,7 +36,7 @@ public class StatementDefault extends Statement {
             throw iae;
         }
 
-        this.executeQuery(connection);
+        this.executeStatement(connection);
         // TODO Do we need to catch the exception here?
     }
 

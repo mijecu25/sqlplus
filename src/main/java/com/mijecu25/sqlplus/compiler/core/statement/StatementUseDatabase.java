@@ -13,7 +13,7 @@ import com.mijecu25.messages.Messages;
  * in the server and prints a message with the name of the current database.
  *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.10
+ * @version 0.1.0.12
  */
 public class StatementUseDatabase extends Statement {
     private String database;
@@ -30,7 +30,6 @@ public class StatementUseDatabase extends Statement {
     public void execute(Connection connection) throws SQLException {
         StatementUseDatabase.logger.info("Will execute the code to use " + this.database);
 
-        // If the connection is null
         if(connection == null) {
             IllegalArgumentException iae = new IllegalArgumentException();
             StatementUseDatabase.logger.fatal(Messages.FATAL + "The connection passed to execute the statement "
@@ -43,7 +42,7 @@ public class StatementUseDatabase extends Statement {
         }
 
         // TODO should we catch an exception?
-        this.executeSQL(connection);
+        this.executeStatement(connection);
     }
 
     @Override

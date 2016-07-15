@@ -13,9 +13,9 @@ import com.mijecu25.sqlplus.compiler.core.statement.Statement;
 
 /**
  * SQLPlusConnection abstrac class. Default database is MySQL on port 3306.
- * 
+ *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.15
+ * @version 0.1.0.16
  */
 public abstract class SQLPlusConnection {
     public static final String MYSQL = "mysql";
@@ -23,7 +23,7 @@ public abstract class SQLPlusConnection {
 
     private static final String LOCALHOST = "127.0.0.1";
     private static final String JAVA_DATABASE_DRIVER = "jdbc";
-        
+
     private static final String DEFAULT_DATABASE = SQLPlusConnection.MYSQL;
     private static final String DEFAULT_PORT = SQLPlusConnection.MYSQL_PORT_NUMBER;
     private static final String DEFAULT_HOST = SQLPlusConnection.LOCALHOST;
@@ -38,13 +38,13 @@ public abstract class SQLPlusConnection {
     private String database;
     private String port;
     private String currentDatabase;
-    
+
     private Connection connection;
     private Properties connectionProperties;
-    
+
     /**
      * Constructor that instantiates several variables use to create a connection to a database.
-     * 
+     *
      * @param username the username used to connect to the database.
      * @param password the password associated to the user.
      * @param host the host where the server is located.
@@ -52,7 +52,7 @@ public abstract class SQLPlusConnection {
      * @param port the port used to connect to the server.
      */
     public SQLPlusConnection(String username, char[] password, String host, String database, String port) {
-        SQLPlusConnection.logger.info("Instantiating the credentials that will be used to connect to a " 
+        SQLPlusConnection.logger.info("Instantiating the credentials that will be used to connect to a "
                 + database + " database");
         this.host = host;
         this.username = username;
@@ -60,7 +60,7 @@ public abstract class SQLPlusConnection {
         this.database = database;
         this.port = port;
         this.currentDatabase = this.database.toUpperCase();
-        
+
         this.connectionProperties = new Properties();
     }
 
@@ -68,7 +68,7 @@ public abstract class SQLPlusConnection {
      * Connect to a database with the keywords and credentials provided by the user. The keywords used are platform
      * specific and are determined by the type of database used by the user. The default database is
      * {@value #DEFAULT_DATABASE}.
-     * 
+     *
      * @param usernameKey the username keyword used to specify the user.
      * @param passwordKey the password keyword used to specify the password
      * @throws SQLException if there is a problem connecting to the database
@@ -76,29 +76,28 @@ public abstract class SQLPlusConnection {
     public void connect(String usernameKey, String passwordKey) throws SQLException {
         SQLPlusConnection.logger.info("Adding the connection properties to connect to a " + this.database + " database");
 
-        // Add the properties to connect to a database
         this.connectionProperties.put(usernameKey, this.username);
         this.connectionProperties.put(passwordKey, new String(this.password));
         this.connectionProperties.put(SQLPlusConnection.USE_SSL, SQLPlusConnection.USE_SSL_DEFAULT);
-        
+
         // Delete any traces of password in memory by filling the password array with with random characters
         // to minimize the lifetime of sensitive data in memory. Then call the garbage collections
         java.util.Arrays.fill(this.password, Character.MIN_VALUE);
         System.gc();
-        
+
         try {
-            SQLPlusConnection.logger.info("Attempting to connect to the database: " 
-                    + SQLPlusConnection.JAVA_DATABASE_DRIVER + ":" + this.database + "://" 
+            SQLPlusConnection.logger.info("Attempting to connect to the database: "
+                    + SQLPlusConnection.JAVA_DATABASE_DRIVER + ":" + this.database + "://"
                     + this.host + ":" + this.port + "/");
-            this.connection = DriverManager.getConnection(SQLPlusConnection.JAVA_DATABASE_DRIVER 
-                    + ":" + this.database + "://" + this.host + ":" + this.port + "/",
-                    this.connectionProperties);            
+            this.connection = DriverManager.getConnection(SQLPlusConnection.JAVA_DATABASE_DRIVER
+                            + ":" + this.database + "://" + this.host + ":" + this.port + "/",
+                    this.connectionProperties);
         } catch (SQLException sqle) {
             SQLPlusConnection.logger.warn(Messages.WARNING + "Error when attempting to connect to the "
                     + "database", sqle);
             System.out.println(Messages.WARNING + "(" + sqle.getErrorCode() + ") (" + sqle.getSQLState() + ") "
                     + sqle.getMessage());
-            
+
             SQLPlusConnection.logger.warn(Messages.WARNING + "Throwing a " + sqle.getClass().getSimpleName()
                     + " to the calling class");
             throw new SQLException();
@@ -112,11 +111,11 @@ public abstract class SQLPlusConnection {
      */
     public void execute(Statement statement) {
         SQLPlusConnection.logger.info("Query to be executed: \"" + statement + "\"");
-                
+
         try {
             statement.execute(this.connection);
         } catch (SQLException sqle) {
-            SQLPlusConnection.logger.warn(Messages.WARNING + "There was an exception when executing the last command." 
+            SQLPlusConnection.logger.warn(Messages.WARNING + "There was an exception when executing the last command."
                     + " " + Messages.CHECK_LOG_FILES);
         }
     }
@@ -125,14 +124,12 @@ public abstract class SQLPlusConnection {
      * Disconnect from the database
      */
     public void disconnect() {
-        // If there is a connection
         if(this.connection != null) {
             try {
-                // Close the connection to the database
                 SQLPlusConnection.logger.info("Attempting to disconnect from the database");
                 this.connection.close();
                 SQLPlusConnection.logger.info("Disconnected from the database");
-            } 
+            }
             catch (SQLException sqle) {
                 // This exception might never occur, but it is good practice to handle it
                 SQLPlusConnection.logger.warn(Messages.WARNING + "Error when attempting to disconnect from the "
@@ -178,7 +175,7 @@ public abstract class SQLPlusConnection {
 
     @Override
     public String toString() {
-        return "SQLPlusConnection [username=" + this.username + ", host=" + this.host + ", database=" 
+        return "SQLPlusConnection [username=" + this.username + ", host=" + this.host + ", database="
                 + this.database + ", port=" + this.port + "]";
     }
 
