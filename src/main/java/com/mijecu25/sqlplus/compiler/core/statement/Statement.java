@@ -18,7 +18,7 @@ import com.mijecu25.messages.Messages;
  * This class represents either a SQLPlus statement or a regular SQL statement.
  *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.32
+ * @version 0.1.0.33
  */
 public abstract class Statement {
     private List<Integer> columnsMaxLength;
@@ -89,8 +89,6 @@ public abstract class Statement {
      * @param length the length of the longest string that will be printed.
      */
     public static String buildRightHorizontalBorder(int length) {
-        Statement.logger.info("Building a horizontal border");
-
         int limit = 4;
 
         if(length < limit) {
@@ -300,41 +298,6 @@ public abstract class Statement {
             throw sqle;
         }
     }
-
-//    /**
-//     * Execute a SQL statement using the provided connection. This type of execution does not generate any object.
-//     * Developers should implement their own output to the user.
-//     *
-//     * @param connection the connection used to execute the query.
-//     * @throws SQLException if there is a problem executing the query.
-//     */
-//    protected void executeSQL(Connection connection) throws SQLException {
-//        if(connection == null) {
-//            IllegalArgumentException iae = new IllegalArgumentException();
-//            Statement.logger.fatal(Messages.FATAL + "The connection passed to execute sql "
-//                    + "cannot be null");
-//            System.out.println(Messages.FATAL + Messages.FATAL_EXCEPTION_ACTION(iae.getClass().getSimpleName()) + " "
-//                    + Messages.CHECK_LOG_FILES);
-//            Statement.logger.warn(Messages.WARNING + "Throwing a " + iae.getClass().getSimpleName()
-//                    + " to the calling class");
-//            throw iae;
-//        }
-//
-//        try {
-//            java.sql.Statement statement = connection.createStatement();
-//            statement.execute(this.statement);
-//
-//            this.printResult();
-//        }
-//        catch(SQLException sqle) {
-//            Statement.logger.warn(Messages.WARNING + "Error when executing " + this, sqle);
-//            System.out.println(Messages.WARNING + "(" + sqle.getErrorCode() + ") (" + sqle.getSQLState() + ") "
-//                    + sqle.getMessage());
-//
-//            Statement.logger.warn(Messages.WARNING + "Throwing a " + sqle.getClass().getSimpleName() + " to the calling class");
-//            throw sqle;
-//        }
-//    }
 
     /**
      * Print a result table after executing a statement.

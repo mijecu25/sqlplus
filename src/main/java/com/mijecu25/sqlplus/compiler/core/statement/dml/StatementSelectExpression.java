@@ -2,6 +2,7 @@ package com.mijecu25.sqlplus.compiler.core.statement.dml;
 
 import com.mijecu25.messages.Messages;
 
+import com.mijecu25.sqlplus.compiler.core.expression.Expression;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -13,13 +14,13 @@ import java.util.List;
  * This class represents the "select...." SQL statement. It prints the columns that match the query.
  *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.15
+ * @version 0.1.0.16
  */
 public class StatementSelectExpression extends StatementDML {
     private static final Logger logger = LogManager.getLogger(StatementSelectExpression.class);
 
-    public StatementSelectExpression(List<String> columns, List<String> tables) {
-        super(columns, tables);
+    public StatementSelectExpression(List<String> columns, List<String> tables, Expression whereClause) {
+        super(columns, tables, whereClause);
 
         StatementSelectExpression.logger.info("Parsed and created a StatementSelectExpression");
     }

@@ -3,9 +3,11 @@ package com.mijecu25.sqlplus.compiler.core.statement.dml;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.mijecu25.messages.Messages;
+import com.mijecu25.sqlplus.compiler.core.expression.Expression;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -15,15 +17,16 @@ import com.mijecu25.sqlplus.compiler.core.statement.Statement;
  * This class contains common behavior for all DML SQL statements.
  *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.8
+ * @version 0.1.0.9
  */
 public abstract class StatementDML extends Statement {
     private static final Logger logger = LogManager.getLogger(StatementDML.class);
-    
+
     protected List<String> columns;
     protected List<String> tables;
-    
-    public StatementDML(List<String> columns, List<String> tables) {
+    protected Expression whereClause;
+
+    public StatementDML(List<String> columns, List<String> tables, Expression whereClause) {
         super();
         this.columns = columns;
 
@@ -38,9 +41,18 @@ public abstract class StatementDML extends Statement {
         }
 
         this.tables = tables;
+        this.whereClause = whereClause;
         StatementDML.logger.info("Parsed and created a StatementDML");
     }
-    
+
+    public StatementDML(List<String> columns, List<String> tables) {
+        this(columns, tables, null);
+    }
+
+    public StatementDML(List<String> tables, Expression whereClause) {
+        this(null, tables, whereClause);
+    }
+
     @Override
     public abstract void execute(Connection connection) throws SQLException;
 
@@ -129,6 +141,31 @@ public abstract class StatementDML extends Statement {
         result.append(" in set");
 
         return result.toString();
+    }
+
+    /**
+     * Return a list of tables from a single string that represents a table. This is used since StatementDML's constructors
+     * take a list of tables.
+     *
+     * @param table the string that represents the table used.
+     *
+     * @return a list of strings with a single element.
+     */
+    protected static List<String> tableToList(String table) {
+        if(table == null) {
+            IllegalArgumentException iae = new IllegalArgumentException();
+            StatementDML.logger.fatal(Messages.FATAL + "The string passed that represents a table cannot be null");
+            System.out.println(Messages.FATAL + Messages.FATAL_EXCEPTION_ACTION(iae.getClass().getSimpleName()) + " "
+                    + Messages.CHECK_LOG_FILES);
+            StatementDML.logger.warn(Messages.WARNING + "Throwing a " + iae.getClass().getSimpleName()
+                    + " to the calling class");
+            throw iae;
+        }
+
+        List<String> tableList = new ArrayList<String>();
+        tableList.add(table);
+
+        return tableList;
     }
 
 }

@@ -4,29 +4,48 @@ lexer grammar SQLPlusLex;
 	package com.mijecu25.sqlplus.parser;
 }
 
+AND
+    :   'and'
+    |   'AND'
+    |   '&&'
+    ;
 ASTERISK : '*';
 COMMA : ',';
 COLON : ':';
 DOT : '.';
 EQUAL :	'=';
 GREATER_THAN : '>';
-GREATER_THAN_EQUAL: '>=';
+GREATER_THAN_EQUAL : '>=';
 LEFT_PARENTHESIS : '(';
 LESS_THAN :	'<';
 LESS_THAN_EQUAL : '<=';
 MINUS : '-';
+NOT
+    : 'NOT'
+    | 'not'
+    | '!'
+    ;
 NOT_EQUAL
 	:	'<>'
 	| 	'!='
 	| 	'~='
 	| 	'^='
 	;
+OR
+    :   'or'
+    |   'OR'
+    |   '||'
+    ;
 PLUS : '+';
 QUESTION_MARK : '?';
 QUOTE : '\'';
 RIGHT_PARENTHESIS : ')';
 SEMICOLON :	';';
 UNDERSCORE :'_';
+XOR
+    :   'xor'
+    |   'XOR'
+    ;
 
 
 ALERT
@@ -34,10 +53,20 @@ ALERT
 	|	'ALERT'
 	;
 
+ALL
+    :   'all'
+    |   'any'
+    ;
+
 AFTER
 	:	'after'
 	|	'AFTER'
 	;
+
+ANY
+    :   'any'
+    |   'ANY'
+    ;
 
 AS
 	: 	'as'
@@ -54,10 +83,25 @@ DATABASES
 	|	'DATABASES'
 	;
 
+DEFAULT
+    :   'default'
+    |   'DEFAULT'
+    ;
+
 DELETE
 	:	'delete'
 	|	'DELETE'
 	;
+
+EXISTS
+    :   'exists'
+    |   'EXISTS'
+    ;
+
+FALSE
+    :   'false'
+    |   'FALSE'
+    ;
 
 FROM
 	:	'from'
@@ -84,15 +128,30 @@ INSERT
 	|	'INSERT'
 	;
 
+IS
+    :   'is'
+    |   'IS'
+    ;
+
 LIKE
 	:	'like'
 	|	'LIKE'
 	;
 
+NULL
+    :   'null'
+    |   'NULL'
+    ;
+
 SELECT
 	:	'select'
 	|	'SELECT'
 	;
+
+SET
+    :   'set'
+    |   'SET'
+    ;
 
 SHOW
 	:	'show'
@@ -103,6 +162,11 @@ TABLES
 	:	'tables'
 	|	'TABLES'
 	;
+
+TRUE
+    :   'true'
+    |   'TRUE'
+    ;
 
 UPDATE
 	: 	'update'
