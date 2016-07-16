@@ -7,7 +7,7 @@ import org.apache.logging.log4j.Logger;
  * This class represents a Binary expression. It has two child expressions and an operator which may or may not be null.
  *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.1
+ * @version 0.1.0.2
  */
 public class ExpressionBinary extends Expression {
     private static final Logger logger = LogManager.getLogger(ExpressionBinary.class);
@@ -24,6 +24,30 @@ public class ExpressionBinary extends Expression {
 
         ExpressionBinary.logger.info("Parsed and created an ExpressionBinary");
     }
+
+    /**
+     * TODO
+     * @return
+     */
+    public Expression getLeftExpression() { 
+        if(this.leftExpression != null) {
+            return this.leftExpression; 
+        }
+
+        return ((ExpressionBinary) this.getRightExpression()).getLeftExpression();
+     }
+
+    /**
+     * TODO
+     * @return
+     */
+    public String getRelationalOperator() { return this.relationalOperator; }  
+
+    /**
+     * TODO
+     * @return
+     */
+    public Expression getRightExpression() { return this.rightExpression; } 
 
     @Override
     public String toString() {
