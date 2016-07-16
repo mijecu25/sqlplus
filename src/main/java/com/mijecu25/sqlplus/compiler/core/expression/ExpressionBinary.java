@@ -29,25 +29,25 @@ public class ExpressionBinary extends Expression {
      * TODO
      * @return
      */
-    public Expression getLeftExpression() { 
+    public Expression getLeftExpression() {
         if(this.leftExpression != null) {
-            return this.leftExpression; 
+            return this.leftExpression;
         }
 
         return ((ExpressionBinary) this.getRightExpression()).getLeftExpression();
-     }
+    }
 
     /**
      * TODO
      * @return
      */
-    public String getRelationalOperator() { return this.relationalOperator; }  
+    public String getRelationalOperator() { return this.relationalOperator; }  
 
     /**
      * TODO
      * @return
      */
-    public Expression getRightExpression() { return this.rightExpression; } 
+    public Expression getRightExpression() { return this.rightExpression; } 
 
     @Override
     public String toString() {
