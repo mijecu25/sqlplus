@@ -10,7 +10,7 @@ import java.sql.Connection;import java.sql.SQLException;
  * TODO
  *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.1
+ * @version 0.1.0.2
  */
 public class Alert extends Statement {
 //    ALERT timing data_manipulation_language IN table_reference IF column_spec relational_op match_value
@@ -47,6 +47,27 @@ public class Alert extends Statement {
         Alert.logger.info("Printing message that acknowledges that an alert was created");
         System.out.println("Alert created");
         AlertManager.getManager().listAll();
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        if(this == other) { return true; }
+        if(other == null || this.getClass() != other.getClass()) { return false; }
+
+        Alert alert = (Alert) other;
+
+        if(!this.timing.equals(alert.timing)) { return false; }
+        if(!this.DML.equals(alert.DML)) { return false; }
+        if(!this.table.equals(alert.table)) { return false; }
+
+        return this.whereClause.equals(alert.whereClause);
+    }
+
+    @Override
+    public int hashCode() {
+        String variables = this.timing + this.DML + this.table + this.whereClause;
+
+        return variables.hashCode();
     }
 
     public String getTiming() { return this.timing; }

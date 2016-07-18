@@ -11,7 +11,7 @@ import java.util.List;
  * Singleton class that managers the ALERTS created by the user.
  *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.3
+ * @version 0.1.0.4
  */
 public class AlertManager {
 
@@ -45,8 +45,6 @@ public class AlertManager {
      * @param alert
      */
     public void addAlert(Alert alert) {
-        AlertManager.logger.info("Adding alert");
-
         if(alert == null) {
             IllegalArgumentException iae = new IllegalArgumentException();
             AlertManager.logger.fatal(Messages.FATAL + "The alert passed cannot be null");
@@ -57,7 +55,14 @@ public class AlertManager {
             throw iae;
         }
 
-        AlertManager.getManager().ALERTS.add(alert);
+        if(AlertManager.getManager().ALERTS.contains(alert)) {
+            AlertManager.logger.info("This alert has already been created");
+            System.out.println(Messages.ERROR + "this alert has alreaady been created");
+        }
+        else {
+            AlertManager.logger.info("Adding a new alert");
+            AlertManager.getManager().ALERTS.add(alert);
+        }
     }
 
     /**

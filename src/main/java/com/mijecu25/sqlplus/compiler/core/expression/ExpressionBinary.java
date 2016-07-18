@@ -7,7 +7,7 @@ import org.apache.logging.log4j.Logger;
  * This class represents a Binary expression. It has two child expressions and an operator which may or may not be null.
  *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.2
+ * @version 0.1.0.3
  */
 public class ExpressionBinary extends Expression {
     private static final Logger logger = LogManager.getLogger(ExpressionBinary.class);
@@ -47,7 +47,45 @@ public class ExpressionBinary extends Expression {
      * TODO
      * @return
      */
-    public Expression getRightExpression() { return this.rightExpression; } 
+    public Expression getRightExpression() { return this.rightExpression; }
+
+    @Override
+    public boolean equals(Object other) {
+        if(this == other) { return true; }
+        if(other == null || this.getClass() != other.getClass()) { return false; }
+
+        ExpressionBinary expressionBinary = (ExpressionBinary) other;
+
+        boolean compareFails = true;
+
+        if(this.leftExpression != null) {
+            compareFails = !this.leftExpression.equals(expressionBinary.leftExpression);
+        }
+        else {
+            compareFails = expressionBinary.leftExpression != null;
+        }
+
+        if(compareFails) { return false; }
+
+        if(this.relationalOperator != null) {
+            compareFails = !this.relationalOperator.equals(expressionBinary.relationalOperator);
+        }
+        else {
+            compareFails = expressionBinary.relationalOperator != null;
+        }
+
+        if(compareFails) { return false; }
+
+        return rightExpression.equals(expressionBinary.rightExpression);
+
+    }
+
+    @Override
+    public int hashCode() {
+        String variables = this.leftExpression + this.relationalOperator + this.rightExpression;
+
+        return variables.hashCode();
+    }
 
     @Override
     public String toString() {
