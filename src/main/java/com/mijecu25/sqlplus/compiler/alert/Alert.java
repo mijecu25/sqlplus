@@ -6,6 +6,12 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import java.sql.Connection;import java.sql.SQLException;
 
+/**
+ * TODO
+ *
+ * @author Miguel Velez - miguelvelezmj25
+ * @version 0.1.0.1
+ */
 public class Alert extends Statement {
 //    ALERT timing data_manipulation_language IN table_reference IF column_spec relational_op match_value
 
@@ -32,15 +38,15 @@ public class Alert extends Statement {
 
     @Override
     public void execute(Connection connection) throws SQLException {
-        // TODO save in list of alerts
-        AlertManager.alerts.add(this);
+        AlertManager.getManager().addAlert(this);
         this.printResult();
     }
 
     @Override
     protected void printResult() {
         Alert.logger.info("Printing message that acknowledges that an alert was created");
-        System.out.println("Alert created ");
+        System.out.println("Alert created");
+        AlertManager.getManager().listAll();
     }
 
     public String getTiming() { return this.timing; }

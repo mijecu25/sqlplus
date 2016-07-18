@@ -1,5 +1,6 @@
 package com.mijecu25.sqlplus.compiler.alert;
 
+import com.mijecu25.messages.Messages;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -7,21 +8,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Singleton class that managers the alerts created by the user.s
+ * Singleton class that managers the ALERTS created by the user.
  *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.2
+ * @version 0.1.0.3
  */
 public class AlertManager {
 
     private static AlertManager INSTANCE;
-
-    public static List<Alert> alerts;
+    private static List<Alert> ALERTS;
 
     private static final Logger logger = LogManager.getLogger(AlertManager.class);
 
     private AlertManager() {
-        AlertManager.alerts = new ArrayList<Alert>();
+        AlertManager.ALERTS = new ArrayList<Alert>();
     }
 
     /**
@@ -40,6 +40,39 @@ public class AlertManager {
         return AlertManager.INSTANCE;
     }
 
-    // TODO list all
-    // TODO clear all
+    /**
+     * TODO
+     * @param alert
+     */
+    public void addAlert(Alert alert) {
+        AlertManager.logger.info("Adding alert");
+
+        if(alert == null) {
+            IllegalArgumentException iae = new IllegalArgumentException();
+            AlertManager.logger.fatal(Messages.FATAL + "The alert passed cannot be null");
+            System.out.println(Messages.FATAL + Messages.FATAL_EXCEPTION_ACTION(iae.getClass().getSimpleName()) + " "
+                    + Messages.CHECK_LOG_FILES);
+            AlertManager.logger.warn(Messages.WARNING + "Throwing a " + iae.getClass().getSimpleName()
+                    + " to the calling class");
+            throw iae;
+        }
+
+        AlertManager.getManager().ALERTS.add(alert);
+    }
+
+    /**
+     * TODO
+     *
+     */
+    public void listAll() {
+        System.out.println(AlertManager.getManager().ALERTS);
+    }
+
+    /**
+     * TODO
+     */
+    public void clearAll() {
+        AlertManager.getManager().ALERTS.clear();
+    }
+
 }
