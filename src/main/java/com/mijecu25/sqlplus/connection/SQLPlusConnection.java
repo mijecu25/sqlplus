@@ -12,10 +12,10 @@ import com.mijecu25.messages.Messages;
 import com.mijecu25.sqlplus.compiler.core.statement.Statement;
 
 /**
- * SQLPlusConnection abstrac class. Default database is MySQL on port 3306.
+ * SQLPlusConnection abstract class. Default database is MySQL on port 3306.
  *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.16
+ * @version 0.1.0.17
  */
 public abstract class SQLPlusConnection {
     public static final String MYSQL = "mysql";

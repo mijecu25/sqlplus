@@ -8,10 +8,10 @@ import org.apache.logging.log4j.Logger;
 import com.mijecu25.messages.Messages;
 
 /**
- * Singleton class. Default database is MySQL on port 3306.
+ * Singleton class to create a connection to a MySQL database. Default database is MySQL on port 3306.
  *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.8
+ * @version 0.1.0.9
  *
  */
 public class SQLPlusMySQLConnection extends SQLPlusConnection {
@@ -24,7 +24,7 @@ public class SQLPlusMySQLConnection extends SQLPlusConnection {
     private static SQLPlusMySQLConnection INSTANCE;
 
     /**
-     * Create an SQLPlusMySQLConnection to a mysql database on the provided port
+     * Create a SQLPlusMySQLConnection to a mysql database on the provided port
      *
      * @param username the username used to connect to the database.
      * @param password the password associated to the user.
@@ -44,7 +44,7 @@ public class SQLPlusMySQLConnection extends SQLPlusConnection {
     }
 
     /**
-     * Create an SQLPlusMySQLConnection to a mysql database on port 3306.
+     * Create a SQLPlusMySQLConnection to a mysql database on port 3306.
      *
      * @param username the username used to connect to the database.
      * @param password the password associated to the user.
@@ -57,7 +57,7 @@ public class SQLPlusMySQLConnection extends SQLPlusConnection {
     }
 
     /**
-     * Create an SQLPlusMySQLConnection to a mysql database on port 3306 and localhost.
+     * Create a SQLPlusMySQLConnection to a mysql database on port 3306 and localhost.
      *
      * @param username the username used to connect to the database.
      * @param password the password associated to the user.
@@ -69,7 +69,7 @@ public class SQLPlusMySQLConnection extends SQLPlusConnection {
     }
 
     /**
-     * Get an SQLPlusMySQLConnection.
+     * Get a SQLPlusMySQLConnection.
      *
      * @param username the username used to connect to the database.
      * @param password the password associated to the user.
@@ -93,7 +93,7 @@ public class SQLPlusMySQLConnection extends SQLPlusConnection {
     }
 
     /**
-     * Get an SQLPlusMySQLConnection. By not providing information about the port, SQLPlus defaults
+     * Get a SQLPlusMySQLConnection. By not providing information about the port, SQLPlus defaults
      * to port 3306.
      *
      * @param username the username used to connect to the database.
@@ -116,7 +116,7 @@ public class SQLPlusMySQLConnection extends SQLPlusConnection {
     }
 
     /**
-     * Get an SQLPlusMySQLConnection. By not providing information about the port and the host, SQLPlus defaults
+     * Get a SQLPlusMySQLConnection. By not providing information about the port and the host, SQLPlus defaults
      * those values to port 3306 and localhost.
      *
      * @param username the username used to connect to the database.
@@ -138,7 +138,7 @@ public class SQLPlusMySQLConnection extends SQLPlusConnection {
     }
 
     /**
-     * Default method to get an SQLPlusMySQLConnection. This method prints an error message if there is
+     * Default method to get a SQLPlusMySQLConnection. This method prints an error message if there is
      * no SQLPlusMySQLConnection.
      *
      * @return a singleton SQLPlusMySQLConnection.
@@ -147,8 +147,8 @@ public class SQLPlusMySQLConnection extends SQLPlusConnection {
         if(SQLPlusMySQLConnection.INSTANCE == null) {
             // Print an error message since we cannot implement a default constructor since we need the user to
             // gives an username and password to connect to a database
-            SQLPlusMySQLConnection.logger.warn("There is not an SQLPlusMySQLConnection");
-            System.out.println(Messages.WARNING + "There is not an SQLPlusMySQLConnection");
+            SQLPlusMySQLConnection.logger.warn("There is not a SQLPlusMySQLConnection");
+            System.out.println(Messages.WARNING + "There is not a SQLPlusMySQLConnection");
         }
 
         SQLPlusMySQLConnection.logger.info("Returning a SQLPlusMySQLConnection instance " + SQLPlusMySQLConnection.INSTANCE);

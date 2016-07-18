@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Properties;
 
+import com.mijecu25.sqlplus.compiler.alert.AlertManager;
 import com.mijecu25.sqlplus.compiler.core.statement.StatementDefault;
 import jline.console.UserInterruptException;
 import org.antlr.runtime.ANTLRStringStream;
@@ -30,7 +31,7 @@ import jline.console.ConsoleReader;
  * SQLPlus add alerts to your sql queries.
  *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.31
+ * @version 0.1.0.32
  */
 public class SQLPlus {
 
@@ -46,6 +47,7 @@ public class SQLPlus {
 
     private static SQLPlusConnection sqlPlusConnection;
     private static ConsoleReader console;
+    private static AlertManager alertManager;
 
     private static final Logger logger = LogManager.getLogger(SQLPlus.class);
 
@@ -119,6 +121,8 @@ public class SQLPlus {
 
             return;
         }
+
+        SQLPlus.alertManager = AlertManager.getManager();
 
         System.out.println("Connection established! Commands end with " + SQLPlus.END_OF_COMMAND);
         System.out.println("Type " + SQLPlus.EXIT + " or " + SQLPlus.QUIT + " to exit the application ");
