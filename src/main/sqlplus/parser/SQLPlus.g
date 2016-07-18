@@ -16,6 +16,7 @@ import SQLPlusLex;
 	import com.mijecu25.sqlplus.compiler.core.expression.Expression;
 	import com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary;
 	import com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral;
+	import com.mijecu25.sqlplus.compiler.alert.Alert;
 }
 
 @members {
@@ -47,17 +48,21 @@ sqlplus returns [Statement statement]
 	: 	sql_statement SEMICOLON {
 			statement = $sql_statement.sqlStatement;
 		}
-		// TODO this should be optional
-	|	sqlplus_alert
+	|	sqlplus_alert SEMICOLON {
+	        statement = $sqlplus_alert.alert;
+        }
 	;
 
 
-sqlplus_alert
-	:	ALERT timing data_manipulation_language IN ID IF ID relational_operation match_value SEMICOLON
-			{
-				System.out.println("Created SQLPlus alert");
-			}
-	;
+sqlplus_alert returns [Statement alert]
+    @init {
+        $alert = null;
+    }
+    // TODO add 'LIKE'
+    :   ALERT timing data_manipulation_language IN table_reference where_clause /*IF column_spec relational_op match_value*/ {
+            alert = new Alert($timing.text, $data_manipulation_language.text, $table_reference.text, $where_clause.expr);
+        }
+    ;
 
 sql_statement returns [Statement sqlStatement]
 	@init {
