@@ -62,9 +62,8 @@ sqlplus_statement returns [Statement sqlplusStatement]
     :   sqlplus_alert {
             sqlplusStatement = $sqlplus_alert.alert;
         }
-    |   LIST ALERTS {
-            AlertManager.getManager().listAll();
-            sqlplusStatement = new AlertDefault();
+    |   sqlplus_list_alert {
+            sqlplusStatement = $sqlplus_list_alert.listAlert;
         }
     |   CLEAR ALERTS {
             AlertManager.getManager().clearAll();
@@ -77,8 +76,19 @@ sqlplus_alert returns [Statement alert]
         alert = null;
     }
     // TODO add 'LIKE'
+    // TODO use '?' to grab value from the user
     :   ALERT timing data_manipulation_language IN table_reference where_clause /*IF column_spec relational_op match_value*/ {
             alert = new Alert($timing.text, $data_manipulation_language.text, $table_reference.text, $where_clause.expr);
+        }
+    ;
+
+sqlplus_list_alert returns [Statement listAlert]
+    @init {
+        listAlert = null;
+    }
+    :   LIST ALERTS {
+            AlertManager.getManager().listAll();
+            listAlert = new AlertDefault();
         }
     ;
 

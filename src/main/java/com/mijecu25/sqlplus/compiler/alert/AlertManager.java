@@ -11,7 +11,7 @@ import java.util.List;
  * Singleton class that managers the ALERTS created by the user.
  *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.7
+ * @version 0.1.0.8
  */
 public class AlertManager {
 
@@ -71,10 +71,97 @@ public class AlertManager {
      * Print a list of all of the created Alerts.
      */
     public void listAll() {
+        AlertManager.logger.info("Listing all alerts");
         for(Alert alert : AlertManager.getManager().ALERTS) {
             System.out.println(alert);
         }
 
+    }
+
+    /**
+     * TODO
+     * @param timing
+     * @return
+     */
+    public List<Alert> listByTiming(String timing) {
+        AlertManager.logger.info("Listing alerts by timing");
+        if(timing == null) {
+            IllegalArgumentException iae = new IllegalArgumentException();
+            AlertManager.logger.fatal(Messages.FATAL + "The timing passed cannot be null");
+            System.out.println(Messages.FATAL + Messages.FATAL_EXCEPTION_ACTION(iae.getClass().getSimpleName()) + " "
+                    + Messages.CHECK_LOG_FILES);
+            AlertManager.logger.warn(Messages.WARNING + "Throwing a " + iae.getClass().getSimpleName()
+                    + " to the calling class");
+            throw iae;
+        }
+
+        List<Alert> timingList = new ArrayList<Alert>();
+
+        for(Alert alert : AlertManager.getManager().ALERTS) {
+            if(alert.getTiming().toLowerCase().equals(timing.toLowerCase())) {
+                timingList.add(alert);
+            }
+        }
+
+        return timingList;
+    }
+
+    /**
+     * TODO
+     * @param dml
+     * @return
+     */
+    public List<Alert> listByDML(String dml) {
+        AlertManager.logger.info("Listing alerts by DML");
+        if(dml == null) {
+            IllegalArgumentException iae = new IllegalArgumentException();
+            AlertManager.logger.fatal(Messages.FATAL + "The DML passed cannot be null");
+            System.out.println(Messages.FATAL + Messages.FATAL_EXCEPTION_ACTION(iae.getClass().getSimpleName()) + " "
+                    + Messages.CHECK_LOG_FILES);
+            AlertManager.logger.warn(Messages.WARNING + "Throwing a " + iae.getClass().getSimpleName()
+                    + " to the calling class");
+            throw iae;
+        }
+
+        List<Alert> dmlList = new ArrayList<Alert>();
+
+        for(Alert alert : AlertManager.getManager().ALERTS) {
+            if(alert.getDML().toLowerCase().equals(dml.toLowerCase())) {
+                dmlList.add(alert);
+            }
+        }
+
+        AlertManager.logger.info(dmlList);
+
+        return dmlList;
+    }
+
+    /**
+     * TODO
+     * @param table
+     * @return
+     */
+    public List<Alert> listByTable(String table) {
+        AlertManager.logger.info("Listing alerts by DML");
+        if(table == null) {
+            IllegalArgumentException iae = new IllegalArgumentException();
+            AlertManager.logger.fatal(Messages.FATAL + "The table passed cannot be null");
+            System.out.println(Messages.FATAL + Messages.FATAL_EXCEPTION_ACTION(iae.getClass().getSimpleName()) + " "
+                    + Messages.CHECK_LOG_FILES);
+            AlertManager.logger.warn(Messages.WARNING + "Throwing a " + iae.getClass().getSimpleName()
+                    + " to the calling class");
+            throw iae;
+        }
+
+        List<Alert> tableList = new ArrayList<Alert>();
+
+        for(Alert alert : AlertManager.getManager().ALERTS) {
+            if(alert.getTable().equals(table)) {
+                tableList.add(alert);
+            }
+        }
+
+        return tableList;
     }
 
     /**

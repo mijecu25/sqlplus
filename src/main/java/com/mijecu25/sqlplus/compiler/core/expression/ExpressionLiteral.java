@@ -7,7 +7,7 @@ import org.apache.logging.log4j.Logger;
  * This class represents a Literal expression. It is used for strings and numbers.
  *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.2
+ * @version 0.1.0.3
  */
 public class ExpressionLiteral extends ExpressionConstant {
 
@@ -29,7 +29,7 @@ public class ExpressionLiteral extends ExpressionConstant {
 
         ExpressionLiteral expressionLiteral = (ExpressionLiteral) other;
 
-        return value.equals(expressionLiteral.value);
+        return value.toLowerCase().equals(expressionLiteral.value.toLowerCase());
     }
 
     @Override

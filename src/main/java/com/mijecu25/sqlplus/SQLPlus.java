@@ -31,7 +31,7 @@ import jline.console.ConsoleReader;
  * SQLPlus add alerts to your sql queries.
  *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.33
+ * @version 0.1.0.34
  */
 public class SQLPlus {
 
@@ -146,7 +146,19 @@ public class SQLPlus {
 
                 // TODO DELETE
                 if(line.equals("a")) {
+                    line = "alert after insert in cards where name = " + Math.random() + ";";
+                }
+
+                if(line.equals("b")) {
                     line = "alert before insert in cards where name = " + Math.random() + ";";
+                }
+
+                if(line.equals("l")) {
+                    line = "alert before insert in cards where name = 1;";
+                }
+
+                if(line.equals("u")) {
+                    line = "alert BEFORE insert in cards where name = 1;";
                 }
 
                 if(line.equals("i")) {

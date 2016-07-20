@@ -1,6 +1,8 @@
 package com.mijecu25.sqlplus.compiler.core.statement.dml;
 
 import com.mijecu25.messages.Messages;
+import com.mijecu25.sqlplus.compiler.alert.Alert;
+import com.mijecu25.sqlplus.compiler.alert.AlertManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -12,7 +14,7 @@ import java.util.List;
  * This class represents the "insert...." SQL statement. It inserts rows into a table.
  *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.3
+ * @version 0.1.0.4
  */
 public class StatementInsertStatement1 extends StatementDML {
     private List<List<String>> valuesList;
@@ -40,6 +42,12 @@ public class StatementInsertStatement1 extends StatementDML {
             StatementInsertStatement1.logger.warn(Messages.WARNING + "Throwing a " + iae.getClass().getSimpleName()
                     + " to the calling class");
             throw iae;
+        }
+
+        List<Alert> beforeInsertAlerts = StatementDML.filterByDML(AlertManager.getManager().listByTiming(Alert.BEFORE), StatementDML.INSERT);
+
+        if(!beforeInsertAlerts.isEmpty()) {
+            System.out.println(beforeInsertAlerts);
         }
 
         // TODO this is where the sqlplus alert should check before or after this insert statement

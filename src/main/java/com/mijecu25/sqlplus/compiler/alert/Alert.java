@@ -2,17 +2,17 @@ package com.mijecu25.sqlplus.compiler.alert;
 
 import com.mijecu25.sqlplus.compiler.core.expression.Expression;
 import com.mijecu25.sqlplus.compiler.core.statement.Statement;
-import com.mijecu25.sqlplus.compiler.core.statement.dml.StatementSelectExpression;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import java.sql.Connection;import java.sql.SQLException;
+import java.sql.Connection;
+import java.sql.SQLException;
 
 /**
  * This class represents the "alert...." statement. It creates an alert using a timing and DML statement when manipulating
  * a table in the database.
  *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.4
+ * @version 0.1.0.5
  */
 public class Alert extends Statement {
 //    ALERT timing data_manipulation_language IN table_reference IF column_spec relational_op match_value
@@ -25,6 +25,9 @@ public class Alert extends Statement {
     // private//
     // private String column;
     // TODO make it work with multiple columns
+
+    public static final String BEFORE = "before";
+    public static final String AFTER = "after";
 
     private static final Logger logger = LogManager.getLogger(Alert.class);
 
@@ -53,8 +56,8 @@ public class Alert extends Statement {
 
         Alert alert = (Alert) other;
 
-        if(!this.timing.equals(alert.timing)) { return false; }
-        if(!this.DML.equals(alert.DML)) { return false; }
+        if(!this.timing.toLowerCase().equals(alert.timing.toLowerCase())) { return false; }
+        if(!this.DML.toLowerCase().equals(alert.DML.toLowerCase())) { return false; }
         if(!this.table.equals(alert.table)) { return false; }
 
         return this.whereClause.equals(alert.whereClause);
