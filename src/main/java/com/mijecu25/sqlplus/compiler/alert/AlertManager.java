@@ -11,7 +11,7 @@ import java.util.List;
  * Singleton class that managers the ALERTS created by the user.
  *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.5
+ * @version 0.1.0.6
  */
 public class AlertManager {
 
@@ -79,6 +79,8 @@ public class AlertManager {
      */
     public void clearAll() {
         AlertManager.getManager().ALERTS.clear();
+        AlertManager.logger.info("Cleared alerts");
+        System.out.println("Cleared alerts");
     }
 
     @Override

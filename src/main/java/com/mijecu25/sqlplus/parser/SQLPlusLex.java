@@ -1,4 +1,4 @@
-// $ANTLR 3.5.2 src/main/sqlplus/parser/SQLPlusLex.g 2016-07-19 19:16:34
+// $ANTLR 3.5.2 src/main/sqlplus/parser/SQLPlusLex.g 2016-07-19 19:23:26
 
 	package com.mijecu25.sqlplus.parser;
 
@@ -20,55 +20,56 @@ public class SQLPlusLex extends Lexer {
 	public static final int AS=10;
 	public static final int ASTERISK=11;
 	public static final int BEFORE=12;
-	public static final int COLON=13;
-	public static final int COMMA=14;
-	public static final int DATABASES=15;
-	public static final int DEFAULT=16;
-	public static final int DELETE=17;
-	public static final int DOT=18;
-	public static final int EQUAL=19;
-	public static final int EXISTS=20;
-	public static final int FALSE=21;
-	public static final int FROM=22;
-	public static final int GREATER_THAN=23;
-	public static final int GREATER_THAN_EQUAL=24;
-	public static final int ID=25;
-	public static final int IF=26;
-	public static final int IN=27;
-	public static final int INSERT=28;
-	public static final int INTEGER_NUMBER=29;
-	public static final int INTO=30;
-	public static final int IS=31;
-	public static final int LEFT_PARENTHESIS=32;
-	public static final int LESS_THAN=33;
-	public static final int LESS_THAN_EQUAL=34;
-	public static final int LIKE=35;
-	public static final int LIST=36;
-	public static final int MINUS=37;
-	public static final int NEWLINE=38;
-	public static final int NOT=39;
-	public static final int NOT_EQUAL=40;
-	public static final int NULL=41;
-	public static final int OR=42;
-	public static final int PLUS=43;
-	public static final int QUESTION_MARK=44;
-	public static final int QUOTE=45;
-	public static final int REAL_NUMBER=46;
-	public static final int RIGHT_PARENTHESIS=47;
-	public static final int SELECT=48;
-	public static final int SEMICOLON=49;
-	public static final int SET=50;
-	public static final int SHOW=51;
-	public static final int TABLES=52;
-	public static final int TEXT_STRING=53;
-	public static final int TRUE=54;
-	public static final int UNDERSCORE=55;
-	public static final int UPDATE=56;
-	public static final int USE=57;
-	public static final int VALUES=58;
-	public static final int WHERE=59;
-	public static final int WS=60;
-	public static final int XOR=61;
+	public static final int CLEAR=13;
+	public static final int COLON=14;
+	public static final int COMMA=15;
+	public static final int DATABASES=16;
+	public static final int DEFAULT=17;
+	public static final int DELETE=18;
+	public static final int DOT=19;
+	public static final int EQUAL=20;
+	public static final int EXISTS=21;
+	public static final int FALSE=22;
+	public static final int FROM=23;
+	public static final int GREATER_THAN=24;
+	public static final int GREATER_THAN_EQUAL=25;
+	public static final int ID=26;
+	public static final int IF=27;
+	public static final int IN=28;
+	public static final int INSERT=29;
+	public static final int INTEGER_NUMBER=30;
+	public static final int INTO=31;
+	public static final int IS=32;
+	public static final int LEFT_PARENTHESIS=33;
+	public static final int LESS_THAN=34;
+	public static final int LESS_THAN_EQUAL=35;
+	public static final int LIKE=36;
+	public static final int LIST=37;
+	public static final int MINUS=38;
+	public static final int NEWLINE=39;
+	public static final int NOT=40;
+	public static final int NOT_EQUAL=41;
+	public static final int NULL=42;
+	public static final int OR=43;
+	public static final int PLUS=44;
+	public static final int QUESTION_MARK=45;
+	public static final int QUOTE=46;
+	public static final int REAL_NUMBER=47;
+	public static final int RIGHT_PARENTHESIS=48;
+	public static final int SELECT=49;
+	public static final int SEMICOLON=50;
+	public static final int SET=51;
+	public static final int SHOW=52;
+	public static final int TABLES=53;
+	public static final int TEXT_STRING=54;
+	public static final int TRUE=55;
+	public static final int UNDERSCORE=56;
+	public static final int UPDATE=57;
+	public static final int USE=58;
+	public static final int VALUES=59;
+	public static final int WHERE=60;
+	public static final int WS=61;
+	public static final int XOR=62;
 
 	// delegates
 	// delegators
@@ -1074,18 +1075,18 @@ public class SQLPlusLex extends Lexer {
 	}
 	// $ANTLR end "BEFORE"
 
-	// $ANTLR start "DATABASES"
-	public final void mDATABASES() throws RecognitionException {
+	// $ANTLR start "CLEAR"
+	public final void mCLEAR() throws RecognitionException {
 		try {
-			int _type = DATABASES;
+			int _type = CLEAR;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/main/sqlplus/parser/SQLPlusLex.g:87:2: ( 'databases' | 'DATABASES' )
+			// src/main/sqlplus/parser/SQLPlusLex.g:87:5: ( 'clear' | 'CLEAR' )
 			int alt13=2;
 			int LA13_0 = input.LA(1);
-			if ( (LA13_0=='d') ) {
+			if ( (LA13_0=='c') ) {
 				alt13=1;
 			}
-			else if ( (LA13_0=='D') ) {
+			else if ( (LA13_0=='C') ) {
 				alt13=2;
 			}
 
@@ -1097,14 +1098,61 @@ public class SQLPlusLex extends Lexer {
 
 			switch (alt13) {
 				case 1 :
-					// src/main/sqlplus/parser/SQLPlusLex.g:87:4: 'databases'
+					// src/main/sqlplus/parser/SQLPlusLex.g:87:9: 'clear'
+					{
+					match("clear"); 
+
+					}
+					break;
+				case 2 :
+					// src/main/sqlplus/parser/SQLPlusLex.g:88:9: 'CLEAR'
+					{
+					match("CLEAR"); 
+
+					}
+					break;
+
+			}
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "CLEAR"
+
+	// $ANTLR start "DATABASES"
+	public final void mDATABASES() throws RecognitionException {
+		try {
+			int _type = DATABASES;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// src/main/sqlplus/parser/SQLPlusLex.g:92:2: ( 'databases' | 'DATABASES' )
+			int alt14=2;
+			int LA14_0 = input.LA(1);
+			if ( (LA14_0=='d') ) {
+				alt14=1;
+			}
+			else if ( (LA14_0=='D') ) {
+				alt14=2;
+			}
+
+			else {
+				NoViableAltException nvae =
+					new NoViableAltException("", 14, 0, input);
+				throw nvae;
+			}
+
+			switch (alt14) {
+				case 1 :
+					// src/main/sqlplus/parser/SQLPlusLex.g:92:4: 'databases'
 					{
 					match("databases"); 
 
 					}
 					break;
 				case 2 :
-					// src/main/sqlplus/parser/SQLPlusLex.g:88:4: 'DATABASES'
+					// src/main/sqlplus/parser/SQLPlusLex.g:93:4: 'DATABASES'
 					{
 					match("DATABASES"); 
 
@@ -1126,32 +1174,32 @@ public class SQLPlusLex extends Lexer {
 		try {
 			int _type = DEFAULT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/main/sqlplus/parser/SQLPlusLex.g:92:5: ( 'default' | 'DEFAULT' )
-			int alt14=2;
-			int LA14_0 = input.LA(1);
-			if ( (LA14_0=='d') ) {
-				alt14=1;
+			// src/main/sqlplus/parser/SQLPlusLex.g:97:5: ( 'default' | 'DEFAULT' )
+			int alt15=2;
+			int LA15_0 = input.LA(1);
+			if ( (LA15_0=='d') ) {
+				alt15=1;
 			}
-			else if ( (LA14_0=='D') ) {
-				alt14=2;
+			else if ( (LA15_0=='D') ) {
+				alt15=2;
 			}
 
 			else {
 				NoViableAltException nvae =
-					new NoViableAltException("", 14, 0, input);
+					new NoViableAltException("", 15, 0, input);
 				throw nvae;
 			}
 
-			switch (alt14) {
+			switch (alt15) {
 				case 1 :
-					// src/main/sqlplus/parser/SQLPlusLex.g:92:9: 'default'
+					// src/main/sqlplus/parser/SQLPlusLex.g:97:9: 'default'
 					{
 					match("default"); 
 
 					}
 					break;
 				case 2 :
-					// src/main/sqlplus/parser/SQLPlusLex.g:93:9: 'DEFAULT'
+					// src/main/sqlplus/parser/SQLPlusLex.g:98:9: 'DEFAULT'
 					{
 					match("DEFAULT"); 
 
@@ -1173,32 +1221,32 @@ public class SQLPlusLex extends Lexer {
 		try {
 			int _type = DELETE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/main/sqlplus/parser/SQLPlusLex.g:97:2: ( 'delete' | 'DELETE' )
-			int alt15=2;
-			int LA15_0 = input.LA(1);
-			if ( (LA15_0=='d') ) {
-				alt15=1;
+			// src/main/sqlplus/parser/SQLPlusLex.g:102:2: ( 'delete' | 'DELETE' )
+			int alt16=2;
+			int LA16_0 = input.LA(1);
+			if ( (LA16_0=='d') ) {
+				alt16=1;
 			}
-			else if ( (LA15_0=='D') ) {
-				alt15=2;
+			else if ( (LA16_0=='D') ) {
+				alt16=2;
 			}
 
 			else {
 				NoViableAltException nvae =
-					new NoViableAltException("", 15, 0, input);
+					new NoViableAltException("", 16, 0, input);
 				throw nvae;
 			}
 
-			switch (alt15) {
+			switch (alt16) {
 				case 1 :
-					// src/main/sqlplus/parser/SQLPlusLex.g:97:4: 'delete'
+					// src/main/sqlplus/parser/SQLPlusLex.g:102:4: 'delete'
 					{
 					match("delete"); 
 
 					}
 					break;
 				case 2 :
-					// src/main/sqlplus/parser/SQLPlusLex.g:98:4: 'DELETE'
+					// src/main/sqlplus/parser/SQLPlusLex.g:103:4: 'DELETE'
 					{
 					match("DELETE"); 
 
@@ -1220,32 +1268,32 @@ public class SQLPlusLex extends Lexer {
 		try {
 			int _type = EXISTS;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/main/sqlplus/parser/SQLPlusLex.g:102:5: ( 'exists' | 'EXISTS' )
-			int alt16=2;
-			int LA16_0 = input.LA(1);
-			if ( (LA16_0=='e') ) {
-				alt16=1;
+			// src/main/sqlplus/parser/SQLPlusLex.g:107:5: ( 'exists' | 'EXISTS' )
+			int alt17=2;
+			int LA17_0 = input.LA(1);
+			if ( (LA17_0=='e') ) {
+				alt17=1;
 			}
-			else if ( (LA16_0=='E') ) {
-				alt16=2;
+			else if ( (LA17_0=='E') ) {
+				alt17=2;
 			}
 
 			else {
 				NoViableAltException nvae =
-					new NoViableAltException("", 16, 0, input);
+					new NoViableAltException("", 17, 0, input);
 				throw nvae;
 			}
 
-			switch (alt16) {
+			switch (alt17) {
 				case 1 :
-					// src/main/sqlplus/parser/SQLPlusLex.g:102:9: 'exists'
+					// src/main/sqlplus/parser/SQLPlusLex.g:107:9: 'exists'
 					{
 					match("exists"); 
 
 					}
 					break;
 				case 2 :
-					// src/main/sqlplus/parser/SQLPlusLex.g:103:9: 'EXISTS'
+					// src/main/sqlplus/parser/SQLPlusLex.g:108:9: 'EXISTS'
 					{
 					match("EXISTS"); 
 
@@ -1267,32 +1315,32 @@ public class SQLPlusLex extends Lexer {
 		try {
 			int _type = FALSE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/main/sqlplus/parser/SQLPlusLex.g:107:5: ( 'false' | 'FALSE' )
-			int alt17=2;
-			int LA17_0 = input.LA(1);
-			if ( (LA17_0=='f') ) {
-				alt17=1;
+			// src/main/sqlplus/parser/SQLPlusLex.g:112:5: ( 'false' | 'FALSE' )
+			int alt18=2;
+			int LA18_0 = input.LA(1);
+			if ( (LA18_0=='f') ) {
+				alt18=1;
 			}
-			else if ( (LA17_0=='F') ) {
-				alt17=2;
+			else if ( (LA18_0=='F') ) {
+				alt18=2;
 			}
 
 			else {
 				NoViableAltException nvae =
-					new NoViableAltException("", 17, 0, input);
+					new NoViableAltException("", 18, 0, input);
 				throw nvae;
 			}
 
-			switch (alt17) {
+			switch (alt18) {
 				case 1 :
-					// src/main/sqlplus/parser/SQLPlusLex.g:107:9: 'false'
+					// src/main/sqlplus/parser/SQLPlusLex.g:112:9: 'false'
 					{
 					match("false"); 
 
 					}
 					break;
 				case 2 :
-					// src/main/sqlplus/parser/SQLPlusLex.g:108:9: 'FALSE'
+					// src/main/sqlplus/parser/SQLPlusLex.g:113:9: 'FALSE'
 					{
 					match("FALSE"); 
 
@@ -1314,32 +1362,32 @@ public class SQLPlusLex extends Lexer {
 		try {
 			int _type = FROM;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/main/sqlplus/parser/SQLPlusLex.g:112:2: ( 'from' | 'FROM' )
-			int alt18=2;
-			int LA18_0 = input.LA(1);
-			if ( (LA18_0=='f') ) {
-				alt18=1;
+			// src/main/sqlplus/parser/SQLPlusLex.g:117:2: ( 'from' | 'FROM' )
+			int alt19=2;
+			int LA19_0 = input.LA(1);
+			if ( (LA19_0=='f') ) {
+				alt19=1;
 			}
-			else if ( (LA18_0=='F') ) {
-				alt18=2;
+			else if ( (LA19_0=='F') ) {
+				alt19=2;
 			}
 
 			else {
 				NoViableAltException nvae =
-					new NoViableAltException("", 18, 0, input);
+					new NoViableAltException("", 19, 0, input);
 				throw nvae;
 			}
 
-			switch (alt18) {
+			switch (alt19) {
 				case 1 :
-					// src/main/sqlplus/parser/SQLPlusLex.g:112:4: 'from'
+					// src/main/sqlplus/parser/SQLPlusLex.g:117:4: 'from'
 					{
 					match("from"); 
 
 					}
 					break;
 				case 2 :
-					// src/main/sqlplus/parser/SQLPlusLex.g:113:4: 'FROM'
+					// src/main/sqlplus/parser/SQLPlusLex.g:118:4: 'FROM'
 					{
 					match("FROM"); 
 
@@ -1361,32 +1409,32 @@ public class SQLPlusLex extends Lexer {
 		try {
 			int _type = IF;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/main/sqlplus/parser/SQLPlusLex.g:117:2: ( 'if' | 'IF' )
-			int alt19=2;
-			int LA19_0 = input.LA(1);
-			if ( (LA19_0=='i') ) {
-				alt19=1;
+			// src/main/sqlplus/parser/SQLPlusLex.g:122:2: ( 'if' | 'IF' )
+			int alt20=2;
+			int LA20_0 = input.LA(1);
+			if ( (LA20_0=='i') ) {
+				alt20=1;
 			}
-			else if ( (LA19_0=='I') ) {
-				alt19=2;
+			else if ( (LA20_0=='I') ) {
+				alt20=2;
 			}
 
 			else {
 				NoViableAltException nvae =
-					new NoViableAltException("", 19, 0, input);
+					new NoViableAltException("", 20, 0, input);
 				throw nvae;
 			}
 
-			switch (alt19) {
+			switch (alt20) {
 				case 1 :
-					// src/main/sqlplus/parser/SQLPlusLex.g:117:4: 'if'
+					// src/main/sqlplus/parser/SQLPlusLex.g:122:4: 'if'
 					{
 					match("if"); 
 
 					}
 					break;
 				case 2 :
-					// src/main/sqlplus/parser/SQLPlusLex.g:118:4: 'IF'
+					// src/main/sqlplus/parser/SQLPlusLex.g:123:4: 'IF'
 					{
 					match("IF"); 
 
@@ -1408,32 +1456,32 @@ public class SQLPlusLex extends Lexer {
 		try {
 			int _type = IN;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/main/sqlplus/parser/SQLPlusLex.g:122:2: ( 'in' | 'IN' )
-			int alt20=2;
-			int LA20_0 = input.LA(1);
-			if ( (LA20_0=='i') ) {
-				alt20=1;
+			// src/main/sqlplus/parser/SQLPlusLex.g:127:2: ( 'in' | 'IN' )
+			int alt21=2;
+			int LA21_0 = input.LA(1);
+			if ( (LA21_0=='i') ) {
+				alt21=1;
 			}
-			else if ( (LA20_0=='I') ) {
-				alt20=2;
+			else if ( (LA21_0=='I') ) {
+				alt21=2;
 			}
 
 			else {
 				NoViableAltException nvae =
-					new NoViableAltException("", 20, 0, input);
+					new NoViableAltException("", 21, 0, input);
 				throw nvae;
 			}
 
-			switch (alt20) {
+			switch (alt21) {
 				case 1 :
-					// src/main/sqlplus/parser/SQLPlusLex.g:122:4: 'in'
+					// src/main/sqlplus/parser/SQLPlusLex.g:127:4: 'in'
 					{
 					match("in"); 
 
 					}
 					break;
 				case 2 :
-					// src/main/sqlplus/parser/SQLPlusLex.g:123:4: 'IN'
+					// src/main/sqlplus/parser/SQLPlusLex.g:128:4: 'IN'
 					{
 					match("IN"); 
 
@@ -1455,32 +1503,32 @@ public class SQLPlusLex extends Lexer {
 		try {
 			int _type = INTO;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/main/sqlplus/parser/SQLPlusLex.g:127:5: ( 'into' | 'INTO' )
-			int alt21=2;
-			int LA21_0 = input.LA(1);
-			if ( (LA21_0=='i') ) {
-				alt21=1;
+			// src/main/sqlplus/parser/SQLPlusLex.g:132:5: ( 'into' | 'INTO' )
+			int alt22=2;
+			int LA22_0 = input.LA(1);
+			if ( (LA22_0=='i') ) {
+				alt22=1;
 			}
-			else if ( (LA21_0=='I') ) {
-				alt21=2;
+			else if ( (LA22_0=='I') ) {
+				alt22=2;
 			}
 
 			else {
 				NoViableAltException nvae =
-					new NoViableAltException("", 21, 0, input);
+					new NoViableAltException("", 22, 0, input);
 				throw nvae;
 			}
 
-			switch (alt21) {
+			switch (alt22) {
 				case 1 :
-					// src/main/sqlplus/parser/SQLPlusLex.g:127:9: 'into'
+					// src/main/sqlplus/parser/SQLPlusLex.g:132:9: 'into'
 					{
 					match("into"); 
 
 					}
 					break;
 				case 2 :
-					// src/main/sqlplus/parser/SQLPlusLex.g:128:9: 'INTO'
+					// src/main/sqlplus/parser/SQLPlusLex.g:133:9: 'INTO'
 					{
 					match("INTO"); 
 
@@ -1502,32 +1550,32 @@ public class SQLPlusLex extends Lexer {
 		try {
 			int _type = INSERT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/main/sqlplus/parser/SQLPlusLex.g:132:2: ( 'insert' | 'INSERT' )
-			int alt22=2;
-			int LA22_0 = input.LA(1);
-			if ( (LA22_0=='i') ) {
-				alt22=1;
+			// src/main/sqlplus/parser/SQLPlusLex.g:137:2: ( 'insert' | 'INSERT' )
+			int alt23=2;
+			int LA23_0 = input.LA(1);
+			if ( (LA23_0=='i') ) {
+				alt23=1;
 			}
-			else if ( (LA22_0=='I') ) {
-				alt22=2;
+			else if ( (LA23_0=='I') ) {
+				alt23=2;
 			}
 
 			else {
 				NoViableAltException nvae =
-					new NoViableAltException("", 22, 0, input);
+					new NoViableAltException("", 23, 0, input);
 				throw nvae;
 			}
 
-			switch (alt22) {
+			switch (alt23) {
 				case 1 :
-					// src/main/sqlplus/parser/SQLPlusLex.g:132:5: 'insert'
+					// src/main/sqlplus/parser/SQLPlusLex.g:137:5: 'insert'
 					{
 					match("insert"); 
 
 					}
 					break;
 				case 2 :
-					// src/main/sqlplus/parser/SQLPlusLex.g:133:4: 'INSERT'
+					// src/main/sqlplus/parser/SQLPlusLex.g:138:4: 'INSERT'
 					{
 					match("INSERT"); 
 
@@ -1549,32 +1597,32 @@ public class SQLPlusLex extends Lexer {
 		try {
 			int _type = IS;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/main/sqlplus/parser/SQLPlusLex.g:137:5: ( 'is' | 'IS' )
-			int alt23=2;
-			int LA23_0 = input.LA(1);
-			if ( (LA23_0=='i') ) {
-				alt23=1;
+			// src/main/sqlplus/parser/SQLPlusLex.g:142:5: ( 'is' | 'IS' )
+			int alt24=2;
+			int LA24_0 = input.LA(1);
+			if ( (LA24_0=='i') ) {
+				alt24=1;
 			}
-			else if ( (LA23_0=='I') ) {
-				alt23=2;
+			else if ( (LA24_0=='I') ) {
+				alt24=2;
 			}
 
 			else {
 				NoViableAltException nvae =
-					new NoViableAltException("", 23, 0, input);
+					new NoViableAltException("", 24, 0, input);
 				throw nvae;
 			}
 
-			switch (alt23) {
+			switch (alt24) {
 				case 1 :
-					// src/main/sqlplus/parser/SQLPlusLex.g:137:9: 'is'
+					// src/main/sqlplus/parser/SQLPlusLex.g:142:9: 'is'
 					{
 					match("is"); 
 
 					}
 					break;
 				case 2 :
-					// src/main/sqlplus/parser/SQLPlusLex.g:138:9: 'IS'
+					// src/main/sqlplus/parser/SQLPlusLex.g:143:9: 'IS'
 					{
 					match("IS"); 
 
@@ -1596,32 +1644,32 @@ public class SQLPlusLex extends Lexer {
 		try {
 			int _type = LIKE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/main/sqlplus/parser/SQLPlusLex.g:142:2: ( 'like' | 'LIKE' )
-			int alt24=2;
-			int LA24_0 = input.LA(1);
-			if ( (LA24_0=='l') ) {
-				alt24=1;
+			// src/main/sqlplus/parser/SQLPlusLex.g:147:2: ( 'like' | 'LIKE' )
+			int alt25=2;
+			int LA25_0 = input.LA(1);
+			if ( (LA25_0=='l') ) {
+				alt25=1;
 			}
-			else if ( (LA24_0=='L') ) {
-				alt24=2;
+			else if ( (LA25_0=='L') ) {
+				alt25=2;
 			}
 
 			else {
 				NoViableAltException nvae =
-					new NoViableAltException("", 24, 0, input);
+					new NoViableAltException("", 25, 0, input);
 				throw nvae;
 			}
 
-			switch (alt24) {
+			switch (alt25) {
 				case 1 :
-					// src/main/sqlplus/parser/SQLPlusLex.g:142:4: 'like'
+					// src/main/sqlplus/parser/SQLPlusLex.g:147:4: 'like'
 					{
 					match("like"); 
 
 					}
 					break;
 				case 2 :
-					// src/main/sqlplus/parser/SQLPlusLex.g:143:4: 'LIKE'
+					// src/main/sqlplus/parser/SQLPlusLex.g:148:4: 'LIKE'
 					{
 					match("LIKE"); 
 
@@ -1643,32 +1691,32 @@ public class SQLPlusLex extends Lexer {
 		try {
 			int _type = LIST;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/main/sqlplus/parser/SQLPlusLex.g:147:5: ( 'list' | 'LIST' )
-			int alt25=2;
-			int LA25_0 = input.LA(1);
-			if ( (LA25_0=='l') ) {
-				alt25=1;
+			// src/main/sqlplus/parser/SQLPlusLex.g:152:5: ( 'list' | 'LIST' )
+			int alt26=2;
+			int LA26_0 = input.LA(1);
+			if ( (LA26_0=='l') ) {
+				alt26=1;
 			}
-			else if ( (LA25_0=='L') ) {
-				alt25=2;
+			else if ( (LA26_0=='L') ) {
+				alt26=2;
 			}
 
 			else {
 				NoViableAltException nvae =
-					new NoViableAltException("", 25, 0, input);
+					new NoViableAltException("", 26, 0, input);
 				throw nvae;
 			}
 
-			switch (alt25) {
+			switch (alt26) {
 				case 1 :
-					// src/main/sqlplus/parser/SQLPlusLex.g:147:9: 'list'
+					// src/main/sqlplus/parser/SQLPlusLex.g:152:9: 'list'
 					{
 					match("list"); 
 
 					}
 					break;
 				case 2 :
-					// src/main/sqlplus/parser/SQLPlusLex.g:148:9: 'LIST'
+					// src/main/sqlplus/parser/SQLPlusLex.g:153:9: 'LIST'
 					{
 					match("LIST"); 
 
@@ -1690,32 +1738,32 @@ public class SQLPlusLex extends Lexer {
 		try {
 			int _type = NULL;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/main/sqlplus/parser/SQLPlusLex.g:152:5: ( 'null' | 'NULL' )
-			int alt26=2;
-			int LA26_0 = input.LA(1);
-			if ( (LA26_0=='n') ) {
-				alt26=1;
+			// src/main/sqlplus/parser/SQLPlusLex.g:157:5: ( 'null' | 'NULL' )
+			int alt27=2;
+			int LA27_0 = input.LA(1);
+			if ( (LA27_0=='n') ) {
+				alt27=1;
 			}
-			else if ( (LA26_0=='N') ) {
-				alt26=2;
+			else if ( (LA27_0=='N') ) {
+				alt27=2;
 			}
 
 			else {
 				NoViableAltException nvae =
-					new NoViableAltException("", 26, 0, input);
+					new NoViableAltException("", 27, 0, input);
 				throw nvae;
 			}
 
-			switch (alt26) {
+			switch (alt27) {
 				case 1 :
-					// src/main/sqlplus/parser/SQLPlusLex.g:152:9: 'null'
+					// src/main/sqlplus/parser/SQLPlusLex.g:157:9: 'null'
 					{
 					match("null"); 
 
 					}
 					break;
 				case 2 :
-					// src/main/sqlplus/parser/SQLPlusLex.g:153:9: 'NULL'
+					// src/main/sqlplus/parser/SQLPlusLex.g:158:9: 'NULL'
 					{
 					match("NULL"); 
 
@@ -1737,32 +1785,32 @@ public class SQLPlusLex extends Lexer {
 		try {
 			int _type = SELECT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/main/sqlplus/parser/SQLPlusLex.g:157:2: ( 'select' | 'SELECT' )
-			int alt27=2;
-			int LA27_0 = input.LA(1);
-			if ( (LA27_0=='s') ) {
-				alt27=1;
+			// src/main/sqlplus/parser/SQLPlusLex.g:162:2: ( 'select' | 'SELECT' )
+			int alt28=2;
+			int LA28_0 = input.LA(1);
+			if ( (LA28_0=='s') ) {
+				alt28=1;
 			}
-			else if ( (LA27_0=='S') ) {
-				alt27=2;
+			else if ( (LA28_0=='S') ) {
+				alt28=2;
 			}
 
 			else {
 				NoViableAltException nvae =
-					new NoViableAltException("", 27, 0, input);
+					new NoViableAltException("", 28, 0, input);
 				throw nvae;
 			}
 
-			switch (alt27) {
+			switch (alt28) {
 				case 1 :
-					// src/main/sqlplus/parser/SQLPlusLex.g:157:4: 'select'
+					// src/main/sqlplus/parser/SQLPlusLex.g:162:4: 'select'
 					{
 					match("select"); 
 
 					}
 					break;
 				case 2 :
-					// src/main/sqlplus/parser/SQLPlusLex.g:158:4: 'SELECT'
+					// src/main/sqlplus/parser/SQLPlusLex.g:163:4: 'SELECT'
 					{
 					match("SELECT"); 
 
@@ -1784,32 +1832,32 @@ public class SQLPlusLex extends Lexer {
 		try {
 			int _type = SET;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/main/sqlplus/parser/SQLPlusLex.g:162:5: ( 'set' | 'SET' )
-			int alt28=2;
-			int LA28_0 = input.LA(1);
-			if ( (LA28_0=='s') ) {
-				alt28=1;
+			// src/main/sqlplus/parser/SQLPlusLex.g:167:5: ( 'set' | 'SET' )
+			int alt29=2;
+			int LA29_0 = input.LA(1);
+			if ( (LA29_0=='s') ) {
+				alt29=1;
 			}
-			else if ( (LA28_0=='S') ) {
-				alt28=2;
+			else if ( (LA29_0=='S') ) {
+				alt29=2;
 			}
 
 			else {
 				NoViableAltException nvae =
-					new NoViableAltException("", 28, 0, input);
+					new NoViableAltException("", 29, 0, input);
 				throw nvae;
 			}
 
-			switch (alt28) {
+			switch (alt29) {
 				case 1 :
-					// src/main/sqlplus/parser/SQLPlusLex.g:162:9: 'set'
+					// src/main/sqlplus/parser/SQLPlusLex.g:167:9: 'set'
 					{
 					match("set"); 
 
 					}
 					break;
 				case 2 :
-					// src/main/sqlplus/parser/SQLPlusLex.g:163:9: 'SET'
+					// src/main/sqlplus/parser/SQLPlusLex.g:168:9: 'SET'
 					{
 					match("SET"); 
 
@@ -1831,32 +1879,32 @@ public class SQLPlusLex extends Lexer {
 		try {
 			int _type = SHOW;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/main/sqlplus/parser/SQLPlusLex.g:167:2: ( 'show' | 'SHOW' )
-			int alt29=2;
-			int LA29_0 = input.LA(1);
-			if ( (LA29_0=='s') ) {
-				alt29=1;
+			// src/main/sqlplus/parser/SQLPlusLex.g:172:2: ( 'show' | 'SHOW' )
+			int alt30=2;
+			int LA30_0 = input.LA(1);
+			if ( (LA30_0=='s') ) {
+				alt30=1;
 			}
-			else if ( (LA29_0=='S') ) {
-				alt29=2;
+			else if ( (LA30_0=='S') ) {
+				alt30=2;
 			}
 
 			else {
 				NoViableAltException nvae =
-					new NoViableAltException("", 29, 0, input);
+					new NoViableAltException("", 30, 0, input);
 				throw nvae;
 			}
 
-			switch (alt29) {
+			switch (alt30) {
 				case 1 :
-					// src/main/sqlplus/parser/SQLPlusLex.g:167:4: 'show'
+					// src/main/sqlplus/parser/SQLPlusLex.g:172:4: 'show'
 					{
 					match("show"); 
 
 					}
 					break;
 				case 2 :
-					// src/main/sqlplus/parser/SQLPlusLex.g:168:4: 'SHOW'
+					// src/main/sqlplus/parser/SQLPlusLex.g:173:4: 'SHOW'
 					{
 					match("SHOW"); 
 
@@ -1878,32 +1926,32 @@ public class SQLPlusLex extends Lexer {
 		try {
 			int _type = TABLES;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/main/sqlplus/parser/SQLPlusLex.g:172:2: ( 'tables' | 'TABLES' )
-			int alt30=2;
-			int LA30_0 = input.LA(1);
-			if ( (LA30_0=='t') ) {
-				alt30=1;
+			// src/main/sqlplus/parser/SQLPlusLex.g:177:2: ( 'tables' | 'TABLES' )
+			int alt31=2;
+			int LA31_0 = input.LA(1);
+			if ( (LA31_0=='t') ) {
+				alt31=1;
 			}
-			else if ( (LA30_0=='T') ) {
-				alt30=2;
+			else if ( (LA31_0=='T') ) {
+				alt31=2;
 			}
 
 			else {
 				NoViableAltException nvae =
-					new NoViableAltException("", 30, 0, input);
+					new NoViableAltException("", 31, 0, input);
 				throw nvae;
 			}
 
-			switch (alt30) {
+			switch (alt31) {
 				case 1 :
-					// src/main/sqlplus/parser/SQLPlusLex.g:172:4: 'tables'
+					// src/main/sqlplus/parser/SQLPlusLex.g:177:4: 'tables'
 					{
 					match("tables"); 
 
 					}
 					break;
 				case 2 :
-					// src/main/sqlplus/parser/SQLPlusLex.g:173:4: 'TABLES'
+					// src/main/sqlplus/parser/SQLPlusLex.g:178:4: 'TABLES'
 					{
 					match("TABLES"); 
 
@@ -1925,32 +1973,32 @@ public class SQLPlusLex extends Lexer {
 		try {
 			int _type = TRUE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/main/sqlplus/parser/SQLPlusLex.g:177:5: ( 'true' | 'TRUE' )
-			int alt31=2;
-			int LA31_0 = input.LA(1);
-			if ( (LA31_0=='t') ) {
-				alt31=1;
+			// src/main/sqlplus/parser/SQLPlusLex.g:182:5: ( 'true' | 'TRUE' )
+			int alt32=2;
+			int LA32_0 = input.LA(1);
+			if ( (LA32_0=='t') ) {
+				alt32=1;
 			}
-			else if ( (LA31_0=='T') ) {
-				alt31=2;
+			else if ( (LA32_0=='T') ) {
+				alt32=2;
 			}
 
 			else {
 				NoViableAltException nvae =
-					new NoViableAltException("", 31, 0, input);
+					new NoViableAltException("", 32, 0, input);
 				throw nvae;
 			}
 
-			switch (alt31) {
+			switch (alt32) {
 				case 1 :
-					// src/main/sqlplus/parser/SQLPlusLex.g:177:9: 'true'
+					// src/main/sqlplus/parser/SQLPlusLex.g:182:9: 'true'
 					{
 					match("true"); 
 
 					}
 					break;
 				case 2 :
-					// src/main/sqlplus/parser/SQLPlusLex.g:178:9: 'TRUE'
+					// src/main/sqlplus/parser/SQLPlusLex.g:183:9: 'TRUE'
 					{
 					match("TRUE"); 
 
@@ -1972,32 +2020,32 @@ public class SQLPlusLex extends Lexer {
 		try {
 			int _type = UPDATE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/main/sqlplus/parser/SQLPlusLex.g:182:2: ( 'update' | 'UPDATE' )
-			int alt32=2;
-			int LA32_0 = input.LA(1);
-			if ( (LA32_0=='u') ) {
-				alt32=1;
+			// src/main/sqlplus/parser/SQLPlusLex.g:187:2: ( 'update' | 'UPDATE' )
+			int alt33=2;
+			int LA33_0 = input.LA(1);
+			if ( (LA33_0=='u') ) {
+				alt33=1;
 			}
-			else if ( (LA32_0=='U') ) {
-				alt32=2;
+			else if ( (LA33_0=='U') ) {
+				alt33=2;
 			}
 
 			else {
 				NoViableAltException nvae =
-					new NoViableAltException("", 32, 0, input);
+					new NoViableAltException("", 33, 0, input);
 				throw nvae;
 			}
 
-			switch (alt32) {
+			switch (alt33) {
 				case 1 :
-					// src/main/sqlplus/parser/SQLPlusLex.g:182:5: 'update'
+					// src/main/sqlplus/parser/SQLPlusLex.g:187:5: 'update'
 					{
 					match("update"); 
 
 					}
 					break;
 				case 2 :
-					// src/main/sqlplus/parser/SQLPlusLex.g:183:4: 'UPDATE'
+					// src/main/sqlplus/parser/SQLPlusLex.g:188:4: 'UPDATE'
 					{
 					match("UPDATE"); 
 
@@ -2019,32 +2067,32 @@ public class SQLPlusLex extends Lexer {
 		try {
 			int _type = USE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/main/sqlplus/parser/SQLPlusLex.g:187:2: ( 'use' | 'USE' )
-			int alt33=2;
-			int LA33_0 = input.LA(1);
-			if ( (LA33_0=='u') ) {
-				alt33=1;
+			// src/main/sqlplus/parser/SQLPlusLex.g:192:2: ( 'use' | 'USE' )
+			int alt34=2;
+			int LA34_0 = input.LA(1);
+			if ( (LA34_0=='u') ) {
+				alt34=1;
 			}
-			else if ( (LA33_0=='U') ) {
-				alt33=2;
+			else if ( (LA34_0=='U') ) {
+				alt34=2;
 			}
 
 			else {
 				NoViableAltException nvae =
-					new NoViableAltException("", 33, 0, input);
+					new NoViableAltException("", 34, 0, input);
 				throw nvae;
 			}
 
-			switch (alt33) {
+			switch (alt34) {
 				case 1 :
-					// src/main/sqlplus/parser/SQLPlusLex.g:187:4: 'use'
+					// src/main/sqlplus/parser/SQLPlusLex.g:192:4: 'use'
 					{
 					match("use"); 
 
 					}
 					break;
 				case 2 :
-					// src/main/sqlplus/parser/SQLPlusLex.g:188:4: 'USE'
+					// src/main/sqlplus/parser/SQLPlusLex.g:193:4: 'USE'
 					{
 					match("USE"); 
 
@@ -2066,32 +2114,32 @@ public class SQLPlusLex extends Lexer {
 		try {
 			int _type = VALUES;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/main/sqlplus/parser/SQLPlusLex.g:192:5: ( 'values' | 'VALUES' )
-			int alt34=2;
-			int LA34_0 = input.LA(1);
-			if ( (LA34_0=='v') ) {
-				alt34=1;
+			// src/main/sqlplus/parser/SQLPlusLex.g:197:5: ( 'values' | 'VALUES' )
+			int alt35=2;
+			int LA35_0 = input.LA(1);
+			if ( (LA35_0=='v') ) {
+				alt35=1;
 			}
-			else if ( (LA34_0=='V') ) {
-				alt34=2;
+			else if ( (LA35_0=='V') ) {
+				alt35=2;
 			}
 
 			else {
 				NoViableAltException nvae =
-					new NoViableAltException("", 34, 0, input);
+					new NoViableAltException("", 35, 0, input);
 				throw nvae;
 			}
 
-			switch (alt34) {
+			switch (alt35) {
 				case 1 :
-					// src/main/sqlplus/parser/SQLPlusLex.g:192:9: 'values'
+					// src/main/sqlplus/parser/SQLPlusLex.g:197:9: 'values'
 					{
 					match("values"); 
 
 					}
 					break;
 				case 2 :
-					// src/main/sqlplus/parser/SQLPlusLex.g:193:9: 'VALUES'
+					// src/main/sqlplus/parser/SQLPlusLex.g:198:9: 'VALUES'
 					{
 					match("VALUES"); 
 
@@ -2113,32 +2161,32 @@ public class SQLPlusLex extends Lexer {
 		try {
 			int _type = WHERE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/main/sqlplus/parser/SQLPlusLex.g:197:2: ( 'where' | 'WHERE' )
-			int alt35=2;
-			int LA35_0 = input.LA(1);
-			if ( (LA35_0=='w') ) {
-				alt35=1;
+			// src/main/sqlplus/parser/SQLPlusLex.g:202:2: ( 'where' | 'WHERE' )
+			int alt36=2;
+			int LA36_0 = input.LA(1);
+			if ( (LA36_0=='w') ) {
+				alt36=1;
 			}
-			else if ( (LA35_0=='W') ) {
-				alt35=2;
+			else if ( (LA36_0=='W') ) {
+				alt36=2;
 			}
 
 			else {
 				NoViableAltException nvae =
-					new NoViableAltException("", 35, 0, input);
+					new NoViableAltException("", 36, 0, input);
 				throw nvae;
 			}
 
-			switch (alt35) {
+			switch (alt36) {
 				case 1 :
-					// src/main/sqlplus/parser/SQLPlusLex.g:197:5: 'where'
+					// src/main/sqlplus/parser/SQLPlusLex.g:202:5: 'where'
 					{
 					match("where"); 
 
 					}
 					break;
 				case 2 :
-					// src/main/sqlplus/parser/SQLPlusLex.g:198:4: 'WHERE'
+					// src/main/sqlplus/parser/SQLPlusLex.g:203:4: 'WHERE'
 					{
 					match("WHERE"); 
 
@@ -2160,20 +2208,20 @@ public class SQLPlusLex extends Lexer {
 		try {
 			int _type = INTEGER_NUMBER;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/main/sqlplus/parser/SQLPlusLex.g:202:5: ( ( '0' .. '9' )+ )
-			// src/main/sqlplus/parser/SQLPlusLex.g:202:9: ( '0' .. '9' )+
+			// src/main/sqlplus/parser/SQLPlusLex.g:207:5: ( ( '0' .. '9' )+ )
+			// src/main/sqlplus/parser/SQLPlusLex.g:207:9: ( '0' .. '9' )+
 			{
-			// src/main/sqlplus/parser/SQLPlusLex.g:202:9: ( '0' .. '9' )+
-			int cnt36=0;
-			loop36:
+			// src/main/sqlplus/parser/SQLPlusLex.g:207:9: ( '0' .. '9' )+
+			int cnt37=0;
+			loop37:
 			while (true) {
-				int alt36=2;
-				int LA36_0 = input.LA(1);
-				if ( ((LA36_0 >= '0' && LA36_0 <= '9')) ) {
-					alt36=1;
+				int alt37=2;
+				int LA37_0 = input.LA(1);
+				if ( ((LA37_0 >= '0' && LA37_0 <= '9')) ) {
+					alt37=1;
 				}
 
-				switch (alt36) {
+				switch (alt37) {
 				case 1 :
 					// src/main/sqlplus/parser/SQLPlusLex.g:
 					{
@@ -2189,11 +2237,11 @@ public class SQLPlusLex extends Lexer {
 					break;
 
 				default :
-					if ( cnt36 >= 1 ) break loop36;
-					EarlyExitException eee = new EarlyExitException(36, input);
+					if ( cnt37 >= 1 ) break loop37;
+					EarlyExitException eee = new EarlyExitException(37, input);
 					throw eee;
 				}
-				cnt36++;
+				cnt37++;
 			}
 
 			}
@@ -2212,8 +2260,8 @@ public class SQLPlusLex extends Lexer {
 		try {
 			int _type = ID;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/main/sqlplus/parser/SQLPlusLex.g:206:2: ( ( 'A' .. 'Z' | 'a' .. 'z' | '_' | '$' ) ( 'A' .. 'Z' | 'a' .. 'z' | '_' | '$' | '0' .. '9' )* )
-			// src/main/sqlplus/parser/SQLPlusLex.g:206:4: ( 'A' .. 'Z' | 'a' .. 'z' | '_' | '$' ) ( 'A' .. 'Z' | 'a' .. 'z' | '_' | '$' | '0' .. '9' )*
+			// src/main/sqlplus/parser/SQLPlusLex.g:211:2: ( ( 'A' .. 'Z' | 'a' .. 'z' | '_' | '$' ) ( 'A' .. 'Z' | 'a' .. 'z' | '_' | '$' | '0' .. '9' )* )
+			// src/main/sqlplus/parser/SQLPlusLex.g:211:4: ( 'A' .. 'Z' | 'a' .. 'z' | '_' | '$' ) ( 'A' .. 'Z' | 'a' .. 'z' | '_' | '$' | '0' .. '9' )*
 			{
 			if ( input.LA(1)=='$'||(input.LA(1) >= 'A' && input.LA(1) <= 'Z')||input.LA(1)=='_'||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
 				input.consume();
@@ -2223,16 +2271,16 @@ public class SQLPlusLex extends Lexer {
 				recover(mse);
 				throw mse;
 			}
-			// src/main/sqlplus/parser/SQLPlusLex.g:206:39: ( 'A' .. 'Z' | 'a' .. 'z' | '_' | '$' | '0' .. '9' )*
-			loop37:
+			// src/main/sqlplus/parser/SQLPlusLex.g:211:39: ( 'A' .. 'Z' | 'a' .. 'z' | '_' | '$' | '0' .. '9' )*
+			loop38:
 			while (true) {
-				int alt37=2;
-				int LA37_0 = input.LA(1);
-				if ( (LA37_0=='$'||(LA37_0 >= '0' && LA37_0 <= '9')||(LA37_0 >= 'A' && LA37_0 <= 'Z')||LA37_0=='_'||(LA37_0 >= 'a' && LA37_0 <= 'z')) ) {
-					alt37=1;
+				int alt38=2;
+				int LA38_0 = input.LA(1);
+				if ( (LA38_0=='$'||(LA38_0 >= '0' && LA38_0 <= '9')||(LA38_0 >= 'A' && LA38_0 <= 'Z')||LA38_0=='_'||(LA38_0 >= 'a' && LA38_0 <= 'z')) ) {
+					alt38=1;
 				}
 
-				switch (alt37) {
+				switch (alt38) {
 				case 1 :
 					// src/main/sqlplus/parser/SQLPlusLex.g:
 					{
@@ -2248,7 +2296,7 @@ public class SQLPlusLex extends Lexer {
 					break;
 
 				default :
-					break loop37;
+					break loop38;
 				}
 			}
 
@@ -2268,15 +2316,15 @@ public class SQLPlusLex extends Lexer {
 		try {
 			int _type = REAL_NUMBER;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/main/sqlplus/parser/SQLPlusLex.g:210:5: ( ( INTEGER_NUMBER DOT INTEGER_NUMBER | INTEGER_NUMBER DOT | DOT INTEGER_NUMBER | INTEGER_NUMBER ) ( ( 'E' | 'e' ) ( PLUS | MINUS )? INTEGER_NUMBER )? )
-			// src/main/sqlplus/parser/SQLPlusLex.g:210:9: ( INTEGER_NUMBER DOT INTEGER_NUMBER | INTEGER_NUMBER DOT | DOT INTEGER_NUMBER | INTEGER_NUMBER ) ( ( 'E' | 'e' ) ( PLUS | MINUS )? INTEGER_NUMBER )?
+			// src/main/sqlplus/parser/SQLPlusLex.g:215:5: ( ( INTEGER_NUMBER DOT INTEGER_NUMBER | INTEGER_NUMBER DOT | DOT INTEGER_NUMBER | INTEGER_NUMBER ) ( ( 'E' | 'e' ) ( PLUS | MINUS )? INTEGER_NUMBER )? )
+			// src/main/sqlplus/parser/SQLPlusLex.g:215:9: ( INTEGER_NUMBER DOT INTEGER_NUMBER | INTEGER_NUMBER DOT | DOT INTEGER_NUMBER | INTEGER_NUMBER ) ( ( 'E' | 'e' ) ( PLUS | MINUS )? INTEGER_NUMBER )?
 			{
-			// src/main/sqlplus/parser/SQLPlusLex.g:210:9: ( INTEGER_NUMBER DOT INTEGER_NUMBER | INTEGER_NUMBER DOT | DOT INTEGER_NUMBER | INTEGER_NUMBER )
-			int alt38=4;
-			alt38 = dfa38.predict(input);
-			switch (alt38) {
+			// src/main/sqlplus/parser/SQLPlusLex.g:215:9: ( INTEGER_NUMBER DOT INTEGER_NUMBER | INTEGER_NUMBER DOT | DOT INTEGER_NUMBER | INTEGER_NUMBER )
+			int alt39=4;
+			alt39 = dfa39.predict(input);
+			switch (alt39) {
 				case 1 :
-					// src/main/sqlplus/parser/SQLPlusLex.g:210:11: INTEGER_NUMBER DOT INTEGER_NUMBER
+					// src/main/sqlplus/parser/SQLPlusLex.g:215:11: INTEGER_NUMBER DOT INTEGER_NUMBER
 					{
 					mINTEGER_NUMBER(); 
 
@@ -2287,7 +2335,7 @@ public class SQLPlusLex extends Lexer {
 					}
 					break;
 				case 2 :
-					// src/main/sqlplus/parser/SQLPlusLex.g:210:47: INTEGER_NUMBER DOT
+					// src/main/sqlplus/parser/SQLPlusLex.g:215:47: INTEGER_NUMBER DOT
 					{
 					mINTEGER_NUMBER(); 
 
@@ -2296,7 +2344,7 @@ public class SQLPlusLex extends Lexer {
 					}
 					break;
 				case 3 :
-					// src/main/sqlplus/parser/SQLPlusLex.g:210:68: DOT INTEGER_NUMBER
+					// src/main/sqlplus/parser/SQLPlusLex.g:215:68: DOT INTEGER_NUMBER
 					{
 					mDOT(); 
 
@@ -2305,7 +2353,7 @@ public class SQLPlusLex extends Lexer {
 					}
 					break;
 				case 4 :
-					// src/main/sqlplus/parser/SQLPlusLex.g:210:89: INTEGER_NUMBER
+					// src/main/sqlplus/parser/SQLPlusLex.g:215:89: INTEGER_NUMBER
 					{
 					mINTEGER_NUMBER(); 
 
@@ -2314,15 +2362,15 @@ public class SQLPlusLex extends Lexer {
 
 			}
 
-			// src/main/sqlplus/parser/SQLPlusLex.g:211:9: ( ( 'E' | 'e' ) ( PLUS | MINUS )? INTEGER_NUMBER )?
-			int alt40=2;
-			int LA40_0 = input.LA(1);
-			if ( (LA40_0=='E'||LA40_0=='e') ) {
-				alt40=1;
+			// src/main/sqlplus/parser/SQLPlusLex.g:216:9: ( ( 'E' | 'e' ) ( PLUS | MINUS )? INTEGER_NUMBER )?
+			int alt41=2;
+			int LA41_0 = input.LA(1);
+			if ( (LA41_0=='E'||LA41_0=='e') ) {
+				alt41=1;
 			}
-			switch (alt40) {
+			switch (alt41) {
 				case 1 :
-					// src/main/sqlplus/parser/SQLPlusLex.g:211:11: ( 'E' | 'e' ) ( PLUS | MINUS )? INTEGER_NUMBER
+					// src/main/sqlplus/parser/SQLPlusLex.g:216:11: ( 'E' | 'e' ) ( PLUS | MINUS )? INTEGER_NUMBER
 					{
 					if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
 						input.consume();
@@ -2332,13 +2380,13 @@ public class SQLPlusLex extends Lexer {
 						recover(mse);
 						throw mse;
 					}
-					// src/main/sqlplus/parser/SQLPlusLex.g:211:21: ( PLUS | MINUS )?
-					int alt39=2;
-					int LA39_0 = input.LA(1);
-					if ( (LA39_0=='+'||LA39_0=='-') ) {
-						alt39=1;
+					// src/main/sqlplus/parser/SQLPlusLex.g:216:21: ( PLUS | MINUS )?
+					int alt40=2;
+					int LA40_0 = input.LA(1);
+					if ( (LA40_0=='+'||LA40_0=='-') ) {
+						alt40=1;
 					}
-					switch (alt39) {
+					switch (alt40) {
 						case 1 :
 							// src/main/sqlplus/parser/SQLPlusLex.g:
 							{
@@ -2378,37 +2426,37 @@ public class SQLPlusLex extends Lexer {
 		try {
 			int _type = TEXT_STRING;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/main/sqlplus/parser/SQLPlusLex.g:215:5: ( '\\'' (~ ( '\\'' ) )* '\\'' | '\"' (~ ( '\"' ) )* '\"' )
-			int alt43=2;
-			int LA43_0 = input.LA(1);
-			if ( (LA43_0=='\'') ) {
-				alt43=1;
+			// src/main/sqlplus/parser/SQLPlusLex.g:220:5: ( '\\'' (~ ( '\\'' ) )* '\\'' | '\"' (~ ( '\"' ) )* '\"' )
+			int alt44=2;
+			int LA44_0 = input.LA(1);
+			if ( (LA44_0=='\'') ) {
+				alt44=1;
 			}
-			else if ( (LA43_0=='\"') ) {
-				alt43=2;
+			else if ( (LA44_0=='\"') ) {
+				alt44=2;
 			}
 
 			else {
 				NoViableAltException nvae =
-					new NoViableAltException("", 43, 0, input);
+					new NoViableAltException("", 44, 0, input);
 				throw nvae;
 			}
 
-			switch (alt43) {
+			switch (alt44) {
 				case 1 :
-					// src/main/sqlplus/parser/SQLPlusLex.g:215:9: '\\'' (~ ( '\\'' ) )* '\\''
+					// src/main/sqlplus/parser/SQLPlusLex.g:220:9: '\\'' (~ ( '\\'' ) )* '\\''
 					{
 					match('\''); 
-					// src/main/sqlplus/parser/SQLPlusLex.g:215:14: (~ ( '\\'' ) )*
-					loop41:
+					// src/main/sqlplus/parser/SQLPlusLex.g:220:14: (~ ( '\\'' ) )*
+					loop42:
 					while (true) {
-						int alt41=2;
-						int LA41_0 = input.LA(1);
-						if ( ((LA41_0 >= '\u0000' && LA41_0 <= '&')||(LA41_0 >= '(' && LA41_0 <= '\uFFFF')) ) {
-							alt41=1;
+						int alt42=2;
+						int LA42_0 = input.LA(1);
+						if ( ((LA42_0 >= '\u0000' && LA42_0 <= '&')||(LA42_0 >= '(' && LA42_0 <= '\uFFFF')) ) {
+							alt42=1;
 						}
 
-						switch (alt41) {
+						switch (alt42) {
 						case 1 :
 							// src/main/sqlplus/parser/SQLPlusLex.g:
 							{
@@ -2424,7 +2472,7 @@ public class SQLPlusLex extends Lexer {
 							break;
 
 						default :
-							break loop41;
+							break loop42;
 						}
 					}
 
@@ -2432,19 +2480,19 @@ public class SQLPlusLex extends Lexer {
 					}
 					break;
 				case 2 :
-					// src/main/sqlplus/parser/SQLPlusLex.g:216:9: '\"' (~ ( '\"' ) )* '\"'
+					// src/main/sqlplus/parser/SQLPlusLex.g:221:9: '\"' (~ ( '\"' ) )* '\"'
 					{
 					match('\"'); 
-					// src/main/sqlplus/parser/SQLPlusLex.g:216:13: (~ ( '\"' ) )*
-					loop42:
+					// src/main/sqlplus/parser/SQLPlusLex.g:221:13: (~ ( '\"' ) )*
+					loop43:
 					while (true) {
-						int alt42=2;
-						int LA42_0 = input.LA(1);
-						if ( ((LA42_0 >= '\u0000' && LA42_0 <= '!')||(LA42_0 >= '#' && LA42_0 <= '\uFFFF')) ) {
-							alt42=1;
+						int alt43=2;
+						int LA43_0 = input.LA(1);
+						if ( ((LA43_0 >= '\u0000' && LA43_0 <= '!')||(LA43_0 >= '#' && LA43_0 <= '\uFFFF')) ) {
+							alt43=1;
 						}
 
-						switch (alt42) {
+						switch (alt43) {
 						case 1 :
 							// src/main/sqlplus/parser/SQLPlusLex.g:
 							{
@@ -2460,7 +2508,7 @@ public class SQLPlusLex extends Lexer {
 							break;
 
 						default :
-							break loop42;
+							break loop43;
 						}
 					}
 
@@ -2483,18 +2531,18 @@ public class SQLPlusLex extends Lexer {
 		try {
 			int _type = NEWLINE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/main/sqlplus/parser/SQLPlusLex.g:221:2: ( ( '\\r' )? '\\n' )
-			// src/main/sqlplus/parser/SQLPlusLex.g:221:5: ( '\\r' )? '\\n'
+			// src/main/sqlplus/parser/SQLPlusLex.g:226:2: ( ( '\\r' )? '\\n' )
+			// src/main/sqlplus/parser/SQLPlusLex.g:226:5: ( '\\r' )? '\\n'
 			{
-			// src/main/sqlplus/parser/SQLPlusLex.g:221:5: ( '\\r' )?
-			int alt44=2;
-			int LA44_0 = input.LA(1);
-			if ( (LA44_0=='\r') ) {
-				alt44=1;
+			// src/main/sqlplus/parser/SQLPlusLex.g:226:5: ( '\\r' )?
+			int alt45=2;
+			int LA45_0 = input.LA(1);
+			if ( (LA45_0=='\r') ) {
+				alt45=1;
 			}
-			switch (alt44) {
+			switch (alt45) {
 				case 1 :
-					// src/main/sqlplus/parser/SQLPlusLex.g:221:5: '\\r'
+					// src/main/sqlplus/parser/SQLPlusLex.g:226:5: '\\r'
 					{
 					match('\r'); 
 					}
@@ -2519,20 +2567,20 @@ public class SQLPlusLex extends Lexer {
 		try {
 			int _type = WS;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/main/sqlplus/parser/SQLPlusLex.g:226:2: ( ( ' ' | '\\t' )+ )
-			// src/main/sqlplus/parser/SQLPlusLex.g:226:5: ( ' ' | '\\t' )+
+			// src/main/sqlplus/parser/SQLPlusLex.g:231:2: ( ( ' ' | '\\t' )+ )
+			// src/main/sqlplus/parser/SQLPlusLex.g:231:5: ( ' ' | '\\t' )+
 			{
-			// src/main/sqlplus/parser/SQLPlusLex.g:226:5: ( ' ' | '\\t' )+
-			int cnt45=0;
-			loop45:
+			// src/main/sqlplus/parser/SQLPlusLex.g:231:5: ( ' ' | '\\t' )+
+			int cnt46=0;
+			loop46:
 			while (true) {
-				int alt45=2;
-				int LA45_0 = input.LA(1);
-				if ( (LA45_0=='\t'||LA45_0==' ') ) {
-					alt45=1;
+				int alt46=2;
+				int LA46_0 = input.LA(1);
+				if ( (LA46_0=='\t'||LA46_0==' ') ) {
+					alt46=1;
 				}
 
-				switch (alt45) {
+				switch (alt46) {
 				case 1 :
 					// src/main/sqlplus/parser/SQLPlusLex.g:
 					{
@@ -2548,11 +2596,11 @@ public class SQLPlusLex extends Lexer {
 					break;
 
 				default :
-					if ( cnt45 >= 1 ) break loop45;
-					EarlyExitException eee = new EarlyExitException(45, input);
+					if ( cnt46 >= 1 ) break loop46;
+					EarlyExitException eee = new EarlyExitException(46, input);
 					throw eee;
 				}
-				cnt45++;
+				cnt46++;
 			}
 
 			 _channel = HIDDEN; 
@@ -2569,10 +2617,10 @@ public class SQLPlusLex extends Lexer {
 
 	@Override
 	public void mTokens() throws RecognitionException {
-		// src/main/sqlplus/parser/SQLPlusLex.g:1:8: ( AND | ASTERISK | COMMA | COLON | DOT | EQUAL | GREATER_THAN | GREATER_THAN_EQUAL | LEFT_PARENTHESIS | LESS_THAN | LESS_THAN_EQUAL | MINUS | NOT | NOT_EQUAL | OR | PLUS | QUESTION_MARK | QUOTE | RIGHT_PARENTHESIS | SEMICOLON | UNDERSCORE | XOR | ALERT | ALERTS | ALL | AFTER | ANY | AS | BEFORE | DATABASES | DEFAULT | DELETE | EXISTS | FALSE | FROM | IF | IN | INTO | INSERT | IS | LIKE | LIST | NULL | SELECT | SET | SHOW | TABLES | TRUE | UPDATE | USE | VALUES | WHERE | INTEGER_NUMBER | ID | REAL_NUMBER | TEXT_STRING | NEWLINE | WS )
-		int alt46=58;
-		alt46 = dfa46.predict(input);
-		switch (alt46) {
+		// src/main/sqlplus/parser/SQLPlusLex.g:1:8: ( AND | ASTERISK | COMMA | COLON | DOT | EQUAL | GREATER_THAN | GREATER_THAN_EQUAL | LEFT_PARENTHESIS | LESS_THAN | LESS_THAN_EQUAL | MINUS | NOT | NOT_EQUAL | OR | PLUS | QUESTION_MARK | QUOTE | RIGHT_PARENTHESIS | SEMICOLON | UNDERSCORE | XOR | ALERT | ALERTS | ALL | AFTER | ANY | AS | BEFORE | CLEAR | DATABASES | DEFAULT | DELETE | EXISTS | FALSE | FROM | IF | IN | INTO | INSERT | IS | LIKE | LIST | NULL | SELECT | SET | SHOW | TABLES | TRUE | UPDATE | USE | VALUES | WHERE | INTEGER_NUMBER | ID | REAL_NUMBER | TEXT_STRING | NEWLINE | WS )
+		int alt47=59;
+		alt47 = dfa47.predict(input);
+		switch (alt47) {
 			case 1 :
 				// src/main/sqlplus/parser/SQLPlusLex.g:1:10: AND
 				{
@@ -2777,203 +2825,210 @@ public class SQLPlusLex extends Lexer {
 				}
 				break;
 			case 30 :
-				// src/main/sqlplus/parser/SQLPlusLex.g:1:248: DATABASES
+				// src/main/sqlplus/parser/SQLPlusLex.g:1:248: CLEAR
+				{
+				mCLEAR(); 
+
+				}
+				break;
+			case 31 :
+				// src/main/sqlplus/parser/SQLPlusLex.g:1:254: DATABASES
 				{
 				mDATABASES(); 
 
 				}
 				break;
-			case 31 :
-				// src/main/sqlplus/parser/SQLPlusLex.g:1:258: DEFAULT
+			case 32 :
+				// src/main/sqlplus/parser/SQLPlusLex.g:1:264: DEFAULT
 				{
 				mDEFAULT(); 
 
 				}
 				break;
-			case 32 :
-				// src/main/sqlplus/parser/SQLPlusLex.g:1:266: DELETE
+			case 33 :
+				// src/main/sqlplus/parser/SQLPlusLex.g:1:272: DELETE
 				{
 				mDELETE(); 
 
 				}
 				break;
-			case 33 :
-				// src/main/sqlplus/parser/SQLPlusLex.g:1:273: EXISTS
+			case 34 :
+				// src/main/sqlplus/parser/SQLPlusLex.g:1:279: EXISTS
 				{
 				mEXISTS(); 
 
 				}
 				break;
-			case 34 :
-				// src/main/sqlplus/parser/SQLPlusLex.g:1:280: FALSE
+			case 35 :
+				// src/main/sqlplus/parser/SQLPlusLex.g:1:286: FALSE
 				{
 				mFALSE(); 
 
 				}
 				break;
-			case 35 :
-				// src/main/sqlplus/parser/SQLPlusLex.g:1:286: FROM
+			case 36 :
+				// src/main/sqlplus/parser/SQLPlusLex.g:1:292: FROM
 				{
 				mFROM(); 
 
 				}
 				break;
-			case 36 :
-				// src/main/sqlplus/parser/SQLPlusLex.g:1:291: IF
+			case 37 :
+				// src/main/sqlplus/parser/SQLPlusLex.g:1:297: IF
 				{
 				mIF(); 
 
 				}
 				break;
-			case 37 :
-				// src/main/sqlplus/parser/SQLPlusLex.g:1:294: IN
+			case 38 :
+				// src/main/sqlplus/parser/SQLPlusLex.g:1:300: IN
 				{
 				mIN(); 
 
 				}
 				break;
-			case 38 :
-				// src/main/sqlplus/parser/SQLPlusLex.g:1:297: INTO
+			case 39 :
+				// src/main/sqlplus/parser/SQLPlusLex.g:1:303: INTO
 				{
 				mINTO(); 
 
 				}
 				break;
-			case 39 :
-				// src/main/sqlplus/parser/SQLPlusLex.g:1:302: INSERT
+			case 40 :
+				// src/main/sqlplus/parser/SQLPlusLex.g:1:308: INSERT
 				{
 				mINSERT(); 
 
 				}
 				break;
-			case 40 :
-				// src/main/sqlplus/parser/SQLPlusLex.g:1:309: IS
+			case 41 :
+				// src/main/sqlplus/parser/SQLPlusLex.g:1:315: IS
 				{
 				mIS(); 
 
 				}
 				break;
-			case 41 :
-				// src/main/sqlplus/parser/SQLPlusLex.g:1:312: LIKE
+			case 42 :
+				// src/main/sqlplus/parser/SQLPlusLex.g:1:318: LIKE
 				{
 				mLIKE(); 
 
 				}
 				break;
-			case 42 :
-				// src/main/sqlplus/parser/SQLPlusLex.g:1:317: LIST
+			case 43 :
+				// src/main/sqlplus/parser/SQLPlusLex.g:1:323: LIST
 				{
 				mLIST(); 
 
 				}
 				break;
-			case 43 :
-				// src/main/sqlplus/parser/SQLPlusLex.g:1:322: NULL
+			case 44 :
+				// src/main/sqlplus/parser/SQLPlusLex.g:1:328: NULL
 				{
 				mNULL(); 
 
 				}
 				break;
-			case 44 :
-				// src/main/sqlplus/parser/SQLPlusLex.g:1:327: SELECT
+			case 45 :
+				// src/main/sqlplus/parser/SQLPlusLex.g:1:333: SELECT
 				{
 				mSELECT(); 
 
 				}
 				break;
-			case 45 :
-				// src/main/sqlplus/parser/SQLPlusLex.g:1:334: SET
+			case 46 :
+				// src/main/sqlplus/parser/SQLPlusLex.g:1:340: SET
 				{
 				mSET(); 
 
 				}
 				break;
-			case 46 :
-				// src/main/sqlplus/parser/SQLPlusLex.g:1:338: SHOW
+			case 47 :
+				// src/main/sqlplus/parser/SQLPlusLex.g:1:344: SHOW
 				{
 				mSHOW(); 
 
 				}
 				break;
-			case 47 :
-				// src/main/sqlplus/parser/SQLPlusLex.g:1:343: TABLES
+			case 48 :
+				// src/main/sqlplus/parser/SQLPlusLex.g:1:349: TABLES
 				{
 				mTABLES(); 
 
 				}
 				break;
-			case 48 :
-				// src/main/sqlplus/parser/SQLPlusLex.g:1:350: TRUE
+			case 49 :
+				// src/main/sqlplus/parser/SQLPlusLex.g:1:356: TRUE
 				{
 				mTRUE(); 
 
 				}
 				break;
-			case 49 :
-				// src/main/sqlplus/parser/SQLPlusLex.g:1:355: UPDATE
+			case 50 :
+				// src/main/sqlplus/parser/SQLPlusLex.g:1:361: UPDATE
 				{
 				mUPDATE(); 
 
 				}
 				break;
-			case 50 :
-				// src/main/sqlplus/parser/SQLPlusLex.g:1:362: USE
+			case 51 :
+				// src/main/sqlplus/parser/SQLPlusLex.g:1:368: USE
 				{
 				mUSE(); 
 
 				}
 				break;
-			case 51 :
-				// src/main/sqlplus/parser/SQLPlusLex.g:1:366: VALUES
+			case 52 :
+				// src/main/sqlplus/parser/SQLPlusLex.g:1:372: VALUES
 				{
 				mVALUES(); 
 
 				}
 				break;
-			case 52 :
-				// src/main/sqlplus/parser/SQLPlusLex.g:1:373: WHERE
+			case 53 :
+				// src/main/sqlplus/parser/SQLPlusLex.g:1:379: WHERE
 				{
 				mWHERE(); 
 
 				}
 				break;
-			case 53 :
-				// src/main/sqlplus/parser/SQLPlusLex.g:1:379: INTEGER_NUMBER
+			case 54 :
+				// src/main/sqlplus/parser/SQLPlusLex.g:1:385: INTEGER_NUMBER
 				{
 				mINTEGER_NUMBER(); 
 
 				}
 				break;
-			case 54 :
-				// src/main/sqlplus/parser/SQLPlusLex.g:1:394: ID
+			case 55 :
+				// src/main/sqlplus/parser/SQLPlusLex.g:1:400: ID
 				{
 				mID(); 
 
 				}
 				break;
-			case 55 :
-				// src/main/sqlplus/parser/SQLPlusLex.g:1:397: REAL_NUMBER
+			case 56 :
+				// src/main/sqlplus/parser/SQLPlusLex.g:1:403: REAL_NUMBER
 				{
 				mREAL_NUMBER(); 
 
 				}
 				break;
-			case 56 :
-				// src/main/sqlplus/parser/SQLPlusLex.g:1:409: TEXT_STRING
+			case 57 :
+				// src/main/sqlplus/parser/SQLPlusLex.g:1:415: TEXT_STRING
 				{
 				mTEXT_STRING(); 
 
 				}
 				break;
-			case 57 :
-				// src/main/sqlplus/parser/SQLPlusLex.g:1:421: NEWLINE
+			case 58 :
+				// src/main/sqlplus/parser/SQLPlusLex.g:1:427: NEWLINE
 				{
 				mNEWLINE(); 
 
 				}
 				break;
-			case 58 :
-				// src/main/sqlplus/parser/SQLPlusLex.g:1:429: WS
+			case 59 :
+				// src/main/sqlplus/parser/SQLPlusLex.g:1:435: WS
 				{
 				mWS(); 
 
@@ -2984,21 +3039,21 @@ public class SQLPlusLex extends Lexer {
 	}
 
 
-	protected DFA38 dfa38 = new DFA38(this);
-	protected DFA46 dfa46 = new DFA46(this);
-	static final String DFA38_eotS =
+	protected DFA39 dfa39 = new DFA39(this);
+	protected DFA47 dfa47 = new DFA47(this);
+	static final String DFA39_eotS =
 		"\1\uffff\1\3\2\uffff\1\5\2\uffff";
-	static final String DFA38_eofS =
+	static final String DFA39_eofS =
 		"\7\uffff";
-	static final String DFA38_minS =
+	static final String DFA39_minS =
 		"\2\56\2\uffff\1\60\2\uffff";
-	static final String DFA38_maxS =
+	static final String DFA39_maxS =
 		"\2\71\2\uffff\1\71\2\uffff";
-	static final String DFA38_acceptS =
+	static final String DFA39_acceptS =
 		"\2\uffff\1\3\1\4\1\uffff\1\2\1\1";
-	static final String DFA38_specialS =
+	static final String DFA39_specialS =
 		"\7\uffff}>";
-	static final String[] DFA38_transitionS = {
+	static final String[] DFA39_transitionS = {
 			"\1\2\1\uffff\12\1",
 			"\1\4\1\uffff\12\1",
 			"",
@@ -3008,232 +3063,233 @@ public class SQLPlusLex extends Lexer {
 			""
 	};
 
-	static final short[] DFA38_eot = DFA.unpackEncodedString(DFA38_eotS);
-	static final short[] DFA38_eof = DFA.unpackEncodedString(DFA38_eofS);
-	static final char[] DFA38_min = DFA.unpackEncodedStringToUnsignedChars(DFA38_minS);
-	static final char[] DFA38_max = DFA.unpackEncodedStringToUnsignedChars(DFA38_maxS);
-	static final short[] DFA38_accept = DFA.unpackEncodedString(DFA38_acceptS);
-	static final short[] DFA38_special = DFA.unpackEncodedString(DFA38_specialS);
-	static final short[][] DFA38_transition;
+	static final short[] DFA39_eot = DFA.unpackEncodedString(DFA39_eotS);
+	static final short[] DFA39_eof = DFA.unpackEncodedString(DFA39_eofS);
+	static final char[] DFA39_min = DFA.unpackEncodedStringToUnsignedChars(DFA39_minS);
+	static final char[] DFA39_max = DFA.unpackEncodedStringToUnsignedChars(DFA39_maxS);
+	static final short[] DFA39_accept = DFA.unpackEncodedString(DFA39_acceptS);
+	static final short[] DFA39_special = DFA.unpackEncodedString(DFA39_specialS);
+	static final short[][] DFA39_transition;
 
 	static {
-		int numStates = DFA38_transitionS.length;
-		DFA38_transition = new short[numStates][];
+		int numStates = DFA39_transitionS.length;
+		DFA39_transition = new short[numStates][];
 		for (int i=0; i<numStates; i++) {
-			DFA38_transition[i] = DFA.unpackEncodedString(DFA38_transitionS[i]);
+			DFA39_transition[i] = DFA.unpackEncodedString(DFA39_transitionS[i]);
 		}
 	}
 
-	protected class DFA38 extends DFA {
+	protected class DFA39 extends DFA {
 
-		public DFA38(BaseRecognizer recognizer) {
+		public DFA39(BaseRecognizer recognizer) {
 			this.recognizer = recognizer;
-			this.decisionNumber = 38;
-			this.eot = DFA38_eot;
-			this.eof = DFA38_eof;
-			this.min = DFA38_min;
-			this.max = DFA38_max;
-			this.accept = DFA38_accept;
-			this.special = DFA38_special;
-			this.transition = DFA38_transition;
+			this.decisionNumber = 39;
+			this.eot = DFA39_eot;
+			this.eof = DFA39_eof;
+			this.min = DFA39_min;
+			this.max = DFA39_max;
+			this.accept = DFA39_accept;
+			this.special = DFA39_special;
+			this.transition = DFA39_transition;
 		}
 		@Override
 		public String getDescription() {
-			return "210:9: ( INTEGER_NUMBER DOT INTEGER_NUMBER | INTEGER_NUMBER DOT | DOT INTEGER_NUMBER | INTEGER_NUMBER )";
+			return "215:9: ( INTEGER_NUMBER DOT INTEGER_NUMBER | INTEGER_NUMBER DOT | DOT INTEGER_NUMBER | INTEGER_NUMBER )";
 		}
 	}
 
-	static final String DFA46_eotS =
-		"\1\uffff\2\63\4\uffff\1\77\1\uffff\1\102\1\uffff\1\104\1\uffff\2\63\1"+
-		"\111\1\uffff\2\63\3\uffff\1\114\2\uffff\1\115\30\63\1\164\4\uffff\3\63"+
-		"\1\172\3\63\1\172\6\uffff\4\63\1\uffff\2\23\2\uffff\16\63\1\u0093\1\u0096"+
-		"\1\u0097\1\u0093\1\u0096\1\u0097\22\63\1\uffff\1\3\1\u00b0\1\63\1\u00b0"+
-		"\1\63\1\uffff\1\3\1\u00b3\2\63\1\111\1\63\1\111\1\63\2\u00b8\16\63\1\uffff"+
-		"\2\63\2\uffff\7\63\1\u00d0\2\63\1\u00d0\6\63\1\u00d9\1\63\1\u00d9\4\63"+
-		"\1\uffff\2\63\1\uffff\2\63\2\u00e3\1\uffff\13\63\1\u00ef\1\63\1\u00ef"+
-		"\1\u00f1\1\63\1\u00f1\1\63\1\u00f4\1\u00f5\1\u00f4\1\u00f5\1\63\1\uffff"+
-		"\1\u00f7\1\63\1\u00f7\1\63\1\u00fa\1\63\1\u00fa\1\63\1\uffff\5\63\1\u0103"+
-		"\1\u0104\1\u0103\1\u0104\1\uffff\12\63\1\u0110\1\uffff\1\u0110\1\uffff"+
-		"\2\63\2\uffff\1\63\1\uffff\2\63\1\uffff\5\63\2\u011b\1\u011c\2\uffff\1"+
-		"\u011c\2\u011d\2\63\1\u0120\2\63\1\u0120\2\u0123\1\uffff\2\u0124\2\u0125"+
-		"\2\u0126\2\u0127\2\u0128\3\uffff\1\63\1\u012a\1\uffff\1\63\1\u012a\6\uffff"+
-		"\1\63\1\uffff\1\63\2\u012e\1\uffff";
-	static final String DFA46_eofS =
-		"\u012f\uffff";
-	static final String DFA46_minS =
+	static final String DFA47_eotS =
+		"\1\uffff\2\65\4\uffff\1\101\1\uffff\1\104\1\uffff\1\106\1\uffff\2\65\1"+
+		"\113\1\uffff\2\65\3\uffff\1\116\2\uffff\1\117\32\65\1\170\4\uffff\3\65"+
+		"\1\176\3\65\1\176\6\uffff\4\65\1\uffff\2\23\2\uffff\20\65\1\u0099\1\u009c"+
+		"\1\u009d\1\u0099\1\u009c\1\u009d\22\65\1\uffff\1\3\1\u00b6\1\65\1\u00b6"+
+		"\1\65\1\uffff\1\3\1\u00b9\2\65\1\113\1\65\1\113\1\65\2\u00be\20\65\1\uffff"+
+		"\2\65\2\uffff\7\65\1\u00d8\2\65\1\u00d8\6\65\1\u00e1\1\65\1\u00e1\4\65"+
+		"\1\uffff\2\65\1\uffff\2\65\2\u00eb\1\uffff\15\65\1\u00f9\1\65\1\u00f9"+
+		"\1\u00fb\1\65\1\u00fb\1\65\1\u00fe\1\u00ff\1\u00fe\1\u00ff\1\65\1\uffff"+
+		"\1\u0101\1\65\1\u0101\1\65\1\u0104\1\65\1\u0104\1\65\1\uffff\5\65\1\u010d"+
+		"\1\u010e\1\u010d\1\u010e\1\uffff\2\65\2\u0112\10\65\1\u011b\1\uffff\1"+
+		"\u011b\1\uffff\2\65\2\uffff\1\65\1\uffff\2\65\1\uffff\5\65\2\u0126\1\u0127"+
+		"\2\uffff\1\u0127\2\u0128\1\uffff\2\65\1\u012b\2\65\1\u012b\2\u012e\1\uffff"+
+		"\2\u012f\2\u0130\2\u0131\2\u0132\2\u0133\3\uffff\1\65\1\u0135\1\uffff"+
+		"\1\65\1\u0135\6\uffff\1\65\1\uffff\1\65\2\u0139\1\uffff";
+	static final String DFA47_eofS =
+		"\u013a\uffff";
+	static final String DFA47_minS =
 		"\1\11\1\146\1\106\4\uffff\1\60\1\uffff\1\75\1\uffff\1\75\1\uffff\1\117"+
 		"\1\157\1\75\1\uffff\1\162\1\122\3\uffff\1\0\2\uffff\1\44\1\157\1\117\1"+
-		"\145\1\105\1\141\1\101\1\170\1\130\1\141\1\101\1\146\1\106\1\151\1\111"+
-		"\1\145\1\105\1\141\1\101\1\160\1\120\1\141\1\101\1\150\1\110\1\56\4\uffff"+
-		"\1\144\1\145\1\164\1\44\1\104\1\105\1\124\1\44\6\uffff\1\124\1\114\1\164"+
-		"\1\154\1\uffff\2\44\2\uffff\1\162\1\122\1\146\1\106\1\164\1\146\1\124"+
-		"\1\106\1\151\1\111\1\154\1\157\1\114\1\117\6\44\1\153\1\113\1\154\1\157"+
-		"\1\114\1\117\1\142\1\165\1\102\1\125\1\144\1\145\1\104\1\105\1\154\1\114"+
-		"\1\145\1\105\1\uffff\2\44\1\162\1\44\1\145\1\uffff\2\44\1\122\1\105\1"+
-		"\44\1\114\1\44\1\154\2\44\1\157\1\117\2\141\1\145\2\101\1\105\1\163\1"+
-		"\123\1\163\1\155\1\123\1\115\1\uffff\1\157\1\145\2\uffff\1\117\1\105\1"+
-		"\145\1\164\1\105\1\124\1\145\1\44\1\167\1\105\1\44\1\127\1\154\1\145\1"+
-		"\114\1\105\1\141\1\44\1\101\1\44\1\165\1\125\1\162\1\122\1\uffff\1\164"+
-		"\1\162\1\uffff\1\124\1\122\2\44\1\uffff\1\162\1\122\1\142\1\165\1\164"+
-		"\1\102\1\125\1\124\1\164\1\124\1\145\1\44\1\105\2\44\1\162\1\44\1\122"+
-		"\4\44\1\143\1\uffff\1\44\1\103\1\44\1\145\1\44\1\105\1\44\1\164\1\uffff"+
-		"\1\124\1\145\1\105\1\145\1\105\4\44\1\uffff\1\145\1\105\1\141\1\154\1"+
-		"\145\1\101\1\114\1\105\1\163\1\123\1\44\1\uffff\1\44\1\uffff\1\164\1\124"+
-		"\2\uffff\1\164\1\uffff\1\124\1\163\1\uffff\1\123\1\145\1\105\1\163\1\123"+
-		"\3\44\2\uffff\3\44\1\163\1\164\1\44\1\123\1\124\3\44\1\uffff\12\44\3\uffff"+
-		"\1\145\1\44\1\uffff\1\105\1\44\6\uffff\1\163\1\uffff\1\123\2\44\1\uffff";
-	static final String DFA46_maxS =
+		"\145\1\105\1\154\1\114\1\141\1\101\1\170\1\130\1\141\1\101\1\146\1\106"+
+		"\1\151\1\111\1\145\1\105\1\141\1\101\1\160\1\120\1\141\1\101\1\150\1\110"+
+		"\1\56\4\uffff\1\144\1\145\1\164\1\44\1\104\1\105\1\124\1\44\6\uffff\1"+
+		"\124\1\114\1\164\1\154\1\uffff\2\44\2\uffff\1\162\1\122\1\146\1\106\1"+
+		"\145\1\105\1\164\1\146\1\124\1\106\1\151\1\111\1\154\1\157\1\114\1\117"+
+		"\6\44\1\153\1\113\1\154\1\157\1\114\1\117\1\142\1\165\1\102\1\125\1\144"+
+		"\1\145\1\104\1\105\1\154\1\114\1\145\1\105\1\uffff\2\44\1\162\1\44\1\145"+
+		"\1\uffff\2\44\1\122\1\105\1\44\1\114\1\44\1\154\2\44\1\157\1\117\1\141"+
+		"\1\101\2\141\1\145\2\101\1\105\1\163\1\123\1\163\1\155\1\123\1\115\1\uffff"+
+		"\1\157\1\145\2\uffff\1\117\1\105\1\145\1\164\1\105\1\124\1\145\1\44\1"+
+		"\167\1\105\1\44\1\127\1\154\1\145\1\114\1\105\1\141\1\44\1\101\1\44\1"+
+		"\165\1\125\1\162\1\122\1\uffff\1\164\1\162\1\uffff\1\124\1\122\2\44\1"+
+		"\uffff\1\162\1\122\1\162\1\122\1\142\1\165\1\164\1\102\1\125\1\124\1\164"+
+		"\1\124\1\145\1\44\1\105\2\44\1\162\1\44\1\122\4\44\1\143\1\uffff\1\44"+
+		"\1\103\1\44\1\145\1\44\1\105\1\44\1\164\1\uffff\1\124\1\145\1\105\1\145"+
+		"\1\105\4\44\1\uffff\1\145\1\105\2\44\1\141\1\154\1\145\1\101\1\114\1\105"+
+		"\1\163\1\123\1\44\1\uffff\1\44\1\uffff\1\164\1\124\2\uffff\1\164\1\uffff"+
+		"\1\124\1\163\1\uffff\1\123\1\145\1\105\1\163\1\123\3\44\2\uffff\3\44\1"+
+		"\uffff\1\163\1\164\1\44\1\123\1\124\3\44\1\uffff\12\44\3\uffff\1\145\1"+
+		"\44\1\uffff\1\105\1\44\6\uffff\1\163\1\uffff\1\123\2\44\1\uffff";
+	static final String DFA47_maxS =
 		"\1\176\1\163\1\123\4\uffff\1\71\1\uffff\1\75\1\uffff\1\76\1\uffff\1\125"+
 		"\1\165\1\75\1\uffff\1\162\1\122\3\uffff\1\uffff\2\uffff\1\172\1\157\1"+
-		"\117\1\145\1\105\1\145\1\105\1\170\1\130\1\162\1\122\1\163\1\123\1\151"+
-		"\1\111\1\150\1\110\1\162\1\122\1\163\1\123\1\141\1\101\1\150\1\110\1\145"+
-		"\4\uffff\1\171\1\154\1\164\1\172\1\131\1\105\1\124\1\172\6\uffff\1\124"+
-		"\1\114\1\164\1\154\1\uffff\2\172\2\uffff\1\162\1\122\1\146\1\106\1\164"+
-		"\1\154\1\124\1\114\1\151\1\111\1\154\1\157\1\114\1\117\6\172\1\163\1\123"+
-		"\1\164\1\157\1\124\1\117\1\142\1\165\1\102\1\125\1\144\1\145\1\104\1\105"+
-		"\1\154\1\114\1\145\1\105\1\uffff\2\172\1\162\1\172\1\145\1\uffff\2\172"+
-		"\1\122\1\105\1\172\1\114\1\172\1\154\2\172\1\157\1\117\2\141\1\145\2\101"+
-		"\1\105\1\163\1\123\1\163\1\155\1\123\1\115\1\uffff\1\157\1\145\2\uffff"+
-		"\1\117\1\105\1\145\1\164\1\105\1\124\1\145\1\172\1\167\1\105\1\172\1\127"+
-		"\1\154\1\145\1\114\1\105\1\141\1\172\1\101\1\172\1\165\1\125\1\162\1\122"+
-		"\1\uffff\1\164\1\162\1\uffff\1\124\1\122\2\172\1\uffff\1\162\1\122\1\142"+
-		"\1\165\1\164\1\102\1\125\1\124\1\164\1\124\1\145\1\172\1\105\2\172\1\162"+
-		"\1\172\1\122\4\172\1\143\1\uffff\1\172\1\103\1\172\1\145\1\172\1\105\1"+
-		"\172\1\164\1\uffff\1\124\1\145\1\105\1\145\1\105\4\172\1\uffff\1\145\1"+
-		"\105\1\141\1\154\1\145\1\101\1\114\1\105\1\163\1\123\1\172\1\uffff\1\172"+
-		"\1\uffff\1\164\1\124\2\uffff\1\164\1\uffff\1\124\1\163\1\uffff\1\123\1"+
-		"\145\1\105\1\163\1\123\3\172\2\uffff\3\172\1\163\1\164\1\172\1\123\1\124"+
+		"\117\1\145\1\105\1\154\1\114\1\145\1\105\1\170\1\130\1\162\1\122\1\163"+
+		"\1\123\1\151\1\111\1\150\1\110\1\162\1\122\1\163\1\123\1\141\1\101\1\150"+
+		"\1\110\1\145\4\uffff\1\171\1\154\1\164\1\172\1\131\1\105\1\124\1\172\6"+
+		"\uffff\1\124\1\114\1\164\1\154\1\uffff\2\172\2\uffff\1\162\1\122\1\146"+
+		"\1\106\1\145\1\105\1\164\1\154\1\124\1\114\1\151\1\111\1\154\1\157\1\114"+
+		"\1\117\6\172\1\163\1\123\1\164\1\157\1\124\1\117\1\142\1\165\1\102\1\125"+
+		"\1\144\1\145\1\104\1\105\1\154\1\114\1\145\1\105\1\uffff\2\172\1\162\1"+
+		"\172\1\145\1\uffff\2\172\1\122\1\105\1\172\1\114\1\172\1\154\2\172\1\157"+
+		"\1\117\1\141\1\101\2\141\1\145\2\101\1\105\1\163\1\123\1\163\1\155\1\123"+
+		"\1\115\1\uffff\1\157\1\145\2\uffff\1\117\1\105\1\145\1\164\1\105\1\124"+
+		"\1\145\1\172\1\167\1\105\1\172\1\127\1\154\1\145\1\114\1\105\1\141\1\172"+
+		"\1\101\1\172\1\165\1\125\1\162\1\122\1\uffff\1\164\1\162\1\uffff\1\124"+
+		"\1\122\2\172\1\uffff\1\162\1\122\1\162\1\122\1\142\1\165\1\164\1\102\1"+
+		"\125\1\124\1\164\1\124\1\145\1\172\1\105\2\172\1\162\1\172\1\122\4\172"+
+		"\1\143\1\uffff\1\172\1\103\1\172\1\145\1\172\1\105\1\172\1\164\1\uffff"+
+		"\1\124\1\145\1\105\1\145\1\105\4\172\1\uffff\1\145\1\105\2\172\1\141\1"+
+		"\154\1\145\1\101\1\114\1\105\1\163\1\123\1\172\1\uffff\1\172\1\uffff\1"+
+		"\164\1\124\2\uffff\1\164\1\uffff\1\124\1\163\1\uffff\1\123\1\145\1\105"+
+		"\1\163\1\123\3\172\2\uffff\3\172\1\uffff\1\163\1\164\1\172\1\123\1\124"+
 		"\3\172\1\uffff\12\172\3\uffff\1\145\1\172\1\uffff\1\105\1\172\6\uffff"+
 		"\1\163\1\uffff\1\123\2\172\1\uffff";
-	static final String DFA46_acceptS =
+	static final String DFA47_acceptS =
 		"\3\uffff\1\1\1\2\1\3\1\4\1\uffff\1\6\1\uffff\1\11\1\uffff\1\14\3\uffff"+
-		"\1\16\2\uffff\1\17\1\20\1\21\1\uffff\1\23\1\24\32\uffff\1\66\1\70\1\71"+
-		"\1\72\10\uffff\1\5\1\67\1\10\1\7\1\13\1\12\4\uffff\1\15\2\uffff\1\22\1"+
-		"\25\46\uffff\1\65\5\uffff\1\34\30\uffff\1\44\2\uffff\1\45\1\50\30\uffff"+
-		"\1\31\2\uffff\1\33\4\uffff\1\26\27\uffff\1\55\10\uffff\1\62\11\uffff\1"+
-		"\53\13\uffff\1\43\1\uffff\1\46\2\uffff\1\51\1\52\1\uffff\1\56\2\uffff"+
-		"\1\60\10\uffff\1\27\1\32\13\uffff\1\42\12\uffff\1\64\1\30\1\35\2\uffff"+
-		"\1\40\2\uffff\1\41\1\47\1\54\1\57\1\61\1\63\1\uffff\1\37\3\uffff\1\36";
-	static final String DFA46_specialS =
-		"\26\uffff\1\0\u0118\uffff}>";
-	static final String[] DFA46_transitionS = {
-			"\1\66\1\65\2\uffff\1\65\22\uffff\1\66\1\17\1\64\1\uffff\1\63\1\uffff"+
-			"\1\3\1\26\1\12\1\27\1\4\1\24\1\5\1\14\1\7\1\uffff\12\62\1\6\1\30\1\13"+
-			"\1\10\1\11\1\25\1\uffff\1\2\1\35\1\63\1\37\1\41\1\43\2\63\1\45\2\63\1"+
-			"\47\1\63\1\15\1\22\3\63\1\51\1\53\1\55\1\57\1\61\1\33\2\63\3\uffff\1"+
-			"\20\1\31\1\uffff\1\1\1\34\1\63\1\36\1\40\1\42\2\63\1\44\2\63\1\46\1\63"+
-			"\1\16\1\21\3\63\1\50\1\52\1\54\1\56\1\60\1\32\2\63\1\uffff\1\23\1\uffff"+
+		"\1\16\2\uffff\1\17\1\20\1\21\1\uffff\1\23\1\24\34\uffff\1\67\1\71\1\72"+
+		"\1\73\10\uffff\1\5\1\70\1\10\1\7\1\13\1\12\4\uffff\1\15\2\uffff\1\22\1"+
+		"\25\50\uffff\1\66\5\uffff\1\34\32\uffff\1\45\2\uffff\1\46\1\51\30\uffff"+
+		"\1\31\2\uffff\1\33\4\uffff\1\26\31\uffff\1\56\10\uffff\1\63\11\uffff\1"+
+		"\54\15\uffff\1\44\1\uffff\1\47\2\uffff\1\52\1\53\1\uffff\1\57\2\uffff"+
+		"\1\61\10\uffff\1\27\1\32\3\uffff\1\36\10\uffff\1\43\12\uffff\1\65\1\30"+
+		"\1\35\2\uffff\1\41\2\uffff\1\42\1\50\1\55\1\60\1\62\1\64\1\uffff\1\40"+
+		"\3\uffff\1\37";
+	static final String DFA47_specialS =
+		"\26\uffff\1\0\u0123\uffff}>";
+	static final String[] DFA47_transitionS = {
+			"\1\70\1\67\2\uffff\1\67\22\uffff\1\70\1\17\1\66\1\uffff\1\65\1\uffff"+
+			"\1\3\1\26\1\12\1\27\1\4\1\24\1\5\1\14\1\7\1\uffff\12\64\1\6\1\30\1\13"+
+			"\1\10\1\11\1\25\1\uffff\1\2\1\35\1\37\1\41\1\43\1\45\2\65\1\47\2\65\1"+
+			"\51\1\65\1\15\1\22\3\65\1\53\1\55\1\57\1\61\1\63\1\33\2\65\3\uffff\1"+
+			"\20\1\31\1\uffff\1\1\1\34\1\36\1\40\1\42\1\44\2\65\1\46\2\65\1\50\1\65"+
+			"\1\16\1\21\3\65\1\52\1\54\1\56\1\60\1\62\1\32\2\65\1\uffff\1\23\1\uffff"+
 			"\1\20",
-			"\1\71\5\uffff\1\70\1\uffff\1\67\4\uffff\1\72",
-			"\1\75\5\uffff\1\74\1\uffff\1\73\4\uffff\1\76",
+			"\1\73\5\uffff\1\72\1\uffff\1\71\4\uffff\1\74",
+			"\1\77\5\uffff\1\76\1\uffff\1\75\4\uffff\1\100",
 			"",
 			"",
 			"",
 			"",
-			"\12\100",
+			"\12\102",
 			"",
-			"\1\101",
+			"\1\103",
 			"",
-			"\1\103\1\20",
+			"\1\105\1\20",
 			"",
-			"\1\105\5\uffff\1\106",
 			"\1\107\5\uffff\1\110",
+			"\1\111\5\uffff\1\112",
 			"\1\20",
 			"",
-			"\1\112",
-			"\1\113",
+			"\1\114",
+			"\1\115",
 			"",
 			"",
 			"",
-			"\0\64",
+			"\0\66",
 			"",
 			"",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
-			"\1\116",
-			"\1\117",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
 			"\1\120",
 			"\1\121",
-			"\1\122\3\uffff\1\123",
-			"\1\124\3\uffff\1\125",
-			"\1\126",
-			"\1\127",
-			"\1\130\20\uffff\1\131",
-			"\1\132\20\uffff\1\133",
-			"\1\134\7\uffff\1\135\4\uffff\1\136",
-			"\1\137\7\uffff\1\140\4\uffff\1\141",
-			"\1\142",
-			"\1\143",
-			"\1\144\2\uffff\1\145",
-			"\1\146\2\uffff\1\147",
-			"\1\150\20\uffff\1\151",
-			"\1\152\20\uffff\1\153",
-			"\1\154\2\uffff\1\155",
-			"\1\156\2\uffff\1\157",
-			"\1\160",
-			"\1\161",
-			"\1\162",
-			"\1\163",
-			"\1\100\1\uffff\12\62\13\uffff\1\100\37\uffff\1\100",
+			"\1\122",
+			"\1\123",
+			"\1\124",
+			"\1\125",
+			"\1\126\3\uffff\1\127",
+			"\1\130\3\uffff\1\131",
+			"\1\132",
+			"\1\133",
+			"\1\134\20\uffff\1\135",
+			"\1\136\20\uffff\1\137",
+			"\1\140\7\uffff\1\141\4\uffff\1\142",
+			"\1\143\7\uffff\1\144\4\uffff\1\145",
+			"\1\146",
+			"\1\147",
+			"\1\150\2\uffff\1\151",
+			"\1\152\2\uffff\1\153",
+			"\1\154\20\uffff\1\155",
+			"\1\156\20\uffff\1\157",
+			"\1\160\2\uffff\1\161",
+			"\1\162\2\uffff\1\163",
+			"\1\164",
+			"\1\165",
+			"\1\166",
+			"\1\167",
+			"\1\102\1\uffff\12\64\13\uffff\1\102\37\uffff\1\102",
 			"",
 			"",
 			"",
 			"",
-			"\1\165\24\uffff\1\166",
-			"\1\167\6\uffff\1\170",
-			"\1\171",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
-			"\1\173\24\uffff\1\174",
+			"\1\171\24\uffff\1\172",
+			"\1\173\6\uffff\1\174",
 			"\1\175",
-			"\1\176",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
-			"",
-			"",
-			"",
-			"",
-			"",
-			"",
-			"\1\177",
-			"\1\u0080",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
+			"\1\177\24\uffff\1\u0080",
 			"\1\u0081",
 			"\1\u0082",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
 			"",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"",
+			"",
+			"",
 			"",
 			"",
 			"\1\u0083",
 			"\1\u0084",
 			"\1\u0085",
 			"\1\u0086",
+			"",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
+			"",
+			"",
 			"\1\u0087",
-			"\1\u0088\5\uffff\1\u0089",
+			"\1\u0088",
+			"\1\u0089",
 			"\1\u008a",
-			"\1\u008b\5\uffff\1\u008c",
+			"\1\u008b",
+			"\1\u008c",
 			"\1\u008d",
-			"\1\u008e",
-			"\1\u008f",
+			"\1\u008e\5\uffff\1\u008f",
 			"\1\u0090",
-			"\1\u0091",
-			"\1\u0092",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\22\63\1\u0095"+
-			"\1\u0094\6\63",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
-			"\1\63\13\uffff\12\63\7\uffff\22\63\1\u0099\1\u0098\6\63\4\uffff\1\63"+
-			"\1\uffff\32\63",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
-			"\1\u009a\7\uffff\1\u009b",
-			"\1\u009c\7\uffff\1\u009d",
-			"\1\u009e\7\uffff\1\u009f",
-			"\1\u00a0",
-			"\1\u00a1\7\uffff\1\u00a2",
-			"\1\u00a3",
-			"\1\u00a4",
-			"\1\u00a5",
+			"\1\u0091\5\uffff\1\u0092",
+			"\1\u0093",
+			"\1\u0094",
+			"\1\u0095",
+			"\1\u0096",
+			"\1\u0097",
+			"\1\u0098",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\22\65\1\u009b"+
+			"\1\u009a\6\65",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
+			"\1\65\13\uffff\12\65\7\uffff\22\65\1\u009f\1\u009e\6\65\4\uffff\1\65"+
+			"\1\uffff\32\65",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
+			"\1\u00a0\7\uffff\1\u00a1",
+			"\1\u00a2\7\uffff\1\u00a3",
+			"\1\u00a4\7\uffff\1\u00a5",
 			"\1\u00a6",
-			"\1\u00a7",
-			"\1\u00a8",
+			"\1\u00a7\7\uffff\1\u00a8",
 			"\1\u00a9",
 			"\1\u00aa",
 			"\1\u00ab",
@@ -3241,29 +3297,29 @@ public class SQLPlusLex extends Lexer {
 			"\1\u00ad",
 			"\1\u00ae",
 			"\1\u00af",
-			"",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\1\u00b0",
 			"\1\u00b1",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u00b2",
-			"",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\1\u00b3",
 			"\1\u00b4",
 			"\1\u00b5",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
-			"\1\u00b6",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
 			"\1\u00b7",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
-			"\1\u00b9",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
+			"\1\u00b8",
+			"",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
 			"\1\u00ba",
 			"\1\u00bb",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
 			"\1\u00bc",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
 			"\1\u00bd",
-			"\1\u00be",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
 			"\1\u00bf",
 			"\1\u00c0",
 			"\1\u00c1",
@@ -3272,198 +3328,211 @@ public class SQLPlusLex extends Lexer {
 			"\1\u00c4",
 			"\1\u00c5",
 			"\1\u00c6",
-			"",
 			"\1\u00c7",
 			"\1\u00c8",
-			"",
-			"",
 			"\1\u00c9",
 			"\1\u00ca",
 			"\1\u00cb",
 			"\1\u00cc",
 			"\1\u00cd",
 			"\1\u00ce",
+			"",
 			"\1\u00cf",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\1\u00d0",
+			"",
+			"",
 			"\1\u00d1",
 			"\1\u00d2",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u00d3",
 			"\1\u00d4",
 			"\1\u00d5",
 			"\1\u00d6",
 			"\1\u00d7",
-			"\1\u00d8",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
+			"\1\u00d9",
 			"\1\u00da",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
 			"\1\u00db",
 			"\1\u00dc",
 			"\1\u00dd",
 			"\1\u00de",
-			"",
 			"\1\u00df",
 			"\1\u00e0",
-			"",
-			"\1\u00e1",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
 			"\1\u00e2",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
-			"",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
+			"\1\u00e3",
 			"\1\u00e4",
 			"\1\u00e5",
 			"\1\u00e6",
+			"",
 			"\1\u00e7",
 			"\1\u00e8",
+			"",
 			"\1\u00e9",
 			"\1\u00ea",
-			"\1\u00eb",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
+			"",
 			"\1\u00ec",
 			"\1\u00ed",
 			"\1\u00ee",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\1\u00ef",
 			"\1\u00f0",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\1\u00f1",
 			"\1\u00f2",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u00f3",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\1\u00f4",
+			"\1\u00f5",
 			"\1\u00f6",
-			"",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\1\u00f7",
 			"\1\u00f8",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
-			"\1\u00f9",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
-			"\1\u00fb",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
+			"\1\u00fa",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
 			"\1\u00fc",
-			"",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
 			"\1\u00fd",
-			"\1\u00fe",
-			"\1\u00ff",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
 			"\1\u0100",
-			"\1\u0101",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\22\63\1\u0102"+
-			"\7\63",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
-			"\1\63\13\uffff\12\63\7\uffff\22\63\1\u0105\7\63\4\uffff\1\63\1\uffff"+
-			"\32\63",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
+			"\1\u0102",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
+			"\1\u0103",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
+			"\1\u0105",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
 			"\1\u0106",
+			"",
 			"\1\u0107",
 			"\1\u0108",
 			"\1\u0109",
 			"\1\u010a",
 			"\1\u010b",
-			"\1\u010c",
-			"\1\u010d",
-			"\1\u010e",
-			"\1\u010f",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\22\65\1\u010c"+
+			"\7\65",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
+			"\1\65\13\uffff\12\65\7\uffff\22\65\1\u010f\7\65\4\uffff\1\65\1\uffff"+
+			"\32\65",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
 			"",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
-			"",
+			"\1\u0110",
 			"\1\u0111",
-			"\1\u0112",
-			"",
-			"",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
 			"\1\u0113",
-			"",
 			"\1\u0114",
 			"\1\u0115",
-			"",
 			"\1\u0116",
 			"\1\u0117",
 			"\1\u0118",
 			"\1\u0119",
 			"\1\u011a",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
+			"",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
+			"",
+			"\1\u011c",
+			"\1\u011d",
 			"",
 			"",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u011e",
+			"",
 			"\1\u011f",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\1\u0120",
+			"",
 			"\1\u0121",
 			"\1\u0122",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
-			"",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\1\u0123",
+			"\1\u0124",
+			"\1\u0125",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
 			"",
 			"",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
 			"",
 			"\1\u0129",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
-			"",
-			"\1\u012b",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
-			"",
-			"",
-			"",
-			"",
-			"",
-			"",
+			"\1\u012a",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
 			"\1\u012c",
-			"",
 			"\1\u012d",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
-			"\1\63\13\uffff\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
+			"",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
+			"",
+			"",
+			"",
+			"\1\u0134",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
+			"",
+			"\1\u0136",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"\1\u0137",
+			"",
+			"\1\u0138",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
+			"\1\65\13\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
 			""
 	};
 
-	static final short[] DFA46_eot = DFA.unpackEncodedString(DFA46_eotS);
-	static final short[] DFA46_eof = DFA.unpackEncodedString(DFA46_eofS);
-	static final char[] DFA46_min = DFA.unpackEncodedStringToUnsignedChars(DFA46_minS);
-	static final char[] DFA46_max = DFA.unpackEncodedStringToUnsignedChars(DFA46_maxS);
-	static final short[] DFA46_accept = DFA.unpackEncodedString(DFA46_acceptS);
-	static final short[] DFA46_special = DFA.unpackEncodedString(DFA46_specialS);
-	static final short[][] DFA46_transition;
+	static final short[] DFA47_eot = DFA.unpackEncodedString(DFA47_eotS);
+	static final short[] DFA47_eof = DFA.unpackEncodedString(DFA47_eofS);
+	static final char[] DFA47_min = DFA.unpackEncodedStringToUnsignedChars(DFA47_minS);
+	static final char[] DFA47_max = DFA.unpackEncodedStringToUnsignedChars(DFA47_maxS);
+	static final short[] DFA47_accept = DFA.unpackEncodedString(DFA47_acceptS);
+	static final short[] DFA47_special = DFA.unpackEncodedString(DFA47_specialS);
+	static final short[][] DFA47_transition;
 
 	static {
-		int numStates = DFA46_transitionS.length;
-		DFA46_transition = new short[numStates][];
+		int numStates = DFA47_transitionS.length;
+		DFA47_transition = new short[numStates][];
 		for (int i=0; i<numStates; i++) {
-			DFA46_transition[i] = DFA.unpackEncodedString(DFA46_transitionS[i]);
+			DFA47_transition[i] = DFA.unpackEncodedString(DFA47_transitionS[i]);
 		}
 	}
 
-	protected class DFA46 extends DFA {
+	protected class DFA47 extends DFA {
 
-		public DFA46(BaseRecognizer recognizer) {
+		public DFA47(BaseRecognizer recognizer) {
 			this.recognizer = recognizer;
-			this.decisionNumber = 46;
-			this.eot = DFA46_eot;
-			this.eof = DFA46_eof;
-			this.min = DFA46_min;
-			this.max = DFA46_max;
-			this.accept = DFA46_accept;
-			this.special = DFA46_special;
-			this.transition = DFA46_transition;
+			this.decisionNumber = 47;
+			this.eot = DFA47_eot;
+			this.eof = DFA47_eof;
+			this.min = DFA47_min;
+			this.max = DFA47_max;
+			this.accept = DFA47_accept;
+			this.special = DFA47_special;
+			this.transition = DFA47_transition;
 		}
 		@Override
 		public String getDescription() {
-			return "1:1: Tokens : ( AND | ASTERISK | COMMA | COLON | DOT | EQUAL | GREATER_THAN | GREATER_THAN_EQUAL | LEFT_PARENTHESIS | LESS_THAN | LESS_THAN_EQUAL | MINUS | NOT | NOT_EQUAL | OR | PLUS | QUESTION_MARK | QUOTE | RIGHT_PARENTHESIS | SEMICOLON | UNDERSCORE | XOR | ALERT | ALERTS | ALL | AFTER | ANY | AS | BEFORE | DATABASES | DEFAULT | DELETE | EXISTS | FALSE | FROM | IF | IN | INTO | INSERT | IS | LIKE | LIST | NULL | SELECT | SET | SHOW | TABLES | TRUE | UPDATE | USE | VALUES | WHERE | INTEGER_NUMBER | ID | REAL_NUMBER | TEXT_STRING | NEWLINE | WS );";
+			return "1:1: Tokens : ( AND | ASTERISK | COMMA | COLON | DOT | EQUAL | GREATER_THAN | GREATER_THAN_EQUAL | LEFT_PARENTHESIS | LESS_THAN | LESS_THAN_EQUAL | MINUS | NOT | NOT_EQUAL | OR | PLUS | QUESTION_MARK | QUOTE | RIGHT_PARENTHESIS | SEMICOLON | UNDERSCORE | XOR | ALERT | ALERTS | ALL | AFTER | ANY | AS | BEFORE | CLEAR | DATABASES | DEFAULT | DELETE | EXISTS | FALSE | FROM | IF | IN | INTO | INSERT | IS | LIKE | LIST | NULL | SELECT | SET | SHOW | TABLES | TRUE | UPDATE | USE | VALUES | WHERE | INTEGER_NUMBER | ID | REAL_NUMBER | TEXT_STRING | NEWLINE | WS );";
 		}
 		@Override
 		public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
@@ -3471,15 +3540,15 @@ public class SQLPlusLex extends Lexer {
 			int _s = s;
 			switch ( s ) {
 					case 0 : 
-						int LA46_22 = input.LA(1);
+						int LA47_22 = input.LA(1);
 						s = -1;
-						if ( ((LA46_22 >= '\u0000' && LA46_22 <= '\uFFFF')) ) {s = 52;}
-						else s = 76;
+						if ( ((LA47_22 >= '\u0000' && LA47_22 <= '\uFFFF')) ) {s = 54;}
+						else s = 78;
 						if ( s>=0 ) return s;
 						break;
 			}
 			NoViableAltException nvae =
-				new NoViableAltException(getDescription(), 46, _s, input);
+				new NoViableAltException(getDescription(), 47, _s, input);
 			error(nvae);
 			throw nvae;
 		}

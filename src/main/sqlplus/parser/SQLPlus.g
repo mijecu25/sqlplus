@@ -66,6 +66,10 @@ sqlplus_statement returns [Statement sqlplusStatement]
             AlertManager.getManager().listAll();
             sqlplusStatement = new AlertDefault();
         }
+    |   CLEAR ALERTS {
+            AlertManager.getManager().clearAll();
+            sqlplusStatement = new AlertDefault();
+        }
     ;
 
 sqlplus_alert returns [Statement alert]

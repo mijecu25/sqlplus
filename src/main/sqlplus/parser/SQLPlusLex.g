@@ -83,6 +83,11 @@ BEFORE
 	|	'BEFORE'
 	;
 
+CLEAR
+    :   'clear'
+    |   'CLEAR'
+    ;
+
 DATABASES
 	:	'databases'
 	|	'DATABASES'
