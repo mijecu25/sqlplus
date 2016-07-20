@@ -2,6 +2,7 @@ package com.mijecu25.sqlplus.compiler.alert;
 
 import com.mijecu25.sqlplus.compiler.core.expression.Expression;
 import com.mijecu25.sqlplus.compiler.core.statement.Statement;
+import com.mijecu25.sqlplus.compiler.core.statement.dml.StatementSelectExpression;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import java.sql.Connection;import java.sql.SQLException;
@@ -11,7 +12,7 @@ import java.sql.Connection;import java.sql.SQLException;
  * a table in the database.
  *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.3
+ * @version 0.1.0.4
  */
 public class Alert extends Statement {
 //    ALERT timing data_manipulation_language IN table_reference IF column_spec relational_op match_value
@@ -37,6 +38,7 @@ public class Alert extends Statement {
 
     @Override
     public void execute(Connection connection) throws SQLException {
+        Alert.logger.info("Will execute the code to add the alert to the list of alerts");
         AlertManager.getManager().addAlert(this);
         this.printResult();
     }

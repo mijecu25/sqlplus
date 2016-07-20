@@ -17,6 +17,8 @@ import SQLPlusLex;
 	import com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary;
 	import com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral;
 	import com.mijecu25.sqlplus.compiler.alert.Alert;
+	import com.mijecu25.sqlplus.compiler.alert.AlertManager;
+	import com.mijecu25.sqlplus.compiler.alert.AlertDefault;
 }
 
 @members {
@@ -59,6 +61,10 @@ sqlplus_statement returns [Statement sqlplusStatement]
     }
     :   sqlplus_alert {
             sqlplusStatement = $sqlplus_alert.alert;
+        }
+    |   LIST ALERTS {
+            AlertManager.getManager().listAll();
+            sqlplusStatement = new AlertDefault();
         }
     ;
 

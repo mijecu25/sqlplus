@@ -53,6 +53,11 @@ ALERT
 	|	'ALERT'
 	;
 
+ALERTS
+	:	'alerts'
+	|	'ALERTS'
+	;
+
 ALL
     :   'all'
     |   'any'
@@ -137,6 +142,11 @@ LIKE
 	:	'like'
 	|	'LIKE'
 	;
+
+LIST
+    :   'list'
+    |   'LIST'
+    ;
 
 NULL
     :   'null'
