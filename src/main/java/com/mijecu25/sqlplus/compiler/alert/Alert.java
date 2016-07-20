@@ -7,10 +7,11 @@ import org.apache.logging.log4j.Logger;
 import java.sql.Connection;import java.sql.SQLException;
 
 /**
- * TODO
+ * This class represents the "alert...." statement. It creates an alert using a timing and DML statement when manipulating
+ * a table in the database.
  *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.2
+ * @version 0.1.0.3
  */
 public class Alert extends Statement {
 //    ALERT timing data_manipulation_language IN table_reference IF column_spec relational_op match_value
@@ -20,9 +21,9 @@ public class Alert extends Statement {
     private String table;
     private Expression whereClause;
     // private String column;
-    // TODO make it work with multiple columns//
     // private//
-    // private String column; // TODO make it work with multiple columns
+    // private String column;
+    // TODO make it work with multiple columns
 
     private static final Logger logger = LogManager.getLogger(Alert.class);
 
@@ -31,8 +32,6 @@ public class Alert extends Statement {
         this.DML = DML;
         this.table = table;
         this.whereClause = whereClause;
-        // TODO check if this does not collision with an already existing alert. If it does, out error message
-        // saying that there is already an alert like it
         Alert.logger.info("Parsed and created an Alert");
     }
 
@@ -43,11 +42,7 @@ public class Alert extends Statement {
     }
 
     @Override
-    protected void printResult() {
-        Alert.logger.info("Printing message that acknowledges that an alert was created");
-        System.out.println("Alert created");
-        AlertManager.getManager().listAll();
-    }
+    protected void printResult() { }
 
     @Override
     public boolean equals(Object other) {

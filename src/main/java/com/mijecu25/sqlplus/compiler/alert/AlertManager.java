@@ -11,7 +11,7 @@ import java.util.List;
  * Singleton class that managers the ALERTS created by the user.
  *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.4
+ * @version 0.1.0.5
  */
 public class AlertManager {
 
@@ -35,14 +35,15 @@ public class AlertManager {
             AlertManager.INSTANCE = new AlertManager();
         }
 
-        AlertManager.logger.info("Returning an AlertManager instance " + AlertManager.INSTANCE);
+        AlertManager.logger.info("Returning an AlertManager instance");
 
         return AlertManager.INSTANCE;
     }
 
     /**
-     * TODO
-     * @param alert
+     * Add an Alert object to the list of Alert objects maintained in the current session.
+     *
+     * @param alert the Alert created by an Alert statement.
      */
     public void addAlert(Alert alert) {
         if(alert == null) {
@@ -57,27 +58,29 @@ public class AlertManager {
 
         if(AlertManager.getManager().ALERTS.contains(alert)) {
             AlertManager.logger.info("This alert has already been created");
-            System.out.println(Messages.ERROR + "this alert has alreaady been created");
+            System.out.println(Messages.ERROR + "the alert has already been created");
         }
         else {
             AlertManager.logger.info("Adding a new alert");
             AlertManager.getManager().ALERTS.add(alert);
+            System.out.println("Alert created");
         }
     }
 
     /**
-     * TODO
-     *
+     * Print a list of all of the created Alerts.
      */
     public void listAll() {
         System.out.println(AlertManager.getManager().ALERTS);
     }
 
     /**
-     * TODO
+     * Delete all of the created Alerts.
      */
     public void clearAll() {
         AlertManager.getManager().ALERTS.clear();
     }
 
+    @Override
+    public String toString() { return "AlertManager []"; }
 }

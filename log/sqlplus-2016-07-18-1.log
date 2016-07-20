@@ -1,0 +1,1009 @@
+[07-18-2016 15:28:47.006] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(57) - Initializing SQLPlus version 0.1.0-SNAPSHOT
+[07-18-2016 15:28:47.159] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(99) - Create SQLPlusConnection
+[07-18-2016 15:28:47.159] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(395) - Connection with username, password, and host
+[07-18-2016 15:28:47.159] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(109) - Creating a new SQLPlusMySQLConnection instance with username:sqlplus password:********* host:127.0.0.1
+[07-18-2016 15:28:47.159] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(55) - Instantiating the credentials that will be used to connect to a mysql database
+[07-18-2016 15:28:47.160] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(38) - Creating SQLPlusMySQLConnection with username:sqlplus password:********* host: 127.0.0.1 port:3306
+[07-18-2016 15:28:47.160] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(42) - Will connect to a MySQL database using the credentials provided
+[07-18-2016 15:28:47.160] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(77) - Adding the connection properties to connect to a mysql database
+[07-18-2016 15:28:47.176] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(89) - Attempting to connect to the database: jdbc:mysql://127.0.0.1:3306/
+[07-18-2016 15:28:47.390] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(114) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=sqlplus, host=127.0.0.1, database=mysql, port=3306]
+[07-18-2016 15:28:47.390] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(399) - Created and returning a SQLPlusConnection SQLPlusConnection [username=sqlplus, host=127.0.0.1, database=mysql, port=3306]
+[07-18-2016 15:29:00.825] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(189) - The user wants to quit SQLPlus
+[07-18-2016 15:29:00.825] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(408) - Attempting to disconnect the SQLPlusConnection
+[07-18-2016 15:29:00.825] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(129) - Attempting to disconnect from the database
+[07-18-2016 15:29:00.827] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(131) - Disconnected from the database
+[07-18-2016 15:29:00.827] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(410) - Disconnected the SQLPlusConnection
+[07-18-2016 15:29:00.827] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(413) - Reset the console from jline
+[07-18-2016 15:29:00.827] [main] INFO  com.mijecu25.sqlplus.SQLPlus.resetConsole(425) - About to reset the console from jline
+[07-18-2016 15:29:00.832] [main] INFO  com.mijecu25.sqlplus.SQLPlus.resetConsole(427) - Reset the console from jline
+[07-18-2016 15:29:00.832] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(416) - Quitting SQLPlus
+[07-18-2016 15:47:56.083] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(59) - Initializing SQLPlus version 0.1.0-SNAPSHOT
+[07-18-2016 15:47:56.175] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(101) - Create SQLPlusConnection
+[07-18-2016 15:47:56.176] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(399) - Connection with username, password, and host
+[07-18-2016 15:47:56.176] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(109) - Creating a new SQLPlusMySQLConnection instance with username:sqlplus password:********* host:127.0.0.1
+[07-18-2016 15:47:56.176] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(55) - Instantiating the credentials that will be used to connect to a mysql database
+[07-18-2016 15:47:56.176] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(38) - Creating SQLPlusMySQLConnection with username:sqlplus password:********* host: 127.0.0.1 port:3306
+[07-18-2016 15:47:56.176] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(42) - Will connect to a MySQL database using the credentials provided
+[07-18-2016 15:47:56.176] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(77) - Adding the connection properties to connect to a mysql database
+[07-18-2016 15:47:56.193] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(89) - Attempting to connect to the database: jdbc:mysql://127.0.0.1:3306/
+[07-18-2016 15:47:56.387] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(114) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=sqlplus, host=127.0.0.1, database=mysql, port=3306]
+[07-18-2016 15:47:56.387] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(403) - Created and returning a SQLPlusConnection SQLPlusConnection [username=sqlplus, host=127.0.0.1, database=mysql, port=3306]
+[07-18-2016 15:47:56.388] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(34) - Creating a new AlertManager
+[07-18-2016 15:47:56.388] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@74294adb
+[07-18-2016 15:48:48.208] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(193) - The user wants to quit SQLPlus
+[07-18-2016 15:48:48.208] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(412) - Attempting to disconnect the SQLPlusConnection
+[07-18-2016 15:48:48.208] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(129) - Attempting to disconnect from the database
+[07-18-2016 15:48:48.210] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(131) - Disconnected from the database
+[07-18-2016 15:48:48.210] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(414) - Disconnected the SQLPlusConnection
+[07-18-2016 15:48:48.210] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(417) - Reset the console from jline
+[07-18-2016 15:48:48.210] [main] INFO  com.mijecu25.sqlplus.SQLPlus.resetConsole(429) - About to reset the console from jline
+[07-18-2016 15:48:48.215] [main] INFO  com.mijecu25.sqlplus.SQLPlus.resetConsole(431) - Reset the console from jline
+[07-18-2016 15:48:48.215] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(420) - Quitting SQLPlus
+[07-18-2016 15:56:10.096] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(59) - Initializing SQLPlus version 0.1.0-SNAPSHOT
+[07-18-2016 15:56:10.187] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(101) - Create SQLPlusConnection
+[07-18-2016 15:56:10.188] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(399) - Connection with username, password, and host
+[07-18-2016 15:56:10.188] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(109) - Creating a new SQLPlusMySQLConnection instance with username:sqlplus password:********* host:127.0.0.1
+[07-18-2016 15:56:10.188] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(55) - Instantiating the credentials that will be used to connect to a mysql database
+[07-18-2016 15:56:10.188] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(38) - Creating SQLPlusMySQLConnection with username:sqlplus password:********* host: 127.0.0.1 port:3306
+[07-18-2016 15:56:10.188] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(42) - Will connect to a MySQL database using the credentials provided
+[07-18-2016 15:56:10.188] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(77) - Adding the connection properties to connect to a mysql database
+[07-18-2016 15:56:10.206] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(89) - Attempting to connect to the database: jdbc:mysql://127.0.0.1:3306/
+[07-18-2016 15:56:10.403] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(114) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=sqlplus, host=127.0.0.1, database=mysql, port=3306]
+[07-18-2016 15:56:10.404] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(403) - Created and returning a SQLPlusConnection SQLPlusConnection [username=sqlplus, host=127.0.0.1, database=mysql, port=3306]
+[07-18-2016 15:56:10.404] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(33) - Creating a new AlertManager
+[07-18-2016 15:56:10.404] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(37) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@74294adb
+[07-18-2016 15:56:11.180] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(211) - Raw input from the user: alert before insert in cards where name = 'blue';
+[07-18-2016 15:56:11.180] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(217) - Will parse the user input to determine what to execute
+[07-18-2016 15:56:11.196] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 15:56:11.196] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 15:56:11.196] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 15:56:11.197] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 15:56:11.197] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 15:56:11.197] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 15:56:11.197] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 15:56:11.197] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 15:56:11.197] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 15:56:11.197] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 15:56:11.198] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.<init>(42) - Created a Statement
+[07-18-2016 15:56:11.198] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.<init>(36) - Parsed and created an Alert
+[07-18-2016 15:56:11.199] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(113) - Query to be executed: "Alert [statement=alert before insert in cards where name = 'blue';]"
+[07-18-2016 15:56:11.199] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(37) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@74294adb
+[07-18-2016 15:56:11.199] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(37) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@74294adb
+[07-18-2016 15:56:11.199] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.printResult(47) - Printing message that acknowledges that an alert was created
+[07-18-2016 15:56:11.199] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(37) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@74294adb
+[07-18-2016 15:56:11.199] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(37) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@74294adb
+[07-18-2016 15:56:21.243] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(211) - Raw input from the user: alert before insert in cards where name = 'blue';
+[07-18-2016 15:56:21.243] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(217) - Will parse the user input to determine what to execute
+[07-18-2016 15:56:21.243] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 15:56:21.243] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 15:56:21.244] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 15:56:21.244] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 15:56:21.244] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 15:56:21.244] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 15:56:21.244] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 15:56:21.244] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 15:56:21.244] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 15:56:21.244] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 15:56:21.244] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.<init>(42) - Created a Statement
+[07-18-2016 15:56:21.244] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.<init>(36) - Parsed and created an Alert
+[07-18-2016 15:56:21.244] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(113) - Query to be executed: "Alert [statement=alert before insert in cards where name = 'blue';]"
+[07-18-2016 15:56:21.245] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(37) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@74294adb
+[07-18-2016 15:56:21.245] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(37) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@74294adb
+[07-18-2016 15:56:21.245] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.printResult(47) - Printing message that acknowledges that an alert was created
+[07-18-2016 15:56:21.245] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(37) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@74294adb
+[07-18-2016 15:56:21.245] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(37) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@74294adb
+[07-18-2016 15:58:45.342] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(193) - The user wants to quit SQLPlus
+[07-18-2016 15:58:45.342] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(412) - Attempting to disconnect the SQLPlusConnection
+[07-18-2016 15:58:45.342] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(129) - Attempting to disconnect from the database
+[07-18-2016 15:58:45.344] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(131) - Disconnected from the database
+[07-18-2016 15:58:45.345] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(414) - Disconnected the SQLPlusConnection
+[07-18-2016 15:58:45.345] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(417) - Reset the console from jline
+[07-18-2016 15:58:45.345] [main] INFO  com.mijecu25.sqlplus.SQLPlus.resetConsole(429) - About to reset the console from jline
+[07-18-2016 15:58:45.350] [main] INFO  com.mijecu25.sqlplus.SQLPlus.resetConsole(431) - Reset the console from jline
+[07-18-2016 15:58:45.352] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(420) - Quitting SQLPlus
+[07-18-2016 15:58:47.899] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(59) - Initializing SQLPlus version 0.1.0-SNAPSHOT
+[07-18-2016 15:58:47.991] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(101) - Create SQLPlusConnection
+[07-18-2016 15:58:47.991] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(399) - Connection with username, password, and host
+[07-18-2016 15:58:47.991] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(109) - Creating a new SQLPlusMySQLConnection instance with username:sqlplus password:********* host:127.0.0.1
+[07-18-2016 15:58:47.991] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(55) - Instantiating the credentials that will be used to connect to a mysql database
+[07-18-2016 15:58:47.992] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(38) - Creating SQLPlusMySQLConnection with username:sqlplus password:********* host: 127.0.0.1 port:3306
+[07-18-2016 15:58:47.992] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(42) - Will connect to a MySQL database using the credentials provided
+[07-18-2016 15:58:47.992] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(77) - Adding the connection properties to connect to a mysql database
+[07-18-2016 15:58:48.010] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(89) - Attempting to connect to the database: jdbc:mysql://127.0.0.1:3306/
+[07-18-2016 15:58:48.205] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(114) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=sqlplus, host=127.0.0.1, database=mysql, port=3306]
+[07-18-2016 15:58:48.205] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(403) - Created and returning a SQLPlusConnection SQLPlusConnection [username=sqlplus, host=127.0.0.1, database=mysql, port=3306]
+[07-18-2016 15:58:48.205] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(33) - Creating a new AlertManager
+[07-18-2016 15:58:48.205] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(37) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@74294adb
+[07-18-2016 15:58:48.420] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(193) - The user wants to quit SQLPlus
+[07-18-2016 15:58:48.420] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(412) - Attempting to disconnect the SQLPlusConnection
+[07-18-2016 15:58:48.420] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(129) - Attempting to disconnect from the database
+[07-18-2016 15:58:48.422] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(131) - Disconnected from the database
+[07-18-2016 15:58:48.422] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(414) - Disconnected the SQLPlusConnection
+[07-18-2016 15:58:48.422] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(417) - Reset the console from jline
+[07-18-2016 15:58:48.422] [main] INFO  com.mijecu25.sqlplus.SQLPlus.resetConsole(429) - About to reset the console from jline
+[07-18-2016 15:58:48.427] [main] INFO  com.mijecu25.sqlplus.SQLPlus.resetConsole(431) - Reset the console from jline
+[07-18-2016 15:58:48.427] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(420) - Quitting SQLPlus
+[07-18-2016 15:58:54.000] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(59) - Initializing SQLPlus version 0.1.0-SNAPSHOT
+[07-18-2016 15:58:54.096] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(101) - Create SQLPlusConnection
+[07-18-2016 15:58:54.096] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(399) - Connection with username, password, and host
+[07-18-2016 15:58:54.097] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(109) - Creating a new SQLPlusMySQLConnection instance with username:sqlplus password:********* host:127.0.0.1
+[07-18-2016 15:58:54.097] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(55) - Instantiating the credentials that will be used to connect to a mysql database
+[07-18-2016 15:58:54.097] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(38) - Creating SQLPlusMySQLConnection with username:sqlplus password:********* host: 127.0.0.1 port:3306
+[07-18-2016 15:58:54.097] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(42) - Will connect to a MySQL database using the credentials provided
+[07-18-2016 15:58:54.097] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(77) - Adding the connection properties to connect to a mysql database
+[07-18-2016 15:58:54.114] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(89) - Attempting to connect to the database: jdbc:mysql://127.0.0.1:3306/
+[07-18-2016 15:58:54.307] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(114) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=sqlplus, host=127.0.0.1, database=mysql, port=3306]
+[07-18-2016 15:58:54.307] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(403) - Created and returning a SQLPlusConnection SQLPlusConnection [username=sqlplus, host=127.0.0.1, database=mysql, port=3306]
+[07-18-2016 15:58:54.307] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(35) - Creating a new AlertManager
+[07-18-2016 15:58:54.308] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(39) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@1188e820
+[07-18-2016 15:58:54.323] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(211) - Raw input from the user: alert before insert in cards where name = 'blue';
+[07-18-2016 15:58:54.323] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(217) - Will parse the user input to determine what to execute
+[07-18-2016 15:58:54.339] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 15:58:54.339] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 15:58:54.339] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 15:58:54.340] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 15:58:54.340] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 15:58:54.340] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 15:58:54.340] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 15:58:54.340] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 15:58:54.340] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 15:58:54.340] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 15:58:54.341] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.<init>(42) - Created a Statement
+[07-18-2016 15:58:54.341] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.<init>(36) - Parsed and created an Alert
+[07-18-2016 15:58:54.341] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(113) - Query to be executed: "Alert [statement=alert before insert in cards where name = 'blue';]"
+[07-18-2016 15:58:54.341] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(39) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@1188e820
+[07-18-2016 15:58:54.341] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.addAlert(59) - Adding alert
+[07-18-2016 15:58:54.341] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(39) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@1188e820
+[07-18-2016 15:58:54.342] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.printResult(47) - Printing message that acknowledges that an alert was created
+[07-18-2016 15:58:54.342] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(39) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@1188e820
+[07-18-2016 15:58:54.342] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(39) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@1188e820
+[07-18-2016 15:59:02.315] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(211) - Raw input from the user: alert before insert in cards where name = 'blue';
+[07-18-2016 15:59:02.315] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(217) - Will parse the user input to determine what to execute
+[07-18-2016 15:59:02.316] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 15:59:02.316] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 15:59:02.316] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 15:59:02.316] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 15:59:02.316] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 15:59:02.316] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 15:59:02.316] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 15:59:02.316] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 15:59:02.316] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 15:59:02.316] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 15:59:02.317] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.<init>(42) - Created a Statement
+[07-18-2016 15:59:02.317] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.<init>(36) - Parsed and created an Alert
+[07-18-2016 15:59:02.317] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(113) - Query to be executed: "Alert [statement=alert before insert in cards where name = 'blue';]"
+[07-18-2016 15:59:02.317] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(39) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@1188e820
+[07-18-2016 15:59:02.317] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.addAlert(59) - Adding alert
+[07-18-2016 15:59:02.317] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(39) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@1188e820
+[07-18-2016 15:59:02.317] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.printResult(47) - Printing message that acknowledges that an alert was created
+[07-18-2016 15:59:02.317] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(39) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@1188e820
+[07-18-2016 15:59:02.317] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(39) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@1188e820
+[07-18-2016 15:59:37.426] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(193) - The user wants to quit SQLPlus
+[07-18-2016 15:59:37.426] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(412) - Attempting to disconnect the SQLPlusConnection
+[07-18-2016 15:59:37.426] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(129) - Attempting to disconnect from the database
+[07-18-2016 15:59:37.428] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(131) - Disconnected from the database
+[07-18-2016 15:59:37.428] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(414) - Disconnected the SQLPlusConnection
+[07-18-2016 15:59:37.428] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(417) - Reset the console from jline
+[07-18-2016 15:59:37.428] [main] INFO  com.mijecu25.sqlplus.SQLPlus.resetConsole(429) - About to reset the console from jline
+[07-18-2016 15:59:37.434] [main] INFO  com.mijecu25.sqlplus.SQLPlus.resetConsole(431) - Reset the console from jline
+[07-18-2016 15:59:37.434] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(420) - Quitting SQLPlus
+[07-18-2016 16:28:41.247] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(61) - Initializing SQLPlus version 0.1.0-SNAPSHOT
+[07-18-2016 16:28:41.343] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(103) - Create SQLPlusConnection
+[07-18-2016 16:28:41.344] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(401) - Connection with username, password, and host
+[07-18-2016 16:28:41.344] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(109) - Creating a new SQLPlusMySQLConnection instance with username:sqlplus password:********* host:127.0.0.1
+[07-18-2016 16:28:41.344] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(55) - Instantiating the credentials that will be used to connect to a mysql database
+[07-18-2016 16:28:41.344] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(38) - Creating SQLPlusMySQLConnection with username:sqlplus password:********* host: 127.0.0.1 port:3306
+[07-18-2016 16:28:41.344] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(42) - Will connect to a MySQL database using the credentials provided
+[07-18-2016 16:28:41.344] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(77) - Adding the connection properties to connect to a mysql database
+[07-18-2016 16:28:41.361] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(89) - Attempting to connect to the database: jdbc:mysql://127.0.0.1:3306/
+[07-18-2016 16:28:41.586] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(114) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=sqlplus, host=127.0.0.1, database=mysql, port=3306]
+[07-18-2016 16:28:41.586] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(405) - Created and returning a SQLPlusConnection SQLPlusConnection [username=sqlplus, host=127.0.0.1, database=mysql, port=3306]
+[07-18-2016 16:28:41.586] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(34) - Creating a new AlertManager
+[07-18-2016 16:28:41.587] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@130f889
+[07-18-2016 16:28:44.970] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(213) - Raw input from the user: alert before insert in cards where name = 'blue';
+[07-18-2016 16:28:44.971] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(219) - Will parse the user input to determine what to execute
+[07-18-2016 16:28:44.987] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:28:44.987] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 16:28:44.987] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 16:28:44.988] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:28:44.988] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 16:28:44.988] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 16:28:44.988] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:28:44.988] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 16:28:44.988] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:28:44.988] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 16:28:44.989] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.<init>(42) - Created a Statement
+[07-18-2016 16:28:44.989] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.<init>(36) - Parsed and created an Alert
+[07-18-2016 16:28:44.989] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(113) - Query to be executed: "Alert [statement=alert before insert in cards where name = 'blue';]"
+[07-18-2016 16:28:44.989] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@130f889
+[07-18-2016 16:28:44.989] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@130f889
+[07-18-2016 16:28:44.989] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.addAlert(63) - Adding a new alert
+[07-18-2016 16:28:44.989] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@130f889
+[07-18-2016 16:28:44.990] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.printResult(47) - Printing message that acknowledges that an alert was created
+[07-18-2016 16:28:44.990] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@130f889
+[07-18-2016 16:28:44.990] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@130f889
+[07-18-2016 16:29:00.938] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(213) - Raw input from the user: alert before insert in cards where name = 'blue';
+[07-18-2016 16:29:00.938] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(219) - Will parse the user input to determine what to execute
+[07-18-2016 16:29:00.939] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:29:00.939] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 16:29:00.939] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 16:29:00.939] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:29:00.939] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 16:29:00.940] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 16:29:00.940] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:29:00.940] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 16:29:00.940] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:29:00.940] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 16:29:00.940] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.<init>(42) - Created a Statement
+[07-18-2016 16:29:00.941] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.<init>(36) - Parsed and created an Alert
+[07-18-2016 16:29:00.941] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(113) - Query to be executed: "Alert [statement=alert before insert in cards where name = 'blue';]"
+[07-18-2016 16:29:00.941] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@130f889
+[07-18-2016 16:29:00.941] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@130f889
+[07-18-2016 16:29:00.941] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.addAlert(63) - Adding a new alert
+[07-18-2016 16:29:00.941] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@130f889
+[07-18-2016 16:29:00.941] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.printResult(47) - Printing message that acknowledges that an alert was created
+[07-18-2016 16:29:00.941] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@130f889
+[07-18-2016 16:29:00.942] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@130f889
+[07-18-2016 16:29:07.594] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(195) - The user wants to quit SQLPlus
+[07-18-2016 16:29:07.594] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(414) - Attempting to disconnect the SQLPlusConnection
+[07-18-2016 16:29:07.594] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(129) - Attempting to disconnect from the database
+[07-18-2016 16:29:07.598] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(131) - Disconnected from the database
+[07-18-2016 16:29:07.598] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(416) - Disconnected the SQLPlusConnection
+[07-18-2016 16:29:07.598] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(419) - Reset the console from jline
+[07-18-2016 16:29:07.599] [main] INFO  com.mijecu25.sqlplus.SQLPlus.resetConsole(431) - About to reset the console from jline
+[07-18-2016 16:29:07.605] [main] INFO  com.mijecu25.sqlplus.SQLPlus.resetConsole(433) - Reset the console from jline
+[07-18-2016 16:29:07.605] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(422) - Quitting SQLPlus
+[07-18-2016 16:29:21.691] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(61) - Initializing SQLPlus version 0.1.0-SNAPSHOT
+[07-18-2016 16:29:21.787] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(103) - Create SQLPlusConnection
+[07-18-2016 16:29:21.787] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(401) - Connection with username, password, and host
+[07-18-2016 16:29:21.788] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(109) - Creating a new SQLPlusMySQLConnection instance with username:sqlplus password:********* host:127.0.0.1
+[07-18-2016 16:29:21.788] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(55) - Instantiating the credentials that will be used to connect to a mysql database
+[07-18-2016 16:29:21.788] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(38) - Creating SQLPlusMySQLConnection with username:sqlplus password:********* host: 127.0.0.1 port:3306
+[07-18-2016 16:29:21.788] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(42) - Will connect to a MySQL database using the credentials provided
+[07-18-2016 16:29:21.788] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(77) - Adding the connection properties to connect to a mysql database
+[07-18-2016 16:29:21.806] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(89) - Attempting to connect to the database: jdbc:mysql://127.0.0.1:3306/
+[07-18-2016 16:29:21.998] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(114) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=sqlplus, host=127.0.0.1, database=mysql, port=3306]
+[07-18-2016 16:29:21.998] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(405) - Created and returning a SQLPlusConnection SQLPlusConnection [username=sqlplus, host=127.0.0.1, database=mysql, port=3306]
+[07-18-2016 16:29:21.998] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(34) - Creating a new AlertManager
+[07-18-2016 16:29:21.999] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@74294adb
+[07-18-2016 16:29:22.592] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(213) - Raw input from the user: alert before insert in cards where name = 'blue';
+[07-18-2016 16:29:22.593] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(219) - Will parse the user input to determine what to execute
+[07-18-2016 16:29:22.608] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:29:22.609] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 16:29:22.609] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 16:29:22.609] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:29:22.609] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 16:29:22.609] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 16:29:22.609] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:29:22.609] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 16:29:22.609] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:29:22.609] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 16:29:22.610] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.<init>(42) - Created a Statement
+[07-18-2016 16:29:22.610] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.<init>(36) - Parsed and created an Alert
+[07-18-2016 16:29:22.610] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(113) - Query to be executed: "Alert [statement=alert before insert in cards where name = 'blue';]"
+[07-18-2016 16:29:22.610] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@74294adb
+[07-18-2016 16:29:22.611] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@74294adb
+[07-18-2016 16:29:22.611] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.addAlert(63) - Adding a new alert
+[07-18-2016 16:29:22.611] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@74294adb
+[07-18-2016 16:29:22.611] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.printResult(47) - Printing message that acknowledges that an alert was created
+[07-18-2016 16:29:22.611] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@74294adb
+[07-18-2016 16:29:22.611] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@74294adb
+[07-18-2016 16:29:23.319] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(213) - Raw input from the user: alert before insert in cards where name = 'blue';
+[07-18-2016 16:29:23.320] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(219) - Will parse the user input to determine what to execute
+[07-18-2016 16:29:23.320] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:29:23.320] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 16:29:23.320] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 16:29:23.320] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:29:23.320] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 16:29:23.320] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 16:29:23.321] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:29:23.321] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 16:29:23.321] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:29:23.321] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 16:29:23.321] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.<init>(42) - Created a Statement
+[07-18-2016 16:29:23.321] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.<init>(36) - Parsed and created an Alert
+[07-18-2016 16:29:23.321] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(113) - Query to be executed: "Alert [statement=alert before insert in cards where name = 'blue';]"
+[07-18-2016 16:29:23.321] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@74294adb
+[07-18-2016 16:29:23.321] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@74294adb
+[07-18-2016 16:29:23.321] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.addAlert(63) - Adding a new alert
+[07-18-2016 16:29:23.321] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@74294adb
+[07-18-2016 16:29:23.321] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.printResult(47) - Printing message that acknowledges that an alert was created
+[07-18-2016 16:29:23.322] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@74294adb
+[07-18-2016 16:29:23.322] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@74294adb
+[07-18-2016 16:29:26.704] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(213) - Raw input from the user: alert before insert in cards where name = 'blue';
+[07-18-2016 16:29:26.705] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(219) - Will parse the user input to determine what to execute
+[07-18-2016 16:29:26.705] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:29:26.705] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 16:29:26.706] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 16:29:26.706] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:29:26.708] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 16:29:26.709] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 16:29:26.709] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:29:26.709] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 16:29:26.709] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:29:26.709] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 16:29:26.709] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.<init>(42) - Created a Statement
+[07-18-2016 16:29:26.709] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.<init>(36) - Parsed and created an Alert
+[07-18-2016 16:29:26.710] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(113) - Query to be executed: "Alert [statement=alert before insert in cards where name = 'blue';]"
+[07-18-2016 16:29:26.710] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@74294adb
+[07-18-2016 16:29:26.710] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@74294adb
+[07-18-2016 16:29:26.710] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.addAlert(63) - Adding a new alert
+[07-18-2016 16:29:26.710] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@74294adb
+[07-18-2016 16:29:26.710] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.printResult(47) - Printing message that acknowledges that an alert was created
+[07-18-2016 16:29:26.710] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@74294adb
+[07-18-2016 16:29:26.710] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@74294adb
+[07-18-2016 16:29:27.993] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(213) - Raw input from the user: alert before insert in cards where name = 'blue';
+[07-18-2016 16:29:27.993] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(219) - Will parse the user input to determine what to execute
+[07-18-2016 16:29:27.993] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:29:27.994] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 16:29:27.994] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 16:29:27.994] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:29:27.994] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 16:29:27.994] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 16:29:27.994] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:29:27.995] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 16:29:27.995] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:29:27.995] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 16:29:27.995] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.<init>(42) - Created a Statement
+[07-18-2016 16:29:27.995] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.<init>(36) - Parsed and created an Alert
+[07-18-2016 16:29:27.995] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(113) - Query to be executed: "Alert [statement=alert before insert in cards where name = 'blue';]"
+[07-18-2016 16:29:27.995] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@74294adb
+[07-18-2016 16:29:27.996] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@74294adb
+[07-18-2016 16:29:27.996] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.addAlert(63) - Adding a new alert
+[07-18-2016 16:29:27.996] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@74294adb
+[07-18-2016 16:29:27.996] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.printResult(47) - Printing message that acknowledges that an alert was created
+[07-18-2016 16:29:27.996] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@74294adb
+[07-18-2016 16:29:27.996] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@74294adb
+[07-18-2016 16:29:41.200] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(213) - Raw input from the user: alert before insert in cards where name = 'blue';
+[07-18-2016 16:29:41.200] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(219) - Will parse the user input to determine what to execute
+[07-18-2016 16:29:41.201] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:29:41.201] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 16:29:41.201] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 16:29:41.201] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:29:41.202] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 16:29:41.202] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 16:29:41.202] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:29:41.202] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 16:29:41.202] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:29:41.203] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 16:29:41.203] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.<init>(42) - Created a Statement
+[07-18-2016 16:29:41.203] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.<init>(36) - Parsed and created an Alert
+[07-18-2016 16:29:41.203] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(113) - Query to be executed: "Alert [statement=alert before insert in cards where name = 'blue';]"
+[07-18-2016 16:29:41.203] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@74294adb
+[07-18-2016 16:29:41.203] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@74294adb
+[07-18-2016 16:29:41.203] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.addAlert(63) - Adding a new alert
+[07-18-2016 16:29:41.203] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@74294adb
+[07-18-2016 16:29:41.203] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.printResult(47) - Printing message that acknowledges that an alert was created
+[07-18-2016 16:29:41.204] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@74294adb
+[07-18-2016 16:29:41.204] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@74294adb
+[07-18-2016 16:29:50.512] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(195) - The user wants to quit SQLPlus
+[07-18-2016 16:29:50.512] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(414) - Attempting to disconnect the SQLPlusConnection
+[07-18-2016 16:29:50.512] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(129) - Attempting to disconnect from the database
+[07-18-2016 16:29:50.514] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(131) - Disconnected from the database
+[07-18-2016 16:29:50.515] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(416) - Disconnected the SQLPlusConnection
+[07-18-2016 16:29:50.515] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(419) - Reset the console from jline
+[07-18-2016 16:29:50.515] [main] INFO  com.mijecu25.sqlplus.SQLPlus.resetConsole(431) - About to reset the console from jline
+[07-18-2016 16:29:50.521] [main] INFO  com.mijecu25.sqlplus.SQLPlus.resetConsole(433) - Reset the console from jline
+[07-18-2016 16:29:50.522] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(422) - Quitting SQLPlus
+[07-18-2016 16:30:18.427] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(61) - Initializing SQLPlus version 0.1.0-SNAPSHOT
+[07-18-2016 16:30:18.540] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(103) - Create SQLPlusConnection
+[07-18-2016 16:30:18.540] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(401) - Connection with username, password, and host
+[07-18-2016 16:30:18.541] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(109) - Creating a new SQLPlusMySQLConnection instance with username:sqlplus password:********* host:127.0.0.1
+[07-18-2016 16:30:18.541] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(55) - Instantiating the credentials that will be used to connect to a mysql database
+[07-18-2016 16:30:18.541] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(38) - Creating SQLPlusMySQLConnection with username:sqlplus password:********* host: 127.0.0.1 port:3306
+[07-18-2016 16:30:18.541] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(42) - Will connect to a MySQL database using the credentials provided
+[07-18-2016 16:30:18.541] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(77) - Adding the connection properties to connect to a mysql database
+[07-18-2016 16:30:18.560] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(89) - Attempting to connect to the database: jdbc:mysql://127.0.0.1:3306/
+[07-18-2016 16:30:18.870] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(114) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=sqlplus, host=127.0.0.1, database=mysql, port=3306]
+[07-18-2016 16:30:18.870] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(405) - Created and returning a SQLPlusConnection SQLPlusConnection [username=sqlplus, host=127.0.0.1, database=mysql, port=3306]
+[07-18-2016 16:30:18.871] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(34) - Creating a new AlertManager
+[07-18-2016 16:30:18.871] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@638ef7ed
+[07-18-2016 16:30:20.652] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(213) - Raw input from the user: alert before insert in cards where name = 'blue';
+[07-18-2016 16:30:20.652] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(219) - Will parse the user input to determine what to execute
+[07-18-2016 16:30:20.673] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:30:20.673] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 16:30:20.673] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 16:30:20.673] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:30:20.673] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 16:30:20.673] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 16:30:20.674] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:30:20.674] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 16:30:20.674] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:30:20.674] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 16:30:20.678] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.<init>(42) - Created a Statement
+[07-18-2016 16:30:20.678] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.<init>(36) - Parsed and created an Alert
+[07-18-2016 16:30:20.678] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(113) - Query to be executed: "Alert [statement=alert before insert in cards where name = 'blue';]"
+[07-18-2016 16:30:20.678] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@638ef7ed
+[07-18-2016 16:30:20.678] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@638ef7ed
+[07-18-2016 16:30:20.678] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.addAlert(63) - Adding a new alert
+[07-18-2016 16:30:20.678] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@638ef7ed
+[07-18-2016 16:30:20.678] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.printResult(47) - Printing message that acknowledges that an alert was created
+[07-18-2016 16:30:20.681] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@638ef7ed
+[07-18-2016 16:30:20.681] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@638ef7ed
+[07-18-2016 16:30:22.520] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(213) - Raw input from the user: alert before insert in cards where name = 'blue';
+[07-18-2016 16:30:22.520] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(219) - Will parse the user input to determine what to execute
+[07-18-2016 16:30:22.521] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:30:22.521] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 16:30:22.521] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 16:30:22.521] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:30:22.521] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 16:30:22.522] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 16:30:22.522] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:30:22.522] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 16:30:22.522] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:30:22.522] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 16:30:22.522] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.<init>(42) - Created a Statement
+[07-18-2016 16:30:22.522] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.<init>(36) - Parsed and created an Alert
+[07-18-2016 16:30:22.523] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(113) - Query to be executed: "Alert [statement=alert before insert in cards where name = 'blue';]"
+[07-18-2016 16:30:22.523] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@638ef7ed
+[07-18-2016 16:30:22.523] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@638ef7ed
+[07-18-2016 16:31:05.629] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.addAlert(63) - Adding a new alert
+[07-18-2016 16:31:05.629] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@638ef7ed
+[07-18-2016 16:31:05.629] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.printResult(47) - Printing message that acknowledges that an alert was created
+[07-18-2016 16:31:05.629] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@638ef7ed
+[07-18-2016 16:31:05.629] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@638ef7ed
+[07-18-2016 16:31:30.023] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(61) - Initializing SQLPlus version 0.1.0-SNAPSHOT
+[07-18-2016 16:31:30.133] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(103) - Create SQLPlusConnection
+[07-18-2016 16:31:30.133] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(401) - Connection with username, password, and host
+[07-18-2016 16:31:30.133] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(109) - Creating a new SQLPlusMySQLConnection instance with username:sqlplus password:********* host:127.0.0.1
+[07-18-2016 16:31:30.134] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(55) - Instantiating the credentials that will be used to connect to a mysql database
+[07-18-2016 16:31:30.134] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(38) - Creating SQLPlusMySQLConnection with username:sqlplus password:********* host: 127.0.0.1 port:3306
+[07-18-2016 16:31:30.134] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(42) - Will connect to a MySQL database using the credentials provided
+[07-18-2016 16:31:30.134] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(77) - Adding the connection properties to connect to a mysql database
+[07-18-2016 16:31:30.154] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(89) - Attempting to connect to the database: jdbc:mysql://127.0.0.1:3306/
+[07-18-2016 16:31:30.448] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(114) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=sqlplus, host=127.0.0.1, database=mysql, port=3306]
+[07-18-2016 16:31:30.448] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(405) - Created and returning a SQLPlusConnection SQLPlusConnection [username=sqlplus, host=127.0.0.1, database=mysql, port=3306]
+[07-18-2016 16:31:30.449] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(34) - Creating a new AlertManager
+[07-18-2016 16:31:30.449] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@638ef7ed
+[07-18-2016 16:31:35.472] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(213) - Raw input from the user: alert before insert in cards where name = 'blue';
+[07-18-2016 16:31:35.473] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(219) - Will parse the user input to determine what to execute
+[07-18-2016 16:31:35.494] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:31:35.494] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 16:31:35.495] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 16:31:35.495] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:31:35.495] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 16:31:35.495] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 16:31:35.495] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:31:35.495] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 16:31:35.495] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:31:35.495] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 16:31:35.498] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.<init>(42) - Created a Statement
+[07-18-2016 16:31:35.499] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.<init>(36) - Parsed and created an Alert
+[07-18-2016 16:31:35.499] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(113) - Query to be executed: "Alert [statement=alert before insert in cards where name = 'blue';]"
+[07-18-2016 16:31:35.499] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@638ef7ed
+[07-18-2016 16:31:35.499] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@638ef7ed
+[07-18-2016 16:31:35.499] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.addAlert(63) - Adding a new alert
+[07-18-2016 16:31:35.501] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@638ef7ed
+[07-18-2016 16:31:35.501] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.printResult(47) - Printing message that acknowledges that an alert was created
+[07-18-2016 16:31:35.501] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@638ef7ed
+[07-18-2016 16:31:35.501] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@638ef7ed
+[07-18-2016 16:31:37.972] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(213) - Raw input from the user: alert before insert in cards where name = 'blue';
+[07-18-2016 16:31:37.973] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(219) - Will parse the user input to determine what to execute
+[07-18-2016 16:31:37.973] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:31:37.973] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 16:31:37.974] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 16:31:37.974] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:31:37.974] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 16:31:37.974] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 16:31:37.974] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:31:37.974] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 16:31:37.974] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:31:37.974] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 16:31:37.975] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.<init>(42) - Created a Statement
+[07-18-2016 16:31:37.975] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.<init>(36) - Parsed and created an Alert
+[07-18-2016 16:31:37.975] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(113) - Query to be executed: "Alert [statement=alert before insert in cards where name = 'blue';]"
+[07-18-2016 16:31:37.975] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@638ef7ed
+[07-18-2016 16:31:37.975] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@638ef7ed
+[07-18-2016 16:31:57.951] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.addAlert(63) - Adding a new alert
+[07-18-2016 16:31:57.951] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@638ef7ed
+[07-18-2016 16:31:57.951] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.printResult(47) - Printing message that acknowledges that an alert was created
+[07-18-2016 16:31:57.952] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@638ef7ed
+[07-18-2016 16:31:57.952] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@638ef7ed
+[07-18-2016 16:32:14.220] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(61) - Initializing SQLPlus version 0.1.0-SNAPSHOT
+[07-18-2016 16:32:14.328] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(103) - Create SQLPlusConnection
+[07-18-2016 16:32:14.329] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(401) - Connection with username, password, and host
+[07-18-2016 16:32:14.330] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(109) - Creating a new SQLPlusMySQLConnection instance with username:sqlplus password:********* host:127.0.0.1
+[07-18-2016 16:32:14.330] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(55) - Instantiating the credentials that will be used to connect to a mysql database
+[07-18-2016 16:32:14.330] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(38) - Creating SQLPlusMySQLConnection with username:sqlplus password:********* host: 127.0.0.1 port:3306
+[07-18-2016 16:32:14.330] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(42) - Will connect to a MySQL database using the credentials provided
+[07-18-2016 16:32:14.330] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(77) - Adding the connection properties to connect to a mysql database
+[07-18-2016 16:32:14.349] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(89) - Attempting to connect to the database: jdbc:mysql://127.0.0.1:3306/
+[07-18-2016 16:32:14.677] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(114) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=sqlplus, host=127.0.0.1, database=mysql, port=3306]
+[07-18-2016 16:32:14.677] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(405) - Created and returning a SQLPlusConnection SQLPlusConnection [username=sqlplus, host=127.0.0.1, database=mysql, port=3306]
+[07-18-2016 16:32:14.678] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(34) - Creating a new AlertManager
+[07-18-2016 16:32:14.678] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@638ef7ed
+[07-18-2016 16:32:17.326] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(213) - Raw input from the user: alert before insert in cards where name = 'blue';
+[07-18-2016 16:32:17.326] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(219) - Will parse the user input to determine what to execute
+[07-18-2016 16:32:17.346] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:32:17.346] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 16:32:17.347] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 16:32:17.347] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:32:17.347] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 16:32:17.347] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 16:32:17.347] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:32:17.347] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 16:32:17.347] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:32:17.347] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 16:32:17.351] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.<init>(42) - Created a Statement
+[07-18-2016 16:32:17.351] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.<init>(36) - Parsed and created an Alert
+[07-18-2016 16:32:17.351] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(113) - Query to be executed: "Alert [statement=alert before insert in cards where name = 'blue';]"
+[07-18-2016 16:32:17.351] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@638ef7ed
+[07-18-2016 16:32:17.351] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@638ef7ed
+[07-18-2016 16:32:17.351] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.addAlert(63) - Adding a new alert
+[07-18-2016 16:32:17.351] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@638ef7ed
+[07-18-2016 16:32:17.353] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.printResult(47) - Printing message that acknowledges that an alert was created
+[07-18-2016 16:32:17.353] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@638ef7ed
+[07-18-2016 16:32:17.353] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@638ef7ed
+[07-18-2016 16:32:18.842] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(213) - Raw input from the user: alert before insert in cards where name = 'blue';
+[07-18-2016 16:32:18.842] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(219) - Will parse the user input to determine what to execute
+[07-18-2016 16:32:18.842] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:32:18.843] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 16:32:18.843] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 16:32:18.843] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:32:18.843] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 16:32:18.843] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 16:32:18.843] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:32:18.843] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 16:32:18.844] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:32:18.844] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 16:32:18.844] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.<init>(42) - Created a Statement
+[07-18-2016 16:32:18.844] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.<init>(36) - Parsed and created an Alert
+[07-18-2016 16:32:18.844] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(113) - Query to be executed: "Alert [statement=alert before insert in cards where name = 'blue';]"
+[07-18-2016 16:32:18.844] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@638ef7ed
+[07-18-2016 16:32:18.844] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@638ef7ed
+[07-18-2016 16:32:41.357] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.addAlert(63) - Adding a new alert
+[07-18-2016 16:32:41.357] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@638ef7ed
+[07-18-2016 16:32:41.357] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.printResult(47) - Printing message that acknowledges that an alert was created
+[07-18-2016 16:32:41.357] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@638ef7ed
+[07-18-2016 16:32:41.357] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@638ef7ed
+[07-18-2016 16:33:20.836] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(61) - Initializing SQLPlus version 0.1.0-SNAPSHOT
+[07-18-2016 16:33:20.973] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(103) - Create SQLPlusConnection
+[07-18-2016 16:33:20.973] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(401) - Connection with username, password, and host
+[07-18-2016 16:33:20.974] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(109) - Creating a new SQLPlusMySQLConnection instance with username:sqlplus password:********* host:127.0.0.1
+[07-18-2016 16:33:20.975] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(55) - Instantiating the credentials that will be used to connect to a mysql database
+[07-18-2016 16:33:20.975] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(38) - Creating SQLPlusMySQLConnection with username:sqlplus password:********* host: 127.0.0.1 port:3306
+[07-18-2016 16:33:20.975] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(42) - Will connect to a MySQL database using the credentials provided
+[07-18-2016 16:33:20.975] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(77) - Adding the connection properties to connect to a mysql database
+[07-18-2016 16:33:20.999] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(89) - Attempting to connect to the database: jdbc:mysql://127.0.0.1:3306/
+[07-18-2016 16:33:21.273] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(114) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=sqlplus, host=127.0.0.1, database=mysql, port=3306]
+[07-18-2016 16:33:21.273] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(405) - Created and returning a SQLPlusConnection SQLPlusConnection [username=sqlplus, host=127.0.0.1, database=mysql, port=3306]
+[07-18-2016 16:33:21.273] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(34) - Creating a new AlertManager
+[07-18-2016 16:33:21.274] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@638ef7ed
+[07-18-2016 16:33:22.451] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(213) - Raw input from the user: alert before insert in cards where name = 'blue';
+[07-18-2016 16:33:22.451] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(219) - Will parse the user input to determine what to execute
+[07-18-2016 16:33:22.472] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:33:22.472] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 16:33:22.472] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 16:33:22.472] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:33:22.472] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 16:33:22.472] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 16:33:22.473] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:33:22.473] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 16:33:22.473] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:33:22.473] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 16:33:22.476] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.<init>(42) - Created a Statement
+[07-18-2016 16:33:22.476] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.<init>(36) - Parsed and created an Alert
+[07-18-2016 16:33:22.476] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(113) - Query to be executed: "Alert [statement=alert before insert in cards where name = 'blue';]"
+[07-18-2016 16:33:22.476] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@638ef7ed
+[07-18-2016 16:33:22.476] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@638ef7ed
+[07-18-2016 16:33:22.476] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.addAlert(63) - Adding a new alert
+[07-18-2016 16:33:22.476] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@638ef7ed
+[07-18-2016 16:33:22.478] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.printResult(47) - Printing message that acknowledges that an alert was created
+[07-18-2016 16:33:22.478] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@638ef7ed
+[07-18-2016 16:33:22.478] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@638ef7ed
+[07-18-2016 16:33:23.495] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(213) - Raw input from the user: alert before insert in cards where name = 'blue';
+[07-18-2016 16:33:23.496] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(219) - Will parse the user input to determine what to execute
+[07-18-2016 16:33:23.496] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:33:23.496] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 16:33:23.496] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 16:33:23.497] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:33:23.497] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 16:33:23.497] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 16:33:23.497] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:33:23.497] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 16:33:23.497] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:33:23.498] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 16:33:23.498] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.<init>(42) - Created a Statement
+[07-18-2016 16:33:23.498] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.<init>(36) - Parsed and created an Alert
+[07-18-2016 16:33:23.498] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(113) - Query to be executed: "Alert [statement=alert before insert in cards where name = 'blue';]"
+[07-18-2016 16:33:23.498] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@638ef7ed
+[07-18-2016 16:33:23.498] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@638ef7ed
+[07-18-2016 16:33:39.633] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.addAlert(63) - Adding a new alert
+[07-18-2016 16:33:39.634] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@638ef7ed
+[07-18-2016 16:33:39.634] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.printResult(47) - Printing message that acknowledges that an alert was created
+[07-18-2016 16:33:39.634] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@638ef7ed
+[07-18-2016 16:33:39.634] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@638ef7ed
+[07-18-2016 16:46:22.172] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(61) - Initializing SQLPlus version 0.1.0-SNAPSHOT
+[07-18-2016 16:46:22.296] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(103) - Create SQLPlusConnection
+[07-18-2016 16:46:22.297] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(401) - Connection with username, password, and host
+[07-18-2016 16:46:22.297] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(109) - Creating a new SQLPlusMySQLConnection instance with username:sqlplus password:********* host:127.0.0.1
+[07-18-2016 16:46:22.297] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(55) - Instantiating the credentials that will be used to connect to a mysql database
+[07-18-2016 16:46:22.298] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(38) - Creating SQLPlusMySQLConnection with username:sqlplus password:********* host: 127.0.0.1 port:3306
+[07-18-2016 16:46:22.298] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(42) - Will connect to a MySQL database using the credentials provided
+[07-18-2016 16:46:22.298] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(77) - Adding the connection properties to connect to a mysql database
+[07-18-2016 16:46:22.316] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(89) - Attempting to connect to the database: jdbc:mysql://127.0.0.1:3306/
+[07-18-2016 16:46:22.562] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(114) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=sqlplus, host=127.0.0.1, database=mysql, port=3306]
+[07-18-2016 16:46:22.562] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(405) - Created and returning a SQLPlusConnection SQLPlusConnection [username=sqlplus, host=127.0.0.1, database=mysql, port=3306]
+[07-18-2016 16:46:22.562] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(34) - Creating a new AlertManager
+[07-18-2016 16:46:22.563] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@47c81abf
+[07-18-2016 16:46:27.769] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(213) - Raw input from the user: alert before insert in cards where name = 'blue';
+[07-18-2016 16:46:27.770] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(219) - Will parse the user input to determine what to execute
+[07-18-2016 16:46:27.792] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:46:27.792] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 16:46:27.792] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 16:46:27.792] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:46:27.793] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 16:46:27.793] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 16:46:27.793] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:46:27.793] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 16:46:27.793] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:46:27.793] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 16:46:27.796] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.<init>(42) - Created a Statement
+[07-18-2016 16:46:27.797] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.<init>(36) - Parsed and created an Alert
+[07-18-2016 16:46:27.797] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(113) - Query to be executed: "Alert [statement=alert before insert in cards where name = 'blue';]"
+[07-18-2016 16:46:27.797] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@47c81abf
+[07-18-2016 16:46:27.797] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@47c81abf
+[07-18-2016 16:46:27.798] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.addAlert(63) - Adding a new alert
+[07-18-2016 16:46:27.798] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@47c81abf
+[07-18-2016 16:46:27.799] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.printResult(47) - Printing message that acknowledges that an alert was created
+[07-18-2016 16:46:27.799] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@47c81abf
+[07-18-2016 16:46:27.799] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@47c81abf
+[07-18-2016 16:46:28.188] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(213) - Raw input from the user: alert before insert in cards where name = 'blue';
+[07-18-2016 16:46:28.188] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(219) - Will parse the user input to determine what to execute
+[07-18-2016 16:46:28.189] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:46:28.189] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 16:46:28.189] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 16:46:28.189] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:46:28.189] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 16:46:28.189] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 16:46:28.189] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:46:28.190] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 16:46:28.190] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:46:28.190] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 16:46:28.190] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.<init>(42) - Created a Statement
+[07-18-2016 16:46:28.190] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.<init>(36) - Parsed and created an Alert
+[07-18-2016 16:46:28.190] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(113) - Query to be executed: "Alert [statement=alert before insert in cards where name = 'blue';]"
+[07-18-2016 16:46:28.190] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@47c81abf
+[07-18-2016 16:46:28.190] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@47c81abf
+[07-18-2016 16:46:45.490] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.addAlert(63) - Adding a new alert
+[07-18-2016 16:46:45.491] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@47c81abf
+[07-18-2016 16:46:45.491] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.printResult(47) - Printing message that acknowledges that an alert was created
+[07-18-2016 16:46:45.491] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@47c81abf
+[07-18-2016 16:46:45.491] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@47c81abf
+[07-18-2016 16:46:46.695] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(61) - Initializing SQLPlus version 0.1.0-SNAPSHOT
+[07-18-2016 16:46:46.844] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(103) - Create SQLPlusConnection
+[07-18-2016 16:46:46.844] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(401) - Connection with username, password, and host
+[07-18-2016 16:46:46.845] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(109) - Creating a new SQLPlusMySQLConnection instance with username:sqlplus password:********* host:127.0.0.1
+[07-18-2016 16:46:46.845] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(55) - Instantiating the credentials that will be used to connect to a mysql database
+[07-18-2016 16:46:46.845] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(38) - Creating SQLPlusMySQLConnection with username:sqlplus password:********* host: 127.0.0.1 port:3306
+[07-18-2016 16:46:46.845] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(42) - Will connect to a MySQL database using the credentials provided
+[07-18-2016 16:46:46.845] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(77) - Adding the connection properties to connect to a mysql database
+[07-18-2016 16:46:46.873] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(89) - Attempting to connect to the database: jdbc:mysql://127.0.0.1:3306/
+[07-18-2016 16:46:47.132] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(114) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=sqlplus, host=127.0.0.1, database=mysql, port=3306]
+[07-18-2016 16:46:47.132] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(405) - Created and returning a SQLPlusConnection SQLPlusConnection [username=sqlplus, host=127.0.0.1, database=mysql, port=3306]
+[07-18-2016 16:46:47.132] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(34) - Creating a new AlertManager
+[07-18-2016 16:46:47.132] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@638ef7ed
+[07-18-2016 16:46:47.902] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(213) - Raw input from the user: alert before insert in cards where name = 'blue';
+[07-18-2016 16:46:47.903] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(219) - Will parse the user input to determine what to execute
+[07-18-2016 16:46:47.923] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:46:47.923] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 16:46:47.924] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 16:46:47.924] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:46:47.924] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 16:46:47.924] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 16:46:47.926] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:46:47.927] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 16:46:47.927] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:46:47.927] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 16:46:47.929] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.<init>(42) - Created a Statement
+[07-18-2016 16:46:47.929] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.<init>(36) - Parsed and created an Alert
+[07-18-2016 16:46:47.929] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(113) - Query to be executed: "Alert [statement=alert before insert in cards where name = 'blue';]"
+[07-18-2016 16:46:47.930] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@638ef7ed
+[07-18-2016 16:46:47.930] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@638ef7ed
+[07-18-2016 16:46:47.931] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.addAlert(63) - Adding a new alert
+[07-18-2016 16:46:47.931] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@638ef7ed
+[07-18-2016 16:46:47.931] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.printResult(47) - Printing message that acknowledges that an alert was created
+[07-18-2016 16:46:47.932] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@638ef7ed
+[07-18-2016 16:46:47.932] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@638ef7ed
+[07-18-2016 16:46:50.028] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(213) - Raw input from the user: alert before insert in cards where name = 'blue';
+[07-18-2016 16:46:50.029] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(219) - Will parse the user input to determine what to execute
+[07-18-2016 16:46:50.029] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:46:50.029] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 16:46:50.029] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 16:46:50.029] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:46:50.029] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 16:46:50.029] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 16:46:50.030] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:46:50.030] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 16:46:50.030] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:46:50.030] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 16:46:50.030] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.<init>(42) - Created a Statement
+[07-18-2016 16:46:50.030] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.<init>(36) - Parsed and created an Alert
+[07-18-2016 16:46:50.030] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(113) - Query to be executed: "Alert [statement=alert before insert in cards where name = 'blue';]"
+[07-18-2016 16:46:50.030] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@638ef7ed
+[07-18-2016 16:46:50.030] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@638ef7ed
+[07-18-2016 16:48:02.645] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.addAlert(63) - Adding a new alert
+[07-18-2016 16:48:02.645] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@638ef7ed
+[07-18-2016 16:48:02.646] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.printResult(47) - Printing message that acknowledges that an alert was created
+[07-18-2016 16:48:02.646] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@638ef7ed
+[07-18-2016 16:48:02.646] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@638ef7ed
+[07-18-2016 16:48:03.829] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(61) - Initializing SQLPlus version 0.1.0-SNAPSHOT
+[07-18-2016 16:48:03.940] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(103) - Create SQLPlusConnection
+[07-18-2016 16:48:03.940] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(401) - Connection with username, password, and host
+[07-18-2016 16:48:03.941] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(109) - Creating a new SQLPlusMySQLConnection instance with username:sqlplus password:********* host:127.0.0.1
+[07-18-2016 16:48:03.941] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(55) - Instantiating the credentials that will be used to connect to a mysql database
+[07-18-2016 16:48:03.941] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(38) - Creating SQLPlusMySQLConnection with username:sqlplus password:********* host: 127.0.0.1 port:3306
+[07-18-2016 16:48:03.941] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(42) - Will connect to a MySQL database using the credentials provided
+[07-18-2016 16:48:03.941] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(77) - Adding the connection properties to connect to a mysql database
+[07-18-2016 16:48:03.959] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(89) - Attempting to connect to the database: jdbc:mysql://127.0.0.1:3306/
+[07-18-2016 16:48:04.245] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(114) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=sqlplus, host=127.0.0.1, database=mysql, port=3306]
+[07-18-2016 16:48:04.246] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(405) - Created and returning a SQLPlusConnection SQLPlusConnection [username=sqlplus, host=127.0.0.1, database=mysql, port=3306]
+[07-18-2016 16:48:04.246] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(34) - Creating a new AlertManager
+[07-18-2016 16:48:04.246] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@47c81abf
+[07-18-2016 16:48:05.834] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(213) - Raw input from the user: alert before insert in cards where name = 'blue';
+[07-18-2016 16:48:05.834] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(219) - Will parse the user input to determine what to execute
+[07-18-2016 16:48:05.854] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:48:05.854] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 16:48:05.854] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 16:48:05.854] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:48:05.854] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 16:48:05.854] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 16:48:05.857] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:48:05.857] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 16:48:05.857] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:48:05.857] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 16:48:05.860] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.<init>(42) - Created a Statement
+[07-18-2016 16:48:05.860] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.<init>(36) - Parsed and created an Alert
+[07-18-2016 16:48:05.861] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(113) - Query to be executed: "Alert [statement=alert before insert in cards where name = 'blue';]"
+[07-18-2016 16:48:05.861] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@47c81abf
+[07-18-2016 16:48:05.861] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@47c81abf
+[07-18-2016 16:48:05.861] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.addAlert(63) - Adding a new alert
+[07-18-2016 16:48:05.861] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@47c81abf
+[07-18-2016 16:48:05.862] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.printResult(47) - Printing message that acknowledges that an alert was created
+[07-18-2016 16:48:05.863] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@47c81abf
+[07-18-2016 16:48:05.863] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@47c81abf
+[07-18-2016 16:48:08.014] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(213) - Raw input from the user: alert before insert in cards where name = 'blue';
+[07-18-2016 16:48:08.015] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(219) - Will parse the user input to determine what to execute
+[07-18-2016 16:48:08.015] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:48:08.015] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 16:48:08.015] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 16:48:08.016] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:48:08.016] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 16:48:08.016] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 16:48:08.016] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:48:08.016] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 16:48:08.016] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:48:08.016] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 16:48:08.017] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.<init>(42) - Created a Statement
+[07-18-2016 16:48:08.017] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.<init>(36) - Parsed and created an Alert
+[07-18-2016 16:48:08.017] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(113) - Query to be executed: "Alert [statement=alert before insert in cards where name = 'blue';]"
+[07-18-2016 16:48:08.017] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@47c81abf
+[07-18-2016 16:48:08.017] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@47c81abf
+[07-18-2016 16:49:39.208] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.addAlert(63) - Adding a new alert
+[07-18-2016 16:49:39.209] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@47c81abf
+[07-18-2016 16:49:39.209] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.printResult(47) - Printing message that acknowledges that an alert was created
+[07-18-2016 16:49:39.209] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@47c81abf
+[07-18-2016 16:49:39.209] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@47c81abf
+[07-18-2016 16:50:44.206] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(61) - Initializing SQLPlus version 0.1.0-SNAPSHOT
+[07-18-2016 16:50:44.332] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(103) - Create SQLPlusConnection
+[07-18-2016 16:50:44.332] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(401) - Connection with username, password, and host
+[07-18-2016 16:50:44.333] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(109) - Creating a new SQLPlusMySQLConnection instance with username:sqlplus password:********* host:127.0.0.1
+[07-18-2016 16:50:44.333] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(55) - Instantiating the credentials that will be used to connect to a mysql database
+[07-18-2016 16:50:44.334] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(38) - Creating SQLPlusMySQLConnection with username:sqlplus password:********* host: 127.0.0.1 port:3306
+[07-18-2016 16:50:44.334] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(42) - Will connect to a MySQL database using the credentials provided
+[07-18-2016 16:50:44.334] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(77) - Adding the connection properties to connect to a mysql database
+[07-18-2016 16:50:44.352] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(89) - Attempting to connect to the database: jdbc:mysql://127.0.0.1:3306/
+[07-18-2016 16:50:44.588] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(114) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=sqlplus, host=127.0.0.1, database=mysql, port=3306]
+[07-18-2016 16:50:44.589] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(405) - Created and returning a SQLPlusConnection SQLPlusConnection [username=sqlplus, host=127.0.0.1, database=mysql, port=3306]
+[07-18-2016 16:50:44.589] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(34) - Creating a new AlertManager
+[07-18-2016 16:50:44.589] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@3f1d2e23
+[07-18-2016 16:50:45.803] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(213) - Raw input from the user: alert before insert in cards where name = 'blue';
+[07-18-2016 16:50:45.804] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(219) - Will parse the user input to determine what to execute
+[07-18-2016 16:50:45.825] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:50:45.825] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 16:50:45.825] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 16:50:45.825] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:50:45.825] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 16:50:45.825] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 16:50:45.828] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:50:45.828] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 16:50:45.828] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:50:45.828] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 16:50:45.831] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.<init>(42) - Created a Statement
+[07-18-2016 16:50:45.831] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.<init>(36) - Parsed and created an Alert
+[07-18-2016 16:50:45.831] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(113) - Query to be executed: "Alert [statement=alert before insert in cards where name = 'blue';]"
+[07-18-2016 16:50:45.831] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@3f1d2e23
+[07-18-2016 16:50:45.831] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@3f1d2e23
+[07-18-2016 16:50:45.831] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.addAlert(63) - Adding a new alert
+[07-18-2016 16:50:45.833] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@3f1d2e23
+[07-18-2016 16:50:45.833] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.printResult(47) - Printing message that acknowledges that an alert was created
+[07-18-2016 16:50:45.833] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@3f1d2e23
+[07-18-2016 16:50:45.833] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@3f1d2e23
+[07-18-2016 16:50:46.464] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(213) - Raw input from the user: alert before insert in cards where name = 'blue';
+[07-18-2016 16:50:46.464] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(219) - Will parse the user input to determine what to execute
+[07-18-2016 16:50:46.465] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:50:46.465] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 16:50:46.465] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 16:50:46.465] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:50:46.465] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 16:50:46.466] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 16:50:46.466] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:50:46.466] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 16:50:46.466] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:50:46.466] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 16:50:46.466] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.<init>(42) - Created a Statement
+[07-18-2016 16:50:46.466] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.<init>(36) - Parsed and created an Alert
+[07-18-2016 16:50:46.466] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(113) - Query to be executed: "Alert [statement=alert before insert in cards where name = 'blue';]"
+[07-18-2016 16:50:46.466] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@3f1d2e23
+[07-18-2016 16:50:46.466] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@3f1d2e23
+[07-18-2016 16:51:09.369] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.addAlert(59) - This alert has already been created
+[07-18-2016 16:51:09.369] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.printResult(47) - Printing message that acknowledges that an alert was created
+[07-18-2016 16:51:09.370] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@3f1d2e23
+[07-18-2016 16:51:09.370] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@3f1d2e23
+[07-18-2016 16:51:44.339] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(61) - Initializing SQLPlus version 0.1.0-SNAPSHOT
+[07-18-2016 16:51:44.446] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(103) - Create SQLPlusConnection
+[07-18-2016 16:51:44.446] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(401) - Connection with username, password, and host
+[07-18-2016 16:51:44.447] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(109) - Creating a new SQLPlusMySQLConnection instance with username:sqlplus password:********* host:127.0.0.1
+[07-18-2016 16:51:44.447] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(55) - Instantiating the credentials that will be used to connect to a mysql database
+[07-18-2016 16:51:44.447] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(38) - Creating SQLPlusMySQLConnection with username:sqlplus password:********* host: 127.0.0.1 port:3306
+[07-18-2016 16:51:44.447] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(42) - Will connect to a MySQL database using the credentials provided
+[07-18-2016 16:51:44.447] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(77) - Adding the connection properties to connect to a mysql database
+[07-18-2016 16:51:44.464] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(89) - Attempting to connect to the database: jdbc:mysql://127.0.0.1:3306/
+[07-18-2016 16:51:44.668] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(114) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=sqlplus, host=127.0.0.1, database=mysql, port=3306]
+[07-18-2016 16:51:44.668] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(405) - Created and returning a SQLPlusConnection SQLPlusConnection [username=sqlplus, host=127.0.0.1, database=mysql, port=3306]
+[07-18-2016 16:51:44.669] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(34) - Creating a new AlertManager
+[07-18-2016 16:51:44.669] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@1188e820
+[07-18-2016 16:51:47.229] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(213) - Raw input from the user: alert before insert in cards where name = 'blue';
+[07-18-2016 16:51:47.229] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(219) - Will parse the user input to determine what to execute
+[07-18-2016 16:51:47.246] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:51:47.246] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 16:51:47.246] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 16:51:47.246] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:51:47.246] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 16:51:47.246] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 16:51:47.246] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:51:47.246] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 16:51:47.247] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:51:47.247] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 16:51:47.247] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.<init>(42) - Created a Statement
+[07-18-2016 16:51:47.247] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.<init>(36) - Parsed and created an Alert
+[07-18-2016 16:51:47.248] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(113) - Query to be executed: "Alert [statement=alert before insert in cards where name = 'blue';]"
+[07-18-2016 16:51:47.248] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@1188e820
+[07-18-2016 16:51:47.248] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@1188e820
+[07-18-2016 16:51:47.248] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.addAlert(63) - Adding a new alert
+[07-18-2016 16:51:47.248] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@1188e820
+[07-18-2016 16:51:47.248] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.printResult(47) - Printing message that acknowledges that an alert was created
+[07-18-2016 16:51:47.248] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@1188e820
+[07-18-2016 16:51:47.248] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@1188e820
+[07-18-2016 16:51:48.044] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(213) - Raw input from the user: alert before insert in cards where name = 'blue';
+[07-18-2016 16:51:48.044] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(219) - Will parse the user input to determine what to execute
+[07-18-2016 16:51:48.044] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:51:48.045] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 16:51:48.045] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 16:51:48.045] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:51:48.045] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 16:51:48.045] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 16:51:48.046] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:51:48.046] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 16:51:48.046] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:51:48.046] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 16:51:48.046] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.<init>(42) - Created a Statement
+[07-18-2016 16:51:48.046] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.<init>(36) - Parsed and created an Alert
+[07-18-2016 16:51:48.046] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(113) - Query to be executed: "Alert [statement=alert before insert in cards where name = 'blue';]"
+[07-18-2016 16:51:48.047] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@1188e820
+[07-18-2016 16:51:48.047] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@1188e820
+[07-18-2016 16:51:48.047] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.addAlert(59) - This alert has already been created
+[07-18-2016 16:51:48.047] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.printResult(47) - Printing message that acknowledges that an alert was created
+[07-18-2016 16:51:48.047] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@1188e820
+[07-18-2016 16:51:48.047] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@1188e820
+[07-18-2016 16:51:50.131] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(213) - Raw input from the user: alert before insert in cards where name = 'blue';
+[07-18-2016 16:51:50.132] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(219) - Will parse the user input to determine what to execute
+[07-18-2016 16:51:50.132] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:51:50.132] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 16:51:50.132] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 16:51:50.133] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:51:50.133] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 16:51:50.133] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 16:51:50.133] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:51:50.135] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 16:51:50.135] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:51:50.136] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 16:51:50.136] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.<init>(42) - Created a Statement
+[07-18-2016 16:51:50.136] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.<init>(36) - Parsed and created an Alert
+[07-18-2016 16:51:50.136] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(113) - Query to be executed: "Alert [statement=alert before insert in cards where name = 'blue';]"
+[07-18-2016 16:51:50.136] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@1188e820
+[07-18-2016 16:51:50.136] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@1188e820
+[07-18-2016 16:51:50.136] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.addAlert(59) - This alert has already been created
+[07-18-2016 16:51:50.136] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.printResult(47) - Printing message that acknowledges that an alert was created
+[07-18-2016 16:51:50.136] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@1188e820
+[07-18-2016 16:51:50.136] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@1188e820
+[07-18-2016 16:51:50.820] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(213) - Raw input from the user: alert before insert in cards where name = 'blue';
+[07-18-2016 16:51:50.820] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(219) - Will parse the user input to determine what to execute
+[07-18-2016 16:51:50.821] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:51:50.821] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 16:51:50.821] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 16:51:50.821] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:51:50.821] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 16:51:50.821] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 16:51:50.822] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:51:50.822] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 16:51:50.822] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:51:50.822] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 16:51:50.822] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.<init>(42) - Created a Statement
+[07-18-2016 16:51:50.822] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.<init>(36) - Parsed and created an Alert
+[07-18-2016 16:51:50.823] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(113) - Query to be executed: "Alert [statement=alert before insert in cards where name = 'blue';]"
+[07-18-2016 16:51:50.823] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@1188e820
+[07-18-2016 16:51:50.823] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@1188e820
+[07-18-2016 16:51:50.823] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.addAlert(59) - This alert has already been created
+[07-18-2016 16:51:50.823] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.printResult(47) - Printing message that acknowledges that an alert was created
+[07-18-2016 16:51:50.823] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@1188e820
+[07-18-2016 16:51:50.823] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@1188e820
+[07-18-2016 16:51:52.260] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(213) - Raw input from the user: alert before insert in cards where name = 'blue';
+[07-18-2016 16:51:52.260] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(219) - Will parse the user input to determine what to execute
+[07-18-2016 16:51:52.260] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:51:52.260] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 16:51:52.261] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 16:51:52.261] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:51:52.261] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 16:51:52.261] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 16:51:52.261] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:51:52.262] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 16:51:52.262] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:51:52.262] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 16:51:52.262] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.<init>(42) - Created a Statement
+[07-18-2016 16:51:52.262] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.<init>(36) - Parsed and created an Alert
+[07-18-2016 16:51:52.263] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(113) - Query to be executed: "Alert [statement=alert before insert in cards where name = 'blue';]"
+[07-18-2016 16:51:52.263] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@1188e820
+[07-18-2016 16:51:52.263] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@1188e820
+[07-18-2016 16:51:52.263] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.addAlert(59) - This alert has already been created
+[07-18-2016 16:51:52.263] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.printResult(47) - Printing message that acknowledges that an alert was created
+[07-18-2016 16:51:52.263] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@1188e820
+[07-18-2016 16:51:52.263] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@1188e820
+[07-18-2016 16:52:06.643] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(213) - Raw input from the user: alert before insert in cards where name = 'blue';
+[07-18-2016 16:52:06.643] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(219) - Will parse the user input to determine what to execute
+[07-18-2016 16:52:06.644] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:52:06.644] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 16:52:06.644] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 16:52:06.644] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:52:06.645] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstant.<init>(19) - Parsed and created an ExpressionConstant
+[07-18-2016 16:52:06.645] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral.<init>(22) - Parsed and created an ExpressionConstant
+[07-18-2016 16:52:06.645] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:52:06.645] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 16:52:06.646] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.Expression.<init>(16) - Parsed and created an Expression
+[07-18-2016 16:52:06.646] [main] INFO  com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary.<init>(25) - Parsed and created an ExpressionBinary
+[07-18-2016 16:52:06.646] [main] INFO  com.mijecu25.sqlplus.compiler.core.statement.Statement.<init>(42) - Created a Statement
+[07-18-2016 16:52:06.646] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.<init>(36) - Parsed and created an Alert
+[07-18-2016 16:52:06.646] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.execute(113) - Query to be executed: "Alert [statement=alert before insert in cards where name = 'blue';]"
+[07-18-2016 16:52:06.647] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@1188e820
+[07-18-2016 16:52:06.647] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@1188e820
+[07-18-2016 16:52:06.647] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.addAlert(59) - This alert has already been created
+[07-18-2016 16:52:06.647] [main] INFO  com.mijecu25.sqlplus.compiler.alert.Alert.printResult(47) - Printing message that acknowledges that an alert was created
+[07-18-2016 16:52:06.647] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@1188e820
+[07-18-2016 16:52:06.647] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@1188e820
+[07-18-2016 16:52:38.354] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(195) - The user wants to quit SQLPlus
+[07-18-2016 16:52:38.354] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(414) - Attempting to disconnect the SQLPlusConnection
+[07-18-2016 16:52:38.354] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(129) - Attempting to disconnect from the database
+[07-18-2016 16:52:38.356] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.disconnect(131) - Disconnected from the database
+[07-18-2016 16:52:38.357] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(416) - Disconnected the SQLPlusConnection
+[07-18-2016 16:52:38.357] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(419) - Reset the console from jline
+[07-18-2016 16:52:38.357] [main] INFO  com.mijecu25.sqlplus.SQLPlus.resetConsole(431) - About to reset the console from jline
+[07-18-2016 16:52:38.365] [main] INFO  com.mijecu25.sqlplus.SQLPlus.resetConsole(433) - Reset the console from jline
+[07-18-2016 16:52:38.365] [main] INFO  com.mijecu25.sqlplus.SQLPlus.exitSQLPlus(422) - Quitting SQLPlus
+[07-18-2016 18:19:25.148] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(59) - Initializing SQLPlus version 0.1.0-SNAPSHOT
+[07-18-2016 18:19:25.257] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(101) - Create SQLPlusConnection
+[07-18-2016 18:19:25.257] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(399) - Connection with username, password, and host
+[07-18-2016 18:19:25.258] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(109) - Creating a new SQLPlusMySQLConnection instance with username:sqlplus password:********* host:127.0.0.1
+[07-18-2016 18:19:25.258] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.<init>(55) - Instantiating the credentials that will be used to connect to a mysql database
+[07-18-2016 18:19:25.258] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(38) - Creating SQLPlusMySQLConnection with username:sqlplus password:********* host: 127.0.0.1 port:3306
+[07-18-2016 18:19:25.258] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.<init>(42) - Will connect to a MySQL database using the credentials provided
+[07-18-2016 18:19:25.258] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(77) - Adding the connection properties to connect to a mysql database
+[07-18-2016 18:19:25.275] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusConnection.connect(89) - Attempting to connect to the database: jdbc:mysql://127.0.0.1:3306/
+[07-18-2016 18:19:25.465] [main] INFO  com.mijecu25.sqlplus.connection.SQLPlusMySQLConnection.getConnection(114) - Returning a SQLPlusMySQLConnection instance SQLPlusConnection [username=sqlplus, host=127.0.0.1, database=mysql, port=3306]
+[07-18-2016 18:19:25.465] [main] INFO  com.mijecu25.sqlplus.SQLPlus.createSQLPlusConnection(403) - Created and returning a SQLPlusConnection SQLPlusConnection [username=sqlplus, host=127.0.0.1, database=mysql, port=3306]
+[07-18-2016 18:19:25.466] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(34) - Creating a new AlertManager
+[07-18-2016 18:19:25.466] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@130f889
+[07-18-2016 18:19:27.426] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(211) - Raw input from the user: list alerts;
+[07-18-2016 18:19:27.426] [main] INFO  com.mijecu25.sqlplus.SQLPlus.main(217) - Will parse the user input to determine what to execute
+[07-18-2016 18:19:27.444] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@130f889
+[07-18-2016 18:19:27.445] [main] INFO  com.mijecu25.sqlplus.compiler.alert.AlertManager.getManager(38) - Returning an AlertManager instance com.mijecu25.sqlplus.compiler.alert.AlertManager@130f889
