@@ -86,6 +86,12 @@
             <artifactId>messages</artifactId>
             <version>1.0.1</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.udojava</groupId>
+            <artifactId>EvalEx</artifactId>
+            <version>1.0</version>
+        </dependency>
     </dependencies>
   
     <build>
