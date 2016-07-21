@@ -31,7 +31,7 @@ import jline.console.ConsoleReader;
  * SQLPlus add alerts to your sql queries.
  *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.34
+ * @version 0.1.0.35
  */
 public class SQLPlus {
 
@@ -162,7 +162,7 @@ public class SQLPlus {
                 }
 
                 if(line.equals("i")) {
-                    line = "insert into cards (name) values ('o');";
+                    line = "insert into cards (id,name) values (0,1);";
                 }
 
                 if (line.equals("1")) {

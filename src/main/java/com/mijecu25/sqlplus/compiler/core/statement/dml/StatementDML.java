@@ -7,8 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.mijecu25.messages.Messages;
-import com.mijecu25.sqlplus.compiler.alert.Alert;
-import com.mijecu25.sqlplus.compiler.alert.AlertManager;
 import com.mijecu25.sqlplus.compiler.core.expression.Expression;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -19,15 +17,15 @@ import com.mijecu25.sqlplus.compiler.core.statement.Statement;
  * This class contains common behavior for all DML SQL statements.
  *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.11
+ * @version 0.1.0.12
  */
 public abstract class StatementDML extends Statement {
     private static final Logger logger = LogManager.getLogger(StatementDML.class);
 
-    protected static final String INSERT = "INSERT";
-    protected static final String UPDATE = "UPDATE";
-    protected static final String DELETE = "DELETE";
-    protected static final String SELECT = "SELECT";
+    public static final String INSERT = "INSERT";
+    public static final String UPDATE = "UPDATE";
+    public static final String DELETE = "DELETE";
+    public static final String SELECT = "SELECT";
 
     protected List<String> columns;
     protected List<String> tables;
@@ -139,47 +137,6 @@ public abstract class StatementDML extends Statement {
         tableList.add(table);
 
         return tableList;
-    }
-
-    /**
-     * TODO
-     * @param alerts
-     * @param dml
-     * @return
-     */
-    protected static List<Alert> filterByDML(List<Alert> alerts, String dml) {
-        if(alerts == null) {
-            IllegalArgumentException iae = new IllegalArgumentException();
-            StatementDML.logger.fatal(Messages.FATAL + "The list of alerts passed cannot be null");
-            System.out.println(Messages.FATAL + Messages.FATAL_EXCEPTION_ACTION(iae.getClass().getSimpleName()) + " "
-                    + Messages.CHECK_LOG_FILES);
-            StatementDML.logger.warn(Messages.WARNING + "Throwing a " + iae.getClass().getSimpleName()
-                    + " to the calling class");
-            throw iae;
-        }
-
-        if(dml == null) {
-            IllegalArgumentException iae = new IllegalArgumentException();
-            StatementDML.logger.fatal(Messages.FATAL + "The dml passed cannot be null");
-            System.out.println(Messages.FATAL + Messages.FATAL_EXCEPTION_ACTION(iae.getClass().getSimpleName()) + " "
-                    + Messages.CHECK_LOG_FILES);
-            StatementDML.logger.warn(Messages.WARNING + "Throwing a " + iae.getClass().getSimpleName()
-                    + " to the calling class");
-            throw iae;
-        }
-
-        StatementDML.logger.info("Filtering a list of alerts by dml action");
-
-        List<Alert> dmlList = new ArrayList<Alert>();
-
-        for(Alert alert : alerts) {
-            if(alert.getDML().toLowerCase().equals(dml.toLowerCase())) {
-                dmlList.add(alert);
-            }
-        }
-
-        StatementDML.logger.info(dmlList);
-        return dmlList;
     }
 
 }

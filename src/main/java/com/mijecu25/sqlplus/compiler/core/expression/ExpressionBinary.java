@@ -7,7 +7,7 @@ import org.apache.logging.log4j.Logger;
  * This class represents a Binary expression. It has two child expressions and an operator which may or may not be null.
  *
  * @author Miguel Velez - miguelvelezmj25
- * @version 0.1.0.3
+ * @version 0.1.0.4
  */
 public class ExpressionBinary extends Expression {
     private static final Logger logger = LogManager.getLogger(ExpressionBinary.class);
@@ -26,28 +26,46 @@ public class ExpressionBinary extends Expression {
     }
 
     /**
-     * TODO
-     * @return
+     * Return the left expression.
+     *
+     * @return the left expression.
      */
     public Expression getLeftExpression() {
-        if(this.leftExpression != null) {
+//        if(this.leftExpression != null) {
             return this.leftExpression;
-        }
+//        }
 
-        return ((ExpressionBinary) this.getRightExpression()).getLeftExpression();
+//        return ((ExpressionBinary) this.getRightExpression()).getLeftExpression();
     }
 
     /**
-     * TODO
-     * @return
+     * Return the relational operator.
+     *
+     * @return the relational operator.
      */
-    public String getRelationalOperator() { return this.relationalOperator; }  
+    public String getRelationalOperator() { return this.relationalOperator; }
 
     /**
-     * TODO
-     * @return
+     * Return the right expression.
+     *
+     * @return the right expression.
      */
     public Expression getRightExpression() { return this.rightExpression; }
+
+    /**
+     * Transform a SQL '=' to '==' if the operator is a '='. Otherwise, the original operator is returned.
+     *
+     * @param operator that will be transformed.
+     *
+     * @return a transformed string or the original string.
+     */
+    public static String transformToEquals(String operator) {
+        if(operator.equals("=")) {
+            return "==";
+        }
+
+        return operator;
+    }
 
     @Override
     public boolean equals(Object other) {
