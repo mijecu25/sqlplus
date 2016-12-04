@@ -5,7 +5,7 @@ import java.io.Console;
 import java.io.FileReader;
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.Properties;
+import java.util.*;
 
 import com.mijecu25.sqlplus.compiler.alert.AlertManager;
 import com.mijecu25.sqlplus.compiler.core.statement.StatementDefault;

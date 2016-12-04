@@ -1,6 +1,7 @@
 package com.mijecu25.sqlplus.compiler.alert;
 
 import com.mijecu25.sqlplus.compiler.core.expression.Expression;
+import com.mijecu25.sqlplus.compiler.core.expression.ExpressionTable;
 import com.mijecu25.sqlplus.compiler.core.statement.Statement;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -19,7 +20,7 @@ public class Alert extends Statement {
 
     private String timing;
     private String DML;
-    private String table;
+    private ExpressionTable table;
     private Expression whereClause;
     // private String column;
     // private//
@@ -31,7 +32,7 @@ public class Alert extends Statement {
 
     private static final Logger logger = LogManager.getLogger(Alert.class);
 
-    public Alert(String timing, String DML, String table, Expression whereClause) {
+    public Alert(String timing, String DML, ExpressionTable table, Expression whereClause) {
         this.timing = timing;
         this.DML = DML;
         this.table = table;
@@ -74,7 +75,7 @@ public class Alert extends Statement {
 
     public String getDML() { return this.DML; }
 
-    public String getTable() { return this.table; }
+    public Expression getTable() { return this.table; }
 
     public Expression getWhereClause() { return this.whereClause; }
 

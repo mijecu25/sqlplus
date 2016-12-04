@@ -3,14 +3,14 @@ package com.mijecu25.sqlplus.compiler.core.statement.dml;
 import com.mijecu25.messages.Messages;
 import com.mijecu25.sqlplus.compiler.alert.Alert;
 import com.mijecu25.sqlplus.compiler.alert.AlertManager;
-import com.mijecu25.sqlplus.compiler.core.expression.Expression;
-import com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary;
+import com.mijecu25.sqlplus.compiler.core.expression.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -20,12 +20,12 @@ import java.util.List;
  * @version 0.1.0.5
  */
 public class StatementInsertStatement1 extends StatementDML {
-    private List<List<String>> valuesList;
+    private List<List<Expression>> valuesList;
 
     private static final Logger logger = LogManager.getLogger(StatementSelectExpression.class);
 
-    public StatementInsertStatement1(String table, List<String> columns, List<List<String>> valuesList) {
-        super(columns, StatementDML.tableToList(table));
+    public StatementInsertStatement1(ExpressionTable table, List<ExpressionColumn> columns, List<List<Expression>> valuesList) {
+        super(StatementInsertStatement1.createExpressionList(columns), StatementDML.tableToList(table));
 
         this.valuesList = valuesList;
 
@@ -52,10 +52,10 @@ public class StatementInsertStatement1 extends StatementDML {
                 ), this.getFirstTable());
 
         if(!beforeInsertAlerts.isEmpty()) {
-            for(List<String> values : this.valuesList) {
+            for(List<Expression> values : this.valuesList) {
                 for (Alert alert : beforeInsertAlerts) {
                     for (int i = 0; i < this.columns.size(); i++) {
-                        String column = this.columns.get(i);
+                        Expression column = this.columns.get(i);
                         ExpressionBinary condition = (ExpressionBinary) alert.getWhereClause();
                         Expression left = condition.getLeftExpression();
 
@@ -66,13 +66,13 @@ public class StatementInsertStatement1 extends StatementDML {
                             left = condition.getLeftExpression();
                         }
 
-                        if(column.toLowerCase().equals(condition.getLeftExpression().toString().toLowerCase())) {
+                        if(column.toString().toLowerCase().equals(condition.getLeftExpression().toString().toLowerCase())) {
                             String expression = condition.getLeftExpression()
                                     + ExpressionBinary.transformToEquals(condition.getRelationalOperator())
                                     + condition.getRightExpression();
 
                             com.udojava.evalex.Expression evaluator = new com.udojava.evalex.Expression(expression);
-                            evaluator.with(condition.getLeftExpression().toString(), values.get(i));
+                            evaluator.with(condition.getLeftExpression().toString(), values.get(i).toString());
                             BigDecimal result = evaluator.eval();
 
                             if(result.intValue() == 1) {
@@ -88,6 +88,16 @@ public class StatementInsertStatement1 extends StatementDML {
         // TODO this is where the sqlplus alert should check before or after this insert statement
         this.executeUpdate(connection);
         // TODO Do we need to catch the exception here?
+    }
+
+    private static List<Expression> createExpressionList(List<ExpressionColumn> list) {
+        List<Expression> expressionList = new ArrayList<Expression>();
+
+        for(ExpressionColumn column : list) {
+            expressionList.add(column);
+        }
+
+        return expressionList;
     }
 
     @Override

@@ -3,6 +3,8 @@ package com.mijecu25.sqlplus.compiler.core.statement.dml;
 import com.mijecu25.messages.Messages;
 
 import com.mijecu25.sqlplus.compiler.core.expression.Expression;
+import com.mijecu25.sqlplus.compiler.core.expression.ExpressionColumn;
+import com.mijecu25.sqlplus.compiler.core.expression.ExpressionTable;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -19,7 +21,7 @@ import java.util.List;
 public class StatementSelectExpression extends StatementDML {
     private static final Logger logger = LogManager.getLogger(StatementSelectExpression.class);
 
-    public StatementSelectExpression(List<String> columns, List<String> tables, Expression whereClause) {
+    public StatementSelectExpression(List<Expression> columns, List<ExpressionTable> tables, Expression whereClause) {
         super(columns, tables, whereClause);
 
         StatementSelectExpression.logger.info("Parsed and created a StatementSelectExpression");

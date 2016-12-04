@@ -8,6 +8,8 @@ import java.util.List;
 
 import com.mijecu25.messages.Messages;
 import com.mijecu25.sqlplus.compiler.core.expression.Expression;
+import com.mijecu25.sqlplus.compiler.core.expression.ExpressionColumn;
+import com.mijecu25.sqlplus.compiler.core.expression.ExpressionTable;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -27,11 +29,11 @@ public abstract class StatementDML extends Statement {
     public static final String DELETE = "DELETE";
     public static final String SELECT = "SELECT";
 
-    protected List<String> columns;
-    protected List<String> tables;
+    protected List<Expression> columns;
+    protected List<ExpressionTable> tables;
     protected Expression whereClause;
 
-    public StatementDML(List<String> columns, List<String> tables, Expression whereClause) {
+    public StatementDML(List<Expression> columns, List<ExpressionTable> tables, Expression whereClause) {
         super();
         this.columns = columns;
 
@@ -50,11 +52,11 @@ public abstract class StatementDML extends Statement {
         StatementDML.logger.info("Parsed and created a StatementDML");
     }
 
-    public StatementDML(List<String> columns, List<String> tables) {
+    public StatementDML(List<Expression> columns, List<ExpressionTable> tables) {
         this(columns, tables, null);
     }
 
-    public StatementDML(List<String> tables, Expression whereClause) {
+    public StatementDML(List<ExpressionTable> tables, Expression whereClause) {
         this(null, tables, whereClause);
     }
 
@@ -110,19 +112,19 @@ public abstract class StatementDML extends Statement {
     /**
      * Helper method to return the first table in the list of referenced tables.
      *
-     * @return a string with the name of the first referenced table.
+     * @return an expression with the name of the first referenced table.
      */
-    public String getFirstTable() { return this.tables.get(0); }
+    public Expression getFirstTable() { return this.tables.get(0); }
 
     /**
-     * Return a list of tables from a single string that represents a table. This is used since StatementDML's constructors
-     * take a list of tables.
+     * Return a list of tables from a single expression that represents a table. This is used since
+     * StatementDML's constructors take a list of tables.
      *
-     * @param table the string that represents the table used.
+     * @param table the expression that represents the table used.
      *
-     * @return a list of strings with a single element.
+     * @return a list of expression with a single element.
      */
-    protected static List<String> tableToList(String table) {
+    protected static List<ExpressionTable> tableToList(ExpressionTable table) {
         if(table == null) {
             IllegalArgumentException iae = new IllegalArgumentException();
             StatementDML.logger.fatal(Messages.FATAL + "The string passed that represents a table cannot be null");
@@ -133,7 +135,7 @@ public abstract class StatementDML extends Statement {
             throw iae;
         }
 
-        List<String> tableList = new ArrayList<String>();
+        List<ExpressionTable> tableList = new ArrayList<ExpressionTable>();
         tableList.add(table);
 
         return tableList;

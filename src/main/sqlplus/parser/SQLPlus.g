@@ -16,6 +16,10 @@ import SQLPlusLex;
 	import com.mijecu25.sqlplus.compiler.core.expression.Expression;
 	import com.mijecu25.sqlplus.compiler.core.expression.ExpressionBinary;
 	import com.mijecu25.sqlplus.compiler.core.expression.ExpressionLiteral;
+	import com.mijecu25.sqlplus.compiler.core.expression.ExpressionTable;
+	import com.mijecu25.sqlplus.compiler.core.expression.ExpressionColumn;
+	import com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstantInteger;
+	import com.mijecu25.sqlplus.compiler.core.expression.ExpressionConstantFloat;
 	import com.mijecu25.sqlplus.compiler.alert.Alert;
 	import com.mijecu25.sqlplus.compiler.alert.AlertManager;
 	import com.mijecu25.sqlplus.compiler.alert.AlertDefault;
@@ -77,8 +81,8 @@ sqlplus_alert returns [Statement alert]
     }
     // TODO add 'LIKE'
     // TODO use '?' to grab value from the user
-    :   ALERT timing data_manipulation_language IN table_reference where_clause /*IF column_spec relational_op match_value*/ {
-            alert = new Alert($timing.text, $data_manipulation_language.text, $table_reference.text, $where_clause.expr);
+    :   ALERT timing data_manipulation_language IN table_reference where_clause {
+            alert = new Alert($timing.text, $data_manipulation_language.text, $table_reference.tableReference, $where_clause.expr);
         }
     ;
 
@@ -189,62 +193,68 @@ single_table_update_statement returns [Statement singleTableUpdateStatement]
 		singleTableUpdateStatement = null;
 	}
 	:	UPDATE table_reference set_columns_clause (where_clause)? {
-			singleTableUpdateStatement = new StatementSingleTableUpdateStatement($table_reference.text, $set_columns_clause.columnsValuesMap, $where_clause.expr);
+			singleTableUpdateStatement = new StatementSingleTableUpdateStatement($table_reference.tableReference, $set_columns_clause.columnsValuesMap, $where_clause.expr);
 		}
 	;
 
-select_list returns [List<String> selectList]
+select_list returns [List<Expression> selectList]
 	@init {
-		selectList = new ArrayList<String>();
+		selectList = new ArrayList<Expression>();
 	}
 	:	column = displayed_column {
-	 		selectList.add($column.text);
+	 		selectList.add($column.displayedColumn);
 		}
 		(
 			COMMA column = displayed_column {
-				selectList.add($column.text);
+				selectList.add($column.displayedColumn);
 			}
 		)*
 	| 	ASTERISK {
-			selectList.add($ASTERISK.text);
+			selectList.add(new ExpressionLiteral($ASTERISK.text));
 		}
 	;
 
-displayed_column
-	:	column_spec (alias)?
+displayed_column returns [Expression displayedColumn]
+    @init {
+        displayedColumn = null;
+    }
+	:	column_spec (alias)? { displayedColumn = $column_spec.columnSpec; }
 	;
 
-table_references returns [List<String> tableReferences]
+table_references returns [List<ExpressionTable> tableReferences]
 	@init {
-		tableReferences = new ArrayList<String>();
+		tableReferences = new ArrayList<ExpressionTable>();
 	}
 	:	table = table_reference {
-			tableReferences.add($table.text);
+			tableReferences.add($table.tableReference);
 		}
 		(
 			COMMA
 			table = table_reference {
-				tableReferences.add($table.text);
+				tableReferences.add($table.tableReference);
 			}
 		)*
 	;
 
-table_reference
-	:	table_atom
+table_reference returns [ExpressionTable tableReference]
+    @init {
+        tableReference = null;
+    }
+	:	table_atom { tableReference = $table_atom.tableAtom; }
 	;
 
-insert_header returns [String table]
+insert_header returns [ExpressionTable table]
     @init {
         table = null;
     }
     :   INSERT (INTO)? table_spec {
-            table = $table_spec.text;
+            table = $table_spec.tableSpec;
         }
     ;
 
-value_list_clause returns [List<List<String>> valueListClause]
+value_list_clause returns [List<List<Expression>> valueListClause]
     @init {
-        valueListClause = new ArrayList<List<String>>();
+        valueListClause = new ArrayList<List<Expression>>();
     }
     :   VALUES
         value = column_value_list {
@@ -258,26 +268,26 @@ value_list_clause returns [List<List<String>> valueListClause]
         )*
     ;
 
-column_value_list returns [List<String> columnValueList]
+column_value_list returns [List<Expression> columnValueList]
     @init {
-        columnValueList = new ArrayList<String>();
+        columnValueList = new ArrayList<Expression>();
     }
     :   LEFT_PARENTHESIS
         expr = bit_expr {
-            columnValueList.add($expr.text);
+            columnValueList.add($expr.bitExpr);
         }
         (
             COMMA
             expr = bit_expr {
-                columnValueList.add($expr.text);
+                columnValueList.add($expr.bitExpr);
             }
         )*
         RIGHT_PARENTHESIS
     ;
 
-set_columns_clause returns [Map<String, Expression> columnsValuesMap]
+set_columns_clause returns [Map<ExpressionColumn, Expression> columnsValuesMap]
     @init {
-        columnsValuesMap = new HashMap<String, Expression>();
+        columnsValuesMap = new HashMap<ExpressionColumn, Expression>();
     }
     :   SET
         columnValue = set_column_clause {
@@ -291,17 +301,17 @@ set_columns_clause returns [Map<String, Expression> columnsValuesMap]
         )*
     ;
 
-set_column_clause returns [Map<String, Expression> columnValueMap]
+set_column_clause returns [Map<ExpressionColumn, Expression> columnValueMap]
     @init {
-        columnValueMap = new HashMap<String, Expression>();
+        columnValueMap = new HashMap<ExpressionColumn, Expression>();
     }
     :	column_spec EQUAL (
             expression {
-                columnValueMap.put($column_spec.text, $expression.expr);
+                columnValueMap.put($column_spec.columnSpec, $expression.expr);
             }
             |
             DEFAULT {
-                columnValueMap.put($column_spec.text, new ExpressionLiteral($DEFAULT.text));
+                columnValueMap.put($column_spec.columnSpec, new ExpressionLiteral($DEFAULT.text));
             }
         )
     ;
@@ -313,33 +323,44 @@ where_clause returns [Expression expr]
     :   WHERE expression { expr = $expression.expr; }
     ;
 
-table_atom
-	:	table_spec
-	;
-
-table_spec
-	:	(schema_name DOT)? table_name
-	;
-
-column_list returns [List<String> columnList]
+table_atom returns [ExpressionTable tableAtom]
     @init {
-        columnList = new ArrayList<String>();
+        tableAtom = null;
+    }
+	:	table_spec { tableAtom = $table_spec.tableSpec; }
+	;
+
+table_spec returns [ExpressionTable tableSpec]
+    @init {
+        tableSpec = null;
+    }
+	:	(schema_name DOT)? table_name { tableSpec = new ExpressionTable($schema_name.text, $table_name.text); }
+	;
+
+column_list returns [List<ExpressionColumn> columnList]
+    @init {
+        columnList = new ArrayList<ExpressionColumn>();
     }
 	:   LEFT_PARENTHESIS
 	    column = column_spec {
-	        columnList.add($column.text);
+	        columnList.add($column.columnSpec);
 	    }
         (
             COMMA
             column = column_spec {
-                columnList.add($column.text);
+                columnList.add($column.columnSpec);
             }
         )*
         RIGHT_PARENTHESIS
 	;
 
-column_spec
-	:   ((schema_name DOT)? table_name DOT)? column_name
+column_spec returns [ExpressionColumn columnSpec]
+    @init {
+        columnSpec = null;
+    }
+	:   ((schema_name DOT)? table_name DOT)? column_name {
+	        columnSpec = new ExpressionColumn($schema_name.text, $table_name.text, $column_name.text);
+        }
 	;
 
 subquery
@@ -414,21 +435,30 @@ predicate returns [Expression expr]
     @init {
         expr = null;
     }
-    :   bit_expr { expr = new ExpressionLiteral($bit_expr.text); }
+    :   bit_expr { expr = $bit_expr.bitExpr; }
     ;
 
-bit_expr
-    :   simple_expr
+bit_expr returns [Expression bitExpr]
+    @init {
+        bitExpr = null;
+    }
+    :   simple_expr { bitExpr = $simple_expr.simpleExpression; }
     ;
 
-simple_expr
-    :   literal_value
-    |   column_spec
+simple_expr returns [Expression simpleExpression]
+    @init {
+        simpleExpression = null;
+    }
+    :   literal_value { simpleExpression = $literal_value.literalValue; }
+    |   column_spec //{ simpleExpression = $column_spec.columnSpec; }
     ;
 
-literal_value
-    :   string_literal
-    |   number_literal
+literal_value returns [Expression literalValue]
+    @init {
+        literalValue = null;
+    }
+    :   string_literal { literalValue = $string_literal.stringLiteral; }
+    |   number_literal { literalValue = $number_literal.numberLiteral; }
     ;
 
 relational_op
@@ -440,8 +470,24 @@ relational_op
     |   NOT_EQUAL
     ;
 
-string_literal  :   TEXT_STRING;
-number_literal  :	(PLUS | MINUS)? (INTEGER_NUMBER | REAL_NUMBER);
+string_literal  returns [Expression stringLiteral]
+    @init {
+        stringLiteral = null;
+    }
+    :   TEXT_STRING { stringLiteral = new ExpressionLiteral($TEXT_STRING.text); }
+    ;
+number_literal  returns [Expression numberLiteral]
+    @init {
+        numberLiteral = null;
+    }
+    :	(PLUS | MINUS)?
+        (
+            INTEGER_NUMBER { numberLiteral = new ExpressionConstantInteger(Integer.parseInt($INTEGER_NUMBER.text)); }
+        |
+            REAL_NUMBER { numberLiteral = new ExpressionConstantFloat(Float.parseFloat($REAL_NUMBER.text)); }
+        )
+    ;
+
 boolean_literal :	TRUE | FALSE;
 
 

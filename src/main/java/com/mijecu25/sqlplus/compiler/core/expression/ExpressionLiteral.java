@@ -11,7 +11,7 @@ import org.apache.logging.log4j.Logger;
  */
 public class ExpressionLiteral extends ExpressionConstant {
 
-    private String value;
+    protected String value;
 
     private static final Logger logger = LogManager.getLogger(ExpressionLiteral.class);
 
@@ -19,7 +19,7 @@ public class ExpressionLiteral extends ExpressionConstant {
         super();
 
         this.value = value;
-        ExpressionLiteral.logger.info("Parsed and created an ExpressionConstant");
+        ExpressionLiteral.logger.info("Parsed and created an ExpressionLiteral");
     }
 
     @Override

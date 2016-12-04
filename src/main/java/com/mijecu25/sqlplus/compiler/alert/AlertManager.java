@@ -1,6 +1,7 @@
 package com.mijecu25.sqlplus.compiler.alert;
 
 import com.mijecu25.messages.Messages;
+import com.mijecu25.sqlplus.compiler.core.expression.Expression;
 import com.mijecu25.sqlplus.compiler.core.statement.dml.StatementDML;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -98,11 +99,11 @@ public class AlertManager {
             throw iae;
         }
 
-        if(!timing.toLowerCase().equals(Alert.AFTER.toLowerCase()) || !timing.toLowerCase()
+        if(!timing.toLowerCase().equals(Alert.AFTER.toLowerCase()) && !timing.toLowerCase()
                 .equals(Alert.BEFORE.toLowerCase())) {
             IllegalArgumentException iae = new IllegalArgumentException();
-            AlertManager.logger.fatal(Messages.FATAL + "The timing passed has to be either " + Alert.BEFORE + " or "
-                    + Alert.AFTER);
+            AlertManager.logger.fatal(Messages.FATAL + "The timing passed " + timing + " has to be either "
+                    + Alert.BEFORE + " or " + Alert.AFTER);
             System.out.println(Messages.FATAL + Messages.FATAL_EXCEPTION_ACTION(iae.getClass().getSimpleName()) + " "
                     + Messages.CHECK_LOG_FILES);
             AlertManager.logger.warn(Messages.WARNING + "Throwing a " + iae.getClass().getSimpleName()
@@ -141,11 +142,12 @@ public class AlertManager {
             throw iae;
         }
 
-        if(!dml.toLowerCase().equals(StatementDML.INSERT) || !dml.toLowerCase().equals(StatementDML.UPDATE)
-                || !dml.toLowerCase().equals(StatementDML.DELETE)) {
+        if(!dml.toLowerCase().equals(StatementDML.INSERT.toLowerCase())
+                && !dml.toLowerCase().equals(StatementDML.UPDATE.toLowerCase())
+                && !dml.toLowerCase().equals(StatementDML.DELETE.toLowerCase())) {
             IllegalArgumentException iae = new IllegalArgumentException();
-            AlertManager.logger.fatal(Messages.FATAL + "The dml passed can either be " + StatementDML.INSERT + ", "
-                    + StatementDML.UPDATE + ", or " + StatementDML.DELETE);
+            AlertManager.logger.fatal(Messages.FATAL + "The dml passed " + dml + " can either be "
+                    + StatementDML.INSERT + ", " + StatementDML.UPDATE + ", or " + StatementDML.DELETE);
             System.out.println(Messages.FATAL + Messages.FATAL_EXCEPTION_ACTION(iae.getClass().getSimpleName()) + " "
                     + Messages.CHECK_LOG_FILES);
             AlertManager.logger.warn(Messages.WARNING + "Throwing a " + iae.getClass().getSimpleName()
@@ -173,7 +175,7 @@ public class AlertManager {
      *
      * @return a list of alerts for a specific table.
      */
-    public List<Alert> listByTable(String table) {
+    public List<Alert> listByTable(Expression table) {
         AlertManager.logger.info("Listing alerts by DML");
         if(table == null) {
             IllegalArgumentException iae = new IllegalArgumentException();
@@ -225,11 +227,11 @@ public class AlertManager {
             throw iae;
         }
 
-        if(!timing.toLowerCase().equals(Alert.AFTER.toLowerCase()) || !timing.toLowerCase()
+        if(!timing.toLowerCase().equals(Alert.AFTER.toLowerCase()) && !timing.toLowerCase()
                 .equals(Alert.BEFORE.toLowerCase())) {
             IllegalArgumentException iae = new IllegalArgumentException();
-            AlertManager.logger.fatal(Messages.FATAL + "The timing passed has to be either " + Alert.BEFORE + " or "
-                    + Alert.AFTER);
+            AlertManager.logger.fatal(Messages.FATAL + "The timing passed " + timing + " has to be either "
+                    + Alert.BEFORE + " or " + Alert.AFTER);
             System.out.println(Messages.FATAL + Messages.FATAL_EXCEPTION_ACTION(iae.getClass().getSimpleName()) + " "
                     + Messages.CHECK_LOG_FILES);
             AlertManager.logger.warn(Messages.WARNING + "Throwing a " + iae.getClass().getSimpleName()
@@ -279,11 +281,12 @@ public class AlertManager {
             throw iae;
         }
 
-        if(!dml.toLowerCase().equals(StatementDML.INSERT) || !dml.toLowerCase().equals(StatementDML.UPDATE)
-                || !dml.toLowerCase().equals(StatementDML.DELETE)) {
+        if(!dml.toLowerCase().equals(StatementDML.INSERT.toLowerCase())
+                && !dml.toLowerCase().equals(StatementDML.UPDATE.toLowerCase())
+                && !dml.toLowerCase().equals(StatementDML.DELETE.toLowerCase())) {
             IllegalArgumentException iae = new IllegalArgumentException();
-            AlertManager.logger.fatal(Messages.FATAL + "The dml passed can either be " + StatementDML.INSERT + ", "
-                    + StatementDML.UPDATE + ", or " + StatementDML.DELETE);
+            AlertManager.logger.fatal(Messages.FATAL + "The dml passed " + dml + " can either be "
+                    + StatementDML.INSERT + ", " + StatementDML.UPDATE + ", or " + StatementDML.DELETE);
             System.out.println(Messages.FATAL + Messages.FATAL_EXCEPTION_ACTION(iae.getClass().getSimpleName()) + " "
                     + Messages.CHECK_LOG_FILES);
             AlertManager.logger.warn(Messages.WARNING + "Throwing a " + iae.getClass().getSimpleName()
@@ -312,7 +315,7 @@ public class AlertManager {
      *
      * @return a filtered list of alerts based on a table.
      */
-    public static List<Alert> filterByTable(List<Alert> alerts, String table) {
+    public static List<Alert> filterByTable(List<Alert> alerts, Expression table) {
         if(alerts == null) {
             IllegalArgumentException iae = new IllegalArgumentException();
             AlertManager.logger.fatal(Messages.FATAL + "The list of alerts passed cannot be null");
@@ -338,7 +341,7 @@ public class AlertManager {
         List<Alert> tableList = new ArrayList<Alert>();
 
         for(Alert alert : alerts) {
-            if(alert.getTable().toLowerCase().equals(table.toLowerCase())) {
+            if(alert.getTable().toString().toLowerCase().equals(table.toString().toLowerCase())) {
                 tableList.add(alert);
             }
         }

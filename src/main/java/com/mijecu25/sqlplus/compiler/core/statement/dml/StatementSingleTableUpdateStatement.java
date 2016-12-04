@@ -2,6 +2,8 @@ package com.mijecu25.sqlplus.compiler.core.statement.dml;
 
 import com.mijecu25.messages.Messages;
 import com.mijecu25.sqlplus.compiler.core.expression.Expression;
+import com.mijecu25.sqlplus.compiler.core.expression.ExpressionColumn;
+import com.mijecu25.sqlplus.compiler.core.expression.ExpressionTable;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -16,12 +18,12 @@ import java.util.Map;
  * @version 0.1.0.2
  */
 public class StatementSingleTableUpdateStatement extends StatementDML {
-    private Map<String, Expression> columnValues;
+    private Map<ExpressionColumn, Expression> columnValues;
 
     private static final Logger logger = LogManager.getLogger(StatementSingleTableUpdateStatement.class);
 
 
-    public StatementSingleTableUpdateStatement(String table, Map<String, Expression> columnValues, Expression whereClause) {
+    public StatementSingleTableUpdateStatement(ExpressionTable table, Map<ExpressionColumn, Expression> columnValues, Expression whereClause) {
         super(StatementDML.tableToList(table), whereClause);
 
         this.columnValues = columnValues;
